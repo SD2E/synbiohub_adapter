@@ -1,7 +1,8 @@
 from fetch_SPARQL import fetch_SPARQL
 
 
-''' This module is used to query information from SD2's SynBioHub instance for DARPA's SD2E project.
+''' 
+	This module is used to query information from SD2's SynBioHub instance for DARPA's SD2E project.
 	
 	author(s) : Nicholas Roehner 
 				Tramy Nguyen

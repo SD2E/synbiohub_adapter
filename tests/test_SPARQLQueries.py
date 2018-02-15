@@ -1,6 +1,7 @@
 import unittest
 
 from query_synbiohub import *
+from SynBioHubUtil import SBHConstants 
 
 class TestSBHQueries(unittest.TestCase):
 	'''
@@ -18,13 +19,29 @@ class TestSBHQueries(unittest.TestCase):
 	def setup_test1(self):
 		self.assertEqual(True)
 
-	def test_query(self):
-		server = "http://hub-api.sd2e.org:80/sparql"
-		collection = '<http://hub.sd2e.org/user/nicholasroehner/rule_30/rule_30_collection/1>'
+	def test_inducerQuery(self):
+		server = SBHConstants.SD2_SERVER
+		collection = SBHConstants.RULE30_COLLECTION
+
+		sbhQuery = query_synbiohub(server)
+		inducer = sbhQuery.query_Inducer(collection)
+		print(inducer)
+
+	def test_plasmidQuery(self):
+		server = SBHConstants.SD2_SERVER
+		collection = SBHConstants.RULE30_COLLECTION
+
+		sbhQuery = query_synbiohub(server)
+		plasmid = sbhQuery.query_Plasmid(collection)
+		print(plasmid)
+
+	def test_sampleQuery(self):
+		server = SBHConstants.SD2_SERVER
+		collection = SBHConstants.RULE30_COLLECTION
 
 		sbhQuery = query_synbiohub(server)
 		sample = sbhQuery.query_Sample(collection)
-		print(sample)
+		# print(sample)
 
 if __name__ == '__main__':
 	unittest.main()
