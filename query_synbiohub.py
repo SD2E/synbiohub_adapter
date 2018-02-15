@@ -7,7 +7,7 @@ from fetch_SPARQL import fetch_SPARQL
 	author(s) : Nicholas Roehner 
 				Tramy Nguyen
 ''' 
-class query_synbiohub():
+class SynbiohubQuery():
 	''' This class is used to connect to SD2's SynBioHub instance. 
 		An instance of this class will allow a user to push and pull information from SynBioHub
 		Each method stored in this class are SPARQL queries used to call to SynBioHub's instance.

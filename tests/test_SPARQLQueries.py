@@ -23,7 +23,7 @@ class TestSBHQueries(unittest.TestCase):
 		server = SBHConstants.SD2_SERVER
 		collection = SBHConstants.RULE30_COLLECTION
 
-		sbhQuery = query_synbiohub(server)
+		sbhQuery = SynbiohubQuery(server)
 		inducer = sbhQuery.query_Inducer(collection)
 		print(inducer)
 
@@ -31,7 +31,7 @@ class TestSBHQueries(unittest.TestCase):
 		server = SBHConstants.SD2_SERVER
 		collection = SBHConstants.RULE30_COLLECTION
 
-		sbhQuery = query_synbiohub(server)
+		sbhQuery = SynbiohubQuery(server)
 		plasmid = sbhQuery.query_Plasmid(collection)
 		print(plasmid)
 
@@ -39,7 +39,7 @@ class TestSBHQueries(unittest.TestCase):
 		server = SBHConstants.SD2_SERVER
 		collection = SBHConstants.RULE30_COLLECTION
 
-		sbhQuery = query_synbiohub(server)
+		sbhQuery = SynbiohubQuery(server)
 		sample = sbhQuery.query_Sample(collection)
 		# print(sample)
 
