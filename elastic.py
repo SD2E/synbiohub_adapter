@@ -68,6 +68,7 @@ def find_entities(input):
   results = es.search(index='sd2_service', body={'query': {'multi_match': {'query': input, "fuzziness": "AUTO", 'fields': ['parts', 'uri', 'literal']}}})
   results = set(['{{"{}": "{}"}}'.format(k, item['_source'][k]) for item in results['hits']['hits'] for k in item['_source'] if k != 'parts'])
   results = [json.loads(s) for s in results]
+  return results
 
 
 
