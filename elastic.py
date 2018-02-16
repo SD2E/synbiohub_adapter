@@ -16,7 +16,7 @@ def virtuoso_to_elasticsearch_full(step=1000):
   SELECT COUNT DISTINCT *
   WHERE {{
     GRAPH <http://hub.sd2e.org/user/sd2_service> {{ ?s [] ?o }}
-  }}""".format(step, offset))
+  }}""")
 
   sparql.setReturnFormat(JSON)
   num_triples = int(sparql.query().convert()['results']['bindings'][0]['callret-0']['value'])
