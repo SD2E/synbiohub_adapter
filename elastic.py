@@ -65,9 +65,12 @@ def virtuoso_to_elasticsearch_full(step=1000):
 
 
 def find_entities(input):
+  # This function is an abomination to be tamed later
   results = es.search(index='sd2e', body={'query': {'multi_match': {'query': input, "fuzziness": "AUTO", 'fields': ['parts', 'uri', 'literal']}}})
-  results = set([u'{{"{}": "{}"}}'.format(k, item['_source'][k]) for item in results['hits']['hits'] for k in item['_source'] if k != 'parts'])
+  results = set([u'{{ "{}": "{}", "score": {} }}'.format(k, item['_source'][k], item['_score']) for item in results['hits']['hits'] for k in item['_source'] if k != 'parts'])
   results = [json.loads(s) for s in results]
+  results.sort(key = lambda x: x['score'], reverse = True)
+  results = [{k: item[k]} for item in results for k in item if k != 'score']
   return results
 
 
