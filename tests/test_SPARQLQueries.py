@@ -43,5 +43,11 @@ class TestSBHQueries(unittest.TestCase):
 		sample = sbhQuery.query_Sample(collection)
 		# print(sample)
 
+	def test_bbnSBH(self):
+		server = SBHConstants.BBN_SERVER
+		collection = SBHConstants.BBN_YEASTGATES_COLLECTION
+		sbhQuery = SynbiohubQuery(server)
+		sample = sbhQuery.query_Sample(collection)
+
 if __name__ == '__main__':
 	unittest.main()
