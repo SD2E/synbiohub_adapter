@@ -16,4 +16,4 @@ class SBHConstants():
 	SD2_SERVER = "http://hub-api.sd2e.org:80/sparql"
 	BBN_SERVER = "http://localhost:8890/sparql"
 	BBN_YEASTGATES_COLLECTION = "<http://openmap.bbn.com:7777/user/tramyn/BBN_YEAST_GATES/BBN_YEAST_GATES_collection/1>"
-	RULE30_COLLECTION = '<http://hub.sd2e.org/user/nicholasroehner/rule_30/rule_30_collection/1>'
+	RULE_30_COLLECTION = '<https://hub.sd2e.org/user/sd2e/rule_30/rule_30/1>'
