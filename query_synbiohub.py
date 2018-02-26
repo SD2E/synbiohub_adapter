@@ -104,5 +104,4 @@ class SynBioHubQuery():
   			?sample sd2:built ?condition
 		}}""".format(col=collection)
 
-		sample_metadata = fetch_SPARQL(self.__server, sample_query)
-		return sample_metadata
+		return fetch_SPARQL(self.__server, sample_query)
