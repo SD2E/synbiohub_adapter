@@ -36,7 +36,7 @@ class TestSBHQueries(unittest.TestCase):
 		rule_30_experiment = '<https://hub.sd2e.org/user/sd2e/rule_30/transcriptic_rule_30_q0_1_09242017/1>'
 
 		sbh_query = SynBioHubQuery(SBHConstants.SD2_SERVER)
-		inducer = sbh_query.query_experiment_inducers(experiment)
+		inducer = sbh_query.query_experiment_inducers(rule_30_experiment)
 		print(inducer)
 
 	def test_query_experiment_plasmids(self):
