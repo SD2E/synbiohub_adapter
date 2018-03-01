@@ -14,6 +14,7 @@ class SBOLConstants():
 
 class SBHConstants():
 	SD2_SERVER = "http://hub-api.sd2e.org:80/sparql"
-	BBN_SERVER = "http://localhost:8890/sparql"
-	BBN_YEASTGATES_COLLECTION = "<http://openmap.bbn.com:7777/user/tramyn/BBN_YEAST_GATES/BBN_YEAST_GATES_collection/1>"
+	BBN_SERVER = "https://synbiohub.bbn.com/"
+	BBN_YEASTGATES_COLLECTION = "<https://synbiohub.bbn.com/user/tramyn/BBN_YEAST_GATES/BBN_YEAST_GATES_collection/1>"
+	BBN_RULE30_COLLECTION = '<https://synbiohub.bbn.com/user/tramyn/transcriptic_rule_30_q0_1_09242017/transcriptic_rule_30_q0_1_09242017_collection/1>'
 	RULE_30_COLLECTION = '<https://hub.sd2e.org/user/sd2e/rule_30/rule_30/1>'

@@ -15,9 +15,6 @@ class TestSBHQueries(unittest.TestCase):
 			python -m unittest tests/test_SPARQLQueries.py
 	'''
 
-	def setup_test1(self):
-		self.assertEqual(True)
-
 	def test_query_challenge_inducers(self):
 		rule_30_collection = SBHConstants.RULE_30_COLLECTION
 		
@@ -60,11 +57,13 @@ class TestSBHQueries(unittest.TestCase):
 		strains = sbh_query.query_experiment_strains(rule_30_experiment)
 		print(strains)
 
-	# def test_bbn_sbh(self):
-	# 	server = SBHConstants.BBN_SERVER
-	# 	collection = SBHConstants.BBN_YEASTGATES_COLLECTION
-	# 	sbh_query = SynBioHubQuery(server)
-	# 	sample = sbh_query.query_Sample(collection)
+	# Note: This BBN instance will successfully query infomration if the user is directly connected to BBN's server
+	def test_bbnSBH(self):
+		server = SBHConstants.BBN_SERVER
+		collection = SBHConstants.BBN_RULE30_COLLECTION
+		sbhQuery = SynBioHubQuery(server)
+		sample = sbhQuery.query_experiment_plasmids(collection)
+		print('Successfully Queried BBN instance!')
 
 if __name__ == '__main__':
 	unittest.main()
