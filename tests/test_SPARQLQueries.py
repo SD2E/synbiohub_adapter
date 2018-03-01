@@ -32,19 +32,33 @@ class TestSBHQueries(unittest.TestCase):
 		plasmids = sbh_query.query_challenge_plasmids(rule_30_collection)
 		print(plasmids)
 
+	def test_query_challenge_strains(self):
+		rule_30_collection = SBHConstants.RULE_30_COLLECTION
+
+		sbh_query = SynBioHubQuery(SBHConstants.SD2_SERVER)
+		strains = sbh_query.query_challenge_strains(rule_30_collection)
+		print(strains)
+
 	def test_query_experiment_inducers(self):
 		rule_30_experiment = '<https://hub.sd2e.org/user/sd2e/rule_30/transcriptic_rule_30_q0_1_09242017/1>'
 
 		sbh_query = SynBioHubQuery(SBHConstants.SD2_SERVER)
-		inducer = sbh_query.query_experiment_inducers(rule_30_experiment)
-		print(inducer)
+		inducers = sbh_query.query_experiment_inducers(rule_30_experiment)
+		print(inducers)
 
 	def test_query_experiment_plasmids(self):
 		rule_30_experiment = '<https://hub.sd2e.org/user/sd2e/rule_30/transcriptic_rule_30_q0_1_09242017/1>'
 
 		sbh_query = SynBioHubQuery(SBHConstants.SD2_SERVER)
-		inducer = sbh_query.query_experiment_plasmids(rule_30_experiment)
-		print(inducer)
+		plasmids = sbh_query.query_experiment_plasmids(rule_30_experiment)
+		print(plasmids)
+
+	def test_query_experiment_strains(self):
+		rule_30_experiment = '<https://hub.sd2e.org/user/sd2e/rule_30/transcriptic_rule_30_q0_1_09242017/1>'
+
+		sbh_query = SynBioHubQuery(SBHConstants.SD2_SERVER)
+		strains = sbh_query.query_experiment_strains(rule_30_experiment)
+		print(strains)
 
 	# def test_bbn_sbh(self):
 	# 	server = SBHConstants.BBN_SERVER
