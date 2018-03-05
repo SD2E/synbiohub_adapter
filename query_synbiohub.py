@@ -1,5 +1,8 @@
-from fetch_SPARQL import fetch_SPARQL
+import getpass
+import sys
 
+from fetch_SPARQL import fetch_SPARQL
+from sbol import *
 
 ''' 
 	This module is used to query information from SD2's SynBioHub instance for DARPA's SD2E project.
@@ -105,3 +108,29 @@ class SynBioHubQuery():
 		}}""".format(col=collection)
 
 		return fetch_SPARQL(self.__server, sample_query)
+
+	# Submit a new collection to the specified SynBioHub instance. 
+	# sbolFile - Full path to the SBOL file that the user would like to upload SynBioHub
+	# displayId - The SynBioHub Collection Id that must be set when creating a new SynBioHub Collection. 
+	# 	Note: This displayId must be unique from the Collection IDs that exist in the SynBioHub instance that the user want to upload their design to.
+	# name - The SynBioHub Collection Name that must be set when creating a new SynBioHub Collection
+	# description - A description about this new collection. 
+	# version - The version number that you would like to set this new SynBioHub Collection as. 
+	def submitNewCollection(self, sbolFile, displayId, name, description, version):
+		sbolDoc = Document()
+		sbolDoc.read(sbolFile)
+
+		# Set the required properties for the new SynBioHub collection
+		sbolDoc.displayId = displayId
+		sbolDoc.name = name
+		sbolDoc.version = version
+		sbolDoc.description = description
+
+		sbh_user = input('Enter SynBioHub Username: ')
+		sbh_connector = PartShop(self.__server)
+		sbh_connector.login(sbh_user, getpass.getpass(prompt='Enter SynBioHub Password: ', stream=sys.stderr))
+		result = sbh_connector.submit(sbolDoc)
+
+		# SynBioHub will alert user if they have successfully uploaded their SBOL design. 
+		# If uploading was not successful, errors or warnings will be stored in the result variable
+		print(result)

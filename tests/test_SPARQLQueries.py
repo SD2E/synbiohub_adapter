@@ -15,41 +15,53 @@ class TestSBHQueries(unittest.TestCase):
 			python -m unittest tests/test_SPARQLQueries.py
 	'''
 
-	def test_query_challenge_inducers(self):
-		rule_30_collection = SBHConstants.RULE_30_COLLECTION
+	# def test_query_challenge_inducers(self):
+	# 	rule_30_collection = SBHConstants.RULE_30_COLLECTION
 		
-		sbh_query = SynBioHubQuery(SBHConstants.SD2_SERVER)
-		inducers = sbh_query.query_challenge_inducers(rule_30_collection)
-		print(inducers)
+	# 	sbh_query = SynBioHubQuery(SBHConstants.SD2_SERVER)
+	# 	inducers = sbh_query.query_challenge_inducers(rule_30_collection)
+	# 	print(inducers)
 
-	def test_query_challenge_plasmids(self):
-		rule_30_collection = SBHConstants.RULE_30_COLLECTION
+	# def test_query_challenge_plasmids(self):
+	# 	rule_30_collection = SBHConstants.RULE_30_COLLECTION
 
-		sbh_query = SynBioHubQuery(SBHConstants.SD2_SERVER)
-		plasmids = sbh_query.query_challenge_plasmids(rule_30_collection)
-		print(plasmids)
+	# 	sbh_query = SynBioHubQuery(SBHConstants.SD2_SERVER)
+	# 	plasmids = sbh_query.query_challenge_plasmids(rule_30_collection)
+	# 	print(plasmids)
 
-	def test_query_experiment_inducers(self):
-		rule_30_experiment = '<https://hub.sd2e.org/user/sd2e/rule_30/transcriptic_rule_30_q0_1_09242017/1>'
+	# def test_query_experiment_inducers(self):
+	# 	rule_30_experiment = '<https://hub.sd2e.org/user/sd2e/rule_30/transcriptic_rule_30_q0_1_09242017/1>'
 
-		sbh_query = SynBioHubQuery(SBHConstants.SD2_SERVER)
-		inducer = sbh_query.query_experiment_inducers(rule_30_experiment)
-		print(inducer)
+	# 	sbh_query = SynBioHubQuery(SBHConstants.SD2_SERVER)
+	# 	inducer = sbh_query.query_experiment_inducers(rule_30_experiment)
+	# 	print(inducer)
 
-	def test_query_experiment_plasmids(self):
-		rule_30_experiment = '<https://hub.sd2e.org/user/sd2e/rule_30/transcriptic_rule_30_q0_1_09242017/1>'
+	# def test_query_experiment_plasmids(self):
+	# 	rule_30_experiment = '<https://hub.sd2e.org/user/sd2e/rule_30/transcriptic_rule_30_q0_1_09242017/1>'
 
-		sbh_query = SynBioHubQuery(SBHConstants.SD2_SERVER)
-		inducer = sbh_query.query_experiment_plasmids(rule_30_experiment)
-		print(inducer)
+	# 	sbh_query = SynBioHubQuery(SBHConstants.SD2_SERVER)
+	# 	inducer = sbh_query.query_experiment_plasmids(rule_30_experiment)
+	# 	print(inducer)
 
-	# Note: This BBN instance will successfully query infomration if the user is directly connected to BBN's server
-	def test_bbnSBH(self):
+	# # Note: This BBN instance will successfully query infomration if the user is directly connected to BBN's server
+	# def test_bbnSBH(self):
+	# 	server = SBHConstants.BBN_SERVER
+	# 	collection = SBHConstants.BBN_RULE30_COLLECTION
+	# 	sbhQuery = SynBioHubQuery(server)
+	# 	sample = sbhQuery.query_experiment_plasmids(collection)
+	# 	print('Successfully Queried BBN instance!')
+
+	def test_submitCollection(self):
 		server = SBHConstants.BBN_SERVER
-		collection = SBHConstants.BBN_RULE30_COLLECTION
 		sbhQuery = SynBioHubQuery(server)
-		sample = sbhQuery.query_experiment_plasmids(collection)
-		print('Successfully Queried BBN instance!')
+
+		rule30_sbol = 'examples/rule_30_design.xml'
+		displayId = 'design'
+		name = 'BBN_Rule30_Design'
+		description = 'Rule of 30 collection used for testing'
+		version = '1'
+		
+		sbhQuery.submitNewCollection(rule30_sbol, displayId, name, description, version)
 
 if __name__ == '__main__':
 	unittest.main()
