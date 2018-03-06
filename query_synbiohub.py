@@ -147,7 +147,7 @@ class SynBioHubQuery():
 	# sbolDoc: The SBOL Document that the user wants to submit to the existing SynBioHub Collection
 	# collURI: The URI of the SynBioHub Collection that the user would like to submit to
 	# ovewrite: An integer variable to indicate whether the data submitting to the existing SynBioHub collection should override information.
-	# 	Note: Setting the variable overwrite = 1 (ovewrite existing collection data) or 2 (merge existing collection data with new data)
+	# 	Note: Setting the variable overwrite = 1 (ovewrite existing collection data) or 2 (merge existing collection data with new data). 0 will be set as default.
 	def submit_ExistingCollection(self, sbolDoc, collURI, overwrite):
 		
 		sbolDoc.identity = collURI

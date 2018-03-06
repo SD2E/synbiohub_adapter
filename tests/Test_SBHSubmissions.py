@@ -51,13 +51,26 @@ class TestSBHSubmissions(unittest.TestCase):
 		sbolDoc = loadSBOLFile(rule30_sbol)
 		sbhQuery.submit_NewCollection(sbolDoc, displayId, name, description, version)
 
-	# def test_submitExistingCollection(self):
-	# 	server = SBHConstants.BBN_SERVER
-	# 	sbhQuery = SynBioHubQuery(server)
+	def test_submitNewCollection4(self):
+		server = SBHConstants.BBN_SERVER
+		sbhQuery = SynBioHubQuery(server)
 
-	# 	rule30_sbol = 'examples/rule30-Q0-v2.xml'
-	# 	rule30_collection = 'https://synbiohub.bbn.com/user/tramyn/design/design_collection/1'
-	# 	sbhQuery.submit_ExistingCollection(rule30_sbol, rule30_collection, 2)
+		rule30_sbol = 'examples/rule30-Q0-v2.xml'
+		displayId = 'rule_30_Q0_v2'
+		name = 'BBN_Rule30'
+		description = 'Rule of 30 problem collection used for stress testing'
+		version = '1'
+		
+		sbolDoc = loadSBOLFile(rule30_sbol)
+		sbhQuery.submit_NewCollection(sbolDoc, displayId, name, description, version)
+
+	def test_submitExistingCollection(self):
+		server = SBHConstants.BBN_SERVER
+		sbhQuery = SynBioHubQuery(server)
+
+		rule30_sbol = 'examples/rule30-Q0-v2.xml'
+		rule30_collection = 'https://synbiohub.bbn.com/user/tramyn/design/design_collection/1'
+		sbhQuery.submit_ExistingCollection(rule30_sbol, rule30_collection, 2)
 
 	def test_stress1(self):
 		sbolDoc = Document()
@@ -82,6 +95,21 @@ class TestSBHSubmissions(unittest.TestCase):
 		description = 'A collection full of dummy ComponentDefinitions'
 		version = '1'
 		sbhQuery.submit_NewCollection(sbolDoc, displayId, name, description, version)
+
+	def test_stress2(self):
+		# write to new collections with different versions
+		server = SBHConstants.BBN_SERVER
+		sbhQuery = SynBioHubQuery(server)
+		
+		rule30_sbol = 'examples/rule30-Q0-v2.xml'
+		description = "same rule of 30 but different versioning collection."
+		sbolDoc = loadSBOLFile(rule30_sbol)
+		for v in range(0, 3):
+			version = str(v)
+			displayId = 'stress2_reg' + version 
+			name = 'rule30_Q0_v' + version
+			sbhQuery.submit_NewCollection(sbolDoc, displayId, name, description, version)
+
 
 if __name__ == '__main__':
 	unittest.main()
