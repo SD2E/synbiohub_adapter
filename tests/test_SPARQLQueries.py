@@ -57,13 +57,20 @@ class TestSBHQueries(unittest.TestCase):
 		strains = sbh_query.query_experiment_strains(rule_30_experiment)
 		print(strains)
 
+	def test_query_experimental_data(self):
+		rule_30_experiment = '<https://hub.sd2e.org/user/sd2e/rule_30/transcriptic_rule_30_q0_1_09242017/1>'
+
+		sbh_query = SynBioHubQuery(SBHConstants.SD2_SERVER)
+		exp_data = sbh_query.query_experimental_data(rule_30_experiment)
+		print(exp_data)
+
 	# Note: This BBN instance will successfully query infomration if the user is directly connected to BBN's server
-	def test_bbnSBH(self):
-		server = SBHConstants.BBN_SERVER
-		collection = SBHConstants.BBN_RULE30_COLLECTION
-		sbhQuery = SynBioHubQuery(server)
-		sample = sbhQuery.query_experiment_plasmids(collection)
-		print('Successfully Queried BBN instance!')
+	# def test_bbnSBH(self):
+	# 	server = SBHConstants.BBN_SERVER
+	# 	collection = SBHConstants.BBN_RULE30_COLLECTION
+	# 	sbhQuery = SynBioHubQuery(server)
+	# 	sample = sbhQuery.query_experiment_plasmids(collection)
+	# 	print('Successfully Queried BBN instance!')
 
 if __name__ == '__main__':
 	unittest.main()
