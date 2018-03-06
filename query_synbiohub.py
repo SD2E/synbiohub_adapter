@@ -175,6 +175,7 @@ class SynBioHubQuery():
 		return fetch_SPARQL(self.__server, sample_query)
 
 	# Submit the data stored in the given sbolDoc to a collection on SynBioHub
+	# sbh_connector: An instance of the pySBOL Partshop to set SynBioHub credential needed for submitting a collection
 	# sbolDoc: The SBOL Document containing the data to be submitted to SynBioHub
 	# isNewCollection: A boolean variable. True will submit the given sbolDoc to a new SynBioHub Collection. 
 	# 	Otherwise, False will submit to existing SynBioHub Collection.
