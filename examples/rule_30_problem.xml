@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:prov="http://www.w3.org/ns/prov#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:sbol="http://sbols.org/v2#"
+   xmlns:sd2="http://sd2e.org#">
+  <sbol:Collection rdf:about="http://hub.sd2e.org/user/sd2e/rule_30/rule_30/1">
+    <dcterms:description>This is a collection of all experiments carried out as part of the Rule 30 challenge problem for SD2.</dcterms:description>
+    <dcterms:title>Rule 30 Challenge Problem</dcterms:title>
+    <sbol:displayId>rule_30</sbol:displayId>
+    <sbol:member rdf:resource="http://hub.sd2e.org/user/sd2e/rule_30/transcriptic_rule_30_q0_1_09242017/1"/>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/rule_30/rule_30"/>
+    <sbol:version>1</sbol:version>
+  </sbol:Collection>
+  <sd2:Experiment rdf:about="http://hub.sd2e.org/user/sd2e/rule_30/transcriptic_rule_30_q0_1_09242017/1">
+    <dcterms:title>Transcriptic Rule 30 Q0 1 09242017</dcterms:title>
+    <sbol:displayId>transcriptic_rule_30_q0_1_09242017</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/rule_30/transcriptic_rule_30_q0_1_09242017"/>
+    <sbol:version>1</sbol:version>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/A01_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/A02_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/A03_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/A04_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/A05_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/A06_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/A07_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/A08_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/A09_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/B01_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/B02_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/B03_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/B04_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/B05_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/B06_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/B07_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/B08_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/B09_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/C01_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/C02_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/C03_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/C04_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/C05_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/C06_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/C07_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/C08_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/C09_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/D01_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/D02_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/D03_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/D04_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/D05_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/D06_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/D07_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/D08_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/D09_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/E01_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/E02_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/E03_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/E04_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/E05_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/E06_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/E07_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/E08_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/E09_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/F01_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/F02_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/F03_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/F04_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/F05_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/F06_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/F07_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/F08_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/F09_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/G01_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/G02_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/G03_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/G04_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/G05_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/G06_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/G07_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/G08_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/G09_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/H01_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/H02_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/H03_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/H04_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/H05_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/H06_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/H07_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/H08_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/H09_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/beadcontrol_flowCytometry_3/1"/>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/A01_1_rnaSeq_10/1"/>
+  </sd2:Experiment>
+</rdf:RDF>
