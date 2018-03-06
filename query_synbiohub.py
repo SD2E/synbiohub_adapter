@@ -128,16 +128,13 @@ class SynBioHubQuery():
 
 
 	# Submit a new collection to the specified SynBioHub instance. 
-	# sbolFile: The SBOL file containing SBOL parts that the user would like to upload as a new Collection.
+	# sbolDoc: The SBOL Document containing SBOL parts that the user would like to upload as a new Collection.
 	# displayId: The SynBioHub Collection Id that must be set when creating a new SynBioHub Collection. 
 	# 	Note: This displayId must be unique from the Collection IDs that exist in the SynBioHub instance that the user want to upload their design to.
 	# name: The SynBioHub Collection Name that must be set when creating a new SynBioHub Collection
 	# description: A description about this new collection. 
 	# version: The version number that you would like to set this new SynBioHub Collection as. 
-	def submit_NewCollection(self, sbolFile, displayId, name, description, version):
-		sbolDoc = Document()
-		sbolDoc.read(sbolFile)
-
+	def submit_NewCollection(self, sbolDoc, displayId, name, description, version):
 		# Set the required properties for the new SynBioHub collection
 		sbolDoc.displayId = displayId
 		sbolDoc.name = name
@@ -146,15 +143,12 @@ class SynBioHubQuery():
 
 		self.submit_Collection(sbolDoc, True, 0)
 
-	# Submit the given sbol file to an existing SynBioHub Collection
-	# sbolFile: The SBOL file that the user wants to submit to the existing SynBioHub Collection
+	# Submit the given SBOL Document to an existing SynBioHub Collection
+	# sbolDoc: The SBOL Document that the user wants to submit to the existing SynBioHub Collection
 	# collURI: The URI of the SynBioHub Collection that the user would like to submit to
 	# ovewrite: An integer variable to indicate whether the data submitting to the existing SynBioHub collection should override information.
 	# 	Note: Setting the variable overwrite = 1 (ovewrite existing collection data) or 2 (merge existing collection data with new data)
-	def submit_ExistingCollection(self, sbolFile, collURI, overwrite):
-		sbolDoc = Document()
-		sbolDoc.read(sbolFile)
-
+	def submit_ExistingCollection(self, sbolDoc, collURI, overwrite):
+		
 		sbolDoc.identity = collURI
-
 		self.submit_Collection(sbolDoc, False, overwrite)

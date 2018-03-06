@@ -1,3 +1,5 @@
+from sbol import *
+
 '''
 	This is a utility module containing classes with constant variables used for querying SynBioHub information
 	
@@ -11,6 +13,7 @@ class SBOLConstants():
 	SMALL_MOLECULE = "<http://www.biopax.org/release/biopax-level3.owl#SmallMolecule>"
 
 	SBOL_NS = "http://sbols.org/v2#"
+	BBN_HOMESPACE = "https://synbiohub.bbn.com"
 
 class SBHConstants():
 	SD2_SERVER = "http://hub-api.sd2e.org:80/sparql"
@@ -18,3 +21,9 @@ class SBHConstants():
 	BBN_YEASTGATES_COLLECTION = "<https://synbiohub.bbn.com/user/tramyn/BBN_YEAST_GATES/BBN_YEAST_GATES_collection/1>"
 	BBN_RULE30_COLLECTION = '<https://synbiohub.bbn.com/user/tramyn/transcriptic_rule_30_q0_1_09242017/transcriptic_rule_30_q0_1_09242017_collection/1>'
 	RULE_30_COLLECTION = '<https://hub.sd2e.org/user/sd2e/rule_30/rule_30/1>'
+
+
+def loadSBOLFile(sbolFile):
+	sbolDoc = Document()
+	sbolDoc.read(sbolFile)
+	return sbolDoc

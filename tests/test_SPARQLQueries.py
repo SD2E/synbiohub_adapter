@@ -1,7 +1,8 @@
 import unittest
 
 from query_synbiohub import *
-from SynBioHubUtil import SBHConstants 
+from SynBioHubUtil import * 
+from sbol import *
 
 class TestSBHQueries(unittest.TestCase):
 	'''
@@ -51,25 +52,6 @@ class TestSBHQueries(unittest.TestCase):
 		sample = sbhQuery.query_experiment_plasmids(collection)
 		print('Successfully Queried BBN instance!')
 
-	def test_submitNewCollection(self):
-		server = SBHConstants.BBN_SERVER
-		sbhQuery = SynBioHubQuery(server)
-
-		rule30_sbol = 'examples/rule_30_design.xml'
-		displayId = 'design'
-		name = 'BBN_Rule30_Design'
-		description = 'Rule of 30 collection used for testing'
-		version = '1'
-		
-		sbhQuery.submit_NewCollection(rule30_sbol, displayId, name, description, version)
-
-	def test_submitExistingCollection(self):
-		server = SBHConstants.BBN_SERVER
-		sbhQuery = SynBioHubQuery(server)
-
-		rule30_sbol = 'examples/rule30-Q0-v2.xml'
-		rule30_collection = 'https://synbiohub.bbn.com/user/tramyn/design/design_collection/1'
-		sbhQuery.submit_ExistingCollection(rule30_sbol, rule30_collection, 2)
 
 if __name__ == '__main__':
 	unittest.main()
