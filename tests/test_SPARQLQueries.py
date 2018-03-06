@@ -30,27 +30,48 @@ class TestSBHQueries(unittest.TestCase):
 		plasmids = sbh_query.query_challenge_plasmids(rule_30_collection)
 		print(plasmids)
 
+	def test_query_challenge_strains(self):
+		rule_30_collection = SBHConstants.RULE_30_COLLECTION
+
+		sbh_query = SynBioHubQuery(SBHConstants.SD2_SERVER)
+		strains = sbh_query.query_challenge_strains(rule_30_collection)
+		print(strains)
+
 	def test_query_experiment_inducers(self):
 		rule_30_experiment = '<https://hub.sd2e.org/user/sd2e/rule_30/transcriptic_rule_30_q0_1_09242017/1>'
 
 		sbh_query = SynBioHubQuery(SBHConstants.SD2_SERVER)
-		inducer = sbh_query.query_experiment_inducers(rule_30_experiment)
-		print(inducer)
+		inducers = sbh_query.query_experiment_inducers(rule_30_experiment)
+		print(inducers)
 
 	def test_query_experiment_plasmids(self):
 		rule_30_experiment = '<https://hub.sd2e.org/user/sd2e/rule_30/transcriptic_rule_30_q0_1_09242017/1>'
 
 		sbh_query = SynBioHubQuery(SBHConstants.SD2_SERVER)
-		inducer = sbh_query.query_experiment_plasmids(rule_30_experiment)
-		print(inducer)
+		plasmids = sbh_query.query_experiment_plasmids(rule_30_experiment)
+		print(plasmids)
+
+	def test_query_experiment_strains(self):
+		rule_30_experiment = '<https://hub.sd2e.org/user/sd2e/rule_30/transcriptic_rule_30_q0_1_09242017/1>'
+
+		sbh_query = SynBioHubQuery(SBHConstants.SD2_SERVER)
+		strains = sbh_query.query_experiment_strains(rule_30_experiment)
+		print(strains)
+
+	def test_query_experimental_data(self):
+		rule_30_experiment = '<https://hub.sd2e.org/user/sd2e/rule_30/transcriptic_rule_30_q0_1_09242017/1>'
+
+		sbh_query = SynBioHubQuery(SBHConstants.SD2_SERVER)
+		exp_data = sbh_query.query_experimental_data(rule_30_experiment)
+		print(exp_data)
 
 	# Note: This BBN instance will successfully query infomration if the user is directly connected to BBN's server
-	def test_bbnSBH(self):
-		server = SBHConstants.BBN_SERVER
-		collection = SBHConstants.BBN_RULE30_COLLECTION
-		sbhQuery = SynBioHubQuery(server)
-		sample = sbhQuery.query_experiment_plasmids(collection)
-		print('Successfully Queried BBN instance!')
+	# def test_bbnSBH(self):
+	# 	server = SBHConstants.BBN_SERVER
+	# 	collection = SBHConstants.BBN_RULE30_COLLECTION
+	# 	sbhQuery = SynBioHubQuery(server)
+	# 	sample = sbhQuery.query_experiment_plasmids(collection)
+	# 	print('Successfully Queried BBN instance!')
 
 
 if __name__ == '__main__':
