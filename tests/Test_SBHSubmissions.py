@@ -65,12 +65,14 @@ class TestSBHSubmissions(unittest.TestCase):
 		sbhQuery.submit_NewCollection(sbolDoc, displayId, name, description, version)
 
 	def test_submitExistingCollection(self):
+		# Note: To run this method, make sure that the collection exist on synbiohub first.
 		server = SBHConstants.BBN_SERVER
 		sbhQuery = SynBioHubQuery(server)
 
 		rule30_sbol = 'examples/rule30-Q0-v2.xml'
 		rule30_collection = 'https://synbiohub.bbn.com/user/tramyn/design/design_collection/1'
-		sbhQuery.submit_ExistingCollection(rule30_sbol, rule30_collection, 2)
+		sbolDoc = loadSBOLFile(rule30_sbol)
+		sbhQuery.submit_ExistingCollection(sbolDoc, rule30_collection, 2)
 
 	def test_stress1(self):
 		sbolDoc = Document()
