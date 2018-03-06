@@ -19,8 +19,9 @@ RUN apt-get install -y wget
 #TODO remove manual dependency
 RUN wget https://github.com/tcmitchell/pySBOL/blob/ubuntu/Ubuntu_16.04_64_2/libsbol.so\?raw\=true -O libsbol.so
 
+RUN cp libsbol.so /usr/local/lib
+
 #TODO remove manual dependency
-ADD libsbol.so /usr/local/lib/
 
 RUN ldconfig -v
 
