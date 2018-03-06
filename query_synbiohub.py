@@ -180,17 +180,20 @@ class SynBioHubQuery():
 	# 	Otherwise, False will submit to existing SynBioHub Collection.
 	# overwrite: An integer variable to indicate whether the data submitting to the existing SynBioHub collection should override information.
 	# 	Note: Setting the variable overwrite = 1 (ovewrite existing collection data) or 2 (merge existing collection data with new data)
-	def submit_Collection(self, sbolDoc, isNewCollection, overwrite):
-		sbh_connector = PartShop(self.__server)
-		sbh_user = input('Enter SynBioHub Username: ')
-		sbh_connector.login(sbh_user, getpass.getpass(prompt='Enter SynBioHub Password: ', stream=sys.stderr))
-
+	def submit_Collection(self, sbh_connector, sbolDoc, isNewCollection, overwrite):
 		result = sbh_connector.submit(sbolDoc) if isNewCollection else sbh_connector.submit(sbolDoc, sbolDoc.identity, overwrite)
 		
 		# SynBioHub will alert user if they have successfully uploaded their SBOL design. 
 		# If uploading was not successful, errors or warnings will be stored in the result variable
 		print(result)
+		if result != 'Successfully uploaded':
+			sys.exit(0)
 
+	def login_SBH(self):
+		sbh_connector = PartShop(self.__server)
+		sbh_user = input('Enter SynBioHub Username: ')
+		sbh_connector.login(sbh_user, getpass.getpass(prompt='Enter SynBioHub Password: ', stream=sys.stderr))
+		return sbh_connector
 
 	# Submit a new collection to the specified SynBioHub instance. 
 	# sbolDoc: The SBOL Document containing SBOL parts that the user would like to upload as a new Collection.
@@ -205,8 +208,8 @@ class SynBioHubQuery():
 		sbolDoc.name = name
 		sbolDoc.version = version
 		sbolDoc.description = description
-
-		self.submit_Collection(sbolDoc, True, 0)
+		sbh_connector = self.login_SBH()
+		self.submit_Collection(sbh_connector, sbolDoc, True, 0)
 
 	# Submit the given SBOL Document to an existing SynBioHub Collection
 	# sbolDoc: The SBOL Document that the user wants to submit to the existing SynBioHub Collection
@@ -214,6 +217,6 @@ class SynBioHubQuery():
 	# ovewrite: An integer variable to indicate whether the data submitting to the existing SynBioHub collection should override information.
 	# 	Note: Setting the variable overwrite = 1 (ovewrite existing collection data) or 2 (merge existing collection data with new data). 0 will be set as default.
 	def submit_ExistingCollection(self, sbolDoc, collURI, overwrite):
-		
 		sbolDoc.identity = collURI
-		self.submit_Collection(sbolDoc, False, overwrite)
+		sbh_connector = self.login_SBH()
+		self.submit_Collection(sbh_connector, sbolDoc, False, overwrite)

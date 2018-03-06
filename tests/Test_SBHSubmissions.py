@@ -106,11 +106,17 @@ class TestSBHSubmissions(unittest.TestCase):
 		rule30_sbol = 'examples/rule30-Q0-v2.xml'
 		description = "same rule of 30 but different versioning collection."
 		sbolDoc = loadSBOLFile(rule30_sbol)
+		sbh_connector = sbhQuery.login_SBH()
+
+		sbolDoc.description = description
+
 		for v in range(0, 3):
 			version = str(v)
-			displayId = 'stress2_reg' + version 
-			name = 'rule30_Q0_v' + version
-			sbhQuery.submit_NewCollection(sbolDoc, displayId, name, description, version)
+			sbolDoc.version = version
+			sbolDoc.displayId = 'stress2_reg' + version 
+			sbolDoc.name = 'rule30_Q0_v' + version
+
+			sbhQuery.submit_Collection(sbh_connector, sbolDoc, True, 0)
 
 
 if __name__ == '__main__':
