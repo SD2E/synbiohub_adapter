@@ -1,4 +1,4 @@
-FROM sd2e/python3:ubuntu16
+FROM sd2e/python3:ubuntu17
 
 RUN apt-get update
 RUN apt-get install -y libraptor2-dev libjsoncpp1
