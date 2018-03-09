@@ -1,19 +1,19 @@
 import unittest
 
-from query_synbiohub import *
-from SynBioHubUtil import * 
+from synbiohub_adapter.query_synbiohub import *
+from synbiohub_adapter.SynBioHubUtil import *
 from sbol import *
 
 class TestSBHQueries(unittest.TestCase):
 	'''
-		This class will perform unit testing to query information from SynBioHub SD2 instance. 
+		This class will perform unit testing to query information from SynBioHub's instances. 
 
 		Installation Requirement(s):
 		- This test environment will need SPARQLWrapper installed to run successfully. 
 			SPARQLWrapper is used to remotely execute SynBioHub queries.
 
 		To run this python file, enter in the following command from the synbiohub_adapter directory:
-			python -m unittest tests/test_SPARQLQueries.py
+			python -m unittest tests/Test_SPARQLQueries.py
 	'''
 
 	def test_query_challenge_inducers(self):

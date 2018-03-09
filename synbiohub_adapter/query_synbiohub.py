@@ -1,7 +1,7 @@
 import getpass
 import sys
 
-from fetch_SPARQL import fetch_SPARQL
+from .fetch_SPARQL import fetch_SPARQL
 from sbol import *
 
 ''' 

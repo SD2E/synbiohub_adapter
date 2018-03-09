@@ -1,7 +1,7 @@
 import unittest
 
-from query_synbiohub import *
-from SynBioHubUtil import * 
+from synbiohub_adapter.query_synbiohub import *
+from synbiohub_adapter.SynBioHubUtil import *
 from sbol import *
 
 class TestSBHSubmissions(unittest.TestCase):
