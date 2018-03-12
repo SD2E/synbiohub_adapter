@@ -14,6 +14,9 @@ class TestSBHQueries(unittest.TestCase):
 
 		To run this python file, enter in the following command from the synbiohub_adapter directory:
 			python -m unittest tests/Test_SPARQLQueries.py
+
+		author(s) : Nicholas Roehner
+					Tramy Nguyen
 	'''
 
 	def test_query_challenge_inducers(self):
