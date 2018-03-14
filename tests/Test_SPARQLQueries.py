@@ -19,37 +19,44 @@ class TestSBHQueries(unittest.TestCase):
 					Tramy Nguyen
 	'''
 
-	def test_query_challenge_problems(self):
+	def test_query_design_inducers(self):
 		sbh_query = SynBioHubQuery(SBHConstants.SD2_SERVER)
-		challenges = sbh_query.query_challenge_problems()
-		print(challenges)
-
-	def test_query_challenge_experiment_count(self):
-		rule_30_collection = SBHConstants.RULE_30_EXPERIMENT_COLLECTION
-		
-		sbh_query = SynBioHubQuery(SBHConstants.SD2_SERVER)
-		exp_count = sbh_query.query_challenge_experiment_count(rule_30_collection)
-		print(exp_count)
-
-	def test_query_challenge_inducers(self):
-		rule_30_collection = SBHConstants.RULE_30_EXPERIMENT_COLLECTION
-		
-		sbh_query = SynBioHubQuery(SBHConstants.SD2_SERVER)
-		inducers = sbh_query.query_challenge_inducers(rule_30_collection)
+		inducers = sbh_query.query_design_inducers(SBHConstants.YEAST_GATES_DESIGN_COLLECTION)
 		print(inducers)
 
-	def test_query_challenge_plasmids(self):
-		rule_30_collection = SBHConstants.RULE_30_EXPERIMENT_COLLECTION
-
+	def test_query_design_plasmids(self):
 		sbh_query = SynBioHubQuery(SBHConstants.SD2_SERVER)
-		plasmids = sbh_query.query_challenge_plasmids(rule_30_collection)
+		plasmids = sbh_query.query_design_plasmids(SBHConstants.YEAST_GATES_DESIGN_COLLECTION)
 		print(plasmids)
 
-	def test_query_challenge_strains(self):
-		rule_30_collection = SBHConstants.RULE_30_EXPERIMENT_COLLECTION
-
+	def test_query_design_strains(self):
 		sbh_query = SynBioHubQuery(SBHConstants.SD2_SERVER)
-		strains = sbh_query.query_challenge_strains(rule_30_collection)
+		strains = sbh_query.query_design_strains(SBHConstants.YEAST_GATES_DESIGN_COLLECTION)
+		print(strains)
+
+	def test_query_experiment_sets(self):
+		sbh_query = SynBioHubQuery(SBHConstants.SD2_SERVER)
+		exp_sets = sbh_query.query_experiment_sets()
+		print(exp_sets)
+
+	def test_query_experiment_set_count(self):
+		sbh_query = SynBioHubQuery(SBHConstants.SD2_SERVER)
+		exp_count = sbh_query.query_experiment_set_count(SBHConstants.RULE_30_EXPERIMENT_COLLECTION)
+		print(exp_count)
+
+	def test_query_experiment_set_inducers(self):
+		sbh_query = SynBioHubQuery(SBHConstants.SD2_SERVER)
+		inducers = sbh_query.query_experiment_set_inducers(SBHConstants.RULE_30_EXPERIMENT_COLLECTION)
+		print(inducers)
+
+	def test_query_experiment_set_plasmids(self):
+		sbh_query = SynBioHubQuery(SBHConstants.SD2_SERVER)
+		plasmids = sbh_query.query_experiment_set_plasmids(SBHConstants.RULE_30_EXPERIMENT_COLLECTION)
+		print(plasmids)
+
+	def test_query_experiment_set_strains(self):
+		sbh_query = SynBioHubQuery(SBHConstants.SD2_SERVER)
+		strains = sbh_query.query_experiment_set_strains(SBHConstants.RULE_30_EXPERIMENT_COLLECTION)
 		print(strains)
 
 	def test_query_experiment_inducers(self):
@@ -73,11 +80,11 @@ class TestSBHQueries(unittest.TestCase):
 		strains = sbh_query.query_experiment_strains(rule_30_experiment)
 		print(strains)
 
-	def test_query_experimental_data(self):
+	def test_query_experiment_data(self):
 		rule_30_experiment = '<https://hub.sd2e.org/user/sd2e/experiment/transcriptic_rule_30_q0_1_09242017/1>'
 
 		sbh_query = SynBioHubQuery(SBHConstants.SD2_SERVER)
-		exp_data = sbh_query.query_experimental_data(rule_30_experiment)
+		exp_data = sbh_query.query_experiment_data(rule_30_experiment)
 		print(exp_data)
 
 	# Note: This BBN instance will successfully query infomration if the user is directly connected to BBN's server
