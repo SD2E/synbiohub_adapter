@@ -20,6 +20,36 @@ class SynBioHubQuery():
 	def __init__(self, server):
 		self.__server = server
 
+	# Retrieves the URIs for challenge problem collections
+	def query_challenge_problems(self):
+		challenge_query = """
+		PREFIX sbol: <http://sbols.org/v2#>
+		PREFIX sd2: <http://sd2e.org#>
+		SELECT DISTINCT ?collection WHERE {{ 
+  			?collection sbol:member ?exp .
+  			?exp sd2:experimentalData ?data .
+  			FILTER NOT EXISTS {{
+  				?collection sbol:member ?m .
+  				FILTER ( ?m != ?exp )
+  			}}
+		}}
+		"""
+
+		return fetch_SPARQL(self.__server, challenge_query)
+
+	# Retrieves the number of experiments in the specified challenge problem collection
+	def query_challenge_experiment_count(self, collection):
+		experiment_count_query = """
+		PREFIX sbol: <http://sbols.org/v2#>
+		PREFIX sd2: <http://sd2e.org#>
+		SELECT (count(distinct ?exp) as ?expcount) WHERE {{ 
+  			{col} sbol:member ?exp .
+  			?exp sd2:experimentalData ?data
+		}}
+		""".format(col=collection)
+
+		return fetch_SPARQL(self.__server, experiment_count_query)
+
 	# Retrieves the URIs for all inducers in the specified challenge problem collection
 	def query_challenge_inducers(self, collection):
 		inducer_query = """

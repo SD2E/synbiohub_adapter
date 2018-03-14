@@ -19,6 +19,18 @@ class TestSBHQueries(unittest.TestCase):
 					Tramy Nguyen
 	'''
 
+	def test_query_challenge_problems(self):
+		sbh_query = SynBioHubQuery(SBHConstants.SD2_SERVER)
+		challenges = sbh_query.query_challenge_problems()
+		print(challenges)
+
+	def test_query_challenge_experiment_count(self):
+		rule_30_collection = SBHConstants.RULE_30_COLLECTION
+		
+		sbh_query = SynBioHubQuery(SBHConstants.SD2_SERVER)
+		exp_count = sbh_query.query_challenge_experiment_count(rule_30_collection)
+		print(exp_count)
+
 	def test_query_challenge_inducers(self):
 		rule_30_collection = SBHConstants.RULE_30_COLLECTION
 		
