@@ -19,6 +19,11 @@ class TestSBHQueries(unittest.TestCase):
 					Tramy Nguyen
 	'''
 
+	def test_query_design_gates(self):
+		sbh_query = SynBioHubQuery(SBHConstants.SD2_SERVER)
+		gates = sbh_query.query_design_gates(SBHConstants.YEAST_GATES_DESIGN_COLLECTION)
+		print(gates)
+
 	def test_query_design_inducers(self):
 		sbh_query = SynBioHubQuery(SBHConstants.SD2_SERVER)
 		inducers = sbh_query.query_design_inducers(SBHConstants.YEAST_GATES_DESIGN_COLLECTION)

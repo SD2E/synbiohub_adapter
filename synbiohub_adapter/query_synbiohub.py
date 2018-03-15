@@ -20,6 +20,20 @@ class SynBioHubQuery():
 	def __init__(self, server):
 		self.__server = server
 
+	# Retrieves the URIs for all logic gates in the specified collection of design elements
+	# This collection is typically associated with a challenge problem
+	def query_design_gates(self, collection):
+		gate_query = """
+		PREFIX sbol: <http://sbols.org/v2#>
+		SELECT DISTINCT ?gate WHERE {{ 
+  			{col} sbol:member ?gate .
+  			?gate sbol:role ?role .
+  		FILTER ( ?role = <http://edamontology.org/data_2133> )
+		}}
+		""".format(col=collection)
+
+		return fetch_SPARQL(self.__server, gate_query)
+
 	# Retrieves the URIs for all inducers in the specified collection of design elements
 	# This collection is typically associated with a challenge problem
 	def query_design_inducers(self, collection):
