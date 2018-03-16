@@ -19,24 +19,49 @@ class TestSBHQueries(unittest.TestCase):
 					Tramy Nguyen
 	'''
 
+	def test_query_design_sets(self):
+		sbh_query = SynBioHubQuery(SBHConstants.SD2_SERVER)
+		design_sets = sbh_query.query_design_sets()
+		print(design_sets)
+
+	def test_query_design_set_gates(self):
+		sbh_query = SynBioHubQuery(SBHConstants.SD2_SERVER)
+		gates = sbh_query.query_design_set_gates(SBHConstants.RULE_30_DESIGN_COLLECTION)
+		print(gates)
+
+	def test_query_design_set_inducers(self):
+		sbh_query = SynBioHubQuery(SBHConstants.SD2_SERVER)
+		inducers = sbh_query.query_design_set_inducers(SBHConstants.RULE_30_DESIGN_COLLECTION)
+		print(inducers)
+
+	def test_query_design_set_plasmids(self):
+		sbh_query = SynBioHubQuery(SBHConstants.SD2_SERVER)
+		plasmids = sbh_query.query_design_set_plasmids(SBHConstants.RULE_30_DESIGN_COLLECTION)
+		print(plasmids)
+
+	def test_query_design_set_strains(self):
+		sbh_query = SynBioHubQuery(SBHConstants.SD2_SERVER)
+		strains = sbh_query.query_design_set_strains(SBHConstants.RULE_30_DESIGN_COLLECTION)
+		print(strains)
+
 	def test_query_design_gates(self):
 		sbh_query = SynBioHubQuery(SBHConstants.SD2_SERVER)
-		gates = sbh_query.query_design_gates(SBHConstants.YEAST_GATES_DESIGN_COLLECTION)
+		gates = sbh_query.query_design_gates()
 		print(gates)
 
 	def test_query_design_inducers(self):
 		sbh_query = SynBioHubQuery(SBHConstants.SD2_SERVER)
-		inducers = sbh_query.query_design_inducers(SBHConstants.YEAST_GATES_DESIGN_COLLECTION)
+		inducers = sbh_query.query_design_inducers()
 		print(inducers)
 
 	def test_query_design_plasmids(self):
 		sbh_query = SynBioHubQuery(SBHConstants.SD2_SERVER)
-		plasmids = sbh_query.query_design_plasmids(SBHConstants.YEAST_GATES_DESIGN_COLLECTION)
+		plasmids = sbh_query.query_design_plasmids()
 		print(plasmids)
 
 	def test_query_design_strains(self):
 		sbh_query = SynBioHubQuery(SBHConstants.SD2_SERVER)
-		strains = sbh_query.query_design_strains(SBHConstants.YEAST_GATES_DESIGN_COLLECTION)
+		strains = sbh_query.query_design_strains()
 		print(strains)
 
 	def test_query_experiment_sets(self):
