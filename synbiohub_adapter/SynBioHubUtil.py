@@ -7,10 +7,13 @@ from sbol import *
 				Tramy Nguyen
 '''
 class SBOLConstants():
-	CIRCULAR = "http://identifiers.org/so/SO:0000988"
-	DNA_REGION = "http://www.biopax.org/release/biopax-level3.owl#DnaRegion"
-	EFFECTOR = "http://identifiers.org/chebi/CHEBI:35224"
-	SMALL_MOLECULE = "<http://www.biopax.org/release/biopax-level3.owl#SmallMolecule>"
+	CIRCULAR = ''.join(['<', SO_CIRCULAR, '>'])
+	DNA = ''.join(['<', BIOPAX_DNA, '>'])
+	SMALL_MOLECULE = ''.join(['<', BIOPAX_SMALL_MOLECULE, '>'])
+	EFFECTOR = "<http://identifiers.org/chebi/CHEBI:35224>"
+	LOGIC_OPERATOR = "<http://edamontology.org/data_2133>"
+	NCIT_STRAIN = "<http://purl.obolibrary.org/obo/NCIT_C14419>"
+	OBI_STRAIN = "<http://purl.obolibrary.org/obo/OBI_0001185>"
 
 	SBOL_NS = "http://sbols.org/v2#"
 	BBN_HOMESPACE = "https://synbiohub.bbn.com"

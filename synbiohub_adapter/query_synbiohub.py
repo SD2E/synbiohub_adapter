@@ -43,9 +43,9 @@ class SynBioHubQuery():
 		SELECT DISTINCT ?gate WHERE {{ 
   			{col} sbol:member ?gate .
   			?gate sbol:role ?role .
-  		FILTER ( ?role = <http://edamontology.org/data_2133> )
+  		FILTER ( ?role = {ro} )
 		}}
-		""".format(col=collection)
+		""".format(col=collection, ro=SBOLConstants.LOGIC_OPERATOR)
 
 		return fetch_SPARQL(self.__server, gate_query)
 
@@ -58,10 +58,10 @@ class SynBioHubQuery():
   			{col} sbol:member ?inducer .
   			?inducer sbol:type ?type ;
            		sbol:role ?role .
-  		FILTER ( ?type = <http://www.biopax.org/release/biopax-level3.owl#SmallMolecule> && 
-  			?role = <http://identifiers.org/chebi/CHEBI:35224> )
+  		FILTER ( ?type = {ty} && 
+  			?role = {ro} )
 		}}
-		""".format(col=collection)
+		""".format(col=collection, ty=SBOLConstants.SMALL_MOLECULE, ro=SBOLConstants.EFFECTOR)
 
 		return fetch_SPARQL(self.__server, inducer_query)
 
@@ -74,10 +74,10 @@ class SynBioHubQuery():
   			{col} sbol:member ?plasmid .
   			?plasmid sbol:type ?type1 ;
            		sbol:type ?type2 .
-  		FILTER ( ?type1 = <http://www.biopax.org/release/biopax-level3.owl#DnaRegion> && 
-  			?type2 = <http://identifiers.org/so/SO:0000988> )
+  		FILTER ( ?type1 = {ty1} && 
+  			?type2 = {ty2} )
 		}}
-		""".format(col=collection)
+		""".format(col=collection, ty1=SBOLConstants.DNA, ty2=SBOLConstants.CIRCULAR)
 
 		return fetch_SPARQL(self.__server, plasmid_query)
 
@@ -89,10 +89,10 @@ class SynBioHubQuery():
 		SELECT DISTINCT ?strain WHERE {{ 
   			{col} sbol:member ?strain .
   			?strain sbol:type ?type .
-  		FILTER ( ?type = <http://purl.obolibrary.org/obo/NCIT_C14419> || 
-  			?type = <http://purl.obolibrary.org/obo/OBI_0001185> )
+  		FILTER ( ?type = {ty1} || 
+  			?type = {ty2} )
 		}}
-		""".format(col=collection)
+		""".format(col=collection, ty1=SBOLConstants.NCIT_STRAIN, ty2=SBOLConstants.OBI_STRAIN)
 
 		return fetch_SPARQL(self.__server, strain_query)
 
@@ -160,9 +160,9 @@ class SynBioHubQuery():
   			?condition sbol:module ?mod .
   			?mod sbol:definition ?gate .
   			?gate sbol:role ?role .
-  		FILTER ( ?role = <http://edamontology.org/data_2133> )
+  		FILTER ( ?role = {ro} )
 		}}
-		""".format(col=collection)
+		""".format(col=collection, ro=SBOLConstants.LOGIC_OPERATOR)
 
 		return fetch_SPARQL(self.__server, gate_query)
 
@@ -181,11 +181,11 @@ class SynBioHubQuery():
   			?condition sbol:functionalComponent ?fc .
   			?fc sbol:definition ?inducer .
   			?inducer sbol:type ?type ;
-           		sbol:role ?role .
-  		FILTER ( ?type = <http://www.biopax.org/release/biopax-level3.owl#SmallMolecule> && 
-  			?role = <http://identifiers.org/chebi/CHEBI:35224> )
+           		sbol:role ?role . 
+  		FILTER ( ?type = {ty} && 
+  			?role = {ro} )
 		}}
-		""".format(col=collection)
+		""".format(col=collection, ty=SBOLConstants.SMALL_MOLECULE, ro=SBOLConstants.EFFECTOR)
 
 		return fetch_SPARQL(self.__server, inducer_query)
 
@@ -205,10 +205,10 @@ class SynBioHubQuery():
   			?fc sbol:definition ?plasmid .
   			?plasmid sbol:type ?type1 ;
            		sbol:type ?type2 .
-  		FILTER ( ?type1 = <http://www.biopax.org/release/biopax-level3.owl#DnaRegion> && 
-  			?type2 = <http://identifiers.org/so/SO:0000988> )
+  		FILTER ( ?type1 = {ty1} && 
+  			?type2 = {ty2} )
 		}}
-		""".format(col=collection)
+		""".format(col=collection, ty1=SBOLConstants.DNA, ty2=SBOLConstants.CIRCULAR)
 
 		return fetch_SPARQL(self.__server, plasmid_query)
 
@@ -227,10 +227,10 @@ class SynBioHubQuery():
   			?condition sbol:functionalComponent ?fc .
   			?fc sbol:definition ?strain .
   			?strain sbol:type ?type .
-  		FILTER ( ?type = <http://purl.obolibrary.org/obo/NCIT_C14419> || 
-  			?type = <http://purl.obolibrary.org/obo/OBI_0001185> )
+  		FILTER ( ?type = {ty1} || 
+  			?type = {ty2} )
 		}}
-		""".format(col=collection)
+		""".format(col=collection, ty1=SBOLConstants.NCIT_STRAIN, ty2=SBOLConstants.OBI_STRAIN)
 
 		return fetch_SPARQL(self.__server, strain_query)
 
@@ -263,9 +263,9 @@ class SynBioHubQuery():
   			?condition sbol:module ?mod .
   			?mod sbol:definition ?gate .
   			?gate sbol:role ?role .
-  		FILTER ( ?role = <http://edamontology.org/data_2133> )
+  		FILTER ( ?role = {ro} )
 		}}
-		""".format(exp=experiment)
+		""".format(exp=experiment, ro=SBOLConstants.LOGIC_OPERATOR)
 
 		return fetch_SPARQL(self.__server, gate_query)
 
@@ -283,10 +283,10 @@ class SynBioHubQuery():
   			?fc sbol:definition ?inducer .
   			?inducer sbol:type ?type ;
            		sbol:role ?role .
-  		FILTER ( ?type = <http://www.biopax.org/release/biopax-level3.owl#SmallMolecule> && 
-  			?role = <http://identifiers.org/chebi/CHEBI:35224> ) 
+  		FILTER ( ?type = {ty} && 
+  			?role = {ro} )
 		}}
-		""".format(exp=experiment)
+		""".format(exp=experiment, ty=SBOLConstants.SMALL_MOLECULE, ro=SBOLConstants.EFFECTOR)
 
 		return fetch_SPARQL(self.__server, inducer_query)
 
@@ -304,10 +304,10 @@ class SynBioHubQuery():
   			?fc sbol:definition ?plasmid .
   			?plasmid sbol:type ?type1 ;
            		sbol:type ?type2 .
-  		FILTER ( ?type1 = <http://www.biopax.org/release/biopax-level3.owl#DnaRegion> && 
-  			?type2 = <http://identifiers.org/so/SO:0000988> )
+  		FILTER ( ?type1 = {ty1} && 
+  			?type2 = {ty2} )
 		}}
-		""".format(exp=experiment)
+		""".format(exp=experiment, ty1=SBOLConstants.DNA, ty2=SBOLConstants.CIRCULAR)
 
 		return fetch_SPARQL(self.__server, plasmid_query)
 
@@ -324,10 +324,10 @@ class SynBioHubQuery():
   			?condition sbol:functionalComponent ?fc .
   			?fc sbol:definition ?strain .
   			?strain sbol:type ?type .
-  		FILTER ( ?type = <http://purl.obolibrary.org/obo/NCIT_C14419> || 
-  			?type = <http://purl.obolibrary.org/obo/OBI_0001185> ) 
+  		FILTER ( ?type = {ty1} || 
+  			?type = {ty2} )
 		}}
-		""".format(exp=experiment)
+		""".format(exp=experiment, ty1=SBOLConstants.NCIT_STRAIN, ty2=SBOLConstants.OBI_STRAIN)
 
 		return fetch_SPARQL(self.__server, strains_query)
 
