@@ -43,7 +43,7 @@ class SynBioHubQuery():
 		SELECT DISTINCT ?gate WHERE {{ 
   			{col} sbol:member ?gate .
   			?gate sbol:role ?role .
-  		FILTER ( ?role = {ro} )
+  			FILTER ( ?role = {ro} )
 		}}
 		""".format(col=collection, ro=SBOLConstants.LOGIC_OPERATOR)
 
@@ -58,8 +58,7 @@ class SynBioHubQuery():
   			{col} sbol:member ?inducer .
   			?inducer sbol:type ?type ;
            		sbol:role ?role .
-  		FILTER ( ?type = {ty} && 
-  			?role = {ro} )
+  			FILTER ( ?type = {ty} && ?role = {ro} )
 		}}
 		""".format(col=collection, ty=SBOLConstants.SMALL_MOLECULE, ro=SBOLConstants.EFFECTOR)
 
@@ -74,8 +73,7 @@ class SynBioHubQuery():
   			{col} sbol:member ?plasmid .
   			?plasmid sbol:type ?type1 ;
            		sbol:type ?type2 .
-  		FILTER ( ?type1 = {ty1} && 
-  			?type2 = {ty2} )
+  			FILTER ( ?type1 = {ty1} && ?type2 = {ty2} )
 		}}
 		""".format(col=collection, ty1=SBOLConstants.DNA, ty2=SBOLConstants.CIRCULAR)
 
@@ -89,8 +87,7 @@ class SynBioHubQuery():
 		SELECT DISTINCT ?strain WHERE {{ 
   			{col} sbol:member ?strain .
   			?strain sbol:type ?type .
-  		FILTER ( ?type = {ty1} || 
-  			?type = {ty2} )
+  		FILTER ( ?type = {ty1} || ?type = {ty2} )
 		}}
 		""".format(col=collection, ty1=SBOLConstants.NCIT_STRAIN, ty2=SBOLConstants.OBI_STRAIN)
 
@@ -160,7 +157,7 @@ class SynBioHubQuery():
   			?condition sbol:module ?mod .
   			?mod sbol:definition ?gate .
   			?gate sbol:role ?role .
-  		FILTER ( ?role = {ro} )
+  			FILTER ( ?role = {ro} )
 		}}
 		""".format(col=collection, ro=SBOLConstants.LOGIC_OPERATOR)
 
@@ -172,8 +169,10 @@ class SynBioHubQuery():
 		inducer_query = """
 		PREFIX sbol: <http://sbols.org/v2#>
 		PREFIX sd2: <http://sd2e.org#>
+		PREFIX om: <http://www.ontology-of-units-of-measure.org/resource/om-2#>
 		PREFIX prov: <http://www.w3.org/ns/prov#> 
-		SELECT DISTINCT ?inducer WHERE {{ 
+		SELECT ?inducer (concat('[',group_concat(distinct ?level;separator=','),']') as ?levels)
+		WHERE {{ 
   			{col} sbol:member ?exp .
   			?exp sd2:experimentalData ?data .
   			?data prov:wasDerivedFrom ?sample .
@@ -182,9 +181,13 @@ class SynBioHubQuery():
   			?fc sbol:definition ?inducer .
   			?inducer sbol:type ?type ;
            		sbol:role ?role . 
-  		FILTER ( ?type = {ty} && 
-  			?role = {ro} )
+  			FILTER ( ?type = {ty} && ?role = {ro} ) .
+           	OPTIONAL {{ 
+           		?fc om:measure ?concentration .
+           		?concentration om:hasNumericalValue ?level
+           	}}
 		}}
+		GROUP BY ?inducer
 		""".format(col=collection, ty=SBOLConstants.SMALL_MOLECULE, ro=SBOLConstants.EFFECTOR)
 
 		return fetch_SPARQL(self.__server, inducer_query)
@@ -205,8 +208,7 @@ class SynBioHubQuery():
   			?fc sbol:definition ?plasmid .
   			?plasmid sbol:type ?type1 ;
            		sbol:type ?type2 .
-  		FILTER ( ?type1 = {ty1} && 
-  			?type2 = {ty2} )
+  			FILTER ( ?type1 = {ty1} && ?type2 = {ty2} )
 		}}
 		""".format(col=collection, ty1=SBOLConstants.DNA, ty2=SBOLConstants.CIRCULAR)
 
@@ -227,8 +229,7 @@ class SynBioHubQuery():
   			?condition sbol:functionalComponent ?fc .
   			?fc sbol:definition ?strain .
   			?strain sbol:type ?type .
-  		FILTER ( ?type = {ty1} || 
-  			?type = {ty2} )
+  			FILTER ( ?type = {ty1} || ?type = {ty2} )
 		}}
 		""".format(col=collection, ty1=SBOLConstants.NCIT_STRAIN, ty2=SBOLConstants.OBI_STRAIN)
 
@@ -263,7 +264,7 @@ class SynBioHubQuery():
   			?condition sbol:module ?mod .
   			?mod sbol:definition ?gate .
   			?gate sbol:role ?role .
-  		FILTER ( ?role = {ro} )
+  			FILTER ( ?role = {ro} )
 		}}
 		""".format(exp=experiment, ro=SBOLConstants.LOGIC_OPERATOR)
 
@@ -274,8 +275,10 @@ class SynBioHubQuery():
 		inducer_query = """
 		PREFIX sbol: <http://sbols.org/v2#>
 		PREFIX sd2: <http://sd2e.org#>
+		PREFIX om: <http://www.ontology-of-units-of-measure.org/resource/om-2#>
 		PREFIX prov: <http://www.w3.org/ns/prov#> 
-		SELECT DISTINCT ?inducer WHERE {{ 
+		SELECT ?inducer (concat('[',group_concat(distinct ?level;separator=','),']') as ?levels)
+		WHERE {{ 
   			{exp} sd2:experimentalData ?data .
   			?data prov:wasDerivedFrom ?sample .
   			?sample sd2:built ?condition .
@@ -283,9 +286,13 @@ class SynBioHubQuery():
   			?fc sbol:definition ?inducer .
   			?inducer sbol:type ?type ;
            		sbol:role ?role .
-  		FILTER ( ?type = {ty} && 
-  			?role = {ro} )
+           	FILTER ( ?type = {ty} && ?role = {ro} ) .
+           	OPTIONAL {{ 
+           		?fc om:measure ?concentration .
+           		?concentration om:hasNumericalValue ?level
+           	}}
 		}}
+		GROUP BY ?inducer
 		""".format(exp=experiment, ty=SBOLConstants.SMALL_MOLECULE, ro=SBOLConstants.EFFECTOR)
 
 		return fetch_SPARQL(self.__server, inducer_query)
@@ -304,8 +311,7 @@ class SynBioHubQuery():
   			?fc sbol:definition ?plasmid .
   			?plasmid sbol:type ?type1 ;
            		sbol:type ?type2 .
-  		FILTER ( ?type1 = {ty1} && 
-  			?type2 = {ty2} )
+  			FILTER ( ?type1 = {ty1} && ?type2 = {ty2} )
 		}}
 		""".format(exp=experiment, ty1=SBOLConstants.DNA, ty2=SBOLConstants.CIRCULAR)
 
@@ -324,8 +330,7 @@ class SynBioHubQuery():
   			?condition sbol:functionalComponent ?fc .
   			?fc sbol:definition ?strain .
   			?strain sbol:type ?type .
-  		FILTER ( ?type = {ty1} || 
-  			?type = {ty2} )
+  			FILTER ( ?type = {ty1} || ?type = {ty2} )
 		}}
 		""".format(exp=experiment, ty1=SBOLConstants.NCIT_STRAIN, ty2=SBOLConstants.OBI_STRAIN)
 
