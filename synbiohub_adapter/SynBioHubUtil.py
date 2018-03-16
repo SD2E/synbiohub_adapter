@@ -24,6 +24,8 @@ class SBHConstants():
 	YEAST_GATES_EXPERIMENT_COLLECTION = '<https://hub.sd2e.org/user/sd2e/experiment/yeast_gates/1>'
 	RULE_30_DESIGN_COLLECTION = '<https://hub.sd2e.org/user/sd2e/design/rule_30/1>'
 	YEAST_GATES_DESIGN_COLLECTION = '<https://hub.sd2e.org/user/sd2e/design/yeast_gates/1>'
+	SD2_DESIGN_COLLECTION = '<https://hub.sd2e.org/user/sd2e/design/design_collection/1>'
+	SD2_EXPERIMENT_COLLECTION = '<https://hub.sd2e.org/user/sd2e/experiment/experiment_collection/1>'
 
 
 def loadSBOLFile(sbolFile):
