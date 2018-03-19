@@ -2,6 +2,7 @@ import getpass
 import sys
 
 from .fetch_SPARQL import fetch_SPARQL
+from synbiohub_adapter.SynBioHubUtil import *
 from sbol import *
 
 ''' 
@@ -190,11 +191,6 @@ class SynBioHubQuery():
 		if result != 'Successfully uploaded':
 			sys.exit(0)
 
-	def login_SBH(self):
-		sbh_connector = PartShop(self.__server)
-		sbh_user = input('Enter SynBioHub Username: ')
-		sbh_connector.login(sbh_user, getpass.getpass(prompt='Enter SynBioHub Password: ', stream=sys.stderr))
-		return sbh_connector
 
 	# Submit a new collection to the specified SynBioHub instance. 
 	# sbolDoc: The SBOL Document containing SBOL parts that the user would like to upload as a new Collection.
@@ -209,7 +205,7 @@ class SynBioHubQuery():
 		sbolDoc.name = name
 		sbolDoc.version = version
 		sbolDoc.description = description
-		sbh_connector = self.login_SBH()
+		sbh_connector = login_SBH(self.__server)
 		self.submit_Collection(sbh_connector, sbolDoc, True, 0)
 
 	# Submit the given SBOL Document to an existing SynBioHub Collection
@@ -219,5 +215,5 @@ class SynBioHubQuery():
 	# 	Note: Setting the variable overwrite = 1 (ovewrite existing collection data) or 2 (merge existing collection data with new data). 0 will be set as default.
 	def submit_ExistingCollection(self, sbolDoc, collURI, overwrite):
 		sbolDoc.identity = collURI
-		sbh_connector = self.login_SBH()
+		sbh_connector = login_SBH(self.__server)
 		self.submit_Collection(sbh_connector, sbolDoc, False, overwrite)

@@ -1,3 +1,6 @@
+import getpass
+import sys
+
 from sbol import *
 
 '''
@@ -27,3 +30,9 @@ def loadSBOLFile(sbolFile):
 	sbolDoc = Document()
 	sbolDoc.read(sbolFile)
 	return sbolDoc
+
+def login_SBH(server):
+	sbh_connector = PartShop(server)
+	sbh_user = input('Enter SynBioHub Username: ')
+	sbh_connector.login(sbh_user, getpass.getpass(prompt='Enter SynBioHub Password: ', stream=sys.stderr))
+	return sbh_connector
