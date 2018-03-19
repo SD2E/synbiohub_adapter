@@ -10,10 +10,13 @@ from sbol import *
 				Tramy Nguyen
 '''
 class SBOLConstants():
-	CIRCULAR = "http://identifiers.org/so/SO:0000988"
-	DNA_REGION = "http://www.biopax.org/release/biopax-level3.owl#DnaRegion"
-	EFFECTOR = "http://identifiers.org/chebi/CHEBI:35224"
-	SMALL_MOLECULE = "<http://www.biopax.org/release/biopax-level3.owl#SmallMolecule>"
+	CIRCULAR = ''.join(['<', SO_CIRCULAR, '>'])
+	DNA = ''.join(['<', BIOPAX_DNA, '>'])
+	SMALL_MOLECULE = ''.join(['<', BIOPAX_SMALL_MOLECULE, '>'])
+	EFFECTOR = "<http://identifiers.org/chebi/CHEBI:35224>"
+	LOGIC_OPERATOR = "<http://edamontology.org/data_2133>"
+	NCIT_STRAIN = "<http://purl.obolibrary.org/obo/NCIT_C14419>"
+	OBI_STRAIN = "<http://purl.obolibrary.org/obo/OBI_0001185>"
 
 	SBOL_NS = "http://sbols.org/v2#"
 	BBN_HOMESPACE = "https://synbiohub.bbn.com"
@@ -23,7 +26,12 @@ class SBHConstants():
 	BBN_SERVER = "https://synbiohub.bbn.com/"
 	BBN_YEASTGATES_COLLECTION = "<https://synbiohub.bbn.com/user/tramyn/BBN_YEAST_GATES/BBN_YEAST_GATES_collection/1>"
 	BBN_RULE30_COLLECTION = '<https://synbiohub.bbn.com/user/tramyn/transcriptic_rule_30_q0_1_09242017/transcriptic_rule_30_q0_1_09242017_collection/1>'
-	RULE_30_COLLECTION = '<https://hub.sd2e.org/user/sd2e/rule_30/rule_30/1>'
+	RULE_30_EXPERIMENT_COLLECTION = '<https://hub.sd2e.org/user/sd2e/experiment/rule_30/1>'
+	YEAST_GATES_EXPERIMENT_COLLECTION = '<https://hub.sd2e.org/user/sd2e/experiment/yeast_gates/1>'
+	RULE_30_DESIGN_COLLECTION = '<https://hub.sd2e.org/user/sd2e/design/rule_30/1>'
+	YEAST_GATES_DESIGN_COLLECTION = '<https://hub.sd2e.org/user/sd2e/design/yeast_gates/1>'
+	SD2_DESIGN_COLLECTION = '<https://hub.sd2e.org/user/sd2e/design/design_collection/1>'
+	SD2_EXPERIMENT_COLLECTION = '<https://hub.sd2e.org/user/sd2e/experiment/experiment_collection/1>'
 
 
 def loadSBOLFile(sbolFile):

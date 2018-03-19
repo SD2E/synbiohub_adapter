@@ -21,30 +21,180 @@ class SynBioHubQuery():
 	def __init__(self, server):
 		self.__server = server
 
-	# Retrieves the URIs for all inducers in the specified challenge problem collection
-	def query_challenge_inducers(self, collection):
+	# Retrieves the URIs for all sub-collections of design elements in the collection of every SD2 design element
+	# These sub-collections are typically associated with challenge problems
+	def query_design_sets(self):
+		design_set_query = """
+		PREFIX sbol: <http://sbols.org/v2#>
+		SELECT DISTINCT ?collection WHERE {{ 
+  			<https://hub.sd2e.org/user/sd2e/design/design_collection/1> sbol:member ?design ;
+  				sbol:member ?collection .
+  			?collection sbol:member ?design
+		}}
+		"""
+
+		return fetch_SPARQL(self.__server, design_set_query)
+
+	# Retrieves the URIs for all logic gates in the specified collection of design elements
+	# This collection is typically associated with a challenge problem
+	def query_design_set_gates(self, collection):
+		gate_query = """
+		PREFIX sbol: <http://sbols.org/v2#>
+		SELECT DISTINCT ?gate WHERE {{ 
+  			{col} sbol:member ?gate .
+  			?gate sbol:role ?role .
+  			FILTER ( ?role = {ro} )
+		}}
+		""".format(col=collection, ro=SBOLConstants.LOGIC_OPERATOR)
+
+		return fetch_SPARQL(self.__server, gate_query)
+
+	# Retrieves the URIs for all inducers in the specified collection of design elements
+	# This collection is typically associated with a challenge problem
+	def query_design_set_inducers(self, collection):
+		inducer_query = """
+		PREFIX sbol: <http://sbols.org/v2#>
+		SELECT DISTINCT ?inducer WHERE {{ 
+  			{col} sbol:member ?inducer .
+  			?inducer sbol:type ?type ;
+           		sbol:role ?role .
+  			FILTER ( ?type = {ty} && ?role = {ro} )
+		}}
+		""".format(col=collection, ty=SBOLConstants.SMALL_MOLECULE, ro=SBOLConstants.EFFECTOR)
+
+		return fetch_SPARQL(self.__server, inducer_query)
+
+	# Retrieves the URIs for all plasmids in the specified collection of design elements
+	# This collection is typically associated with a challenge problem
+	def query_design_set_plasmids(self, collection):
+		plasmid_query = """
+		PREFIX sbol: <http://sbols.org/v2#>
+		SELECT DISTINCT ?plasmid WHERE {{ 
+  			{col} sbol:member ?plasmid .
+  			?plasmid sbol:type ?type1 ;
+           		sbol:type ?type2 .
+  			FILTER ( ?type1 = {ty1} && ?type2 = {ty2} )
+		}}
+		""".format(col=collection, ty1=SBOLConstants.DNA, ty2=SBOLConstants.CIRCULAR)
+
+		return fetch_SPARQL(self.__server, plasmid_query)
+
+	# Retrieves the URIs for all strains in the specified collection of design elements
+	# This collection is typically associated with a challenge problem
+	def query_design_set_strains(self, collection):
+		strain_query = """
+		PREFIX sbol: <http://sbols.org/v2#>
+		SELECT DISTINCT ?strain WHERE {{ 
+  			{col} sbol:member ?strain .
+  			?strain sbol:type ?type .
+  		FILTER ( ?type = {ty1} || ?type = {ty2} )
+		}}
+		""".format(col=collection, ty1=SBOLConstants.NCIT_STRAIN, ty2=SBOLConstants.OBI_STRAIN)
+
+		return fetch_SPARQL(self.__server, strain_query)
+
+	# Retrieves the URIs for all logic gates in the collection of every SD2 design element
+	def query_design_gates(self):
+		return self.query_design_set_gates(SBHConstants.SD2_DESIGN_COLLECTION)
+
+	# Retrieves the URIs for all inducers in the collection of every SD2 design element
+	def query_design_inducers(self):
+		return self.query_design_set_inducers(SBHConstants.SD2_DESIGN_COLLECTION)
+
+	# Retrieves the URIs for all plasmids in the collection of every SD2 design element
+	def query_design_plasmids(self):
+		return self.query_design_set_plasmids(SBHConstants.SD2_DESIGN_COLLECTION)
+
+	# Retrieves the URIs for all strains from the collection of every SD2 design element
+	def query_design_strains(self):
+		return self.query_design_set_strains(SBHConstants.SD2_DESIGN_COLLECTION)
+
+	# Retrieves the URIs for all sub-collections of experiments in the collection of every SD2 experiemnt
+	# These sub-collections are typically associated with challenge problems
+	def query_experiment_sets(self):
+		exp_set_query = """
+		PREFIX sbol: <http://sbols.org/v2#>
+		PREFIX sd2: <http://sd2e.org#>
+		SELECT DISTINCT ?collection WHERE {{ 
+  			<https://hub.sd2e.org/user/sd2e/experiment/experiment_collection/1> sbol:member ?collection .
+  			?collection sbol:member ?exp .
+  			?exp sd2:experimentalData ?data .
+  			FILTER NOT EXISTS {{
+  				?collection sbol:member ?m .
+  				FILTER ( ?m != ?exp )
+  			}}
+		}}
+		"""
+
+		return fetch_SPARQL(self.__server, exp_set_query)
+
+	# Retrieves the size of the specified collection of experiments
+	# This collection is typically associated with a challenge problem
+	def query_experiment_set_size(self, collection):
+		exp_set_size_query = """
+		PREFIX sbol: <http://sbols.org/v2#>
+		PREFIX sd2: <http://sd2e.org#>
+		SELECT (count(distinct ?exp) as ?size) WHERE {{ 
+  			{col} sbol:member ?exp .
+  			?exp sd2:experimentalData ?data
+		}}
+		""".format(col=collection)
+
+		return fetch_SPARQL(self.__server, exp_set_size_query)
+
+	# Retrieves the URIs for all logic gates used in the specified collection of experiments
+	# This collection is typically associated with a challenge problem
+	def query_experiment_set_gates(self, collection):
+		gate_query = """
+		PREFIX sbol: <http://sbols.org/v2#>
+		PREFIX sd2: <http://sd2e.org#>
+		PREFIX prov: <http://www.w3.org/ns/prov#>
+		SELECT DISTINCT ?gate WHERE {{ 
+  			{col} sbol:member ?exp .
+  			?exp sd2:experimentalData ?data .
+  			?data prov:wasDerivedFrom ?sample .
+  			?sample sd2:built ?condition .
+  			?condition sbol:module ?mod .
+  			?mod sbol:definition ?gate .
+  			?gate sbol:role ?role .
+  			FILTER ( ?role = {ro} )
+		}}
+		""".format(col=collection, ro=SBOLConstants.LOGIC_OPERATOR)
+
+		return fetch_SPARQL(self.__server, gate_query)
+
+	# Retrieves the URIs for all inducers used in the specified collection of experiments
+	# This collection is typically associated with a challenge problem
+	def query_experiment_set_inducers(self, collection):
 		inducer_query = """
 		PREFIX sbol: <http://sbols.org/v2#>
 		PREFIX sd2: <http://sd2e.org#>
+		PREFIX om: <http://www.ontology-of-units-of-measure.org/resource/om-2#>
 		PREFIX prov: <http://www.w3.org/ns/prov#> 
-		SELECT DISTINCT ?inducer WHERE {{ 
+		SELECT ?inducer (concat('[',group_concat(distinct ?level;separator=','),']') as ?levels)
+		WHERE {{ 
   			{col} sbol:member ?exp .
   			?exp sd2:experimentalData ?data .
   			?data prov:wasDerivedFrom ?sample .
   			?sample sd2:built ?condition .
   			?condition sbol:functionalComponent ?fc .
   			?fc sbol:definition ?inducer .
-  			?inducer sbol:type ?type;
-           		sbol:role ?role .
-  		FILTER ( ?type = <http://www.biopax.org/release/biopax-level3.owl#SmallMolecule> && 
-  			?role = <http://identifiers.org/chebi/CHEBI:35224> )
+  			?inducer sbol:type ?type ;
+           		sbol:role ?role . 
+  			FILTER ( ?type = {ty} && ?role = {ro} ) .
+           	OPTIONAL {{ 
+           		?fc om:measure ?concentration .
+           		?concentration om:hasNumericalValue ?level
+           	}}
 		}}
-		""".format(col=collection)
+		GROUP BY ?inducer
+		""".format(col=collection, ty=SBOLConstants.SMALL_MOLECULE, ro=SBOLConstants.EFFECTOR)
 
 		return fetch_SPARQL(self.__server, inducer_query)
 
-	# Retrieves the URIs for all plasmids in the specified challenge problem collection
-	def query_challenge_plasmids(self, collection):
+	# Retrieves the URIs for all plasmids used in the specified collection of experiments
+	# This collection is typically associated with a challenge problem
+	def query_experiment_set_plasmids(self, collection):
 		plasmid_query = """
 		PREFIX sbol: <http://sbols.org/v2#>
 		PREFIX sd2: <http://sd2e.org#>
@@ -56,17 +206,17 @@ class SynBioHubQuery():
   			?sample sd2:built ?condition .
   			?condition sbol:functionalComponent ?fc .
   			?fc sbol:definition ?plasmid .
-  			?plasmid sbol:type ?type1;
+  			?plasmid sbol:type ?type1 ;
            		sbol:type ?type2 .
-  		FILTER ( ?type1 = <http://www.biopax.org/release/biopax-level3.owl#DnaRegion> && 
-  			?type2 = <http://identifiers.org/so/SO:0000988> )
+  			FILTER ( ?type1 = {ty1} && ?type2 = {ty2} )
 		}}
-		""".format(col=collection)
+		""".format(col=collection, ty1=SBOLConstants.DNA, ty2=SBOLConstants.CIRCULAR)
 
 		return fetch_SPARQL(self.__server, plasmid_query)
 
-	# Retrieves the URIs for all strains in the specified challenge problem collection
-	def query_challenge_strains(self, collection):
+	# Retrieves the URIs for all strains used in the specified collection of experiments
+	# This collection is typically associated with a challenge problem
+	def query_experiment_set_strains(self, collection):
 		strain_query = """
 		PREFIX sbol: <http://sbols.org/v2#>
 		PREFIX sd2: <http://sd2e.org#>
@@ -79,36 +229,76 @@ class SynBioHubQuery():
   			?condition sbol:functionalComponent ?fc .
   			?fc sbol:definition ?strain .
   			?strain sbol:type ?type .
-  		FILTER ( ?type = <http://purl.obolibrary.org/obo/NCIT_C14419> || 
-  			?type = <http://purl.obolibrary.org/obo/OBI_0001185> )
+  			FILTER ( ?type = {ty1} || ?type = {ty2} )
 		}}
-		""".format(col=collection)
+		""".format(col=collection, ty1=SBOLConstants.NCIT_STRAIN, ty2=SBOLConstants.OBI_STRAIN)
 
 		return fetch_SPARQL(self.__server, strain_query)
 
-	# Retrieves the URIs for all inducers in the specified experiment
-	def query_experiment_inducers(self, experiment):
-		inducer_query = """
+	# Retrieves the URIs for all logic gates used by experiments in the collection of every SD2 experiment
+	def query_experiment_gates(self):
+		return self.query_experiment_set_gates(SBHConstants.SD2_EXPERIMENT_COLLECTION)
+
+	# Retrieves the URIs for all inducers used by experiments in the collection of every SD2 experiment
+	def query_experiment_inducers(self):
+		return self.query_experiment_set_inducers(SBHConstants.SD2_EXPERIMENT_COLLECTION)
+
+	# Retrieves the URIs for all plasmids used by experiments in the collection of every SD2 experiment
+	def query_experiment_plasmids(self):
+		return self.query_experiment_set_plasmids(SBHConstants.SD2_EXPERIMENT_COLLECTION)
+
+	# Retrieves the URIs for all strains used by experiments in the collection of every SD2 experiment
+	def query_experiment_strains(self):
+		return self.query_experiment_set_strains(SBHConstants.SD2_EXPERIMENT_COLLECTION)
+
+	# Retrieves the URIs for all logic gates used in the specified experiment
+	def query_single_experiment_gates(self, experiment):
+		gate_query = """
 		PREFIX sbol: <http://sbols.org/v2#>
 		PREFIX sd2: <http://sd2e.org#>
 		PREFIX prov: <http://www.w3.org/ns/prov#> 
-		SELECT DISTINCT ?inducer WHERE {{ 
+		SELECT DISTINCT ?gate WHERE {{ 
+  			{exp} sd2:experimentalData ?data .
+  			?data prov:wasDerivedFrom ?sample .
+  			?sample sd2:built ?condition .
+  			?condition sbol:module ?mod .
+  			?mod sbol:definition ?gate .
+  			?gate sbol:role ?role .
+  			FILTER ( ?role = {ro} )
+		}}
+		""".format(exp=experiment, ro=SBOLConstants.LOGIC_OPERATOR)
+
+		return fetch_SPARQL(self.__server, gate_query)
+
+	# Retrieves the URIs for all inducers in the specified experiment
+	def query_single_experiment_inducers(self, experiment):
+		inducer_query = """
+		PREFIX sbol: <http://sbols.org/v2#>
+		PREFIX sd2: <http://sd2e.org#>
+		PREFIX om: <http://www.ontology-of-units-of-measure.org/resource/om-2#>
+		PREFIX prov: <http://www.w3.org/ns/prov#> 
+		SELECT ?inducer (concat('[',group_concat(distinct ?level;separator=','),']') as ?levels)
+		WHERE {{ 
   			{exp} sd2:experimentalData ?data .
   			?data prov:wasDerivedFrom ?sample .
   			?sample sd2:built ?condition .
   			?condition sbol:functionalComponent ?fc .
   			?fc sbol:definition ?inducer .
-  			?inducer sbol:type ?type;
+  			?inducer sbol:type ?type ;
            		sbol:role ?role .
-  		FILTER ( ?type = <http://www.biopax.org/release/biopax-level3.owl#SmallMolecule> && 
-  			?role = <http://identifiers.org/chebi/CHEBI:35224> ) 
+           	FILTER ( ?type = {ty} && ?role = {ro} ) .
+           	OPTIONAL {{ 
+           		?fc om:measure ?concentration .
+           		?concentration om:hasNumericalValue ?level
+           	}}
 		}}
-		""".format(exp=experiment)
+		GROUP BY ?inducer
+		""".format(exp=experiment, ty=SBOLConstants.SMALL_MOLECULE, ro=SBOLConstants.EFFECTOR)
 
 		return fetch_SPARQL(self.__server, inducer_query)
 
 	# Retrieves the URIs for all plasmids in the specified experiment
-	def query_experiment_plasmids(self, experiment):
+	def query_single_experiment_plasmids(self, experiment):
 		plasmid_query = """
 		PREFIX sbol: <http://sbols.org/v2#>
 		PREFIX sd2: <http://sd2e.org#>
@@ -119,17 +309,16 @@ class SynBioHubQuery():
   			?sample sd2:built ?condition .
   			?condition sbol:functionalComponent ?fc .
   			?fc sbol:definition ?plasmid .
-  			?plasmid sbol:type ?type1;
+  			?plasmid sbol:type ?type1 ;
            		sbol:type ?type2 .
-  		FILTER ( ?type1 = <http://www.biopax.org/release/biopax-level3.owl#DnaRegion> && 
-  			?type2 = <http://identifiers.org/so/SO:0000988> )
+  			FILTER ( ?type1 = {ty1} && ?type2 = {ty2} )
 		}}
-		""".format(exp=experiment)
+		""".format(exp=experiment, ty1=SBOLConstants.DNA, ty2=SBOLConstants.CIRCULAR)
 
 		return fetch_SPARQL(self.__server, plasmid_query)
 
 	# Retrieves the URIs for all inducers in the specified experiment
-	def query_experiment_strains(self, experiment):
+	def query_single_experiment_strains(self, experiment):
 		strains_query = """
 		PREFIX sbol: <http://sbols.org/v2#>
 		PREFIX sd2: <http://sd2e.org#>
@@ -141,15 +330,14 @@ class SynBioHubQuery():
   			?condition sbol:functionalComponent ?fc .
   			?fc sbol:definition ?strain .
   			?strain sbol:type ?type .
-  		FILTER ( ?type = <http://purl.obolibrary.org/obo/NCIT_C14419> || 
-  			?type = <http://purl.obolibrary.org/obo/OBI_0001185> ) 
+  			FILTER ( ?type = {ty1} || ?type = {ty2} )
 		}}
-		""".format(exp=experiment)
+		""".format(exp=experiment, ty1=SBOLConstants.NCIT_STRAIN, ty2=SBOLConstants.OBI_STRAIN)
 
 		return fetch_SPARQL(self.__server, strains_query)
 
 	# Retrieves the source URLs for all experimental data files generated by the specified experiment
-	def query_experimental_data(self, experiment):
+	def query_single_experiment_data(self, experiment):
 		exp_data_query = """
 		PREFIX sd2: <http://sd2e.org#>
 		SELECT DISTINCT ?source WHERE {{ 
@@ -160,20 +348,6 @@ class SynBioHubQuery():
 		""".format(exp=experiment)
 
 		return fetch_SPARQL(self.__server, exp_data_query)
-
-	# Retrieves all samples and associated experimental conditions from specified collection
-	# collection: A collection aggregates all objects associated with a challenge problem or experiment plan
-	def query_Sample(self, collection):
-		sample_query = """
-		PREFIX sbol: <http://sbols.org/v2#>
-		PREFIX sd2: <http://sd2e.org#>
-		SELECT ?sample ?condition WHERE {{
-  			{col} sbol:member ?sample ;
-        		sbol:member ?condition .
-  			?sample sd2:built ?condition
-		}}""".format(col=collection)
-
-		return fetch_SPARQL(self.__server, sample_query)
 
 	# Submit the data stored in the given sbolDoc to a collection on SynBioHub
 	# sbh_connector: An instance of the pySBOL Partshop to set SynBioHub credential needed for submitting a collection

@@ -7,6 +7,24 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:sbol="http://sbols.org/v2#"
    xmlns:sd2="http://sd2e.org#">
+  <sbol:Collection rdf:about="http://hub.sd2e.org/user/sd2e/design/rule_30/1">
+    <dcterms:description>This is a collection of designated design elements for the Rule 30 challenge problem of SD2.</dcterms:description>
+    <dcterms:title>Rule 30 Designs</dcterms:title>
+    <sbol:displayId>rule_30</sbol:displayId>
+    <sbol:member rdf:resource="http://hub.sd2e.org/user/sd2e/design/pAN1201/1"/>
+    <sbol:member rdf:resource="http://hub.sd2e.org/user/sd2e/design/pAN1717/1"/>
+    <sbol:member rdf:resource="http://hub.sd2e.org/user/sd2e/design/pAN3928/1"/>
+    <sbol:member rdf:resource="http://hub.sd2e.org/user/sd2e/design/pAN4036/1"/>
+    <sbol:member rdf:resource="http://hub.sd2e.org/user/sd2e/design/NEB_10_beta/1"/>
+    <sbol:member rdf:resource="http://hub.sd2e.org/user/sd2e/design/Larabinose/1"/>
+    <sbol:member rdf:resource="http://hub.sd2e.org/user/sd2e/design/IPTG/1"/>
+    <sbol:member rdf:resource="http://hub.sd2e.org/user/sd2e/design/aTc/1"/>
+    <sbol:member rdf:resource="http://hub.sd2e.org/user/sd2e/design/NEB_10_beta_pAN1201_Larabinose_aTc_IPTG_system/1"/>
+    <sbol:member rdf:resource="http://hub.sd2e.org/user/sd2e/design/NEB_10_beta_pAN1717_Larabinose_aTc_IPTG_system/1"/>
+    <sbol:member rdf:resource="http://hub.sd2e.org/user/sd2e/design/NEB_10_beta_pAN3928_pAN4036_Larabinose_aTc_IPTG_system/1"/>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/rule_30"/>
+    <sbol:version>1</sbol:version>
+  </sbol:Collection>
   <sbol:ComponentDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/A1">
     <sbol:displayId>A1</sbol:displayId>
     <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/A1"/>
@@ -923,52 +941,61 @@
     </genbank:reference>
     <genbank:source>synthetic DNA construct</genbank:source>
   </sbol:ComponentDefinition>
-  <sbol:ModuleDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/pAN1201_Larabinose_aTc_IPTG_system/1">
-    <dcterms:title>pAN1201_Larabinose_aTc_IPTG_system</dcterms:title>
-    <sbol:displayId>pAN1201_Larabinose_aTc_IPTG_system</sbol:displayId>
+  <sbol:ModuleDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/NEB_10_beta_pAN1201_Larabinose_aTc_IPTG_system/1">
+    <dcterms:title>NEB_10_beta_pAN1201_Larabinose_aTc_IPTG_system</dcterms:title>
+    <sbol:displayId>NEB_10_beta_pAN1201_Larabinose_aTc_IPTG_system</sbol:displayId>
     <sbol:functionalComponent>
-      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/pAN1201_Larabinose_aTc_IPTG_system/IPTG/1">
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/NEB_10_beta_pAN1201_Larabinose_aTc_IPTG_system/IPTG/1">
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
         <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/IPTG/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#in"/>
         <sbol:displayId>IPTG</sbol:displayId>
-        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/pAN1201_Larabinose_aTc_IPTG_system/IPTG"/>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/NEB_10_beta_pAN1201_Larabinose_aTc_IPTG_system/IPTG"/>
         <sbol:version>1</sbol:version>
       </sbol:FunctionalComponent>
     </sbol:functionalComponent>
     <sbol:functionalComponent>
-      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/pAN1201_Larabinose_aTc_IPTG_system/Larabinose/1">
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/NEB_10_beta_pAN1201_Larabinose_aTc_IPTG_system/Larabinose/1">
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
         <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/Larabinose/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#in"/>
         <sbol:displayId>Larabinose</sbol:displayId>
-        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/pAN1201_Larabinose_aTc_IPTG_system/Larabinose"/>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/NEB_10_beta_pAN1201_Larabinose_aTc_IPTG_system/Larabinose"/>
         <sbol:version>1</sbol:version>
       </sbol:FunctionalComponent>
     </sbol:functionalComponent>
     <sbol:functionalComponent>
-      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/pAN1201_Larabinose_aTc_IPTG_system/aTc/1">
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/NEB_10_beta_pAN1201_Larabinose_aTc_IPTG_system/aTc/1">
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
         <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/aTc/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#in"/>
         <sbol:displayId>aTc</sbol:displayId>
-        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/pAN1201_Larabinose_aTc_IPTG_system/aTc"/>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/NEB_10_beta_pAN1201_Larabinose_aTc_IPTG_system/aTc"/>
         <sbol:version>1</sbol:version>
       </sbol:FunctionalComponent>
     </sbol:functionalComponent>
     <sbol:functionalComponent>
-      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/pAN1201_Larabinose_aTc_IPTG_system/pAN1201/1">
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/NEB_10_beta_pAN1201_Larabinose_aTc_IPTG_system/NEB_10_beta/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/NEB_10_beta/1"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>NEB_10_beta</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/NEB_10_beta_pAN1201_Larabinose_aTc_IPTG_system/NEB_10_beta"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/NEB_10_beta_pAN1201_Larabinose_aTc_IPTG_system/pAN1201/1">
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
         <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/pAN1201"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>pAN1201</sbol:displayId>
-        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/pAN1201_Larabinose_aTc_IPTG_system/pAN1201"/>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/NEB_10_beta_pAN1201_Larabinose_aTc_IPTG_system/pAN1201"/>
         <sbol:version>1</sbol:version>
       </sbol:FunctionalComponent>
     </sbol:functionalComponent>
-    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/pAN1201_Larabinose_aTc_IPTG_system"/>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/NEB_10_beta_pAN1201_Larabinose_aTc_IPTG_system"/>
     <sbol:version>1</sbol:version>
-    <sd2:plasmid rdf:resource="http://hub.sd2e.org/user/sd2e/design/pAN1201"/>
   </sbol:ModuleDefinition>
   <sbol:Sequence rdf:about="http://hub.sd2e.org/user/sd2e/design/pAN1201_seq">
     <sbol:displayId>pAN1201_seq</sbol:displayId>
@@ -1360,52 +1387,61 @@
     </genbank:reference>
     <genbank:source>synthetic DNA construct</genbank:source>
   </sbol:ComponentDefinition>
-  <sbol:ModuleDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/pAN1717_Larabinose_aTc_IPTG_system/1">
-    <dcterms:title>pAN1717_Larabinose_aTc_IPTG_system</dcterms:title>
-    <sbol:displayId>pAN1717_Larabinose_aTc_IPTG_system</sbol:displayId>
+  <sbol:ModuleDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/NEB_10_beta_pAN1717_Larabinose_aTc_IPTG_system/1">
+    <dcterms:title>NEB_10_beta_pAN1717_Larabinose_aTc_IPTG_system</dcterms:title>
+    <sbol:displayId>NEB_10_beta_pAN1717_Larabinose_aTc_IPTG_system</sbol:displayId>
     <sbol:functionalComponent>
-      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/pAN1717_Larabinose_aTc_IPTG_system/IPTG/1">
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/NEB_10_beta_pAN1717_Larabinose_aTc_IPTG_system/IPTG/1">
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
         <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/IPTG/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#in"/>
         <sbol:displayId>IPTG</sbol:displayId>
-        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/pAN1717_Larabinose_aTc_IPTG_system/IPTG"/>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/NEB_10_beta_pAN1717_Larabinose_aTc_IPTG_system/IPTG"/>
         <sbol:version>1</sbol:version>
       </sbol:FunctionalComponent>
     </sbol:functionalComponent>
     <sbol:functionalComponent>
-      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/pAN1717_Larabinose_aTc_IPTG_system/Larabinose/1">
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/NEB_10_beta_pAN1717_Larabinose_aTc_IPTG_system/Larabinose/1">
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
         <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/Larabinose/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#in"/>
         <sbol:displayId>Larabinose</sbol:displayId>
-        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/pAN1717_Larabinose_aTc_IPTG_system/Larabinose"/>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/NEB_10_beta_pAN1717_Larabinose_aTc_IPTG_system/Larabinose"/>
         <sbol:version>1</sbol:version>
       </sbol:FunctionalComponent>
     </sbol:functionalComponent>
     <sbol:functionalComponent>
-      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/pAN1717_Larabinose_aTc_IPTG_system/aTc/1">
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/NEB_10_beta_pAN1717_Larabinose_aTc_IPTG_system/aTc/1">
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
         <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/aTc/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#in"/>
         <sbol:displayId>aTc</sbol:displayId>
-        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/pAN1717_Larabinose_aTc_IPTG_system/aTc"/>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/NEB_10_beta_pAN1717_Larabinose_aTc_IPTG_system/aTc"/>
         <sbol:version>1</sbol:version>
       </sbol:FunctionalComponent>
     </sbol:functionalComponent>
     <sbol:functionalComponent>
-      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/pAN1717_Larabinose_aTc_IPTG_system/pAN1717/1">
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/NEB_10_beta_pAN1717_Larabinose_aTc_IPTG_system/NEB_10_beta/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/NEB_10_beta/1"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>NEB_10_beta</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/NEB_10_beta_pAN1717_Larabinose_aTc_IPTG_system/NEB_10_beta"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/NEB_10_beta_pAN1717_Larabinose_aTc_IPTG_system/pAN1717/1">
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
         <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/pAN1717"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>pAN1717</sbol:displayId>
-        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/pAN1717_Larabinose_aTc_IPTG_system/pAN1717"/>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/NEB_10_beta_pAN1717_Larabinose_aTc_IPTG_system/pAN1717"/>
         <sbol:version>1</sbol:version>
       </sbol:FunctionalComponent>
     </sbol:functionalComponent>
-    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/pAN1717_Larabinose_aTc_IPTG_system"/>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/NEB_10_beta_pAN1717_Larabinose_aTc_IPTG_system"/>
     <sbol:version>1</sbol:version>
-    <sd2:plasmid rdf:resource="http://hub.sd2e.org/user/sd2e/design/pAN1717"/>
   </sbol:ModuleDefinition>
   <sbol:Sequence rdf:about="http://hub.sd2e.org/user/sd2e/design/pAN1717_seq">
     <sbol:displayId>pAN1717_seq</sbol:displayId>
@@ -2267,65 +2303,75 @@
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/pAN3928/sequence_annotation_sensor_module_component_36"/>
       </sbol:SequenceAnnotation>
     </sbol:sequenceAnnotation>
+    <sbol:type rdf:resource="http://identifiers.org/so/SO:0000988"/>
     <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:sequence rdf:resource="http://hub.sd2e.org/user/sd2e/design/pAN3928_sequence"/>
   </sbol:ComponentDefinition>
-  <sbol:ModuleDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/pAN3928_pAN4036_Larabinose_aTc_IPTG_system/1">
-    <dcterms:title>pAN3928_pAN4036_Larabinose_aTc_IPTG_system</dcterms:title>
-    <sbol:displayId>pAN3928_pAN4036_Larabinose_aTc_IPTG_system</sbol:displayId>
+  <sbol:ModuleDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/NEB_10_beta_pAN3928_pAN4036_Larabinose_aTc_IPTG_system/1">
+    <dcterms:title>NEB_10_beta_pAN3928_pAN4036_Larabinose_aTc_IPTG_system</dcterms:title>
+    <sbol:displayId>NEB_10_beta_pAN3928_pAN4036_Larabinose_aTc_IPTG_system</sbol:displayId>
     <sbol:functionalComponent>
-      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/pAN3928_pAN4036_Larabinose_aTc_IPTG_system/IPTG/1">
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/NEB_10_beta_pAN3928_pAN4036_Larabinose_aTc_IPTG_system/IPTG/1">
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
         <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/IPTG/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#in"/>
         <sbol:displayId>IPTG</sbol:displayId>
-        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/pAN3928_pAN4036_Larabinose_aTc_IPTG_system/IPTG"/>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/NEB_10_beta_pAN3928_pAN4036_Larabinose_aTc_IPTG_system/IPTG"/>
         <sbol:version>1</sbol:version>
       </sbol:FunctionalComponent>
     </sbol:functionalComponent>
     <sbol:functionalComponent>
-      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/pAN3928_pAN4036_Larabinose_aTc_IPTG_system/Larabinose/1">
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/NEB_10_beta_pAN3928_pAN4036_Larabinose_aTc_IPTG_system/Larabinose/1">
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
         <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/Larabinose/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#in"/>
         <sbol:displayId>Larabinose</sbol:displayId>
-        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/pAN3928_pAN4036_Larabinose_aTc_IPTG_system/Larabinose"/>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/NEB_10_beta_pAN3928_pAN4036_Larabinose_aTc_IPTG_system/Larabinose"/>
         <sbol:version>1</sbol:version>
       </sbol:FunctionalComponent>
     </sbol:functionalComponent>
     <sbol:functionalComponent>
-      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/pAN3928_pAN4036_Larabinose_aTc_IPTG_system/aTc/1">
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/NEB_10_beta_pAN3928_pAN4036_Larabinose_aTc_IPTG_system/aTc/1">
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
         <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/aTc/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#in"/>
         <sbol:displayId>aTc</sbol:displayId>
-        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/pAN3928_pAN4036_Larabinose_aTc_IPTG_system/aTc"/>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/NEB_10_beta_pAN3928_pAN4036_Larabinose_aTc_IPTG_system/aTc"/>
         <sbol:version>1</sbol:version>
       </sbol:FunctionalComponent>
     </sbol:functionalComponent>
     <sbol:functionalComponent>
-      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/pAN3928_pAN4036_Larabinose_aTc_IPTG_system/pAN3928/1">
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/NEB_10_beta_pAN3928_pAN4036_Larabinose_aTc_IPTG_system/NEB_10_beta/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/NEB_10_beta/1"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>NEB_10_beta</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/NEB_10_beta_pAN3928_pAN4036_Larabinose_aTc_IPTG_system/NEB_10_beta"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/NEB_10_beta_pAN3928_pAN4036_Larabinose_aTc_IPTG_system/pAN3928/1">
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
         <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/pAN3928"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>pAN3928</sbol:displayId>
-        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/pAN3928_pAN4036_Larabinose_aTc_IPTG_system/pAN3928"/>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/NEB_10_beta_pAN3928_pAN4036_Larabinose_aTc_IPTG_system/pAN3928"/>
         <sbol:version>1</sbol:version>
       </sbol:FunctionalComponent>
     </sbol:functionalComponent>
     <sbol:functionalComponent>
-      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/pAN3928_pAN4036_Larabinose_aTc_IPTG_system/pAN4036/1">
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/NEB_10_beta_pAN3928_pAN4036_Larabinose_aTc_IPTG_system/pAN4036/1">
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
         <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/pAN4036"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>pAN4036</sbol:displayId>
-        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/pAN3928_pAN4036_Larabinose_aTc_IPTG_system/pAN4036"/>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/NEB_10_beta_pAN3928_pAN4036_Larabinose_aTc_IPTG_system/pAN4036"/>
         <sbol:version>1</sbol:version>
       </sbol:FunctionalComponent>
     </sbol:functionalComponent>
-    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/pAN3928_pAN4036_Larabinose_aTc_IPTG_system"/>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/NEB_10_beta_pAN3928_pAN4036_Larabinose_aTc_IPTG_system"/>
     <sbol:version>1</sbol:version>
-    <sd2:plasmid rdf:resource="http://hub.sd2e.org/user/sd2e/design/pAN3928"/>
-    <sd2:plasmid rdf:resource="http://hub.sd2e.org/user/sd2e/design/pAN4036"/>
   </sbol:ModuleDefinition>
   <sbol:Sequence rdf:about="http://hub.sd2e.org/user/sd2e/design/pAN3928_sequence">
     <sbol:displayId>pAN3928_sequence</sbol:displayId>
@@ -2674,4 +2720,11 @@
     <sbol:encoding rdf:resource="http://www.chem.qmul.ac.uk/iubmb/misc/naseq.html"/>
     <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/sensor_module_sequence"/>
   </sbol:Sequence>
+  <sbol:ComponentDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/NEB_10_beta/1">
+    <dcterms:title>NEB 10-beta</dcterms:title>
+    <sbol:displayId>NEB_10_beta</sbol:displayId>
+    <sbol:version>1</sbol:version>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/NEB_10_beta"/>
+    <sbol:type rdf:resource="http://purl.obolibrary.org/obo/NCIT_C14419"/>
+  </sbol:ComponentDefinition>
 </rdf:RDF>
