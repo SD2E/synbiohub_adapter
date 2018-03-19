@@ -4,18 +4,18 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:sbol="http://sbols.org/v2#"
    xmlns:sd2="http://sd2e.org#">
-  <sbol:Collection rdf:about="http://hub.sd2e.org/user/sd2e/rule_30/rule_30/1">
+  <sbol:Collection rdf:about="http://hub.sd2e.org/user/sd2e/experiment/rule_30/1">
     <dcterms:description>This is a collection of all experiments carried out as part of the Rule 30 challenge problem for SD2.</dcterms:description>
-    <dcterms:title>Rule 30 Challenge Problem</dcterms:title>
+    <dcterms:title>Rule 30 Experiments</dcterms:title>
     <sbol:displayId>rule_30</sbol:displayId>
-    <sbol:member rdf:resource="http://hub.sd2e.org/user/sd2e/rule_30/transcriptic_rule_30_q0_1_09242017/1"/>
-    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/rule_30/rule_30"/>
+    <sbol:member rdf:resource="http://hub.sd2e.org/user/sd2e/experiment/transcriptic_rule_30_q0_1_09242017/1"/>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/experiment/rule_30"/>
     <sbol:version>1</sbol:version>
   </sbol:Collection>
-  <sd2:Experiment rdf:about="http://hub.sd2e.org/user/sd2e/rule_30/transcriptic_rule_30_q0_1_09242017/1">
+  <sd2:Experiment rdf:about="http://hub.sd2e.org/user/sd2e/experiment/transcriptic_rule_30_q0_1_09242017/1">
     <dcterms:title>Transcriptic Rule 30 Q0 1 09242017</dcterms:title>
     <sbol:displayId>transcriptic_rule_30_q0_1_09242017</sbol:displayId>
-    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/rule_30/transcriptic_rule_30_q0_1_09242017"/>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/experiment/transcriptic_rule_30_q0_1_09242017"/>
     <sbol:version>1</sbol:version>
     <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/A01_flowCytometry_3/1"/>
     <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e/transcriptic_rule_30_q0_1_09242017/A02_flowCytometry_3/1"/>
