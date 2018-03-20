@@ -110,6 +110,7 @@ else:
     # Can use normal pysbol for windows and mac
     install_requires.append('pysbol')
 
+
 setup(
     name='sbh_adapter',
     version='0.0.1',
