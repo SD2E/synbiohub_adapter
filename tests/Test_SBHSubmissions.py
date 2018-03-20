@@ -42,7 +42,7 @@ class TestSBHSubmissions(unittest.TestCase):
 		server = SBHConstants.BBN_SERVER
 		sbhQuery = SynBioHubQuery(server)
 
-		rule30_sbol = 'examples/rule_30_problem.xml'
+		rule30_sbol = 'examples/rule_30_experiments.xml'
 		displayId = 'rule_30'
 		name = 'BBN_Rule30_Problem'
 		description = 'Rule of 30 problem collection used for testing BBN SBH instance'
