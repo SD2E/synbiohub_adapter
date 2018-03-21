@@ -10,36 +10,36 @@ import sys
 from synbiohub_adapter.SynBioHubUtil import *
 from sbol import *
 
-# download third party package: pip install pandas
+# download third party package to display plot: pip install pandas
 # python -m tests.Throughput_Thread
 
 class myThread (threading.Thread):
-	def __init__(self, sbolDoc, sbh_connector):
+	def __init__(self, sbolDoc_list, sbh_connector):
 		threading.Thread.__init__(self)
-		self.sbolDoc = sbolDoc
+		self.sbolDoc_list = sbolDoc_list
 		self.sbh_connector = sbh_connector
 		self.thread_start = self.thread_end = 0
 
 	def run(self):
-		# print("Started Thread at : %s" %(time.ctime(time.time())))
 		self.thread_start = time.ctime(time.time())
-		push_sbh(self.sbolDoc, self.sbh_connector)
+		for sbolDoc in self.sbolDoc_list:
+			push_sbh(sbolDoc, self.sbh_connector)
+			uri = sbolDoc.displayId + "/transcriptic_rule_30_q0_1_09242017/1"
+			pull_sbh(self.sbh_connector, uri)
 		self.thread_end = time.ctime(time.time())
-		# print("Ended Thread at : %s" %(time.ctime(time.time())))
 
 	def thread_times(self):
 		return self.thread_start, self.thread_end
 
 
-def create_sbolDocs(numDocs, startIndex, sbolFile='examples/rule30-Q0-v2.xml'):
+def create_sbolDocs(numDocs, collPrefix, sbolFile='examples/rule30-Q0-v2.xml'):
 	doc_list = []
-	print("startIndex %s" %startIndex)
-	for i in range(startIndex,numDocs):
+	for i in range(0, numDocs):
 		sbolDoc = Document()
 		sbolDoc.read(sbolFile)
-		sbolDoc.displayId = "ThroughputTest_Coll_" + str(i)
-		sbolDoc.name = "ThroughputTest_Coll_" + str(i) + "_name"
-		sbolDoc.description = "ThroughputTest_Coll_" + str(i) + "_description"
+		sbolDoc.displayId = collPrefix + str(i)
+		sbolDoc.name = collPrefix + str(i) + "_name"
+		sbolDoc.description = collPrefix + str(i) + "_description"
 		sbolDoc.version = str(i)
 		doc_list.append(sbolDoc)
 	return doc_list
@@ -61,56 +61,51 @@ def pull_sbh(sbh_connector, sbolURI):
 	start = time.clock()
 	sbh_connector.pull(sbolURI, sbolDoc)
 	end = time.clock()
-	# sbolDoc.writeString()
+	
+	if sbolDoc is None:
+		print("Found nothing and caused no error.")
+	else:
+		experimentalData_tl = []
+		for tl in sbolDoc:
+			if topLevel.type == 'http://sd2e.org#ExperimentalData':
+				experimentalData_tl.append(topLevel)
+				if len(experimentalData_tl) != 74:
+					print("Found the wrong SynBioHub Part with this uri: %s" %sbolURI)
+
 	return end - start
 
-def testSpeed(iterations, sbolDoc, sbh_connector):
-	
+def testSpeed(sbolDoc_List, sbh_connector):
 	pushTimes = []
 	pullTimes = []
 
-	collPrefix = "ST_CColl_"
-	# Note:iteration can't be 0 or lower
-	for i in range(0,iterations):
-		sbolDoc.displayId = collPrefix + str(i)
-		sbolDoc.name = collPrefix + str(i) + "_name"
-		sbolDoc.version = str(i)
-		sbolDoc.description = collPrefix + str(i) + "_description"
-		
+	for sbolDoc in sbolDoc_List:
 		pushTime = push_sbh(sbolDoc, sbh_connector)
 		pushTimes.append(pushTime)
-	
-		pullTime = pull_sbh(sbh_connector, sbolDoc.displayId)
-		pullTimes.append(0)
-		
+
+		uri = sbolDoc.displayId + "/transcriptic_rule_30_q0_1_09242017/1"
+		pullTime = pull_sbh(sbh_connector, uri)
+		pullTimes.append(pullTime)
+
 	return pullTimes, pushTimes
 
-# Calculate how many pull and push were made to SynBioHub for a specified time
-# totalTime: How long to push and pull from SynBioHub
-def testSpeed2(totalTime, sbolDoc, sbh_connector):
-	numPush = 0
-	pushTimes = []
-	startTime = time.clock()
-	coll_id = "TT2_AColl_" + str(numPush)
-	while time.clock() - startTime < totalTime:
-		sbolDoc.displayId = coll_id
-		sbolDoc.name = coll_id + "_name"
-		sbolDoc.version = str(numPush)
-		sbolDoc.description = coll_id + "_description"
-		
-		pushTimes.append(push_sbh(sbolDoc, sbh_connector))
-		numPush += 1
+def testThroughput(threadNum, sbh_connector, docNum):
+	threads = []
+	for t in range(0, threadNum):
+		sbolDoc_List = create_sbolDocs(docNum, "TT_EColl_" + str(t))
+		threads.append(myThread(sbolDoc_List, sbh_connector))
+	start = time.clock()
+	for t in threads:
+		t.start()
+	for t in threads:
+		t.join()
+	end = time.clock()
 
-	print("%d pushes in %d seconds" % (numPush, totalTime))
 
 def run_tests(iterations=0, testType=0):
-	sbolFile = 'examples/rule30-Q0-v2.xml' 
-	sbolDoc = Document()
-	sbolDoc.read(sbolFile)
-
 	sbh_connector = PartShop("https://synbiohub.bbn.com/")
 	sbh_user = input('Enter SynBioHub Username: ')
 	sbh_connector.login(sbh_user, getpass.getpass(prompt='Enter SynBioHub Password: ', stream=sys.stderr))
+	# Config.setOption("verbose", True)
 
 	if testType < 0 or testType > 2:
 		raise ValueError("Error: testType must be 0, 1, or 2")
@@ -119,10 +114,11 @@ def run_tests(iterations=0, testType=0):
 	isThrpt = (testType == 1) or (testType == 2)
 
 	if isSpeed:
-		pullTimes, pushTimes = testSpeed(iterations, sbolDoc, sbh_connector)
+		sbolDoc_List = create_sbolDocs(iterations, "ST_NColl_")
+		pullTimes, pushTimes = testSpeed(sbolDoc_List, sbh_connector)
 		df = pd.DataFrame({"Pull Time": pullTimes,
 							"Push Time": pushTimes})
-		df.loc['Total'] = df.sum()
+		
 		fig, ax = plt.subplots()
 		ax.set_title("Speed Test")
 		ax.set_ylabel("Time (sec)")
@@ -130,54 +126,17 @@ def run_tests(iterations=0, testType=0):
 		df.plot(x=df.index, ax = ax)
 		plt.show()
 		fig.savefig('outputs/SpeedResult_%s_iter.png' %iterations)
+
+		df.loc['Total'] = df.sum()
 		df.to_csv("outputs/SpeedResult_%s_iter.csv" %iterations)
 
 	if isThrpt:
-		count = 0
-		docNum = iterations
-		startIndex = 0
-		pushSec = []
-		tStart = []
-		tEnd = []
-		while count < 3:
-			doc_list = create_sbolDocs(docNum, startIndex)
-			threads = [myThread(sbolDoc, sbh_connector) for sbolDoc in doc_list]
-			start = time.clock()
-			for t in threads:
-				t.start()
-			for t in threads:
-				t.join()
-			end = time.clock()
-			for t in threads:
-				t_start, t_end = t.thread_times()
-				tStart.append(t_start)
-				tEnd.append(t_end)
+		threadNum = 3
+		testThroughput(threadNum, sbh_connector, iterations)
 
-			pushSec.append(docNum/(end-start))
-			startIndex = docNum
-			docNum += 2
-			count += 1
-
-		df = pd.DataFrame({"Thread Started": tStart,
-							"Thread Ended": tEnd,
-							"Push per Sec": pushSec})
-		fig, ax = plt.subplots()
-		ax.set_title("Throughput_Thread Test")
-		ax.set_ylabel("Time (sec)")
-		ax.set_xlabel("Iterations")
-		df.plot(x=df.index, ax = ax)
-		plt.show()
-		fig.savefig('SpeedResult_%s_iter.png' %iterations)
-		df.to_csv("SpeedResult_%s_iter.csv" %iterations)
+		
 
 		
 if __name__ == '__main__':
-	# run_tests(3, 0)
+	run_tests(3, 1)
 
-	uri = "https://synbiohub.org/public/igem/BBa_K1001755/1"
-	Config.setOption("verbose", True)
-	sbh_connector = PartShop("https://synbiohub.org/")
-	sbh_user = input('Enter SynBioHub Username: ')
-	sbh_connector.login(sbh_user, getpass.getpass(prompt='Enter SynBioHub Password: ', stream=sys.stderr))
-
-	pull_sbh(sbh_connector, uri)
