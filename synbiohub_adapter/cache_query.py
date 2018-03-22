@@ -33,7 +33,6 @@ def wrap_query_fn(fn, db_file_path=None):
         q_key = ", ".join((str(x) for x in args))
 
         try:
-            raise QueryBadFormed()
             result = fn(*args)
             # Run the query function then cache the results
             with shelve.open(db_file_path) as db:
