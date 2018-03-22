@@ -24,7 +24,9 @@ except OSError as e:
         pass
     
 
-def wrap_query_fn(fn):
+def wrap_query_fn(fn, db_file_path=None):
+    if db_file_path is None:
+        db_file_path = db_file
 
     def wrapped_fn(*args):
         # Just join the args into one string as the query key
@@ -34,7 +36,7 @@ def wrap_query_fn(fn):
             raise QueryBadFormed()
             result = fn(*args)
             # Run the query function then cache the results
-            with shelve.open(db_file) as db:
+            with shelve.open(db_file_path) as db:
                 db[q_key] = result
         except _catch_exceptions as e:
 
@@ -43,7 +45,7 @@ def wrap_query_fn(fn):
             sys.stderr.write('Query failed, using fallback cache: {}\n'.format(e))
 
             try:
-                with shelve.open(db_file) as db:
+                with shelve.open(db_file_path) as db:
                     result = db[q_key]
             except Exception:
                 # If fail to get cached value, re-raise the original exception instead.
