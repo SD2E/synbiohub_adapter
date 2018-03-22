@@ -10,7 +10,9 @@ import sys
 from synbiohub_adapter.SynBioHubUtil import *
 from sbol import *
 
-# download third party package to display plot: pip install pandas
+# download two third party packages to display plot: 
+# 	1. pip install pandas 
+#	2. python -mpip install -U matplotlib
 # python -m tests.Throughput_Thread
 
 class myThread (threading.Thread):
@@ -19,17 +21,24 @@ class myThread (threading.Thread):
 		self.sbolDoc_list = sbolDoc_list
 		self.sbh_connector = sbh_connector
 		self.thread_start = self.thread_end = 0
+		self.tuple_time = {}
 
 	def run(self):
-		self.thread_start = time.ctime(time.time())
+		self.thread_start = time.clock()
 		for sbolDoc in self.sbolDoc_list:
-			push_sbh(sbolDoc, self.sbh_connector)
-			uri = sbolDoc.displayId + "/transcriptic_rule_30_q0_1_09242017/1"
-			pull_sbh(self.sbh_connector, uri)
-		self.thread_end = time.ctime(time.time())
+			push_time = push_sbh(sbolDoc, self.sbh_connector)
+			# tuple_size = len(get_tuples(sbolDoc))
+			# self.tuple_time[tuple_size] = push_time
 
-	def thread_times(self):
-		return self.thread_start, self.thread_end
+			# uri = sbolDoc.displayId + "/transcriptic_rule_30_q0_1_09242017/1"
+			# pull_sbh(self.sbh_connector, uri)
+		self.thread_end = time.clock()
+
+	def thread_duration(self):
+		return self.thread_end - self.thread_start
+
+	def tuple_time(self):
+		return self.tuple_time
 
 
 def create_sbolDocs(numDocs, collPrefix, sbolFile='examples/rule30-Q0-v2.xml'):
@@ -91,17 +100,26 @@ def testSpeed(sbolDoc_List, sbh_connector):
 def testThroughput(threadNum, sbh_connector, docNum):
 	threads = []
 	for t in range(0, threadNum):
-		sbolDoc_List = create_sbolDocs(docNum, "TT_EColl_" + str(t))
+		sbolDoc_List = create_sbolDocs(docNum, "TT_MColl_" + str(t) +"_")
 		threads.append(myThread(sbolDoc_List, sbh_connector))
-	start = time.clock()
+	
+	# Note: Terminate all threads once they have all been started
 	for t in threads:
 		t.start()
 	for t in threads:
 		t.join()
-	end = time.clock()
+	
+	thread_duration = {}
+	tuple_times = []
+	for t in threads:
+		thread_duration[t.getName()] = t.thread_duration()
+		# tuple_times = t.tuple_time()
+
+	return thread_duration
 
 
-def run_tests(iterations=0, testType=0):
+
+def run_tests(iterations=0, testType=0, threadNum=1):
 	sbh_connector = PartShop("https://synbiohub.bbn.com/")
 	sbh_user = input('Enter SynBioHub Username: ')
 	sbh_connector.login(sbh_user, getpass.getpass(prompt='Enter SynBioHub Password: ', stream=sys.stderr))
@@ -131,12 +149,23 @@ def run_tests(iterations=0, testType=0):
 		df.to_csv("outputs/SpeedResult_%s_iter.csv" %iterations)
 
 	if isThrpt:
-		threadNum = 3
-		testThroughput(threadNum, sbh_connector, iterations)
+		thread_duration = testThroughput(threadNum, sbh_connector, iterations)
 
+		df = pd.DataFrame.from_dict(thread_duration, orient='index')
+		fig, (ax1, ax2) = plt.subplots(2)
+		ax1.set_title("Time vs. %s SBOL Documents Executed for Each Thread" %iterations)
+		ax1.set_ylabel("Time (sec)")
+		ax1.set_xlabel("# of SBOL Tuples")
+		df.plot(ax = ax1)
+		plt.show()
+		fig.savefig('outputs/ThreadTime_%s_%s.png' %(threadNum, iterations))
+		df.to_csv("outputs/ThreadTime_%s_%s.csv" %(threadNum, iterations))
 		
 
 		
 if __name__ == '__main__':
-	run_tests(3, 1)
+	docNum = 2 
+	testType = 1
+	threadNum = 3
+	run_tests(docNum, testType, threadNum)
 
