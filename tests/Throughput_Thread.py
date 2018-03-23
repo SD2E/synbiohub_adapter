@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 import getpass
 import sys
 
+from rdflib import Graph
 from synbiohub_adapter.SynBioHubUtil import *
 from sbol import *
 
@@ -16,19 +17,19 @@ from sbol import *
 # python -m tests.Throughput_Thread
 
 class myThread (threading.Thread):
-	def __init__(self, sbolDoc_list, sbh_connector):
+	def __init__(self, sbolTuples, sbh_connector):
 		threading.Thread.__init__(self)
-		self.sbolDoc_list = sbolDoc_list
+		self.sbolDoc_list = sbolTuples
 		self.sbh_connector = sbh_connector
 		self.thread_start = self.thread_end = 0
-		self.tuple_time = {}
+		self.tupTime_List = []
 
 	def run(self):
 		self.thread_start = time.clock()
-		for sbolDoc in self.sbolDoc_list:
-			push_time = push_sbh(sbolDoc, self.sbh_connector)
-			# tuple_size = len(get_tuples(sbolDoc))
-			# self.tuple_time[tuple_size] = push_time
+		for sbolTuple in self.sbolDoc_list:
+			push_time = push_sbh(sbolTuple.sbolDoc(), self.sbh_connector)
+			
+			self.tupTime_List.append((sbolTuple.totalTuples(), push_time))
 
 			# uri = sbolDoc.displayId + "/transcriptic_rule_30_q0_1_09242017/1"
 			# pull_sbh(self.sbh_connector, uri)
@@ -37,12 +38,29 @@ class myThread (threading.Thread):
 	def thread_duration(self):
 		return self.thread_end - self.thread_start
 
-	def tuple_time(self):
-		return self.tuple_time
+	def tupleTime_List(self):
+		return self.tupTime_List
 
+class SBOLTuple():
+	def __init__(self, xmlFile, sbolDoc):
+		xmlGraph = Graph()
+		xmlGraph.parse(xmlFile)
+		
+		total_obj = []
+		for sbol_subj, sbol_pred, sbol_obj in xmlGraph:
+			total_obj.append(sbol_obj)
+		self.__tuplesSize = len(total_obj)
+		self.__sbolDoc = sbolDoc
+
+	def sbolDoc(self):
+		return self.__sbolDoc
+
+	def totalTuples(self):
+		return self.__tuplesSize
 
 def create_sbolDocs(numDocs, collPrefix, sbolFile='examples/rule30-Q0-v2.xml'):
 	doc_list = []
+	sbolTuples = []
 	for i in range(0, numDocs):
 		sbolDoc = Document()
 		sbolDoc.read(sbolFile)
@@ -51,7 +69,11 @@ def create_sbolDocs(numDocs, collPrefix, sbolFile='examples/rule30-Q0-v2.xml'):
 		sbolDoc.description = collPrefix + str(i) + "_description"
 		sbolDoc.version = str(i)
 		doc_list.append(sbolDoc)
-	return doc_list
+
+		st = SBOLTuple(sbolFile, sbolDoc)
+		sbolTuples.append(st)
+
+	return doc_list, sbolTuples
 
 # Returns the time (seconds) it takes to make a push to a new Collection on SynBioHub
 def push_sbh(sbolDoc, sbh_connector):
@@ -100,22 +122,21 @@ def testSpeed(sbolDoc_List, sbh_connector):
 def testThroughput(threadNum, sbh_connector, docNum):
 	threads = []
 	for t in range(0, threadNum):
-		sbolDoc_List = create_sbolDocs(docNum, "TT_MColl_" + str(t) +"_")
-		threads.append(myThread(sbolDoc_List, sbh_connector))
+		sbolDoc_List, sbolTuples = create_sbolDocs(docNum, "TT1_KColl_" + str(t) +"_")
+		threads.append(myThread(sbolTuples, sbh_connector))
 	
-	# Note: Terminate all threads once they have all been started
+	# Note: Start all threads first then join the threads for termination
 	for t in threads:
 		t.start()
-	for t in threads:
-		t.join()
-	
+
 	thread_duration = {}
-	tuple_times = []
+	tupleTime_res = {}
 	for t in threads:
 		thread_duration[t.getName()] = t.thread_duration()
-		# tuple_times = t.tuple_time()
-
-	return thread_duration
+		tupleTime_res[t.getName()] = t.tupleTime_List()
+		t.join()
+	
+	return thread_duration, tupleTime_res
 
 
 
@@ -132,7 +153,7 @@ def run_tests(iterations=0, testType=0, threadNum=1):
 	isThrpt = (testType == 1) or (testType == 2)
 
 	if isSpeed:
-		sbolDoc_List = create_sbolDocs(iterations, "ST_NColl_")
+		sbolDoc_List, sbolTuples = create_sbolDocs(iterations, "ST_PColl_")
 		pullTimes, pushTimes = testSpeed(sbolDoc_List, sbh_connector)
 		df = pd.DataFrame({"Pull Time": pullTimes,
 							"Push Time": pushTimes})
@@ -149,22 +170,46 @@ def run_tests(iterations=0, testType=0, threadNum=1):
 		df.to_csv("outputs/SpeedResult_%s_iter.csv" %iterations)
 
 	if isThrpt:
-		thread_duration = testThroughput(threadNum, sbh_connector, iterations)
+		thread_duration, tuple_results = testThroughput(threadNum, sbh_connector, iterations)
 
 		df = pd.DataFrame.from_dict(thread_duration, orient='index')
 		fig, (ax1, ax2) = plt.subplots(2)
-		ax1.set_title("Time vs. %s SBOL Documents Executed for Each Thread" %iterations)
-		ax1.set_ylabel("Time (sec)")
-		ax1.set_xlabel("# of SBOL Tuples")
+		ax1.set_title("Time vs. %s SBOL Documents Pushed for Each Thread" %iterations)
+		ax1.set_ylabel("Duration (sec)")
+		ax1.set_xlabel("# of Threads")
 		df.plot(ax = ax1)
-		plt.show()
-		fig.savefig('outputs/ThreadTime_%s_%s.png' %(threadNum, iterations))
-		df.to_csv("outputs/ThreadTime_%s_%s.csv" %(threadNum, iterations))
+		# fig.savefig('outputs/ThreadTime_%s_%s.png' %(threadNum, iterations))
+		df.to_csv("outputs/Thread_t%s_d%s.csv" %(threadNum, iterations))
 		
+		thread_names = []
+		sbol_tupleSizes = []
+		pushTimes = []
+		for k, lt in tuple_results.items():
+			thread_names.append(k)
+			for v1, v2 in lt:
+				sbol_tupleSizes.append(v1)
+				pushTimes.append(v2)
+			
+		df2 = pd.DataFrame({"Thread_Name": thread_names,
+							"Total_Tuples": sbol_tupleSizes,
+							"Push_Time": pushTimes}, columns=['Thread_Name', 'Total_Tuples', 'Push_Time'])
+		
+		groups = df2.groupby('Thread_Name')
+		for name, group in groups:
+			ax2.plot(group.Total_Tuples, group.Push_Time, label=name)
+		ax2.set_title("Push Time vs. # of Tuples in SBOLDocuments")
+		ax2.set_ylabel("Time (sec)")
+		ax2.set_xlabel("# of SBOL Tuples")
+		ax2.legend()
+		
+		plt.show()
 
+		fig.savefig('outputs/ThreadTime_%s_%s.png' %(threadNum, iterations))
+		df2.to_csv("outputs/Tuples_t%s_d%s.csv" %(threadNum, iterations))
+		
 		
 if __name__ == '__main__':
-	docNum = 2 
+	docNum = 1 
 	testType = 1
 	threadNum = 3
 	run_tests(docNum, testType, threadNum)
