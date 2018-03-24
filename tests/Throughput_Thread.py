@@ -122,7 +122,7 @@ def testSpeed(sbolDoc_List, sbh_connector):
 def testThroughput(threadNum, sbh_connector, docNum):
 	threads = []
 	for t in range(0, threadNum):
-		sbolDoc_List, sbolTuples = create_sbolDocs(docNum, "TT1_KColl_" + str(t) +"_")
+		sbolDoc_List, sbolTuples = create_sbolDocs(docNum, "TT2_AColl_" + str(t) +"_")
 		threads.append(myThread(sbolTuples, sbh_connector))
 	
 	# Note: Start all threads first then join the threads for termination
@@ -173,12 +173,12 @@ def run_tests(iterations=0, testType=0, threadNum=1):
 		thread_duration, tuple_results = testThroughput(threadNum, sbh_connector, iterations)
 
 		df = pd.DataFrame.from_dict(thread_duration, orient='index')
+		df.columns = ['Push Time']
 		fig, (ax1, ax2) = plt.subplots(2)
 		ax1.set_title("Time vs. %s SBOL Documents Pushed for Each Thread" %iterations)
 		ax1.set_ylabel("Duration (sec)")
 		ax1.set_xlabel("# of Threads")
 		df.plot(ax = ax1)
-		# fig.savefig('outputs/ThreadTime_%s_%s.png' %(threadNum, iterations))
 		df.to_csv("outputs/Thread_t%s_d%s.csv" %(threadNum, iterations))
 		
 		thread_names = []
@@ -190,21 +190,22 @@ def run_tests(iterations=0, testType=0, threadNum=1):
 				sbol_tupleSizes.append(v1)
 				pushTimes.append(v2)
 			
-		df2 = pd.DataFrame({"Thread_Name": thread_names,
-							"Total_Tuples": sbol_tupleSizes,
-							"Push_Time": pushTimes}, columns=['Thread_Name', 'Total_Tuples', 'Push_Time'])
+		df2 = pd.DataFrame({"Thread_Name": thread_names, 
+							"Total_Tuples": sbol_tupleSizes, 
+							"Push_Time": pushTimes},  
+							columns=['Thread_Name', 'Total_Tuples', 'Push_Time'])
 		
 		groups = df2.groupby('Thread_Name')
 		for name, group in groups:
-			ax2.plot(group.Total_Tuples, group.Push_Time, label=name)
+			group.plot(x='Total_Tuples', y='Push_Time', ax=ax2, marker='o', label= name)
+	
 		ax2.set_title("Push Time vs. # of Tuples in SBOLDocuments")
 		ax2.set_ylabel("Time (sec)")
 		ax2.set_xlabel("# of SBOL Tuples")
 		ax2.legend()
-		
 		plt.show()
 
-		fig.savefig('outputs/ThreadTime_%s_%s.png' %(threadNum, iterations))
+		fig.savefig('outputs/ThroughputTime_%s_%s.png' %(threadNum, iterations))
 		df2.to_csv("outputs/Tuples_t%s_d%s.csv" %(threadNum, iterations))
 		
 		
