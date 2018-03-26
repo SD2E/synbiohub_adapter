@@ -117,7 +117,7 @@ class LinuxInstallCommand(install):
 class LinuxDevelopCommand(develop):
     pass
         
-install_requires=['SPARQLWrapper']
+install_requires=['SPARQLWrapper', 'pySBOLx']
 cmdclass = {}
         
 if sys.platform in {'linux', 'linux2'}:
@@ -126,7 +126,7 @@ if sys.platform in {'linux', 'linux2'}:
     cmdclass['install'] = LinuxInstallCommand
     cmdclass['develop'] = LinuxDevelopCommand
 else:
-    # Can use normal pysbol for windows and mac
+    # Can use normal pysbol for mac and windows
     install_requires.append('pysbol')
 
 
@@ -135,5 +135,8 @@ setup(
     version='0.0.1',
     packages=find_packages(),
     install_requires=install_requires,
+    dependency_links=[
+        'git+https://git@github.com/nroehner/pySBOLx.git#egg=pySBOLx'
+    ],
     cmdclass=cmdclass
 )

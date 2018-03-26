@@ -1,0 +1,2553 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:om="http://www.ontology-of-units-of-measure.org/resource/om-2#"
+   xmlns:prov="http://www.w3.org/ns/prov#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:sbol="http://sbols.org/v2#"
+   xmlns:sys-bio="http://sys-bio.org#">
+  <sbol:ComponentDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/CAT_147440250/1">
+    <dcterms:title>Adenine</dcterms:title>
+    <sbol:displayId>CAT_147440250</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/CAT_147440250"/>
+    <sbol:type rdf:resource="http://identifiers.org/chebi/CHEBI_16708"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/CAT_157300250/1">
+    <dcterms:title>Uracil</dcterms:title>
+    <sbol:displayId>CAT_157300250</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/CAT_157300250"/>
+    <sbol:type rdf:resource="http://identifiers.org/chebi/CHEBI_17568"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/CAT_630425/1">
+    <dcterms:description>Is a supplement that contains L_Tyrosine, but not the following amino acids: His,Leu, Trp, and Ura</dcterms:description>
+    <dcterms:title>DO Supplement -His/-Leu/-Trp/-Ura</dcterms:title>
+    <sbol:displayId>CAT_630425</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/CAT_630425"/>
+    <sbol:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0000079"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/CAT_71006_012/1">
+    <dcterms:title>Ethanol</dcterms:title>
+    <sbol:displayId>CAT_71006_012</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/CAT_71006_012"/>
+    <sbol:type rdf:resource="http://identifiers.org/chebi/CHEBI_16236"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/CAT_90000_726/1">
+    <dcterms:description>Is a concentrate of the water soluble portion of autolyzed yeast, and has the highest levels of carbohydrate of BD yeast extract offerings.</dcterms:description>
+    <dcterms:title>BD Bacto Yeast Extract BD Biosciences</dcterms:title>
+    <sbol:displayId>CAT_90000_726</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/CAT_90000_726"/>
+    <sbol:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0000079"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/CAT_BP382_100/1">
+    <dcterms:title>L-Histidine</dcterms:title>
+    <sbol:displayId>CAT_BP382_100</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/CAT_BP382_100"/>
+    <sbol:type rdf:resource="http://identifiers.org/chebi/CHEBI_15971"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/CAT_BP385_100/1">
+    <dcterms:title>L-Leucine</dcterms:title>
+    <sbol:displayId>CAT_BP385_100</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/CAT_BP385_100"/>
+    <sbol:type rdf:resource="http://identifiers.org/chebi/CHEBI_15603"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/CAT_BP395_100/1">
+    <dcterms:title>L-Tryptophan</dcterms:title>
+    <sbol:displayId>CAT_BP395_100</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/CAT_BP395_100"/>
+    <sbol:type rdf:resource="http://identifiers.org/chebi/CHEBI_16828"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/CAT_D16_3/1">
+    <dcterms:title>Dextrose (D-Glucose)</dcterms:title>
+    <sbol:displayId>CAT_D16_3</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/CAT_D16_3"/>
+    <sbol:type rdf:resource="http://identifiers.org/chebi/CHEBI_17634"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/CAT_DF0123_17_3/1">
+    <dcterms:description>Dehydrated, enzymatic digest of casein especially rich in tryptone.</dcterms:description>
+    <dcterms:title>BD Bacto Dehydrated Culture Media Additive_Tryptone</dcterms:title>
+    <sbol:displayId>CAT_DF0123_17_3</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/CAT_DF0123_17_3"/>
+    <sbol:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0000079"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/CAT_G33_500/1">
+    <dcterms:title>Glycerol</dcterms:title>
+    <sbol:displayId>CAT_G33_500</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/CAT_G33_500"/>
+    <sbol:type rdf:resource="http://identifiers.org/chebi/CHEBI_17754"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/CAT_R459942/1">
+    <dcterms:description>Is a chemically defined carbohydrate and amino acid free medium to which individual carbohydrates and_or amino acids may be added. Ammonium sulfate supplies a source of nitrogen. The medium also contains required vitamins, trace elements, and salts. Growth in the medium indicates utilization of the test carbohydrate or amino acid.</dcterms:description>
+    <dcterms:title>Thermo Scientific Remel Yeast Nitrogen Base w/o Amino Acids</dcterms:title>
+    <sbol:displayId>CAT_R459942</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/CAT_R459942"/>
+    <sbol:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0000079"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/CAT_S1876_1KG/1">
+    <dcterms:title>D-Sorbitol</dcterms:title>
+    <sbol:displayId>CAT_S1876_1KG</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/CAT_S1876_1KG"/>
+    <sbol:type rdf:resource="http://identifiers.org/chebi/CHEBI_17924"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ComponentDefinition>
+  <sbol:ModuleDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16967/1">
+    <dcterms:description>Description: This yeast strain has XOR gate logic comprised of 8 genetic elements and Inputs 1_1. Genotype: pMOD8-pGRR-r2r3-RGR-r9|pMOD6-pGRR-r1r9-RGR-r7|pMOD-LTR3-Hyg-pGRR-r6r6-RGR-r1|pMOD4G-dCas9-Mxi1|pMOD6-r5r7-yeGFP|pMOD-LTR2-Bleo-r6r3-RGR-r7|pMOD-LTR1-NatMX-A-RGR-r6|pMOD8A-RGR-r3. Literature: M. Gander, J. Vrana, W. Voje, J. Carothers &amp;amp; E. Klavins "Digital logic circuits in yeast with CRISPR-dCas9 NOR gates" Nature Communications volume 8, 15459 (2017).</dcterms:description>
+    <dcterms:title>UWBF_XOR_11</dcterms:title>
+    <sbol:displayId>UWBF_16967</sbol:displayId>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16967/UWBIOFAB_22544/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>UWBIOFAB_22544</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16967/UWBIOFAB_22544"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16967/YG_plasmid_001/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_001</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16967/YG_plasmid_001"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16967/YG_plasmid_003/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_003</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16967/YG_plasmid_003"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16967/YG_plasmid_005/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_005</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16967/YG_plasmid_005"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16967/YG_plasmid_010/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_010</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16967/YG_plasmid_010"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16967/YG_plasmid_014/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_014</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16967/YG_plasmid_014"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16967/YG_plasmid_015/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_015</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16967/YG_plasmid_015"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16967/YG_plasmid_017/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_017</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16967/YG_plasmid_017"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16967/YG_plasmid_021/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_021</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16967/YG_plasmid_021"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16967"/>
+    <sbol:role rdf:resource="http://edamontology.org/data_2133"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16968/1">
+    <dcterms:description>Description: This yeast strain has XOR gate logic comprised of 7 genetic elements and Inputs 1_0. Genotype: pMOD8-pGRR-r2r3-RGR-r9|pMOD6-pGRR-r1r9-RGR-r7|pMOD-LTR3-Hyg-pGRR-r6r6-RGR-r1|pMOD4G-dCas9-Mxi1|pMOD6-r5r7-yeGFP|pMOD-LTR2-Bleo-r6r3-RGR-r7|pMOD8A-RGR-r3. Literature: M. Gander, J. Vrana, W. Voje, J. Carothers &amp;amp; E. Klavins "Digital logic circuits in yeast with CRISPR-dCas9 NOR gates" Nature Communications volume 8, 15459 (2017).</dcterms:description>
+    <dcterms:title>UWBF_XOR_10</dcterms:title>
+    <sbol:displayId>UWBF_16968</sbol:displayId>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16968/UWBIOFAB_22544/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>UWBIOFAB_22544</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16968/UWBIOFAB_22544"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16968/YG_plasmid_001/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_001</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16968/YG_plasmid_001"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16968/YG_plasmid_003/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_003</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16968/YG_plasmid_003"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16968/YG_plasmid_005/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_005</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16968/YG_plasmid_005"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16968/YG_plasmid_014/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_014</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16968/YG_plasmid_014"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16968/YG_plasmid_015/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_015</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16968/YG_plasmid_015"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16968/YG_plasmid_017/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_017</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16968/YG_plasmid_017"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16968/YG_plasmid_021/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_021</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16968/YG_plasmid_021"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16968"/>
+    <sbol:role rdf:resource="http://edamontology.org/data_2133"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16969/1">
+    <dcterms:description>Description: This yeast strain has XOR gate logic comprised of 7 genetic elements and Inputs 0_1. Genotype: pMOD8-pGRR-r2r3-RGR-r9|pMOD6-pGRR-r1r9-RGR-r7|pMOD-LTR3-Hyg-pGRR-r6r6-RGR-r1|pMOD4G-dCas9-Mxi1|pMOD6-r5r7-yeGFP|pMOD-LTR2-Bleo-r6r3-RGR-r7|pMOD-LTR1-NatMX-A-RGR-r6. Literature: M. Gander, J. Vrana, W. Voje, J. Carothers &amp;amp; E. Klavins "Digital logic circuits in yeast with CRISPR-dCas9 NOR gates" Nature Communications volume 8, 15459 (2017).</dcterms:description>
+    <dcterms:title>UWBF_XOR_01</dcterms:title>
+    <sbol:displayId>UWBF_16969</sbol:displayId>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16969/UWBIOFAB_22544/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>UWBIOFAB_22544</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16969/UWBIOFAB_22544"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16969/YG_plasmid_001/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_001</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16969/YG_plasmid_001"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16969/YG_plasmid_005/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_005</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16969/YG_plasmid_005"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16969/YG_plasmid_010/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_010</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16969/YG_plasmid_010"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16969/YG_plasmid_014/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_014</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16969/YG_plasmid_014"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16969/YG_plasmid_015/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_015</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16969/YG_plasmid_015"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16969/YG_plasmid_017/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_017</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16969/YG_plasmid_017"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16969/YG_plasmid_021/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_021</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16969/YG_plasmid_021"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16969"/>
+    <sbol:role rdf:resource="http://edamontology.org/data_2133"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16970/1">
+    <dcterms:description>Description: This yeast strain has XOR gate logic comprised of 6 genetic elements and Inputs 0_0. Genotype: pMOD8-pGRR-r2r3-RGR-r9|pMOD6-pGRR-r1r9-RGR-r7|pMOD-LTR3-Hyg-pGRR-r6r6-RGR-r1|pMOD4G-dCas9-Mxi1|pMOD6-r5r7-yeGFP|pMOD-LTR2-Bleo-r6r3-RGR-r7. Literature: M. Gander, J. Vrana, W. Voje, J. Carothers &amp;amp; E. Klavins "Digital logic circuits in yeast with CRISPR-dCas9 NOR gates" Nature Communications volume 8, 15459 (2017).</dcterms:description>
+    <dcterms:title>UWBF_XOR_00</dcterms:title>
+    <sbol:displayId>UWBF_16970</sbol:displayId>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16970/UWBIOFAB_22544/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>UWBIOFAB_22544</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16970/UWBIOFAB_22544"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16970/YG_plasmid_001/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_001</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16970/YG_plasmid_001"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16970/YG_plasmid_005/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_005</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16970/YG_plasmid_005"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16970/YG_plasmid_014/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_014</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16970/YG_plasmid_014"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16970/YG_plasmid_015/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_015</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16970/YG_plasmid_015"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16970/YG_plasmid_017/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_017</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16970/YG_plasmid_017"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16970/YG_plasmid_021/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_021</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16970/YG_plasmid_021"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16970"/>
+    <sbol:role rdf:resource="http://edamontology.org/data_2133"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_5783/1">
+    <dcterms:description>Description: This yeast strain has OR gate logic comprised of 4 genetic elements and Inputs 1_0. Genotype: pMOD4G-dCas9-Mxi1|pMOD6-r5r7-yeGFP|pMOD-LTR2-Bleo-r6r3-RGR-r7|pMOD6-pGRR-r2-RGR-r6. Literature: M. Gander, J. Vrana, W. Voje, J. Carothers &amp;amp; E. Klavins "Digital logic circuits in yeast with CRISPR-dCas9 NOR gates" Nature Communications volume 8, 15459 (2017).</dcterms:description>
+    <dcterms:title>UWBF_OR_10</dcterms:title>
+    <sbol:displayId>UWBF_5783</sbol:displayId>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_5783/UWBIOFAB_22544/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>UWBIOFAB_22544</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_5783/UWBIOFAB_22544"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_5783/YG_plasmid_001/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_001</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_5783/YG_plasmid_001"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_5783/YG_plasmid_014/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_014</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_5783/YG_plasmid_014"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_5783/YG_plasmid_018/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_018</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_5783/YG_plasmid_018"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_5783/YG_plasmid_021/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_021</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_5783/YG_plasmid_021"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_5783"/>
+    <sbol:role rdf:resource="http://edamontology.org/data_2133"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_5992/1">
+    <dcterms:description>Description: This yeast strain has OR gate logic comprised of 5 genetic elements and Inputs 1_1. Genotype: pMOD4G-dCas9-Mxi1|pMOD6-r5r7-yeGFP|pMOD-LTR2-Bleo-r6r3-RGR-r7|pMOD8A-RGR-r3|pMOD6-pGRR-r2-RGR-r6. Literature: M. Gander, J. Vrana, W. Voje, J. Carothers &amp;amp; E. Klavins "Digital logic circuits in yeast with CRISPR-dCas9 NOR gates" Nature Communications volume 8, 15459 (2017).</dcterms:description>
+    <dcterms:title>UWBF_OR_11</dcterms:title>
+    <sbol:displayId>UWBF_5992</sbol:displayId>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_5992/UWBIOFAB_22544/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>UWBIOFAB_22544</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_5992/UWBIOFAB_22544"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_5992/YG_plasmid_001/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_001</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_5992/YG_plasmid_001"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_5992/YG_plasmid_003/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_003</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_5992/YG_plasmid_003"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_5992/YG_plasmid_014/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_014</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_5992/YG_plasmid_014"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_5992/YG_plasmid_018/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_018</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_5992/YG_plasmid_018"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_5992/YG_plasmid_021/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_021</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_5992/YG_plasmid_021"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_5992"/>
+    <sbol:role rdf:resource="http://edamontology.org/data_2133"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_5993/1">
+    <dcterms:description>Description: This yeast strain has OR gate logic comprised of 4 genetic elements and Inputs 0_1. Genotype: pMOD4G-dCas9-Mxi1|pMOD6-r5r7-yeGFP|pMOD-LTR2-Bleo-r6r3-RGR-r7|pMOD8A-RGR-r3. Literature: M. Gander, J. Vrana, W. Voje, J. Carothers &amp;amp; E. Klavins "Digital logic circuits in yeast with CRISPR-dCas9 NOR gates" Nature Communications volume 8, 15459 (2017).</dcterms:description>
+    <dcterms:title>UWBF_OR_01</dcterms:title>
+    <sbol:displayId>UWBF_5993</sbol:displayId>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_5993/UWBIOFAB_22544/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>UWBIOFAB_22544</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_5993/UWBIOFAB_22544"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_5993/YG_plasmid_001/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_001</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_5993/YG_plasmid_001"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_5993/YG_plasmid_003/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_003</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_5993/YG_plasmid_003"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_5993/YG_plasmid_014/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_014</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_5993/YG_plasmid_014"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_5993/YG_plasmid_021/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_021</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_5993/YG_plasmid_021"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_5993"/>
+    <sbol:role rdf:resource="http://edamontology.org/data_2133"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_6388/1">
+    <dcterms:description>Description: This yeast strain has NOR gate logic comprised of 3 genetic elements and Inputs 0_1. Genotype: pMOD_TRP_pGPD-dcas9-mxi1|pMOD_URA_-r5r7-yeGFP|pMOD_HIS_pADH1-RGR-r5. Literature: M. Gander, J. Vrana, W. Voje, J. Carothers &amp;amp; E. Klavins "Digital logic circuits in yeast with CRISPR-dCas9 NOR gates" Nature Communications volume 8, 15459 (2017).</dcterms:description>
+    <dcterms:title>UWBF_NOR_01</dcterms:title>
+    <sbol:displayId>UWBF_6388</sbol:displayId>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_6388/UWBIOFAB_22544/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>UWBIOFAB_22544</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_6388/UWBIOFAB_22544"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_6388/YG_plasmid_001/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_001</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_6388/YG_plasmid_001"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_6388/YG_plasmid_003/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_003</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_6388/YG_plasmid_003"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_6388/YG_plasmid_023/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_023</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_6388/YG_plasmid_023"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_6388"/>
+    <sbol:role rdf:resource="http://edamontology.org/data_2133"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_6389/1">
+    <dcterms:description>Description: This yeast strain has NOR gate logic comprised of 3 genetic elements and Inputs 1_0. Genotype: pMOD_TRP_pGPD-dcas9-mxi1|pMOD_URA_-r5r7-yeGFP|pMOD_HIS_pADH1-RGR-r7. Literature: M. Gander, J. Vrana, W. Voje, J. Carothers &amp;amp; E. Klavins "Digital logic circuits in yeast with CRISPR-dCas9 NOR gates" Nature Communications volume 8, 15459 (2017).</dcterms:description>
+    <dcterms:title>UWBF_NOR_10</dcterms:title>
+    <sbol:displayId>UWBF_6389</sbol:displayId>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_6389/UWBIOFAB_22544/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>UWBIOFAB_22544</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_6389/UWBIOFAB_22544"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_6389/YG_plasmid_001/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_001</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_6389/YG_plasmid_001"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_6389/YG_plasmid_021/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_021</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_6389/YG_plasmid_021"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_6389/YG_plasmid_024/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_024</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_6389/YG_plasmid_024"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_6389"/>
+    <sbol:role rdf:resource="http://edamontology.org/data_2133"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_6390/1">
+    <dcterms:description>Description: This yeast strain has NOR gate logic comprised of 3 genetic elements and Inputs 0_0. Genotype: pMOD_TRP_pGPD-dcas9-mxi1|pMOD_URA_-r5r7-yeGFP|pMOD_HIS_pADH1-RGR-r3. Literature: M. Gander, J. Vrana, W. Voje, J. Carothers &amp;amp; E. Klavins "Digital logic circuits in yeast with CRISPR-dCas9 NOR gates" Nature Communications volume 8, 15459 (2017).</dcterms:description>
+    <dcterms:title>UWBF_NOR_00</dcterms:title>
+    <sbol:displayId>UWBF_6390</sbol:displayId>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_6390/UWBIOFAB_22544/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>UWBIOFAB_22544</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_6390/UWBIOFAB_22544"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_6390/YG_plasmid_001/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_001</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_6390/YG_plasmid_001"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_6390/YG_plasmid_003/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_003</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_6390/YG_plasmid_003"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_6390/YG_plasmid_021/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_021</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_6390/YG_plasmid_021"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_6390"/>
+    <sbol:role rdf:resource="http://edamontology.org/data_2133"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_6391/1">
+    <dcterms:description>Description: This yeast strain has NOR gate logic comprised of 4 genetic elements and Inputs 1_1. Genotype: pMOD_TRP_pGPD-dcas9-mxi1|pMOD_URA_-r5r7-yeGFP|pMOD_HIS_pADH1-RGR-r7|pMOD-LTR3-Hyg-pGRR-r10-RGR-r5. Literature: M. Gander, J. Vrana, W. Voje, J. Carothers &amp;amp; E. Klavins "Digital logic circuits in yeast with CRISPR-dCas9 NOR gates" Nature Communications volume 8, 15459 (2017).</dcterms:description>
+    <dcterms:title>UWBF_NOR_11</dcterms:title>
+    <sbol:displayId>UWBF_6391</sbol:displayId>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_6391/UWBIOFAB_22544/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>UWBIOFAB_22544</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_6391/UWBIOFAB_22544"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_6391/YG_plasmid_001/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_001</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_6391/YG_plasmid_001"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_6391/YG_plasmid_021/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_021</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_6391/YG_plasmid_021"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_6391/YG_plasmid_024/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_024</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_6391/YG_plasmid_024"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_6391/YG_plasmid_025/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_025</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_6391/YG_plasmid_025"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_6391"/>
+    <sbol:role rdf:resource="http://edamontology.org/data_2133"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7299/1">
+    <dcterms:description>Description: This yeast strain has XNOR gate logic comprised of 7 genetic elements and Inputs 1_1. Genotype: pMOD4G-dcas9-mxi1|pMOD6-pGRR-r3r1-yeGFP|pMOD8-pGRR-r10r7-RGR-r3|pMOD-LTR2-Bleo-pGRR-r2r7-RGR-r1|pMOD8A-RGR-r2|pMOD-HOKan-pGRR-r10r2-RGR-r7|pMOD-LTR3-HygMX-pGRR-RGR-r10. Literature: M. Gander, J. Vrana, W. Voje, J. Carothers &amp;amp; E. Klavins "Digital logic circuits in yeast with CRISPR-dCas9 NOR gates" Nature Communications volume 8, 15459 (2017).</dcterms:description>
+    <dcterms:title>UWBF_XNOR_11</dcterms:title>
+    <sbol:displayId>UWBF_7299</sbol:displayId>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7299/UWBIOFAB_22544/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>UWBIOFAB_22544</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7299/UWBIOFAB_22544"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7299/YG_plasmid_001/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_001</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7299/YG_plasmid_001"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7299/YG_plasmid_002/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_002</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7299/YG_plasmid_002"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7299/YG_plasmid_004/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_004</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7299/YG_plasmid_004"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7299/YG_plasmid_008/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_008</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7299/YG_plasmid_008"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7299/YG_plasmid_012/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_012</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7299/YG_plasmid_012"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7299/YG_plasmid_016/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_016</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7299/YG_plasmid_016"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7299/YG_plasmid_020/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_020</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7299/YG_plasmid_020"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7299"/>
+    <sbol:role rdf:resource="http://edamontology.org/data_2133"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7300/1">
+    <dcterms:description>Description: This yeast strain has XNOR gate logic comprised of 5 genetic elements and Inputs 0_0. Genotype: pMOD4G-dcas9-mxi1|pMOD6-pGRR-r3r1-yeGFP|pMOD8-pGRR-r10r7-RGR-r3|pMOD-LTR2-Bleo-pGRR-r2r7-RGR-r1|pMOD-HOKan-pGRR-r10r2-RGR-r7. Literature: M. Gander, J. Vrana, W. Voje, J. Carothers &amp;amp; E. Klavins "Digital logic circuits in yeast with CRISPR-dCas9 NOR gates" Nature Communications volume 8, 15459 (2017).</dcterms:description>
+    <dcterms:title>UWBF_XNOR_00</dcterms:title>
+    <sbol:displayId>UWBF_7300</sbol:displayId>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7300/UWBIOFAB_22544/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>UWBIOFAB_22544</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7300/UWBIOFAB_22544"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7300/YG_plasmid_001/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_001</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7300/YG_plasmid_001"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7300/YG_plasmid_004/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_004</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7300/YG_plasmid_004"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7300/YG_plasmid_008/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_008</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7300/YG_plasmid_008"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7300/YG_plasmid_012/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_012</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7300/YG_plasmid_012"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7300"/>
+    <sbol:role rdf:resource="http://edamontology.org/data_2133"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7373/1">
+    <dcterms:description>Description: This yeast strain has AND gate logic comprised of 5 genetic elements and Inputs 1_0. Genotype: pMOD4G-dcas9-mxi1|pMOD6-r5r7-yeGFP|pMOD-HOKan-pGRR-r10r2-RGR-r7|pMOD-LTR1-Nat-pGRR-r10-RGR-r1|pMOD6-pGRR-r3r1-RGR-r5. Literature: M. Gander, J. Vrana, W. Voje, J. Carothers &amp;amp; E. Klavins "Digital logic circuits in yeast with CRISPR-dCas9 NOR gates" Nature Communications volume 8, 15459 (2017).</dcterms:description>
+    <dcterms:title>UWBF_AND_10</dcterms:title>
+    <sbol:displayId>UWBF_7373</sbol:displayId>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7373/UWBIOFAB_22544/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>UWBIOFAB_22544</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7373/UWBIOFAB_22544"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7373/YG_plasmid_001/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_001</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7373/YG_plasmid_001"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7373/YG_plasmid_008/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_008</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7373/YG_plasmid_008"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7373/YG_plasmid_009/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_009</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7373/YG_plasmid_009"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7373/YG_plasmid_019/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_019</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7373/YG_plasmid_019"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7373/YG_plasmid_021/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_021</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7373/YG_plasmid_021"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7373"/>
+    <sbol:role rdf:resource="http://edamontology.org/data_2133"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7374/1">
+    <dcterms:description>Description: This yeast strain has AND gate logic comprised of 6 genetic elements and Inputs 1_1. Genotype: pMOD4G-dcas9-mxi|pMOD8-URGR-r2|pMOD6-r5r7-yeGFP|pMOD-HOKan-pGRR-r10r2-RGR-r7|pMOD-LTR1-Nat-pGRR-r10-RGR-r1|pMOD6-pGRR-r3r1-RGR-r5. Literature: M. Gander, J. Vrana, W. Voje, J. Carothers &amp;amp; E. Klavins "Digital logic circuits in yeast with CRISPR-dCas9 NOR gates" Nature Communications volume 8, 15459 (2017).</dcterms:description>
+    <dcterms:title>UWBF_AND_11</dcterms:title>
+    <sbol:displayId>UWBF_7374</sbol:displayId>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7374/UWBIOFAB_22544/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>UWBIOFAB_22544</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7374/UWBIOFAB_22544"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7374/YG_plasmid_001/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_001</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7374/YG_plasmid_001"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7374/YG_plasmid_006/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_006</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7374/YG_plasmid_006"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7374/YG_plasmid_008/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_008</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7374/YG_plasmid_008"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7374/YG_plasmid_009/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_009</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7374/YG_plasmid_009"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7374/YG_plasmid_019/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_019</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7374/YG_plasmid_019"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7374/YG_plasmid_021/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_021</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7374/YG_plasmid_021"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7374"/>
+    <sbol:role rdf:resource="http://edamontology.org/data_2133"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7375/1">
+    <dcterms:description>Description: This yeast strain has AND gate logic comprised of 5 genetic elements and Inputs 0_1. Genotype: pMOD4G-dcas9-mxi1|pMOD8-URGR-r2|pMOD6-r5r7-yeGFP|pMOD-HOKan-pGRR-r10r2-RGR-r7|pMOD6-pGRR-r3r1-RGR-r5. Literature: M. Gander, J. Vrana, W. Voje, J. Carothers &amp;amp; E. Klavins "Digital logic circuits in yeast with CRISPR-dCas9 NOR gates" Nature Communications volume 8, 15459 (2017).</dcterms:description>
+    <dcterms:title>UWBF_AND_01</dcterms:title>
+    <sbol:displayId>UWBF_7375</sbol:displayId>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7375/UWBIOFAB_22544/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>UWBIOFAB_22544</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7375/UWBIOFAB_22544"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7375/YG_plasmid_001/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_001</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7375/YG_plasmid_001"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7375/YG_plasmid_006/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_006</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7375/YG_plasmid_006"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7375/YG_plasmid_008/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_008</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7375/YG_plasmid_008"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7375/YG_plasmid_019/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_019</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7375/YG_plasmid_019"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7375/YG_plasmid_021/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_021</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7375/YG_plasmid_021"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7375"/>
+    <sbol:role rdf:resource="http://edamontology.org/data_2133"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7376/1">
+    <dcterms:description>Description: This yeast strain has AND gate logic comprised of 4 genetic elements and Inputs 0_0. Genotype: pMOD6-pGRR-r3r1-RGR-r5|pMOD4G-dCas9-Mxi1|pMOD6-r5r7-yeGFP|pMOD-HOKan-pGRR-r10r2-RGR-r7. Literature: M. Gander, J. Vrana, W. Voje, J. Carothers &amp;amp; E. Klavins "Digital logic circuits in yeast with CRISPR-dCas9 NOR gates" Nature Communications volume 8, 15459 (2017).</dcterms:description>
+    <dcterms:title>UWBF_AND_00</dcterms:title>
+    <sbol:displayId>UWBF_7376</sbol:displayId>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7376/UWBIOFAB_22544/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>UWBIOFAB_22544</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7376/UWBIOFAB_22544"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7376/YG_plasmid_001/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_001</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7376/YG_plasmid_001"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7376/YG_plasmid_008/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_008</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7376/YG_plasmid_008"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7376/YG_plasmid_019/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_019</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7376/YG_plasmid_019"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7376/YG_plasmid_021/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_021</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7376/YG_plasmid_021"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7376"/>
+    <sbol:role rdf:resource="http://edamontology.org/data_2133"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7377/1">
+    <dcterms:description>Description: This yeast strain has XNOR gate logic comprised of 6 genetic elements and Inputs 1_0. Genotype: pMOD4G-dcas9-mxi1|pMOD6-pGRR-r3r1-yeGFP|pMOD8-pGRR-r10r7-RGR-r3|pMOD-LTR2-Bleo-pGRR-r2r7-RGR-r1|pMOD8A-RGR-r2|pMOD-HOKan-pGRR-r10r2-RGR-r7. Literature: M. Gander, J. Vrana, W. Voje, J. Carothers &amp;amp; E. Klavins "Digital logic circuits in yeast with CRISPR-dCas9 NOR gates" Nature Communications volume 8, 15459 (2017).</dcterms:description>
+    <dcterms:title>UWBF_XNOR_10</dcterms:title>
+    <sbol:displayId>UWBF_7377</sbol:displayId>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7377/UWBIOFAB_22544/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>UWBIOFAB_22544</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7377/UWBIOFAB_22544"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7377/YG_plasmid_001/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_001</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7377/YG_plasmid_001"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7377/YG_plasmid_002/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_002</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7377/YG_plasmid_002"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7377/YG_plasmid_004/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_004</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7377/YG_plasmid_004"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7377/YG_plasmid_008/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_008</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7377/YG_plasmid_008"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7377/YG_plasmid_012/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_012</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7377/YG_plasmid_012"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7377/YG_plasmid_020/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_020</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7377/YG_plasmid_020"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7377"/>
+    <sbol:role rdf:resource="http://edamontology.org/data_2133"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8225/1">
+    <dcterms:description>Description: This yeast strain has OR gate logic comprised of 3 genetic elements and Inputs 0_0. Genotype: pMOD4G-dCas9-Mxi1|pMOD6-r5r7-yeGFP|pMOD-LTR2-Bleo-r6r3-RGR-r7|pMOD8. Literature: M. Gander, J. Vrana, W. Voje, J. Carothers &amp;amp; E. Klavins "Digital logic circuits in yeast with CRISPR-dCas9 NOR gates" Nature Communications volume 8, 15459 (2017).</dcterms:description>
+    <dcterms:title>UWBF_OR_00</dcterms:title>
+    <sbol:displayId>UWBF_8225</sbol:displayId>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8225/UWBIOFAB_22544/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>UWBIOFAB_22544</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8225/UWBIOFAB_22544"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8225/YG_plasmid_001/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_001</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8225/YG_plasmid_001"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8225/YG_plasmid_014/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_014</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8225/YG_plasmid_014"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8225/YG_plasmid_021/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_021</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8225/YG_plasmid_021"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8225"/>
+    <sbol:role rdf:resource="http://edamontology.org/data_2133"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8231/1">
+    <dcterms:description>Description: This yeast strain has XNOR gate logic comprised of 6 genetic elements and Inputs 0_1. Genotype: pMOD4G-dcas9-mxi1|pMOD6-pGRR-r3r1-yeGFP|pMOD8-pGRR-r10r7-RGR-r3|pMOD-LTR2-Bleo-pGRR-r7r2-RGR-r1|pMOD-HOKan-pGRR-r10r2-RGR-r7|pMOD-LTR2-BleoMX-pGRR-r4-RGR-r10. Literature: M. Gander, J. Vrana, W. Voje, J. Carothers &amp;amp; E. Klavins "Digital logic circuits in yeast with CRISPR-dCas9 NOR gates" Nature Communications volume 8, 15459 (2017).</dcterms:description>
+    <dcterms:title>UWBF_XNOR_01</dcterms:title>
+    <sbol:displayId>UWBF_8231</sbol:displayId>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8231/UWBIOFAB_22544/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>UWBIOFAB_22544</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8231/UWBIOFAB_22544"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8231/YG_plasmid_001/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_001</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8231/YG_plasmid_001"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8231/YG_plasmid_004/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_004</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8231/YG_plasmid_004"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8231/YG_plasmid_008/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_008</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8231/YG_plasmid_008"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8231/YG_plasmid_012/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_012</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8231/YG_plasmid_012"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8231/YG_plasmid_020/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_020</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8231/YG_plasmid_020"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8231/YG_plasmid_022/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_022</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8231/YG_plasmid_022"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8231"/>
+    <sbol:role rdf:resource="http://edamontology.org/data_2133"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8542/1">
+    <dcterms:description>Description: This yeast strain has NAND gate logic comprised of 9 genetic elements and Inputs 1_1. Genotype: pMOD4G-dcas9-mxi1|pMOD6-r5r7-yeGFP|pMOD-HOKan-pGRR-r10r2-RGR-r7|pMOD-LTR1-Nat-pGRR-r10-RGR-r1|pMOD6-pGRR-r3r1-RGR-r5|pMOD-LTR2-bleo-pGRR-r2r2-RGR-r3|pMOD-LTR3-HygMX-GPD-RGR-r10|pMOD8A-RGR-r2|pMOD-HOKan-Leu2. Literature: M. Gander, J. Vrana, W. Voje, J. Carothers &amp;amp; E. Klavins "Digital logic circuits in yeast with CRISPR-dCas9 NOR gates" Nature Communications volume 8, 15459 (2017).</dcterms:description>
+    <dcterms:title>UWBF_NAND_11</dcterms:title>
+    <sbol:displayId>UWBF_8542</sbol:displayId>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8542/UWBIOFAB_22544/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>UWBIOFAB_22544</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8542/UWBIOFAB_22544"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8542/YG_plasmid_001/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_001</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8542/YG_plasmid_001"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8542/YG_plasmid_006/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_006</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8542/YG_plasmid_006"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8542/YG_plasmid_007/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_007</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8542/YG_plasmid_007"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8542/YG_plasmid_008/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_008</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8542/YG_plasmid_008"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8542/YG_plasmid_009/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_009</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8542/YG_plasmid_009"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8542/YG_plasmid_011/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_011</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8542/YG_plasmid_011"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8542/YG_plasmid_016/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_016</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8542/YG_plasmid_016"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8542/YG_plasmid_019/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_019</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8542/YG_plasmid_019"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8542/YG_plasmid_021/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_021</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8542/YG_plasmid_021"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8542"/>
+    <sbol:role rdf:resource="http://edamontology.org/data_2133"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8543/1">
+    <dcterms:description>Description: This yeast strain has NAND gate logic comprised of 8 genetic elements and Inputs 1_0. Genotype: pMOD4G-dcas9-mxi1|pMOD6-r5r7-yeGFP|pMOD-HOKan-pGRR-r10r2-RGR-r7|pMOD-LTR1-Nat-pGRR-r10-RGR-r1|pMOD6-pGRR-r3r1-RGR-r5|pMOD-LTR2-bleo-pGRR-r2r2-RGR-r3|pMOD8A-RGR-r2|pMOD-HOKan-Leu2. Literature: M. Gander, J. Vrana, W. Voje, J. Carothers &amp;amp; E. Klavins "Digital logic circuits in yeast with CRISPR-dCas9 NOR gates" Nature Communications volume 8, 15459 (2017).</dcterms:description>
+    <dcterms:title>UWBF_NAND_10</dcterms:title>
+    <sbol:displayId>UWBF_8543</sbol:displayId>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8543/UWBIOFAB_22544/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>UWBIOFAB_22544</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8543/UWBIOFAB_22544"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8543/YG_plasmid_001/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_001</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8543/YG_plasmid_001"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8543/YG_plasmid_002/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_002</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8543/YG_plasmid_002"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8543/YG_plasmid_007/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_007</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8543/YG_plasmid_007"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8543/YG_plasmid_008/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_008</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8543/YG_plasmid_008"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8543/YG_plasmid_009/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_009</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8543/YG_plasmid_009"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8543/YG_plasmid_011/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_011</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8543/YG_plasmid_011"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8543/YG_plasmid_019/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_019</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8543/YG_plasmid_019"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8543/YG_plasmid_021/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_021</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8543/YG_plasmid_021"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8543"/>
+    <sbol:role rdf:resource="http://edamontology.org/data_2133"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8544/1">
+    <dcterms:description>Description: This yeast strain has NAND gate logic comprised of 7 genetic elements and Inputs 0_0. Genotype: pMOD4G-dcas9-mxi1|pMOD6-r5r7-yeGFP|pMOD-HOKan-pGRR-r10r2-RGR-r7|pMOD-LTR1-Nat-pGRR-r10-RGR-r1|pMOD6-pGRR-r3r1-RGR-r5|pMOD-LTR2-bleo-pGRR-r2r2-RGR-r3|pMOD-HOKan-Leu2. Literature: M. Gander, J. Vrana, W. Voje, J. Carothers &amp;amp; E. Klavins "Digital logic circuits in yeast with CRISPR-dCas9 NOR gates" Nature Communications volume 8, 15459 (2017).</dcterms:description>
+    <dcterms:title>UWBF_NAND_00</dcterms:title>
+    <sbol:displayId>UWBF_8544</sbol:displayId>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8544/UWBIOFAB_22544/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>UWBIOFAB_22544</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8544/UWBIOFAB_22544"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8544/YG_plasmid_001/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_001</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8544/YG_plasmid_001"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8544/YG_plasmid_007/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_007</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8544/YG_plasmid_007"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8544/YG_plasmid_008/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_008</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8544/YG_plasmid_008"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8544/YG_plasmid_009/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_009</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8544/YG_plasmid_009"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8544/YG_plasmid_011/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_011</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8544/YG_plasmid_011"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8544/YG_plasmid_019/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_019</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8544/YG_plasmid_019"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8544/YG_plasmid_021/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_021</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8544/YG_plasmid_021"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8544"/>
+    <sbol:role rdf:resource="http://edamontology.org/data_2133"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8545/1">
+    <dcterms:description>Description: This yeast strain has NAND gate logic comprised of 8 genetic elements and Inputs 0_1. Genotype: pMOD4G-dcas9-mxi1|pMOD6-r5r7-yeGFP|pMOD-HOKan-pGRR-r10r2-RGR-r7|pMOD-LTR1-Nat-pGRR-r10-RGR-r1|pMOD6-pGRR-r3r1-RGR-r5|pMOD-LTR2-bleo-pGRR-r2r2-RGR-r3|pMOD-LTR3-HygMX-GPD-RGR-r10|pMOD-HOKan-Leu2. Literature: M. Gander, J. Vrana, W. Voje, J. Carothers &amp;amp; E. Klavins "Digital logic circuits in yeast with CRISPR-dCas9 NOR gates" Nature Communications volume 8, 15459 (2017).</dcterms:description>
+    <dcterms:title>UWBF_NAND_01</dcterms:title>
+    <sbol:displayId>UWBF_8545</sbol:displayId>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8545/UWBIOFAB_22544/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>UWBIOFAB_22544</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8545/UWBIOFAB_22544"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8545/YG_plasmid_001/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_001</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8545/YG_plasmid_001"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8545/YG_plasmid_007/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_007</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8545/YG_plasmid_007"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8545/YG_plasmid_008/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_008</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8545/YG_plasmid_008"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8545/YG_plasmid_009/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_009</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8545/YG_plasmid_009"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8545/YG_plasmid_011/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_011</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8545/YG_plasmid_011"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8545/YG_plasmid_016/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_016</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8545/YG_plasmid_016"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8545/YG_plasmid_019/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_019</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8545/YG_plasmid_019"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8545/YG_plasmid_021/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>YG_plasmid_021</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8545/YG_plasmid_021"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8545"/>
+    <sbol:role rdf:resource="http://edamontology.org/data_2133"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+  <sbol:ComponentDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBIOFAB_22544/1">
+    <dcterms:description>This is the background wild type strain for Yeast Gates strains.</dcterms:description>
+    <dcterms:title>UWBIOFAB_22544</dcterms:title>
+    <sbol:displayId>UWBIOFAB_22544</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBIOFAB_22544"/>
+    <sbol:type rdf:resource="http://purl.obolibrary.org/obo/NCIT_C14419"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ComponentDefinition>
+  <sbol:ModuleDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_001/1">
+    <dcterms:description>Yeast Gates standard growth conditions growth media.</dcterms:description>
+    <dcterms:title>Synthetic_Complete</dcterms:title>
+    <sbol:displayId>YG_media_001</sbol:displayId>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_001/CAT_147440250/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>CAT_147440250</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_001/CAT_147440250"/>
+        <sbol:version>1</sbol:version>
+        <om:measure>
+          <om:Measure rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_001/CAT_147440250/concentration/1">
+            <dcterms:title>concentration</dcterms:title>
+            <sbol:displayId>concentration</sbol:displayId>
+            <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_001/CAT_147440250/concentration"/>
+            <sbol:version>1</sbol:version>
+            <om:hasNumericalValue>0.080000</om:hasNumericalValue>
+            <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/gramPerLitre/1"/>
+          </om:Measure>
+        </om:measure>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_001/CAT_157300250/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>CAT_157300250</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_001/CAT_157300250"/>
+        <sbol:version>1</sbol:version>
+        <om:measure>
+          <om:Measure rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_001/CAT_157300250/concentration/1">
+            <dcterms:title>concentration</dcterms:title>
+            <sbol:displayId>concentration</sbol:displayId>
+            <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_001/CAT_157300250/concentration"/>
+            <sbol:version>1</sbol:version>
+            <om:hasNumericalValue>0.025000</om:hasNumericalValue>
+            <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/gramPerLitre/1"/>
+          </om:Measure>
+        </om:measure>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_001/CAT_630425/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>CAT_630425</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_001/CAT_630425"/>
+        <sbol:version>1</sbol:version>
+        <om:measure>
+          <om:Measure rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_001/CAT_630425/concentration/1">
+            <dcterms:title>concentration</dcterms:title>
+            <sbol:displayId>concentration</sbol:displayId>
+            <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_001/CAT_630425/concentration"/>
+            <sbol:version>1</sbol:version>
+            <om:hasNumericalValue>1.400000</om:hasNumericalValue>
+            <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/gramPerLitre/1"/>
+          </om:Measure>
+        </om:measure>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_001/CAT_BP382_100/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>CAT_BP382_100</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_001/CAT_BP382_100"/>
+        <sbol:version>1</sbol:version>
+        <om:measure>
+          <om:Measure rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_001/CAT_BP382_100/concentration/1">
+            <dcterms:title>concentration</dcterms:title>
+            <sbol:displayId>concentration</sbol:displayId>
+            <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_001/CAT_BP382_100/concentration"/>
+            <sbol:version>1</sbol:version>
+            <om:hasNumericalValue>0.100000</om:hasNumericalValue>
+            <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/gramPerLitre/1"/>
+          </om:Measure>
+        </om:measure>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_001/CAT_BP385_100/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>CAT_BP385_100</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_001/CAT_BP385_100"/>
+        <sbol:version>1</sbol:version>
+        <om:measure>
+          <om:Measure rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_001/CAT_BP385_100/concentration/1">
+            <dcterms:title>concentration</dcterms:title>
+            <sbol:displayId>concentration</sbol:displayId>
+            <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_001/CAT_BP385_100/concentration"/>
+            <sbol:version>1</sbol:version>
+            <om:hasNumericalValue>0.100000</om:hasNumericalValue>
+            <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/gramPerLitre/1"/>
+          </om:Measure>
+        </om:measure>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_001/CAT_BP395_100/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>CAT_BP395_100</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_001/CAT_BP395_100"/>
+        <sbol:version>1</sbol:version>
+        <om:measure>
+          <om:Measure rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_001/CAT_BP395_100/concentration/1">
+            <dcterms:title>concentration</dcterms:title>
+            <sbol:displayId>concentration</sbol:displayId>
+            <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_001/CAT_BP395_100/concentration"/>
+            <sbol:version>1</sbol:version>
+            <om:hasNumericalValue>0.100000</om:hasNumericalValue>
+            <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/gramPerLitre/1"/>
+          </om:Measure>
+        </om:measure>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_001/CAT_D16_3/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>CAT_D16_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_001/CAT_D16_3"/>
+        <sbol:version>1</sbol:version>
+        <om:measure>
+          <om:Measure rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_001/CAT_D16_3/concentration/1">
+            <dcterms:title>concentration</dcterms:title>
+            <sbol:displayId>concentration</sbol:displayId>
+            <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_001/CAT_D16_3/concentration"/>
+            <sbol:version>1</sbol:version>
+            <om:hasNumericalValue>20.000000</om:hasNumericalValue>
+            <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/gramPerLitre/1"/>
+          </om:Measure>
+        </om:measure>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_001/CAT_R459942/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>CAT_R459942</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_001/CAT_R459942"/>
+        <sbol:version>1</sbol:version>
+        <om:measure>
+          <om:Measure rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_001/CAT_R459942/concentration/1">
+            <dcterms:title>concentration</dcterms:title>
+            <sbol:displayId>concentration</sbol:displayId>
+            <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_001/CAT_R459942/concentration"/>
+            <sbol:version>1</sbol:version>
+            <om:hasNumericalValue>6.700000</om:hasNumericalValue>
+            <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/gramPerLitre/1"/>
+          </om:Measure>
+        </om:measure>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_001/ddH2O/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>ddH2O</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_001/ddH2O"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_001"/>
+    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/OBI_0000079"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_002/1">
+    <dcterms:description>Slow growth non-fermentable carbon source media. Contains no Dextrose.</dcterms:description>
+    <dcterms:title>Synthetic_Complete_2%Glycerol_2%Ethanol</dcterms:title>
+    <sbol:displayId>YG_media_002</sbol:displayId>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_002/CAT_147440250/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>CAT_147440250</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_002/CAT_147440250"/>
+        <sbol:version>1</sbol:version>
+        <om:measure>
+          <om:Measure rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_002/CAT_147440250/concentration/1">
+            <dcterms:title>concentration</dcterms:title>
+            <sbol:displayId>concentration</sbol:displayId>
+            <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_002/CAT_147440250/concentration"/>
+            <sbol:version>1</sbol:version>
+            <om:hasNumericalValue>0.080000</om:hasNumericalValue>
+            <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/gramPerLitre/1"/>
+          </om:Measure>
+        </om:measure>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_002/CAT_157300250/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>CAT_157300250</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_002/CAT_157300250"/>
+        <sbol:version>1</sbol:version>
+        <om:measure>
+          <om:Measure rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_002/CAT_157300250/concentration/1">
+            <dcterms:title>concentration</dcterms:title>
+            <sbol:displayId>concentration</sbol:displayId>
+            <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_002/CAT_157300250/concentration"/>
+            <sbol:version>1</sbol:version>
+            <om:hasNumericalValue>0.025000</om:hasNumericalValue>
+            <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/gramPerLitre/1"/>
+          </om:Measure>
+        </om:measure>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_002/CAT_630425/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>CAT_630425</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_002/CAT_630425"/>
+        <sbol:version>1</sbol:version>
+        <om:measure>
+          <om:Measure rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_002/CAT_630425/concentration/1">
+            <dcterms:title>concentration</dcterms:title>
+            <sbol:displayId>concentration</sbol:displayId>
+            <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_002/CAT_630425/concentration"/>
+            <sbol:version>1</sbol:version>
+            <om:hasNumericalValue>1.400000</om:hasNumericalValue>
+            <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/gramPerLitre/1"/>
+          </om:Measure>
+        </om:measure>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_002/CAT_71006_012/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>CAT_71006_012</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_002/CAT_71006_012"/>
+        <sbol:version>1</sbol:version>
+        <om:measure>
+          <om:Measure rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_002/CAT_71006_012/concentration/1">
+            <dcterms:title>concentration</dcterms:title>
+            <sbol:displayId>concentration</sbol:displayId>
+            <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_002/CAT_71006_012/concentration"/>
+            <sbol:version>1</sbol:version>
+            <om:hasNumericalValue>15.780000</om:hasNumericalValue>
+            <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/gramPerLitre/1"/>
+          </om:Measure>
+        </om:measure>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_002/CAT_BP382_100/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>CAT_BP382_100</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_002/CAT_BP382_100"/>
+        <sbol:version>1</sbol:version>
+        <om:measure>
+          <om:Measure rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_002/CAT_BP382_100/concentration/1">
+            <dcterms:title>concentration</dcterms:title>
+            <sbol:displayId>concentration</sbol:displayId>
+            <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_002/CAT_BP382_100/concentration"/>
+            <sbol:version>1</sbol:version>
+            <om:hasNumericalValue>0.100000</om:hasNumericalValue>
+            <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/gramPerLitre/1"/>
+          </om:Measure>
+        </om:measure>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_002/CAT_BP385_100/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>CAT_BP385_100</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_002/CAT_BP385_100"/>
+        <sbol:version>1</sbol:version>
+        <om:measure>
+          <om:Measure rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_002/CAT_BP385_100/concentration/1">
+            <dcterms:title>concentration</dcterms:title>
+            <sbol:displayId>concentration</sbol:displayId>
+            <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_002/CAT_BP385_100/concentration"/>
+            <sbol:version>1</sbol:version>
+            <om:hasNumericalValue>0.100000</om:hasNumericalValue>
+            <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/gramPerLitre/1"/>
+          </om:Measure>
+        </om:measure>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_002/CAT_BP395_100/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>CAT_BP395_100</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_002/CAT_BP395_100"/>
+        <sbol:version>1</sbol:version>
+        <om:measure>
+          <om:Measure rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_002/CAT_BP395_100/concentration/1">
+            <dcterms:title>concentration</dcterms:title>
+            <sbol:displayId>concentration</sbol:displayId>
+            <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_002/CAT_BP395_100/concentration"/>
+            <sbol:version>1</sbol:version>
+            <om:hasNumericalValue>0.100000</om:hasNumericalValue>
+            <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/gramPerLitre/1"/>
+          </om:Measure>
+        </om:measure>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_002/CAT_G33_500/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>CAT_G33_500</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_002/CAT_G33_500"/>
+        <sbol:version>1</sbol:version>
+        <om:measure>
+          <om:Measure rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_002/CAT_G33_500/concentration/1">
+            <dcterms:title>concentration</dcterms:title>
+            <sbol:displayId>concentration</sbol:displayId>
+            <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_002/CAT_G33_500/concentration"/>
+            <sbol:version>1</sbol:version>
+            <om:hasNumericalValue>25.200000</om:hasNumericalValue>
+            <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/gramPerLitre/1"/>
+          </om:Measure>
+        </om:measure>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_002/CAT_R459942/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>CAT_R459942</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_002/CAT_R459942"/>
+        <sbol:version>1</sbol:version>
+        <om:measure>
+          <om:Measure rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_002/CAT_R459942/concentration/1">
+            <dcterms:title>concentration</dcterms:title>
+            <sbol:displayId>concentration</sbol:displayId>
+            <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_002/CAT_R459942/concentration"/>
+            <sbol:version>1</sbol:version>
+            <om:hasNumericalValue>6.700000</om:hasNumericalValue>
+            <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/gramPerLitre/1"/>
+          </om:Measure>
+        </om:measure>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_002/ddH2O/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>ddH2O</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_002/ddH2O"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_002"/>
+    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/OBI_0000079"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_003/1">
+    <dcterms:description>High osmotic pressure growth media. Contains Dextrose.</dcterms:description>
+    <dcterms:title>Synthetic_Complete_1%Sorbitol</dcterms:title>
+    <sbol:displayId>YG_media_003</sbol:displayId>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_147440250/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>CAT_147440250</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_147440250"/>
+        <sbol:version>1</sbol:version>
+        <om:measure>
+          <om:Measure rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_147440250/concentration/1">
+            <dcterms:title>concentration</dcterms:title>
+            <sbol:displayId>concentration</sbol:displayId>
+            <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_147440250/concentration"/>
+            <sbol:version>1</sbol:version>
+            <om:hasNumericalValue>0.080000</om:hasNumericalValue>
+            <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/gramPerLitre/1"/>
+          </om:Measure>
+        </om:measure>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_157300250/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>CAT_157300250</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_157300250"/>
+        <sbol:version>1</sbol:version>
+        <om:measure>
+          <om:Measure rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_157300250/concentration/1">
+            <dcterms:title>concentration</dcterms:title>
+            <sbol:displayId>concentration</sbol:displayId>
+            <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_157300250/concentration"/>
+            <sbol:version>1</sbol:version>
+            <om:hasNumericalValue>0.025000</om:hasNumericalValue>
+            <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/gramPerLitre/1"/>
+          </om:Measure>
+        </om:measure>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_630425/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>CAT_630425</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_630425"/>
+        <sbol:version>1</sbol:version>
+        <om:measure>
+          <om:Measure rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_630425/concentration/1">
+            <dcterms:title>concentration</dcterms:title>
+            <sbol:displayId>concentration</sbol:displayId>
+            <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_630425/concentration"/>
+            <sbol:version>1</sbol:version>
+            <om:hasNumericalValue>1.400000</om:hasNumericalValue>
+            <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/gramPerLitre/1"/>
+          </om:Measure>
+        </om:measure>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_BP382_100/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>CAT_BP382_100</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_BP382_100"/>
+        <sbol:version>1</sbol:version>
+        <om:measure>
+          <om:Measure rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_BP382_100/concentration/1">
+            <dcterms:title>concentration</dcterms:title>
+            <sbol:displayId>concentration</sbol:displayId>
+            <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_BP382_100/concentration"/>
+            <sbol:version>1</sbol:version>
+            <om:hasNumericalValue>0.100000</om:hasNumericalValue>
+            <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/gramPerLitre/1"/>
+          </om:Measure>
+        </om:measure>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_BP385_100/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>CAT_BP385_100</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_BP385_100"/>
+        <sbol:version>1</sbol:version>
+        <om:measure>
+          <om:Measure rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_BP385_100/concentration/1">
+            <dcterms:title>concentration</dcterms:title>
+            <sbol:displayId>concentration</sbol:displayId>
+            <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_BP385_100/concentration"/>
+            <sbol:version>1</sbol:version>
+            <om:hasNumericalValue>0.100000</om:hasNumericalValue>
+            <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/gramPerLitre/1"/>
+          </om:Measure>
+        </om:measure>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_BP395_100/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>CAT_BP395_100</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_BP395_100"/>
+        <sbol:version>1</sbol:version>
+        <om:measure>
+          <om:Measure rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_BP395_100/concentration/1">
+            <dcterms:title>concentration</dcterms:title>
+            <sbol:displayId>concentration</sbol:displayId>
+            <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_BP395_100/concentration"/>
+            <sbol:version>1</sbol:version>
+            <om:hasNumericalValue>0.100000</om:hasNumericalValue>
+            <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/gramPerLitre/1"/>
+          </om:Measure>
+        </om:measure>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_D16_3/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>CAT_D16_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_D16_3"/>
+        <sbol:version>1</sbol:version>
+        <om:measure>
+          <om:Measure rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_D16_3/concentration/1">
+            <dcterms:title>concentration</dcterms:title>
+            <sbol:displayId>concentration</sbol:displayId>
+            <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_D16_3/concentration"/>
+            <sbol:version>1</sbol:version>
+            <om:hasNumericalValue>20.000000</om:hasNumericalValue>
+            <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/gramPerLitre/1"/>
+          </om:Measure>
+        </om:measure>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_R459942/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>CAT_R459942</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_R459942"/>
+        <sbol:version>1</sbol:version>
+        <om:measure>
+          <om:Measure rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_R459942/concentration/1">
+            <dcterms:title>concentration</dcterms:title>
+            <sbol:displayId>concentration</sbol:displayId>
+            <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_R459942/concentration"/>
+            <sbol:version>1</sbol:version>
+            <om:hasNumericalValue>6.700000</om:hasNumericalValue>
+            <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/gramPerLitre/1"/>
+          </om:Measure>
+        </om:measure>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_S1876_1KG/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>CAT_S1876_1KG</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_S1876_1KG"/>
+        <sbol:version>1</sbol:version>
+        <om:measure>
+          <om:Measure rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_S1876_1KG/concentration/1">
+            <dcterms:title>concentration</dcterms:title>
+            <sbol:displayId>concentration</sbol:displayId>
+            <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_S1876_1KG/concentration"/>
+            <sbol:version>1</sbol:version>
+            <om:hasNumericalValue>10.000000</om:hasNumericalValue>
+            <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/gramPerLitre/1"/>
+          </om:Measure>
+        </om:measure>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_003/ddH2O/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>ddH2O</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_003/ddH2O"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_003"/>
+    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/OBI_0000079"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_004/1">
+    <dcterms:description>Nutrient rich, fast growth media.</dcterms:description>
+    <dcterms:title>Yeast_Extract_Peptone_Adenine_Dextrose</dcterms:title>
+    <sbol:displayId>YG_media_004</sbol:displayId>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_004/CAT_147440250/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>CAT_147440250</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_004/CAT_147440250"/>
+        <sbol:version>1</sbol:version>
+        <om:measure>
+          <om:Measure rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_004/CAT_147440250/concentration/1">
+            <dcterms:title>concentration</dcterms:title>
+            <sbol:displayId>concentration</sbol:displayId>
+            <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_004/CAT_147440250/concentration"/>
+            <sbol:version>1</sbol:version>
+            <om:hasNumericalValue>0.080000</om:hasNumericalValue>
+            <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/gramPerLitre/1"/>
+          </om:Measure>
+        </om:measure>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_004/CAT_90000_726/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>CAT_90000_726</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_004/CAT_90000_726"/>
+        <sbol:version>1</sbol:version>
+        <om:measure>
+          <om:Measure rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_004/CAT_90000_726/concentration/1">
+            <dcterms:title>concentration</dcterms:title>
+            <sbol:displayId>concentration</sbol:displayId>
+            <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_004/CAT_90000_726/concentration"/>
+            <sbol:version>1</sbol:version>
+            <om:hasNumericalValue>20.000000</om:hasNumericalValue>
+            <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/gramPerLitre/1"/>
+          </om:Measure>
+        </om:measure>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_004/CAT_D16_3/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>CAT_D16_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_004/CAT_D16_3"/>
+        <sbol:version>1</sbol:version>
+        <om:measure>
+          <om:Measure rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_004/CAT_D16_3/concentration/1">
+            <dcterms:title>concentration</dcterms:title>
+            <sbol:displayId>concentration</sbol:displayId>
+            <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_004/CAT_D16_3/concentration"/>
+            <sbol:version>1</sbol:version>
+            <om:hasNumericalValue>20.000000</om:hasNumericalValue>
+            <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/gramPerLitre/1"/>
+          </om:Measure>
+        </om:measure>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_004/CAT_DF0123_17_3/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>CAT_DF0123_17_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_004/CAT_DF0123_17_3"/>
+        <sbol:version>1</sbol:version>
+        <om:measure>
+          <om:Measure rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_004/CAT_DF0123_17_3/concentration/1">
+            <dcterms:title>concentration</dcterms:title>
+            <sbol:displayId>concentration</sbol:displayId>
+            <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_004/CAT_DF0123_17_3/concentration"/>
+            <sbol:version>1</sbol:version>
+            <om:hasNumericalValue>10.000000</om:hasNumericalValue>
+            <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/gramPerLitre/1"/>
+          </om:Measure>
+        </om:measure>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_004/ddH2O/1">
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>ddH2O</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_004/ddH2O"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_004"/>
+    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/OBI_0000079"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+  <sbol:ComponentDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_001/1">
+    <dcterms:title>YG_plasmid_001</dcterms:title>
+    <sbol:displayId>YG_plasmid_001</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_001"/>
+    <sbol:type rdf:resource="http://identifiers.org/so/SO:0000988"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_002/1">
+    <dcterms:title>YG_plasmid_002</dcterms:title>
+    <sbol:displayId>YG_plasmid_002</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_002"/>
+    <sbol:type rdf:resource="http://identifiers.org/so/SO:0000988"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_003/1">
+    <dcterms:title>YG_plasmid_003</dcterms:title>
+    <sbol:displayId>YG_plasmid_003</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_003"/>
+    <sbol:type rdf:resource="http://identifiers.org/so/SO:0000988"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_004/1">
+    <dcterms:title>YG_plasmid_004</dcterms:title>
+    <sbol:displayId>YG_plasmid_004</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_004"/>
+    <sbol:type rdf:resource="http://identifiers.org/so/SO:0000988"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_005/1">
+    <dcterms:title>YG_plasmid_005</dcterms:title>
+    <sbol:displayId>YG_plasmid_005</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_005"/>
+    <sbol:type rdf:resource="http://identifiers.org/so/SO:0000988"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_006/1">
+    <dcterms:title>YG_plasmid_006</dcterms:title>
+    <sbol:displayId>YG_plasmid_006</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_006"/>
+    <sbol:type rdf:resource="http://identifiers.org/so/SO:0000988"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_007/1">
+    <dcterms:title>YG_plasmid_007</dcterms:title>
+    <sbol:displayId>YG_plasmid_007</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_007"/>
+    <sbol:type rdf:resource="http://identifiers.org/so/SO:0000988"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_008/1">
+    <dcterms:title>YG_plasmid_008</dcterms:title>
+    <sbol:displayId>YG_plasmid_008</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_008"/>
+    <sbol:type rdf:resource="http://identifiers.org/so/SO:0000988"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_009/1">
+    <dcterms:title>YG_plasmid_009</dcterms:title>
+    <sbol:displayId>YG_plasmid_009</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_009"/>
+    <sbol:type rdf:resource="http://identifiers.org/so/SO:0000988"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_010/1">
+    <dcterms:title>YG_plasmid_010</dcterms:title>
+    <sbol:displayId>YG_plasmid_010</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_010"/>
+    <sbol:type rdf:resource="http://identifiers.org/so/SO:0000988"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_011/1">
+    <dcterms:title>YG_plasmid_011</dcterms:title>
+    <sbol:displayId>YG_plasmid_011</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_011"/>
+    <sbol:type rdf:resource="http://identifiers.org/so/SO:0000988"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_012/1">
+    <dcterms:title>YG_plasmid_012</dcterms:title>
+    <sbol:displayId>YG_plasmid_012</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_012"/>
+    <sbol:type rdf:resource="http://identifiers.org/so/SO:0000988"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_014/1">
+    <dcterms:title>YG_plasmid_014</dcterms:title>
+    <sbol:displayId>YG_plasmid_014</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_014"/>
+    <sbol:type rdf:resource="http://identifiers.org/so/SO:0000988"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_015/1">
+    <dcterms:title>YG_plasmid_015</dcterms:title>
+    <sbol:displayId>YG_plasmid_015</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_015"/>
+    <sbol:type rdf:resource="http://identifiers.org/so/SO:0000988"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_016/1">
+    <dcterms:title>YG_plasmid_016</dcterms:title>
+    <sbol:displayId>YG_plasmid_016</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_016"/>
+    <sbol:type rdf:resource="http://identifiers.org/so/SO:0000988"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_017/1">
+    <dcterms:title>YG_plasmid_017</dcterms:title>
+    <sbol:displayId>YG_plasmid_017</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_017"/>
+    <sbol:type rdf:resource="http://identifiers.org/so/SO:0000988"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_018/1">
+    <dcterms:title>YG_plasmid_018</dcterms:title>
+    <sbol:displayId>YG_plasmid_018</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_018"/>
+    <sbol:type rdf:resource="http://identifiers.org/so/SO:0000988"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_019/1">
+    <dcterms:title>YG_plasmid_019</dcterms:title>
+    <sbol:displayId>YG_plasmid_019</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_019"/>
+    <sbol:type rdf:resource="http://identifiers.org/so/SO:0000988"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_020/1">
+    <dcterms:title>YG_plasmid_020</dcterms:title>
+    <sbol:displayId>YG_plasmid_020</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_020"/>
+    <sbol:type rdf:resource="http://identifiers.org/so/SO:0000988"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_021/1">
+    <dcterms:title>YG_plasmid_021</dcterms:title>
+    <sbol:displayId>YG_plasmid_021</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_021"/>
+    <sbol:type rdf:resource="http://identifiers.org/so/SO:0000988"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_022/1">
+    <dcterms:title>YG_plasmid_022</dcterms:title>
+    <sbol:displayId>YG_plasmid_022</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_022"/>
+    <sbol:type rdf:resource="http://identifiers.org/so/SO:0000988"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_023/1">
+    <dcterms:title>YG_plasmid_023</dcterms:title>
+    <sbol:displayId>YG_plasmid_023</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_023"/>
+    <sbol:type rdf:resource="http://identifiers.org/so/SO:0000988"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_024/1">
+    <dcterms:title>YG_plasmid_024</dcterms:title>
+    <sbol:displayId>YG_plasmid_024</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_024"/>
+    <sbol:type rdf:resource="http://identifiers.org/so/SO:0000988"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_025/1">
+    <dcterms:title>YG_plasmid_025</dcterms:title>
+    <sbol:displayId>YG_plasmid_025</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_025"/>
+    <sbol:type rdf:resource="http://identifiers.org/so/SO:0000988"/>
+    <sbol:type rdf:resource="http://www.biopax.org/release/biopax-level3.owl#DnaRegion"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/ddH2O/1">
+    <dcterms:title>ddH2O (sterile ultra-pure water)</dcterms:title>
+    <sbol:displayId>ddH2O</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/ddH2O"/>
+    <sbol:type rdf:resource="http://identifiers.org/chebi/CHEBI_15377"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ComponentDefinition>
+  <om:Unit rdf:about="http://hub.sd2e.org/user/sd2e/design/gramPerLitre/1">
+    <dcterms:description>Gram per litre is a unit of density defined as gram divided by litre.</dcterms:description>
+    <dcterms:title>gram per litre</dcterms:title>
+    <sbol:displayId>gramPerLitre</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/gramPerLitre"/>
+    <sbol:version>1</sbol:version>
+    <om:symbol>g/l</om:symbol>
+    <prov:wasDerivedFrom rdf:resource="http://www.ontology-of-units-of-measure.org/resource/om-2/gramPerLitre"/>
+  </om:Unit>
+</rdf:RDF>

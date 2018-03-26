@@ -1,0 +1,8 @@
+ID,Name,Description,Type,GenBank
+YG_plasmid_001,YG_plasmid_001,,Plasmid,
+YG_plasmid_002,YG_plasmid_002,,Plasmid,
+YG_plasmid_004,YG_plasmid_004,,Plasmid,
+YG_plasmid_008,YG_plasmid_008,,Plasmid,
+YG_plasmid_012,YG_plasmid_012,,Plasmid,
+YG_plasmid_020,YG_plasmid_020,,Plasmid,
+UWBIOFAB_22544,UWBIOFAB_Scerevisiae_MATa/alpha,This is the background wild type strain for Yeast Gates strains.,Strain,
