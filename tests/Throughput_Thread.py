@@ -4,6 +4,8 @@ import time
 import pandas as pd
 import matplotlib.pyplot as plt
 
+import os, fnmatch
+import random
 import getpass
 import sys
 
@@ -58,11 +60,13 @@ class SBOLTuple():
 	def totalTuples(self):
 		return self.__tuplesSize
 
-def create_sbolDocs(numDocs, collPrefix, sbolFile='examples/rule30-Q0-v2.xml'):
+def create_sbolDocs(numDocs, collPrefix):
 	doc_list = []
 	sbolTuples = []
+
 	for i in range(0, numDocs):
 		sbolDoc = Document()
+		sbolFile = get_sbolFile('./examples')
 		sbolDoc.read(sbolFile)
 		sbolDoc.displayId = collPrefix + str(i)
 		sbolDoc.name = collPrefix + str(i) + "_name"
@@ -74,6 +78,13 @@ def create_sbolDocs(numDocs, collPrefix, sbolFile='examples/rule30-Q0-v2.xml'):
 		sbolTuples.append(st)
 
 	return doc_list, sbolTuples
+
+def get_sbolFile(dirLocation):
+	for root, dir, files in os.walk(dirLocation):
+		sbolFiles = [os.path.abspath(os.path.join(root, fileName)) for fileName in files]
+		selectedFile = random.choice(sbolFiles)
+		return selectedFile
+
 
 # Returns the time (seconds) it takes to make a push to a new Collection on SynBioHub
 def push_sbh(sbolDoc, sbh_connector):
@@ -113,6 +124,7 @@ def testSpeed(sbolDoc_List, sbh_connector):
 		pushTime = push_sbh(sbolDoc, sbh_connector)
 		pushTimes.append(pushTime)
 
+		# Grab this specific collection
 		uri = sbolDoc.displayId + "/transcriptic_rule_30_q0_1_09242017/1"
 		pullTime = pull_sbh(sbh_connector, uri)
 		pullTimes.append(pullTime)
@@ -122,7 +134,7 @@ def testSpeed(sbolDoc_List, sbh_connector):
 def testThroughput(threadNum, sbh_connector, docNum):
 	threads = []
 	for t in range(0, threadNum):
-		sbolDoc_List, sbolTuples = create_sbolDocs(docNum, "TT2_AColl_" + str(t) +"_")
+		sbolDoc_List, sbolTuples = create_sbolDocs(docNum, "TT2_BColl_" + str(t) +"_")
 		threads.append(myThread(sbolTuples, sbh_connector))
 	
 	# Note: Start all threads first then join the threads for termination
@@ -214,4 +226,6 @@ if __name__ == '__main__':
 	testType = 1
 	threadNum = 3
 	run_tests(docNum, testType, threadNum)
+
+	# print(get_sbolFile('./examples'))
 
