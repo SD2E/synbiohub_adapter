@@ -1,4 +1,4 @@
-,Thread_Name,Total_Tuples,Push_Time
-0,Thread-1,4359,15.727509587981539
-1,Thread-2,4359,15.555097130066725
-2,Thread-3,4359,15.610255139909189
+,Thread_Name,File_Name,Total_Tuples,Push_Time
+0,Thread-1,C:\Users\tnguyen\Documents\git\synbiohub_adapter\examples\yg_t1.xml,30,0.15338473961980373
+1,Thread-2,C:\Users\tnguyen\Documents\git\synbiohub_adapter\examples\r30_t5.xml,2560,3.1385553213157262
+2,Thread-3,C:\Users\tnguyen\Documents\git\synbiohub_adapter\examples\yg_t2.xml,24,0.10329836530248304
