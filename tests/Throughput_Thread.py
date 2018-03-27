@@ -63,7 +63,7 @@ class myThread (threading.Thread):
 	'''
 	Returns the time (seconds) it took to run an instance of this thread
 	'''
-	def thread_duration(self):
+	def  thread_duration(self):
 		return self.thread_end - self.thread_start
 
 	'''
@@ -245,6 +245,9 @@ def testThroughput(threadNum, sbh_connector, docNum, uniqueId):
 	
 	return thread_duration, tupleTime_res
 
+'''
+Creates a given number of threads with a given number of SBOL documents per thread
+'''
 def createThreads(threadNum, sbh_connector, sbolFile, docNum, collPrefix):
 	threads = []
 	for t in range(threadNum):
@@ -259,13 +262,13 @@ def createThreads(threadNum, sbh_connector, sbolFile, docNum, collPrefix):
 	PNG figures are also generated for each form of testing. 
 	Both the PNG figure and csv are exported in this module's "output" directory
 
-	iterations: The number of SBOL documents to create for testing speed and throughput
+	sbolDoc_size: The number of SBOL documents to create for testing speed and throughput
 	testType: An integer value between [0, 3). 0 to run speed, 1 to run throughput, and 2 to run both speed and throughput testing
-	threadNum: Number of threads to execute for testing
-	uniqueId: A unique id that will be set as the prefix of a SynBioHub collection
+	thread_size: Number of threads to execute for testing
+	collPrefix: A unique id that will be set as the prefix of a SynBioHub collection
 	sbh_server: The SynBioHub server that the user would like to push and pull these random testing data to
 '''
-def run_tests(iterations=0, testType=0, threadNum=1, uniqueId="defId_", sbh_server="https://synbiohub.bbn.com/"):
+def run_tests(sbolDoc_size=0, testType=0, thread_size=1, collPrefix="defId_", sbh_server="https://synbiohub.bbn.com/"):
 	sbh_connector = PartShop(sbh_server)
 	sbh_user = input('Enter SynBioHub Username: ')
 	sbh_connector.login(sbh_user, getpass.getpass(prompt='Enter SynBioHub Password: ', stream=sys.stderr))
@@ -281,59 +284,67 @@ def run_tests(iterations=0, testType=0, threadNum=1, uniqueId="defId_", sbh_serv
 	# sbolFile = "examples/rule_30_designs.xml"
 
 	if isSpeed:
-		sbolDoc_List, sbolTuples = create_sbolDocs(iterations, uniqueId + "ST_Coll_", 0, sbolFile)
+		sbolDoc_List, sbolTuples = create_sbolDocs(sbolDoc_size, collPrefix + "ST_Coll_", 0, sbolFile)
 		pullTimes, pushTimes = testSpeed(sbolDoc_List, sbh_connector)
 		df = pd.DataFrame({"Pull Time": pullTimes,
 							"Push Time": pushTimes})
 		
 		fig, ax = plt.subplots()
-		ax.set_title("Time Taken to Make %s Pushes and Pulls to and from SynBioHub" %iterations)
+		ax.set_title("Time Taken to Make %s Pushes and Pulls to and from SynBioHub" %sbolDoc_size)
 		ax.set_ylabel("Time (sec)")
 		ax.set_xlabel("Iterations")
 		df.plot(x=df.index, ax = ax)
 		plt.show()
-		fig.savefig('outputs/SpeedResult_%s_iter.png' %iterations)
+		fig.savefig('outputs/SpeedResult_%s_iter.png' %sbolDoc_size)
 
 		df.loc['Total'] = df.sum()
-		df.to_csv("outputs/SpeedResult_%s_iter.csv" %iterations)
+		df.to_csv("outputs/SpeedResult_%s_iter.csv" %sbolDoc_size)
 
 	if isThrpt:
-		print(sbolFile)
-		thread_duration = {}
-
-		for threadSet_val in range(1, threadNum+1):
-			thread_set = createThreads(threadSet_val, sbh_connector, sbolFile, iterations, uniqueId)
-
-			for t in thread_set:
-				t.start()
-
-			for t in thread_set:
-				t.join()
-
-			total_threadTime = 0
-			thread_id = "set" + str(threadSet_val)
-			for t in thread_set:
-				total_threadTime += t.thread_duration()
-				
-			thread_duration[thread_id] = total_threadTime
-
-		df = pd.DataFrame.from_dict(thread_duration, orient='index')
-		# df = pd.DataFrame(thread_duration, index=[0])
-		
-		fig, ax = plt.subplots()
-		ax.set_title("Time Taken to Push %s SBOL Documents for each set of Threads" %iterations)
-		ax.set_ylabel("Total Push Time per Set (sec)")
-		ax.set_xlabel("# of Sets Executed for %s of Threads Ran per Set" %threadNum)
-		df.plot(kind="bar", ax=ax)
-		plt.show()
-		fig.savefig('outputs/Thread_t%s_d%s.png' %(threadNum, iterations))
-		df.to_csv("outputs/Thread_t%s_d%s.csv" %(threadNum, iterations))
+		test_threadSets(sbh_connector, thread_size, sbolFile, sbolDoc_size, collPrefix)
 
 def get_uniqueID(prefix, threadValue, docNum):
 	t = time.ctime()
 	uid = '_'.join([prefix, str(threadValue), t, str(docNum)])
 	return re.sub(r'[: ]', '_', uid)
 
+def test_threadSets(sbh_connector, thread_size, sbolFile, sbolDoc_size, collPrefix):
+	print(sbolFile)
+	thread_duration = {}
+	maxTime_List = []
+	threadId_List = []
+	threadDur_List = []
+
+	for threadSet_val in range(1, thread_size+1):
+		thread_set = createThreads(threadSet_val, sbh_connector, sbolFile, sbolDoc_size, collPrefix)
+		for t in thread_set:
+			t.start()
+
+		for t in thread_set:
+			t.join()
+
+		curr_setTimes = []
+		for t in thread_set:
+			t_dur = t.thread_duration()
+			threadId_List.append("set" + str(threadSet_val) + "_" + t.getName())
+			threadDur_List.append(t_dur)
+			curr_setTimes.append(t_dur)
+			
+		maxTime_List.extend([max(curr_setTimes)] * len(thread_set))
+		
+	df = pd.DataFrame({"Set": threadId_List, 
+						"Time/Thread": threadDur_List, 
+						"Max_Time/Thread": maxTime_List},  
+						columns=['Set', 'Time/Thread', 'Max_Time/Thread'])
+		
+	fig, ax = plt.subplots()
+	ax.set_title("Maximum Time Taken to Push Incrementing Sets of Threads with %s SBOL Documents" %sbolDoc_size)
+	ax.set_ylabel("Maximum Push Time per Set (sec)")
+	ax.set_xlabel("# of Sets Running Parallel Threads")
+	df.plot(kind="bar", ax=ax, x='Set', y='Max_Time/Thread')
+	plt.show()
+	fig.savefig('outputs/Thread_t%s_d%s.png' %(threadNum, sbolDoc_size))
+	df.to_csv("outputs/Thread_t%s_d%s.csv" %(threadNum, sbolDoc_size))
 		
 def backup_t(self):
 	if isThrpt:
@@ -385,7 +396,7 @@ if __name__ == '__main__':
 	docNum = 2 
 	testType = 1 
 	threadNum = 5
-	uniqueId = "RT3_k" 
+	uniqueId = "RT3_m" 
 	run_tests(docNum, testType, threadNum, uniqueId)
 
 
