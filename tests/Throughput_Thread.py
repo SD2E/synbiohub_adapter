@@ -36,7 +36,7 @@ class myThread (threading.Thread):
 	
 	'''
 	An instance of this class will allow a user to execute N numbers of pushes to a SynBioHub instance.
-	sbolTuples: An instance of the SBOLTuple class that holds information about the given SBOL file.
+	sbolTuples: A list of SBOL Tuples that stores SBOL documents 
 	sbh_connector: An instance of pySBOL's PartShop needed to perform login for pushing and pulling data to and from SynBioHub
 	'''
 	def __init__(self, sbolTuples, sbh_connector):
@@ -74,13 +74,15 @@ class myThread (threading.Thread):
 	def tupleTime_List(self):
 		return self.tupTime_List
 
-'''
-An instance of this class will allow a user to access 3 types of information about an SBOLDocument.
-1. the number of SBOL tuples found in a SBOL document, 
-2. the SBOL document object generated from pySBOL, and 
-3. the full path of the XML file used to generate the SBOL document.
-'''
+
 class SBOLTuple():
+	'''
+	An instance of this class will allow a user to access 3 types of information about an SBOLDocument.
+	1. the number of SBOL tuples found in a SBOL document, 
+	2. the SBOL document object generated from pySBOL, and 
+	3. the full path of the XML file used to generate the SBOL document.
+	'''
+
 
 	'''
 	xmlFile: the full path of the SBOL File used to create the SBOL document
@@ -109,31 +111,41 @@ class SBOLTuple():
 	def totalTuples(self):
 		return self.__tuplesSize
 
+def get_uniqueID(prefix, threadNum, docNum):
+	t = time.ctime()
+	uid = '_'.join([prefix, str(threadNum), t, str(docNum)])
+	return re.sub(r'[: ]', '_', uid)
+
 '''
 Returns a list of SBOL Documents that were created from SBOL files taken from the "examples" directory of the synbiohub_adapter project
 
 numDocs: An integer value to indicate how many SBOL documents this method should create
 collPrefix: A unique prefix id to set the name of the SynBioHub collection that will be created for each SBOL document 
 '''
-def create_sbolDocs(numDocs, collPrefix, threadVal, sbolFile):
+def create_sbolDocs(numDocs, collPrefix, threadNum, sbolFile):
 	sbolDoc_List = []
 	sbolTuples = []
+	u_counter = 0
 	for i in range(0, numDocs):
-		sbolDoc = Document()
-		sbolDoc.read(sbolFile)
-
-		uid = get_uniqueID(collPrefix, threadVal, i)
+		uid = get_uniqueID(collPrefix, threadNum, i)
 		print(uid)
-		sbolDoc.displayId = uid 
-		sbolDoc.name = collPrefix + str(i) + "_name"
-		sbolDoc.description = collPrefix + str(i) + "_description"
-		sbolDoc.version = str(i)
-
-		st = SBOLTuple(sbolFile, sbolDoc)
+		st, sbolDoc = create_sbolDoc(sbolFile, uid)
 		sbolTuples.append(st)
 		sbolDoc_List.append(sbolDoc)
 
 	return  sbolDoc_List, sbolTuples
+
+def create_sbolDoc(sbolFile, uid):
+	sbolDoc = Document()
+	sbolDoc.read(sbolFile)
+
+	sbolDoc.displayId = uid 
+	sbolDoc.name = uid + "_name"
+	sbolDoc.description = uid + "_description"
+	sbolDoc.version = str("1")
+
+	st = SBOLTuple(sbolFile, sbolDoc)
+	return st, sbolDoc
 
 '''
 Returns the full path of a randomly selected SBOL file found in the given directory
@@ -215,44 +227,15 @@ def testSpeed(sbolDoc_List, sbh_connector):
 
 	return pullTimes, pushTimes
 
-'''
-This method performs throughput testing for pushing data to SynBioHub.
-The method will return two types of dictionary. 
-	1. the time (seconds) for each thread to execute
-	2. the time it takes to push varying tuple size from an SBOL document.
-
-threadNum: The number of threads to create
-sbh_connector: An instance of pySBOL's PartShop needed to perform login for pushing and pulling data to and from SynBioHub
-docNum: The number of SBOL documents to create for testing
-uniqueId: A random prefix to help create a unique id needed to set a SynBioHub collection ID.  
-'''
-def testThroughput(threadNum, sbh_connector, docNum, uniqueId):
-	threads = []
-	for t in range(0, threadNum):
-		sbolTuples = create_sbolDocs(docNum, uniqueId + "TT_Coll_" + str(t) +"_")
-		threads.append(myThread(sbolTuples, sbh_connector))
-	
-	# Note: Start all threads first then join the threads for termination
-	for t in threads:
-		t.start()
-
-	thread_duration = {}
-	tupleTime_res = {}
-	for t in threads:
-		thread_duration[t.getName()] = t.thread_duration()
-		tupleTime_res[t.getName()] = t.tupleTime_List()
-		t.join()
-	
-	return thread_duration, tupleTime_res
 
 '''
-Creates a given number of threads with a given number of SBOL documents per thread
+Returns a list of threads created with a given number of SBOL documents stored in each thread
 '''
-def createThreads(threadNum, sbh_connector, sbolFile, docNum, collPrefix):
+def createThreads(threadNum, sbh_connector, sbolDoc_size, collPrefix, sbolFile):
 	threads = []
 	for t in range(threadNum):
 		time.sleep(1)
-		_, sbolTuples = create_sbolDocs(docNum, collPrefix, t, sbolFile)
+		_, sbolTuples = create_sbolDocs(sbolDoc_size, collPrefix, t, sbolFile)
 		threads.append(myThread(sbolTuples, sbh_connector))
 	return threads
 
@@ -301,22 +284,47 @@ def run_tests(sbolDoc_size=0, testType=0, thread_size=1, collPrefix="defId_", sb
 		df.to_csv("outputs/SpeedResult_%s_iter.csv" %sbolDoc_size)
 
 	if isThrpt:
-		test_threadSets(sbh_connector, thread_size, sbolFile, sbolDoc_size, collPrefix)
+		# test_threadSets(sbh_connector, thread_size, sbolFile, sbolDoc_size, collPrefix)
+		test_triples(sbh_connector, sbolDoc_size, collPrefix)
 
-def get_uniqueID(prefix, threadValue, docNum):
-	t = time.ctime()
-	uid = '_'.join([prefix, str(threadValue), t, str(docNum)])
-	return re.sub(r'[: ]', '_', uid)
+def test_triples(sbh_connector, sbolDoc_size, collPrefix):
+	triples_list = []
+	for d in range(sbolDoc_size):
+		sbolFile = get_randomFile(get_sbolList("./examples"))
+		uid = get_uniqueID(collPrefix, 1, d)
+		sbolTuple, sbolDoc = create_sbolDoc(sbolFile, uid)
+		triples_list.append(sbolTuple)
+	t = myThread(triples_list, sbh_connector)
+	t.start()
+	t.join()
+
+	pushTimes = []
+	sbol_tripleSizes = []
+	for v1, v2 in t.tupleTime_List():
+		pushTimes.append(v1)
+		sbol_tripleSizes.append(v2.totalTuples())
+
+	df = pd.DataFrame({"Triple_Size": sbol_tripleSizes, 
+						"Push_Time": pushTimes},  
+						columns=['Triple_Size', 'Push_Time'])
+	fig, ax = plt.subplots()
+	ax.set_title("Time to Push Data to SynBiohub with Varying SBOL Document Size" )
+	ax.set_ylabel("Time Taken to Push an SBOL document (sec)")
+	ax.set_xlabel("Different Tuple Size of Varying SBOL Documents")
+	df.plot(kind='bar', x='Triple_Size', y='Push_Time', ax = ax)
+	plt.show()
+	fig.savefig('outputs/Triples_d%s.png' %sbolDoc_size)
+	df.to_csv("outputs/Triples_d%s.csv" %sbolDoc_size)
+
 
 def test_threadSets(sbh_connector, thread_size, sbolFile, sbolDoc_size, collPrefix):
 	print(sbolFile)
-	thread_duration = {}
-	maxTime_List = []
+	setId_List = []
 	threadId_List = []
 	threadDur_List = []
-
+	
 	for threadSet_val in range(1, thread_size+1):
-		thread_set = createThreads(threadSet_val, sbh_connector, sbolFile, sbolDoc_size, collPrefix)
+		thread_set = createThreads(threadSet_val, sbh_connector, sbolDoc_size, collPrefix, sbolFile)
 		for t in thread_set:
 			t.start()
 
@@ -326,25 +334,28 @@ def test_threadSets(sbh_connector, thread_size, sbolFile, sbolDoc_size, collPref
 		curr_setTimes = []
 		for t in thread_set:
 			t_dur = t.thread_duration()
-			threadId_List.append("set" + str(threadSet_val) + "_" + t.getName())
+			threadId_List.append(t.getName())
 			threadDur_List.append(t_dur)
 			curr_setTimes.append(t_dur)
-			
-		maxTime_List.extend([max(curr_setTimes)] * len(thread_set))
+
+		setId_List.extend(["set_t" + str(threadSet_val)] * len(thread_set))
 		
-	df = pd.DataFrame({"Set": threadId_List, 
-						"Time/Thread": threadDur_List, 
-						"Max_Time/Thread": maxTime_List},  
-						columns=['Set', 'Time/Thread', 'Max_Time/Thread'])
-		
+	df = pd.DataFrame({"Set_ID": setId_List, 
+						"Thread_ID": threadId_List, 
+						"Time/Thread": threadDur_List},  
+						columns=['Set_ID', 'Thread_ID', 'Time/Thread'])
+	grouped_maxTime = df.groupby('Set_ID', sort=False)['Time/Thread'].max()
+	
 	fig, ax = plt.subplots()
-	ax.set_title("Maximum Time Taken to Push Incrementing Sets of Threads with %s SBOL Documents" %sbolDoc_size)
-	ax.set_ylabel("Maximum Push Time per Set (sec)")
-	ax.set_xlabel("# of Sets Running Parallel Threads")
-	df.plot(kind="bar", ax=ax, x='Set', y='Max_Time/Thread')
+	grouped_maxTime.plot(kind="bar", ax=ax, x='Set_ID', y='Time/Thread')
+	
+	ax.set_title("Longest Time to Push %s SBOL Documents in each Set of Threads" %sbolDoc_size)
+	ax.set_ylabel("Longest Push Time Found in each Set (sec)")
+	ax.set_xlabel("# of Sets Ran With Incrementing Threads")
+	
 	plt.show()
-	fig.savefig('outputs/Thread_t%s_d%s.png' %(threadNum, sbolDoc_size))
-	df.to_csv("outputs/Thread_t%s_d%s.csv" %(threadNum, sbolDoc_size))
+	fig.savefig('outputs/Set_t%s_d%s.png' %(threadNum, sbolDoc_size))
+	df.to_csv("outputs/Set_t%s_d%s.csv" %(threadNum, sbolDoc_size))
 		
 def backup_t(self):
 	if isThrpt:
