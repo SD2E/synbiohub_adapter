@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:prov="http://www.w3.org/ns/prov#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:sbol="http://sbols.org/v2#"
+   xmlns:sd2="http://sd2e.org#"
+   xmlns:sys-bio="http://sys-bio.org#">
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//biofab_sample_yeast_gates_q0_1_2_A01_1/1">
+    <dcterms:title>biofab_sample_yeast_gates_q0_1_2_A01_1</dcterms:title>
+    <sbol:displayId>biofab_sample_yeast_gates_q0_1_2_A01_1</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//biofab_sample_yeast_gates_q0_1_2_A01_1"/>
+    <sbol:version>1</sbol:version>
+  </sd2:Implementation>
+  <sd2:ExperimentalData rdf:about="https://hub.sd2e.org/user/sd2e//biofab_sample_yeast_gates_q0_1_2_A01_1_spectrophotometry_4/1">
+    <dcterms:title>biofab_sample_yeast_gates_q0_1_2_A01_1_spectrophotometry_4</dcterms:title>
+    <sbol:attachment rdf:resource="https://hub.sd2e.org/user/sd2e//sample_biofab_yeast_gates_q0_1_2_instrument_output_A01_1_od/1"/>
+    <sbol:displayId>biofab_sample_yeast_gates_q0_1_2_A01_1_spectrophotometry_4</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//biofab_sample_yeast_gates_q0_1_2_A01_1_spectrophotometry_4"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//biofab_sample_yeast_gates_q0_1_2_A01_1/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//spectrophotometry_biofab_sample_yeast_gates_q0_1_2_A01_1_to_biofab_sample_yeast_gates_q0_1_2_A01_1_spectrophotometry_4/1.0.0"/>
+  </sd2:ExperimentalData>
+  <sd2:Experiment rdf:about="https://hub.sd2e.org/user/sd2e//df82e79b_e18c_457e_8c5c_ed605acc94cd/1">
+    <dcterms:title>Yeast Gates Q0 Plan</dcterms:title>
+    <sbol:displayId>df82e79b_e18c_457e_8c5c_ed605acc94cd</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//df82e79b_e18c_457e_8c5c_ed605acc94cd"/>
+    <sbol:version>1</sbol:version>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e//biofab_sample_yeast_gates_q0_1_2_A01_1_spectrophotometry_4/1"/>
+  </sd2:Experiment>
+  <sd2:Attachment rdf:about="https://hub.sd2e.org/user/sd2e//sample_biofab_yeast_gates_q0_1_2_instrument_output_A01_1_od/1">
+    <dcterms:title>sample_biofab_yeast_gates_q0_1_2_instrument_output_A01_1_od</dcterms:title>
+    <sbol:displayId>sample_biofab_yeast_gates_q0_1_2_instrument_output_A01_1_od</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//sample_biofab_yeast_gates_q0_1_2_instrument_output_A01_1_od"/>
+    <sbol:version>1</sbol:version>
+    <sd2:source rdf:resource="agave://data-sd2e-community/sample/biofab/yeast-gates_q0/1/2/instrument_output/A01_1.od"/>
+  </sd2:Attachment>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//spectrophotometry_biofab_sample_yeast_gates_q0_1_2_A01_1_to_biofab_sample_yeast_gates_q0_1_2_A01_1_spectrophotometry_4/1.0.0">
+    <dcterms:description>96 flat 1 measure OD600 - OD conversion determined cellometer or flow cytometer</dcterms:description>
+    <dcterms:title>Spectrophotometry Operator</dcterms:title>
+    <sbol:displayId>spectrophotometry_biofab_sample_yeast_gates_q0_1_2_A01_1_to_biofab_sample_yeast_gates_q0_1_2_A01_1_spectrophotometry_4</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//spectrophotometry_biofab_sample_yeast_gates_q0_1_2_A01_1_to_biofab_sample_yeast_gates_q0_1_2_A01_1_spectrophotometry_4"/>
+    <sbol:version>1</sbol:version>
+    <sd2:manifest rdf:resource="agave://data-sd2e-community/sample/biofab/yeast-gates_q0/1/2/manifest/manifest.json"/>
+    <sd2:operatorType rdf:resource="http://sd2e.org#spectrophotometry"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//spectrophotometry_biofab_sample_yeast_gates_q0_1_2_A01_1_to_biofab_sample_yeast_gates_q0_1_2_A01_1_spectrophotometry_4/biofab_sample_yeast_gates_q0_1_2_A01_1/1">
+        <sbol:displayId>biofab_sample_yeast_gates_q0_1_2_A01_1</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//spectrophotometry_biofab_sample_yeast_gates_q0_1_2_A01_1_to_biofab_sample_yeast_gates_q0_1_2_A01_1_spectrophotometry_4/biofab_sample_yeast_gates_q0_1_2_A01_1"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//biofab_sample_yeast_gates_q0_1_2_A01_1/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+</rdf:RDF>
