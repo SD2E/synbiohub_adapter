@@ -163,7 +163,7 @@ class SynBioHubQuery():
 
 		return fetch_SPARQL(self.__server, gate_query)
 
-	# Retrieves the URIs for all inducers used in the specified collection of experiments
+	# Retrieves the URIs for all inducers used in the specified collection of experiments and their associated levels
 	# This collection is typically associated with a challenge problem
 	def query_experiment_set_inducers(self, collection):
 		inducer_query = """
@@ -270,7 +270,7 @@ class SynBioHubQuery():
 
 		return fetch_SPARQL(self.__server, gate_query)
 
-	# Retrieves the URIs for all inducers in the specified experiment
+	# Retrieves the URIs for all inducers in the specified experiment and their associated levels
 	def query_single_experiment_inducers(self, experiment):
 		inducer_query = """
 		PREFIX sbol: <http://sbols.org/v2#>
@@ -348,6 +348,84 @@ class SynBioHubQuery():
 		""".format(exp=experiment)
 
 		return fetch_SPARQL(self.__server, exp_data_query)
+
+	# Retrieves the URIs for all inducers in the specified sample and their associated levels
+	def query_sample_inducers(self, sample):
+		inducer_query = """
+		PREFIX sbol: <http://sbols.org/v2#>
+		PREFIX sd2: <http://sd2e.org#>
+		PREFIX om: <http://www.ontology-of-units-of-measure.org/resource/om-2#>
+		SELECT ?inducer ?level
+		WHERE {{ 
+  			{samp} sd2:built ?condition .
+  			?condition sbol:functionalComponent ?fc .
+  			?fc sbol:definition ?inducer .
+  			?inducer sbol:type ?type ;
+           		sbol:role ?role .
+           	FILTER ( ?type = {ty} && ?role = {ro} ) .
+           	OPTIONAL {{ 
+           		?fc om:measure ?concentration .
+           		?concentration om:hasNumericalValue ?level
+           	}}
+		}}
+		GROUP BY ?inducer
+		""".format(samp=sample, ty=SBOLConstants.SMALL_MOLECULE, ro=SBOLConstants.EFFECTOR)
+
+		return fetch_SPARQL(self.__server, inducer_query)
+
+	# Retrieves the URIs for all plasmids in the specified sample
+	def query_sample_plasmids(self, sample):
+		plasmid_query = """
+		PREFIX sbol: <http://sbols.org/v2#>
+		PREFIX sd2: <http://sd2e.org#>
+		SELECT DISTINCT ?plasmid WHERE {{ 
+  			{samp} sd2:built ?condition .
+  			?condition sbol:functionalComponent ?fc .
+  			?fc sbol:definition ?plasmid .
+  			?plasmid sbol:type ?type1 ;
+           		sbol:type ?type2 .
+  			FILTER ( ?type1 = {ty1} && ?type2 = {ty2} )
+		}}
+		""".format(samp=sample, ty1=SBOLConstants.DNA, ty2=SBOLConstants.CIRCULAR)
+
+		return fetch_SPARQL(self.__server, plasmid_query)
+
+	# Retrieves the URIs for all inducers in the specified sample condition and their associated levels
+	def query_condition_inducers(self, condition):
+		inducer_query = """
+		PREFIX sbol: <http://sbols.org/v2#>
+		PREFIX om: <http://www.ontology-of-units-of-measure.org/resource/om-2#>
+		SELECT ?inducer ?level
+		WHERE {{ 
+  			{cond} sbol:functionalComponent ?fc .
+  			?fc sbol:definition ?inducer .
+  			?inducer sbol:type ?type ;
+           		sbol:role ?role .
+           	FILTER ( ?type = {ty} && ?role = {ro} ) .
+           	OPTIONAL {{ 
+           		?fc om:measure ?concentration .
+           		?concentration om:hasNumericalValue ?level
+           	}}
+		}}
+		GROUP BY ?inducer
+		""".format(cond=condition, ty=SBOLConstants.SMALL_MOLECULE, ro=SBOLConstants.EFFECTOR)
+
+		return fetch_SPARQL(self.__server, inducer_query)
+
+	# Retrieves the URIs for all plasmids in the specified sample condition
+	def query_condition_plasmids(self, condition):
+		plasmid_query = """
+		PREFIX sbol: <http://sbols.org/v2#>
+		SELECT DISTINCT ?plasmid WHERE {{ 
+  			{cond} sbol:functionalComponent ?fc .
+  			?fc sbol:definition ?plasmid .
+  			?plasmid sbol:type ?type1 ;
+           		sbol:type ?type2 .
+  			FILTER ( ?type1 = {ty1} && ?type2 = {ty2} )
+		}}
+		""".format(cond=condition, ty1=SBOLConstants.DNA, ty2=SBOLConstants.CIRCULAR)
+
+		return fetch_SPARQL(self.__server, plasmid_query)
 
 	# Submit the data stored in the given sbolDoc to a collection on SynBioHub
 	# sbh_connector: An instance of the pySBOL Partshop to set SynBioHub credential needed for submitting a collection
