@@ -23,7 +23,8 @@ def main(args=None):
 
 def generate_sbol(csv_files, om_file=None):
     doc = XDocument()
-    doc.configure_options(SD2_DESIGN_NS, False, False)
+    doc.configure_namespace(SD2_DESIGN_NS)
+    doc.configure_options(False, False)
 
     if om_file is None:
         try:
@@ -129,6 +130,21 @@ def generate_chebi(doc, row, header):
 
     return doc.create_component_definition(display_id, name, descr, CHEBI_NS + row[header['CHEBI']])
 
+def generate_control(doc, row, header, devices=[], systems=[], inputs=[], measures={}):
+    display_id = row[header['ID']]
+    try:
+        name = row[header['Name']]
+    except:
+        name = None
+    try:
+        descr = row[header['Description']]
+    except:
+        descr = None
+
+    print('control ' + display_id)
+
+    return doc.create_control(devices, systems, inputs, measures, display_id, name, descr)
+
 def generate_media(doc, row, header, devices=[], systems=[], inputs=[], measures={}):
     display_id = row[header['ID']]
     try:
@@ -143,6 +159,36 @@ def generate_media(doc, row, header, devices=[], systems=[], inputs=[], measures
     print('media ' + display_id)
 
     return doc.create_media(devices, systems, inputs, measures, display_id, name, descr)
+
+def generate_solution(doc, row, header, devices=[], systems=[], inputs=[], measures={}):
+    display_id = row[header['ID']]
+    try:
+        name = row[header['Name']]
+    except:
+        name = None
+    try:
+        descr = row[header['Description']]
+    except:
+        descr = None
+
+    print('solution ' + display_id)
+
+    return doc.create_solution(devices, systems, inputs, measures, display_id, name, descr)
+
+def generate_buffer(doc, row, header):
+    display_id = row[header['ID']]
+    try:
+        name = row[header['Name']]
+    except:
+        name = None
+    try:
+        descr = row[header['Description']]
+    except:
+        descr = None
+
+    print('buffer ' + display_id)
+
+    return doc.create_buffer(display_id, name, descr)
 
 def generate_dna(doc, row, header):
     display_id = row[header['ID']]
