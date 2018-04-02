@@ -46,7 +46,7 @@ def generate_sbol(csv_files, om_file=None):
 
     generate_system_switcher = {
         'Gate': generate_gate, 
-        'Media': generate_composite_media
+        'Media': generate_media
     }
 
     generate_input_switcher = {
@@ -69,14 +69,17 @@ def generate_sbol_helper(doc, csv_file, generate_device_switcher, generate_syste
             try:
                 generate_system = generate_system_switcher[generate_type]
 
-                aux_file = row[header['Composition_File']]
-
                 devices = []
                 systems = []
                 inputs = []
                 measures = {}
 
-                generate_sbol_helper(doc, aux_file, generate_device_switcher, generate_system_switcher, generate_input_switcher, om, devices, systems, inputs, measures)
+                try:
+                    aux_file = row[header['Composition_File']]
+
+                    generate_sbol_helper(doc, aux_file, generate_device_switcher, generate_system_switcher, generate_input_switcher, om, devices, systems, inputs, measures)
+                except:
+                    pass
 
                 identified = generate_system(doc, row, header, devices, systems, inputs, measures)
 
@@ -126,7 +129,7 @@ def generate_chebi(doc, row, header):
 
     return doc.create_component_definition(display_id, name, descr, CHEBI_NS + row[header['CHEBI']])
 
-def generate_composite_media(doc, row, header, devices=[], systems=[], inputs=[], measures={}):
+def generate_media(doc, row, header, devices=[], systems=[], inputs=[], measures={}):
     display_id = row[header['ID']]
     try:
         name = row[header['Name']]
@@ -137,9 +140,9 @@ def generate_composite_media(doc, row, header, devices=[], systems=[], inputs=[]
     except:
         descr = None
 
-    print('composite media ' + display_id)
+    print('media ' + display_id)
 
-    return doc.create_composite_media(devices, systems, inputs, measures, display_id, name, descr)
+    return doc.create_media(devices, systems, inputs, measures, display_id, name, descr)
 
 def generate_dna(doc, row, header):
     display_id = row[header['ID']]
@@ -200,21 +203,6 @@ def generate_inducer(doc, row, header):
     print('inducer ' + display_id)
 
     return doc.create_inducer(display_id, name, descr)
-
-def generate_media(doc, row, header):
-    display_id = row[header['ID']]
-    try:
-        name = row[header['Name']]
-    except:
-        name = None
-    try:
-        descr = row[header['Description']]
-    except:
-        descr = None
-
-    print('media ' + display_id)
-
-    return doc.create_media(display_id, name, descr)
 
 def generate_plasmid(doc, row, header):
     display_id = row[header['ID']]
