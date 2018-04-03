@@ -168,7 +168,6 @@ def get_sbolList(dirLocation):
 		sbolFiles = [os.path.abspath(os.path.join(root, fileName)) for fileName in files]
 		return sbolFiles
 
-
 '''
 Returns the time (seconds) it takes to make a push to a new Collection on SynBioHub
 
@@ -260,14 +259,14 @@ def test_triples(sbh_connector, sbolDoc_size, collPrefix):
 	return sbol_tripleSizes, pushTimes
 
 
-def test_threadSets(sbh_connector, thread_size, sbolFile, sbolDoc_size, collPrefix):
+def test_threadSets(sbh_connector, set_size, t_growthRate, sbolFile, sbolDoc_size, collPrefix):
 	print(sbolFile)
 	setId_List = []
 	threadId_List = []
 	threadDur_List = []
-	
-	for threadSet_val in range(1, thread_size+1):
-		thread_set = createThreads(threadSet_val, sbh_connector, sbolDoc_size, collPrefix, sbolFile)
+	curr_rate = 1 * t_growthRate
+	for curr_set in range(1, set_size+1):
+		thread_set = createThreads(curr_rate, sbh_connector, sbolDoc_size, collPrefix, sbolFile)
 		for t in thread_set:
 			t.start()
 
@@ -279,17 +278,18 @@ def test_threadSets(sbh_connector, thread_size, sbolFile, sbolDoc_size, collPref
 			threadId_List.append(t.getName())
 			threadDur_List.append(t_dur)
 
-		setId_List.extend(["set_t" + str(threadSet_val)] * len(thread_set))
+		setId_List.extend(["set_t" + str(t_growthRate)] * len(thread_set))
+		# curr_rate *= t_growthRate
 		
 	return setId_List, threadId_List, threadDur_List
 
-def run_threadSets(sbh_connector, iterations, thread_size, sbolFile, sbolDoc_size, collPrefix):
+def run_threadSets(sbh_connector, iterations, set_size, t_growthRate, sbolFile, sbolDoc_size, collPrefix):
 	runId_List = []
 	setId_List = []
 	threadId_List = []
 	threadDur_List = []
 	for i in range(1, iterations+1):
-		r1, r2, r3 = test_threadSets(sbh_connector, thread_size, sbolFile, sbolDoc_size, collPrefix)
+		r1, r2, r3 = test_threadSets(sbh_connector, set_size, t_growthRate, sbolFile, sbolDoc_size, collPrefix)
 		runId_List.extend(['run' + str(i)] * len(r1))
 		setId_List.extend(r1)
 		threadId_List.extend(r2)
@@ -333,7 +333,7 @@ def run_tripleSize(sbh_connector, iterations, sbolDoc_size, collPrefix):
 	collPrefix: A unique id that will be set as the prefix of a SynBioHub collection
 	sbh_server: The SynBioHub server that the user would like to push and pull these random testing data to
 '''
-def run_tests(sbolDoc_size=0, testType=0, thread_size=1, collPrefix="defId_", sbh_server="https://synbiohub.bbn.com/"):
+def run_tests(iterations, sbolDoc_size=0, testType=0, thread_size=1, collPrefix="defId_", sbh_server="https://synbiohub.bbn.com/"):
 	sbh_connector = PartShop(sbh_server)
 	# sbh_user = input('Enter SynBioHub Username: ')
 	sbh_user = 'tramy.t.nguyen@raytheon.com'
@@ -365,32 +365,38 @@ def run_tests(sbolDoc_size=0, testType=0, thread_size=1, collPrefix="defId_", sb
 
 	elif isThreadSet:
 		sbolFile = "examples/r30_t3.xml"
-		df = run_threadSets(sbh_connector, 3, thread_size, sbolFile, sbolDoc_size, collPrefix)
+		set_size = 3
+		t_growthRate = 2
+		df = run_threadSets(sbh_connector, 3, set_size, t_growthRate, sbolFile, sbolDoc_size, collPrefix)
 		fig, ax = plt.subplots()
+
 		max_index = df.groupby(['Run_ID', 'Set_ID'])['Time/Thread'].transform(max) == df['Time/Thread']
 		max_df = df[max_index]
-		grouped_max = max_df.groupby('Run_ID')
+		grouped_max = max_df.groupby(['Run_ID'])
 		for name, group in grouped_max:
-			ax.scatter(data=group, x='Set_ID', y='Time/Thread', marker='o', label=name)
+			print(group)
+	
+		means = grouped_max.mean()
+		errors = grouped_max.std()
+		grouped_max.plot(max_df, x='Set_ID', y=means, kind='bar', ax=ax, yerr=errors)
+		# means.plot.bar(yerr=errors, ax=ax)
 
-		ax.set_title("Longest Time to Push %s SBOL Documents in each Set of Threads" %sbolDoc_size)
-		ax.set_ylabel("Longest Push Time Found in each Set (sec)")
-		ax.set_xlabel("Set Value")
+		ax.set_title("Sample Standard Deviation")
+		ax.set_ylabel("Average Time to Push (sec)")
+		ax.set_xlabel("# of Runs")
 		plt.legend(loc='best')
 		plt.show()
 		fig.savefig('outputs/Set_t%s_d%s.png' %(threadNum, sbolDoc_size))
 		df.to_csv("outputs/Set_t%s_d%s.csv" %(threadNum, sbolDoc_size))
 
 	elif isTriple:
-		iterations = 3
 		df = run_tripleSize(sbh_connector, 3, sbolDoc_size, collPrefix)
 		fig, ax = plt.subplots()
-
 		grouped_runs = df.groupby('Run_ID')
 		for name, group in grouped_runs:
 			ax.scatter(data=group, x='Triple_Size', y='Push_Time', marker='o', label=name)
 		
-		ax.set_title("Time to Push Data for %s SBOL Documents with Varying Size" %sbolDoc_size)
+		ax.set_title("Time to Push %s SBOL Documents with Varying Size" %sbolDoc_size)
 		ax.set_ylabel("Time to Push (sec)")
 		ax.set_xlabel("Triple Size")
 		plt.legend(loc=2)
@@ -399,11 +405,12 @@ def run_tests(sbolDoc_size=0, testType=0, thread_size=1, collPrefix="defId_", sb
 		df.to_csv("outputs/Triples_r%s_d%s.csv" %(iterations, sbolDoc_size))
 
 if __name__ == '__main__':
-	docNum = 3 
-	testType = 0
+	iterations = 3
+	docNum = 5 
+	testType = 1
 	threadNum = 5
 	uniqueId = "RT3_m" 
-	run_tests(docNum, testType, threadNum, uniqueId)
+	run_tests(iterations, docNum, testType, threadNum, uniqueId)
 
 	# sbh_connector = PartShop('https://synbiohub.bbn.com/')
 	# sbh_user = input('Enter SynBioHub Username: ')
