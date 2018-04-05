@@ -26,7 +26,7 @@ from sbol import *
 		2. python -mpip install -U matplotlib
 
 	To run this python file, enter in the following command from the synbiohub_adapter directory:
-	python -m tests.Throughput_Thread
+	python -m tests.SBHRun_Environment
 
 	author(s) :Tramy Nguyen
 '''
@@ -384,80 +384,17 @@ def run_tests(iterations, sbolDoc_size=0, testType=0, thread_size=1, collPrefix=
 	sbh_connector.login(sbh_user, getpass.getpass(prompt='Enter SynBioHub Password: ', stream=sys.stderr))
 	# Config.setOption("verbose", True)
 
-	# if testType < 0 or testType > 3:
-	# 	raise ValueError("Error: testType must be 0, 1, or 2")
-
-	# isSpeed = (testType == 0) or (testType == 3) 
-	# isThreadSet = (testType == 1) or (testType == 3) 
-	# isTriple = (testType == 2) or (testType == 3) 
-
-	# sbolFile = get_randomFile(get_sbolList('./examples'))
-
-	# if isSpeed:
-	# 	df = generate_speedData(sbolFile, sbh_connector, sbolDoc_size, collPrefix)
-		
-	# 	fig, ax = plt.subplots()
-	# 	ax.set_title("Time Taken to Make %s Pushes and Pulls to and from SynBioHub" %sbolDoc_size)
-	# 	ax.set_ylabel("Time (sec)")
-	# 	ax.set_xlabel("Push Number")
-	# 	df.iloc[:-1].plot(x=df.iloc[:-1].index, ax = ax)
-	# 	plt.show()
-	# 	fig.savefig('outputs/SpeedResult_d%s.pdf' %sbolDoc_size)
-
-	# 	df.to_csv("outputs/SpeedResult_d%s.csv" %sbolDoc_size)
-
-	# elif isThreadSet:
-	# 	set_size = 10
-	# 	t_growthRate = 5
-	# 	df = generate_setData(sbh_connector, iterations, set_size, t_growthRate, sbolFile, sbolDoc_size, collPrefix)
-	# 	fig, ax = plt.subplots()
-
-	# 	max_index = df.groupby(['Run_ID', 'Set_ID'])['Time/Thread'].transform(max) == df['Time/Thread']
-	# 	max_df = df[max_index]
-	# 	grouped_max = max_df.groupby(['Set_ID'])
-		
-	# 	means = grouped_max.mean()
-	# 	errors = grouped_max.std()
-	# 	means.plot.bar(yerr=errors, ax=ax)
-
-	# 	ax.set_title("Sample Standard Deviation Over %s Runs with Varying Set of Threads" %(iterations))
-	# 	ax.set_ylabel("Average Time to Push (sec)")
-	# 	ax.set_xlabel("Set of Threads with Longest Run Time")
-	# 	plt.show()
-	# 	fig.savefig('outputs/Set_t%s_d%s.pdf' %(threadNum, sbolDoc_size))
-	# 	df.to_csv("outputs/Set_t%s_d%s.csv" %(threadNum, sbolDoc_size))
-
-	# elif isTriple:
-	# 	df = generate_tripleData(sbh_connector, iterations, sbolDoc_size, collPrefix)
-	# 	fig, ax = plt.subplots()
-	# 	grouped_runs = df.groupby('Run_ID')
-	# 	for name, group in grouped_runs:
-	# 		ax.scatter(data=group, x='Triple_Size', y='Push_Time', marker='o', label=name)
-		
-	# 	ax.set_title("Time to Push %s SBOL Documents with Varying Size" %sbolDoc_size)
-	# 	ax.set_ylabel("Time to Push (sec)")
-	# 	ax.set_xlabel("Triple Size")
-	# 	plt.legend(loc=2)
-	# 	plt.show()
-	# 	fig.savefig('outputs/Triples_r%s.pdf' %(iterations))
-	# 	df.to_csv("outputs/Triples_r%s_d%s.csv" %(iterations))
-
+	
 if __name__ == '__main__':
-	# iterations = 3
-	# docNum = 500 
-	# testType = 3
-	# threadNum = 5
-	# uniqueId = "RT3_m" 
-	# run_tests(iterations, docNum, testType, threadNum, uniqueId)
-
-
-
+	print("Logging into BBNs SBH")
 	sbh_connector = PartShop("https://synbiohub.bbn.com/")
-	# sbh_user = input('Enter SynBioHub Username: ')
-	sbh_user = 'tramy.t.nguyen@raytheon.com'
+	sbh_user = input('Enter Username: ')
 	sbh_connector.login(sbh_user, getpass.getpass(prompt='Enter SynBioHub Password: ', stream=sys.stderr))
 
+	iterations = 100
+	br_speed(sbh_connector, iterations)
+	br_triples(sbh_connector, iterations)
 	
-	# br_speed(sbh_connector, 5)
-	br_setThread(sbh_connector, 3, 5, 5, 5)
+	#iterations, set_size=10, t_growthRate=5, sbolDoc_size=100
+	br_setThread(sbh_connector, iterations, 10, 5, 50)
 
