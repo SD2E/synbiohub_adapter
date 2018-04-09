@@ -153,7 +153,7 @@ class SynBioHubQuery():
   			{col} sbol:member ?exp .
   			?exp sd2:experimentalData ?data .
   			?data prov:wasDerivedFrom ?sample .
-  			?sample sd2:built ?condition .
+  			?sample sbol:built ?condition .
   			?condition sbol:module ?mod .
   			?mod sbol:definition ?gate .
   			?gate sbol:role ?role .
@@ -176,7 +176,7 @@ class SynBioHubQuery():
   			{col} sbol:member ?exp .
   			?exp sd2:experimentalData ?data .
   			?data prov:wasDerivedFrom ?sample .
-  			?sample sd2:built ?condition .
+  			?sample sbol:built ?condition .
   			?condition sbol:functionalComponent ?fc .
   			?fc sbol:definition ?inducer .
   			?inducer sbol:type ?type ;
@@ -203,7 +203,7 @@ class SynBioHubQuery():
   			{col} sbol:member ?exp .
   			?exp sd2:experimentalData ?data .
   			?data prov:wasDerivedFrom ?sample .
-  			?sample sd2:built ?condition .
+  			?sample sbol:built ?condition .
   			?condition sbol:functionalComponent ?fc .
   			?fc sbol:definition ?plasmid .
   			?plasmid sbol:type ?type1 ;
@@ -225,7 +225,7 @@ class SynBioHubQuery():
   			{col} sbol:member ?exp .
   			?exp sd2:experimentalData ?data .
   			?data prov:wasDerivedFrom ?sample .
-  			?sample sd2:built ?condition .
+  			?sample sbol:built ?condition .
   			?condition sbol:functionalComponent ?fc .
   			?fc sbol:definition ?strain .
   			?strain sbol:type ?type .
@@ -260,7 +260,7 @@ class SynBioHubQuery():
 		SELECT DISTINCT ?gate WHERE {{ 
   			{exp} sd2:experimentalData ?data .
   			?data prov:wasDerivedFrom ?sample .
-  			?sample sd2:built ?condition .
+  			?sample sbol:built ?condition .
   			?condition sbol:module ?mod .
   			?mod sbol:definition ?gate .
   			?gate sbol:role ?role .
@@ -281,7 +281,7 @@ class SynBioHubQuery():
 		WHERE {{ 
   			{exp} sd2:experimentalData ?data .
   			?data prov:wasDerivedFrom ?sample .
-  			?sample sd2:built ?condition .
+  			?sample sbol:built ?condition .
   			?condition sbol:functionalComponent ?fc .
   			?fc sbol:definition ?inducer .
   			?inducer sbol:type ?type ;
@@ -306,7 +306,7 @@ class SynBioHubQuery():
 		SELECT DISTINCT ?plasmid WHERE {{ 
   			{exp} sd2:experimentalData ?data .
   			?data prov:wasDerivedFrom ?sample .
-  			?sample sd2:built ?condition .
+  			?sample sbol:built ?condition .
   			?condition sbol:functionalComponent ?fc .
   			?fc sbol:definition ?plasmid .
   			?plasmid sbol:type ?type1 ;
@@ -326,7 +326,7 @@ class SynBioHubQuery():
 		SELECT DISTINCT ?strain WHERE {{ 
   			{exp} sd2:experimentalData ?data .
   			?data prov:wasDerivedFrom ?sample .
-  			?sample sd2:built ?condition .
+  			?sample sbol:built ?condition .
   			?condition sbol:functionalComponent ?fc .
   			?fc sbol:definition ?strain .
   			?strain sbol:type ?type .
@@ -356,10 +356,9 @@ class SynBioHubQuery():
 	def query_sample_inducers(self, sample):
 		inducer_query = """
 		PREFIX sbol: <http://sbols.org/v2#>
-		PREFIX sd2: <http://sd2e.org#>
 		PREFIX om: <http://www.ontology-of-units-of-measure.org/resource/om-2#>
 		SELECT ?inducer ?level WHERE {{ 
-  			{samp} sd2:built ?condition .
+  			{samp} sbol:built ?condition .
   			?condition sbol:functionalComponent ?fc .
   			?fc sbol:definition ?inducer .
   			?inducer sbol:type ?type ;
@@ -379,9 +378,8 @@ class SynBioHubQuery():
 	def query_sample_plasmids(self, sample):
 		plasmid_query = """
 		PREFIX sbol: <http://sbols.org/v2#>
-		PREFIX sd2: <http://sd2e.org#>
 		SELECT DISTINCT ?plasmid WHERE {{ 
-  			{samp} sd2:built ?condition .
+  			{samp} sbol:built ?condition .
   			?condition sbol:functionalComponent ?fc .
   			?fc sbol:definition ?plasmid .
   			?plasmid sbol:type ?type1 ;
