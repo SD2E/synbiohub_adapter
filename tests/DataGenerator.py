@@ -15,11 +15,17 @@ def create_compDef(idPrefix):
 	compDef = ComponentDefinition(c_uri, BIOPAX_DNA, '1.0')
 	return compDef
 
+def create_seq(idPrefix):
+	s_uri = get_uniqueID('seq' + idPrefix)
+	seq = Sequence(s_uri, 'atatatatatatatatat', SBOL_ENCODING_IUPAC, '1.0')
+	return seq
+
 if __name__ == '__main__':
 	sbolDoc = Document()
 	setHomespace("https://www.bbn.com/")
 	for i in range(20000):
-		c = create_compDef(str(i))
+		# c = create_compDef(str(i))
+		s = create_seq(str(i))
 		sbolDoc.addComponentDefinition(c)
 
 	res = sbolDoc.writeString()
