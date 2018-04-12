@@ -1,0 +1,1832 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:prov="http://www.w3.org/ns/prov#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:sbol="http://sbols.org/v2#"
+   xmlns:sd2="http://sd2e.org#"
+   xmlns:sys-bio="http://sys-bio.org#">
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//A01/1">
+    <dcterms:title>A01</dcterms:title>
+    <sbol:displayId>A01</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//A01"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1201_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_A01/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//A02/1">
+    <dcterms:title>A02</dcterms:title>
+    <sbol:displayId>A02</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//A02"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1201_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_A02/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//A03/1">
+    <dcterms:title>A03</dcterms:title>
+    <sbol:displayId>A03</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//A03"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1201_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_A03/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//A04/1">
+    <dcterms:title>A04</dcterms:title>
+    <sbol:displayId>A04</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//A04"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN3928_pAN4036_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_A04/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//A05/1">
+    <dcterms:title>A05</dcterms:title>
+    <sbol:displayId>A05</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//A05"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN3928_pAN4036_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_A05/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//A06/1">
+    <dcterms:title>A06</dcterms:title>
+    <sbol:displayId>A06</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//A06"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN3928_pAN4036_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_A06/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//A07/1">
+    <dcterms:title>A07</dcterms:title>
+    <sbol:displayId>A07</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//A07"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1717_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_A07/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//A08/1">
+    <dcterms:title>A08</dcterms:title>
+    <sbol:displayId>A08</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//A08"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1717_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_A08/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//A09/1">
+    <dcterms:title>A09</dcterms:title>
+    <sbol:displayId>A09</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//A09"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1717_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_A09/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//B01/1">
+    <dcterms:title>B01</dcterms:title>
+    <sbol:displayId>B01</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//B01"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1201_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_B01/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//B02/1">
+    <dcterms:title>B02</dcterms:title>
+    <sbol:displayId>B02</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//B02"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1201_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_B02/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//B03/1">
+    <dcterms:title>B03</dcterms:title>
+    <sbol:displayId>B03</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//B03"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1201_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_B03/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//B04/1">
+    <dcterms:title>B04</dcterms:title>
+    <sbol:displayId>B04</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//B04"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN3928_pAN4036_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_B04/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//B05/1">
+    <dcterms:title>B05</dcterms:title>
+    <sbol:displayId>B05</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//B05"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN3928_pAN4036_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_B05/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//B06/1">
+    <dcterms:title>B06</dcterms:title>
+    <sbol:displayId>B06</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//B06"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN3928_pAN4036_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_B06/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//B07/1">
+    <dcterms:title>B07</dcterms:title>
+    <sbol:displayId>B07</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//B07"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1717_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_B07/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//B08/1">
+    <dcterms:title>B08</dcterms:title>
+    <sbol:displayId>B08</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//B08"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1717_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_B08/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//B09/1">
+    <dcterms:title>B09</dcterms:title>
+    <sbol:displayId>B09</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//B09"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1717_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_B09/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//C01/1">
+    <dcterms:title>C01</dcterms:title>
+    <sbol:displayId>C01</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//C01"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1201_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_C01/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//C02/1">
+    <dcterms:title>C02</dcterms:title>
+    <sbol:displayId>C02</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//C02"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1201_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_C02/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//C03/1">
+    <dcterms:title>C03</dcterms:title>
+    <sbol:displayId>C03</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//C03"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1201_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_C03/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//C04/1">
+    <dcterms:title>C04</dcterms:title>
+    <sbol:displayId>C04</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//C04"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN3928_pAN4036_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_C04/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//C05/1">
+    <dcterms:title>C05</dcterms:title>
+    <sbol:displayId>C05</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//C05"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN3928_pAN4036_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_C05/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//C06/1">
+    <dcterms:title>C06</dcterms:title>
+    <sbol:displayId>C06</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//C06"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN3928_pAN4036_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_C06/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//C07/1">
+    <dcterms:title>C07</dcterms:title>
+    <sbol:displayId>C07</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//C07"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1717_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_C07/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//C08/1">
+    <dcterms:title>C08</dcterms:title>
+    <sbol:displayId>C08</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//C08"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1717_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_C08/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//C09/1">
+    <dcterms:title>C09</dcterms:title>
+    <sbol:displayId>C09</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//C09"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1717_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_C09/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//D01/1">
+    <dcterms:title>D01</dcterms:title>
+    <sbol:displayId>D01</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//D01"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1201_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_D01/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//D02/1">
+    <dcterms:title>D02</dcterms:title>
+    <sbol:displayId>D02</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//D02"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1201_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_D02/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//D03/1">
+    <dcterms:title>D03</dcterms:title>
+    <sbol:displayId>D03</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//D03"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1201_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_D03/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//D04/1">
+    <dcterms:title>D04</dcterms:title>
+    <sbol:displayId>D04</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//D04"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN3928_pAN4036_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_D04/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//D05/1">
+    <dcterms:title>D05</dcterms:title>
+    <sbol:displayId>D05</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//D05"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN3928_pAN4036_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_D05/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//D06/1">
+    <dcterms:title>D06</dcterms:title>
+    <sbol:displayId>D06</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//D06"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN3928_pAN4036_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_D06/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//D07/1">
+    <dcterms:title>D07</dcterms:title>
+    <sbol:displayId>D07</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//D07"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1717_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_D07/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//D08/1">
+    <dcterms:title>D08</dcterms:title>
+    <sbol:displayId>D08</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//D08"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1717_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_D08/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//D09/1">
+    <dcterms:title>D09</dcterms:title>
+    <sbol:displayId>D09</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//D09"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1717_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_D09/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//E01/1">
+    <dcterms:title>E01</dcterms:title>
+    <sbol:displayId>E01</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//E01"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1201_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_E01/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//E02/1">
+    <dcterms:title>E02</dcterms:title>
+    <sbol:displayId>E02</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//E02"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1201_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_E02/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//E03/1">
+    <dcterms:title>E03</dcterms:title>
+    <sbol:displayId>E03</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//E03"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1201_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_E03/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//E04/1">
+    <dcterms:title>E04</dcterms:title>
+    <sbol:displayId>E04</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//E04"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN3928_pAN4036_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_E04/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//E05/1">
+    <dcterms:title>E05</dcterms:title>
+    <sbol:displayId>E05</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//E05"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN3928_pAN4036_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_E05/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//E06/1">
+    <dcterms:title>E06</dcterms:title>
+    <sbol:displayId>E06</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//E06"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN3928_pAN4036_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_E06/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//E07/1">
+    <dcterms:title>E07</dcterms:title>
+    <sbol:displayId>E07</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//E07"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1717_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_E07/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//E08/1">
+    <dcterms:title>E08</dcterms:title>
+    <sbol:displayId>E08</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//E08"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1717_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_E08/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//E09/1">
+    <dcterms:title>E09</dcterms:title>
+    <sbol:displayId>E09</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//E09"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1717_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_E09/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//F01/1">
+    <dcterms:title>F01</dcterms:title>
+    <sbol:displayId>F01</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//F01"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1201_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_F01/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//F02/1">
+    <dcterms:title>F02</dcterms:title>
+    <sbol:displayId>F02</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//F02"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1201_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_F02/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//F03/1">
+    <dcterms:title>F03</dcterms:title>
+    <sbol:displayId>F03</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//F03"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1201_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_F03/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//F04/1">
+    <dcterms:title>F04</dcterms:title>
+    <sbol:displayId>F04</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//F04"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN3928_pAN4036_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_F04/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//F05/1">
+    <dcterms:title>F05</dcterms:title>
+    <sbol:displayId>F05</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//F05"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN3928_pAN4036_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_F05/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//F06/1">
+    <dcterms:title>F06</dcterms:title>
+    <sbol:displayId>F06</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//F06"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN3928_pAN4036_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_F06/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//F07/1">
+    <dcterms:title>F07</dcterms:title>
+    <sbol:displayId>F07</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//F07"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1717_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_F07/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//F08/1">
+    <dcterms:title>F08</dcterms:title>
+    <sbol:displayId>F08</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//F08"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1717_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_F08/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//F09/1">
+    <dcterms:title>F09</dcterms:title>
+    <sbol:displayId>F09</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//F09"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1717_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_F09/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//G01/1">
+    <dcterms:title>G01</dcterms:title>
+    <sbol:displayId>G01</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//G01"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1201_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_G01/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//G02/1">
+    <dcterms:title>G02</dcterms:title>
+    <sbol:displayId>G02</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//G02"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1201_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_G02/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//G03/1">
+    <dcterms:title>G03</dcterms:title>
+    <sbol:displayId>G03</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//G03"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1201_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_G03/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//G04/1">
+    <dcterms:title>G04</dcterms:title>
+    <sbol:displayId>G04</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//G04"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN3928_pAN4036_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_G04/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//G05/1">
+    <dcterms:title>G05</dcterms:title>
+    <sbol:displayId>G05</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//G05"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN3928_pAN4036_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_G05/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//G06/1">
+    <dcterms:title>G06</dcterms:title>
+    <sbol:displayId>G06</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//G06"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN3928_pAN4036_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_G06/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//G07/1">
+    <dcterms:title>G07</dcterms:title>
+    <sbol:displayId>G07</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//G07"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1717_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_G07/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//G08/1">
+    <dcterms:title>G08</dcterms:title>
+    <sbol:displayId>G08</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//G08"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1717_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_G08/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//G09/1">
+    <dcterms:title>G09</dcterms:title>
+    <sbol:displayId>G09</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//G09"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1717_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_G09/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//H01/1">
+    <dcterms:title>H01</dcterms:title>
+    <sbol:displayId>H01</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//H01"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1201_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_H01/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//H02/1">
+    <dcterms:title>H02</dcterms:title>
+    <sbol:displayId>H02</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//H02"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1201_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_H02/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//H03/1">
+    <dcterms:title>H03</dcterms:title>
+    <sbol:displayId>H03</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//H03"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1201_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_H03/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//H04/1">
+    <dcterms:title>H04</dcterms:title>
+    <sbol:displayId>H04</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//H04"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN3928_pAN4036_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_H04/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//H05/1">
+    <dcterms:title>H05</dcterms:title>
+    <sbol:displayId>H05</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//H05"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN3928_pAN4036_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_H05/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//H06/1">
+    <dcterms:title>H06</dcterms:title>
+    <sbol:displayId>H06</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//H06"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN3928_pAN4036_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_H06/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//H07/1">
+    <dcterms:title>H07</dcterms:title>
+    <sbol:displayId>H07</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//H07"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1717_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_H07/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//H08/1">
+    <dcterms:title>H08</dcterms:title>
+    <sbol:displayId>H08</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//H08"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1717_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_H08/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//H09/1">
+    <dcterms:title>H09</dcterms:title>
+    <sbol:displayId>H09</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//H09"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1717_3/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_H09/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1201_3/1">
+    <dcterms:title>NEB_10_beta_pAN1201_3</dcterms:title>
+    <sbol:displayId>NEB_10_beta_pAN1201_3</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1201_3"/>
+    <sbol:version>1</sbol:version>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1717_3/1">
+    <dcterms:title>NEB_10_beta_pAN1717_3</dcterms:title>
+    <sbol:displayId>NEB_10_beta_pAN1717_3</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1717_3"/>
+    <sbol:version>1</sbol:version>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN3928_pAN4036_3/1">
+    <dcterms:title>NEB_10_beta_pAN3928_pAN4036_3</dcterms:title>
+    <sbol:displayId>NEB_10_beta_pAN3928_pAN4036_3</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN3928_pAN4036_3"/>
+    <sbol:version>1</sbol:version>
+  </sd2:Implementation>
+  <sd2:Experiment rdf:about="https://hub.sd2e.org/user/sd2e//transcriptic_rule_30_q0_1_09242017/1">
+    <dcterms:title>Rule30 Q0 Plan</dcterms:title>
+    <sbol:displayId>transcriptic_rule_30_q0_1_09242017</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transcriptic_rule_30_q0_1_09242017"/>
+    <sbol:version>1</sbol:version>
+  </sd2:Experiment>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_A01/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN1201_3_to_A01</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_A01"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_A01/NEB_10_beta_pAN1201_3/1">
+        <sbol:displayId>NEB_10_beta_pAN1201_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_A01/NEB_10_beta_pAN1201_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1201_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_A02/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN1201_3_to_A02</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_A02"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_A02/NEB_10_beta_pAN1201_3/1">
+        <sbol:displayId>NEB_10_beta_pAN1201_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_A02/NEB_10_beta_pAN1201_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1201_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_A03/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN1201_3_to_A03</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_A03"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_A03/NEB_10_beta_pAN1201_3/1">
+        <sbol:displayId>NEB_10_beta_pAN1201_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_A03/NEB_10_beta_pAN1201_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1201_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_B01/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN1201_3_to_B01</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_B01"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_B01/NEB_10_beta_pAN1201_3/1">
+        <sbol:displayId>NEB_10_beta_pAN1201_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_B01/NEB_10_beta_pAN1201_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1201_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_B02/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN1201_3_to_B02</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_B02"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_B02/NEB_10_beta_pAN1201_3/1">
+        <sbol:displayId>NEB_10_beta_pAN1201_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_B02/NEB_10_beta_pAN1201_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1201_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_B03/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN1201_3_to_B03</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_B03"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_B03/NEB_10_beta_pAN1201_3/1">
+        <sbol:displayId>NEB_10_beta_pAN1201_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_B03/NEB_10_beta_pAN1201_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1201_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_C01/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN1201_3_to_C01</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_C01"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_C01/NEB_10_beta_pAN1201_3/1">
+        <sbol:displayId>NEB_10_beta_pAN1201_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_C01/NEB_10_beta_pAN1201_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1201_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_C02/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN1201_3_to_C02</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_C02"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_C02/NEB_10_beta_pAN1201_3/1">
+        <sbol:displayId>NEB_10_beta_pAN1201_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_C02/NEB_10_beta_pAN1201_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1201_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_C03/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN1201_3_to_C03</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_C03"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_C03/NEB_10_beta_pAN1201_3/1">
+        <sbol:displayId>NEB_10_beta_pAN1201_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_C03/NEB_10_beta_pAN1201_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1201_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_D01/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN1201_3_to_D01</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_D01"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_D01/NEB_10_beta_pAN1201_3/1">
+        <sbol:displayId>NEB_10_beta_pAN1201_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_D01/NEB_10_beta_pAN1201_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1201_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_D02/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN1201_3_to_D02</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_D02"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_D02/NEB_10_beta_pAN1201_3/1">
+        <sbol:displayId>NEB_10_beta_pAN1201_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_D02/NEB_10_beta_pAN1201_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1201_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_D03/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN1201_3_to_D03</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_D03"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_D03/NEB_10_beta_pAN1201_3/1">
+        <sbol:displayId>NEB_10_beta_pAN1201_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_D03/NEB_10_beta_pAN1201_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1201_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_E01/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN1201_3_to_E01</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_E01"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_E01/NEB_10_beta_pAN1201_3/1">
+        <sbol:displayId>NEB_10_beta_pAN1201_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_E01/NEB_10_beta_pAN1201_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1201_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_E02/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN1201_3_to_E02</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_E02"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_E02/NEB_10_beta_pAN1201_3/1">
+        <sbol:displayId>NEB_10_beta_pAN1201_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_E02/NEB_10_beta_pAN1201_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1201_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_E03/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN1201_3_to_E03</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_E03"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_E03/NEB_10_beta_pAN1201_3/1">
+        <sbol:displayId>NEB_10_beta_pAN1201_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_E03/NEB_10_beta_pAN1201_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1201_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_F01/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN1201_3_to_F01</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_F01"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_F01/NEB_10_beta_pAN1201_3/1">
+        <sbol:displayId>NEB_10_beta_pAN1201_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_F01/NEB_10_beta_pAN1201_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1201_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_F02/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN1201_3_to_F02</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_F02"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_F02/NEB_10_beta_pAN1201_3/1">
+        <sbol:displayId>NEB_10_beta_pAN1201_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_F02/NEB_10_beta_pAN1201_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1201_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_F03/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN1201_3_to_F03</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_F03"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_F03/NEB_10_beta_pAN1201_3/1">
+        <sbol:displayId>NEB_10_beta_pAN1201_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_F03/NEB_10_beta_pAN1201_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1201_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_G01/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN1201_3_to_G01</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_G01"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_G01/NEB_10_beta_pAN1201_3/1">
+        <sbol:displayId>NEB_10_beta_pAN1201_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_G01/NEB_10_beta_pAN1201_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1201_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_G02/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN1201_3_to_G02</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_G02"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_G02/NEB_10_beta_pAN1201_3/1">
+        <sbol:displayId>NEB_10_beta_pAN1201_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_G02/NEB_10_beta_pAN1201_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1201_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_G03/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN1201_3_to_G03</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_G03"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_G03/NEB_10_beta_pAN1201_3/1">
+        <sbol:displayId>NEB_10_beta_pAN1201_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_G03/NEB_10_beta_pAN1201_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1201_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_H01/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN1201_3_to_H01</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_H01"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_H01/NEB_10_beta_pAN1201_3/1">
+        <sbol:displayId>NEB_10_beta_pAN1201_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_H01/NEB_10_beta_pAN1201_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1201_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_H02/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN1201_3_to_H02</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_H02"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_H02/NEB_10_beta_pAN1201_3/1">
+        <sbol:displayId>NEB_10_beta_pAN1201_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_H02/NEB_10_beta_pAN1201_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1201_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_H03/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN1201_3_to_H03</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_H03"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_H03/NEB_10_beta_pAN1201_3/1">
+        <sbol:displayId>NEB_10_beta_pAN1201_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1201_3_to_H03/NEB_10_beta_pAN1201_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1201_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_A07/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN1717_3_to_A07</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_A07"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_A07/NEB_10_beta_pAN1717_3/1">
+        <sbol:displayId>NEB_10_beta_pAN1717_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_A07/NEB_10_beta_pAN1717_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1717_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_A08/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN1717_3_to_A08</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_A08"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_A08/NEB_10_beta_pAN1717_3/1">
+        <sbol:displayId>NEB_10_beta_pAN1717_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_A08/NEB_10_beta_pAN1717_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1717_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_A09/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN1717_3_to_A09</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_A09"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_A09/NEB_10_beta_pAN1717_3/1">
+        <sbol:displayId>NEB_10_beta_pAN1717_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_A09/NEB_10_beta_pAN1717_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1717_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_B07/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN1717_3_to_B07</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_B07"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_B07/NEB_10_beta_pAN1717_3/1">
+        <sbol:displayId>NEB_10_beta_pAN1717_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_B07/NEB_10_beta_pAN1717_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1717_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_B08/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN1717_3_to_B08</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_B08"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_B08/NEB_10_beta_pAN1717_3/1">
+        <sbol:displayId>NEB_10_beta_pAN1717_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_B08/NEB_10_beta_pAN1717_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1717_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_B09/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN1717_3_to_B09</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_B09"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_B09/NEB_10_beta_pAN1717_3/1">
+        <sbol:displayId>NEB_10_beta_pAN1717_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_B09/NEB_10_beta_pAN1717_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1717_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_C07/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN1717_3_to_C07</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_C07"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_C07/NEB_10_beta_pAN1717_3/1">
+        <sbol:displayId>NEB_10_beta_pAN1717_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_C07/NEB_10_beta_pAN1717_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1717_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_C08/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN1717_3_to_C08</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_C08"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_C08/NEB_10_beta_pAN1717_3/1">
+        <sbol:displayId>NEB_10_beta_pAN1717_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_C08/NEB_10_beta_pAN1717_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1717_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_C09/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN1717_3_to_C09</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_C09"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_C09/NEB_10_beta_pAN1717_3/1">
+        <sbol:displayId>NEB_10_beta_pAN1717_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_C09/NEB_10_beta_pAN1717_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1717_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_D07/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN1717_3_to_D07</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_D07"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_D07/NEB_10_beta_pAN1717_3/1">
+        <sbol:displayId>NEB_10_beta_pAN1717_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_D07/NEB_10_beta_pAN1717_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1717_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_D08/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN1717_3_to_D08</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_D08"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_D08/NEB_10_beta_pAN1717_3/1">
+        <sbol:displayId>NEB_10_beta_pAN1717_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_D08/NEB_10_beta_pAN1717_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1717_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_D09/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN1717_3_to_D09</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_D09"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_D09/NEB_10_beta_pAN1717_3/1">
+        <sbol:displayId>NEB_10_beta_pAN1717_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_D09/NEB_10_beta_pAN1717_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1717_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_E07/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN1717_3_to_E07</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_E07"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_E07/NEB_10_beta_pAN1717_3/1">
+        <sbol:displayId>NEB_10_beta_pAN1717_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_E07/NEB_10_beta_pAN1717_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1717_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_E08/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN1717_3_to_E08</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_E08"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_E08/NEB_10_beta_pAN1717_3/1">
+        <sbol:displayId>NEB_10_beta_pAN1717_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_E08/NEB_10_beta_pAN1717_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1717_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_E09/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN1717_3_to_E09</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_E09"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_E09/NEB_10_beta_pAN1717_3/1">
+        <sbol:displayId>NEB_10_beta_pAN1717_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_E09/NEB_10_beta_pAN1717_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1717_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_F07/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN1717_3_to_F07</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_F07"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_F07/NEB_10_beta_pAN1717_3/1">
+        <sbol:displayId>NEB_10_beta_pAN1717_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_F07/NEB_10_beta_pAN1717_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1717_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_F08/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN1717_3_to_F08</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_F08"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_F08/NEB_10_beta_pAN1717_3/1">
+        <sbol:displayId>NEB_10_beta_pAN1717_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_F08/NEB_10_beta_pAN1717_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1717_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_F09/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN1717_3_to_F09</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_F09"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_F09/NEB_10_beta_pAN1717_3/1">
+        <sbol:displayId>NEB_10_beta_pAN1717_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_F09/NEB_10_beta_pAN1717_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1717_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_G07/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN1717_3_to_G07</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_G07"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_G07/NEB_10_beta_pAN1717_3/1">
+        <sbol:displayId>NEB_10_beta_pAN1717_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_G07/NEB_10_beta_pAN1717_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1717_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_G08/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN1717_3_to_G08</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_G08"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_G08/NEB_10_beta_pAN1717_3/1">
+        <sbol:displayId>NEB_10_beta_pAN1717_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_G08/NEB_10_beta_pAN1717_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1717_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_G09/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN1717_3_to_G09</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_G09"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_G09/NEB_10_beta_pAN1717_3/1">
+        <sbol:displayId>NEB_10_beta_pAN1717_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_G09/NEB_10_beta_pAN1717_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1717_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_H07/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN1717_3_to_H07</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_H07"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_H07/NEB_10_beta_pAN1717_3/1">
+        <sbol:displayId>NEB_10_beta_pAN1717_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_H07/NEB_10_beta_pAN1717_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1717_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_H08/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN1717_3_to_H08</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_H08"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_H08/NEB_10_beta_pAN1717_3/1">
+        <sbol:displayId>NEB_10_beta_pAN1717_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_H08/NEB_10_beta_pAN1717_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1717_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_H09/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN1717_3_to_H09</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_H09"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_H09/NEB_10_beta_pAN1717_3/1">
+        <sbol:displayId>NEB_10_beta_pAN1717_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN1717_3_to_H09/NEB_10_beta_pAN1717_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1717_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_A04/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN3928_pAN4036_3_to_A04</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_A04"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_A04/NEB_10_beta_pAN3928_pAN4036_3/1">
+        <sbol:displayId>NEB_10_beta_pAN3928_pAN4036_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_A04/NEB_10_beta_pAN3928_pAN4036_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN3928_pAN4036_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_A05/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN3928_pAN4036_3_to_A05</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_A05"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_A05/NEB_10_beta_pAN3928_pAN4036_3/1">
+        <sbol:displayId>NEB_10_beta_pAN3928_pAN4036_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_A05/NEB_10_beta_pAN3928_pAN4036_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN3928_pAN4036_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_A06/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN3928_pAN4036_3_to_A06</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_A06"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_A06/NEB_10_beta_pAN3928_pAN4036_3/1">
+        <sbol:displayId>NEB_10_beta_pAN3928_pAN4036_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_A06/NEB_10_beta_pAN3928_pAN4036_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN3928_pAN4036_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_B04/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN3928_pAN4036_3_to_B04</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_B04"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_B04/NEB_10_beta_pAN3928_pAN4036_3/1">
+        <sbol:displayId>NEB_10_beta_pAN3928_pAN4036_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_B04/NEB_10_beta_pAN3928_pAN4036_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN3928_pAN4036_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_B05/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN3928_pAN4036_3_to_B05</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_B05"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_B05/NEB_10_beta_pAN3928_pAN4036_3/1">
+        <sbol:displayId>NEB_10_beta_pAN3928_pAN4036_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_B05/NEB_10_beta_pAN3928_pAN4036_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN3928_pAN4036_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_B06/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN3928_pAN4036_3_to_B06</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_B06"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_B06/NEB_10_beta_pAN3928_pAN4036_3/1">
+        <sbol:displayId>NEB_10_beta_pAN3928_pAN4036_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_B06/NEB_10_beta_pAN3928_pAN4036_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN3928_pAN4036_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_C04/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN3928_pAN4036_3_to_C04</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_C04"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_C04/NEB_10_beta_pAN3928_pAN4036_3/1">
+        <sbol:displayId>NEB_10_beta_pAN3928_pAN4036_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_C04/NEB_10_beta_pAN3928_pAN4036_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN3928_pAN4036_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_C05/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN3928_pAN4036_3_to_C05</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_C05"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_C05/NEB_10_beta_pAN3928_pAN4036_3/1">
+        <sbol:displayId>NEB_10_beta_pAN3928_pAN4036_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_C05/NEB_10_beta_pAN3928_pAN4036_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN3928_pAN4036_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_C06/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN3928_pAN4036_3_to_C06</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_C06"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_C06/NEB_10_beta_pAN3928_pAN4036_3/1">
+        <sbol:displayId>NEB_10_beta_pAN3928_pAN4036_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_C06/NEB_10_beta_pAN3928_pAN4036_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN3928_pAN4036_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_D04/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN3928_pAN4036_3_to_D04</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_D04"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_D04/NEB_10_beta_pAN3928_pAN4036_3/1">
+        <sbol:displayId>NEB_10_beta_pAN3928_pAN4036_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_D04/NEB_10_beta_pAN3928_pAN4036_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN3928_pAN4036_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_D05/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN3928_pAN4036_3_to_D05</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_D05"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_D05/NEB_10_beta_pAN3928_pAN4036_3/1">
+        <sbol:displayId>NEB_10_beta_pAN3928_pAN4036_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_D05/NEB_10_beta_pAN3928_pAN4036_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN3928_pAN4036_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_D06/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN3928_pAN4036_3_to_D06</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_D06"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_D06/NEB_10_beta_pAN3928_pAN4036_3/1">
+        <sbol:displayId>NEB_10_beta_pAN3928_pAN4036_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_D06/NEB_10_beta_pAN3928_pAN4036_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN3928_pAN4036_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_E04/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN3928_pAN4036_3_to_E04</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_E04"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_E04/NEB_10_beta_pAN3928_pAN4036_3/1">
+        <sbol:displayId>NEB_10_beta_pAN3928_pAN4036_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_E04/NEB_10_beta_pAN3928_pAN4036_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN3928_pAN4036_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_E05/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN3928_pAN4036_3_to_E05</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_E05"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_E05/NEB_10_beta_pAN3928_pAN4036_3/1">
+        <sbol:displayId>NEB_10_beta_pAN3928_pAN4036_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_E05/NEB_10_beta_pAN3928_pAN4036_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN3928_pAN4036_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_E06/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN3928_pAN4036_3_to_E06</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_E06"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_E06/NEB_10_beta_pAN3928_pAN4036_3/1">
+        <sbol:displayId>NEB_10_beta_pAN3928_pAN4036_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_E06/NEB_10_beta_pAN3928_pAN4036_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN3928_pAN4036_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_F04/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN3928_pAN4036_3_to_F04</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_F04"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_F04/NEB_10_beta_pAN3928_pAN4036_3/1">
+        <sbol:displayId>NEB_10_beta_pAN3928_pAN4036_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_F04/NEB_10_beta_pAN3928_pAN4036_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN3928_pAN4036_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_F05/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN3928_pAN4036_3_to_F05</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_F05"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_F05/NEB_10_beta_pAN3928_pAN4036_3/1">
+        <sbol:displayId>NEB_10_beta_pAN3928_pAN4036_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_F05/NEB_10_beta_pAN3928_pAN4036_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN3928_pAN4036_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_F06/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN3928_pAN4036_3_to_F06</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_F06"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_F06/NEB_10_beta_pAN3928_pAN4036_3/1">
+        <sbol:displayId>NEB_10_beta_pAN3928_pAN4036_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_F06/NEB_10_beta_pAN3928_pAN4036_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN3928_pAN4036_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_G04/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN3928_pAN4036_3_to_G04</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_G04"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_G04/NEB_10_beta_pAN3928_pAN4036_3/1">
+        <sbol:displayId>NEB_10_beta_pAN3928_pAN4036_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_G04/NEB_10_beta_pAN3928_pAN4036_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN3928_pAN4036_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_G05/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN3928_pAN4036_3_to_G05</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_G05"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_G05/NEB_10_beta_pAN3928_pAN4036_3/1">
+        <sbol:displayId>NEB_10_beta_pAN3928_pAN4036_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_G05/NEB_10_beta_pAN3928_pAN4036_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN3928_pAN4036_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_G06/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN3928_pAN4036_3_to_G06</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_G06"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_G06/NEB_10_beta_pAN3928_pAN4036_3/1">
+        <sbol:displayId>NEB_10_beta_pAN3928_pAN4036_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_G06/NEB_10_beta_pAN3928_pAN4036_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN3928_pAN4036_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_H04/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN3928_pAN4036_3_to_H04</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_H04"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_H04/NEB_10_beta_pAN3928_pAN4036_3/1">
+        <sbol:displayId>NEB_10_beta_pAN3928_pAN4036_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_H04/NEB_10_beta_pAN3928_pAN4036_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN3928_pAN4036_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_H05/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN3928_pAN4036_3_to_H05</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_H05"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_H05/NEB_10_beta_pAN3928_pAN4036_3/1">
+        <sbol:displayId>NEB_10_beta_pAN3928_pAN4036_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_H05/NEB_10_beta_pAN3928_pAN4036_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN3928_pAN4036_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_H06/1.0.0">
+    <dcterms:description>Branch 1 -&gt; Flow cytometry: Take 3 μL of that dilution and distribute into eight wells with 145 μL inducer-containing M9 glucose media with 50 μg/mL kanamycin and 50 μg/mL spectinomycin in a V-bottom 96-well plate. The eight wells correspond to the inducer conditions (—/—/—), (—/—/+), (—/+/—), (— /+/+), (+/—/—), (+/—/+), (+/+/—), and (+/+/+). Each — or + corresponds to the absence or presence of 5 mM L-arabinose (Sigma-Aldrich, MO, A3256), 2 ng/mL aTc (anhydrotetracycline hydrochloride; Sigma-Aldrich, MO, 37919), and 1 mM IPTG (isopropyl β-D-1- thiogalactopyranoside; Sigma-Aldrich, MO, I6758).</dcterms:description>
+    <dcterms:title>Transfer</dcterms:title>
+    <sbol:displayId>transfer_NEB_10_beta_pAN3928_pAN4036_3_to_H06</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_H06"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transfer"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_H06/NEB_10_beta_pAN3928_pAN4036_3/1">
+        <sbol:displayId>NEB_10_beta_pAN3928_pAN4036_3</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transfer_NEB_10_beta_pAN3928_pAN4036_3_to_H06/NEB_10_beta_pAN3928_pAN4036_3"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN3928_pAN4036_3/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+</rdf:RDF>

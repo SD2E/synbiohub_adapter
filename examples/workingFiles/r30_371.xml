@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:prov="http://www.w3.org/ns/prov#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:sbol="http://sbols.org/v2#"
+   xmlns:sd2="http://sd2e.org#"
+   xmlns:sys-bio="http://sys-bio.org#">
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//NEB_10_beta/1">
+    <dcterms:title>NEB_10_beta</dcterms:title>
+    <sbol:displayId>NEB_10_beta</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta"/>
+    <sbol:version>1</sbol:version>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1201/1">
+    <dcterms:title>NEB_10_beta_pAN1201</dcterms:title>
+    <sbol:displayId>NEB_10_beta_pAN1201</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1201"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta/1"/>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//pAN1201/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transform_pAN1201_NEB_10_beta_to_NEB_10_beta_pAN1201/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1201_1/1">
+    <dcterms:title>NEB_10_beta_pAN1201_1</dcterms:title>
+    <sbol:displayId>NEB_10_beta_pAN1201_1</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1201_1"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1201/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//pick_NEB_10_beta_pAN1201_to_NEB_10_beta_pAN1201_1/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1201_2/1">
+    <dcterms:title>NEB_10_beta_pAN1201_2</dcterms:title>
+    <sbol:displayId>NEB_10_beta_pAN1201_2</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1201_2"/>
+    <sbol:version>1</sbol:version>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1717/1">
+    <dcterms:title>NEB_10_beta_pAN1717</dcterms:title>
+    <sbol:displayId>NEB_10_beta_pAN1717</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1717"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta/1"/>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//pAN1717/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transform_pAN1717_NEB_10_beta_to_NEB_10_beta_pAN1717/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1717_1/1">
+    <dcterms:title>NEB_10_beta_pAN1717_1</dcterms:title>
+    <sbol:displayId>NEB_10_beta_pAN1717_1</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1717_1"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1717/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//pick_NEB_10_beta_pAN1717_to_NEB_10_beta_pAN1717_1/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1717_2/1">
+    <dcterms:title>NEB_10_beta_pAN1717_2</dcterms:title>
+    <sbol:displayId>NEB_10_beta_pAN1717_2</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1717_2"/>
+    <sbol:version>1</sbol:version>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN3928_pAN4036/1">
+    <dcterms:title>NEB_10_beta_pAN3928_pAN4036</dcterms:title>
+    <sbol:displayId>NEB_10_beta_pAN3928_pAN4036</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN3928_pAN4036"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta/1"/>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//pAN3928/1"/>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//pAN4036/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//transform_pAN3928_pAN4036_NEB_10_beta_to_NEB_10_beta_pAN3928_pAN4036/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN3928_pAN4036_1/1">
+    <dcterms:title>NEB_10_beta_pAN3928_pAN4036_1</dcterms:title>
+    <sbol:displayId>NEB_10_beta_pAN3928_pAN4036_1</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN3928_pAN4036_1"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN3928_pAN4036/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//pick_NEB_10_beta_pAN3928_pAN4036_to_NEB_10_beta_pAN3928_pAN4036_1/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN3928_pAN4036_2/1">
+    <dcterms:title>NEB_10_beta_pAN3928_pAN4036_2</dcterms:title>
+    <sbol:displayId>NEB_10_beta_pAN3928_pAN4036_2</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN3928_pAN4036_2"/>
+    <sbol:version>1</sbol:version>
+  </sd2:Implementation>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//incubate_NEB_10_beta_pAN1201_1/1.0.0">
+    <dcterms:description>Grow single colonies in sealed (Excel Scientific, Inc., AeraSeal, BS-25) V-bottom 96-well plates overnight (16 hours) at 37°C and 1000 RPM in an ELMI Digital Thermos Microplates shaker incubator (Elmi Ltd, Riga, Latvia).</dcterms:description>
+    <dcterms:title>Incubate</dcterms:title>
+    <sbol:displayId>incubate_NEB_10_beta_pAN1201_1</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//incubate_NEB_10_beta_pAN1201_1"/>
+    <sbol:version>1.0.0</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#incubate"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//incubate_NEB_10_beta_pAN1201_1/NEB_10_beta_pAN1201_1/1.0.0">
+        <sbol:displayId>NEB_10_beta_pAN1201_1</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//incubate_NEB_10_beta_pAN1201_1/NEB_10_beta_pAN1201_1"/>
+        <sbol:version>1.0.0</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1201_1/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//incubate_NEB_10_beta_pAN1201_2/1.0.0">
+    <dcterms:description>Grow the diluted cultures in an ELMI shaker incubator at 37 °C and 1000 RPM for three hours.</dcterms:description>
+    <dcterms:title>Incubate</dcterms:title>
+    <sbol:displayId>incubate_NEB_10_beta_pAN1201_2</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//incubate_NEB_10_beta_pAN1201_2"/>
+    <sbol:version>1.0.0</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#incubate"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//incubate_NEB_10_beta_pAN1201_2/NEB_10_beta_pAN1201_2/1.0.0">
+        <sbol:displayId>NEB_10_beta_pAN1201_2</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//incubate_NEB_10_beta_pAN1201_2/NEB_10_beta_pAN1201_2"/>
+        <sbol:version>1.0.0</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1201_2/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//incubate_NEB_10_beta_pAN1717_1/1.0.0">
+    <dcterms:description>Grow single colonies in sealed (Excel Scientific, Inc., AeraSeal, BS-25) V-bottom 96-well plates overnight (16 hours) at 37°C and 1000 RPM in an ELMI Digital Thermos Microplates shaker incubator (Elmi Ltd, Riga, Latvia).</dcterms:description>
+    <dcterms:title>Incubate</dcterms:title>
+    <sbol:displayId>incubate_NEB_10_beta_pAN1717_1</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//incubate_NEB_10_beta_pAN1717_1"/>
+    <sbol:version>1.0.0</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#incubate"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//incubate_NEB_10_beta_pAN1717_1/NEB_10_beta_pAN1717_1/1.0.0">
+        <sbol:displayId>NEB_10_beta_pAN1717_1</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//incubate_NEB_10_beta_pAN1717_1/NEB_10_beta_pAN1717_1"/>
+        <sbol:version>1.0.0</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1717_1/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//incubate_NEB_10_beta_pAN1717_2/1.0.0">
+    <dcterms:description>Grow the diluted cultures in an ELMI shaker incubator at 37 °C and 1000 RPM for three hours.</dcterms:description>
+    <dcterms:title>Incubate</dcterms:title>
+    <sbol:displayId>incubate_NEB_10_beta_pAN1717_2</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//incubate_NEB_10_beta_pAN1717_2"/>
+    <sbol:version>1.0.0</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#incubate"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//incubate_NEB_10_beta_pAN1717_2/NEB_10_beta_pAN1717_2/1.0.0">
+        <sbol:displayId>NEB_10_beta_pAN1717_2</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//incubate_NEB_10_beta_pAN1717_2/NEB_10_beta_pAN1717_2"/>
+        <sbol:version>1.0.0</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1717_2/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//incubate_NEB_10_beta_pAN3928_pAN4036_1/1.0.0">
+    <dcterms:description>Grow single colonies in sealed (Excel Scientific, Inc., AeraSeal, BS-25) V-bottom 96-well plates overnight (16 hours) at 37°C and 1000 RPM in an ELMI Digital Thermos Microplates shaker incubator (Elmi Ltd, Riga, Latvia).</dcterms:description>
+    <dcterms:title>Incubate</dcterms:title>
+    <sbol:displayId>incubate_NEB_10_beta_pAN3928_pAN4036_1</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//incubate_NEB_10_beta_pAN3928_pAN4036_1"/>
+    <sbol:version>1.0.0</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#incubate"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//incubate_NEB_10_beta_pAN3928_pAN4036_1/NEB_10_beta_pAN3928_pAN4036_1/1.0.0">
+        <sbol:displayId>NEB_10_beta_pAN3928_pAN4036_1</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//incubate_NEB_10_beta_pAN3928_pAN4036_1/NEB_10_beta_pAN3928_pAN4036_1"/>
+        <sbol:version>1.0.0</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN3928_pAN4036_1/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//incubate_NEB_10_beta_pAN3928_pAN4036_2/1.0.0">
+    <dcterms:description>Grow the diluted cultures in an ELMI shaker incubator at 37 °C and 1000 RPM for three hours.</dcterms:description>
+    <dcterms:title>Incubate</dcterms:title>
+    <sbol:displayId>incubate_NEB_10_beta_pAN3928_pAN4036_2</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//incubate_NEB_10_beta_pAN3928_pAN4036_2"/>
+    <sbol:version>1.0.0</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#incubate"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//incubate_NEB_10_beta_pAN3928_pAN4036_2/NEB_10_beta_pAN3928_pAN4036_2/1.0.0">
+        <sbol:displayId>NEB_10_beta_pAN3928_pAN4036_2</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//incubate_NEB_10_beta_pAN3928_pAN4036_2/NEB_10_beta_pAN3928_pAN4036_2"/>
+        <sbol:version>1.0.0</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN3928_pAN4036_2/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//pAN1201/1">
+    <dcterms:title>pAN1201</dcterms:title>
+    <sbol:displayId>pAN1201</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//pAN1201"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//pAN1201_streak/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//prepare_plasmids_pAN1201_streak_to_pAN1201/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//pAN1201_streak/1">
+    <dcterms:title>pAN1201_streak</dcterms:title>
+    <sbol:displayId>pAN1201_streak</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//pAN1201_streak"/>
+    <sbol:version>1</sbol:version>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//pAN1717/1">
+    <dcterms:title>pAN1717</dcterms:title>
+    <sbol:displayId>pAN1717</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//pAN1717"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//pAN1717_streak/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//prepare_plasmids_pAN1717_streak_to_pAN1717/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//pAN1717_streak/1">
+    <dcterms:title>pAN1717_streak</dcterms:title>
+    <sbol:displayId>pAN1717_streak</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//pAN1717_streak"/>
+    <sbol:version>1</sbol:version>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//pAN3928/1">
+    <dcterms:title>pAN3928</dcterms:title>
+    <sbol:displayId>pAN3928</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//pAN3928"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//pAN3928_streak/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//prepare_plasmids_pAN3928_streak_to_pAN3928/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//pAN3928_streak/1">
+    <dcterms:title>pAN3928_streak</dcterms:title>
+    <sbol:displayId>pAN3928_streak</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//pAN3928_streak"/>
+    <sbol:version>1</sbol:version>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//pAN4036/1">
+    <dcterms:title>pAN4036</dcterms:title>
+    <sbol:displayId>pAN4036</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//pAN4036"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//pAN4036_streak/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//prepare_plasmids_pAN4036_streak_to_pAN4036/1.0.0"/>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//pAN4036_streak/1">
+    <dcterms:title>pAN4036_streak</dcterms:title>
+    <sbol:displayId>pAN4036_streak</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//pAN4036_streak"/>
+    <sbol:version>1</sbol:version>
+  </sd2:Implementation>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//pick_NEB_10_beta_pAN1201_to_NEB_10_beta_pAN1201_1/1.0.0">
+    <dcterms:description>The day after transformation, pick single colonies and inoculate into 200 μl of M9 glucose with appropriate antibiotics in a V-bottom 96-well plate (Nunc, Roskilde, Denmark, 249952). </dcterms:description>
+    <dcterms:title>Pick</dcterms:title>
+    <sbol:displayId>pick_NEB_10_beta_pAN1201_to_NEB_10_beta_pAN1201_1</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//pick_NEB_10_beta_pAN1201_to_NEB_10_beta_pAN1201_1"/>
+    <sbol:version>1.0.0</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#pick"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//pick_NEB_10_beta_pAN1201_to_NEB_10_beta_pAN1201_1/NEB_10_beta_pAN1201/1.0.0">
+        <sbol:displayId>NEB_10_beta_pAN1201</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//pick_NEB_10_beta_pAN1201_to_NEB_10_beta_pAN1201_1/NEB_10_beta_pAN1201"/>
+        <sbol:version>1.0.0</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1201/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//pick_NEB_10_beta_pAN1717_to_NEB_10_beta_pAN1717_1/1.0.0">
+    <dcterms:description>The day after transformation, pick single colonies and inoculate into 200 μl of M9 glucose with appropriate antibiotics in a V-bottom 96-well plate (Nunc, Roskilde, Denmark, 249952). </dcterms:description>
+    <dcterms:title>Pick</dcterms:title>
+    <sbol:displayId>pick_NEB_10_beta_pAN1717_to_NEB_10_beta_pAN1717_1</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//pick_NEB_10_beta_pAN1717_to_NEB_10_beta_pAN1717_1"/>
+    <sbol:version>1.0.0</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#pick"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//pick_NEB_10_beta_pAN1717_to_NEB_10_beta_pAN1717_1/NEB_10_beta_pAN1717/1.0.0">
+        <sbol:displayId>NEB_10_beta_pAN1717</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//pick_NEB_10_beta_pAN1717_to_NEB_10_beta_pAN1717_1/NEB_10_beta_pAN1717"/>
+        <sbol:version>1.0.0</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1717/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//pick_NEB_10_beta_pAN3928_pAN4036_to_NEB_10_beta_pAN3928_pAN4036_1/1.0.0">
+    <dcterms:description>The day after transformation, pick single colonies and inoculate into 200 μl of M9 glucose with appropriate antibiotics in a V-bottom 96-well plate (Nunc, Roskilde, Denmark, 249952). </dcterms:description>
+    <dcterms:title>Pick</dcterms:title>
+    <sbol:displayId>pick_NEB_10_beta_pAN3928_pAN4036_to_NEB_10_beta_pAN3928_pAN4036_1</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//pick_NEB_10_beta_pAN3928_pAN4036_to_NEB_10_beta_pAN3928_pAN4036_1"/>
+    <sbol:version>1.0.0</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#pick"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//pick_NEB_10_beta_pAN3928_pAN4036_to_NEB_10_beta_pAN3928_pAN4036_1/NEB_10_beta_pAN3928_pAN4036/1.0.0">
+        <sbol:displayId>NEB_10_beta_pAN3928_pAN4036</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//pick_NEB_10_beta_pAN3928_pAN4036_to_NEB_10_beta_pAN3928_pAN4036_1/NEB_10_beta_pAN3928_pAN4036"/>
+        <sbol:version>1.0.0</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN3928_pAN4036/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//prepare_plasmids_pAN1201_streak_to_pAN1201/1.0.0">
+    <dcterms:description>Miniprep (QIAprep Spin Miniprep Kit ) and isolate plasmids pAN3928, pAN4036, pAN1201, and pAN1717  from provided plate streaks</dcterms:description>
+    <dcterms:title>Prepare Plasmids</dcterms:title>
+    <sbol:displayId>prepare_plasmids_pAN1201_streak_to_pAN1201</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//prepare_plasmids_pAN1201_streak_to_pAN1201"/>
+    <sbol:version>1.0.0</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#prepare_plasmids"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//prepare_plasmids_pAN1201_streak_to_pAN1201/pAN1201_streak/1.0.0">
+        <sbol:displayId>pAN1201_streak</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//prepare_plasmids_pAN1201_streak_to_pAN1201/pAN1201_streak"/>
+        <sbol:version>1.0.0</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//pAN1201_streak/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//prepare_plasmids_pAN1717_streak_to_pAN1717/1.0.0">
+    <dcterms:description>Miniprep (QIAprep Spin Miniprep Kit ) and isolate plasmids pAN3928, pAN4036, pAN1201, and pAN1717  from provided plate streaks</dcterms:description>
+    <dcterms:title>Prepare Plasmids</dcterms:title>
+    <sbol:displayId>prepare_plasmids_pAN1717_streak_to_pAN1717</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//prepare_plasmids_pAN1717_streak_to_pAN1717"/>
+    <sbol:version>1.0.0</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#prepare_plasmids"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//prepare_plasmids_pAN1717_streak_to_pAN1717/pAN1717_streak/1.0.0">
+        <sbol:displayId>pAN1717_streak</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//prepare_plasmids_pAN1717_streak_to_pAN1717/pAN1717_streak"/>
+        <sbol:version>1.0.0</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//pAN1717_streak/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//prepare_plasmids_pAN3928_streak_to_pAN3928/1.0.0">
+    <dcterms:description>Miniprep (QIAprep Spin Miniprep Kit ) and isolate plasmids pAN3928, pAN4036, pAN1201, and pAN1717  from provided plate streaks</dcterms:description>
+    <dcterms:title>Prepare Plasmids</dcterms:title>
+    <sbol:displayId>prepare_plasmids_pAN3928_streak_to_pAN3928</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//prepare_plasmids_pAN3928_streak_to_pAN3928"/>
+    <sbol:version>1.0.0</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#prepare_plasmids"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//prepare_plasmids_pAN3928_streak_to_pAN3928/pAN3928_streak/1.0.0">
+        <sbol:displayId>pAN3928_streak</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//prepare_plasmids_pAN3928_streak_to_pAN3928/pAN3928_streak"/>
+        <sbol:version>1.0.0</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//pAN3928_streak/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//prepare_plasmids_pAN4036_streak_to_pAN4036/1.0.0">
+    <dcterms:description>Miniprep (QIAprep Spin Miniprep Kit ) and isolate plasmids pAN3928, pAN4036, pAN1201, and pAN1717  from provided plate streaks</dcterms:description>
+    <dcterms:title>Prepare Plasmids</dcterms:title>
+    <sbol:displayId>prepare_plasmids_pAN4036_streak_to_pAN4036</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//prepare_plasmids_pAN4036_streak_to_pAN4036"/>
+    <sbol:version>1.0.0</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#prepare_plasmids"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//prepare_plasmids_pAN4036_streak_to_pAN4036/pAN4036_streak/1.0.0">
+        <sbol:displayId>pAN4036_streak</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//prepare_plasmids_pAN4036_streak_to_pAN4036/pAN4036_streak"/>
+        <sbol:version>1.0.0</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//pAN4036_streak/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <sd2:Experiment rdf:about="https://hub.sd2e.org/user/sd2e//transcriptic_rule_30_q0_1_09242017/1">
+    <dcterms:title>Rule30 Q0 Plan</dcterms:title>
+    <sbol:displayId>transcriptic_rule_30_q0_1_09242017</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transcriptic_rule_30_q0_1_09242017"/>
+    <sbol:version>1</sbol:version>
+  </sd2:Experiment>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transform_pAN1201_NEB_10_beta_to_NEB_10_beta_pAN1201/1.0.0">
+    <dcterms:description>3 Transformations (one time - keeping plates for isolates)</dcterms:description>
+    <dcterms:title>Transform Plasmids</dcterms:title>
+    <sbol:displayId>transform_pAN1201_NEB_10_beta_to_NEB_10_beta_pAN1201</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transform_pAN1201_NEB_10_beta_to_NEB_10_beta_pAN1201"/>
+    <sbol:version>1.0.0</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transform"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transform_pAN1201_NEB_10_beta_to_NEB_10_beta_pAN1201/NEB_10_beta/1.0.0">
+        <sbol:displayId>NEB_10_beta</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transform_pAN1201_NEB_10_beta_to_NEB_10_beta_pAN1201/NEB_10_beta"/>
+        <sbol:version>1.0.0</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transform_pAN1201_NEB_10_beta_to_NEB_10_beta_pAN1201/pAN1201/1.0.0">
+        <sbol:displayId>pAN1201</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transform_pAN1201_NEB_10_beta_to_NEB_10_beta_pAN1201/pAN1201"/>
+        <sbol:version>1.0.0</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//pAN1201/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transform_pAN1717_NEB_10_beta_to_NEB_10_beta_pAN1717/1.0.0">
+    <dcterms:description>3 Transformations (one time - keeping plates for isolates)</dcterms:description>
+    <dcterms:title>Transform Plasmids</dcterms:title>
+    <sbol:displayId>transform_pAN1717_NEB_10_beta_to_NEB_10_beta_pAN1717</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transform_pAN1717_NEB_10_beta_to_NEB_10_beta_pAN1717"/>
+    <sbol:version>1.0.0</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transform"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transform_pAN1717_NEB_10_beta_to_NEB_10_beta_pAN1717/NEB_10_beta/1.0.0">
+        <sbol:displayId>NEB_10_beta</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transform_pAN1717_NEB_10_beta_to_NEB_10_beta_pAN1717/NEB_10_beta"/>
+        <sbol:version>1.0.0</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transform_pAN1717_NEB_10_beta_to_NEB_10_beta_pAN1717/pAN1717/1.0.0">
+        <sbol:displayId>pAN1717</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transform_pAN1717_NEB_10_beta_to_NEB_10_beta_pAN1717/pAN1717"/>
+        <sbol:version>1.0.0</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//pAN1717/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//transform_pAN3928_pAN4036_NEB_10_beta_to_NEB_10_beta_pAN3928_pAN4036/1.0.0">
+    <dcterms:description>3 Transformations (one time - keeping plates for isolates)</dcterms:description>
+    <dcterms:title>Transform Plasmids</dcterms:title>
+    <sbol:displayId>transform_pAN3928_pAN4036_NEB_10_beta_to_NEB_10_beta_pAN3928_pAN4036</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transform_pAN3928_pAN4036_NEB_10_beta_to_NEB_10_beta_pAN3928_pAN4036"/>
+    <sbol:version>1.0.0</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#transform"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transform_pAN3928_pAN4036_NEB_10_beta_to_NEB_10_beta_pAN3928_pAN4036/NEB_10_beta/1.0.0">
+        <sbol:displayId>NEB_10_beta</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transform_pAN3928_pAN4036_NEB_10_beta_to_NEB_10_beta_pAN3928_pAN4036/NEB_10_beta"/>
+        <sbol:version>1.0.0</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transform_pAN3928_pAN4036_NEB_10_beta_to_NEB_10_beta_pAN3928_pAN4036/pAN3928/1.0.0">
+        <sbol:displayId>pAN3928</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transform_pAN3928_pAN4036_NEB_10_beta_to_NEB_10_beta_pAN3928_pAN4036/pAN3928"/>
+        <sbol:version>1.0.0</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//pAN3928/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//transform_pAN3928_pAN4036_NEB_10_beta_to_NEB_10_beta_pAN3928_pAN4036/pAN4036/1.0.0">
+        <sbol:displayId>pAN4036</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transform_pAN3928_pAN4036_NEB_10_beta_to_NEB_10_beta_pAN3928_pAN4036/pAN4036"/>
+        <sbol:version>1.0.0</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//pAN4036/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+</rdf:RDF>
