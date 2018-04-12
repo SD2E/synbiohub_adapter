@@ -1,0 +1,16 @@
+ID,Name,Description,Type,Composition_File
+fluorescein_50,Fluorescein Stock,,Control,fluorescein_50.csv
+fluorescein_25,Fluorescein Dilution,,Control,fluorescein_25.csv
+fluorescein_12_5,Fluorescein Dilution,,Control,fluorescein_12_5.csv
+fluorescein_6_25,Fluorescein Dilution,,Control,fluorescein_6_25.csv
+fluorescein_3_125,Fluorescein Dilution,,Control,fluorescein_3_125.csv
+fluorescein_1_625,Fluorescein Dilution,,Control,fluorescein_1_625.csv
+fluorescein_0_8125,Fluorescein Dilution,,Control,fluorescein_0_8125.csv
+fluorescein_0_40625,Fluorescein Dilution,,Control,fluorescein_0_40625.csv
+fluorescein_0_203125,Fluorescein Dilution,,Control,fluorescein_0_203125.csv
+fluorescein_0_1015625,Fluorescein Dilution,,Control,fluorescein_0_1015625.csv
+fluorescein_0_05078125,Fluorescein Dilution,,Control,fluorescein_0_05078125.csv
+fluorescein_0_025390625,Fluorescein Dilution,,Control,fluorescein_0_025390625.csv
+ludox_S40,LUDOX-S40,,Control,ludox_S40.csv
+spherotech_URCP_38_2F_calibration,Spherotech URCP-38-2F (Calibration),SPHERO Rainbow Calibration Particles,Control,spherotech_URCP_38_2F_calibration.csv
+spherotech_URCP_38_2B_blank,Spherotech URCP-38-2B (Blank),SPHERO Rainbow Calibration Particles,Control,spherotech_URCP_38_2B_blank.csv

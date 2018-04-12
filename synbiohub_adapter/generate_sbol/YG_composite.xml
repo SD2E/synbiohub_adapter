@@ -19,14 +19,14 @@
     <sbol:type rdf:resource="http://identifiers.org/chebi/CHEBI_17568"/>
     <sbol:version>1</sbol:version>
   </sbol:ComponentDefinition>
-  <sbol:ComponentDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/CAT_630425/1">
+  <sbol:ModuleDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/CAT_630425/1">
     <dcterms:description>Is a supplement that contains L_Tyrosine, but not the following amino acids: His,Leu, Trp, and Ura</dcterms:description>
     <dcterms:title>DO Supplement -His/-Leu/-Trp/-Ura</dcterms:title>
     <sbol:displayId>CAT_630425</sbol:displayId>
     <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/CAT_630425"/>
-    <sbol:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0000079"/>
+    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/OBI_0000079"/>
     <sbol:version>1</sbol:version>
-  </sbol:ComponentDefinition>
+  </sbol:ModuleDefinition>
   <sbol:ComponentDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/CAT_71006_012/1">
     <dcterms:title>Ethanol</dcterms:title>
     <sbol:displayId>CAT_71006_012</sbol:displayId>
@@ -34,14 +34,14 @@
     <sbol:type rdf:resource="http://identifiers.org/chebi/CHEBI_16236"/>
     <sbol:version>1</sbol:version>
   </sbol:ComponentDefinition>
-  <sbol:ComponentDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/CAT_90000_726/1">
+  <sbol:ModuleDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/CAT_90000_726/1">
     <dcterms:description>Is a concentrate of the water soluble portion of autolyzed yeast, and has the highest levels of carbohydrate of BD yeast extract offerings.</dcterms:description>
     <dcterms:title>BD Bacto Yeast Extract BD Biosciences</dcterms:title>
     <sbol:displayId>CAT_90000_726</sbol:displayId>
     <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/CAT_90000_726"/>
-    <sbol:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0000079"/>
+    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/OBI_0000079"/>
     <sbol:version>1</sbol:version>
-  </sbol:ComponentDefinition>
+  </sbol:ModuleDefinition>
   <sbol:ComponentDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/CAT_BP382_100/1">
     <dcterms:title>L-Histidine</dcterms:title>
     <sbol:displayId>CAT_BP382_100</sbol:displayId>
@@ -70,14 +70,14 @@
     <sbol:type rdf:resource="http://identifiers.org/chebi/CHEBI_17634"/>
     <sbol:version>1</sbol:version>
   </sbol:ComponentDefinition>
-  <sbol:ComponentDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/CAT_DF0123_17_3/1">
+  <sbol:ModuleDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/CAT_DF0123_17_3/1">
     <dcterms:description>Dehydrated, enzymatic digest of casein especially rich in tryptone.</dcterms:description>
     <dcterms:title>BD Bacto Dehydrated Culture Media Additive_Tryptone</dcterms:title>
     <sbol:displayId>CAT_DF0123_17_3</sbol:displayId>
     <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/CAT_DF0123_17_3"/>
-    <sbol:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0000079"/>
+    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/OBI_0000079"/>
     <sbol:version>1</sbol:version>
-  </sbol:ComponentDefinition>
+  </sbol:ModuleDefinition>
   <sbol:ComponentDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/CAT_G33_500/1">
     <dcterms:title>Glycerol</dcterms:title>
     <sbol:displayId>CAT_G33_500</sbol:displayId>
@@ -85,14 +85,14 @@
     <sbol:type rdf:resource="http://identifiers.org/chebi/CHEBI_17754"/>
     <sbol:version>1</sbol:version>
   </sbol:ComponentDefinition>
-  <sbol:ComponentDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/CAT_R459942/1">
+  <sbol:ModuleDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/CAT_R459942/1">
     <dcterms:description>Is a chemically defined carbohydrate and amino acid free medium to which individual carbohydrates and_or amino acids may be added. Ammonium sulfate supplies a source of nitrogen. The medium also contains required vitamins, trace elements, and salts. Growth in the medium indicates utilization of the test carbohydrate or amino acid.</dcterms:description>
     <dcterms:title>Thermo Scientific Remel Yeast Nitrogen Base w/o Amino Acids</dcterms:title>
     <sbol:displayId>CAT_R459942</sbol:displayId>
     <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/CAT_R459942"/>
-    <sbol:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0000079"/>
+    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/OBI_0000079"/>
     <sbol:version>1</sbol:version>
-  </sbol:ComponentDefinition>
+  </sbol:ModuleDefinition>
   <sbol:ComponentDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/CAT_S1876_1KG/1">
     <dcterms:title>D-Sorbitol</dcterms:title>
     <sbol:displayId>CAT_S1876_1KG</sbol:displayId>
@@ -1747,25 +1747,6 @@
       </sbol:FunctionalComponent>
     </sbol:functionalComponent>
     <sbol:functionalComponent>
-      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_001/CAT_630425/1">
-        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
-        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
-        <sbol:displayId>CAT_630425</sbol:displayId>
-        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_001/CAT_630425"/>
-        <sbol:version>1</sbol:version>
-        <om:measure>
-          <om:Measure rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_001/CAT_630425/concentration/1">
-            <dcterms:title>concentration</dcterms:title>
-            <sbol:displayId>concentration</sbol:displayId>
-            <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_001/CAT_630425/concentration"/>
-            <sbol:version>1</sbol:version>
-            <om:hasNumericalValue>1.400000</om:hasNumericalValue>
-            <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/gramPerLitre/1"/>
-          </om:Measure>
-        </om:measure>
-      </sbol:FunctionalComponent>
-    </sbol:functionalComponent>
-    <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_001/CAT_BP382_100/1">
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
@@ -1842,9 +1823,33 @@
       </sbol:FunctionalComponent>
     </sbol:functionalComponent>
     <sbol:functionalComponent>
-      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_001/CAT_R459942/1">
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_001/ddH2O/1">
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>ddH2O</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_001/ddH2O"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:module>
+      <sbol:Module rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_001/CAT_630425/1">
+        <sbol:displayId>CAT_630425</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_001/CAT_630425"/>
+        <sbol:version>1</sbol:version>
+        <om:measure>
+          <om:Measure rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_001/CAT_630425/concentration/1">
+            <dcterms:title>concentration</dcterms:title>
+            <sbol:displayId>concentration</sbol:displayId>
+            <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_001/CAT_630425/concentration"/>
+            <sbol:version>1</sbol:version>
+            <om:hasNumericalValue>1.400000</om:hasNumericalValue>
+            <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/gramPerLitre/1"/>
+          </om:Measure>
+        </om:measure>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:module>
+      <sbol:Module rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_001/CAT_R459942/1">
         <sbol:displayId>CAT_R459942</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_001/CAT_R459942"/>
         <sbol:version>1</sbol:version>
@@ -1858,17 +1863,8 @@
             <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/gramPerLitre/1"/>
           </om:Measure>
         </om:measure>
-      </sbol:FunctionalComponent>
-    </sbol:functionalComponent>
-    <sbol:functionalComponent>
-      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_001/ddH2O/1">
-        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
-        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
-        <sbol:displayId>ddH2O</sbol:displayId>
-        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_001/ddH2O"/>
-        <sbol:version>1</sbol:version>
-      </sbol:FunctionalComponent>
-    </sbol:functionalComponent>
+      </sbol:Module>
+    </sbol:module>
     <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_001"/>
     <sbol:role rdf:resource="http://purl.obolibrary.org/obo/OBI_0000079"/>
     <sbol:version>1</sbol:version>
@@ -1910,25 +1906,6 @@
             <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_002/CAT_157300250/concentration"/>
             <sbol:version>1</sbol:version>
             <om:hasNumericalValue>0.025000</om:hasNumericalValue>
-            <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/gramPerLitre/1"/>
-          </om:Measure>
-        </om:measure>
-      </sbol:FunctionalComponent>
-    </sbol:functionalComponent>
-    <sbol:functionalComponent>
-      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_002/CAT_630425/1">
-        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
-        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
-        <sbol:displayId>CAT_630425</sbol:displayId>
-        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_002/CAT_630425"/>
-        <sbol:version>1</sbol:version>
-        <om:measure>
-          <om:Measure rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_002/CAT_630425/concentration/1">
-            <dcterms:title>concentration</dcterms:title>
-            <sbol:displayId>concentration</sbol:displayId>
-            <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_002/CAT_630425/concentration"/>
-            <sbol:version>1</sbol:version>
-            <om:hasNumericalValue>1.400000</om:hasNumericalValue>
             <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/gramPerLitre/1"/>
           </om:Measure>
         </om:measure>
@@ -2030,9 +2007,33 @@
       </sbol:FunctionalComponent>
     </sbol:functionalComponent>
     <sbol:functionalComponent>
-      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_002/CAT_R459942/1">
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_002/ddH2O/1">
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>ddH2O</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_002/ddH2O"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:module>
+      <sbol:Module rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_002/CAT_630425/1">
+        <sbol:displayId>CAT_630425</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_002/CAT_630425"/>
+        <sbol:version>1</sbol:version>
+        <om:measure>
+          <om:Measure rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_002/CAT_630425/concentration/1">
+            <dcterms:title>concentration</dcterms:title>
+            <sbol:displayId>concentration</sbol:displayId>
+            <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_002/CAT_630425/concentration"/>
+            <sbol:version>1</sbol:version>
+            <om:hasNumericalValue>1.400000</om:hasNumericalValue>
+            <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/gramPerLitre/1"/>
+          </om:Measure>
+        </om:measure>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:module>
+      <sbol:Module rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_002/CAT_R459942/1">
         <sbol:displayId>CAT_R459942</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_002/CAT_R459942"/>
         <sbol:version>1</sbol:version>
@@ -2046,17 +2047,8 @@
             <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/gramPerLitre/1"/>
           </om:Measure>
         </om:measure>
-      </sbol:FunctionalComponent>
-    </sbol:functionalComponent>
-    <sbol:functionalComponent>
-      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_002/ddH2O/1">
-        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
-        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
-        <sbol:displayId>ddH2O</sbol:displayId>
-        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_002/ddH2O"/>
-        <sbol:version>1</sbol:version>
-      </sbol:FunctionalComponent>
-    </sbol:functionalComponent>
+      </sbol:Module>
+    </sbol:module>
     <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_002"/>
     <sbol:role rdf:resource="http://purl.obolibrary.org/obo/OBI_0000079"/>
     <sbol:version>1</sbol:version>
@@ -2098,25 +2090,6 @@
             <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_157300250/concentration"/>
             <sbol:version>1</sbol:version>
             <om:hasNumericalValue>0.025000</om:hasNumericalValue>
-            <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/gramPerLitre/1"/>
-          </om:Measure>
-        </om:measure>
-      </sbol:FunctionalComponent>
-    </sbol:functionalComponent>
-    <sbol:functionalComponent>
-      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_630425/1">
-        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
-        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
-        <sbol:displayId>CAT_630425</sbol:displayId>
-        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_630425"/>
-        <sbol:version>1</sbol:version>
-        <om:measure>
-          <om:Measure rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_630425/concentration/1">
-            <dcterms:title>concentration</dcterms:title>
-            <sbol:displayId>concentration</sbol:displayId>
-            <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_630425/concentration"/>
-            <sbol:version>1</sbol:version>
-            <om:hasNumericalValue>1.400000</om:hasNumericalValue>
             <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/gramPerLitre/1"/>
           </om:Measure>
         </om:measure>
@@ -2199,25 +2172,6 @@
       </sbol:FunctionalComponent>
     </sbol:functionalComponent>
     <sbol:functionalComponent>
-      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_R459942/1">
-        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
-        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
-        <sbol:displayId>CAT_R459942</sbol:displayId>
-        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_R459942"/>
-        <sbol:version>1</sbol:version>
-        <om:measure>
-          <om:Measure rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_R459942/concentration/1">
-            <dcterms:title>concentration</dcterms:title>
-            <sbol:displayId>concentration</sbol:displayId>
-            <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_R459942/concentration"/>
-            <sbol:version>1</sbol:version>
-            <om:hasNumericalValue>6.700000</om:hasNumericalValue>
-            <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/gramPerLitre/1"/>
-          </om:Measure>
-        </om:measure>
-      </sbol:FunctionalComponent>
-    </sbol:functionalComponent>
-    <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_S1876_1KG/1">
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
@@ -2245,6 +2199,40 @@
         <sbol:version>1</sbol:version>
       </sbol:FunctionalComponent>
     </sbol:functionalComponent>
+    <sbol:module>
+      <sbol:Module rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_630425/1">
+        <sbol:displayId>CAT_630425</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_630425"/>
+        <sbol:version>1</sbol:version>
+        <om:measure>
+          <om:Measure rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_630425/concentration/1">
+            <dcterms:title>concentration</dcterms:title>
+            <sbol:displayId>concentration</sbol:displayId>
+            <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_630425/concentration"/>
+            <sbol:version>1</sbol:version>
+            <om:hasNumericalValue>1.400000</om:hasNumericalValue>
+            <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/gramPerLitre/1"/>
+          </om:Measure>
+        </om:measure>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:module>
+      <sbol:Module rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_R459942/1">
+        <sbol:displayId>CAT_R459942</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_R459942"/>
+        <sbol:version>1</sbol:version>
+        <om:measure>
+          <om:Measure rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_R459942/concentration/1">
+            <dcterms:title>concentration</dcterms:title>
+            <sbol:displayId>concentration</sbol:displayId>
+            <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_R459942/concentration"/>
+            <sbol:version>1</sbol:version>
+            <om:hasNumericalValue>6.700000</om:hasNumericalValue>
+            <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/gramPerLitre/1"/>
+          </om:Measure>
+        </om:measure>
+      </sbol:Module>
+    </sbol:module>
     <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_003"/>
     <sbol:role rdf:resource="http://purl.obolibrary.org/obo/OBI_0000079"/>
     <sbol:version>1</sbol:version>
@@ -2273,25 +2261,6 @@
       </sbol:FunctionalComponent>
     </sbol:functionalComponent>
     <sbol:functionalComponent>
-      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_004/CAT_90000_726/1">
-        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
-        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
-        <sbol:displayId>CAT_90000_726</sbol:displayId>
-        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_004/CAT_90000_726"/>
-        <sbol:version>1</sbol:version>
-        <om:measure>
-          <om:Measure rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_004/CAT_90000_726/concentration/1">
-            <dcterms:title>concentration</dcterms:title>
-            <sbol:displayId>concentration</sbol:displayId>
-            <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_004/CAT_90000_726/concentration"/>
-            <sbol:version>1</sbol:version>
-            <om:hasNumericalValue>20.000000</om:hasNumericalValue>
-            <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/gramPerLitre/1"/>
-          </om:Measure>
-        </om:measure>
-      </sbol:FunctionalComponent>
-    </sbol:functionalComponent>
-    <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_004/CAT_D16_3/1">
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
@@ -2311,9 +2280,33 @@
       </sbol:FunctionalComponent>
     </sbol:functionalComponent>
     <sbol:functionalComponent>
-      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_004/CAT_DF0123_17_3/1">
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_004/ddH2O/1">
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>ddH2O</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_004/ddH2O"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:module>
+      <sbol:Module rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_004/CAT_90000_726/1">
+        <sbol:displayId>CAT_90000_726</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_004/CAT_90000_726"/>
+        <sbol:version>1</sbol:version>
+        <om:measure>
+          <om:Measure rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_004/CAT_90000_726/concentration/1">
+            <dcterms:title>concentration</dcterms:title>
+            <sbol:displayId>concentration</sbol:displayId>
+            <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_004/CAT_90000_726/concentration"/>
+            <sbol:version>1</sbol:version>
+            <om:hasNumericalValue>20.000000</om:hasNumericalValue>
+            <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/gramPerLitre/1"/>
+          </om:Measure>
+        </om:measure>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:module>
+      <sbol:Module rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_004/CAT_DF0123_17_3/1">
         <sbol:displayId>CAT_DF0123_17_3</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_004/CAT_DF0123_17_3"/>
         <sbol:version>1</sbol:version>
@@ -2327,17 +2320,8 @@
             <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/gramPerLitre/1"/>
           </om:Measure>
         </om:measure>
-      </sbol:FunctionalComponent>
-    </sbol:functionalComponent>
-    <sbol:functionalComponent>
-      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_004/ddH2O/1">
-        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
-        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
-        <sbol:displayId>ddH2O</sbol:displayId>
-        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_004/ddH2O"/>
-        <sbol:version>1</sbol:version>
-      </sbol:FunctionalComponent>
-    </sbol:functionalComponent>
+      </sbol:Module>
+    </sbol:module>
     <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_004"/>
     <sbol:role rdf:resource="http://purl.obolibrary.org/obo/OBI_0000079"/>
     <sbol:version>1</sbol:version>

@@ -1,0 +1,3 @@
+ID,Name,Description,Type,CHEBI,Source,Concentration,Concentration_Units
+fluorescein,Fluorescein,,CHEBI,CHEBI_31624,,0.1015625,μM
+pbs,Phosphate Buffered Saline,,Buffer,,,,
