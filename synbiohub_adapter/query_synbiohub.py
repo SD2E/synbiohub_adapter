@@ -27,13 +27,38 @@ class SynBioHubQuery():
 		design_set_query = """
 		PREFIX sbol: <http://sbols.org/v2#>
 		SELECT DISTINCT ?collection WHERE {{ 
-  			<https://hub.sd2e.org/user/sd2e/design/design_collection/1> sbol:member ?design ;
+  			<{col}> sbol:member ?design ;
   				sbol:member ?collection .
   			?collection sbol:member ?design
 		}}
-		"""
+		""".format(col=SBHConstants.SD2_DESIGN_COLLECTION)
 
 		return fetch_SPARQL(self.__server, design_set_query)
+
+	# Retrieves the URIs for all controls in the specified collection of design elements
+	# This collection is typically associated with a challenge problem
+	def query_design_set_controls(self, collection, chebi=None):
+		if chebi is None:
+			control_query = """
+			PREFIX sbol: <http://sbols.org/v2#>
+			SELECT DISTINCT ?control WHERE {{ 
+	  			<{col}> sbol:member ?control .
+	  			?control sbol:role <{ro}>
+			}}
+			""".format(col=collection, ro=SBOLConstants.CONTROL)
+		else:
+			control_query = """
+			PREFIX sbol: <http://sbols.org/v2#>
+			SELECT DISTINCT ?control WHERE {{ 
+	  			<{col}> sbol:member ?control .
+	  			?control sbol:role <{ro}> ;
+	  				sbol:functionalComponent ?fc .
+	  			?fc sbol:definition ?chebi .
+	  			?chebi sbol:type <{ty}>
+			}}
+			""".format(col=collection, ro=SBOLConstants.CONTROL, ty=chebi)
+
+		return fetch_SPARQL(self.__server, control_query)
 
 	# Retrieves the URIs for all logic gates in the specified collection of design elements
 	# This collection is typically associated with a challenge problem
@@ -41,9 +66,8 @@ class SynBioHubQuery():
 		gate_query = """
 		PREFIX sbol: <http://sbols.org/v2#>
 		SELECT DISTINCT ?gate WHERE {{ 
-  			{col} sbol:member ?gate .
-  			?gate sbol:role ?role .
-  			FILTER ( ?role = {ro} )
+  			<{col}> sbol:member ?gate .
+  			?gate sbol:role <{ro}>
 		}}
 		""".format(col=collection, ro=SBOLConstants.LOGIC_OPERATOR)
 
@@ -55,12 +79,11 @@ class SynBioHubQuery():
 		inducer_query = """
 		PREFIX sbol: <http://sbols.org/v2#>
 		SELECT DISTINCT ?inducer WHERE {{ 
-  			{col} sbol:member ?inducer .
-  			?inducer sbol:type ?type ;
-           		sbol:role ?role .
-  			FILTER ( ?type = {ty} && ?role = {ro} )
+  			<{col}> sbol:member ?inducer .
+  			?inducer sbol:type <{ty}> ;
+           		sbol:role <{ro}>
 		}}
-		""".format(col=collection, ty=SBOLConstants.SMALL_MOLECULE, ro=SBOLConstants.EFFECTOR)
+		""".format(col=collection, ty=BIOPAX_SMALL_MOLECULE, ro=SBOLConstants.EFFECTOR)
 
 		return fetch_SPARQL(self.__server, inducer_query)
 
@@ -70,12 +93,11 @@ class SynBioHubQuery():
 		plasmid_query = """
 		PREFIX sbol: <http://sbols.org/v2#>
 		SELECT DISTINCT ?plasmid WHERE {{ 
-  			{col} sbol:member ?plasmid .
-  			?plasmid sbol:type ?type1 ;
-           		sbol:type ?type2 .
-  			FILTER ( ?type1 = {ty1} && ?type2 = {ty2} )
+  			<{col}> sbol:member ?plasmid .
+  			?plasmid sbol:type <{ty1}> ;
+           		sbol:type <{ty2}>
 		}}
-		""".format(col=collection, ty1=SBOLConstants.DNA, ty2=SBOLConstants.CIRCULAR)
+		""".format(col=collection, ty1=BIOPAX_DNA, ty2=SO_CIRCULAR)
 
 		return fetch_SPARQL(self.__server, plasmid_query)
 
@@ -85,13 +107,17 @@ class SynBioHubQuery():
 		strain_query = """
 		PREFIX sbol: <http://sbols.org/v2#>
 		SELECT DISTINCT ?strain WHERE {{ 
-  			{col} sbol:member ?strain .
-  			?strain sbol:type ?type .
-  		FILTER ( ?type = {ty1} || ?type = {ty2} )
+  			<{col}> sbol:member ?strain .
+  			VALUES (?type) {{ ( <{ty1}> ) ( <{ty2}> ) }}
+  			?strain sbol:type ?type
 		}}
 		""".format(col=collection, ty1=SBOLConstants.NCIT_STRAIN, ty2=SBOLConstants.OBI_STRAIN)
 
 		return fetch_SPARQL(self.__server, strain_query)
+
+	# Retrieves the URIs for all controls in the collection of every SD2 design element
+	def query_design_controls(self, chebi=None):
+		return self.query_design_set_controls(SBHConstants.SD2_DESIGN_COLLECTION, chebi)
 
 	# Retrieves the URIs for all logic gates in the collection of every SD2 design element
 	def query_design_gates(self):
@@ -115,16 +141,16 @@ class SynBioHubQuery():
 		exp_set_query = """
 		PREFIX sbol: <http://sbols.org/v2#>
 		PREFIX sd2: <http://sd2e.org#>
-		SELECT DISTINCT ?collection WHERE {{ 
-  			<https://hub.sd2e.org/user/sd2e/experiment/experiment_collection/1> sbol:member ?collection .
-  			?collection sbol:member ?exp .
+		SELECT DISTINCT ?subcol WHERE {{ 
+  			<{col}> sbol:member ?subcol .
+  			?subcol sbol:member ?exp .
   			?exp sd2:experimentalData ?data .
   			FILTER NOT EXISTS {{
-  				?collection sbol:member ?m .
+  				?subcol sbol:member ?m .
   				FILTER ( ?m != ?exp )
   			}}
 		}}
-		"""
+		""".format(col=SBHConstants.SD2_EXPERIMENT_COLLECTION)
 
 		return fetch_SPARQL(self.__server, exp_set_query)
 
@@ -135,7 +161,7 @@ class SynBioHubQuery():
 		PREFIX sbol: <http://sbols.org/v2#>
 		PREFIX sd2: <http://sd2e.org#>
 		SELECT (count(distinct ?exp) as ?size) WHERE {{ 
-  			{col} sbol:member ?exp .
+  			<{col}> sbol:member ?exp .
   			?exp sd2:experimentalData ?data
 		}}
 		""".format(col=collection)
@@ -150,14 +176,13 @@ class SynBioHubQuery():
 		PREFIX sd2: <http://sd2e.org#>
 		PREFIX prov: <http://www.w3.org/ns/prov#>
 		SELECT DISTINCT ?gate WHERE {{ 
-  			{col} sbol:member ?exp .
+  			<{col}> sbol:member ?exp .
   			?exp sd2:experimentalData ?data .
   			?data prov:wasDerivedFrom ?sample .
   			?sample sbol:built ?condition .
   			?condition sbol:module ?mod .
   			?mod sbol:definition ?gate .
-  			?gate sbol:role ?role .
-  			FILTER ( ?role = {ro} )
+  			?gate sbol:role <{ro}>
 		}}
 		""".format(col=collection, ro=SBOLConstants.LOGIC_OPERATOR)
 
@@ -173,22 +198,21 @@ class SynBioHubQuery():
 		PREFIX prov: <http://www.w3.org/ns/prov#> 
 		SELECT ?inducer (concat('[',group_concat(distinct ?level;separator=','),']') as ?levels)
 		WHERE {{ 
-  			{col} sbol:member ?exp .
+  			<{col}> sbol:member ?exp .
   			?exp sd2:experimentalData ?data .
   			?data prov:wasDerivedFrom ?sample .
   			?sample sbol:built ?condition .
   			?condition sbol:functionalComponent ?fc .
   			?fc sbol:definition ?inducer .
-  			?inducer sbol:type ?type ;
-           		sbol:role ?role . 
-  			FILTER ( ?type = {ty} && ?role = {ro} ) .
+  			?inducer sbol:type <{ty}> ;
+           		sbol:role <{ro}> .
            	OPTIONAL {{ 
            		?fc om:measure ?concentration .
            		?concentration om:hasNumericalValue ?level
            	}}
 		}}
 		GROUP BY ?inducer
-		""".format(col=collection, ty=SBOLConstants.SMALL_MOLECULE, ro=SBOLConstants.EFFECTOR)
+		""".format(col=collection, ty=BIOPAX_SMALL_MOLECULE, ro=SBOLConstants.EFFECTOR)
 
 		return fetch_SPARQL(self.__server, inducer_query)
 
@@ -200,17 +224,16 @@ class SynBioHubQuery():
 		PREFIX sd2: <http://sd2e.org#>
 		PREFIX prov: <http://www.w3.org/ns/prov#> 
 		SELECT DISTINCT ?plasmid WHERE {{ 
-  			{col} sbol:member ?exp .
+  			<{col}> sbol:member ?exp .
   			?exp sd2:experimentalData ?data .
   			?data prov:wasDerivedFrom ?sample .
   			?sample sbol:built ?condition .
   			?condition sbol:functionalComponent ?fc .
   			?fc sbol:definition ?plasmid .
-  			?plasmid sbol:type ?type1 ;
-           		sbol:type ?type2 .
-  			FILTER ( ?type1 = {ty1} && ?type2 = {ty2} )
+  			?plasmid sbol:type <{ty1}> ;
+           		sbol:type <{ty2}>
 		}}
-		""".format(col=collection, ty1=SBOLConstants.DNA, ty2=SBOLConstants.CIRCULAR)
+		""".format(col=collection, ty1=BIOPAX_DNA, ty2=SO_CIRCULAR)
 
 		return fetch_SPARQL(self.__server, plasmid_query)
 
@@ -222,14 +245,14 @@ class SynBioHubQuery():
 		PREFIX sd2: <http://sd2e.org#>
 		PREFIX prov: <http://www.w3.org/ns/prov#> 
 		SELECT DISTINCT ?strain WHERE {{ 
-  			{col} sbol:member ?exp .
+  			<{col}> sbol:member ?exp .
   			?exp sd2:experimentalData ?data .
   			?data prov:wasDerivedFrom ?sample .
   			?sample sbol:built ?condition .
   			?condition sbol:functionalComponent ?fc .
   			?fc sbol:definition ?strain .
-  			?strain sbol:type ?type .
-  			FILTER ( ?type = {ty1} || ?type = {ty2} )
+  			VALUES (?type) {{ ( <{ty1}> ) ( <{ty2}> ) }}
+  			?strain sbol:type ?type
 		}}
 		""".format(col=collection, ty1=SBOLConstants.NCIT_STRAIN, ty2=SBOLConstants.OBI_STRAIN)
 
@@ -258,13 +281,12 @@ class SynBioHubQuery():
 		PREFIX sd2: <http://sd2e.org#>
 		PREFIX prov: <http://www.w3.org/ns/prov#> 
 		SELECT DISTINCT ?gate WHERE {{ 
-  			{exp} sd2:experimentalData ?data .
+  			<{exp}> sd2:experimentalData ?data .
   			?data prov:wasDerivedFrom ?sample .
   			?sample sbol:built ?condition .
   			?condition sbol:module ?mod .
   			?mod sbol:definition ?gate .
-  			?gate sbol:role ?role .
-  			FILTER ( ?role = {ro} )
+  			?gate sbol:role <{ro}>
 		}}
 		""".format(exp=experiment, ro=SBOLConstants.LOGIC_OPERATOR)
 
@@ -279,21 +301,20 @@ class SynBioHubQuery():
 		PREFIX prov: <http://www.w3.org/ns/prov#> 
 		SELECT ?inducer (concat('[',group_concat(distinct ?level;separator=','),']') as ?levels)
 		WHERE {{ 
-  			{exp} sd2:experimentalData ?data .
+  			<{exp}> sd2:experimentalData ?data .
   			?data prov:wasDerivedFrom ?sample .
   			?sample sbol:built ?condition .
   			?condition sbol:functionalComponent ?fc .
   			?fc sbol:definition ?inducer .
-  			?inducer sbol:type ?type ;
-           		sbol:role ?role .
-           	FILTER ( ?type = {ty} && ?role = {ro} ) .
+  			?inducer sbol:type <{ty}> ;
+           		sbol:role <{ro}> .
            	OPTIONAL {{ 
            		?fc om:measure ?concentration .
            		?concentration om:hasNumericalValue ?level
            	}}
 		}}
 		GROUP BY ?inducer
-		""".format(exp=experiment, ty=SBOLConstants.SMALL_MOLECULE, ro=SBOLConstants.EFFECTOR)
+		""".format(exp=experiment, ty=BIOPAX_SMALL_MOLECULE, ro=SBOLConstants.EFFECTOR)
 
 		return fetch_SPARQL(self.__server, inducer_query)
 
@@ -304,16 +325,15 @@ class SynBioHubQuery():
 		PREFIX sd2: <http://sd2e.org#>
 		PREFIX prov: <http://www.w3.org/ns/prov#> 
 		SELECT DISTINCT ?plasmid WHERE {{ 
-  			{exp} sd2:experimentalData ?data .
+  			<{exp}> sd2:experimentalData ?data .
   			?data prov:wasDerivedFrom ?sample .
   			?sample sbol:built ?condition .
   			?condition sbol:functionalComponent ?fc .
   			?fc sbol:definition ?plasmid .
-  			?plasmid sbol:type ?type1 ;
-           		sbol:type ?type2 .
-  			FILTER ( ?type1 = {ty1} && ?type2 = {ty2} )
+  			?plasmid sbol:type <{ty1}> ;
+           		sbol:type <{ty2}>
 		}}
-		""".format(exp=experiment, ty1=SBOLConstants.DNA, ty2=SBOLConstants.CIRCULAR)
+		""".format(exp=experiment, ty1=BIOPAX_DNA, ty2=SO_CIRCULAR)
 
 		return fetch_SPARQL(self.__server, plasmid_query)
 
@@ -323,14 +343,14 @@ class SynBioHubQuery():
 		PREFIX sbol: <http://sbols.org/v2#>
 		PREFIX sd2: <http://sd2e.org#>
 		PREFIX prov: <http://www.w3.org/ns/prov#> 
-		SELECT DISTINCT ?strain WHERE {{ 
-  			{exp} sd2:experimentalData ?data .
+		SELECT DISTINCT ?strain WHERE {{
+  			<{exp}> sd2:experimentalData ?data .
   			?data prov:wasDerivedFrom ?sample .
   			?sample sbol:built ?condition .
   			?condition sbol:functionalComponent ?fc .
   			?fc sbol:definition ?strain .
-  			?strain sbol:type ?type .
-  			FILTER ( ?type = {ty1} || ?type = {ty2} )
+  			VALUES (?type) {{ ( <{ty1}> ) ( <{ty2}> ) }}
+  			?strain sbol:type ?type
 		}}
 		""".format(exp=experiment, ty1=SBOLConstants.NCIT_STRAIN, ty2=SBOLConstants.OBI_STRAIN)
 
@@ -343,7 +363,7 @@ class SynBioHubQuery():
 		PREFIX prov: <http://www.w3.org/ns/prov#> 
 		SELECT ?sample (concat('[',group_concat(distinct ?source;separator=','),']') as ?sources)
 		WHERE {{ 
-  			{exp} sd2:experimentalData ?data .
+  			<{exp}> sd2:experimentalData ?data .
   			?data prov:wasDerivedFrom ?sample;
   				sd2:attachment ?attach .
   			?attach sd2:source ?source
@@ -358,19 +378,18 @@ class SynBioHubQuery():
 		PREFIX sbol: <http://sbols.org/v2#>
 		PREFIX om: <http://www.ontology-of-units-of-measure.org/resource/om-2#>
 		SELECT ?inducer ?level WHERE {{ 
-  			{samp} sbol:built ?condition .
+  			<{samp}> sbol:built ?condition .
   			?condition sbol:functionalComponent ?fc .
   			?fc sbol:definition ?inducer .
-  			?inducer sbol:type ?type ;
-           		sbol:role ?role .
-           	FILTER ( ?type = {ty} && ?role = {ro} ) .
+  			?inducer sbol:type <{ty}> ;
+           		sbol:role <{ro}> .
            	OPTIONAL {{ 
            		?fc om:measure ?concentration .
            		?concentration om:hasNumericalValue ?level
            	}}
 		}}
 		GROUP BY ?inducer
-		""".format(samp=sample, ty=SBOLConstants.SMALL_MOLECULE, ro=SBOLConstants.EFFECTOR)
+		""".format(samp=sample, ty=BIOPAX_SMALL_MOLECULE, ro=SBOLConstants.EFFECTOR)
 
 		return fetch_SPARQL(self.__server, inducer_query)
 
@@ -379,14 +398,13 @@ class SynBioHubQuery():
 		plasmid_query = """
 		PREFIX sbol: <http://sbols.org/v2#>
 		SELECT DISTINCT ?plasmid WHERE {{ 
-  			{samp} sbol:built ?condition .
+  			<{samp}> sbol:built ?condition .
   			?condition sbol:functionalComponent ?fc .
   			?fc sbol:definition ?plasmid .
-  			?plasmid sbol:type ?type1 ;
-           		sbol:type ?type2 .
-  			FILTER ( ?type1 = {ty1} && ?type2 = {ty2} )
+  			?plasmid sbol:type <{ty1}> ;
+           		sbol:type <{ty2}>
 		}}
-		""".format(samp=sample, ty1=SBOLConstants.DNA, ty2=SBOLConstants.CIRCULAR)
+		""".format(samp=sample, ty1=BIOPAX_DNA, ty2=SO_CIRCULAR)
 
 		return fetch_SPARQL(self.__server, plasmid_query)
 
@@ -396,18 +414,17 @@ class SynBioHubQuery():
 		PREFIX sbol: <http://sbols.org/v2#>
 		PREFIX om: <http://www.ontology-of-units-of-measure.org/resource/om-2#>
 		SELECT ?inducer ?level WHERE {{ 
-  			{cond} sbol:functionalComponent ?fc .
+  			<{cond}> sbol:functionalComponent ?fc .
   			?fc sbol:definition ?inducer .
-  			?inducer sbol:type ?type ;
-           		sbol:role ?role .
-           	FILTER ( ?type = {ty} && ?role = {ro} ) .
+  			?inducer sbol:type <{ty}> ;
+           		sbol:role <{ro}> .
            	OPTIONAL {{ 
            		?fc om:measure ?concentration .
            		?concentration om:hasNumericalValue ?level
            	}}
 		}}
 		GROUP BY ?inducer
-		""".format(cond=condition, ty=SBOLConstants.SMALL_MOLECULE, ro=SBOLConstants.EFFECTOR)
+		""".format(cond=condition, ty=BIOPAX_SMALL_MOLECULE, ro=SBOLConstants.EFFECTOR)
 
 		return fetch_SPARQL(self.__server, inducer_query)
 
@@ -416,13 +433,12 @@ class SynBioHubQuery():
 		plasmid_query = """
 		PREFIX sbol: <http://sbols.org/v2#>
 		SELECT DISTINCT ?plasmid WHERE {{ 
-  			{cond} sbol:functionalComponent ?fc .
+  			<{cond}> sbol:functionalComponent ?fc .
   			?fc sbol:definition ?plasmid .
-  			?plasmid sbol:type ?type1 ;
-           		sbol:type ?type2 .
-  			FILTER ( ?type1 = {ty1} && ?type2 = {ty2} )
+  			?plasmid sbol:type <{ty1}> ;
+           		sbol:type <{ty2}>
 		}}
-		""".format(cond=condition, ty1=SBOLConstants.DNA, ty2=SBOLConstants.CIRCULAR)
+		""".format(cond=condition, ty1=BIOPAX_DNA, ty2=SO_CIRCULAR)
 
 		return fetch_SPARQL(self.__server, plasmid_query)
 
