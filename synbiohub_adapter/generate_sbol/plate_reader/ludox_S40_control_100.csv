@@ -1,2 +1,2 @@
 ID,Name,Description,Type,CHEBI,Source,GenBank,Composition_File,Concentration,Concentration_Units,Volume,Volume_Units
-spherotech_URCP_38_2F,Spherotech URCP-38-2F,,Fluorescent_Bead,,,,,,,,
+ludox_S40,LUDOX-S40,,Solution,,,,ludox_S40.csv,,,100,ml
