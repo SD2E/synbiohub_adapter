@@ -14,25 +14,22 @@ def main(args=None):
     parser = argparse.ArgumentParser()
     parser.add_argument('-i', '--input', nargs='*', default=[f for f in os.listdir('.') if os.path.isfile(f) and f.endswith('.csv')])
     parser.add_argument('-o', '--output', nargs='?', default='generated_sbol.xml')
-    parser.add_argument('-m', '--om', nargs='?', default=os.path.join(os.getcwd(), 'om-2.0.rdf'))
+    parser.add_argument('-m', '--om', nargs='?', default='om-2.0.rdf')
     args = parser.parse_args(args)
 
     doc = generate_sbol(args.input, args.om)
     
     doc.write(args.output)
 
-def generate_sbol(csv_files, om_file=None):
+def generate_sbol(csv_files, om_file):
     doc = XDocument()
     doc.configure_namespace(SD2_DESIGN_NS)
     doc.configure_options(False, False)
 
-    if om_file is None:
-        try:
-            om = doc.read_om(os.path.join(os.getcwd(), 'om-2.0.rdf'))
-        except:
-            om = None
-    else:
+    try:
         om = doc.read_om(om_file)
+    except:
+        om = None
 
     generate_device_switcher = {
         'Bead': generate_bead,

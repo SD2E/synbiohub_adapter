@@ -106,7 +106,9 @@
     <sbol:displayId>UWBF_16967</sbol:displayId>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16967/UWBIOFAB_22544/1">
+        <dcterms:title>UWBIOFAB_22544</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBIOFAB_22544/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>UWBIOFAB_22544</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16967/UWBIOFAB_22544"/>
@@ -115,7 +117,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16967/YG_plasmid_001/1">
+        <dcterms:title>YG_plasmid_001</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_001/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_001</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16967/YG_plasmid_001"/>
@@ -124,7 +128,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16967/YG_plasmid_003/1">
+        <dcterms:title>YG_plasmid_003</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_003/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_003</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16967/YG_plasmid_003"/>
@@ -133,7 +139,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16967/YG_plasmid_005/1">
+        <dcterms:title>YG_plasmid_005</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_005/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_005</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16967/YG_plasmid_005"/>
@@ -142,7 +150,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16967/YG_plasmid_010/1">
+        <dcterms:title>YG_plasmid_010</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_010/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_010</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16967/YG_plasmid_010"/>
@@ -151,7 +161,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16967/YG_plasmid_014/1">
+        <dcterms:title>YG_plasmid_014</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_014/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_014</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16967/YG_plasmid_014"/>
@@ -160,7 +172,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16967/YG_plasmid_015/1">
+        <dcterms:title>YG_plasmid_015</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_015/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_015</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16967/YG_plasmid_015"/>
@@ -169,7 +183,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16967/YG_plasmid_017/1">
+        <dcterms:title>YG_plasmid_017</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_017/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_017</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16967/YG_plasmid_017"/>
@@ -178,7 +194,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16967/YG_plasmid_021/1">
+        <dcterms:title>YG_plasmid_021</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_021/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_021</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16967/YG_plasmid_021"/>
@@ -195,7 +213,9 @@
     <sbol:displayId>UWBF_16968</sbol:displayId>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16968/UWBIOFAB_22544/1">
+        <dcterms:title>UWBIOFAB_22544</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBIOFAB_22544/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>UWBIOFAB_22544</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16968/UWBIOFAB_22544"/>
@@ -204,7 +224,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16968/YG_plasmid_001/1">
+        <dcterms:title>YG_plasmid_001</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_001/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_001</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16968/YG_plasmid_001"/>
@@ -213,7 +235,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16968/YG_plasmid_003/1">
+        <dcterms:title>YG_plasmid_003</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_003/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_003</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16968/YG_plasmid_003"/>
@@ -222,7 +246,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16968/YG_plasmid_005/1">
+        <dcterms:title>YG_plasmid_005</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_005/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_005</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16968/YG_plasmid_005"/>
@@ -231,7 +257,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16968/YG_plasmid_014/1">
+        <dcterms:title>YG_plasmid_014</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_014/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_014</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16968/YG_plasmid_014"/>
@@ -240,7 +268,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16968/YG_plasmid_015/1">
+        <dcterms:title>YG_plasmid_015</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_015/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_015</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16968/YG_plasmid_015"/>
@@ -249,7 +279,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16968/YG_plasmid_017/1">
+        <dcterms:title>YG_plasmid_017</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_017/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_017</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16968/YG_plasmid_017"/>
@@ -258,7 +290,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16968/YG_plasmid_021/1">
+        <dcterms:title>YG_plasmid_021</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_021/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_021</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16968/YG_plasmid_021"/>
@@ -275,7 +309,9 @@
     <sbol:displayId>UWBF_16969</sbol:displayId>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16969/UWBIOFAB_22544/1">
+        <dcterms:title>UWBIOFAB_22544</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBIOFAB_22544/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>UWBIOFAB_22544</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16969/UWBIOFAB_22544"/>
@@ -284,7 +320,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16969/YG_plasmid_001/1">
+        <dcterms:title>YG_plasmid_001</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_001/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_001</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16969/YG_plasmid_001"/>
@@ -293,7 +331,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16969/YG_plasmid_005/1">
+        <dcterms:title>YG_plasmid_005</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_005/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_005</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16969/YG_plasmid_005"/>
@@ -302,7 +342,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16969/YG_plasmid_010/1">
+        <dcterms:title>YG_plasmid_010</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_010/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_010</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16969/YG_plasmid_010"/>
@@ -311,7 +353,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16969/YG_plasmid_014/1">
+        <dcterms:title>YG_plasmid_014</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_014/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_014</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16969/YG_plasmid_014"/>
@@ -320,7 +364,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16969/YG_plasmid_015/1">
+        <dcterms:title>YG_plasmid_015</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_015/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_015</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16969/YG_plasmid_015"/>
@@ -329,7 +375,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16969/YG_plasmid_017/1">
+        <dcterms:title>YG_plasmid_017</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_017/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_017</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16969/YG_plasmid_017"/>
@@ -338,7 +386,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16969/YG_plasmid_021/1">
+        <dcterms:title>YG_plasmid_021</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_021/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_021</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16969/YG_plasmid_021"/>
@@ -355,7 +405,9 @@
     <sbol:displayId>UWBF_16970</sbol:displayId>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16970/UWBIOFAB_22544/1">
+        <dcterms:title>UWBIOFAB_22544</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBIOFAB_22544/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>UWBIOFAB_22544</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16970/UWBIOFAB_22544"/>
@@ -364,7 +416,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16970/YG_plasmid_001/1">
+        <dcterms:title>YG_plasmid_001</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_001/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_001</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16970/YG_plasmid_001"/>
@@ -373,7 +427,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16970/YG_plasmid_005/1">
+        <dcterms:title>YG_plasmid_005</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_005/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_005</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16970/YG_plasmid_005"/>
@@ -382,7 +438,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16970/YG_plasmid_014/1">
+        <dcterms:title>YG_plasmid_014</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_014/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_014</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16970/YG_plasmid_014"/>
@@ -391,7 +449,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16970/YG_plasmid_015/1">
+        <dcterms:title>YG_plasmid_015</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_015/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_015</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16970/YG_plasmid_015"/>
@@ -400,7 +460,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16970/YG_plasmid_017/1">
+        <dcterms:title>YG_plasmid_017</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_017/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_017</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16970/YG_plasmid_017"/>
@@ -409,7 +471,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_16970/YG_plasmid_021/1">
+        <dcterms:title>YG_plasmid_021</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_021/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_021</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_16970/YG_plasmid_021"/>
@@ -426,7 +490,9 @@
     <sbol:displayId>UWBF_5783</sbol:displayId>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_5783/UWBIOFAB_22544/1">
+        <dcterms:title>UWBIOFAB_22544</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBIOFAB_22544/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>UWBIOFAB_22544</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_5783/UWBIOFAB_22544"/>
@@ -435,7 +501,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_5783/YG_plasmid_001/1">
+        <dcterms:title>YG_plasmid_001</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_001/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_001</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_5783/YG_plasmid_001"/>
@@ -444,7 +512,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_5783/YG_plasmid_014/1">
+        <dcterms:title>YG_plasmid_014</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_014/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_014</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_5783/YG_plasmid_014"/>
@@ -453,7 +523,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_5783/YG_plasmid_018/1">
+        <dcterms:title>YG_plasmid_018</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_018/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_018</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_5783/YG_plasmid_018"/>
@@ -462,7 +534,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_5783/YG_plasmid_021/1">
+        <dcterms:title>YG_plasmid_021</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_021/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_021</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_5783/YG_plasmid_021"/>
@@ -479,7 +553,9 @@
     <sbol:displayId>UWBF_5992</sbol:displayId>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_5992/UWBIOFAB_22544/1">
+        <dcterms:title>UWBIOFAB_22544</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBIOFAB_22544/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>UWBIOFAB_22544</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_5992/UWBIOFAB_22544"/>
@@ -488,7 +564,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_5992/YG_plasmid_001/1">
+        <dcterms:title>YG_plasmid_001</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_001/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_001</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_5992/YG_plasmid_001"/>
@@ -497,7 +575,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_5992/YG_plasmid_003/1">
+        <dcterms:title>YG_plasmid_003</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_003/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_003</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_5992/YG_plasmid_003"/>
@@ -506,7 +586,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_5992/YG_plasmid_014/1">
+        <dcterms:title>YG_plasmid_014</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_014/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_014</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_5992/YG_plasmid_014"/>
@@ -515,7 +597,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_5992/YG_plasmid_018/1">
+        <dcterms:title>YG_plasmid_018</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_018/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_018</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_5992/YG_plasmid_018"/>
@@ -524,7 +608,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_5992/YG_plasmid_021/1">
+        <dcterms:title>YG_plasmid_021</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_021/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_021</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_5992/YG_plasmid_021"/>
@@ -541,7 +627,9 @@
     <sbol:displayId>UWBF_5993</sbol:displayId>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_5993/UWBIOFAB_22544/1">
+        <dcterms:title>UWBIOFAB_22544</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBIOFAB_22544/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>UWBIOFAB_22544</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_5993/UWBIOFAB_22544"/>
@@ -550,7 +638,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_5993/YG_plasmid_001/1">
+        <dcterms:title>YG_plasmid_001</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_001/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_001</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_5993/YG_plasmid_001"/>
@@ -559,7 +649,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_5993/YG_plasmid_003/1">
+        <dcterms:title>YG_plasmid_003</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_003/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_003</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_5993/YG_plasmid_003"/>
@@ -568,7 +660,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_5993/YG_plasmid_014/1">
+        <dcterms:title>YG_plasmid_014</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_014/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_014</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_5993/YG_plasmid_014"/>
@@ -577,7 +671,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_5993/YG_plasmid_021/1">
+        <dcterms:title>YG_plasmid_021</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_021/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_021</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_5993/YG_plasmid_021"/>
@@ -594,7 +690,9 @@
     <sbol:displayId>UWBF_6388</sbol:displayId>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_6388/UWBIOFAB_22544/1">
+        <dcterms:title>UWBIOFAB_22544</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBIOFAB_22544/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>UWBIOFAB_22544</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_6388/UWBIOFAB_22544"/>
@@ -603,7 +701,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_6388/YG_plasmid_001/1">
+        <dcterms:title>YG_plasmid_001</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_001/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_001</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_6388/YG_plasmid_001"/>
@@ -612,7 +712,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_6388/YG_plasmid_003/1">
+        <dcterms:title>YG_plasmid_003</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_003/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_003</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_6388/YG_plasmid_003"/>
@@ -621,7 +723,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_6388/YG_plasmid_023/1">
+        <dcterms:title>YG_plasmid_023</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_023/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_023</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_6388/YG_plasmid_023"/>
@@ -638,7 +742,9 @@
     <sbol:displayId>UWBF_6389</sbol:displayId>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_6389/UWBIOFAB_22544/1">
+        <dcterms:title>UWBIOFAB_22544</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBIOFAB_22544/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>UWBIOFAB_22544</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_6389/UWBIOFAB_22544"/>
@@ -647,7 +753,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_6389/YG_plasmid_001/1">
+        <dcterms:title>YG_plasmid_001</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_001/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_001</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_6389/YG_plasmid_001"/>
@@ -656,7 +764,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_6389/YG_plasmid_021/1">
+        <dcterms:title>YG_plasmid_021</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_021/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_021</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_6389/YG_plasmid_021"/>
@@ -665,7 +775,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_6389/YG_plasmid_024/1">
+        <dcterms:title>YG_plasmid_024</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_024/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_024</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_6389/YG_plasmid_024"/>
@@ -682,7 +794,9 @@
     <sbol:displayId>UWBF_6390</sbol:displayId>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_6390/UWBIOFAB_22544/1">
+        <dcterms:title>UWBIOFAB_22544</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBIOFAB_22544/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>UWBIOFAB_22544</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_6390/UWBIOFAB_22544"/>
@@ -691,7 +805,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_6390/YG_plasmid_001/1">
+        <dcterms:title>YG_plasmid_001</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_001/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_001</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_6390/YG_plasmid_001"/>
@@ -700,7 +816,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_6390/YG_plasmid_003/1">
+        <dcterms:title>YG_plasmid_003</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_003/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_003</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_6390/YG_plasmid_003"/>
@@ -709,7 +827,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_6390/YG_plasmid_021/1">
+        <dcterms:title>YG_plasmid_021</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_021/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_021</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_6390/YG_plasmid_021"/>
@@ -726,7 +846,9 @@
     <sbol:displayId>UWBF_6391</sbol:displayId>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_6391/UWBIOFAB_22544/1">
+        <dcterms:title>UWBIOFAB_22544</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBIOFAB_22544/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>UWBIOFAB_22544</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_6391/UWBIOFAB_22544"/>
@@ -735,7 +857,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_6391/YG_plasmid_001/1">
+        <dcterms:title>YG_plasmid_001</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_001/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_001</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_6391/YG_plasmid_001"/>
@@ -744,7 +868,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_6391/YG_plasmid_021/1">
+        <dcterms:title>YG_plasmid_021</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_021/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_021</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_6391/YG_plasmid_021"/>
@@ -753,7 +879,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_6391/YG_plasmid_024/1">
+        <dcterms:title>YG_plasmid_024</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_024/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_024</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_6391/YG_plasmid_024"/>
@@ -762,7 +890,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_6391/YG_plasmid_025/1">
+        <dcterms:title>YG_plasmid_025</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_025/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_025</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_6391/YG_plasmid_025"/>
@@ -779,7 +909,9 @@
     <sbol:displayId>UWBF_7299</sbol:displayId>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7299/UWBIOFAB_22544/1">
+        <dcterms:title>UWBIOFAB_22544</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBIOFAB_22544/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>UWBIOFAB_22544</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7299/UWBIOFAB_22544"/>
@@ -788,7 +920,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7299/YG_plasmid_001/1">
+        <dcterms:title>YG_plasmid_001</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_001/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_001</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7299/YG_plasmid_001"/>
@@ -797,7 +931,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7299/YG_plasmid_002/1">
+        <dcterms:title>YG_plasmid_002</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_002/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_002</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7299/YG_plasmid_002"/>
@@ -806,7 +942,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7299/YG_plasmid_004/1">
+        <dcterms:title>YG_plasmid_004</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_004/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_004</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7299/YG_plasmid_004"/>
@@ -815,7 +953,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7299/YG_plasmid_008/1">
+        <dcterms:title>YG_plasmid_008</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_008/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_008</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7299/YG_plasmid_008"/>
@@ -824,7 +964,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7299/YG_plasmid_012/1">
+        <dcterms:title>YG_plasmid_012</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_012/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_012</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7299/YG_plasmid_012"/>
@@ -833,7 +975,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7299/YG_plasmid_016/1">
+        <dcterms:title>YG_plasmid_016</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_016/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_016</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7299/YG_plasmid_016"/>
@@ -842,7 +986,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7299/YG_plasmid_020/1">
+        <dcterms:title>YG_plasmid_020</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_020/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_020</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7299/YG_plasmid_020"/>
@@ -859,7 +1005,9 @@
     <sbol:displayId>UWBF_7300</sbol:displayId>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7300/UWBIOFAB_22544/1">
+        <dcterms:title>UWBIOFAB_22544</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBIOFAB_22544/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>UWBIOFAB_22544</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7300/UWBIOFAB_22544"/>
@@ -868,7 +1016,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7300/YG_plasmid_001/1">
+        <dcterms:title>YG_plasmid_001</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_001/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_001</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7300/YG_plasmid_001"/>
@@ -877,7 +1027,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7300/YG_plasmid_004/1">
+        <dcterms:title>YG_plasmid_004</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_004/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_004</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7300/YG_plasmid_004"/>
@@ -886,7 +1038,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7300/YG_plasmid_008/1">
+        <dcterms:title>YG_plasmid_008</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_008/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_008</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7300/YG_plasmid_008"/>
@@ -895,7 +1049,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7300/YG_plasmid_012/1">
+        <dcterms:title>YG_plasmid_012</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_012/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_012</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7300/YG_plasmid_012"/>
@@ -912,7 +1068,9 @@
     <sbol:displayId>UWBF_7373</sbol:displayId>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7373/UWBIOFAB_22544/1">
+        <dcterms:title>UWBIOFAB_22544</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBIOFAB_22544/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>UWBIOFAB_22544</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7373/UWBIOFAB_22544"/>
@@ -921,7 +1079,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7373/YG_plasmid_001/1">
+        <dcterms:title>YG_plasmid_001</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_001/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_001</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7373/YG_plasmid_001"/>
@@ -930,7 +1090,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7373/YG_plasmid_008/1">
+        <dcterms:title>YG_plasmid_008</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_008/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_008</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7373/YG_plasmid_008"/>
@@ -939,7 +1101,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7373/YG_plasmid_009/1">
+        <dcterms:title>YG_plasmid_009</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_009/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_009</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7373/YG_plasmid_009"/>
@@ -948,7 +1112,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7373/YG_plasmid_019/1">
+        <dcterms:title>YG_plasmid_019</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_019/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_019</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7373/YG_plasmid_019"/>
@@ -957,7 +1123,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7373/YG_plasmid_021/1">
+        <dcterms:title>YG_plasmid_021</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_021/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_021</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7373/YG_plasmid_021"/>
@@ -974,7 +1142,9 @@
     <sbol:displayId>UWBF_7374</sbol:displayId>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7374/UWBIOFAB_22544/1">
+        <dcterms:title>UWBIOFAB_22544</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBIOFAB_22544/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>UWBIOFAB_22544</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7374/UWBIOFAB_22544"/>
@@ -983,7 +1153,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7374/YG_plasmid_001/1">
+        <dcterms:title>YG_plasmid_001</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_001/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_001</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7374/YG_plasmid_001"/>
@@ -992,7 +1164,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7374/YG_plasmid_006/1">
+        <dcterms:title>YG_plasmid_006</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_006/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_006</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7374/YG_plasmid_006"/>
@@ -1001,7 +1175,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7374/YG_plasmid_008/1">
+        <dcterms:title>YG_plasmid_008</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_008/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_008</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7374/YG_plasmid_008"/>
@@ -1010,7 +1186,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7374/YG_plasmid_009/1">
+        <dcterms:title>YG_plasmid_009</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_009/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_009</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7374/YG_plasmid_009"/>
@@ -1019,7 +1197,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7374/YG_plasmid_019/1">
+        <dcterms:title>YG_plasmid_019</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_019/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_019</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7374/YG_plasmid_019"/>
@@ -1028,7 +1208,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7374/YG_plasmid_021/1">
+        <dcterms:title>YG_plasmid_021</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_021/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_021</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7374/YG_plasmid_021"/>
@@ -1045,7 +1227,9 @@
     <sbol:displayId>UWBF_7375</sbol:displayId>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7375/UWBIOFAB_22544/1">
+        <dcterms:title>UWBIOFAB_22544</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBIOFAB_22544/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>UWBIOFAB_22544</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7375/UWBIOFAB_22544"/>
@@ -1054,7 +1238,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7375/YG_plasmid_001/1">
+        <dcterms:title>YG_plasmid_001</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_001/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_001</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7375/YG_plasmid_001"/>
@@ -1063,7 +1249,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7375/YG_plasmid_006/1">
+        <dcterms:title>YG_plasmid_006</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_006/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_006</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7375/YG_plasmid_006"/>
@@ -1072,7 +1260,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7375/YG_plasmid_008/1">
+        <dcterms:title>YG_plasmid_008</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_008/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_008</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7375/YG_plasmid_008"/>
@@ -1081,7 +1271,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7375/YG_plasmid_019/1">
+        <dcterms:title>YG_plasmid_019</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_019/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_019</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7375/YG_plasmid_019"/>
@@ -1090,7 +1282,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7375/YG_plasmid_021/1">
+        <dcterms:title>YG_plasmid_021</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_021/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_021</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7375/YG_plasmid_021"/>
@@ -1107,7 +1301,9 @@
     <sbol:displayId>UWBF_7376</sbol:displayId>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7376/UWBIOFAB_22544/1">
+        <dcterms:title>UWBIOFAB_22544</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBIOFAB_22544/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>UWBIOFAB_22544</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7376/UWBIOFAB_22544"/>
@@ -1116,7 +1312,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7376/YG_plasmid_001/1">
+        <dcterms:title>YG_plasmid_001</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_001/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_001</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7376/YG_plasmid_001"/>
@@ -1125,7 +1323,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7376/YG_plasmid_008/1">
+        <dcterms:title>YG_plasmid_008</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_008/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_008</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7376/YG_plasmid_008"/>
@@ -1134,7 +1334,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7376/YG_plasmid_019/1">
+        <dcterms:title>YG_plasmid_019</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_019/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_019</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7376/YG_plasmid_019"/>
@@ -1143,7 +1345,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7376/YG_plasmid_021/1">
+        <dcterms:title>YG_plasmid_021</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_021/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_021</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7376/YG_plasmid_021"/>
@@ -1160,7 +1364,9 @@
     <sbol:displayId>UWBF_7377</sbol:displayId>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7377/UWBIOFAB_22544/1">
+        <dcterms:title>UWBIOFAB_22544</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBIOFAB_22544/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>UWBIOFAB_22544</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7377/UWBIOFAB_22544"/>
@@ -1169,7 +1375,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7377/YG_plasmid_001/1">
+        <dcterms:title>YG_plasmid_001</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_001/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_001</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7377/YG_plasmid_001"/>
@@ -1178,7 +1386,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7377/YG_plasmid_002/1">
+        <dcterms:title>YG_plasmid_002</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_002/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_002</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7377/YG_plasmid_002"/>
@@ -1187,7 +1397,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7377/YG_plasmid_004/1">
+        <dcterms:title>YG_plasmid_004</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_004/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_004</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7377/YG_plasmid_004"/>
@@ -1196,7 +1408,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7377/YG_plasmid_008/1">
+        <dcterms:title>YG_plasmid_008</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_008/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_008</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7377/YG_plasmid_008"/>
@@ -1205,7 +1419,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7377/YG_plasmid_012/1">
+        <dcterms:title>YG_plasmid_012</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_012/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_012</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7377/YG_plasmid_012"/>
@@ -1214,7 +1430,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_7377/YG_plasmid_020/1">
+        <dcterms:title>YG_plasmid_020</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_020/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_020</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_7377/YG_plasmid_020"/>
@@ -1231,7 +1449,9 @@
     <sbol:displayId>UWBF_8225</sbol:displayId>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8225/UWBIOFAB_22544/1">
+        <dcterms:title>UWBIOFAB_22544</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBIOFAB_22544/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>UWBIOFAB_22544</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8225/UWBIOFAB_22544"/>
@@ -1240,7 +1460,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8225/YG_plasmid_001/1">
+        <dcterms:title>YG_plasmid_001</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_001/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_001</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8225/YG_plasmid_001"/>
@@ -1249,7 +1471,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8225/YG_plasmid_014/1">
+        <dcterms:title>YG_plasmid_014</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_014/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_014</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8225/YG_plasmid_014"/>
@@ -1258,7 +1482,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8225/YG_plasmid_021/1">
+        <dcterms:title>YG_plasmid_021</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_021/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_021</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8225/YG_plasmid_021"/>
@@ -1275,7 +1501,9 @@
     <sbol:displayId>UWBF_8231</sbol:displayId>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8231/UWBIOFAB_22544/1">
+        <dcterms:title>UWBIOFAB_22544</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBIOFAB_22544/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>UWBIOFAB_22544</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8231/UWBIOFAB_22544"/>
@@ -1284,7 +1512,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8231/YG_plasmid_001/1">
+        <dcterms:title>YG_plasmid_001</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_001/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_001</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8231/YG_plasmid_001"/>
@@ -1293,7 +1523,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8231/YG_plasmid_004/1">
+        <dcterms:title>YG_plasmid_004</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_004/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_004</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8231/YG_plasmid_004"/>
@@ -1302,7 +1534,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8231/YG_plasmid_008/1">
+        <dcterms:title>YG_plasmid_008</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_008/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_008</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8231/YG_plasmid_008"/>
@@ -1311,7 +1545,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8231/YG_plasmid_012/1">
+        <dcterms:title>YG_plasmid_012</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_012/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_012</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8231/YG_plasmid_012"/>
@@ -1320,7 +1556,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8231/YG_plasmid_020/1">
+        <dcterms:title>YG_plasmid_020</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_020/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_020</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8231/YG_plasmid_020"/>
@@ -1329,7 +1567,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8231/YG_plasmid_022/1">
+        <dcterms:title>YG_plasmid_022</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_022/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_022</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8231/YG_plasmid_022"/>
@@ -1346,7 +1586,9 @@
     <sbol:displayId>UWBF_8542</sbol:displayId>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8542/UWBIOFAB_22544/1">
+        <dcterms:title>UWBIOFAB_22544</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBIOFAB_22544/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>UWBIOFAB_22544</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8542/UWBIOFAB_22544"/>
@@ -1355,7 +1597,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8542/YG_plasmid_001/1">
+        <dcterms:title>YG_plasmid_001</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_001/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_001</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8542/YG_plasmid_001"/>
@@ -1364,7 +1608,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8542/YG_plasmid_006/1">
+        <dcterms:title>YG_plasmid_006</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_006/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_006</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8542/YG_plasmid_006"/>
@@ -1373,7 +1619,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8542/YG_plasmid_007/1">
+        <dcterms:title>YG_plasmid_007</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_007/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_007</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8542/YG_plasmid_007"/>
@@ -1382,7 +1630,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8542/YG_plasmid_008/1">
+        <dcterms:title>YG_plasmid_008</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_008/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_008</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8542/YG_plasmid_008"/>
@@ -1391,7 +1641,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8542/YG_plasmid_009/1">
+        <dcterms:title>YG_plasmid_009</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_009/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_009</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8542/YG_plasmid_009"/>
@@ -1400,7 +1652,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8542/YG_plasmid_011/1">
+        <dcterms:title>YG_plasmid_011</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_011/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_011</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8542/YG_plasmid_011"/>
@@ -1409,7 +1663,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8542/YG_plasmid_016/1">
+        <dcterms:title>YG_plasmid_016</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_016/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_016</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8542/YG_plasmid_016"/>
@@ -1418,7 +1674,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8542/YG_plasmid_019/1">
+        <dcterms:title>YG_plasmid_019</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_019/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_019</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8542/YG_plasmid_019"/>
@@ -1427,7 +1685,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8542/YG_plasmid_021/1">
+        <dcterms:title>YG_plasmid_021</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_021/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_021</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8542/YG_plasmid_021"/>
@@ -1444,7 +1704,9 @@
     <sbol:displayId>UWBF_8543</sbol:displayId>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8543/UWBIOFAB_22544/1">
+        <dcterms:title>UWBIOFAB_22544</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBIOFAB_22544/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>UWBIOFAB_22544</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8543/UWBIOFAB_22544"/>
@@ -1453,7 +1715,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8543/YG_plasmid_001/1">
+        <dcterms:title>YG_plasmid_001</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_001/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_001</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8543/YG_plasmid_001"/>
@@ -1462,7 +1726,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8543/YG_plasmid_002/1">
+        <dcterms:title>YG_plasmid_002</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_002/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_002</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8543/YG_plasmid_002"/>
@@ -1471,7 +1737,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8543/YG_plasmid_007/1">
+        <dcterms:title>YG_plasmid_007</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_007/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_007</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8543/YG_plasmid_007"/>
@@ -1480,7 +1748,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8543/YG_plasmid_008/1">
+        <dcterms:title>YG_plasmid_008</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_008/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_008</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8543/YG_plasmid_008"/>
@@ -1489,7 +1759,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8543/YG_plasmid_009/1">
+        <dcterms:title>YG_plasmid_009</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_009/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_009</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8543/YG_plasmid_009"/>
@@ -1498,7 +1770,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8543/YG_plasmid_011/1">
+        <dcterms:title>YG_plasmid_011</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_011/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_011</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8543/YG_plasmid_011"/>
@@ -1507,7 +1781,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8543/YG_plasmid_019/1">
+        <dcterms:title>YG_plasmid_019</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_019/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_019</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8543/YG_plasmid_019"/>
@@ -1516,7 +1792,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8543/YG_plasmid_021/1">
+        <dcterms:title>YG_plasmid_021</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_021/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_021</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8543/YG_plasmid_021"/>
@@ -1533,7 +1811,9 @@
     <sbol:displayId>UWBF_8544</sbol:displayId>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8544/UWBIOFAB_22544/1">
+        <dcterms:title>UWBIOFAB_22544</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBIOFAB_22544/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>UWBIOFAB_22544</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8544/UWBIOFAB_22544"/>
@@ -1542,7 +1822,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8544/YG_plasmid_001/1">
+        <dcterms:title>YG_plasmid_001</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_001/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_001</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8544/YG_plasmid_001"/>
@@ -1551,7 +1833,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8544/YG_plasmid_007/1">
+        <dcterms:title>YG_plasmid_007</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_007/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_007</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8544/YG_plasmid_007"/>
@@ -1560,7 +1844,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8544/YG_plasmid_008/1">
+        <dcterms:title>YG_plasmid_008</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_008/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_008</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8544/YG_plasmid_008"/>
@@ -1569,7 +1855,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8544/YG_plasmid_009/1">
+        <dcterms:title>YG_plasmid_009</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_009/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_009</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8544/YG_plasmid_009"/>
@@ -1578,7 +1866,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8544/YG_plasmid_011/1">
+        <dcterms:title>YG_plasmid_011</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_011/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_011</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8544/YG_plasmid_011"/>
@@ -1587,7 +1877,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8544/YG_plasmid_019/1">
+        <dcterms:title>YG_plasmid_019</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_019/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_019</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8544/YG_plasmid_019"/>
@@ -1596,7 +1888,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8544/YG_plasmid_021/1">
+        <dcterms:title>YG_plasmid_021</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_021/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_021</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8544/YG_plasmid_021"/>
@@ -1613,7 +1907,9 @@
     <sbol:displayId>UWBF_8545</sbol:displayId>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8545/UWBIOFAB_22544/1">
+        <dcterms:title>UWBIOFAB_22544</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBIOFAB_22544/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>UWBIOFAB_22544</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8545/UWBIOFAB_22544"/>
@@ -1622,7 +1918,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8545/YG_plasmid_001/1">
+        <dcterms:title>YG_plasmid_001</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_001/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_001</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8545/YG_plasmid_001"/>
@@ -1631,7 +1929,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8545/YG_plasmid_007/1">
+        <dcterms:title>YG_plasmid_007</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_007/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_007</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8545/YG_plasmid_007"/>
@@ -1640,7 +1940,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8545/YG_plasmid_008/1">
+        <dcterms:title>YG_plasmid_008</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_008/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_008</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8545/YG_plasmid_008"/>
@@ -1649,7 +1951,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8545/YG_plasmid_009/1">
+        <dcterms:title>YG_plasmid_009</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_009/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_009</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8545/YG_plasmid_009"/>
@@ -1658,7 +1962,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8545/YG_plasmid_011/1">
+        <dcterms:title>YG_plasmid_011</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_011/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_011</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8545/YG_plasmid_011"/>
@@ -1667,7 +1973,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8545/YG_plasmid_016/1">
+        <dcterms:title>YG_plasmid_016</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_016/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_016</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8545/YG_plasmid_016"/>
@@ -1676,7 +1984,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8545/YG_plasmid_019/1">
+        <dcterms:title>YG_plasmid_019</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_019/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_019</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8545/YG_plasmid_019"/>
@@ -1685,7 +1995,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/UWBF_8545/YG_plasmid_021/1">
+        <dcterms:title>YG_plasmid_021</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_plasmid_021/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>YG_plasmid_021</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/UWBF_8545/YG_plasmid_021"/>
@@ -1710,7 +2022,9 @@
     <sbol:displayId>YG_media_001</sbol:displayId>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_001/CAT_147440250/1">
+        <dcterms:title>CAT_147440250</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/CAT_147440250/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>CAT_147440250</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_001/CAT_147440250"/>
@@ -1729,7 +2043,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_001/CAT_157300250/1">
+        <dcterms:title>CAT_157300250</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/CAT_157300250/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>CAT_157300250</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_001/CAT_157300250"/>
@@ -1748,7 +2064,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_001/CAT_BP382_100/1">
+        <dcterms:title>CAT_BP382_100</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/CAT_BP382_100/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>CAT_BP382_100</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_001/CAT_BP382_100"/>
@@ -1767,7 +2085,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_001/CAT_BP385_100/1">
+        <dcterms:title>CAT_BP385_100</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/CAT_BP385_100/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>CAT_BP385_100</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_001/CAT_BP385_100"/>
@@ -1786,7 +2106,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_001/CAT_BP395_100/1">
+        <dcterms:title>CAT_BP395_100</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/CAT_BP395_100/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>CAT_BP395_100</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_001/CAT_BP395_100"/>
@@ -1805,7 +2127,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_001/CAT_D16_3/1">
+        <dcterms:title>CAT_D16_3</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/CAT_D16_3/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>CAT_D16_3</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_001/CAT_D16_3"/>
@@ -1824,7 +2148,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_001/ddH2O/1">
+        <dcterms:title>ddH2O</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/ddH2O/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>ddH2O</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_001/ddH2O"/>
@@ -1833,6 +2159,8 @@
     </sbol:functionalComponent>
     <sbol:module>
       <sbol:Module rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_001/CAT_630425/1">
+        <dcterms:title>CAT_630425</dcterms:title>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/CAT_630425/1"/>
         <sbol:displayId>CAT_630425</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_001/CAT_630425"/>
         <sbol:version>1</sbol:version>
@@ -1850,6 +2178,8 @@
     </sbol:module>
     <sbol:module>
       <sbol:Module rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_001/CAT_R459942/1">
+        <dcterms:title>CAT_R459942</dcterms:title>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/CAT_R459942/1"/>
         <sbol:displayId>CAT_R459942</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_001/CAT_R459942"/>
         <sbol:version>1</sbol:version>
@@ -1875,7 +2205,9 @@
     <sbol:displayId>YG_media_002</sbol:displayId>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_002/CAT_147440250/1">
+        <dcterms:title>CAT_147440250</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/CAT_147440250/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>CAT_147440250</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_002/CAT_147440250"/>
@@ -1894,7 +2226,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_002/CAT_157300250/1">
+        <dcterms:title>CAT_157300250</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/CAT_157300250/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>CAT_157300250</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_002/CAT_157300250"/>
@@ -1913,7 +2247,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_002/CAT_71006_012/1">
+        <dcterms:title>CAT_71006_012</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/CAT_71006_012/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>CAT_71006_012</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_002/CAT_71006_012"/>
@@ -1932,7 +2268,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_002/CAT_BP382_100/1">
+        <dcterms:title>CAT_BP382_100</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/CAT_BP382_100/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>CAT_BP382_100</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_002/CAT_BP382_100"/>
@@ -1951,7 +2289,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_002/CAT_BP385_100/1">
+        <dcterms:title>CAT_BP385_100</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/CAT_BP385_100/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>CAT_BP385_100</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_002/CAT_BP385_100"/>
@@ -1970,7 +2310,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_002/CAT_BP395_100/1">
+        <dcterms:title>CAT_BP395_100</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/CAT_BP395_100/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>CAT_BP395_100</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_002/CAT_BP395_100"/>
@@ -1989,7 +2331,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_002/CAT_G33_500/1">
+        <dcterms:title>CAT_G33_500</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/CAT_G33_500/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>CAT_G33_500</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_002/CAT_G33_500"/>
@@ -2008,7 +2352,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_002/ddH2O/1">
+        <dcterms:title>ddH2O</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/ddH2O/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>ddH2O</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_002/ddH2O"/>
@@ -2017,6 +2363,8 @@
     </sbol:functionalComponent>
     <sbol:module>
       <sbol:Module rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_002/CAT_630425/1">
+        <dcterms:title>CAT_630425</dcterms:title>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/CAT_630425/1"/>
         <sbol:displayId>CAT_630425</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_002/CAT_630425"/>
         <sbol:version>1</sbol:version>
@@ -2034,6 +2382,8 @@
     </sbol:module>
     <sbol:module>
       <sbol:Module rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_002/CAT_R459942/1">
+        <dcterms:title>CAT_R459942</dcterms:title>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/CAT_R459942/1"/>
         <sbol:displayId>CAT_R459942</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_002/CAT_R459942"/>
         <sbol:version>1</sbol:version>
@@ -2059,7 +2409,9 @@
     <sbol:displayId>YG_media_003</sbol:displayId>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_147440250/1">
+        <dcterms:title>CAT_147440250</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/CAT_147440250/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>CAT_147440250</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_147440250"/>
@@ -2078,7 +2430,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_157300250/1">
+        <dcterms:title>CAT_157300250</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/CAT_157300250/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>CAT_157300250</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_157300250"/>
@@ -2097,7 +2451,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_BP382_100/1">
+        <dcterms:title>CAT_BP382_100</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/CAT_BP382_100/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>CAT_BP382_100</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_BP382_100"/>
@@ -2116,7 +2472,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_BP385_100/1">
+        <dcterms:title>CAT_BP385_100</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/CAT_BP385_100/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>CAT_BP385_100</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_BP385_100"/>
@@ -2135,7 +2493,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_BP395_100/1">
+        <dcterms:title>CAT_BP395_100</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/CAT_BP395_100/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>CAT_BP395_100</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_BP395_100"/>
@@ -2154,7 +2514,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_D16_3/1">
+        <dcterms:title>CAT_D16_3</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/CAT_D16_3/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>CAT_D16_3</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_D16_3"/>
@@ -2173,7 +2535,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_S1876_1KG/1">
+        <dcterms:title>CAT_S1876_1KG</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/CAT_S1876_1KG/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>CAT_S1876_1KG</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_S1876_1KG"/>
@@ -2192,7 +2556,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_003/ddH2O/1">
+        <dcterms:title>ddH2O</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/ddH2O/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>ddH2O</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_003/ddH2O"/>
@@ -2201,6 +2567,8 @@
     </sbol:functionalComponent>
     <sbol:module>
       <sbol:Module rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_630425/1">
+        <dcterms:title>CAT_630425</dcterms:title>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/CAT_630425/1"/>
         <sbol:displayId>CAT_630425</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_630425"/>
         <sbol:version>1</sbol:version>
@@ -2218,6 +2586,8 @@
     </sbol:module>
     <sbol:module>
       <sbol:Module rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_R459942/1">
+        <dcterms:title>CAT_R459942</dcterms:title>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/CAT_R459942/1"/>
         <sbol:displayId>CAT_R459942</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_003/CAT_R459942"/>
         <sbol:version>1</sbol:version>
@@ -2243,7 +2613,9 @@
     <sbol:displayId>YG_media_004</sbol:displayId>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_004/CAT_147440250/1">
+        <dcterms:title>CAT_147440250</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/CAT_147440250/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>CAT_147440250</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_004/CAT_147440250"/>
@@ -2262,7 +2634,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_004/CAT_D16_3/1">
+        <dcterms:title>CAT_D16_3</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/CAT_D16_3/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>CAT_D16_3</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_004/CAT_D16_3"/>
@@ -2281,7 +2655,9 @@
     </sbol:functionalComponent>
     <sbol:functionalComponent>
       <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_004/ddH2O/1">
+        <dcterms:title>ddH2O</dcterms:title>
         <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/ddH2O/1"/>
         <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
         <sbol:displayId>ddH2O</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_004/ddH2O"/>
@@ -2290,6 +2666,8 @@
     </sbol:functionalComponent>
     <sbol:module>
       <sbol:Module rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_004/CAT_90000_726/1">
+        <dcterms:title>CAT_90000_726</dcterms:title>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/CAT_90000_726/1"/>
         <sbol:displayId>CAT_90000_726</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_004/CAT_90000_726"/>
         <sbol:version>1</sbol:version>
@@ -2307,6 +2685,8 @@
     </sbol:module>
     <sbol:module>
       <sbol:Module rdf:about="http://hub.sd2e.org/user/sd2e/design/YG_media_004/CAT_DF0123_17_3/1">
+        <dcterms:title>CAT_DF0123_17_3</dcterms:title>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/CAT_DF0123_17_3/1"/>
         <sbol:displayId>CAT_DF0123_17_3</sbol:displayId>
         <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/YG_media_004/CAT_DF0123_17_3"/>
         <sbol:version>1</sbol:version>

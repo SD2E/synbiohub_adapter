@@ -31,6 +31,7 @@
             <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein_0_025390625/fluorescein/concentration"/>
             <sbol:version>1</sbol:version>
             <om:hasNumericalValue>0.025391</om:hasNumericalValue>
+            <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/micromolair/1"/>
           </om:Measure>
         </om:measure>
       </sbol:FunctionalComponent>
@@ -67,6 +68,7 @@
             <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein_0_05078125/fluorescein/concentration"/>
             <sbol:version>1</sbol:version>
             <om:hasNumericalValue>0.050781</om:hasNumericalValue>
+            <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/micromolair/1"/>
           </om:Measure>
         </om:measure>
       </sbol:FunctionalComponent>
@@ -103,6 +105,7 @@
             <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein_0_1015625/fluorescein/concentration"/>
             <sbol:version>1</sbol:version>
             <om:hasNumericalValue>0.101563</om:hasNumericalValue>
+            <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/micromolair/1"/>
           </om:Measure>
         </om:measure>
       </sbol:FunctionalComponent>
@@ -139,6 +142,7 @@
             <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein_0_203125/fluorescein/concentration"/>
             <sbol:version>1</sbol:version>
             <om:hasNumericalValue>0.203125</om:hasNumericalValue>
+            <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/micromolair/1"/>
           </om:Measure>
         </om:measure>
       </sbol:FunctionalComponent>
@@ -175,6 +179,7 @@
             <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein_0_40625/fluorescein/concentration"/>
             <sbol:version>1</sbol:version>
             <om:hasNumericalValue>0.406250</om:hasNumericalValue>
+            <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/micromolair/1"/>
           </om:Measure>
         </om:measure>
       </sbol:FunctionalComponent>
@@ -211,6 +216,7 @@
             <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein_0_8125/fluorescein/concentration"/>
             <sbol:version>1</sbol:version>
             <om:hasNumericalValue>0.812500</om:hasNumericalValue>
+            <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/micromolair/1"/>
           </om:Measure>
         </om:measure>
       </sbol:FunctionalComponent>
@@ -247,6 +253,7 @@
             <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein_12_5/fluorescein/concentration"/>
             <sbol:version>1</sbol:version>
             <om:hasNumericalValue>12.500000</om:hasNumericalValue>
+            <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/micromolair/1"/>
           </om:Measure>
         </om:measure>
       </sbol:FunctionalComponent>
@@ -283,6 +290,7 @@
             <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein_1_625/fluorescein/concentration"/>
             <sbol:version>1</sbol:version>
             <om:hasNumericalValue>1.625000</om:hasNumericalValue>
+            <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/micromolair/1"/>
           </om:Measure>
         </om:measure>
       </sbol:FunctionalComponent>
@@ -319,6 +327,7 @@
             <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein_25/fluorescein/concentration"/>
             <sbol:version>1</sbol:version>
             <om:hasNumericalValue>25.000000</om:hasNumericalValue>
+            <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/micromolair/1"/>
           </om:Measure>
         </om:measure>
       </sbol:FunctionalComponent>
@@ -355,6 +364,7 @@
             <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein_3_125/fluorescein/concentration"/>
             <sbol:version>1</sbol:version>
             <om:hasNumericalValue>3.125000</om:hasNumericalValue>
+            <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/micromolair/1"/>
           </om:Measure>
         </om:measure>
       </sbol:FunctionalComponent>
@@ -391,6 +401,7 @@
             <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein_50/fluorescein/concentration"/>
             <sbol:version>1</sbol:version>
             <om:hasNumericalValue>50.000000</om:hasNumericalValue>
+            <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/micromolair/1"/>
           </om:Measure>
         </om:measure>
       </sbol:FunctionalComponent>
@@ -427,6 +438,7 @@
             <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein_6_25/fluorescein/concentration"/>
             <sbol:version>1</sbol:version>
             <om:hasNumericalValue>6.250000</om:hasNumericalValue>
+            <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/micromolair/1"/>
           </om:Measure>
         </om:measure>
       </sbol:FunctionalComponent>
@@ -462,6 +474,14 @@
     <sbol:role rdf:resource="http://purl.obolibrary.org/obo/NCIT_C28143"/>
     <sbol:version>1</sbol:version>
   </sbol:ModuleDefinition>
+  <om:Unit rdf:about="http://hub.sd2e.org/user/sd2e/design/micromolair/1">
+    <dcterms:title>micromolair</dcterms:title>
+    <sbol:displayId>micromolair</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/micromolair"/>
+    <sbol:version>1</sbol:version>
+    <om:symbol>μM</om:symbol>
+    <prov:wasDerivedFrom rdf:resource="http://www.ontology-of-units-of-measure.org/resource/om-2/micromolair"/>
+  </om:Unit>
   <sbol:ModuleDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/pbs/1">
     <dcterms:title>Phosphate Buffered Saline</dcterms:title>
     <sbol:displayId>pbs</sbol:displayId>
