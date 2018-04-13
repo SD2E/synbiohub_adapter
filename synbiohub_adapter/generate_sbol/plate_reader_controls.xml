@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:om="http://www.ontology-of-units-of-measure.org/resource/om-2#"
+   xmlns:prov="http://www.w3.org/ns/prov#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:sbol="http://sbols.org/v2#"
+   xmlns:sys-bio="http://sys-bio.org#">
+  <sbol:ComponentDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/fluorescein/1">
+    <dcterms:title>Fluorescein</dcterms:title>
+    <sbol:displayId>fluorescein</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein"/>
+    <sbol:type rdf:resource="http://identifiers.org/chebi/CHEBI_31624"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ComponentDefinition>
+  <sbol:ModuleDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/fluorescein_0_025390625/1">
+    <dcterms:title>Fluorescein Dilution</dcterms:title>
+    <sbol:displayId>fluorescein_0_025390625</sbol:displayId>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/fluorescein_0_025390625/fluorescein/1">
+        <dcterms:title>fluorescein</dcterms:title>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein/1"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>fluorescein</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein_0_025390625/fluorescein"/>
+        <sbol:version>1</sbol:version>
+        <om:measure>
+          <om:Measure rdf:about="http://hub.sd2e.org/user/sd2e/design/fluorescein_0_025390625/fluorescein/concentration/1">
+            <dcterms:title>concentration</dcterms:title>
+            <sbol:displayId>concentration</sbol:displayId>
+            <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein_0_025390625/fluorescein/concentration"/>
+            <sbol:version>1</sbol:version>
+            <om:hasNumericalValue>0.025391</om:hasNumericalValue>
+            <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/micromolair/1"/>
+          </om:Measure>
+        </om:measure>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:module>
+      <sbol:Module rdf:about="http://hub.sd2e.org/user/sd2e/design/fluorescein_0_025390625/pbs/1">
+        <dcterms:title>pbs</dcterms:title>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/pbs/1"/>
+        <sbol:displayId>pbs</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein_0_025390625/pbs"/>
+        <sbol:version>1</sbol:version>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein_0_025390625"/>
+    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/NCIT_C28143"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/fluorescein_0_05078125/1">
+    <dcterms:title>Fluorescein Dilution</dcterms:title>
+    <sbol:displayId>fluorescein_0_05078125</sbol:displayId>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/fluorescein_0_05078125/fluorescein/1">
+        <dcterms:title>fluorescein</dcterms:title>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein/1"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>fluorescein</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein_0_05078125/fluorescein"/>
+        <sbol:version>1</sbol:version>
+        <om:measure>
+          <om:Measure rdf:about="http://hub.sd2e.org/user/sd2e/design/fluorescein_0_05078125/fluorescein/concentration/1">
+            <dcterms:title>concentration</dcterms:title>
+            <sbol:displayId>concentration</sbol:displayId>
+            <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein_0_05078125/fluorescein/concentration"/>
+            <sbol:version>1</sbol:version>
+            <om:hasNumericalValue>0.050781</om:hasNumericalValue>
+            <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/micromolair/1"/>
+          </om:Measure>
+        </om:measure>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:module>
+      <sbol:Module rdf:about="http://hub.sd2e.org/user/sd2e/design/fluorescein_0_05078125/pbs/1">
+        <dcterms:title>pbs</dcterms:title>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/pbs/1"/>
+        <sbol:displayId>pbs</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein_0_05078125/pbs"/>
+        <sbol:version>1</sbol:version>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein_0_05078125"/>
+    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/NCIT_C28143"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/fluorescein_0_1015625/1">
+    <dcterms:title>Fluorescein Dilution</dcterms:title>
+    <sbol:displayId>fluorescein_0_1015625</sbol:displayId>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/fluorescein_0_1015625/fluorescein/1">
+        <dcterms:title>fluorescein</dcterms:title>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein/1"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>fluorescein</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein_0_1015625/fluorescein"/>
+        <sbol:version>1</sbol:version>
+        <om:measure>
+          <om:Measure rdf:about="http://hub.sd2e.org/user/sd2e/design/fluorescein_0_1015625/fluorescein/concentration/1">
+            <dcterms:title>concentration</dcterms:title>
+            <sbol:displayId>concentration</sbol:displayId>
+            <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein_0_1015625/fluorescein/concentration"/>
+            <sbol:version>1</sbol:version>
+            <om:hasNumericalValue>0.101563</om:hasNumericalValue>
+            <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/micromolair/1"/>
+          </om:Measure>
+        </om:measure>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:module>
+      <sbol:Module rdf:about="http://hub.sd2e.org/user/sd2e/design/fluorescein_0_1015625/pbs/1">
+        <dcterms:title>pbs</dcterms:title>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/pbs/1"/>
+        <sbol:displayId>pbs</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein_0_1015625/pbs"/>
+        <sbol:version>1</sbol:version>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein_0_1015625"/>
+    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/NCIT_C28143"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/fluorescein_0_203125/1">
+    <dcterms:title>Fluorescein Dilution</dcterms:title>
+    <sbol:displayId>fluorescein_0_203125</sbol:displayId>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/fluorescein_0_203125/fluorescein/1">
+        <dcterms:title>fluorescein</dcterms:title>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein/1"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>fluorescein</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein_0_203125/fluorescein"/>
+        <sbol:version>1</sbol:version>
+        <om:measure>
+          <om:Measure rdf:about="http://hub.sd2e.org/user/sd2e/design/fluorescein_0_203125/fluorescein/concentration/1">
+            <dcterms:title>concentration</dcterms:title>
+            <sbol:displayId>concentration</sbol:displayId>
+            <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein_0_203125/fluorescein/concentration"/>
+            <sbol:version>1</sbol:version>
+            <om:hasNumericalValue>0.203125</om:hasNumericalValue>
+            <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/micromolair/1"/>
+          </om:Measure>
+        </om:measure>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:module>
+      <sbol:Module rdf:about="http://hub.sd2e.org/user/sd2e/design/fluorescein_0_203125/pbs/1">
+        <dcterms:title>pbs</dcterms:title>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/pbs/1"/>
+        <sbol:displayId>pbs</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein_0_203125/pbs"/>
+        <sbol:version>1</sbol:version>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein_0_203125"/>
+    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/NCIT_C28143"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/fluorescein_0_40625/1">
+    <dcterms:title>Fluorescein Dilution</dcterms:title>
+    <sbol:displayId>fluorescein_0_40625</sbol:displayId>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/fluorescein_0_40625/fluorescein/1">
+        <dcterms:title>fluorescein</dcterms:title>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein/1"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>fluorescein</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein_0_40625/fluorescein"/>
+        <sbol:version>1</sbol:version>
+        <om:measure>
+          <om:Measure rdf:about="http://hub.sd2e.org/user/sd2e/design/fluorescein_0_40625/fluorescein/concentration/1">
+            <dcterms:title>concentration</dcterms:title>
+            <sbol:displayId>concentration</sbol:displayId>
+            <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein_0_40625/fluorescein/concentration"/>
+            <sbol:version>1</sbol:version>
+            <om:hasNumericalValue>0.406250</om:hasNumericalValue>
+            <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/micromolair/1"/>
+          </om:Measure>
+        </om:measure>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:module>
+      <sbol:Module rdf:about="http://hub.sd2e.org/user/sd2e/design/fluorescein_0_40625/pbs/1">
+        <dcterms:title>pbs</dcterms:title>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/pbs/1"/>
+        <sbol:displayId>pbs</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein_0_40625/pbs"/>
+        <sbol:version>1</sbol:version>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein_0_40625"/>
+    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/NCIT_C28143"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/fluorescein_0_8125/1">
+    <dcterms:title>Fluorescein Dilution</dcterms:title>
+    <sbol:displayId>fluorescein_0_8125</sbol:displayId>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/fluorescein_0_8125/fluorescein/1">
+        <dcterms:title>fluorescein</dcterms:title>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein/1"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>fluorescein</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein_0_8125/fluorescein"/>
+        <sbol:version>1</sbol:version>
+        <om:measure>
+          <om:Measure rdf:about="http://hub.sd2e.org/user/sd2e/design/fluorescein_0_8125/fluorescein/concentration/1">
+            <dcterms:title>concentration</dcterms:title>
+            <sbol:displayId>concentration</sbol:displayId>
+            <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein_0_8125/fluorescein/concentration"/>
+            <sbol:version>1</sbol:version>
+            <om:hasNumericalValue>0.812500</om:hasNumericalValue>
+            <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/micromolair/1"/>
+          </om:Measure>
+        </om:measure>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:module>
+      <sbol:Module rdf:about="http://hub.sd2e.org/user/sd2e/design/fluorescein_0_8125/pbs/1">
+        <dcterms:title>pbs</dcterms:title>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/pbs/1"/>
+        <sbol:displayId>pbs</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein_0_8125/pbs"/>
+        <sbol:version>1</sbol:version>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein_0_8125"/>
+    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/NCIT_C28143"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/fluorescein_12_5/1">
+    <dcterms:title>Fluorescein Dilution</dcterms:title>
+    <sbol:displayId>fluorescein_12_5</sbol:displayId>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/fluorescein_12_5/fluorescein/1">
+        <dcterms:title>fluorescein</dcterms:title>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein/1"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>fluorescein</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein_12_5/fluorescein"/>
+        <sbol:version>1</sbol:version>
+        <om:measure>
+          <om:Measure rdf:about="http://hub.sd2e.org/user/sd2e/design/fluorescein_12_5/fluorescein/concentration/1">
+            <dcterms:title>concentration</dcterms:title>
+            <sbol:displayId>concentration</sbol:displayId>
+            <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein_12_5/fluorescein/concentration"/>
+            <sbol:version>1</sbol:version>
+            <om:hasNumericalValue>12.500000</om:hasNumericalValue>
+            <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/micromolair/1"/>
+          </om:Measure>
+        </om:measure>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:module>
+      <sbol:Module rdf:about="http://hub.sd2e.org/user/sd2e/design/fluorescein_12_5/pbs/1">
+        <dcterms:title>pbs</dcterms:title>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/pbs/1"/>
+        <sbol:displayId>pbs</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein_12_5/pbs"/>
+        <sbol:version>1</sbol:version>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein_12_5"/>
+    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/NCIT_C28143"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/fluorescein_1_625/1">
+    <dcterms:title>Fluorescein Dilution</dcterms:title>
+    <sbol:displayId>fluorescein_1_625</sbol:displayId>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/fluorescein_1_625/fluorescein/1">
+        <dcterms:title>fluorescein</dcterms:title>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein/1"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>fluorescein</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein_1_625/fluorescein"/>
+        <sbol:version>1</sbol:version>
+        <om:measure>
+          <om:Measure rdf:about="http://hub.sd2e.org/user/sd2e/design/fluorescein_1_625/fluorescein/concentration/1">
+            <dcterms:title>concentration</dcterms:title>
+            <sbol:displayId>concentration</sbol:displayId>
+            <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein_1_625/fluorescein/concentration"/>
+            <sbol:version>1</sbol:version>
+            <om:hasNumericalValue>1.625000</om:hasNumericalValue>
+            <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/micromolair/1"/>
+          </om:Measure>
+        </om:measure>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:module>
+      <sbol:Module rdf:about="http://hub.sd2e.org/user/sd2e/design/fluorescein_1_625/pbs/1">
+        <dcterms:title>pbs</dcterms:title>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/pbs/1"/>
+        <sbol:displayId>pbs</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein_1_625/pbs"/>
+        <sbol:version>1</sbol:version>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein_1_625"/>
+    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/NCIT_C28143"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/fluorescein_25/1">
+    <dcterms:title>Fluorescein Dilution</dcterms:title>
+    <sbol:displayId>fluorescein_25</sbol:displayId>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/fluorescein_25/fluorescein/1">
+        <dcterms:title>fluorescein</dcterms:title>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein/1"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>fluorescein</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein_25/fluorescein"/>
+        <sbol:version>1</sbol:version>
+        <om:measure>
+          <om:Measure rdf:about="http://hub.sd2e.org/user/sd2e/design/fluorescein_25/fluorescein/concentration/1">
+            <dcterms:title>concentration</dcterms:title>
+            <sbol:displayId>concentration</sbol:displayId>
+            <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein_25/fluorescein/concentration"/>
+            <sbol:version>1</sbol:version>
+            <om:hasNumericalValue>25.000000</om:hasNumericalValue>
+            <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/micromolair/1"/>
+          </om:Measure>
+        </om:measure>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:module>
+      <sbol:Module rdf:about="http://hub.sd2e.org/user/sd2e/design/fluorescein_25/pbs/1">
+        <dcterms:title>pbs</dcterms:title>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/pbs/1"/>
+        <sbol:displayId>pbs</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein_25/pbs"/>
+        <sbol:version>1</sbol:version>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein_25"/>
+    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/NCIT_C28143"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/fluorescein_3_125/1">
+    <dcterms:title>Fluorescein Dilution</dcterms:title>
+    <sbol:displayId>fluorescein_3_125</sbol:displayId>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/fluorescein_3_125/fluorescein/1">
+        <dcterms:title>fluorescein</dcterms:title>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein/1"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>fluorescein</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein_3_125/fluorescein"/>
+        <sbol:version>1</sbol:version>
+        <om:measure>
+          <om:Measure rdf:about="http://hub.sd2e.org/user/sd2e/design/fluorescein_3_125/fluorescein/concentration/1">
+            <dcterms:title>concentration</dcterms:title>
+            <sbol:displayId>concentration</sbol:displayId>
+            <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein_3_125/fluorescein/concentration"/>
+            <sbol:version>1</sbol:version>
+            <om:hasNumericalValue>3.125000</om:hasNumericalValue>
+            <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/micromolair/1"/>
+          </om:Measure>
+        </om:measure>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:module>
+      <sbol:Module rdf:about="http://hub.sd2e.org/user/sd2e/design/fluorescein_3_125/pbs/1">
+        <dcterms:title>pbs</dcterms:title>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/pbs/1"/>
+        <sbol:displayId>pbs</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein_3_125/pbs"/>
+        <sbol:version>1</sbol:version>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein_3_125"/>
+    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/NCIT_C28143"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/fluorescein_50/1">
+    <dcterms:title>Fluorescein Stock</dcterms:title>
+    <sbol:displayId>fluorescein_50</sbol:displayId>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/fluorescein_50/fluorescein/1">
+        <dcterms:title>fluorescein</dcterms:title>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein/1"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>fluorescein</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein_50/fluorescein"/>
+        <sbol:version>1</sbol:version>
+        <om:measure>
+          <om:Measure rdf:about="http://hub.sd2e.org/user/sd2e/design/fluorescein_50/fluorescein/concentration/1">
+            <dcterms:title>concentration</dcterms:title>
+            <sbol:displayId>concentration</sbol:displayId>
+            <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein_50/fluorescein/concentration"/>
+            <sbol:version>1</sbol:version>
+            <om:hasNumericalValue>50.000000</om:hasNumericalValue>
+            <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/micromolair/1"/>
+          </om:Measure>
+        </om:measure>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:module>
+      <sbol:Module rdf:about="http://hub.sd2e.org/user/sd2e/design/fluorescein_50/pbs/1">
+        <dcterms:title>pbs</dcterms:title>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/pbs/1"/>
+        <sbol:displayId>pbs</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein_50/pbs"/>
+        <sbol:version>1</sbol:version>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein_50"/>
+    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/NCIT_C28143"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/fluorescein_6_25/1">
+    <dcterms:title>Fluorescein Dilution</dcterms:title>
+    <sbol:displayId>fluorescein_6_25</sbol:displayId>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/fluorescein_6_25/fluorescein/1">
+        <dcterms:title>fluorescein</dcterms:title>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein/1"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>fluorescein</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein_6_25/fluorescein"/>
+        <sbol:version>1</sbol:version>
+        <om:measure>
+          <om:Measure rdf:about="http://hub.sd2e.org/user/sd2e/design/fluorescein_6_25/fluorescein/concentration/1">
+            <dcterms:title>concentration</dcterms:title>
+            <sbol:displayId>concentration</sbol:displayId>
+            <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein_6_25/fluorescein/concentration"/>
+            <sbol:version>1</sbol:version>
+            <om:hasNumericalValue>6.250000</om:hasNumericalValue>
+            <om:hasUnit rdf:resource="http://hub.sd2e.org/user/sd2e/design/micromolair/1"/>
+          </om:Measure>
+        </om:measure>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:module>
+      <sbol:Module rdf:about="http://hub.sd2e.org/user/sd2e/design/fluorescein_6_25/pbs/1">
+        <dcterms:title>pbs</dcterms:title>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/pbs/1"/>
+        <sbol:displayId>pbs</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein_6_25/pbs"/>
+        <sbol:version>1</sbol:version>
+      </sbol:Module>
+    </sbol:module>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/fluorescein_6_25"/>
+    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/NCIT_C28143"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+  <sbol:ModuleDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/ludox_S40/1">
+    <dcterms:title>LUDOX-S40</dcterms:title>
+    <sbol:displayId>ludox_S40</sbol:displayId>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/ludox_S40/silicon_dioxide/1">
+        <dcterms:title>silicon_dioxide</dcterms:title>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/silicon_dioxide/1"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>silicon_dioxide</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/ludox_S40/silicon_dioxide"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/ludox_S40"/>
+    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/NCIT_C28143"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+  <om:Unit rdf:about="http://hub.sd2e.org/user/sd2e/design/micromolair/1">
+    <dcterms:title>micromolair</dcterms:title>
+    <sbol:displayId>micromolair</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/micromolair"/>
+    <sbol:version>1</sbol:version>
+    <om:symbol>μM</om:symbol>
+    <prov:wasDerivedFrom rdf:resource="http://www.ontology-of-units-of-measure.org/resource/om-2/micromolair"/>
+  </om:Unit>
+  <sbol:ModuleDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/pbs/1">
+    <dcterms:title>Phosphate Buffered Saline</dcterms:title>
+    <sbol:displayId>pbs</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/pbs"/>
+    <sbol:role rdf:resource="http://identifiers.org/chebi/CHEBI:35225"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+  <sbol:ComponentDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/silicon_dioxide/1">
+    <dcterms:title>Silicon Dioxide</dcterms:title>
+    <sbol:displayId>silicon_dioxide</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/silicon_dioxide"/>
+    <sbol:type rdf:resource="http://identifiers.org/chebi/CHEBI_30563"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ComponentDefinition>
+  <sbol:ComponentDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/spherotech_URCP_38_2B/1">
+    <dcterms:title>Spherotech URCP-38-2B</dcterms:title>
+    <sbol:displayId>spherotech_URCP_38_2B</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/spherotech_URCP_38_2B"/>
+    <sbol:type rdf:resource="http://purl.obolibrary.org/obo/NCIT_C70671"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ComponentDefinition>
+  <sbol:ModuleDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/spherotech_URCP_38_2B_blank/1">
+    <dcterms:description>SPHERO Rainbow Calibration Particles</dcterms:description>
+    <dcterms:title>Spherotech URCP-38-2B (Blank)</dcterms:title>
+    <sbol:displayId>spherotech_URCP_38_2B_blank</sbol:displayId>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/spherotech_URCP_38_2B_blank/spherotech_URCP_38_2B/1">
+        <dcterms:title>spherotech_URCP_38_2B</dcterms:title>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/spherotech_URCP_38_2B/1"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>spherotech_URCP_38_2B</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/spherotech_URCP_38_2B_blank/spherotech_URCP_38_2B"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/spherotech_URCP_38_2B_blank"/>
+    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/NCIT_C28143"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+  <sbol:ComponentDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/spherotech_URCP_38_2F/1">
+    <dcterms:title>Spherotech URCP-38-2F</dcterms:title>
+    <sbol:displayId>spherotech_URCP_38_2F</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/spherotech_URCP_38_2F"/>
+    <sbol:role rdf:resource="http://identifiers.org/chebi/CHEBI:39442"/>
+    <sbol:type rdf:resource="http://purl.obolibrary.org/obo/NCIT_C70671"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ComponentDefinition>
+  <sbol:ModuleDefinition rdf:about="http://hub.sd2e.org/user/sd2e/design/spherotech_URCP_38_2F_calibration/1">
+    <dcterms:description>SPHERO Rainbow Calibration Particles</dcterms:description>
+    <dcterms:title>Spherotech URCP-38-2F (Calibration)</dcterms:title>
+    <sbol:displayId>spherotech_URCP_38_2F_calibration</sbol:displayId>
+    <sbol:functionalComponent>
+      <sbol:FunctionalComponent rdf:about="http://hub.sd2e.org/user/sd2e/design/spherotech_URCP_38_2F_calibration/spherotech_URCP_38_2F/1">
+        <dcterms:title>spherotech_URCP_38_2F</dcterms:title>
+        <sbol:access rdf:resource="http://sbols.org/v2#public"/>
+        <sbol:definition rdf:resource="http://hub.sd2e.org/user/sd2e/design/spherotech_URCP_38_2F/1"/>
+        <sbol:direction rdf:resource="http://sbols.org/v2#none"/>
+        <sbol:displayId>spherotech_URCP_38_2F</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/spherotech_URCP_38_2F_calibration/spherotech_URCP_38_2F"/>
+        <sbol:version>1</sbol:version>
+      </sbol:FunctionalComponent>
+    </sbol:functionalComponent>
+    <sbol:persistentIdentity rdf:resource="http://hub.sd2e.org/user/sd2e/design/spherotech_URCP_38_2F_calibration"/>
+    <sbol:role rdf:resource="http://purl.obolibrary.org/obo/NCIT_C28143"/>
+    <sbol:version>1</sbol:version>
+  </sbol:ModuleDefinition>
+</rdf:RDF>

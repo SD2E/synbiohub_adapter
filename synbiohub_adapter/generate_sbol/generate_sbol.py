@@ -14,38 +14,38 @@ def main(args=None):
     parser = argparse.ArgumentParser()
     parser.add_argument('-i', '--input', nargs='*', default=[f for f in os.listdir('.') if os.path.isfile(f) and f.endswith('.csv')])
     parser.add_argument('-o', '--output', nargs='?', default='generated_sbol.xml')
-    parser.add_argument('-m', '--om', nargs='?', default=os.path.join(os.getcwd(), 'om-2.0.rdf'))
+    parser.add_argument('-m', '--om', nargs='?', default='om-2.0.rdf')
     args = parser.parse_args(args)
 
     doc = generate_sbol(args.input, args.om)
     
     doc.write(args.output)
 
-def generate_sbol(csv_files, om_file=None):
+def generate_sbol(csv_files, om_file):
     doc = XDocument()
     doc.configure_namespace(SD2_DESIGN_NS)
     doc.configure_options(False, False)
 
-    if om_file is None:
-        try:
-            om = doc.read_om(os.path.join(os.getcwd(), 'om-2.0.rdf'))
-        except:
-            om = None
-    else:
+    try:
         om = doc.read_om(om_file)
+    except:
+        om = None
 
     generate_device_switcher = {
+        'Bead': generate_bead,
         'CHEBI': generate_chebi,
         'DNA': generate_dna,
         'Enzyme': generate_enzyme,
+        'Fluorescent_Bead': generate_fluorescent_bead,
         'Plasmid': generate_plasmid,
         'Protein': generate_protein,
         'RNA': generate_rna,
-        'Strain': generate_strain,
-        'Media': generate_media
+        'Strain': generate_strain
     }
 
     generate_system_switcher = {
+        'Buffer': generate_buffer,
+        'Control': generate_control,
         'Gate': generate_gate, 
         'Media': generate_media
     }
@@ -76,7 +76,7 @@ def generate_sbol_helper(doc, csv_file, generate_device_switcher, generate_syste
                 measures = {}
 
                 try:
-                    aux_file = row[header['Composition_File']]
+                    aux_file = os.path.join(os.path.dirname(csv_file), row[header['Composition_File']])
 
                     generate_sbol_helper(doc, aux_file, generate_device_switcher, generate_system_switcher, generate_input_switcher, om, devices, systems, inputs, measures)
                 except:
@@ -115,7 +115,7 @@ def generate_concentration(doc, row, header, om):
         except:
             return None
 
-def generate_chebi(doc, row, header):
+def generate_buffer(doc, row, header, devices=[], systems=[], inputs=[], measures={}):
     display_id = row[header['ID']]
     try:
         name = row[header['Name']]
@@ -126,9 +126,9 @@ def generate_chebi(doc, row, header):
     except:
         descr = None
 
-    print('chebi ' + display_id)
+    print('buffer ' + display_id)
 
-    return doc.create_component_definition(display_id, name, descr, CHEBI_NS + row[header['CHEBI']])
+    return doc.create_buffer(devices, systems, inputs, measures, display_id, name, descr)
 
 def generate_control(doc, row, header, devices=[], systems=[], inputs=[], measures={}):
     display_id = row[header['ID']]
@@ -145,6 +145,21 @@ def generate_control(doc, row, header, devices=[], systems=[], inputs=[], measur
 
     return doc.create_control(devices, systems, inputs, measures, display_id, name, descr)
 
+def generate_gate(doc, row, header, devices=[], systems=[], inputs=[], measures={}):
+    display_id = row[header['ID']]
+    try:
+        name = row[header['Name']]
+    except:
+        name = None
+    try:
+        descr = row[header['Description']]
+    except:
+        descr = None
+
+    print('gate ' + display_id)
+
+    return doc.create_gate(devices, systems, inputs, measures, display_id, name, descr)
+
 def generate_media(doc, row, header, devices=[], systems=[], inputs=[], measures={}):
     display_id = row[header['ID']]
     try:
@@ -160,7 +175,7 @@ def generate_media(doc, row, header, devices=[], systems=[], inputs=[], measures
 
     return doc.create_media(devices, systems, inputs, measures, display_id, name, descr)
 
-def generate_solution(doc, row, header, devices=[], systems=[], inputs=[], measures={}):
+def generate_bead(doc, row, header):
     display_id = row[header['ID']]
     try:
         name = row[header['Name']]
@@ -171,11 +186,11 @@ def generate_solution(doc, row, header, devices=[], systems=[], inputs=[], measu
     except:
         descr = None
 
-    print('solution ' + display_id)
+    print('bead ' + display_id)
 
-    return doc.create_solution(devices, systems, inputs, measures, display_id, name, descr)
+    return doc.create_bead(display_id, name, descr)
 
-def generate_buffer(doc, row, header):
+def generate_chebi(doc, row, header):
     display_id = row[header['ID']]
     try:
         name = row[header['Name']]
@@ -186,9 +201,9 @@ def generate_buffer(doc, row, header):
     except:
         descr = None
 
-    print('buffer ' + display_id)
+    print('chebi ' + display_id)
 
-    return doc.create_buffer(display_id, name, descr)
+    return doc.create_component_definition(display_id, name, descr, CHEBI_NS + row[header['CHEBI']])
 
 def generate_dna(doc, row, header):
     display_id = row[header['ID']]
@@ -220,7 +235,7 @@ def generate_enzyme(doc, row, header):
 
     return doc.create_enzyme(display_id, name, descr)
 
-def generate_gate(doc, row, header, devices=[], systems=[], inputs=[], measures={}):
+def generate_fluorescent_bead(doc, row, header):
     display_id = row[header['ID']]
     try:
         name = row[header['Name']]
@@ -231,24 +246,9 @@ def generate_gate(doc, row, header, devices=[], systems=[], inputs=[], measures=
     except:
         descr = None
 
-    print('gate ' + display_id)
+    print('fluorescent_bead ' + display_id)
 
-    return doc.create_gate(devices, systems, inputs, measures, display_id, name, descr)
-
-def generate_inducer(doc, row, header):
-    display_id = row[header['ID']]
-    try:
-        name = row[header['Name']]
-    except:
-        name = None
-    try:
-        descr = row[header['Description']]
-    except:
-        descr = None
-
-    print('inducer ' + display_id)
-
-    return doc.create_inducer(display_id, name, descr)
+    return doc.create_fluorescent_bead(display_id, name, descr)
 
 def generate_plasmid(doc, row, header):
     display_id = row[header['ID']]
@@ -309,6 +309,21 @@ def generate_strain(doc, row, header):
     print('strain ' + display_id)
 
     return doc.create_strain(display_id, name, descr)
+
+def generate_inducer(doc, row, header):
+    display_id = row[header['ID']]
+    try:
+        name = row[header['Name']]
+    except:
+        name = None
+    try:
+        descr = row[header['Description']]
+    except:
+        descr = None
+
+    print('inducer ' + display_id)
+
+    return doc.create_inducer(display_id, name, descr)
 
 def generate_unit(doc, row, header, om):
     symbol = row[header['Concentration_Units']]

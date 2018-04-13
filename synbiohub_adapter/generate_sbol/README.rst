@@ -35,4 +35,4 @@ Run the following command from the generate_sbol directory:
 
 .. code-block:: powershell
 
-    python generate_sbol.py -i YG_composite.csv  
+    python generate_sbol.py -i yeast_gates\YG_composite.csv
