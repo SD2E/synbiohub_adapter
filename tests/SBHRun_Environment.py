@@ -341,7 +341,6 @@ def br_speed(sbh_connector, sbolDoc_size, sbolFiles):
 		triple_size = trip_obj.totalTriples()
 		
 		create_SpeedLinePlot(df, f, sbolDoc_size, triple_size)
-		
 		create_SpeedLine2Plot(df, f, sbolDoc_size, triple_size)
 		df.to_csv("outputs/SpeedResult_f%s_d%s.csv" %(fileName, sbolDoc_size))
 	
@@ -360,12 +359,13 @@ def br_triples(sbh_connector, iterations, sbolFiles):
 	df.to_csv("outputs/Triples_iter%s.csv" %(iterations))
 
 def create_SpeedLinePlot(df, f, sbolDoc_size, trip_size):
-	y_max = df['Push_Time'].max()
+	y_max = 20
 	fig, ax = plt.subplots()
+	plt.ylim((0, y_max))
 	ax.set_title("Time to Push %s Triples to SynBioHub" %trip_size)
 	ax.set_ylabel("Time to Push (sec)")
 	ax.set_xlabel("Push Index")
-	ax.set_ylim(0, y_max)
+	
 	df.plot(x=df.index+1, y='Push_Time', ax = ax)
 	
 	fileName = get_fileName(f)
@@ -386,24 +386,36 @@ def create_SetBarPlot(df, iterations, set_size, f, trip_size):
 	fig, ax = plt.subplots()
 	# max_index = df.groupby(['Run_ID', 'Set_ID'])['Time/Thread'].transform(max) == df['Time/Thread']
 	# max_df = df[max_index]
-	grouped_max = df.groupby(['Set_ID'])
-		
-	means = grouped_max.mean()
-	errors = grouped_max.std()
-	means.plot.barh(xerr=errors, ax=ax, legend=False)
-	max_val = df.max('Time/Thread')
-	print(max_val)
+	grouped_max = df.groupby(['Run_ID'])
+	mean_vals = []
+	std_vals = []
+	x_vals = grouped_max.size()
+	print(x_vals)
+	for name, group in grouped_max:
+		print(group['Time/Thread'])
+		# mean_vals.append(group['Time/Thread'].mean())
+		# std_vals.append(group.std())
+		# x_vals.append(name)
+		# ax.bar(x=x_vals, height=mean_vals, xerr=std_vals, marker='o', c='green')	
+	# means = grouped_max.mean()
+	# errors = grouped_max.std()
+	# means.plot.barh(xerr=errors, ax=ax, legend=False, colormap='Greens')
+	
+	
 	ax.set_title("Average Time to Push %s Triples per Thread" %(trip_size))
 	ax.set_xlabel("Time to Push (sec)")
 	ax.set_ylabel("Thread Group")
-	ax.set_xlim(0, max_val)
+	
 	fileName = get_fileName(f)
 	fig.savefig('outputs/Set_f%s_iter%s_s%s.pdf' %(fileName, iterations, set_size))
 
 def create_TripleScatterPlot(df, iterations):
 	fig, ax = plt.subplots()
+	plt.ylim((0, 20))
 	grouped_runs = df.groupby('Run_ID')
 	for name, group in grouped_runs:
+		fit = np.polyfit(group['Triple_Size'], group['Push_Time'], deg=1)
+		ax.plot(group['Triple_Size'], fit[0]*group['Triple_Size']+fit[1], color='black')
 		ax.scatter(data=group, x='Triple_Size', y='Push_Time', marker='o', c='orange')
 		
 	ax.set_title("Time to Push SBOL Documents with Varying Size" )
@@ -435,11 +447,11 @@ if __name__ == '__main__':
 	sbolFiles = get_sbolList("./examples/workingFiles")
 	# sbolFiles = ["./examples/workingFiles/r30_125.xml"]
 	iterations = 1
-	sbolDoc_size = 5
-	br_speed(sbh_connector, sbolDoc_size, sbolFiles)
+	sbolDoc_size = 1
+	# br_speed(sbh_connector, sbolDoc_size, sbolFiles)
 
-	# br_triples(sbh_connector, iterations, sbolFiles)
+	br_triples(sbh_connector, iterations, sbolFiles)
 	
 	# iterations, set_size=10, t_growthRate=5, sbolDoc_size=100
-	# br_setThread(sbh_connector, 3, 3, 3, 10, sbolFiles)
+	# br_setThread(sbh_connector, 3, 3, 3, 3, sbolFiles) # TODO: MAKE SURE TO CHANGE COLOR OF BAR GRAPH TO MAKE IT LOOK COOL...
 
