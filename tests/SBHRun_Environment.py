@@ -386,20 +386,12 @@ def create_SetBarPlot(df, iterations, set_size, f, trip_size):
 	fig, ax = plt.subplots()
 	# max_index = df.groupby(['Run_ID', 'Set_ID'])['Time/Thread'].transform(max) == df['Time/Thread']
 	# max_df = df[max_index]
-	grouped_max = df.groupby(['Run_ID'])
-	mean_vals = []
-	std_vals = []
-	x_vals = grouped_max.size()
-	print(x_vals)
-	for name, group in grouped_max:
-		print(group['Time/Thread'])
-		# mean_vals.append(group['Time/Thread'].mean())
-		# std_vals.append(group.std())
-		# x_vals.append(name)
-		# ax.bar(x=x_vals, height=mean_vals, xerr=std_vals, marker='o', c='green')	
-	# means = grouped_max.mean()
-	# errors = grouped_max.std()
-	# means.plot.barh(xerr=errors, ax=ax, legend=False, colormap='Greens')
+	grouped_max = df.groupby(['Set_ID'])
+	means = grouped_max.mean()
+	errors = grouped_max.std()
+
+	g = plt.get_cmap('Dark2')
+	means.plot.barh(xerr=errors, ax=ax, legend=False, colormap=g)
 	
 	
 	ax.set_title("Average Time to Push %s Triples per Thread" %(trip_size))
@@ -444,14 +436,13 @@ if __name__ == '__main__':
 	sbh_connector.login(sbh_user, getpass.getpass(prompt='Enter SynBioHub Password: ', stream=sys.stderr))
 	# Config.setOption("verbose", True)
 
-	sbolFiles = get_sbolList("./examples/workingFiles")
-	# sbolFiles = ["./examples/workingFiles/r30_125.xml"]
+	# sbolFiles = get_sbolList("./examples/workingFiles")
+	sbolFiles = ["./examples/workingFiles/r30_125.xml"]
 	iterations = 1
 	sbolDoc_size = 1
 	# br_speed(sbh_connector, sbolDoc_size, sbolFiles)
-
-	br_triples(sbh_connector, iterations, sbolFiles)
+	# br_triples(sbh_connector, iterations, sbolFiles)
 	
 	# iterations, set_size=10, t_growthRate=5, sbolDoc_size=100
-	# br_setThread(sbh_connector, 3, 3, 3, 3, sbolFiles) # TODO: MAKE SURE TO CHANGE COLOR OF BAR GRAPH TO MAKE IT LOOK COOL...
+	br_setThread(sbh_connector, 3, 3, 3, 3, sbolFiles) # TODO: MAKE SURE TO CHANGE COLOR OF BAR GRAPH TO MAKE IT LOOK COOL...
 
