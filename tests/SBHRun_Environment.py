@@ -444,5 +444,5 @@ if __name__ == '__main__':
 	# br_triples(sbh_connector, iterations, sbolFiles)
 	
 	# iterations, set_size=10, t_growthRate=5, sbolDoc_size=100
-	br_setThread(sbh_connector, 3, 3, 3, 3, sbolFiles) # TODO: MAKE SURE TO CHANGE COLOR OF BAR GRAPH TO MAKE IT LOOK COOL...
+	br_setThread(sbh_connector, 3, 3, 5, 50, sbolFiles) # TODO: MAKE SURE TO CHANGE COLOR OF BAR GRAPH TO MAKE IT LOOK COOL...
 
