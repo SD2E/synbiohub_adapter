@@ -350,8 +350,8 @@ def br_setThread(sbh_connector, iterations, set_size, t_growthRate, sbolDoc_size
 		df = generate_setData(sbh_connector, iterations, set_size, t_growthRate, f, sbolDoc_size, "RST_")
 		trip_obj = SBOLTriple(f, "temp_id")
 		fileName = get_fileName(f)
-		create_SetBarPlot(df, iterations, set_size, f, trip_obj.totalTriples())
-		df.to_csv("outputs/Set_f%s_iter%s_s%s.csv" %(fileName, iterations, set_size))
+		create_SetBarPlot(df, iterations, set_size, f, trip_obj.totalTriples(), sbolDoc_size)
+		df.to_csv("outputs/Set_f%s_iter%s_s%s_d%s.csv" %(fileName, iterations, set_size, sbolDoc_size))
 
 def br_triples(sbh_connector, iterations, sbolFiles):
 	df = generate_tripleData(sbh_connector, iterations, "RT", sbolFiles)
@@ -382,7 +382,7 @@ def create_SpeedLine2Plot(df, f, sbolDoc_size, trip_size):
 	fig.savefig('outputs/SpeedResult2_f%s_d%s.pdf' %(fileName, sbolDoc_size))
 	
 
-def create_SetBarPlot(df, iterations, set_size, f, trip_size):
+def create_SetBarPlot(df, iterations, set_size, f, trip_size, doc_size):
 	fig, ax = plt.subplots()
 	# max_index = df.groupby(['Run_ID', 'Set_ID'])['Time/Thread'].transform(max) == df['Time/Thread']
 	# max_df = df[max_index]
@@ -399,7 +399,7 @@ def create_SetBarPlot(df, iterations, set_size, f, trip_size):
 	ax.set_ylabel("Thread Group")
 	
 	fileName = get_fileName(f)
-	fig.savefig('outputs/Set_f%s_iter%s_s%s.pdf' %(fileName, iterations, set_size))
+	fig.savefig('outputs/Set_f%s_iter%s_s%s_d%s.pdf' %(fileName, iterations, set_size, doc_size))
 
 def create_TripleScatterPlot(df, iterations):
 	fig, ax = plt.subplots()
@@ -444,5 +444,5 @@ if __name__ == '__main__':
 	# br_triples(sbh_connector, iterations, sbolFiles)
 	
 	# iterations, set_size=10, t_growthRate=5, sbolDoc_size=100
-	br_setThread(sbh_connector, 3, 3, 5, 50, sbolFiles) # TODO: MAKE SURE TO CHANGE COLOR OF BAR GRAPH TO MAKE IT LOOK COOL...
+	br_setThread(sbh_connector, 3, 3, 3, 100, sbolFiles) # TODO: MAKE SURE TO CHANGE COLOR OF BAR GRAPH TO MAKE IT LOOK COOL...
 
