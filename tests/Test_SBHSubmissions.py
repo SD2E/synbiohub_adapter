@@ -123,10 +123,10 @@ class TestSBHSubmissions(unittest.TestCase):
 		server = "https://hub-staging.sd2e.org/"
 		sbhQuery = SynBioHubQuery(server)
 
-		largeSbol = 'examples/c_trips100000.xml'
-		displayId = 'Design_100K'
-		name = '100K_Triples'
-		description = '100K Triple Upload'
+		largeSbol = 'examples/c_trips30000.xml'
+		displayId = 'Design_30K'
+		name = '30K_Triples'
+		description = '30K Triple Upload'
 		version = '1'
 
 		sbolDoc = loadSBOLFile(largeSbol)
