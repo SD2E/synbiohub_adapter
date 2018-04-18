@@ -118,6 +118,19 @@ class TestSBHSubmissions(unittest.TestCase):
 
 			sbhQuery.submit_Collection(sbh_connector, sbolDoc, True, 0)
 
+	def test_stress_large_file(self):
+
+		server = "https://hub-staging.sd2e.org/"
+		sbhQuery = SynBioHubQuery(server)
+
+		largeSbol = 'examples/c_trips100000.xml'
+		displayId = 'Design_100K'
+		name = '100K_Triples'
+		description = '100K Triple Upload'
+		version = '1'
+
+		sbolDoc = loadSBOLFile(largeSbol)
+		sbhQuery.submit_NewCollection(sbolDoc, displayId, name, description, version)
 
 if __name__ == '__main__':
 	unittest.main()
