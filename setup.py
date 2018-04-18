@@ -26,11 +26,23 @@ wheels = {
         'url': 'https://github.com/tcmitchell/pySBOL/blob/ubuntu/Ubuntu_16.04_64_2/dist/pySBOL-2.3.0.post11-cp27-none-any.whl?raw=true',
         'name': 'pySBOL-2.3.0.post11-cp27-none-any.whl'
     },
+    (2, 7, 'Ubuntu', '17.10'): {
+        'url': 'https://github.com/tcmitchell/pySBOL/blob/ubuntu/Ubuntu_16.04_64_2/dist/pySBOL-2.3.0.post11-cp27-none-any.whl?raw=true',
+        'name': 'pySBOL-2.3.0.post11-cp27-none-any.whl'
+    },
     (3, 5, 'Ubuntu', '16.04'): {
         'url': 'https://github.com/tcmitchell/pySBOL/blob/ubuntu/Ubuntu_16.04_64_3/dist/pySBOL-2.3.0.post11-cp35-none-any.whl?raw=true',
         'name': 'pySBOL-2.3.0.post11-cp35-none-any.whl'
     },
+    (3, 5, 'Ubuntu', '17.10'): {
+        'url': 'https://github.com/tcmitchell/pySBOL/blob/ubuntu/Ubuntu_16.04_64_3/dist/pySBOL-2.3.0.post11-cp35-none-any.whl?raw=true',
+        'name': 'pySBOL-2.3.0.post11-cp35-none-any.whl'
+    },
     (3, 6, 'Ubuntu', '16.04'): {
+        'url': 'https://github.com/tcmitchell/pySBOL/blob/ubuntu/Ubuntu_16.04_64_3/dist/pySBOL-2.3.0.post11-cp36-none-any.whl?raw=true',
+        'name': 'pySBOL-2.3.0.post11-cp36-none-any.whl'
+    }
+    (3, 6, 'Ubuntu', '17.10'): {
         'url': 'https://github.com/tcmitchell/pySBOL/blob/ubuntu/Ubuntu_16.04_64_3/dist/pySBOL-2.3.0.post11-cp36-none-any.whl?raw=true',
         'name': 'pySBOL-2.3.0.post11-cp36-none-any.whl'
     }
