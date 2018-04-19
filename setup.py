@@ -5,6 +5,10 @@ from setuptools.command.install import install
 from setuptools.command.develop import develop
 import sys
 import platform
+import subprocess
+
+def pip_install(url):
+    subprocess.check_output([sys.executable, '-m', 'pip', 'install', url])
 
 def py_version():
     return tuple(sys.version_info[:2])
@@ -74,7 +78,6 @@ def override_run(cls):
         import shutil
         import tempfile
         import os
-        import pip
         import site
         
         if py_v[0] == 3:
@@ -95,7 +98,7 @@ def override_run(cls):
             # What if installing sbh_adapter with --user?
             # Probably should install pysbol with --user
             # How could we tell here?
-            pip.main(['install', wheel_path])
+            pip_install(wheel_path)
 
             # Will this error? Hopefully not. Crash the install if so.
             try:
