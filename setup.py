@@ -115,8 +115,8 @@ def override_run(cls):
         finally:
             if os.path.isdir(tmp_dir):
                 shutil.rmtree(tmp_dir)
-        
-                
+
+        pip_install('git+https://github.com/nroehner/pySBOLx')
         orig_run(self)
 
     cls.run = new_run
@@ -132,7 +132,7 @@ class LinuxInstallCommand(install):
 class LinuxDevelopCommand(develop):
     pass
         
-install_requires=['SPARQLWrapper', 'pySBOLx']
+install_requires=['SPARQLWrapper']
 cmdclass = {}
         
 if sys.platform in {'linux', 'linux2'}:
@@ -143,6 +143,7 @@ if sys.platform in {'linux', 'linux2'}:
 else:
     # Can use normal pysbol for mac and windows
     install_requires.append('pysbol')
+    install_requires.append('pySBOLx')
 
 
 setup(
