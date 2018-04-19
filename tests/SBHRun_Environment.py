@@ -437,12 +437,12 @@ if __name__ == '__main__':
 	# Config.setOption("verbose", True)
 
 	# sbolFiles = get_sbolList("./examples/workingFiles")
-	sbolFiles = ["./examples/workingFiles/r30_125.xml"]
+	sbolFiles = ["./examples/c_trips40000.xml"]
 	iterations = 1
 	sbolDoc_size = 1
-	# br_speed(sbh_connector, sbolDoc_size, sbolFiles)
+	br_speed(sbh_connector, sbolDoc_size, sbolFiles)
 	# br_triples(sbh_connector, iterations, sbolFiles)
 	
 	# iterations, set_size=10, t_growthRate=5, sbolDoc_size=100
-	br_setThread(sbh_connector, 3, 3, 3, 100, sbolFiles) # TODO: MAKE SURE TO CHANGE COLOR OF BAR GRAPH TO MAKE IT LOOK COOL...
+	# br_setThread(sbh_connector, 3, 5, 3, 50, sbolFiles) # TODO: MAKE SURE TO CHANGE COLOR OF BAR GRAPH TO MAKE IT LOOK COOL...
 
