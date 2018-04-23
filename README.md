@@ -39,3 +39,10 @@ On linux, you will to install `libxslt-dev` and `curl`.
 apt-get install curl libxslt-dev
 ```
 >>>>>>> Update install instructions in readme
+
+
+### Using docker and docker-compose
+Run bash in docker container:
+```
+docker-compose run --rm synbiohub_adapter bash
+```
