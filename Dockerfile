@@ -11,6 +11,8 @@ ADD . /opt/scripts
 
 RUN pip3 install --upgrade pip==9.0.3
 
+RUN pip3 install /opt/scripts/
+
 # custom wheel for Ubuntu
 RUN pip3 install https://github.com/tcmitchell/pySBOL/blob/ubuntu/Ubuntu_16.04_64_3/dist/pySBOL-2.3.0.post11-cp36-none-any.whl?raw=true
 

@@ -132,7 +132,7 @@ class LinuxInstallCommand(install):
 class LinuxDevelopCommand(develop):
     pass
         
-install_requires=['SPARQLWrapper']
+install_requires=['SPARQLWrapper', 'appdirs']
 cmdclass = {}
         
 if sys.platform in {'linux', 'linux2'}:
@@ -147,7 +147,7 @@ else:
 
 
 setup(
-    name='sbh_adapter',
+    name='synbiohub_adapter',
     version='0.0.1',
     packages=find_packages(),
     install_requires=install_requires,
