@@ -5,6 +5,10 @@ from setuptools.command.install import install
 from setuptools.command.develop import develop
 import sys
 import platform
+import subprocess
+
+def pip_install(url):
+    subprocess.check_output([sys.executable, '-m', 'pip', 'install', url])
 
 def py_version():
     return tuple(sys.version_info[:2])
@@ -74,7 +78,6 @@ def override_run(cls):
         import shutil
         import tempfile
         import os
-        import pip
         import site
         
         if py_v[0] == 3:
@@ -95,7 +98,7 @@ def override_run(cls):
             # What if installing sbh_adapter with --user?
             # Probably should install pysbol with --user
             # How could we tell here?
-            pip.main(['install', wheel_path])
+            pip_install(wheel_path)
 
             # Will this error? Hopefully not. Crash the install if so.
             try:
@@ -112,8 +115,8 @@ def override_run(cls):
         finally:
             if os.path.isdir(tmp_dir):
                 shutil.rmtree(tmp_dir)
-        
-                
+
+        pip_install('git+https://github.com/nroehner/pySBOLx')
         orig_run(self)
 
     cls.run = new_run
@@ -129,7 +132,7 @@ class LinuxInstallCommand(install):
 class LinuxDevelopCommand(develop):
     pass
         
-install_requires=['SPARQLWrapper', 'pySBOLx']
+install_requires=['SPARQLWrapper']
 cmdclass = {}
         
 if sys.platform in {'linux', 'linux2'}:
@@ -140,6 +143,7 @@ if sys.platform in {'linux', 'linux2'}:
 else:
     # Can use normal pysbol for mac and windows
     install_requires.append('pysbol')
+    install_requires.append('pySBOLx')
 
 
 setup(
