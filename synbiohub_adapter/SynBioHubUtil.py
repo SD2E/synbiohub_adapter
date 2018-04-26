@@ -1,8 +1,9 @@
 import getpass
 import sys
 
-from .fetch_SPARQL import fetch_SPARQL
+from .fetch_SPARQL import fetch_SPARQL as _fetch_SPARQL
 from sbol import *
+from .cache_query import wrap_query_fn
 
 '''
 	This is a utility module containing classes with constant variables used for querying SynBioHub information
@@ -64,8 +65,16 @@ class SBOLQuery():
 	'''
 
 	# server: The SynBioHub server to call sparql queries on.
-	def __init__(self, server):
-		self.__server = server
+	def __init__(self, server, use_fallback_cache=False):
+		self._server = server
+		self._use_fallback_cache = use_fallback_cache
+
+		# If using fallback cache, wrap the fetch_SPARQL function
+		# with cache storage/retrieval.
+		if use_fallback_cache:
+			self.fetch_SPARQL = wrap_query_fn(_fetch_SPARQL)
+		else:
+			self.fetch_SPARQL = _fetch_SPARQL
 
 	# Constructs a partial SPARQL query for all collection members with 
 	# at least one of the specified types (or all of the specified types). 
@@ -166,7 +175,7 @@ class SBOLQuery():
 	def query_design_set_components(self, collection, types, roles=[], all_types=True):
 		comp_query = self.construct_member_query(collection, types, roles, all_types)
 
-		return fetch_SPARQL(self.__server, comp_query)
+		return self.fetch_SPARQL(self._server, comp_query)
 
 	# Retrieves from the specified collection of design elements the URIs for all ModuleDefinitions with 
 	# at least one of the specified roles and that contain a FunctionalComponent or Module with 
@@ -176,7 +185,7 @@ class SBOLQuery():
 	def query_design_set_modules(self, collection, roles, sub_types=[], sub_roles=[], sub_definitions=[], all_sub_types=False):
 		mod_query = self.construct_member_query(collection=collection, roles=roles, sub_types=sub_types, sub_roles=sub_roles, sub_definitions=sub_definitions, all_sub_types=all_sub_types)
 
-		return fetch_SPARQL(self.__server, mod_query)
+		return self.fetch_SPARQL(self._server, mod_query)
 
 	def serialize_options(self, options):
 		serial_options = []

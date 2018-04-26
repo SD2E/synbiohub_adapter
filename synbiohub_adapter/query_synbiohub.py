@@ -2,10 +2,8 @@ import getpass
 import sys
 import json
 
-from .fetch_SPARQL import fetch_SPARQL as _fetch_SPARQL
 from synbiohub_adapter.SynBioHubUtil import *
 from sbol import *
-from .cache_query import wrap_query_fn
 
 ''' 
 	This module is used to query information from SD2's SynBioHub instance for DARPA's SD2E project.
@@ -20,15 +18,7 @@ class SynBioHubQuery(SBOLQuery):
 
 	# server: The SynBioHub server to call sparql queries on.
 	def __init__(self, server, use_fallback_cache=False):
-		self.__server = server
-		self.__use_fallback_cache = use_fallback_cache
-
-		# If using fallback cache, wrap the fetch_SPARQL function
-		# with cache storage/retrieval.
-		if use_fallback_cache:
-			self.fetch_SPARQL = wrap_query_fn(_fetch_SPARQL)
-		else:
-			self.fetch_SPARQL = _fetch_SPARQL
+		super().__init__(server, use_fallback_cache)
 
 	# Control query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
@@ -105,7 +95,7 @@ class SynBioHubQuery(SBOLQuery):
 		}}
 		""".format(exp=experiment, ro=SBOLConstants.LOGIC_OPERATOR)
     
-		return self.fetch_SPARQL(self._SBOLQuery__server, gate_query)
+		return self.fetch_SPARQL(self._server, gate_query)
 
 	# Retrieves the URIs for all logic gates used in the specified collection of experiments.
 	# This collection is typically associated with a challenge problem.
@@ -125,7 +115,7 @@ class SynBioHubQuery(SBOLQuery):
 		}}
 		""".format(col=collection, ro=SBOLConstants.LOGIC_OPERATOR)
 
-		return self.fetch_SPARQL(self._SBOLQuery__server, gate_query)
+		return self.fetch_SPARQL(self._server, gate_query)
 
 	# Retrieves the URIs for all logic gates used by experiments in the collection of every SD2 experiment.
 	def query_experiment_gates(self):
@@ -145,7 +135,7 @@ class SynBioHubQuery(SBOLQuery):
 		}}
 		""".format(col=collection, ty=BIOPAX_SMALL_MOLECULE, ro=SBOLConstants.EFFECTOR)
     
-    return self.fetch_SPARQL(self._SBOLQuery__server, inducer_query)
+		return self.fetch_SPARQL(self._server, inducer_query)
 	
 	# Retrieves the URIs for all inducers from the collection of every SD2 design element.
 	def query_design_inducers(self):
@@ -175,7 +165,7 @@ class SynBioHubQuery(SBOLQuery):
 		GROUP BY ?inducer
 		""".format(exp=experiment, ty=BIOPAX_SMALL_MOLECULE, ro=SBOLConstants.EFFECTOR)
 
-    return self.fetch_SPARQL(self._SBOLQuery__server, inducer_query)
+		return self.fetch_SPARQL(self._server, inducer_query)
 
 	# Retrieves the URIs for all inducers used in the specified collection of experiments and their associated levels.
 	# This collection is typically associated with a challenge problem.
@@ -203,7 +193,7 @@ class SynBioHubQuery(SBOLQuery):
 		GROUP BY ?inducer
 		""".format(col=collection, ty=BIOPAX_SMALL_MOLECULE, ro=SBOLConstants.EFFECTOR)
 
-		return self.fetch_SPARQL(self._SBOLQuery__server, inducer_query)
+		return self.fetch_SPARQL(self._server, inducer_query)
 
 	# Retrieves the URIs for all inducers used by experiments in the collection of every SD2 experiment.
 	def query_experiment_inducers(self):
@@ -228,7 +218,7 @@ class SynBioHubQuery(SBOLQuery):
 		GROUP BY ?inducer
 		""".format(samp=sample, ty=BIOPAX_SMALL_MOLECULE, ro=SBOLConstants.EFFECTOR)
 
-		return self.fetch_SPARQL(self._SBOLQuery__server, inducer_query)
+		return self.fetch_SPARQL(self._server, inducer_query)
 
 	# Retrieves the URIs for all inducers in the specified sample condition and their associated levels.
 	def query_condition_inducers(self, condition):
@@ -248,7 +238,7 @@ class SynBioHubQuery(SBOLQuery):
 		GROUP BY ?inducer
 		""".format(cond=condition, ty=BIOPAX_SMALL_MOLECULE, ro=SBOLConstants.EFFECTOR)
 
-		return self.fetch_SPARQL(self._SBOLQuery__server, inducer_query)
+		return self.fetch_SPARQL(self._server, inducer_query)
 
 	# Media query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
@@ -289,7 +279,7 @@ class SynBioHubQuery(SBOLQuery):
 		}}
 		""".format(exp=experiment, ty1=BIOPAX_DNA, ty2=SO_CIRCULAR)
 
-		return self.fetch_SPARQL(self._SBOLQuery__server, plasmid_query)
+		return self.fetch_SPARQL(self._server, plasmid_query)
 
 	# Retrieves the URIs for all plasmids used in the specified collection of experiments.
 	# This collection is typically associated with a challenge problem.
@@ -310,7 +300,7 @@ class SynBioHubQuery(SBOLQuery):
 		}}
 		""".format(col=collection, ty1=BIOPAX_DNA, ty2=SO_CIRCULAR)
 
-		return self.fetch_SPARQL(self._SBOLQuery__server, plasmid_query)
+		return self.fetch_SPARQL(self._server, plasmid_query)
 
 	# Retrieves the URIs for all plasmids used by experiments in the collection of every SD2 experiment.
 	def query_experiment_plasmids(self):
@@ -329,7 +319,7 @@ class SynBioHubQuery(SBOLQuery):
 		}}
 		""".format(samp=sample, ty1=BIOPAX_DNA, ty2=SO_CIRCULAR)
 
-		return self.fetch_SPARQL(self._SBOLQuery__server, plasmid_query)
+		return self.fetch_SPARQL(self._server, plasmid_query)
 
 	# Retrieves the URIs for all plasmids in the specified sample condition.
 	def query_condition_plasmids(self, condition):
@@ -343,7 +333,7 @@ class SynBioHubQuery(SBOLQuery):
 		}}
 		""".format(cond=condition, ty1=BIOPAX_DNA, ty2=SO_CIRCULAR)
 
-		return self.fetch_SPARQL(self._SBOLQuery__server, plasmid_query)
+		return self.fetch_SPARQL(self._server, plasmid_query)
 
 	# Strain query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
@@ -373,7 +363,7 @@ class SynBioHubQuery(SBOLQuery):
 		}}
 		""".format(exp=experiment, ty1=SBOLConstants.NCIT_STRAIN, ty2=SBOLConstants.OBI_STRAIN)
 
-		return self.fetch_SPARQL(self._SBOLQuery__server, strains_query)
+		return self.fetch_SPARQL(self._server, strains_query)
 
 	# Retrieves the URIs for all strains used in the specified collection of experiments.
 	# This collection is typically associated with a challenge problem.
@@ -394,7 +384,7 @@ class SynBioHubQuery(SBOLQuery):
 		}}
 		""".format(col=collection, ty1=SBOLConstants.NCIT_STRAIN, ty2=SBOLConstants.OBI_STRAIN)
 
-		return self.fetch_SPARQL(self._SBOLQuery__server, strains_query)
+		return self.fetch_SPARQL(self._server, strains_query)
 
 	# Retrieves the URIs for all strains used by experiments in the collection of every SD2 experiment.
 	def query_experiment_strains(self):
@@ -416,7 +406,7 @@ class SynBioHubQuery(SBOLQuery):
 		}}
 		""".format(exp=experiment)
 
-		return self.fetch_SPARQL(self._SBOLQuery__server, exp_data_query)
+		return self.fetch_SPARQL(self._server, exp_data_query)
 
 	# Experiment intent query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
@@ -441,7 +431,7 @@ class SynBioHubQuery(SBOLQuery):
   		}} }}
 		""".format(exp=experiment)
 
-		intent_data = self.fetch_SPARQL(self._SBOLQuery__server, intent_query)
+		intent_data = self.fetch_SPARQL(self._server, intent_query)
 
 		exp_intent = {'diagnostic-variables': [], 'experimental-variables': [], 'outcome-variables': [], 'truth-table': {'input': [], 'output': []}}
 
@@ -484,7 +474,7 @@ class SynBioHubQuery(SBOLQuery):
 		}} }}
 		""".format(exp=experiment)
 
-		truth_table_data = self.fetch_SPARQL(self._SBOLQuery__server, truth_table_query)
+		truth_table_data = self.fetch_SPARQL(self._server, truth_table_query)
 
 		input_switcher = {}
 
@@ -526,7 +516,7 @@ class SynBioHubQuery(SBOLQuery):
 		}}
 		""".format(col=SD2Constants.SD2_DESIGN_COLLECTION)
 
-		return self.fetch_SPARQL(self._SBOLQuery__server, design_set_query)
+		return self.fetch_SPARQL(self._server, design_set_query)
 
 	# Retrieves the URIs for all sub-collections of experiments from the collection of every SD2 experiemnt.
 	# These sub-collections are typically associated with challenge problems.
@@ -545,7 +535,7 @@ class SynBioHubQuery(SBOLQuery):
 		}}
 		""".format(col=SD2Constants.SD2_EXPERIMENT_COLLECTION)
 
-		return self.fetch_SPARQL(self._SBOLQuery__server, exp_set_query)
+		return self.fetch_SPARQL(self._server, exp_set_query)
 
 	# Retrieves the size of the specified collection of experiments.
 	# This collection is typically associated with a challenge problem.
@@ -559,7 +549,7 @@ class SynBioHubQuery(SBOLQuery):
 		}}
 		""".format(col=collection)
 
-		return self.fetch_SPARQL(self._SBOLQuery__server, exp_set_size_query)
+		return self.fetch_SPARQL(self._server, exp_set_size_query)
 
 	# Submit the data stored in the given sbolDoc to a collection on SynBioHub
 	# sbh_connector: An instance of the pySBOL Partshop to set SynBioHub credential needed for submitting a collection
@@ -590,7 +580,7 @@ class SynBioHubQuery(SBOLQuery):
 		sbolDoc.name = name
 		sbolDoc.version = version
 		sbolDoc.description = description
-		sbh_connector = login_SBH(self._SBOLQuery__server)
+		sbh_connector = login_SBH(self._server)
 		self.submit_Collection(sbh_connector, sbolDoc, True, 0)
 
 	# Submit the given SBOL Document to an existing SynBioHub Collection
@@ -600,5 +590,5 @@ class SynBioHubQuery(SBOLQuery):
 	# 	Note: Setting the variable overwrite = 1 (ovewrite existing collection data) or 2 (merge existing collection data with new data). 0 will be set as default.
 	def submit_ExistingCollection(self, sbolDoc, collURI, overwrite):
 		sbolDoc.identity = collURI
-		sbh_connector = login_SBH(self._SBOLQuery__server)
+		sbh_connector = login_SBH(self._server)
 		self.submit_Collection(sbh_connector, sbolDoc, False, overwrite)
