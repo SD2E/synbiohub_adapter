@@ -348,7 +348,7 @@ class SynBioHubQuery(SBOLQuery):
 
 	# Retrieves the URIs for all inducers in the specified experiment.
 	def query_single_experiment_strains(self, experiment):
-		strains_query = """
+		strain_query = """
 		PREFIX sbol: <http://sbols.org/v2#>
 		PREFIX sd2: <http://sd2e.org#>
 		PREFIX prov: <http://www.w3.org/ns/prov#> 
@@ -363,7 +363,7 @@ class SynBioHubQuery(SBOLQuery):
 		}}
 		""".format(exp=experiment, ty1=SBOLConstants.NCIT_STRAIN, ty2=SBOLConstants.OBI_STRAIN)
 
-		return self.fetch_SPARQL(self._server, strains_query)
+		return self.fetch_SPARQL(self._server, strain_query)
 
 	# Retrieves the URIs for all strains used in the specified collection of experiments.
 	# This collection is typically associated with a challenge problem.
@@ -384,7 +384,7 @@ class SynBioHubQuery(SBOLQuery):
 		}}
 		""".format(col=collection, ty1=SBOLConstants.NCIT_STRAIN, ty2=SBOLConstants.OBI_STRAIN)
 
-		return self.fetch_SPARQL(self._server, strains_query)
+		return self.fetch_SPARQL(self._server, strain_query)
 
 	# Retrieves the URIs for all strains used by experiments in the collection of every SD2 experiment.
 	def query_experiment_strains(self):
