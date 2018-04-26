@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:prov="http://www.w3.org/ns/prov#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:sbol="http://sbols.org/v2#"
+   xmlns:sd2="http://sd2e.org#"
+   xmlns:sys-bio="http://sys-bio.org#">
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1201_1/1">
+    <dcterms:title>NEB_10_beta_pAN1201_1</dcterms:title>
+    <sbol:displayId>NEB_10_beta_pAN1201_1</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1201_1"/>
+    <sbol:version>1</sbol:version>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1717_1/1">
+    <dcterms:title>NEB_10_beta_pAN1717_1</dcterms:title>
+    <sbol:displayId>NEB_10_beta_pAN1717_1</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1717_1"/>
+    <sbol:version>1</sbol:version>
+  </sd2:Implementation>
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN3928_pAN4036_1/1">
+    <dcterms:title>NEB_10_beta_pAN3928_pAN4036_1</dcterms:title>
+    <sbol:displayId>NEB_10_beta_pAN3928_pAN4036_1</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN3928_pAN4036_1"/>
+    <sbol:version>1</sbol:version>
+  </sd2:Implementation>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//incubate_NEB_10_beta_pAN1201_1/1.0.0">
+    <dcterms:description>Grow single colonies in sealed (Excel Scientific, Inc., AeraSeal, BS-25) V-bottom 96-well plates overnight (16 hours) at 37°C and 1000 RPM in an ELMI Digital Thermos Microplates shaker incubator (Elmi Ltd, Riga, Latvia).</dcterms:description>
+    <dcterms:title>Incubate</dcterms:title>
+    <sbol:displayId>incubate_NEB_10_beta_pAN1201_1</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//incubate_NEB_10_beta_pAN1201_1"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#incubate"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//incubate_NEB_10_beta_pAN1201_1/NEB_10_beta_pAN1201_1/1">
+        <sbol:displayId>NEB_10_beta_pAN1201_1</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//incubate_NEB_10_beta_pAN1201_1/NEB_10_beta_pAN1201_1"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1201_1/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//incubate_NEB_10_beta_pAN1717_1/1.0.0">
+    <dcterms:description>Grow single colonies in sealed (Excel Scientific, Inc., AeraSeal, BS-25) V-bottom 96-well plates overnight (16 hours) at 37°C and 1000 RPM in an ELMI Digital Thermos Microplates shaker incubator (Elmi Ltd, Riga, Latvia).</dcterms:description>
+    <dcterms:title>Incubate</dcterms:title>
+    <sbol:displayId>incubate_NEB_10_beta_pAN1717_1</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//incubate_NEB_10_beta_pAN1717_1"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#incubate"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//incubate_NEB_10_beta_pAN1717_1/NEB_10_beta_pAN1717_1/1">
+        <sbol:displayId>NEB_10_beta_pAN1717_1</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//incubate_NEB_10_beta_pAN1717_1/NEB_10_beta_pAN1717_1"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN1717_1/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//incubate_NEB_10_beta_pAN3928_pAN4036_1/1.0.0">
+    <dcterms:description>Grow single colonies in sealed (Excel Scientific, Inc., AeraSeal, BS-25) V-bottom 96-well plates overnight (16 hours) at 37°C and 1000 RPM in an ELMI Digital Thermos Microplates shaker incubator (Elmi Ltd, Riga, Latvia).</dcterms:description>
+    <dcterms:title>Incubate</dcterms:title>
+    <sbol:displayId>incubate_NEB_10_beta_pAN3928_pAN4036_1</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//incubate_NEB_10_beta_pAN3928_pAN4036_1"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#incubate"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//incubate_NEB_10_beta_pAN3928_pAN4036_1/NEB_10_beta_pAN3928_pAN4036_1/1">
+        <sbol:displayId>NEB_10_beta_pAN3928_pAN4036_1</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//incubate_NEB_10_beta_pAN3928_pAN4036_1/NEB_10_beta_pAN3928_pAN4036_1"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//NEB_10_beta_pAN3928_pAN4036_1/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <sd2:Experiment rdf:about="https://hub.sd2e.org/user/sd2e//transcriptic_rule_30_q0_1_09242017/1">
+    <dcterms:title>Rule30 Q0 Plan</dcterms:title>
+    <sbol:displayId>transcriptic_rule_30_q0_1_09242017</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transcriptic_rule_30_q0_1_09242017"/>
+    <sbol:version>1</sbol:version>
+  </sd2:Experiment>
+</rdf:RDF>

@@ -1,0 +1,9 @@
+version: '2'
+services:
+  synbiohub_adapter:
+    build: .
+    volumes: 
+      - ./examples:/opt/scripts/example
+      - ./outputs:/opt/scripts/outputs
+      - ./synbiohub_adapter:/opt/scripts/synbiohub_adapter
+      - ./tests:/opt/scripts/tests

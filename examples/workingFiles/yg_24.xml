@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:prov="http://www.w3.org/ns/prov#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:sbol="http://sbols.org/v2#"
+   xmlns:sd2="http://sd2e.org#"
+   xmlns:sys-bio="http://sys-bio.org#">
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//biofab_sample_yeast_gates_q0_1_1_A01/1">
+    <dcterms:title>biofab_sample_yeast_gates_q0_1_1_A01</dcterms:title>
+    <sbol:displayId>biofab_sample_yeast_gates_q0_1_1_A01</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//biofab_sample_yeast_gates_q0_1_1_A01"/>
+    <sbol:version>1</sbol:version>
+  </sd2:Implementation>
+  <sd2:Experiment rdf:about="https://hub.sd2e.org/user/sd2e//df82e79b_e18c_457e_8c5c_ed605acc94cd/1">
+    <dcterms:title>Yeast Gates Q0 Plan</dcterms:title>
+    <sbol:displayId>df82e79b_e18c_457e_8c5c_ed605acc94cd</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//df82e79b_e18c_457e_8c5c_ed605acc94cd"/>
+    <sbol:version>1</sbol:version>
+  </sd2:Experiment>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//incubate_biofab_sample_yeast_gates_q0_1_1_A01/1.0.0">
+    <dcterms:description>Incubate (30C, 2 days), YPAD-plate_1</dcterms:description>
+    <dcterms:title>Incubate Operator</dcterms:title>
+    <sbol:displayId>incubate_biofab_sample_yeast_gates_q0_1_1_A01</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//incubate_biofab_sample_yeast_gates_q0_1_1_A01"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#incubate"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//incubate_biofab_sample_yeast_gates_q0_1_1_A01/biofab_sample_yeast_gates_q0_1_1_A01/1">
+        <sbol:displayId>biofab_sample_yeast_gates_q0_1_1_A01</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//incubate_biofab_sample_yeast_gates_q0_1_1_A01/biofab_sample_yeast_gates_q0_1_1_A01"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//biofab_sample_yeast_gates_q0_1_1_A01/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+</rdf:RDF>

@@ -5,6 +5,10 @@ from setuptools.command.install import install
 from setuptools.command.develop import develop
 import sys
 import platform
+import subprocess
+
+def pip_install(url):
+    subprocess.check_output([sys.executable, '-m', 'pip', 'install', url])
 
 def py_version():
     return tuple(sys.version_info[:2])
@@ -26,7 +30,15 @@ wheels = {
         'url': 'https://github.com/tcmitchell/pySBOL/blob/ubuntu/Ubuntu_16.04_64_2/dist/pySBOL-2.3.0.post11-cp27-none-any.whl?raw=true',
         'name': 'pySBOL-2.3.0.post11-cp27-none-any.whl'
     },
+    (2, 7, 'Ubuntu', '17.10'): {
+        'url': 'https://github.com/tcmitchell/pySBOL/blob/ubuntu/Ubuntu_16.04_64_2/dist/pySBOL-2.3.0.post11-cp27-none-any.whl?raw=true',
+        'name': 'pySBOL-2.3.0.post11-cp27-none-any.whl'
+    },
     (3, 5, 'Ubuntu', '16.04'): {
+        'url': 'https://github.com/tcmitchell/pySBOL/blob/ubuntu/Ubuntu_16.04_64_3/dist/pySBOL-2.3.0.post11-cp35-none-any.whl?raw=true',
+        'name': 'pySBOL-2.3.0.post11-cp35-none-any.whl'
+    },
+    (3, 5, 'Ubuntu', '17.10'): {
         'url': 'https://github.com/tcmitchell/pySBOL/blob/ubuntu/Ubuntu_16.04_64_3/dist/pySBOL-2.3.0.post11-cp35-none-any.whl?raw=true',
         'name': 'pySBOL-2.3.0.post11-cp35-none-any.whl'
     },
@@ -66,7 +78,6 @@ def override_run(cls):
         import shutil
         import tempfile
         import os
-        import pip
         import site
         
         if py_v[0] == 3:
@@ -87,7 +98,7 @@ def override_run(cls):
             # What if installing sbh_adapter with --user?
             # Probably should install pysbol with --user
             # How could we tell here?
-            pip.main(['install', wheel_path])
+            pip_install(wheel_path)
 
             # Will this error? Hopefully not. Crash the install if so.
             try:
@@ -104,8 +115,8 @@ def override_run(cls):
         finally:
             if os.path.isdir(tmp_dir):
                 shutil.rmtree(tmp_dir)
-        
-                
+
+        pip_install('git+https://github.com/nroehner/pySBOLx')
         orig_run(self)
 
     cls.run = new_run
@@ -130,8 +141,9 @@ if sys.platform in {'linux', 'linux2'}:
     cmdclass['install'] = LinuxInstallCommand
     cmdclass['develop'] = LinuxDevelopCommand
 else:
-    # Can use normal pysbol for windows and mac
+    # Can use normal pysbol for mac and windows
     install_requires.append('pysbol')
+    install_requires.append('pySBOLx')
 
 
 setup(
@@ -139,5 +151,8 @@ setup(
     version='0.0.1',
     packages=find_packages(),
     install_requires=install_requires,
+    dependency_links=[
+        'git+https://git@github.com/nroehner/pySBOLx.git#egg=pySBOLx'
+    ],
     cmdclass=cmdclass
 )

@@ -1,3 +1,6 @@
 /__pycache__
+/build
+/dist
 /tests/__pycache__
 /synbiohub_adapter/__pycache__
+/sbh_adapter.egg-info

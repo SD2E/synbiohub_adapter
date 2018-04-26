@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:prov="http://www.w3.org/ns/prov#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:sbol="http://sbols.org/v2#"
+   xmlns:sd2="http://sd2e.org#"
+   xmlns:sys-bio="http://sys-bio.org#">
+  <sd2:Implementation rdf:about="https://hub.sd2e.org/user/sd2e//A01_1/1">
+    <dcterms:title>A01_1</dcterms:title>
+    <sbol:displayId>A01_1</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//A01_1"/>
+    <sbol:version>1</sbol:version>
+  </sd2:Implementation>
+  <sd2:ExperimentalData rdf:about="https://hub.sd2e.org/user/sd2e//A01_1_rnaSeq_10/1">
+    <dcterms:title>A01_1_rnaSeq_10</dcterms:title>
+    <sbol:attachment rdf:resource="https://hub.sd2e.org/user/sd2e//transcriptic_rule_30_q0_1_171009_TS004_TP01_instrument_output_A1_S2_L001_R1_001_fastq_gz/1"/>
+    <sbol:attachment rdf:resource="https://hub.sd2e.org/user/sd2e//transcriptic_rule_30_q0_1_171009_TS004_TP01_instrument_output_A1_S2_L001_R2_001_fastq_gz/1"/>
+    <sbol:attachment rdf:resource="https://hub.sd2e.org/user/sd2e//transcriptic_rule_30_q0_1_171009_TS004_TP01_instrument_output_A1_S2_L002_R1_001_fastq_gz/1"/>
+    <sbol:attachment rdf:resource="https://hub.sd2e.org/user/sd2e//transcriptic_rule_30_q0_1_171009_TS004_TP01_instrument_output_A1_S2_L002_R2_001_fastq_gz/1"/>
+    <sbol:attachment rdf:resource="https://hub.sd2e.org/user/sd2e//transcriptic_rule_30_q0_1_171009_TS004_TP01_instrument_output_A1_S2_L003_R1_001_fastq_gz/1"/>
+    <sbol:attachment rdf:resource="https://hub.sd2e.org/user/sd2e//transcriptic_rule_30_q0_1_171009_TS004_TP01_instrument_output_A1_S2_L003_R2_001_fastq_gz/1"/>
+    <sbol:attachment rdf:resource="https://hub.sd2e.org/user/sd2e//transcriptic_rule_30_q0_1_171009_TS004_TP01_instrument_output_A1_S2_L004_R1_001_fastq_gz/1"/>
+    <sbol:attachment rdf:resource="https://hub.sd2e.org/user/sd2e//transcriptic_rule_30_q0_1_171009_TS004_TP01_instrument_output_A1_S2_L004_R2_001_fastq_gz/1"/>
+    <sbol:displayId>A01_1_rnaSeq_10</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//A01_1_rnaSeq_10"/>
+    <sbol:version>1</sbol:version>
+    <prov:wasDerivedFrom rdf:resource="https://hub.sd2e.org/user/sd2e//A01_1/1"/>
+    <prov:wasGeneratedBy rdf:resource="https://hub.sd2e.org/user/sd2e//rnaSeq_A01_1_to_A01_1_rnaSeq_10/1.0.0"/>
+  </sd2:ExperimentalData>
+  <prov:Activity rdf:about="https://hub.sd2e.org/user/sd2e//rnaSeq_A01_1_to_A01_1_rnaSeq_10/1.0.0">
+    <dcterms:description>8.c-dd of httpss://docs.google.com/document/d/1WiTOQPM9ylZqIGz86UWsODVydNsDSqJHlEZnSvkQYcs/edit?usp=sharing</dcterms:description>
+    <dcterms:title>RNASeq Operator</dcterms:title>
+    <sbol:displayId>rnaSeq_A01_1_to_A01_1_rnaSeq_10</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//rnaSeq_A01_1_to_A01_1_rnaSeq_10"/>
+    <sbol:version>1</sbol:version>
+    <sd2:operatorType rdf:resource="http://sd2e.org#rnaSeq"/>
+    <prov:qualifiedUsage>
+      <prov:Usage rdf:about="https://hub.sd2e.org/user/sd2e//rnaSeq_A01_1_to_A01_1_rnaSeq_10/A01_1/1">
+        <sbol:displayId>A01_1</sbol:displayId>
+        <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//rnaSeq_A01_1_to_A01_1_rnaSeq_10/A01_1"/>
+        <sbol:version>1</sbol:version>
+        <prov:entity rdf:resource="https://hub.sd2e.org/user/sd2e//A01_1/1"/>
+        <prov:hadRole rdf:resource="http://sbols.org/v2#build"/>
+      </prov:Usage>
+    </prov:qualifiedUsage>
+  </prov:Activity>
+  <sd2:Experiment rdf:about="https://hub.sd2e.org/user/sd2e//transcriptic_rule_30_q0_1_09242017/1">
+    <dcterms:title>Rule30 Q0 Plan</dcterms:title>
+    <sbol:displayId>transcriptic_rule_30_q0_1_09242017</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transcriptic_rule_30_q0_1_09242017"/>
+    <sbol:version>1</sbol:version>
+    <sd2:experimentalData rdf:resource="https://hub.sd2e.org/user/sd2e//A01_1_rnaSeq_10/1"/>
+  </sd2:Experiment>
+  <sd2:Attachment rdf:about="https://hub.sd2e.org/user/sd2e//transcriptic_rule_30_q0_1_171009_TS004_TP01_instrument_output_A1_S2_L001_R1_001_fastq_gz/1">
+    <dcterms:title>transcriptic_rule_30_q0_1_171009_TS004_TP01_instrument_output_A1_S2_L001_R1_001_fastq_gz</dcterms:title>
+    <sbol:displayId>transcriptic_rule_30_q0_1_171009_TS004_TP01_instrument_output_A1_S2_L001_R1_001_fastq_gz</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transcriptic_rule_30_q0_1_171009_TS004_TP01_instrument_output_A1_S2_L001_R1_001_fastq_gz"/>
+    <sbol:version>1</sbol:version>
+    <sd2:source rdf:resource="agave://data-sd2e-community/transcriptic/rule-30_q0/1/171009_TS004-TP01/instrument_output/A1_S2_L001_R1_001.fastq.gz"/>
+  </sd2:Attachment>
+  <sd2:Attachment rdf:about="https://hub.sd2e.org/user/sd2e//transcriptic_rule_30_q0_1_171009_TS004_TP01_instrument_output_A1_S2_L001_R2_001_fastq_gz/1">
+    <dcterms:title>transcriptic_rule_30_q0_1_171009_TS004_TP01_instrument_output_A1_S2_L001_R2_001_fastq_gz</dcterms:title>
+    <sbol:displayId>transcriptic_rule_30_q0_1_171009_TS004_TP01_instrument_output_A1_S2_L001_R2_001_fastq_gz</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transcriptic_rule_30_q0_1_171009_TS004_TP01_instrument_output_A1_S2_L001_R2_001_fastq_gz"/>
+    <sbol:version>1</sbol:version>
+    <sd2:source rdf:resource="agave://data-sd2e-community/transcriptic/rule-30_q0/1/171009_TS004-TP01/instrument_output/A1_S2_L001_R2_001.fastq.gz"/>
+  </sd2:Attachment>
+  <sd2:Attachment rdf:about="https://hub.sd2e.org/user/sd2e//transcriptic_rule_30_q0_1_171009_TS004_TP01_instrument_output_A1_S2_L002_R1_001_fastq_gz/1">
+    <dcterms:title>transcriptic_rule_30_q0_1_171009_TS004_TP01_instrument_output_A1_S2_L002_R1_001_fastq_gz</dcterms:title>
+    <sbol:displayId>transcriptic_rule_30_q0_1_171009_TS004_TP01_instrument_output_A1_S2_L002_R1_001_fastq_gz</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transcriptic_rule_30_q0_1_171009_TS004_TP01_instrument_output_A1_S2_L002_R1_001_fastq_gz"/>
+    <sbol:version>1</sbol:version>
+    <sd2:source rdf:resource="agave://data-sd2e-community/transcriptic/rule-30_q0/1/171009_TS004-TP01/instrument_output/A1_S2_L002_R1_001.fastq.gz"/>
+  </sd2:Attachment>
+  <sd2:Attachment rdf:about="https://hub.sd2e.org/user/sd2e//transcriptic_rule_30_q0_1_171009_TS004_TP01_instrument_output_A1_S2_L002_R2_001_fastq_gz/1">
+    <dcterms:title>transcriptic_rule_30_q0_1_171009_TS004_TP01_instrument_output_A1_S2_L002_R2_001_fastq_gz</dcterms:title>
+    <sbol:displayId>transcriptic_rule_30_q0_1_171009_TS004_TP01_instrument_output_A1_S2_L002_R2_001_fastq_gz</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transcriptic_rule_30_q0_1_171009_TS004_TP01_instrument_output_A1_S2_L002_R2_001_fastq_gz"/>
+    <sbol:version>1</sbol:version>
+    <sd2:source rdf:resource="agave://data-sd2e-community/transcriptic/rule-30_q0/1/171009_TS004-TP01/instrument_output/A1_S2_L002_R2_001.fastq.gz"/>
+  </sd2:Attachment>
+  <sd2:Attachment rdf:about="https://hub.sd2e.org/user/sd2e//transcriptic_rule_30_q0_1_171009_TS004_TP01_instrument_output_A1_S2_L003_R1_001_fastq_gz/1">
+    <dcterms:title>transcriptic_rule_30_q0_1_171009_TS004_TP01_instrument_output_A1_S2_L003_R1_001_fastq_gz</dcterms:title>
+    <sbol:displayId>transcriptic_rule_30_q0_1_171009_TS004_TP01_instrument_output_A1_S2_L003_R1_001_fastq_gz</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transcriptic_rule_30_q0_1_171009_TS004_TP01_instrument_output_A1_S2_L003_R1_001_fastq_gz"/>
+    <sbol:version>1</sbol:version>
+    <sd2:source rdf:resource="agave://data-sd2e-community/transcriptic/rule-30_q0/1/171009_TS004-TP01/instrument_output/A1_S2_L003_R1_001.fastq.gz"/>
+  </sd2:Attachment>
+  <sd2:Attachment rdf:about="https://hub.sd2e.org/user/sd2e//transcriptic_rule_30_q0_1_171009_TS004_TP01_instrument_output_A1_S2_L003_R2_001_fastq_gz/1">
+    <dcterms:title>transcriptic_rule_30_q0_1_171009_TS004_TP01_instrument_output_A1_S2_L003_R2_001_fastq_gz</dcterms:title>
+    <sbol:displayId>transcriptic_rule_30_q0_1_171009_TS004_TP01_instrument_output_A1_S2_L003_R2_001_fastq_gz</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transcriptic_rule_30_q0_1_171009_TS004_TP01_instrument_output_A1_S2_L003_R2_001_fastq_gz"/>
+    <sbol:version>1</sbol:version>
+    <sd2:source rdf:resource="agave://data-sd2e-community/transcriptic/rule-30_q0/1/171009_TS004-TP01/instrument_output/A1_S2_L003_R2_001.fastq.gz"/>
+  </sd2:Attachment>
+  <sd2:Attachment rdf:about="https://hub.sd2e.org/user/sd2e//transcriptic_rule_30_q0_1_171009_TS004_TP01_instrument_output_A1_S2_L004_R1_001_fastq_gz/1">
+    <dcterms:title>transcriptic_rule_30_q0_1_171009_TS004_TP01_instrument_output_A1_S2_L004_R1_001_fastq_gz</dcterms:title>
+    <sbol:displayId>transcriptic_rule_30_q0_1_171009_TS004_TP01_instrument_output_A1_S2_L004_R1_001_fastq_gz</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transcriptic_rule_30_q0_1_171009_TS004_TP01_instrument_output_A1_S2_L004_R1_001_fastq_gz"/>
+    <sbol:version>1</sbol:version>
+    <sd2:source rdf:resource="agave://data-sd2e-community/transcriptic/rule-30_q0/1/171009_TS004-TP01/instrument_output/A1_S2_L004_R1_001.fastq.gz"/>
+  </sd2:Attachment>
+  <sd2:Attachment rdf:about="https://hub.sd2e.org/user/sd2e//transcriptic_rule_30_q0_1_171009_TS004_TP01_instrument_output_A1_S2_L004_R2_001_fastq_gz/1">
+    <dcterms:title>transcriptic_rule_30_q0_1_171009_TS004_TP01_instrument_output_A1_S2_L004_R2_001_fastq_gz</dcterms:title>
+    <sbol:displayId>transcriptic_rule_30_q0_1_171009_TS004_TP01_instrument_output_A1_S2_L004_R2_001_fastq_gz</sbol:displayId>
+    <sbol:persistentIdentity rdf:resource="https://hub.sd2e.org/user/sd2e//transcriptic_rule_30_q0_1_171009_TS004_TP01_instrument_output_A1_S2_L004_R2_001_fastq_gz"/>
+    <sbol:version>1</sbol:version>
+    <sd2:source rdf:resource="agave://data-sd2e-community/transcriptic/rule-30_q0/1/171009_TS004-TP01/instrument_output/A1_S2_L004_R2_001.fastq.gz"/>
+  </sd2:Attachment>
+</rdf:RDF>
