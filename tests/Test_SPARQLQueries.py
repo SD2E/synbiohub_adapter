@@ -236,6 +236,15 @@ class TestSBHQueries(unittest.TestCase):
 		exp_data = sbh_query.query_single_experiment_data(rule_30_experiment)
 		print(exp_data)
 
+	# Test experiment intent query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+	def test_query_single_experiment_intent(self):
+		yeast_gates_experiment = 'https://hub.sd2e.org/user/sd2e/experiment/biofab_yeast_gates_intent/1'
+
+		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
+		exp_intent = sbh_query.query_single_experiment_intent(yeast_gates_experiment)
+		print(exp_intent)
+
 	# Test design and experiment set query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 	def test_query_design_sets(self):

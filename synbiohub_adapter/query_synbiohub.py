@@ -1,5 +1,6 @@
 import getpass
 import sys
+import json
 
 from .fetch_SPARQL import fetch_SPARQL
 from synbiohub_adapter.SynBioHubUtil import *
@@ -406,6 +407,100 @@ class SynBioHubQuery(SBOLQuery):
 		""".format(exp=experiment)
 
 		return fetch_SPARQL(self._SBOLQuery__server, exp_data_query)
+
+	# Experiment intent query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+	# Retrieves the experimental intent JSON for the specified experiment.
+	def query_single_experiment_intent(self, experiment):
+		intent_query = """
+		PREFIX sd2: <http://sd2e.org#>
+		PREFIX dcterms: <http://purl.org/dc/terms/>
+		SELECT ?dname ?ename ?oname
+		WHERE {{ {{
+  			<{exp}> sd2:experimentalDesign ?design .
+  			?design sd2:diagnosticVariable ?dvar .
+  			?dvar dcterms:title ?dname
+  		}} UNION {{
+  			<{exp}> sd2:experimentalDesign ?design .
+  			?design sd2:experimentalVariable ?evar .
+  			?evar dcterms:title ?ename
+  		}} UNION {{
+  			<{exp}> sd2:experimentalDesign ?design .
+  			?design sd2:outcomeVariable ?ovar .
+  			?ovar dcterms:title ?oname
+  		}} }}
+		""".format(exp=experiment)
+
+		intent_data = fetch_SPARQL(self._SBOLQuery__server, intent_query)
+
+		exp_intent = {'diagnostic-variables': [], 'experimental-variables': [], 'outcome-variables': [], 'truth-table': {'input': [], 'output': []}}
+
+		level_switcher = {}
+
+		for binding in intent_data['results']['bindings']:
+			try:
+				intent['diagnostic-variables'].append({'name': binding['dname']['value']})
+			except:
+				try:
+					exp_intent['outcome-variables'].append({'name': binding['oname']['value']})
+				except:
+					ename = binding['ename']['value']
+					try:
+						assert ename in level_switcher
+					except:
+						level_switcher[ename] = len(exp_intent['experimental-variables'])
+						exp_intent['experimental-variables'].append({'name': ename})
+					
+		truth_table_query = """
+		PREFIX sd2: <http://sd2e.org#>
+		PREFIX dcterms: <http://purl.org/dc/terms/>
+		SELECT ?defin ?emag ?ename ?omag ?oname
+		WHERE {{ {{
+  			<{exp}> sd2:experimentalDesign ?design .
+  			?design sd2:experimentalCondition ?cond .
+  			?cond sd2:definition ?defin ;
+  				sd2:experimentalLevel ?elevel .
+  			?elevel sd2:level ?emag ;
+  				sd2:experimentalVariable ?evar .
+  			?evar dcterms:title ?ename
+		}} UNION {{
+			<{exp}> sd2:experimentalDesign ?design .
+  			?design sd2:experimentalCondition ?cond .
+  			?cond sd2:definition ?defin ;
+  				sd2:outcomeLevel ?olevel .
+  			?olevel sd2:level ?omag ;
+  				sd2:experimentalVariable ?ovar .
+  			?ovar dcterms:title ?oname
+		}} }}
+		""".format(exp=experiment)
+
+		truth_table_data = fetch_SPARQL(self._SBOLQuery__server, truth_table_query)
+
+		input_switcher = {}
+
+		for binding in truth_table_data['results']['bindings']:
+			defin = binding['defin']['value']
+			try:
+				assert defin in input_switcher
+			except:
+				input_switcher[defin] = len(exp_intent['truth-table']['input'])
+				exp_intent['truth-table']['input'].append({'experimental-variables': [], 'strain': defin})
+
+		for tt_input in exp_intent['truth-table']['input']:
+			exp_intent['truth-table']['output'].append('-')
+			for evar in exp_intent['experimental-variables']:
+				tt_input['experimental-variables'].append('-')
+
+		for binding in truth_table_data['results']['bindings']:
+			i = input_switcher[binding['defin']['value']]
+			tt_input = exp_intent['truth-table']['input'][i]
+			try:
+				j = level_switcher[binding['ename']['value']]
+				tt_input['experimental-variables'][j] = int(binding['emag']['value'])
+			except:
+				exp_intent['truth-table']['output'][i] = int(binding['omag']['value'])
+
+		return json.dumps(exp_intent, separators=(',',':'))
 
 	# Design and experiment set query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
