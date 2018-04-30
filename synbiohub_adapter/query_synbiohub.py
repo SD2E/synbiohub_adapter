@@ -25,8 +25,7 @@ class SynBioHubQuery(SBOLQuery):
 	# Retrieves the URIs for all controls from the specified collection of design elements.
 	# This collection is typically associated with a challenge problem.
 	def query_design_set_controls(self, collection, sub_types=[], sub_roles=[], sub_definitions=[]):
-		return self.query_design_set_modules(collection, [SBOLConstants.CONTROL], sub_types, sub_roles, sub_definitions)
-
+		return self.query_design_set_modules([SBOLConstants.CONTROL], collection, 'control', sub_types, sub_roles, sub_definitions)
 
 	# Retrieves the URIs for all fluorescent bead controls from the specified collection of design elements.
 	# This collection is typically associated with a challenge problem.
@@ -49,77 +48,48 @@ class SynBioHubQuery(SBOLQuery):
 		return self.query_design_set_controls(collection, [SBOLConstants.H2O])
 
 	# Retrieves the URIs for all controls from the collection of every SD2 design element.
-	def query_design_controls(self, sub_types=[], sub_roles=[]):
-		return self.query_design_set_controls(SD2Constants.SD2_DESIGN_COLLECTION, sub_types, sub_roles)
+	def query_design_controls(self, sub_types=[], sub_roles=[], sub_definitions=[]):
+		return self.query_design_set_modules(roles=[SBOLConstants.CONTROL], mod_label='control', sub_types=sub_types, sub_roles=sub_roles, sub_definitions=sub_definitions)
 
 	# Retrieves the URIs for all fluorescent bead controls from the collection of every SD2 design element.
 	def query_design_fbead_controls(self):
-		return self.query_design_set_fbead_controls(SD2Constants.SD2_DESIGN_COLLECTION)
+		return self.query_design_controls([SBOLConstants.BEAD], [SBOLConstants.FLUORESCENT_PROBE])
 
 	# Retrieves the URIs for all water controls from the collection of every SD2 design element.
 	def query_design_fluorescein_controls(self):
-		return self.query_design_set_fluorescein_controls(SD2Constants.SD2_DESIGN_COLLECTION)
+		return self.query_design_controls([SBOLConstants.FLUORESCEIN])
 
 	# Retrieves the URIs for all fluorescent bead controls from the collection of every SD2 design element.
 	def query_design_ludox_controls(self):
-		return self.query_design_set_ludox_controls(SD2Constants.SD2_DESIGN_COLLECTION)
+		return self.query_design_controls(sub_definitions=[SD2Constants.LUDOX])
 
 	# Retrieves the URIs for all water controls from the collection of every SD2 design element.
 	def query_design_water_controls(self):
-		return self.query_design_set_water_controls(SD2Constants.SD2_DESIGN_COLLECTION)
+		return self.query_design_controls([SBOLConstants.H2O])
 
 	# Gate query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 	# Retrieves the URIs for all logic gates fom the specified collection of design elements.
 	# This collection is typically associated with a challenge problem.
 	def query_design_set_gates(self, collection):
-		return self.query_design_set_modules(collection, [SBOLConstants.LOGIC_OPERATOR])
+		return self.query_design_set_modules([SBOLConstants.LOGIC_OPERATOR], collection, 'gate')
 
 	# Retrieves the URIs for all logic gates from the collection of every SD2 design element.
 	def query_design_gates(self):
-		return self.query_design_set_gates(SD2Constants.SD2_DESIGN_COLLECTION)
+		return self.query_design_set_modules(roles=[SBOLConstants.LOGIC_OPERATOR], mod_label='gate')
 
 	# Retrieves the URIs for all logic gates used in the specified experiment.
 	def query_single_experiment_gates(self, experiment):
-		gate_query = """
-		PREFIX sbol: <http://sbols.org/v2#>
-		PREFIX sd2: <http://sd2e.org#>
-		PREFIX prov: <http://www.w3.org/ns/prov#> 
-		SELECT DISTINCT ?gate WHERE {{ 
-  			<{exp}> sd2:experimentalData ?data .
-  			?data prov:wasDerivedFrom ?sample .
-  			?sample sbol:built ?condition .
-  			?condition sbol:module ?mod .
-  			?mod sbol:definition ?gate .
-  			?gate sbol:role <{ro}>
-		}}
-		""".format(exp=experiment, ro=SBOLConstants.LOGIC_OPERATOR)
-    
-		return self.fetch_SPARQL(self._server, gate_query)
+		return self.query_experiment_set_modules(roles=[SBOLConstants.LOGIC_OPERATOR], mod_label='gate', experiment=experiment)
 
 	# Retrieves the URIs for all logic gates used in the specified collection of experiments.
 	# This collection is typically associated with a challenge problem.
 	def query_experiment_set_gates(self, collection):
-		gate_query = """
-		PREFIX sbol: <http://sbols.org/v2#>
-		PREFIX sd2: <http://sd2e.org#>
-		PREFIX prov: <http://www.w3.org/ns/prov#>
-		SELECT DISTINCT ?gate WHERE {{ 
-  			<{col}> sbol:member ?exp .
-  			?exp sd2:experimentalData ?data .
-  			?data prov:wasDerivedFrom ?sample .
-  			?sample sbol:built ?condition .
-  			?condition sbol:module ?mod .
-  			?mod sbol:definition ?gate .
-  			?gate sbol:role <{ro}>
-		}}
-		""".format(col=collection, ro=SBOLConstants.LOGIC_OPERATOR)
-
-		return self.fetch_SPARQL(self._server, gate_query)
+		return self.query_experiment_set_modules([SBOLConstants.LOGIC_OPERATOR], collection, 'gate')
 
 	# Retrieves the URIs for all logic gates used by experiments in the collection of every SD2 experiment.
 	def query_experiment_gates(self):
-		return self.query_experiment_set_gates(SD2Constants.SD2_EXPERIMENT_COLLECTION)
+		return self.query_experiment_set_modules(roles=[SBOLConstants.LOGIC_OPERATOR], mod_label='gate')
 
 	# Inducer query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
@@ -245,66 +215,35 @@ class SynBioHubQuery(SBOLQuery):
 	# Retrieves the URIs for all media from the specified collection of design elements.
 	# This collection is typically associated with a challenge problem.
 	def query_design_set_media(self, collection):
-		return self.query_design_set_modules(collection, [SBOLConstants.MEDIA])
+		return self.query_design_set_modules([SBOLConstants.MEDIA], collection, 'media')
 
 	# Retrieves the URIs for all media from the collection of every SD2 design element.
 	def query_design_media(self):
-		return self.query_design_set_media(SD2Constants.SD2_DESIGN_COLLECTION)
+		return self.query_design_set_modules(roles=[SBOLConstants.MEDIA], mod_label='media')
 
 	# Plasmid query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 	# Retrieves the URIs for all plasmids from the specified collection of design elements.
 	# This collection is typically associated with a challenge problem.
 	def query_design_set_plasmids(self, collection):
-		return self.query_design_set_components(collection, [BIOPAX_DNA, SO_CIRCULAR])
+		return self.query_design_set_components([BIOPAX_DNA, SO_CIRCULAR], collection, 'plasmid')
 
 	# Retrieves the URIs for all plasmids from the collection of every SD2 design element.
 	def query_design_plasmids(self):
-		return self.query_design_set_plasmids(SD2Constants.SD2_DESIGN_COLLECTION)
+		return self.query_design_set_components(types=[BIOPAX_DNA, SO_CIRCULAR], comp_label='plasmid')
 
 	# Retrieves the URIs for all plasmids in the specified experiment.
 	def query_single_experiment_plasmids(self, experiment):
-		plasmid_query = """
-		PREFIX sbol: <http://sbols.org/v2#>
-		PREFIX sd2: <http://sd2e.org#>
-		PREFIX prov: <http://www.w3.org/ns/prov#> 
-		SELECT DISTINCT ?plasmid WHERE {{ 
-  			<{exp}> sd2:experimentalData ?data .
-  			?data prov:wasDerivedFrom ?sample .
-  			?sample sbol:built ?condition .
-  			?condition sbol:functionalComponent ?fc .
-  			?fc sbol:definition ?plasmid .
-  			?plasmid sbol:type <{ty1}> ;
-           		sbol:type <{ty2}>
-		}}
-		""".format(exp=experiment, ty1=BIOPAX_DNA, ty2=SO_CIRCULAR)
-
-		return self.fetch_SPARQL(self._server, plasmid_query)
+		return self.query_experiment_set_components(types=[BIOPAX_DNA, SO_CIRCULAR], comp_label='plasmid', experiment=experiment)
 
 	# Retrieves the URIs for all plasmids used in the specified collection of experiments.
 	# This collection is typically associated with a challenge problem.
 	def query_experiment_set_plasmids(self, collection):
-		plasmid_query = """
-		PREFIX sbol: <http://sbols.org/v2#>
-		PREFIX sd2: <http://sd2e.org#>
-		PREFIX prov: <http://www.w3.org/ns/prov#> 
-		SELECT DISTINCT ?plasmid WHERE {{ 
-  			<{col}> sbol:member ?exp .
-  			?exp sd2:experimentalData ?data .
-  			?data prov:wasDerivedFrom ?sample .
-  			?sample sbol:built ?condition .
-  			?condition sbol:functionalComponent ?fc .
-  			?fc sbol:definition ?plasmid .
-  			?plasmid sbol:type <{ty1}> ;
-           		sbol:type <{ty2}>
-		}}
-		""".format(col=collection, ty1=BIOPAX_DNA, ty2=SO_CIRCULAR)
-
-		return self.fetch_SPARQL(self._server, plasmid_query)
+		return self.query_experiment_set_components([BIOPAX_DNA, SO_CIRCULAR], collection, 'plasmid')
 
 	# Retrieves the URIs for all plasmids used by experiments in the collection of every SD2 experiment.
 	def query_experiment_plasmids(self):
-		return self.query_experiment_set_plasmids(SD2Constants.SD2_EXPERIMENT_COLLECTION)
+		return self.query_experiment_set_components(types=[BIOPAX_DNA, SO_CIRCULAR], comp_label='plasmid')
 
 	# Retrieves the URIs for all plasmids in the specified sample.
 	def query_sample_plasmids(self, sample):
@@ -340,55 +279,24 @@ class SynBioHubQuery(SBOLQuery):
 	# Retrieves the URIs for all strains from the specified collection of design elements.
 	# This collection is typically associated with a challenge problem.
 	def query_design_set_strains(self, collection):
-		return self.query_design_set_components(collection=collection, types=[SBOLConstants.NCIT_STRAIN, SBOLConstants.OBI_STRAIN], all_types=False)
+		return self.query_design_set_components(types=[SBOLConstants.NCIT_STRAIN, SBOLConstants.OBI_STRAIN], collection=collection, comp_label='strain', all_types=False)
 
 	# Retrieves the URIs for all strains from the collection of every SD2 design element.
 	def query_design_strains(self):
-		return self.query_design_set_strains(SD2Constants.SD2_DESIGN_COLLECTION)
+		return self.query_design_set_components(types=[SBOLConstants.NCIT_STRAIN, SBOLConstants.OBI_STRAIN], comp_label='strain', all_types=False)
 
 	# Retrieves the URIs for all inducers in the specified experiment.
 	def query_single_experiment_strains(self, experiment):
-		strain_query = """
-		PREFIX sbol: <http://sbols.org/v2#>
-		PREFIX sd2: <http://sd2e.org#>
-		PREFIX prov: <http://www.w3.org/ns/prov#> 
-		SELECT DISTINCT ?strain WHERE {{
-  			<{exp}> sd2:experimentalData ?data .
-  			?data prov:wasDerivedFrom ?sample .
-  			?sample sbol:built ?condition .
-  			?condition sbol:functionalComponent ?fc .
-  			?fc sbol:definition ?strain .
-  			VALUES (?type) {{ ( <{ty1}> ) ( <{ty2}> ) }}
-  			?strain sbol:type ?type
-		}}
-		""".format(exp=experiment, ty1=SBOLConstants.NCIT_STRAIN, ty2=SBOLConstants.OBI_STRAIN)
-
-		return self.fetch_SPARQL(self._server, strain_query)
+		return self.query_experiment_set_components(types=[SBOLConstants.NCIT_STRAIN, SBOLConstants.OBI_STRAIN], comp_label='strain', all_types=False, experiment=experiment)
 
 	# Retrieves the URIs for all strains used in the specified collection of experiments.
 	# This collection is typically associated with a challenge problem.
 	def query_experiment_set_strains(self, collection):
-		strain_query = """
-		PREFIX sbol: <http://sbols.org/v2#>
-		PREFIX sd2: <http://sd2e.org#>
-		PREFIX prov: <http://www.w3.org/ns/prov#> 
-		SELECT DISTINCT ?strain WHERE {{ 
-  			<{col}> sbol:member ?exp .
-  			?exp sd2:experimentalData ?data .
-  			?data prov:wasDerivedFrom ?sample .
-  			?sample sbol:built ?condition .
-  			?condition sbol:functionalComponent ?fc .
-  			?fc sbol:definition ?strain .
-  			VALUES (?type) {{ ( <{ty1}> ) ( <{ty2}> ) }}
-  			?strain sbol:type ?type
-		}}
-		""".format(col=collection, ty1=SBOLConstants.NCIT_STRAIN, ty2=SBOLConstants.OBI_STRAIN)
-
-		return self.fetch_SPARQL(self._server, strain_query)
+		return self.query_experiment_set_components(types=[SBOLConstants.NCIT_STRAIN, SBOLConstants.OBI_STRAIN], collection=collection, comp_label='strain', all_types=False)
 
 	# Retrieves the URIs for all strains used by experiments in the collection of every SD2 experiment.
 	def query_experiment_strains(self):
-		return self.query_experiment_set_strains(SD2Constants.SD2_EXPERIMENT_COLLECTION)
+		return self.query_experiment_set_components(types=[SBOLConstants.NCIT_STRAIN, SBOLConstants.OBI_STRAIN], comp_label='strain', all_types=False)
 
 	# Experiment data query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 

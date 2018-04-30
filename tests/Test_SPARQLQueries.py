@@ -92,7 +92,7 @@ class TestSBHQueries(unittest.TestCase):
 
 	def test_query_experiment_set_gates(self):
 		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
-		gates = sbh_query.query_experiment_set_gates(SD2Constants.RULE_30_EXPERIMENT_COLLECTION)
+		gates = sbh_query.query_experiment_set_gates(SD2Constants.YEAST_GATES_EXPERIMENT_COLLECTION)
 		print(gates)
 
 	def test_query_experiment_gates(self):

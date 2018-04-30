@@ -14,6 +14,7 @@ from .cache_query import wrap_query_fn
 class SBOLConstants():
 	EFFECTOR = "http://identifiers.org/chebi/CHEBI:35224"
 	FLUORESCEIN = "http://identifiers.org/chebi/CHEBI:31624"
+	FLUORESCENCE = "http://purl.obolibrary.org/obo/NCIT_C16586"
 	FLUORESCENT_PROBE = "http://identifiers.org/chebi/CHEBI:39442"
 	H2O = "http://identifiers.org/chebi/CHEBI:15377"
 
@@ -78,102 +79,174 @@ class SBOLQuery():
 
 	# Constructs a partial SPARQL query for all collection members with 
 	# at least one of the specified types (or all of the specified types). 
-	def construct_member_type_query(self, types, all_types=True):
+	def construct_type_pattern(self, types, all_types=True, entity_label='entity', type_label='type'):
 		if all_types:
-			return "?mem sbol:type {ty}".format(ty=self.serialize_objects(types))
+			return "?{el} sbol:type {ty}".format(ty=self.serialize_objects(types), el=entity_label)
 		else:
 			return """
-			VALUES (?type) {{ {ty} }}
-			?mem sbol:type ?type .
-			""".format(ty=self.serialize_options(types))
+			VALUES (?{tl}) {{ {ty} }}
+			?{el} sbol:type ?{tl} .
+			""".format(ty=self.serialize_options(types), el=entity_label, tl=type_label)
 
 	# Constructs a partial SPARQL query for all collection members with 
 	# at least one of the specified roles. 
-	def construct_member_role_query(self, roles):
+	def construct_role_pattern(self, roles, entity_label='entity', role_label='role'):
 		return """
-		VALUES (?role) {{ {ro} }}
-		?mem sbol:role ?role .
-		""".format(ro=self.serialize_options(roles))
+		VALUES (?{rl}) {{ {ro} }}
+		?{el} sbol:role ?{rl} .
+		""".format(ro=self.serialize_options(roles), el=entity_label, rl=role_label)
 
 	# Constructs a partial SPARQL query for all collection members that contain a Component
 	# or a FunctionalComponent with at least one of the specified types 
 	# (or all of the specified types)
-	def construct_member_sub_type_query(self, types, all_types=True):
+	def construct_sub_type_pattern(self, types, all_types=True, entity_label='entity', sub_label='subDef'):
+		type_pattern = self.construct_type_pattern(types, all_types, sub_label, 'subType')
+
 		return """
 		VALUES (?contains) {{ (sbol:component) (sbol:functionalComponent) }}
-		?mem ?contains ?sub .
-		?sub sbol:definition ?def .
-		VALUES (?subType) {{ {ty} }}
-		?def sbol:type ?subType .
-		""".format(ty=self.serialize_options(types))
+		?{el} ?contains ?sub .
+		?sub sbol:definition ?{sl} .
+		{ty}
+		""".format(ty=type_pattern, el=entity_label, sl=sub_label)
 
 	# Constructs a partial SPARQL query for all collection members that contain a Component,
 	# FunctionalComponent, or Module with at least one of the specified roles. 
-	def construct_member_sub_role_query(self, roles):
+	def construct_sub_role_pattern(self, roles, entity_label='entity', sub_label='subDef'):
+		role_pattern = self.construct_role_pattern(roles, sub_label, 'subRole')
+
 		return """
 		VALUES (?contains) {{ (sbol:component) (sbol:functionalComponent) (sbol:module) }}
-		?mem ?contains ?sub .
-		?sub sbol:definition ?def .
-		VALUES (?subRole) {{ {ro} }}
-		?def sbol:role ?subRole .
-		""".format(ro=self.serialize_options(roles))
+		?{el} ?contains ?sub .
+		?sub sbol:definition ?{sl} .
+		{ro}
+		""".format(ro=role_pattern, el=entity_label, sl=sub_label)
 
 	# Constructs a partial SPARQL query for all collection members that contain a Component,
 	# FunctionalComponent, or Module with at least one of the specified sub-definitions. 
-	def construct_member_sub_definition_query(self, definitions):
+	def construct_sub_definition_pattern(self, definitions, entity_label='entity', sub_label='subDef'):
 		return """
 		VALUES (?contains) {{ (sbol:component) (sbol:functionalComponent) (sbol:module) }}
-		?mem ?contains ?sub .
-		VALUES (?def) {{ {de} }}
-		?sub sbol:definition ?def .
-		""".format(de=self.serialize_options(definitions))
+		?{el} ?contains ?sub .
+		VALUES (?{sl}) {{ {de} }}
+		?sub sbol:definition ?{sl} .
+		""".format(de=self.serialize_options(definitions), el=entity_label, sl=sub_label)
+
+	def construct_experiment_pattern(self, experiment=None):
+		if experiment is None:
+			return """
+			?exp sd2:experimentalData ?data .
+			?data prov:wasDerivedFrom ?sample .
+			?sample sbol:built ?condition .
+			"""
+		else:
+			return """
+			<{exp}> sd2:experimentalData ?data .
+			?data prov:wasDerivedFrom ?sample .
+			?sample sbol:built ?condition .
+			""".format(exp=experiment)
 
 	# Constructs a SPARQL query for all members of the specified collection with
 	# at least one of the specified types (or all of the specified types) and
 	# at least one of the specified roles.
-	def construct_member_query(self, collection, types=[], roles=[], all_types=True, sub_types=[], sub_roles=[], sub_definitions=[], all_sub_types=True):
+	def construct_member_query(self, collection, member_label='mem', types=[], roles=[], all_types=True, sub_types=[], sub_roles=[], sub_definitions=[], all_sub_types=True, target_label=None, sub_target_label=None, member=None, member_pattern=""):
+		if target_label is None:
+			target_label = member_label
+
 		if len(types) > 0:
-			type_query = self.construct_member_type_query(types, all_types)
+			if sub_target_label is None:
+				type_pattern = self.construct_type_pattern(types, all_types, target_label)
+			else:
+				type_pattern = self.construct_type_pattern(types, all_types, target_label, sub_target_label)
 		else:
-			type_query = ""
+			type_pattern = ""
 
 		if len(roles) > 0:
-			role_query = self.construct_member_role_query(roles)
+			if sub_target_label is None:
+				role_pattern = self.construct_role_pattern(roles, target_label)
+			else:
+				role_pattern = self.construct_role_pattern(roles, target_label, sub_target_label)
 		else:
-			role_query = ""
+			role_pattern = ""
 
 		if len(sub_types) > 0:
-			sub_type_query = self.construct_member_sub_type_query(sub_types, all_sub_types)
+			if sub_target_label is None:
+				sub_type_pattern = self.construct_sub_type_pattern(sub_types, all_sub_types, target_label)
+			else:
+				sub_type_pattern = self.construct_sub_type_pattern(sub_types, all_sub_types, target_label, sub_target_label)
 		else:
-			sub_type_query = ""
+			sub_type_pattern = ""
 
 		if len(sub_roles) > 0:
-			sub_role_query = self.construct_member_sub_role_query(sub_roles)
+			if sub_target_label is None:
+				sub_role_pattern = self.construct_sub_role_pattern(sub_roles, target_label)
+			else:
+				sub_role_pattern = self.construct_sub_role_pattern(sub_roles, target_label, sub_target_label)
 		else:
-			sub_role_query = ""
+			sub_role_pattern = ""
 
 		if len(sub_definitions) > 0:
-			sub_definition_query = self.construct_member_sub_definition_query(sub_definitions)
+			if sub_target_label is None:
+				sub_def_pattern = self.construct_sub_definition_pattern(sub_definitions, target_label)
+			else:
+				sub_def_pattern = self.construct_sub_definition_pattern(sub_definitions, target_label, sub_target_label)
 		else:
-			sub_definition_query = ""
+			sub_def_pattern = ""
 
-		return """
-		PREFIX sbol: <http://sbols.org/v2#>
-		SELECT DISTINCT ?mem WHERE {{ 
-			<{col}> sbol:member ?mem .
-			{ty}
-			{ro}
-			{sty}
-			{sro}
-			{sde}
-		}}
-		""".format(col=collection, ty=type_query, ro=role_query, sty=sub_type_query, sro=sub_role_query, sde=sub_definition_query)
-		
+		if member is None:
+			member_obj = '?' + member_label
+		else:
+			member_obj = ''.join(['<', member, '>'])
+
+		if sub_target_label is None:
+			return """
+			PREFIX sbol: <http://sbols.org/v2#>
+			PREFIX sd2: <http://sd2e.org#>
+			PREFIX prov: <http://www.w3.org/ns/prov#>
+			SELECT DISTINCT ?{tl} WHERE {{ 
+				<{col}> sbol:member {mo} .
+				{mp}
+				{ty}
+				{ro}
+				{sty}
+				{sro}
+				{sde}
+			}}
+			""".format(tl=target_label, col=collection, mo=member_obj, mp=member_pattern, ty=type_pattern, ro=role_pattern, sty=sub_type_pattern, sro=sub_role_pattern, sde=sub_def_pattern)
+		else:
+			return """
+			PREFIX sbol: <http://sbols.org/v2#>
+			PREFIX sd2: <http://sd2e.org#>
+			PREFIX prov: <http://www.w3.org/ns/prov#>
+			SELECT DISTINCT ?{tl} WHERE {{ 
+				<{col}> sbol:member {mo} .
+				{mp}
+				{ty}
+				{ro}
+				{sty}
+				{sro}
+				{sde}
+			}}
+			""".format(tl=sub_target_label, col=collection, mo=member_obj, mp=member_pattern, ty=type_pattern, ro=role_pattern, sty=sub_type_pattern, sro=sub_role_pattern, sde=sub_def_pattern)
+
+	def query_experiment_set_components(self, types, collection=SD2Constants.SD2_EXPERIMENT_COLLECTION, comp_label='comp', roles=[], all_types=True, experiment=None):
+		exp_pattern = self.construct_experiment_pattern(experiment)
+
+		comp_query = self.construct_member_query(collection=collection, member_label='exp', sub_types=types, sub_roles=roles, all_sub_types=all_types, target_label='condition', sub_target_label=comp_label, member=experiment, member_pattern=exp_pattern)
+
+		return self.fetch_SPARQL(self._server, comp_query)
+
+	def query_experiment_set_modules(self, roles, collection=SD2Constants.SD2_EXPERIMENT_COLLECTION, mod_label='mod', experiment=None):
+		exp_pattern = self.construct_experiment_pattern(experiment)
+
+		mod_query = self.construct_member_query(collection=collection, member_label='exp', sub_roles=roles, target_label='condition', sub_target_label=mod_label, member=experiment, member_pattern=exp_pattern)
+
+		return self.fetch_SPARQL(self._server, mod_query)
+
 	# Retrieves from the specified collection of design elements the URIs for all ComponentDefinitions with 
 	# at least one of the specified types (or all of the specified types) and at least one of the specified roles 
 	# This collection is typically associated with a challenge problem.
-	def query_design_set_components(self, collection, types, roles=[], all_types=True):
-		comp_query = self.construct_member_query(collection, types, roles, all_types)
+	def query_design_set_components(self, types, collection=SD2Constants.SD2_DESIGN_COLLECTION, comp_label='comp', roles=[], all_types=True, sub_types=[], sub_roles=[], sub_definitions=[], all_sub_types=True):
+		comp_query = self.construct_member_query(collection, comp_label, types, roles, all_types, sub_types, sub_roles, sub_definitions, all_sub_types)
 
 		return self.fetch_SPARQL(self._server, comp_query)
 
@@ -182,8 +255,8 @@ class SBOLQuery():
 	# at least one of the specified sub-types (or all of the specified sub-types) and with 
 	# at least one of the specified roles.
 	# This collection is typically associated with a challenge problem.
-	def query_design_set_modules(self, collection, roles, sub_types=[], sub_roles=[], sub_definitions=[], all_sub_types=False):
-		mod_query = self.construct_member_query(collection=collection, roles=roles, sub_types=sub_types, sub_roles=sub_roles, sub_definitions=sub_definitions, all_sub_types=all_sub_types)
+	def query_design_set_modules(self, roles, collection=SD2Constants.SD2_DESIGN_COLLECTION, mod_label='mod', sub_types=[], sub_roles=[], sub_definitions=[], all_sub_types=True):
+		mod_query = self.construct_member_query(collection=collection, member_label=mod_label, roles=roles, sub_types=sub_types, sub_roles=sub_roles, sub_definitions=sub_definitions, all_sub_types=all_sub_types)
 
 		return self.fetch_SPARQL(self._server, mod_query)
 
