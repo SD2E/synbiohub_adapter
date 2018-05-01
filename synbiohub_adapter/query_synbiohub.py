@@ -24,8 +24,8 @@ class SynBioHubQuery(SBOLQuery):
 
 	# Retrieves the URIs for all controls from the specified collection of design elements.
 	# This collection is typically associated with a challenge problem.
-	def query_design_set_controls(self, collection, sub_types=[], sub_roles=[], sub_definitions=[]):
-		return self.query_design_set_modules([SBOLConstants.CONTROL], collection, 'control', sub_types, sub_roles, sub_definitions)
+	def query_design_set_controls(self, collection, sub_types=[], sub_roles=[], definitions=[]):
+		return self.query_design_set_modules([SBOLConstants.CONTROL], collection, 'control', sub_types, sub_roles, definitions)
 
 	# Retrieves the URIs for all fluorescent bead controls from the specified collection of design elements.
 	# This collection is typically associated with a challenge problem.
@@ -40,7 +40,7 @@ class SynBioHubQuery(SBOLQuery):
 	# Retrieves the URIs for all LUDOX controls from the specified collection of design elements.
 	# This collection is typically associated with a challenge problem.
 	def query_design_set_ludox_controls(self, collection):
-		return self.query_design_set_controls(collection=collection, sub_definitions=[SD2Constants.LUDOX])
+		return self.query_design_set_controls(collection=collection, definitions=[SD2Constants.LUDOX])
 
 	# Retrieves the URIs for all water controls from the specified collection of design elements.
 	# This collection is typically associated with a challenge problem.
@@ -48,8 +48,8 @@ class SynBioHubQuery(SBOLQuery):
 		return self.query_design_set_controls(collection, [SBOLConstants.H2O])
 
 	# Retrieves the URIs for all controls from the collection of every SD2 design element.
-	def query_design_controls(self, sub_types=[], sub_roles=[], sub_definitions=[]):
-		return self.query_design_set_modules(roles=[SBOLConstants.CONTROL], mod_label='control', sub_types=sub_types, sub_roles=sub_roles, sub_definitions=sub_definitions)
+	def query_design_controls(self, sub_types=[], sub_roles=[], definitions=[]):
+		return self.query_design_set_modules(roles=[SBOLConstants.CONTROL], mod_label='control', sub_types=sub_types, sub_roles=sub_roles, definitions=definitions)
 
 	# Retrieves the URIs for all fluorescent bead controls from the collection of every SD2 design element.
 	def query_design_fbead_controls(self):
@@ -61,7 +61,7 @@ class SynBioHubQuery(SBOLQuery):
 
 	# Retrieves the URIs for all fluorescent bead controls from the collection of every SD2 design element.
 	def query_design_ludox_controls(self):
-		return self.query_design_controls(sub_definitions=[SD2Constants.LUDOX])
+		return self.query_design_controls(definitions=[SD2Constants.LUDOX])
 
 	# Retrieves the URIs for all water controls from the collection of every SD2 design element.
 	def query_design_water_controls(self):
