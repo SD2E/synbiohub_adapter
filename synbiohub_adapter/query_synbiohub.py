@@ -323,19 +323,22 @@ class SynBioHubQuery(SBOLQuery):
 		intent_query = """
 		PREFIX sd2: <http://sd2e.org#>
 		PREFIX dcterms: <http://purl.org/dc/terms/>
-		SELECT ?dname ?ename ?oname
+		SELECT ?dname ?ename ?oname ?ddef ?edef ?odef
 		WHERE {{ {{
   			<{exp}> sd2:experimentalDesign ?design .
   			?design sd2:diagnosticVariable ?dvar .
-  			?dvar dcterms:title ?dname
+  			?dvar dcterms:title ?dname .
+  			OPTIONAL {{?dvar sd2:definition ?ddef}}
   		}} UNION {{
   			<{exp}> sd2:experimentalDesign ?design .
   			?design sd2:experimentalVariable ?evar .
-  			?evar dcterms:title ?ename
+  			?evar dcterms:title ?ename .
+  			OPTIONAL {{?evar sd2:definition ?edef}}
   		}} UNION {{
   			<{exp}> sd2:experimentalDesign ?design .
   			?design sd2:outcomeVariable ?ovar .
-  			?ovar dcterms:title ?oname
+  			?ovar dcterms:title ?oname .
+  			OPTIONAL {{?ovar sd2:definition ?odef}}
   		}} }}
 		""".format(exp=experiment)
 
@@ -347,17 +350,26 @@ class SynBioHubQuery(SBOLQuery):
 
 		for binding in intent_data['results']['bindings']:
 			try:
-				intent['diagnostic-variables'].append({'name': binding['dname']['value']})
+				try:
+					intent['diagnostic-variables'].append({'name': binding['dname']['value'], 'uri': binding['ddef']['value']})
+				except:
+					intent['diagnostic-variables'].append({'name': binding['dname']['value']})
 			except:
 				try:
-					exp_intent['outcome-variables'].append({'name': binding['oname']['value']})
+					try:
+						exp_intent['outcome-variables'].append({'name': binding['oname']['value'], 'uri': binding['odef']['value']})
+					except:
+						exp_intent['outcome-variables'].append({'name': binding['oname']['value']})
 				except:
 					ename = binding['ename']['value']
 					try:
 						assert ename in level_switcher
 					except:
 						level_switcher[ename] = len(exp_intent['experimental-variables'])
-						exp_intent['experimental-variables'].append({'name': ename})
+						try:
+							exp_intent['experimental-variables'].append({'name': ename, 'uri': binding['edef']['value']})
+						except:
+							exp_intent['experimental-variables'].append({'name': ename})
 					
 		truth_table_query = """
 		PREFIX sd2: <http://sd2e.org#>
