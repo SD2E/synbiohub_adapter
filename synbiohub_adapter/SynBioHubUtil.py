@@ -15,7 +15,6 @@ class SBOLConstants():
 	EFFECTOR = "http://identifiers.org/chebi/CHEBI:35224"
 	FLUORESCEIN = "http://identifiers.org/chebi/CHEBI:31624"
 	FLUORESCENCE = "http://purl.obolibrary.org/obo/NCIT_C16586"
-	FLUORESCENT_PROBE = "http://identifiers.org/chebi/CHEBI:39442"
 	H2O = "http://identifiers.org/chebi/CHEBI:15377"
 
 	LOGIC_OPERATOR = "http://edamontology.org/data_2133"

@@ -30,7 +30,7 @@ class SynBioHubQuery(SBOLQuery):
 	# Retrieves the URIs for all fluorescent bead controls from the specified collection of design elements.
 	# This collection is typically associated with a challenge problem.
 	def query_design_set_fbead_controls(self, collection):
-		return self.query_design_set_controls(collection, [SBOLConstants.BEAD], [SBOLConstants.FLUORESCENT_PROBE])
+		return self.query_design_set_controls(collection, [SBOLConstants.BEAD], [SBOLConstants.FLUORESCENCE])
 
 	# Retrieves the URIs for all fluorescein controls from the specified collection of design elements.
 	# This collection is typically associated with a challenge problem.
@@ -53,7 +53,7 @@ class SynBioHubQuery(SBOLQuery):
 
 	# Retrieves the URIs for all fluorescent bead controls from the collection of every SD2 design element.
 	def query_design_fbead_controls(self):
-		return self.query_design_controls([SBOLConstants.BEAD], [SBOLConstants.FLUORESCENT_PROBE])
+		return self.query_design_controls([SBOLConstants.BEAD], [SBOLConstants.FLUORESCENCE])
 
 	# Retrieves the URIs for all water controls from the collection of every SD2 design element.
 	def query_design_fluorescein_controls(self):
