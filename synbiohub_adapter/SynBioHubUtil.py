@@ -47,6 +47,29 @@ class SD2Constants():
 	
 	LUDOX = 'https://hub.sd2e.org/user/sd2e/design/ludox_S40/1'
 
+	# Flow ETL
+	# Link from plan_uri
+	FLOW_POSITIVE_CONTROL = 'http://sd2e.org#positive_control'
+	FLOW_POSITIVE_CONTROL_CHANNEL_CONFIG = 'http://sd2e.org#positive_control_channel_config'
+	FLOW_NEGATIVE_CONTROL = 'http://sd2e.org#negative_control'
+	FLOW_BEAD_CONTROL = 'http://sd2e.org#bead_control'
+
+	# Runtime parameters, link from sample_uri
+	FLOW_BEAD_MODEL = 'http://sd2e.org#bead_model'
+	FLOW_BEAD_BATCH = 'http://sd2e.org#bead_batch'
+
+	# bandpass/longpass channel configuration
+	CYTOMETER_CHANNEL_EW = 'http://sd2e.org#cytometer_channel_excitation_wavelength'
+	CYTOMETER_CHANNEL_EM_FILTER_TYPE = 'http://sd2e.org#cytometer_channel_emission_filter_type'
+	CYTOMETER_CHANNEL_EM_FILTER_CENTER = 'http://sd2e.org#cytometer_channel_emission_filter_center'
+	CYTOMETER_CHANNEL_EM_FILTER_WIDTH = 'http://sd2e.org#cytometer_channel_emission_filter_width'
+	CYTOMETER_CHANNEL_FILTER_CUTOFF = 'http://sd2e.org#cytometer_channel_emission_filter_cutoff'
+
+	# PR ETL, link from plan_uri
+	PR_LUDOX_CONTROL = 'http://sd2e.org#platereader_LUDOX_control'
+	PR_WATER_CONTROL = 'http://sd2e.org#platereader_water_control'
+	PR_FLUORESCEIN_CONTROL = 'http://sd2e.org#platereader_fluorescein_control'
+
 class SBHConstants():
 	SD2_SERVER = "http://hub-api.sd2e.org:80/sparql"
 	BBN_SERVER = "https://synbiohub.bbn.com/"
