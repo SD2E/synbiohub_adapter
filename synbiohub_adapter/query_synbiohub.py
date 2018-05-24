@@ -79,17 +79,17 @@ class SynBioHubQuery(SBOLQuery):
 		return self.query_design_set_modules(roles=[SBOLConstants.LOGIC_OPERATOR], mod_label='gate')
 
 	# Retrieves the URIs for all logic gates used in the specified experiment.
-	def query_single_experiment_gates(self, experiment):
-		return self.query_experiment_set_modules(roles=[SBOLConstants.LOGIC_OPERATOR], mod_label='gate', experiments=[experiment])
+	def query_single_experiment_gates(self, experiment, test_samples_only=False):
+		return self.query_experiment_set_modules(roles=[SBOLConstants.LOGIC_OPERATOR], mod_label='gate', test_samples_only=test_samples_only, experiments=[experiment])
 
 	# Retrieves the URIs for all logic gates used in the specified collection of experiments.
 	# This collection is typically associated with a challenge problem.
-	def query_experiment_set_gates(self, collection):
-		return self.query_experiment_set_modules([SBOLConstants.LOGIC_OPERATOR], [collection], 'gate')
+	def query_experiment_set_gates(self, collection, test_samples_only=False):
+		return self.query_experiment_set_modules([SBOLConstants.LOGIC_OPERATOR], [collection], 'gate', test_samples_only)
 
 	# Retrieves the URIs for all logic gates used by experiments in the collection of every SD2 experiment.
-	def query_experiment_gates(self):
-		return self.query_experiment_set_modules(roles=[SBOLConstants.LOGIC_OPERATOR], mod_label='gate')
+	def query_experiment_gates(self, test_samples_only=False):
+		return self.query_experiment_set_modules(roles=[SBOLConstants.LOGIC_OPERATOR], mod_label='gate', test_samples_only=test_samples_only)
 
 	# Inducer query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
@@ -233,17 +233,17 @@ class SynBioHubQuery(SBOLQuery):
 		return self.query_design_set_components(types=[BIOPAX_DNA, SO_CIRCULAR], comp_label='plasmid')
 
 	# Retrieves the URIs for all plasmids in the specified experiment.
-	def query_single_experiment_plasmids(self, experiment):
-		return self.query_experiment_set_components(types=[BIOPAX_DNA, SO_CIRCULAR], comp_label='plasmid', experiments=[experiment])
+	def query_single_experiment_plasmids(self, experiment, test_samples_only=False):
+		return self.query_experiment_set_components(types=[BIOPAX_DNA, SO_CIRCULAR], comp_label='plasmid', test_samples_only=test_samples_only, experiments=[experiment])
 
 	# Retrieves the URIs for all plasmids used in the specified collection of experiments.
 	# This collection is typically associated with a challenge problem.
-	def query_experiment_set_plasmids(self, collection):
-		return self.query_experiment_set_components([BIOPAX_DNA, SO_CIRCULAR], [collection], 'plasmid')
+	def query_experiment_set_plasmids(self, collection, test_samples_only=False):
+		return self.query_experiment_set_components([BIOPAX_DNA, SO_CIRCULAR], [collection], 'plasmid', test_samples_only)
 
 	# Retrieves the URIs for all plasmids used by experiments in the collection of every SD2 experiment.
-	def query_experiment_plasmids(self):
-		return self.query_experiment_set_components(types=[BIOPAX_DNA, SO_CIRCULAR], comp_label='plasmid')
+	def query_experiment_plasmids(self, test_samples_only=False):
+		return self.query_experiment_set_components(types=[BIOPAX_DNA, SO_CIRCULAR], comp_label='plasmid', test_samples_only=test_samples_only)
 
 	# Retrieves the URIs for all plasmids in the specified sample.
 	def query_sample_plasmids(self, sample):
@@ -286,23 +286,23 @@ class SynBioHubQuery(SBOLQuery):
 		return self.query_design_set_components(types=[SBOLConstants.NCIT_STRAIN, SBOLConstants.OBI_STRAIN], comp_label='strain', all_types=False)
 
 	# Retrieves the URIs for all inducers in the specified experiment.
-	def query_single_experiment_strains(self, experiment):
-		return self.query_experiment_set_components(types=[SBOLConstants.NCIT_STRAIN, SBOLConstants.OBI_STRAIN], comp_label='strain', all_types=False, experiments=[experiment])
+	def query_single_experiment_strains(self, experiment, test_samples_only=False):
+		return self.query_experiment_set_components(types=[SBOLConstants.NCIT_STRAIN, SBOLConstants.OBI_STRAIN], comp_label='strain', test_samples_only=test_samples_only, all_types=False, experiments=[experiment])
 
 	# Retrieves the URIs for all strains used in the specified collection of experiments.
 	# This collection is typically associated with a challenge problem.
-	def query_experiment_set_strains(self, collection):
-		return self.query_experiment_set_components(types=[SBOLConstants.NCIT_STRAIN, SBOLConstants.OBI_STRAIN], collections=[collection], comp_label='strain', all_types=False)
+	def query_experiment_set_strains(self, collection, test_samples_only=False):
+		return self.query_experiment_set_components(types=[SBOLConstants.NCIT_STRAIN, SBOLConstants.OBI_STRAIN], collections=[collection], comp_label='strain', test_samples_only=test_samples_only, all_types=False)
 
 	# Retrieves the URIs for all strains used by experiments in the collection of every SD2 experiment.
-	def query_experiment_strains(self):
-		return self.query_experiment_set_components(types=[SBOLConstants.NCIT_STRAIN, SBOLConstants.OBI_STRAIN], comp_label='strain', all_types=False)
+	def query_experiment_strains(self, test_samples_only=False):
+		return self.query_experiment_set_components(types=[SBOLConstants.NCIT_STRAIN, SBOLConstants.OBI_STRAIN], comp_label='strain', test_samples_only=test_samples_only, all_types=False)
 
 	# Sample query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 	def query_single_experiment_samples_by_probability(self, experiment, threshold):
 		sample_query = """
-		PREFIX sd2: <http://sd2e.org#>
+		PREFIX sd2: <http://sd2e.org#> 
 		PREFIX prov: <http://www.w3.org/ns/prov#> 
 		SELECT ?sample ?prob WHERE {{ 
   			<{exp}> sd2:experimentalData ?data;
