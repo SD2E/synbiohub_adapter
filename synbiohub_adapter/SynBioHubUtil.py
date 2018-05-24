@@ -214,20 +214,20 @@ class SBOLQuery():
 		if len(experiments) == 0:
 			return """
 			?exp sd2:experimentalData ?data .
-			?data prov:wasDerivedFrom ?sample .
+			?data prov:wasDerivedFrom+ ?sample .
 			?sample sbol:built ?{el} .
 			""".format(el=entity_label)
 		elif len(experiments) == 1:
 			return """
 			{exp} sd2:experimentalData ?data .
-			?data prov:wasDerivedFrom ?sample .
+			?data prov:wasDerivedFrom+ ?sample .
 			?sample sbol:built ?{el} .
 			""".format(exp=self.serialize_objects(experiments), el=entity_label)
 		else:
 			return """
 			VALUES (?exp) {{ {exp} }}
 			?exp sd2:experimentalData ?data .
-			?data prov:wasDerivedFrom ?sample .
+			?data prov:wasDerivedFrom+ ?sample .
 			?sample sbol:built ?{el} .
 			""".format(exp=self.serialize_options(experiments), el=entity_label)		
 
@@ -245,9 +245,6 @@ class SBOLQuery():
 		sub_sub_entity_pattern = self.construct_entity_pattern(types=sub_types, roles=sub_roles, all_types=all_sub_types, entity_label='sub_entity', type_label='sub_type', role_label='sub_role')
 		sub_entity_pattern = self.construct_entity_pattern(types, roles, all_types, sub_sub_entity_pattern, definitions, entity_label)
 		entity_pattern_2 = self.construct_entity_pattern(sub_entity_pattern=sub_entity_pattern, sub_label='sub_prime', sub_entity_label=entity_label)
-
-		# if member_label == entity_label:
-			# member_label = 'entity'
 
 		collection_pattern_2 = self.construct_collection_pattern(collections, member_label, members)
 
