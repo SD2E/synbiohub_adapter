@@ -19,6 +19,13 @@ class TestSBHQueries(unittest.TestCase):
 					Tramy Nguyen
 	'''
 
+	# Test collection query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+	def test_query_collection_members(self):
+		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
+		members = sbh_query.query_collection_members([SD2Constants.YEAST_GATES_DESIGN_COLLECTION], ['https://hub.sd2e.org/user/sd2e/design/UWBF_7376/1', 'https://hub.sd2e.org/user/sd2e/design/pAN4036/1'])
+		print(members)
+
 	# Test control query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 	def test_query_design_set_controls(self):

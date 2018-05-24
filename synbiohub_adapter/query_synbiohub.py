@@ -25,27 +25,27 @@ class SynBioHubQuery(SBOLQuery):
 	# Retrieves the URIs for all controls from the specified collection of design elements.
 	# This collection is typically associated with a challenge problem.
 	def query_design_set_controls(self, collection, sub_types=[], sub_roles=[], definitions=[]):
-		return self.query_design_set_modules([SBOLConstants.CONTROL], collection, 'control', sub_types, sub_roles, definitions)
+		return self.query_design_set_modules([SBOLConstants.CONTROL], [collection], 'control', sub_types, sub_roles, definitions)
 
 	# Retrieves the URIs for all fluorescent bead controls from the specified collection of design elements.
 	# This collection is typically associated with a challenge problem.
 	def query_design_set_fbead_controls(self, collection):
-		return self.query_design_set_controls(collection, [SBOLConstants.BEAD], [SBOLConstants.FLUORESCENCE])
+		return self.query_design_set_controls([collection], [SBOLConstants.BEAD], [SBOLConstants.FLUORESCENCE])
 
 	# Retrieves the URIs for all fluorescein controls from the specified collection of design elements.
 	# This collection is typically associated with a challenge problem.
 	def query_design_set_fluorescein_controls(self, collection):
-		return self.query_design_set_controls(collection, [SBOLConstants.FLUORESCEIN])
+		return self.query_design_set_controls([collection], [SBOLConstants.FLUORESCEIN])
 
 	# Retrieves the URIs for all LUDOX controls from the specified collection of design elements.
 	# This collection is typically associated with a challenge problem.
 	def query_design_set_ludox_controls(self, collection):
-		return self.query_design_set_controls(collection=collection, definitions=[SD2Constants.LUDOX])
+		return self.query_design_set_controls(collections=[collection], definitions=[SD2Constants.LUDOX])
 
 	# Retrieves the URIs for all water controls from the specified collection of design elements.
 	# This collection is typically associated with a challenge problem.
 	def query_design_set_water_controls(self, collection):
-		return self.query_design_set_controls(collection, [SBOLConstants.H2O])
+		return self.query_design_set_controls([collection], [SBOLConstants.H2O])
 
 	# Retrieves the URIs for all controls from the collection of every SD2 design element.
 	def query_design_controls(self, sub_types=[], sub_roles=[], definitions=[]):
@@ -72,7 +72,7 @@ class SynBioHubQuery(SBOLQuery):
 	# Retrieves the URIs for all logic gates fom the specified collection of design elements.
 	# This collection is typically associated with a challenge problem.
 	def query_design_set_gates(self, collection):
-		return self.query_design_set_modules([SBOLConstants.LOGIC_OPERATOR], collection, 'gate')
+		return self.query_design_set_modules([SBOLConstants.LOGIC_OPERATOR], [collection], 'gate')
 
 	# Retrieves the URIs for all logic gates from the collection of every SD2 design element.
 	def query_design_gates(self):
@@ -80,12 +80,12 @@ class SynBioHubQuery(SBOLQuery):
 
 	# Retrieves the URIs for all logic gates used in the specified experiment.
 	def query_single_experiment_gates(self, experiment):
-		return self.query_experiment_set_modules(roles=[SBOLConstants.LOGIC_OPERATOR], mod_label='gate', experiment=experiment)
+		return self.query_experiment_set_modules(roles=[SBOLConstants.LOGIC_OPERATOR], mod_label='gate', experiments=[experiment])
 
 	# Retrieves the URIs for all logic gates used in the specified collection of experiments.
 	# This collection is typically associated with a challenge problem.
 	def query_experiment_set_gates(self, collection):
-		return self.query_experiment_set_modules([SBOLConstants.LOGIC_OPERATOR], collection, 'gate')
+		return self.query_experiment_set_modules([SBOLConstants.LOGIC_OPERATOR], [collection], 'gate')
 
 	# Retrieves the URIs for all logic gates used by experiments in the collection of every SD2 experiment.
 	def query_experiment_gates(self):
@@ -215,7 +215,7 @@ class SynBioHubQuery(SBOLQuery):
 	# Retrieves the URIs for all media from the specified collection of design elements.
 	# This collection is typically associated with a challenge problem.
 	def query_design_set_media(self, collection):
-		return self.query_design_set_modules([SBOLConstants.MEDIA], collection, 'media')
+		return self.query_design_set_modules([SBOLConstants.MEDIA], [collection], 'media')
 
 	# Retrieves the URIs for all media from the collection of every SD2 design element.
 	def query_design_media(self):
@@ -226,7 +226,7 @@ class SynBioHubQuery(SBOLQuery):
 	# Retrieves the URIs for all plasmids from the specified collection of design elements.
 	# This collection is typically associated with a challenge problem.
 	def query_design_set_plasmids(self, collection):
-		return self.query_design_set_components([BIOPAX_DNA, SO_CIRCULAR], collection, 'plasmid')
+		return self.query_design_set_components([BIOPAX_DNA, SO_CIRCULAR], [collection], 'plasmid')
 
 	# Retrieves the URIs for all plasmids from the collection of every SD2 design element.
 	def query_design_plasmids(self):
@@ -234,12 +234,12 @@ class SynBioHubQuery(SBOLQuery):
 
 	# Retrieves the URIs for all plasmids in the specified experiment.
 	def query_single_experiment_plasmids(self, experiment):
-		return self.query_experiment_set_components(types=[BIOPAX_DNA, SO_CIRCULAR], comp_label='plasmid', experiment=experiment)
+		return self.query_experiment_set_components(types=[BIOPAX_DNA, SO_CIRCULAR], comp_label='plasmid', experiments=[experiment])
 
 	# Retrieves the URIs for all plasmids used in the specified collection of experiments.
 	# This collection is typically associated with a challenge problem.
 	def query_experiment_set_plasmids(self, collection):
-		return self.query_experiment_set_components([BIOPAX_DNA, SO_CIRCULAR], collection, 'plasmid')
+		return self.query_experiment_set_components([BIOPAX_DNA, SO_CIRCULAR], [collection], 'plasmid')
 
 	# Retrieves the URIs for all plasmids used by experiments in the collection of every SD2 experiment.
 	def query_experiment_plasmids(self):
@@ -279,7 +279,7 @@ class SynBioHubQuery(SBOLQuery):
 	# Retrieves the URIs for all strains from the specified collection of design elements.
 	# This collection is typically associated with a challenge problem.
 	def query_design_set_strains(self, collection):
-		return self.query_design_set_components(types=[SBOLConstants.NCIT_STRAIN, SBOLConstants.OBI_STRAIN], collection=collection, comp_label='strain', all_types=False)
+		return self.query_design_set_components(types=[SBOLConstants.NCIT_STRAIN, SBOLConstants.OBI_STRAIN], collections=[collection], comp_label='strain', all_types=False)
 
 	# Retrieves the URIs for all strains from the collection of every SD2 design element.
 	def query_design_strains(self):
@@ -287,12 +287,12 @@ class SynBioHubQuery(SBOLQuery):
 
 	# Retrieves the URIs for all inducers in the specified experiment.
 	def query_single_experiment_strains(self, experiment):
-		return self.query_experiment_set_components(types=[SBOLConstants.NCIT_STRAIN, SBOLConstants.OBI_STRAIN], comp_label='strain', all_types=False, experiment=experiment)
+		return self.query_experiment_set_components(types=[SBOLConstants.NCIT_STRAIN, SBOLConstants.OBI_STRAIN], comp_label='strain', all_types=False, experiments=[experiment])
 
 	# Retrieves the URIs for all strains used in the specified collection of experiments.
 	# This collection is typically associated with a challenge problem.
 	def query_experiment_set_strains(self, collection):
-		return self.query_experiment_set_components(types=[SBOLConstants.NCIT_STRAIN, SBOLConstants.OBI_STRAIN], collection=collection, comp_label='strain', all_types=False)
+		return self.query_experiment_set_components(types=[SBOLConstants.NCIT_STRAIN, SBOLConstants.OBI_STRAIN], collections=[collection], comp_label='strain', all_types=False)
 
 	# Retrieves the URIs for all strains used by experiments in the collection of every SD2 experiment.
 	def query_experiment_strains(self):
