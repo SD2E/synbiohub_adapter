@@ -171,7 +171,7 @@ class SBOLQuery():
 		else:
 			return ""
 
-	def construct_collection_pattern(self, collections=[], member_label='entity', members=[], member_cardinality='+', entity_label='entity', collection_label='collection'):
+	def construct_collection_pattern(self, collections=[], member_label='entity', members=[], member_cardinality='*', entity_label='entity', collection_label='collection'):
 		member_pattern_switcher = {
 			'exp': self.construct_experiment_pattern
 		}
@@ -210,31 +210,36 @@ class SBOLQuery():
 				{mp}
 				""".format(cl=collection_label, ml=member_label, mp=member_pattern)
 
-	def construct_experiment_pattern(self, experiments=[], entity_label='entity', sample_cardinality='+'):
+	def construct_experiment_pattern(self, experiments=[], entity_label='entity', sample_cardinality='*'):
+		if len(sample_cardinality) > 0:
+			derivation_path = 'prov:wasDerivedFrom{sc}/sbol:built'.format(sc=sample_cardinality)
+		else:
+			derivation_path = 'sbol:built'
+
 		if len(experiments) == 0:
 			return """
 			?exp sd2:experimentalData ?data .
-			?data prov:wasDerivedFrom{sc} ?sample .
-			?sample sbol:built ?{el} .
-			""".format(el=entity_label, sc=sample_cardinality)
+			?data prov:wasDerivedFrom ?sample .
+			?sample {dp} ?{el} .
+			""".format(el=entity_label, dp=derivation_path)
 		elif len(experiments) == 1:
 			return """
 			{exp} sd2:experimentalData ?data .
-			?data prov:wasDerivedFrom{sc} ?sample .
-			?sample sbol:built ?{el} .
-			""".format(exp=self.serialize_objects(experiments), el=entity_label, sc=sample_cardinality)
+			?data prov:wasDerivedFrom ?sample .
+			?sample {dp} ?{el} .
+			""".format(exp=self.serialize_objects(experiments), el=entity_label, dp=derivation_path)
 		else:
 			return """
 			VALUES (?exp) {{ {exp} }}
 			?exp sd2:experimentalData ?data .
-			?data prov:wasDerivedFrom{sc} ?sample .
-			?sample sbol:built ?{el} .
-			""".format(exp=self.serialize_options(experiments), el=entity_label, sc=sample_cardinality)		
+			?data prov:wasDerivedFrom ?sample .
+			?sample {dp} ?{el} .
+			""".format(exp=self.serialize_options(experiments), el=entity_label, dp=derivation_path)		
 
 	# Constructs a SPARQL query for all members of the specified collection with
 	# at least one of the specified types (or all of the specified types) and
 	# at least one of the specified roles.
-	def construct_collection_entity_query(self, collections, member_label='entity', types=[], roles=[], all_types=True, sub_types=[], sub_roles=[], definitions=[], all_sub_types=True, entity_label=None, members=[], member_cardinality='+', entity_depth=2):
+	def construct_collection_entity_query(self, collections, member_label='entity', types=[], roles=[], all_types=True, sub_types=[], sub_roles=[], definitions=[], all_sub_types=True, entity_label=None, other_entity_labels=[], members=[], member_cardinality='+', entity_depth=2):
 		if entity_label is None:
 			entity_label = member_label
 
@@ -242,23 +247,25 @@ class SBOLQuery():
 		entity_pattern_1 = self.construct_entity_pattern(types, roles, all_types, sub_entity_pattern, definitions, entity_label)
 		collection_pattern_1 = self.construct_collection_pattern(collections, member_label, members, member_cardinality, entity_label)
 
+		target_labels = []
 		if len(collections) == 0:
 			return ""
-		elif len(collections) == 1:
-			targets = "?{el}".format(el=entity_label)
-		else:
-			targets = "?collection ?{el}".format(el=entity_label)
+		elif len(collections) > 1:
+			target_labels.append('collection')
+		if len(other_entity_labels) > 0:
+			target_labels.extend(other_entity_labels)
+		target_labels.append(entity_label)
 
 		if entity_depth == 1:
 			return """
 			PREFIX sbol: <http://sbols.org/v2#>
 			PREFIX sd2: <http://sd2e.org#>
 			PREFIX prov: <http://www.w3.org/ns/prov#>
-			SELECT DISTINCT {tar} WHERE {{
+			SELECT DISTINCT ?{tl} WHERE {{
 				{cp1}
 				{ep1}
 			}}
-			""".format(tar=targets, cp1=collection_pattern_1, ep1=entity_pattern_1)
+			""".format(tl=' ?'.join(target_labels), cp1=collection_pattern_1, ep1=entity_pattern_1)
 		elif entity_depth == 2:
 			sub_sub_entity_pattern = self.construct_entity_pattern(types=sub_types, roles=sub_roles, all_types=all_sub_types, entity_label='sub_entity', type_label='sub_type', role_label='sub_role')
 			sub_entity_pattern = self.construct_entity_pattern(types, roles, all_types, sub_sub_entity_pattern, definitions, entity_label)
@@ -270,36 +277,81 @@ class SBOLQuery():
 			PREFIX sbol: <http://sbols.org/v2#>
 			PREFIX sd2: <http://sd2e.org#>
 			PREFIX prov: <http://www.w3.org/ns/prov#>
-			SELECT DISTINCT {tar} WHERE {{ {{
+			SELECT DISTINCT ?{tl} WHERE {{ {{
 				{cp1}
 				{ep1}
 			}} UNION {{
 				{cp2}
 				{ep2}
 			}} }}
-			""".format(tar=targets, cp1=collection_pattern_1, cp2=collection_pattern_2, ep1=entity_pattern_1, ep2=entity_pattern_2)
+			""".format(tl=' ?'.join(target_labels), cp1=collection_pattern_1, cp2=collection_pattern_2, ep1=entity_pattern_1, ep2=entity_pattern_2)
 		else:
 			return ""
 
-	def query_experiment_set_components(self, types, collections=[SD2Constants.SD2_EXPERIMENT_COLLECTION], comp_label='comp', test_samples_only=False, roles=[], all_types=True, sub_types=[], sub_roles=[], definitions=[], all_sub_types=True, experiments=[]):
-		if test_samples_only:
-			sample_cardinality = ''
+	def format_query_result(self, query_result, binding_key, group_key=None):
+		if group_key is None:
+			formatted = set()
+
+			for binding in query_result['results']['bindings']:
+				binding_value = binding[binding_key]['value']
+
+				formatted.add(binding_value)
+
+			return list(formatted)
 		else:
-			sample_cardinality = '+'
+			formatted = {}
 
-		comp_query = self.construct_collection_entity_query(collections, 'exp', types, roles, all_types, sub_types, sub_roles, definitions, all_sub_types, comp_label, experiments, sample_cardinality)
+			for binding in query_result['results']['bindings']:
+				binding_value = binding[binding_key]['value']
 
-		return self.fetch_SPARQL(self._server, comp_query)
+				group_value = binding[group_key]['value']
 
-	def query_experiment_set_modules(self, roles, collections=[SD2Constants.SD2_EXPERIMENT_COLLECTION], mod_label='mod', test_samples_only=False, sub_types=[], sub_roles=[], definitions=[], all_sub_types=True, experiments=[]):
-		if test_samples_only:
-			sample_cardinality = ''
+				if group_value not in formatted:
+					formatted[group_value] = set()
+				formatted[group_value].add(binding_value)
+
+			for key in formatted:
+				formatted[key] = list(formatted[key])
+
+			return formatted
+
+	def query_experiment_set_components(self, types, collections=[SD2Constants.SD2_EXPERIMENT_COLLECTION], comp_label='comp', trace_derivation=True, by_sample=True, roles=[], all_types=True, sub_types=[], sub_roles=[], definitions=[], all_sub_types=True, experiments=[]):
+		if trace_derivation:
+			sample_cardinality = '*'
 		else:
-			sample_cardinality = '+'
+			sample_cardinality = ''
 
-		mod_query = self.construct_collection_entity_query(collections=collections, member_label='exp', roles=roles, sub_types=sub_types, sub_roles=sub_roles, definitions=definitions, all_sub_types=all_sub_types, entity_label=mod_label, members=experiments, member_cardinality=sample_cardinality)
+		if by_sample:
+			sample_labels = ['sample']
+		else:
+			sample_labels = []
 
-		return self.fetch_SPARQL(self._server, mod_query)
+		comp_query = self.construct_collection_entity_query(collections, 'exp', types, roles, all_types, sub_types, sub_roles, definitions, all_sub_types, comp_label, sample_labels, experiments, sample_cardinality)
+		comp_query_results = self.fetch_SPARQL(self._server, comp_query)
+
+		if len(sample_labels) > 0:
+			return self.format_query_result(comp_query_results, comp_label, sample_labels[0])
+		else:
+			return self.format_query_result(comp_query_results, comp_label)
+
+	def query_experiment_set_modules(self, roles, collections=[SD2Constants.SD2_EXPERIMENT_COLLECTION], mod_label='mod', trace_derivation=True, by_sample=True, sub_types=[], sub_roles=[], definitions=[], all_sub_types=True, experiments=[]):
+		if trace_derivation:
+			sample_cardinality = '*'
+		else:
+			sample_cardinality = ''
+
+		if by_sample:
+			sample_labels = ['sample']
+		else:
+			sample_labels = []
+
+		mod_query = self.construct_collection_entity_query(collections=collections, member_label='exp', roles=roles, sub_types=sub_types, sub_roles=sub_roles, definitions=definitions, all_sub_types=all_sub_types, entity_label=mod_label, other_entity_labels=sample_labels, members=experiments, member_cardinality=sample_cardinality)
+		mod_query_results = self.fetch_SPARQL(self._server, mod_query)
+
+		if len(sample_labels) > 0:
+			return self.format_query_result(mod_query_results, mod_label, sample_labels[0])
+		else:
+			return self.format_query_result(mod_query_results, mod_label)
 
 	# Retrieves from the specified collection of design elements the URIs for all ComponentDefinitions with 
 	# at least one of the specified types (or all of the specified types) and at least one of the specified roles 
@@ -321,8 +373,6 @@ class SBOLQuery():
 
 	def query_collection_members(self, collections, members):
 		mem_query = self.construct_collection_entity_query(collections=collections, members=members, depth=1)
-
-		print(mem_query)
 
 		return self.fetch_SPARQL(self._server, mem_query)
 

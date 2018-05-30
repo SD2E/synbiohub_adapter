@@ -180,6 +180,7 @@ class TestSBHQueries(unittest.TestCase):
 		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
 		plasmids = sbh_query.query_single_experiment_plasmids(rule_30_experiment)
 		print(plasmids)
+		print(len(plasmids))
 
 	def test_query_experiment_set_plasmids(self):
 		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
@@ -209,7 +210,7 @@ class TestSBHQueries(unittest.TestCase):
 
 	def test_query_design_set_strains(self):
 		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
-		strains = sbh_query.query_design_set_strains(SD2Constants.RULE_30_DESIGN_COLLECTION)
+		strains = sbh_query.query_design_set_strains(SD2Constants.YEAST_GATES_DESIGN_COLLECTION)
 		print(strains)
 
 	def test_query_design_strains(self):
