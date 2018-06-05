@@ -14,7 +14,7 @@ def main(args=None):
     parser = argparse.ArgumentParser()
     parser.add_argument('-i', '--input_files', nargs='*', default=[f for f in os.listdir('.') if os.path.isfile(f) and f.endswith('.xml')])
     parser.add_argument('-c', '--collection_uri', nargs='?', default=SD2Constants.SD2_DESIGN_COLLECTION)
-    # parser.add_argument('-c', '--collection_uri', nargs='?', default='https://hub.sd2e.org/user/sd2e/test/test_collection/1')
+    parser.add_argument('-b', '--sub_collection_uris', nargs='*', default=[])
     parser.add_argument('-w', '--overwrite', action='store_true')
     parser.add_argument('-u', '--url', nargs='?', default='https://hub.sd2e.org')
     parser.add_argument('-e', '--email', nargs='?', default='sd2_service@sd2e.org')
@@ -28,7 +28,7 @@ def main(args=None):
     sbh = SynBioHub(args.url, args.email, args.password, args.sparql, set(args.locked_predicates))
 
     for doc in docs:
-        sbh.submit_to_collection(doc, args.collection_uri, args.overwrite)
+        sbh.submit_to_collection(doc, args.collection_uri, args.overwrite, args.sub_collection_uris)
 
 def load_documents(sbol_files):
     docs = []
@@ -49,18 +49,23 @@ class SynBioHub():
         self.sparql = sparql
         self.locked_predicates = locked_predicates
 
-    def submit_to_collection(self, doc, collection_uri, overwrite):
+    def submit_to_collection(self, doc, collection_uri, overwrite, sub_collection_uris=[]):
         Config.setOption('validate', False)
         Config.setOption('sbol_typed_uris', False)
 
-        local_to_remote = self.__map_local_to_remote(doc, collection_uri)
+        local_to_remote = self.__map_local_to_remote(doc, collection_uri, sub_collection_uris)
+
+        print('mapped')
 
         if overwrite or len(local_to_remote) == 0:
-
             if len(local_to_remote) > 0:
                 if len(self.locked_predicates) > 0:
-                    self.__merge_remote_predicates(doc, local_to_remote)
+                    self.__copy_remote_predicates(doc, local_to_remote)
                 self.remove_all(local_to_remote.values())
+
+                print('removed')
+
+            # doc.write('uploaded.xml')
 
             self.part_shop.submit(doc, collection_uri, 2)
 
@@ -77,6 +82,14 @@ class SynBioHub():
 
         return sub_collection_uris
 
+    def query_sub_collection_members(self, collection_uri, member_uris):
+        sub_collection_uris = self.search_sub_collections(collection_uri)
+
+        if len(sub_collection_uris) > 0:
+            return self.query_collection_members(sub_collection_uris, member_uris)
+        else:
+            return {}
+
     def query_collection_members(self, collection_uris, member_uris):
         sbh_query = SynBioHubQuery(self.sparql)
         response = sbh_query.query_collection_members(collection_uris, member_uris)
@@ -87,7 +100,10 @@ class SynBioHub():
             try:
                 collection_to_member[binding['collection']['value']].append(binding['entity']['value'])
             except:
-                collection_to_member[binding['collection']['value']] = [binding['entity']['value']]
+                try:
+                    collection_to_member[binding['collection']['value']] = [binding['entity']['value']]
+                except:
+                    pass
 
         return collection_to_member
 
@@ -95,31 +111,53 @@ class SynBioHub():
         header = {'Accept': 'text/plain', 'X-authorization': self.token}
         for uri in uris:
             requests.get(uri + '/remove', headers=header)
-
-    def __map_local_to_remote(self, doc, collection_uri):
-        sub_collection_uris = self.search_sub_collections(collection_uri)
+                
+    def __map_local_to_remote(self, doc, collection_uri, sub_collection_uris):
+        remote_namespace = '/'.join(collection_uri.split('/')[:-2])
+        setHomespace(remote_namespace.replace('https', 'http'))
 
         remote_to_local = {}
-        remote_namespace = '/'.join(collection_uri.split('/')[:-2])
         for local_entity in doc:
             remote_to_local['/'.join([remote_namespace, local_entity.identity.split('/')[-2], '1'])] = local_entity.identity
-        
-        sub_collection_to_remote = self.query_collection_members(sub_collection_uris, remote_to_local.keys())
 
-        local_to_remote = {}
-        setHomespace(remote_namespace.replace('https', 'http'))
-        for sub_collection_uri in sub_collection_to_remote:
+        sub_collections = []
+        for sub_collection_uri in sub_collection_uris:
             uri_arr = sub_collection_uri.split('/')
             sub_collection = Collection(uri_arr[-2], uri_arr[-1])
-            doc.addCollection(sub_collection)
+            sub_collections.append(sub_collection)
 
-            for remote_uri in sub_collection_to_remote[sub_collection_uri]:
-                sub_collection.members = sub_collection.members + [remote_to_local[remote_uri]]
-                local_to_remote[remote_to_local[remote_uri]] = remote_uri
+            for local_entity in doc:
+                sub_collection.members = sub_collection.members + [local_entity.identity]
+
+        for sub_collection in sub_collections:
+            doc.addCollection(sub_collection)
+        
+        sub_collection_to_remote = self.query_sub_collection_members(collection_uri, remote_to_local.keys())
+
+        local_to_remote = {}
+        if len(sub_collection_to_remote) == 0:
+            collection_to_remote = self.query_collection_members([collection_uri], remote_to_local.keys())
+            for collection_key in collection_to_remote.keys():
+                for remote_uri in collection_to_remote[collection_key]:
+                    local_to_remote[remote_to_local[remote_uri]] = remote_uri
+        else:
+            for sub_collection_uri in sub_collection_to_remote:
+                uri_arr = sub_collection_uri.split('/')
+                sub_collection = Collection(uri_arr[-2], uri_arr[-1])
+                try:
+                    doc.addCollection(sub_collection)
+
+                    for remote_uri in sub_collection_to_remote[sub_collection_uri]:
+                        sub_collection.members = sub_collection.members + [remote_to_local[remote_uri]]
+                except:
+                    pass
+
+                for remote_uri in sub_collection_to_remote[sub_collection_uri]:
+                    local_to_remote[remote_to_local[remote_uri]] = remote_uri
 
         return local_to_remote
 
-    def __merge_remote_predicates(self, doc, local_to_remote):
+    def __copy_remote_predicates(self, doc, local_to_remote):
         setHomespace(self.url + '/')
         
         for local_uri in local_to_remote:

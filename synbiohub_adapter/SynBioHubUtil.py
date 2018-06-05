@@ -240,22 +240,23 @@ class SBOLQuery():
 	# at least one of the specified types (or all of the specified types) and
 	# at least one of the specified roles.
 	def construct_collection_entity_query(self, collections, member_label='entity', types=[], roles=[], all_types=True, sub_types=[], sub_roles=[], definitions=[], all_sub_types=True, entity_label=None, other_entity_labels=[], members=[], member_cardinality='+', entity_depth=2):
+		target_labels = []
+		if len(collections) > 0:
+			target_labels.append('collection')
+		else:
+			return ""
+
 		if entity_label is None:
 			entity_label = member_label
 
-		sub_entity_pattern = self.construct_entity_pattern(types=sub_types, roles=sub_roles, all_types=all_sub_types, entity_label='sub_entity', type_label='sub_type', role_label='sub_role')
-		entity_pattern_1 = self.construct_entity_pattern(types, roles, all_types, sub_entity_pattern, definitions, entity_label)
-		collection_pattern_1 = self.construct_collection_pattern(collections, member_label, members, member_cardinality, entity_label)
-
-		target_labels = []
-		if len(collections) == 0:
-			return ""
-		elif len(collections) > 1:
-			target_labels.append('collection')
 		if len(other_entity_labels) > 0:
 			target_labels.extend(other_entity_labels)
 		target_labels.append(entity_label)
 
+		sub_entity_pattern = self.construct_entity_pattern(types=sub_types, roles=sub_roles, all_types=all_sub_types, entity_label='sub_entity', type_label='sub_type', role_label='sub_role')
+		entity_pattern_1 = self.construct_entity_pattern(types, roles, all_types, sub_entity_pattern, definitions, entity_label)
+		collection_pattern_1 = self.construct_collection_pattern(collections, member_label, members, member_cardinality, entity_label)
+		
 		if entity_depth == 1:
 			return """
 			PREFIX sbol: <http://sbols.org/v2#>
