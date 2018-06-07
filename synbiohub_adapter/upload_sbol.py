@@ -111,11 +111,15 @@ class SynBioHub():
 
         for response in responses:
             for binding in response['results']['bindings']:
+                if len(collection_uris) == 1:
+                    collection_uri = collection_uris[0]
+                else:
+                    collection_uri = binding['collection']['value']
                 try:
-                    collection_to_member[binding['collection']['value']].append(binding['entity']['value'])
+                    collection_to_member[collection_uri].append(binding['entity']['value'])
                 except:
                     try:
-                        collection_to_member[binding['collection']['value']] = [binding['entity']['value']]
+                        collection_to_member[collection_uri] = [binding['entity']['value']]
                     except:
                         pass
 

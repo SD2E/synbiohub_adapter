@@ -252,9 +252,9 @@ class SBOLQuery():
 	# at least one of the specified roles.
 	def construct_collection_entity_query(self, collections, member_label='entity', types=[], roles=[], all_types=True, sub_types=[], sub_roles=[], definitions=[], all_sub_types=True, entity_label=None, other_entity_labels=[], members=[], member_cardinality='+', entity_depth=2):
 		target_labels = []
-		if len(collections) > 0:
+		if len(collections) > 1:
 			target_labels.append('collection')
-		else:
+		elif len(collections) == 0:
 			return ""
 
 		if entity_label is None:
@@ -385,7 +385,7 @@ class SBOLQuery():
 
 	def query_collection_members(self, collections, members):
 		mem_query = self.construct_collection_entity_query(collections=collections, members=members, entity_depth=1)
-
+		
 		return self.fetch_SPARQL(self._server, mem_query)
 
 	def serialize_options(self, options):
