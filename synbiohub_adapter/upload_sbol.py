@@ -55,7 +55,7 @@ class SynBioHub():
 
         local_to_remote = self.__map_local_to_remote(doc, collection_uri, sub_collection_uris)
 
-        print('mapped')
+        print('mapped local to remote')
 
         if overwrite or len(local_to_remote) == 0:
             if len(local_to_remote) > 0:
@@ -63,11 +63,13 @@ class SynBioHub():
                     self.__copy_remote_predicates(doc, local_to_remote)
                 self.remove_all(local_to_remote.values())
 
-                print('removed')
+                print('removed remote')
 
             # doc.write('uploaded.xml')
 
             self.part_shop.submit(doc, collection_uri, 2)
+
+            print('submitted local')
 
             print('Upload successful.')
         else:
@@ -91,19 +93,31 @@ class SynBioHub():
             return {}
 
     def query_collection_members(self, collection_uris, member_uris):
+        responses = []
+        
+        cut_len = 50
         sbh_query = SynBioHubQuery(self.sparql)
-        response = sbh_query.query_collection_members(collection_uris, member_uris)
+        if len(member_uris) <= cut_len:
+            responses.append(sbh_query.query_collection_members(collection_uris, member_uris))
+        else:
+            cut_i = []
+            for i in range(0, len(member_uris)//cut_len + 1):
+                cut_i.append(i*cut_len)
+            cut_i.append(cut_i[-1] + len(member_uris)%cut_len)
+            for i in range(0, len(cut_i) - 1):
+                responses.append(sbh_query.query_collection_members(collection_uris, member_uris[cut_i[i]:cut_i[i + 1]]))
 
         collection_to_member = {}
 
-        for binding in response['results']['bindings']:
-            try:
-                collection_to_member[binding['collection']['value']].append(binding['entity']['value'])
-            except:
+        for response in responses:
+            for binding in response['results']['bindings']:
                 try:
-                    collection_to_member[binding['collection']['value']] = [binding['entity']['value']]
+                    collection_to_member[binding['collection']['value']].append(binding['entity']['value'])
                 except:
-                    pass
+                    try:
+                        collection_to_member[binding['collection']['value']] = [binding['entity']['value']]
+                    except:
+                        pass
 
         return collection_to_member
 
@@ -132,11 +146,11 @@ class SynBioHub():
         for sub_collection in sub_collections:
             doc.addCollection(sub_collection)
         
-        sub_collection_to_remote = self.query_sub_collection_members(collection_uri, remote_to_local.keys())
+        sub_collection_to_remote = self.query_sub_collection_members(collection_uri, list(remote_to_local.keys()))
 
         local_to_remote = {}
         if len(sub_collection_to_remote) == 0:
-            collection_to_remote = self.query_collection_members([collection_uri], remote_to_local.keys())
+            collection_to_remote = self.query_collection_members([collection_uri], list(remote_to_local.keys()))
             for collection_key in collection_to_remote.keys():
                 for remote_uri in collection_to_remote[collection_key]:
                     local_to_remote[remote_to_local[remote_uri]] = remote_uri
