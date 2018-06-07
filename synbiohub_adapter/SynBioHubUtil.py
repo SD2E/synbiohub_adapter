@@ -70,6 +70,17 @@ class SD2Constants():
 	PR_WATER_CONTROL = 'http://sd2e.org#platereader_water_control'
 	PR_FLUORESCEIN_CONTROL = 'http://sd2e.org#platereader_fluorescein_control'
 
+	LOGIC_OPERATORS = [
+		"http://www.openmath.org/cd/logic1#not",
+		"http://www.openmath.org/cd/logic1#or",
+		"http://www.openmath.org/cd/logic1#xor",
+		"http://www.openmath.org/cd/logic1#nor",
+		"http://www.openmath.org/cd/logic1#xnor",
+		"http://www.openmath.org/cd/logic1#and",
+		"http://www.openmath.org/cd/logic1#nand",
+		"http://www.openmath.org/cd/logic1#implies"
+	]
+
 class SBHConstants():
 	SD2_SERVER = "http://hub-api.sd2e.org:80/sparql"
 	BBN_SERVER = "https://synbiohub.bbn.com/"

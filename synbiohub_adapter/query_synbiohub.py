@@ -72,24 +72,24 @@ class SynBioHubQuery(SBOLQuery):
 	# Retrieves the URIs for all logic gates fom the specified collection of design elements.
 	# This collection is typically associated with a challenge problem.
 	def query_design_set_gates(self, collection):
-		return self.query_design_set_modules([SBOLConstants.LOGIC_OPERATOR], [collection], 'gate')
+		return self.query_design_set_modules(SD2Constants.LOGIC_OPERATORS, [collection], 'gate')
 
 	# Retrieves the URIs for all logic gates from the collection of every SD2 design element.
 	def query_design_gates(self):
-		return self.query_design_set_modules(roles=[SBOLConstants.LOGIC_OPERATOR], mod_label='gate')
+		return self.query_design_set_modules(roles=SD2Constants.LOGIC_OPERATORS, mod_label='gate')
 
 	# Retrieves the URIs for all logic gates used in the specified experiment.
 	def query_single_experiment_gates(self, experiment, trace_derivation=True, by_sample=True):
-		return self.query_experiment_set_modules(roles=[SBOLConstants.LOGIC_OPERATOR], mod_label='gate', trace_derivation=trace_derivation, by_sample=by_sample, experiments=[experiment])
+		return self.query_experiment_set_modules(roles=SD2Constants.LOGIC_OPERATORS, mod_label='gate', trace_derivation=trace_derivation, by_sample=by_sample, experiments=[experiment])
 
 	# Retrieves the URIs for all logic gates used in the specified collection of experiments.
 	# This collection is typically associated with a challenge problem.
 	def query_experiment_set_gates(self, collection, trace_derivation=True, by_sample=True):
-		return self.query_experiment_set_modules([SBOLConstants.LOGIC_OPERATOR], [collection], 'gate', trace_derivation, by_sample)
+		return self.query_experiment_set_modules(SD2Constants.LOGIC_OPERATORS, [collection], 'gate', trace_derivation, by_sample)
 
 	# Retrieves the URIs for all logic gates used by experiments in the collection of every SD2 experiment.
 	def query_experiment_gates(self, trace_derivation=True, by_sample=True):
-		return self.query_experiment_set_modules(roles=[SBOLConstants.LOGIC_OPERATOR], mod_label='gate', trace_derivation=trace_derivation, by_sample=by_sample)
+		return self.query_experiment_set_modules(roles=SD2Constants.LOGIC_OPERATORS, mod_label='gate', trace_derivation=trace_derivation, by_sample=by_sample)
 
 	# Inducer query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 

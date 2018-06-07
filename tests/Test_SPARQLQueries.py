@@ -175,12 +175,11 @@ class TestSBHQueries(unittest.TestCase):
 		print(plasmids)
 
 	def test_query_single_experiment_plasmids(self):
-		rule_30_experiment = 'https://hub.sd2e.org/user/sd2e/experiment/transcriptic_rule_30_q0_1_09242017/1'
+		yeast_gates_experiment = 'https://hub.sd2e.org/user/sd2e/experiment/biofab_yeast_gates_q0_aq_11269_4/1'
 
 		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
-		plasmids = sbh_query.query_single_experiment_plasmids(rule_30_experiment)
+		plasmids = sbh_query.query_single_experiment_plasmids(yeast_gates_experiment)
 		print(plasmids)
-		print(len(plasmids))
 
 	def test_query_experiment_set_plasmids(self):
 		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
