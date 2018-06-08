@@ -378,14 +378,14 @@ class SBOLQuery():
 	# at least one of the specified sub-types (or all of the specified sub-types) and with 
 	# at least one of the specified roles.
 	# This collection is typically associated with a challenge problem.
-	def query_design_set_modules(self, roles, collections=[SD2Constants.SD2_DESIGN_COLLECTION], mod_label='mod', sub_types=[], sub_roles=[], definitions=[], all_sub_types=True):
-		mod_query = self.construct_collection_entity_query(collections=collections, member_label=mod_label, roles=roles, sub_types=sub_types, sub_roles=sub_roles, definitions=definitions, all_sub_types=all_sub_types)
+	def query_design_set_modules(self, roles, collections, mod_label='mod', other_entity_labels=[], sub_types=[], sub_roles=[], definitions=[], all_sub_types=True):
+		mod_query = self.construct_collection_entity_query(collections=collections, member_label=mod_label, roles=roles, sub_types=sub_types, sub_roles=sub_roles, definitions=definitions, all_sub_types=all_sub_types, other_entity_labels=other_entity_labels)
 
 		return self.fetch_SPARQL(self._server, mod_query)
 
 	def query_collection_members(self, collections, members):
 		mem_query = self.construct_collection_entity_query(collections=collections, members=members, entity_depth=1)
-		
+
 		return self.fetch_SPARQL(self._server, mem_query)
 
 	def serialize_options(self, options):

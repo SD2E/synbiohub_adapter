@@ -166,7 +166,7 @@ class TestSBHQueries(unittest.TestCase):
 
 	def test_query_design_set_plasmids(self):
 		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
-		plasmids = sbh_query.query_design_set_plasmids(SD2Constants.RULE_30_DESIGN_COLLECTION)
+		plasmids = sbh_query.query_design_set_plasmids(SD2Constants.YEAST_GATES_DESIGN_COLLECTION)
 		print(plasmids)
 
 	def test_query_design_plasmids(self):
