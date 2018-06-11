@@ -65,13 +65,10 @@ class SynBioHub():
 
                 print('removed remote')
 
-            # doc.write('uploaded.xml')
-
-            self.part_shop.submit(doc, collection_uri, 2)
+            response = self.part_shop.submit(doc, collection_uri, 2)
 
             print('submitted local')
-
-            print('Upload successful.')
+            print(response)  
         else:
             print(repr(local_to_remote.keys())[10:-1] + ' have been previously uploaded and would be overwritten. Upload aborted. To overwrite, include -w in arguments.')
 
