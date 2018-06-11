@@ -12,13 +12,18 @@ def main(args=None):
         args = sys.argv[1:]
 
     parser = argparse.ArgumentParser()
-    parser.add_argument('-i', '--input', nargs='*', default=[f for f in os.listdir('.') if os.path.isfile(f) and f.endswith('.csv')])
-    parser.add_argument('-o', '--output', nargs='?', default='generated_sbol.xml')
+    parser.add_argument('-i', '--input_files', nargs='*', default=[f for f in os.listdir('.') if os.path.isfile(f) and f.endswith('.csv')])
+    parser.add_argument('-o', '--output_file', nargs='?', default='generated_sbol.xml')
     parser.add_argument('-m', '--om', nargs='?', default='om-2.0.rdf')
+    parser.add_argument('-w', '--overwrite', action='store_true')
+    # parser.add_argument('-u', '--url', nargs='?', default='https://hub.sd2e.org')
+    # parser.add_argument('-e', '--email', nargs='?', default='sd2_service@sd2e.org')
+    # parser.add_argument('-p', '--password', nargs='?', default=None)
     args = parser.parse_args(args)
 
     doc = generate_sbol(args.input, args.om)
     
+    # if password is None:
     doc.write(args.output)
 
 def generate_sbol(csv_files, om_file):
