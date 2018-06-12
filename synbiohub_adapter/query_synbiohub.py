@@ -22,74 +22,103 @@ class SynBioHubQuery(SBOLQuery):
 
 	# Control query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
+	# Retrieves the URIs for all controls from the collection of every SD2 design element.
+	def query_design_controls(self, verbose=False, collections=[SD2Constants.SD2_DESIGN_COLLECTION], sub_types=[], sub_roles=[], definitions=[]):
+		if verbose:
+			other_mod_labels = ['name', 'description']
+		else:
+			other_mod_labels = []
+
+		return self.query_design_modules([SBOLConstants.CONTROL], collections, 'control', other_mod_labels, sub_types, sub_roles, definitions)
+
 	# Retrieves the URIs for all controls from the specified collection of design elements.
 	# This collection is typically associated with a challenge problem.
-	def query_design_set_controls(self, collection, sub_types=[], sub_roles=[], definitions=[]):
-		return self.query_design_set_modules([SBOLConstants.CONTROL], [collection], 'control', [], sub_types, sub_roles, definitions)
+	def query_design_set_controls(self, collection, verbose=False, sub_types=[], sub_roles=[], definitions=[]):
+		return self.query_design_controls(verbose, [collection], sub_types, sub_roles, definitions)
+
+	# Retrieves the URIs for all fluorescent bead controls from the collection of every SD2 design element.
+	def query_design_fbead_controls(self, verbose=False, collections=[SD2Constants.SD2_DESIGN_COLLECTION]):
+		return self.query_design_controls(verbose, collections, [SBOLConstants.BEAD], [SBOLConstants.FLUORESCENCE])
 
 	# Retrieves the URIs for all fluorescent bead controls from the specified collection of design elements.
 	# This collection is typically associated with a challenge problem.
-	def query_design_set_fbead_controls(self, collection):
-		return self.query_design_set_controls(collection, [SBOLConstants.BEAD], [SBOLConstants.FLUORESCENCE])
+	def query_design_set_fbead_controls(self, collection, verbose=False):
+		return self.query_design_fbead_controls(verbose, [collection])
+
+	# Retrieves the URIs for all water controls from the collection of every SD2 design element.
+	def query_design_fluorescein_controls(self, verbose=False, collections=[SD2Constants.SD2_DESIGN_COLLECTION]):
+		return self.query_design_controls(verbose, collections, [SBOLConstants.FLUORESCEIN])
 
 	# Retrieves the URIs for all fluorescein controls from the specified collection of design elements.
 	# This collection is typically associated with a challenge problem.
-	def query_design_set_fluorescein_controls(self, collection):
-		return self.query_design_set_controls(collection, [SBOLConstants.FLUORESCEIN])
+	def query_design_set_fluorescein_controls(self, collection, verbose=False):
+		return self.query_design_fluorescein_controls(verbose, [collection])
+
+	# Retrieves the URIs for all fluorescent bead controls from the collection of every SD2 design element.
+	def query_design_ludox_controls(self, verbose=False, collections=[SD2Constants.SD2_DESIGN_COLLECTION]):
+		return self.query_design_controls(verbose, collections, definitions=[SD2Constants.LUDOX])
 
 	# Retrieves the URIs for all LUDOX controls from the specified collection of design elements.
 	# This collection is typically associated with a challenge problem.
-	def query_design_set_ludox_controls(self, collection):
-		return self.query_design_set_controls(collection=collection, definitions=[SD2Constants.LUDOX])
+	def query_design_set_ludox_controls(self, collection, verbose=False):
+		return self.query_design_ludox_controls(verbose, [collection])
+
+	# Retrieves the URIs for all water controls from the collection of every SD2 design element.
+	def query_design_water_controls(self, verbose=False, collections=[SD2Constants.SD2_DESIGN_COLLECTION]):
+		return self.query_design_controls(verbose, collections, [SBOLConstants.H2O])
 
 	# Retrieves the URIs for all water controls from the specified collection of design elements.
 	# This collection is typically associated with a challenge problem.
-	def query_design_set_water_controls(self, collection):
-		return self.query_design_set_controls(collection, [SBOLConstants.H2O])
-
-	# Retrieves the URIs for all controls from the collection of every SD2 design element.
-	def query_design_controls(self, sub_types=[], sub_roles=[], definitions=[]):
-		return self.query_design_set_modules([SBOLConstants.CONTROL], [SD2Constants.SD2_DESIGN_COLLECTION], 'control', [], sub_types, sub_roles, definitions)
-
-	# Retrieves the URIs for all fluorescent bead controls from the collection of every SD2 design element.
-	def query_design_fbead_controls(self):
-		return self.query_design_controls([SBOLConstants.BEAD], [SBOLConstants.FLUORESCENCE])
-
-	# Retrieves the URIs for all water controls from the collection of every SD2 design element.
-	def query_design_fluorescein_controls(self):
-		return self.query_design_controls([SBOLConstants.FLUORESCEIN])
-
-	# Retrieves the URIs for all fluorescent bead controls from the collection of every SD2 design element.
-	def query_design_ludox_controls(self):
-		return self.query_design_controls(definitions=[SD2Constants.LUDOX])
-
-	# Retrieves the URIs for all water controls from the collection of every SD2 design element.
-	def query_design_water_controls(self):
-		return self.query_design_controls([SBOLConstants.H2O])
+	def query_design_set_water_controls(self, collection, verbose=False):
+		return self.query_design_water_controls(verbose, [collection])
 
 	# Gate query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
+	# Retrieves the URIs for all logic gates from the collection of every SD2 design element.
+	def query_design_gates(self, verbose=False, by_role=True, collections=[SD2Constants.SD2_DESIGN_COLLECTION]):
+		if verbose:
+			other_mod_labels = ['name', 'description']
+		else:
+			other_mod_labels = []
+
+		if by_role:
+			other_mod_labels.append('role')
+
+		return self.query_design_modules(SD2Constants.LOGIC_OPERATORS, collections, 'gate', other_mod_labels)
+
 	# Retrieves the URIs for all logic gates fom the specified collection of design elements.
 	# This collection is typically associated with a challenge problem.
-	def query_design_set_gates(self, collection):
-		return self.query_design_set_modules(SD2Constants.LOGIC_OPERATORS, [collection], 'gate', ['role'])
+	def query_design_set_gates(self, collection, verbose=False, by_role=True):
+		return self.query_design_gates(verbose, by_role, [collection])
 
-	# Retrieves the URIs for all logic gates from the collection of every SD2 design element.
-	def query_design_gates(self):
-		return self.query_design_set_modules(SD2Constants.LOGIC_OPERATORS, [SD2Constants.SD2_DESIGN_COLLECTION], 'gate', ['role'])
+	# Retrieves the URIs for all logic gates used by experiments in the collection of every SD2 experiment.
+	def query_experiment_gates(self, verbose=False, by_role=True, trace_derivation=True, by_sample=True, collections=[SD2Constants.SD2_EXPERIMENT_COLLECTION], experiments=[]):
+		mod_labels = ['gate']
 
-	# Retrieves the URIs for all logic gates used in the specified experiment.
-	def query_single_experiment_gates(self, experiment, trace_derivation=True, by_sample=True):
-		return self.query_experiment_set_modules(roles=SD2Constants.LOGIC_OPERATORS, mod_label='gate', trace_derivation=trace_derivation, by_sample=by_sample, experiments=[experiment])
+		if verbose:
+			mod_labels.extend(['name', 'description'])
+
+		if by_role:
+			mod_labels.append('role')
+
+		if by_sample:
+			mod_labels.append('sample')
+
+		gate_query_result = self.query_experiment_modules(SD2Constants.LOGIC_OPERATORS, collections, mod_labels[0], mod_labels[1:], trace_derivation, experiments=experiments)
+
+		if by_sample:
+			return self.format_query_result(gate_query_result, mod_labels[:-1], mod_labels[-1])
+		else:
+			return self.format_query_result(gate_query_result, mod_labels)
 
 	# Retrieves the URIs for all logic gates used in the specified collection of experiments.
 	# This collection is typically associated with a challenge problem.
-	def query_experiment_set_gates(self, collection, trace_derivation=True, by_sample=True):
-		return self.query_experiment_set_modules(SD2Constants.LOGIC_OPERATORS, [collection], 'gate', trace_derivation, by_sample)
+	def query_experiment_set_gates(self, collection, verbose=False, by_role=True, trace_derivation=True, by_sample=True):
+		return self.query_experiment_gates(verbose, by_role, trace_derivation, by_sample, [collection])
 
-	# Retrieves the URIs for all logic gates used by experiments in the collection of every SD2 experiment.
-	def query_experiment_gates(self, trace_derivation=True, by_sample=True):
-		return self.query_experiment_set_modules(roles=SD2Constants.LOGIC_OPERATORS, mod_label='gate', trace_derivation=trace_derivation, by_sample=by_sample)
+	# Retrieves the URIs for all logic gates used in the specified experiment.
+	def query_single_experiment_gates(self, experiment, verbose=False, by_role=True, trace_derivation=True, by_sample=True):
+		return self.query_experiment_gates(verbose, by_role, trace_derivation, by_sample, experiments=[experiment])
 
 	# Inducer query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
@@ -212,38 +241,67 @@ class SynBioHubQuery(SBOLQuery):
 
 	# Media query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
+	# Retrieves the URIs for all media from the collection of every SD2 design element.
+	def query_design_media(self, verbose=False, collections=[SD2Constants.SD2_DESIGN_COLLECTION]):
+		if verbose:
+			other_mod_labels = ['name', 'description']
+		else:
+			other_mod_labels = []
+
+		return self.query_design_modules([SBOLConstants.MEDIA], collections, 'media', other_mod_labels)
+
 	# Retrieves the URIs for all media from the specified collection of design elements.
 	# This collection is typically associated with a challenge problem.
-	def query_design_set_media(self, collection):
-		return self.query_design_set_modules([SBOLConstants.MEDIA], [collection], 'media')
-
-	# Retrieves the URIs for all media from the collection of every SD2 design element.
-	def query_design_media(self):
-		return self.query_design_set_modules([SBOLConstants.MEDIA], [SD2Constants.SD2_DESIGN_COLLECTION], 'media')
+	def query_design_set_media(self, collection, verbose=False):
+		return self.query_design_media(verbose, [collection])
 
 	# Plasmid query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
+	# Retrieves the URIs for all plasmids from the collection of every SD2 design element.
+	def query_design_plasmids(self, verbose=False, sequence=False, collections=[SD2Constants.SD2_DESIGN_COLLECTION]):
+		if verbose:
+			other_comp_labels = ['name', 'description']
+		else:
+			other_comp_labels = []
+
+		if sequence:
+			other_comp_labels.append('sequence')
+
+		return self.query_design_components([BIOPAX_DNA, SO_CIRCULAR], collections, 'plasmid', other_comp_labels)
+
 	# Retrieves the URIs for all plasmids from the specified collection of design elements.
 	# This collection is typically associated with a challenge problem.
-	def query_design_set_plasmids(self, collection):
-		return self.query_design_set_components([BIOPAX_DNA, SO_CIRCULAR], [collection], 'plasmid')
+	def query_design_set_plasmids(self, collection, verbose=False, sequence=False):
+		return self.query_design_plasmids(verbose, sequence, [collection])
 
-	# Retrieves the URIs for all plasmids from the collection of every SD2 design element.
-	def query_design_plasmids(self):
-		return self.query_design_set_components(types=[BIOPAX_DNA, SO_CIRCULAR], comp_label='plasmid')
+	# Retrieves the URIs for all plasmids used by experiments in the collection of every SD2 experiment.
+	def query_experiment_plasmids(self, verbose=False, sequence=False, trace_derivation=True, by_sample=True, collections=[SD2Constants.SD2_EXPERIMENT_COLLECTION], experiments=[]):
+		comp_labels = ['plasmid']
 
-	# Retrieves the URIs for all plasmids in the specified experiment.
-	def query_single_experiment_plasmids(self, experiment, trace_derivation=True, by_sample=True):
-		return self.query_experiment_set_components(types=[BIOPAX_DNA, SO_CIRCULAR], comp_label='plasmid', trace_derivation=trace_derivation, by_sample=by_sample, experiments=[experiment])
+		if verbose:
+			comp_labels.extend(['name', 'description'])
+
+		if sequence:
+			comp_labels.append('sequence')
+
+		if by_sample:
+			comp_labels.append('sample')
+
+		plasmid_query_result = self.query_experiment_components([BIOPAX_DNA, SO_CIRCULAR], collections, comp_labels[0], comp_labels[1:], trace_derivation, experiments=experiments)
+
+		if by_sample:
+			return self.format_query_result(plasmid_query_result, comp_labels[:-1], comp_labels[-1])
+		else:
+			return self.format_query_result(plasmid_query_result, comp_labels)
 
 	# Retrieves the URIs for all plasmids used in the specified collection of experiments.
 	# This collection is typically associated with a challenge problem.
-	def query_experiment_set_plasmids(self, collection, trace_derivation=True, by_sample=True):
-		return self.query_experiment_set_components([BIOPAX_DNA, SO_CIRCULAR], [collection], 'plasmid', trace_derivation, by_sample)
+	def query_experiment_set_plasmids(self, collection, verbose=False, sequence=False, trace_derivation=True, by_sample=True):
+		return self.query_experiment_plasmids(verbose, sequence, trace_derivation, by_sample, [collection])
 
-	# Retrieves the URIs for all plasmids used by experiments in the collection of every SD2 experiment.
-	def query_experiment_plasmids(self, trace_derivation=True, by_sample=True):
-		return self.query_experiment_set_components(types=[BIOPAX_DNA, SO_CIRCULAR], comp_label='plasmid', trace_derivation=trace_derivation, by_sample=by_sample)
+	# Retrieves the URIs for all plasmids in the specified experiment.
+	def query_single_experiment_plasmids(self, experiment, verbose=False, sequence=False, trace_derivation=True, by_sample=True):
+		return self.query_experiment_plasmids(verbose, sequence, trace_derivation, by_sample, experiments=[experiment])
 
 	# Retrieves the URIs for all plasmids in the specified sample.
 	def query_sample_plasmids(self, sample):
@@ -276,27 +334,45 @@ class SynBioHubQuery(SBOLQuery):
 
 	# Strain query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
+	# Retrieves the URIs for all strains from the collection of every SD2 design element.
+	def query_design_strains(self, verbose=False, collections=[SD2Constants.SD2_DESIGN_COLLECTION]):
+		if verbose:
+			other_comp_labels = ['name', 'description']
+		else:
+			other_comp_labels = []
+
+		return self.query_design_components([SBOLConstants.NCIT_STRAIN, SBOLConstants.OBI_STRAIN], collections, 'strain', other_comp_labels, all_types=False)
+
 	# Retrieves the URIs for all strains from the specified collection of design elements.
 	# This collection is typically associated with a challenge problem.
-	def query_design_set_strains(self, collection):
-		return self.query_design_set_components(types=[SBOLConstants.NCIT_STRAIN, SBOLConstants.OBI_STRAIN], collections=[collection], comp_label='strain', all_types=False)
+	def query_design_set_strains(self, collection, verbose=False):
+		return self.query_design_strains(verbose, [collection])
 
-	# Retrieves the URIs for all strains from the collection of every SD2 design element.
-	def query_design_strains(self):
-		return self.query_design_set_components(types=[SBOLConstants.NCIT_STRAIN, SBOLConstants.OBI_STRAIN], comp_label='strain', all_types=False)
+	# Retrieves the URIs for all strains used by experiments in the collection of every SD2 experiment.
+	def query_experiment_strains(self, verbose=False, trace_derivation=True, by_sample=True, collections=[SD2Constants.SD2_EXPERIMENT_COLLECTION], experiments=[]):
+		comp_labels = ['strain']
 
-	# Retrieves the URIs for all inducers in the specified experiment.
-	def query_single_experiment_strains(self, experiment, trace_derivation=True, by_sample=True):
-		return self.query_experiment_set_components(types=[SBOLConstants.NCIT_STRAIN, SBOLConstants.OBI_STRAIN], comp_label='strain', trace_derivation=trace_derivation, by_sample=by_sample, all_types=False, experiments=[experiment])
+		if verbose:
+			comp_labels.extend(['name', 'description'])
+
+		if by_sample:
+			comp_labels.append('sample')
+
+		strain_query_result = self.query_experiment_components([SBOLConstants.NCIT_STRAIN, SBOLConstants.OBI_STRAIN], collections, comp_labels[0], comp_labels[1:], trace_derivation, all_types=False, experiments=experiments)
+
+		if by_sample:
+			return self.format_query_result(strain_query_result, comp_labels[:-1], comp_labels[-1])
+		else:
+			return self.format_query_result(strain_query_result, comp_labels)
 
 	# Retrieves the URIs for all strains used in the specified collection of experiments.
 	# This collection is typically associated with a challenge problem.
-	def query_experiment_set_strains(self, collection, trace_derivation=True, by_sample=True):
-		return self.query_experiment_set_components(types=[SBOLConstants.NCIT_STRAIN, SBOLConstants.OBI_STRAIN], collections=[collection], comp_label='strain', trace_derivation=trace_derivation, by_sample=by_sample, all_types=False)
+	def query_experiment_set_strains(self, collection, verbose=False, trace_derivation=True, by_sample=True):
+		return self.query_experiment_strains(verbose, trace_derivation, by_sample, [collection])
 
-	# Retrieves the URIs for all strains used by experiments in the collection of every SD2 experiment.
-	def query_experiment_strains(self, trace_derivation=True, by_sample=True):
-		return self.query_experiment_set_components(types=[SBOLConstants.NCIT_STRAIN, SBOLConstants.OBI_STRAIN], comp_label='strain', trace_derivation=trace_derivation, by_sample=by_sample, all_types=False)
+	# Retrieves the URIs for all inducers in the specified experiment.
+	def query_single_experiment_strains(self, experiment, verbose=False, trace_derivation=True, by_sample=True):
+		return self.query_experiment_strains(verbose, trace_derivation, by_sample, experiments=[experiment])
 
 	# Sample query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
