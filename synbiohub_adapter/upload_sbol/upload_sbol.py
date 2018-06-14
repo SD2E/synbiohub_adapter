@@ -6,6 +6,7 @@ import requests
 from sbol import *
 from synbiohub_adapter.query_synbiohub import SynBioHubQuery
 from synbiohub_adapter.SynBioHubUtil import SD2Constants
+from pySBOLx.pySBOLx import Experiment
 
 def main(args=None):
     if args is None:
@@ -49,6 +50,60 @@ class SynBioHub():
         self.sparql = sparql
         self.locked_predicates = locked_predicates
 
+    def push_lab_plan_parameter(self, plan_uri, parameter_uri, parameter_value):
+        try:
+            assert parameter_uri in SD2Constants.PLAN_PARAMETER_PREDICATES
+        except:
+            raise SBHLabPlanParameterError('Parameter URI is not allowed.')
+
+        if len(self.query_collection_members([plan_uri], [SD2Constants.SD2_EXPERIMENT_COLLECTION], 'http://sd2e.org#Experiment')) == 0:
+            raise SBHLabPlanParameterError('Experiment plan not found.')
+
+        uri_arr = plan_uri.split('/')
+
+        Config.setOption('validate', False)
+        Config.setOption('sbol_typed_uris', False)
+        remote_namespace = '/'.join(uri_arr[:-2])
+        setHomespace(remote_namespace.replace('https', 'http'))
+
+        doc = Document()
+
+        plan = Experiment(uri_arr[-2], version=uri_arr[-1])
+        doc.addExtensionObject(plan)
+
+        setattr(plan, parameter_uri, URIProperty(plan.this, parameter_uri, '0', '*'))
+        plan.addPropertyValue(parameter_uri, parameter_value)
+
+        self.part_shop.submit(doc, SD2Constants.SD2_EXPERIMENT_COLLECTION, 2)
+
+    def push_lab_sample_parameter(self, sample_uri, parameter_uri, parameter_value):
+        try:
+            assert parameter_uri in SD2Constants.SAMPLE_PARAMETER_PREDICATES
+        except:
+            raise SBHLabPlanParameterError('Parameter URI is not allowed.')
+
+        collection_to_member = self.query_collection_members([sample_uri], rdf_type='http://sbols.org/v2#Implementation')
+
+        if len(collection_to_member) == 0:
+            raise SBHLabPlanParameterError('Sample not found.')
+
+        uri_arr = sample_uri.split('/')
+
+        Config.setOption('validate', False)
+        Config.setOption('sbol_typed_uris', False)
+        remote_namespace = '/'.join(uri_arr[:-2])
+        setHomespace(remote_namespace.replace('https', 'http'))
+
+        doc = Document()
+
+        sample = Implementation(uri_arr[-2], uri_arr[-1])
+        doc.addImplementation(sample)
+
+        setattr(sample, parameter_uri, URIProperty(sample.this, parameter_uri, '0', '*'))
+        sample.addPropertyValue(parameter_uri, parameter_value)
+
+        self.part_shop.submit(doc, list(collection_to_member.keys())[0], 2)
+
     def submit_to_collection(self, doc, collection_uri, overwrite, sub_collection_uris=[]):
         Config.setOption('validate', False)
         Config.setOption('sbol_typed_uris', False)
@@ -81,28 +136,28 @@ class SynBioHub():
 
         return sub_collection_uris
 
-    def query_sub_collection_members(self, collection_uri, member_uris):
+    def query_sub_collection_members(self, member_uris, collection_uri):
         sub_collection_uris = self.search_sub_collections(collection_uri)
 
         if len(sub_collection_uris) > 0:
-            return self.query_collection_members(sub_collection_uris, member_uris)
+            return self.query_collection_members(member_uris, sub_collection_uris)
         else:
             return {}
 
-    def query_collection_members(self, collection_uris, member_uris):
+    def query_collection_members(self, member_uris, collection_uris=[], rdf_type=None):
         responses = []
         
         cut_len = 50
         sbh_query = SynBioHubQuery(self.sparql)
         if len(member_uris) <= cut_len:
-            responses.append(sbh_query.query_collection_members(collection_uris, member_uris))
+            responses.append(sbh_query.query_collection_members(collection_uris, member_uris, rdf_type))
         else:
             cut_i = []
             for i in range(0, len(member_uris)//cut_len + 1):
                 cut_i.append(i*cut_len)
             cut_i.append(cut_i[-1] + len(member_uris)%cut_len)
             for i in range(0, len(cut_i) - 1):
-                responses.append(sbh_query.query_collection_members(collection_uris, member_uris[cut_i[i]:cut_i[i + 1]]))
+                responses.append(sbh_query.query_collection_members(collection_uris, member_uris[cut_i[i]:cut_i[i + 1]], rdf_type))
 
         collection_to_member = {}
 
@@ -147,11 +202,11 @@ class SynBioHub():
         for sub_collection in sub_collections:
             doc.addCollection(sub_collection)
         
-        sub_collection_to_remote = self.query_sub_collection_members(collection_uri, list(remote_to_local.keys()))
+        sub_collection_to_remote = self.query_sub_collection_members(list(remote_to_local.keys()), collection_uri)
 
         local_to_remote = {}
         if len(sub_collection_to_remote) == 0:
-            collection_to_remote = self.query_collection_members([collection_uri], list(remote_to_local.keys()))
+            collection_to_remote = self.query_collection_members(list(remote_to_local.keys()), [collection_uri])
             for collection_key in collection_to_remote.keys():
                 for remote_uri in collection_to_remote[collection_key]:
                     local_to_remote[remote_to_local[remote_uri]] = remote_uri
@@ -190,6 +245,16 @@ class SynBioHub():
             for remote_predicate in remote_predicates:
                 for obj in remote_entity.getPropertyValues(remote_predicate):
                     local_entity.addPropertyValue(remote_predicate, obj)
+
+class SBHLabPlanParameterError(Exception):
+
+    def __init__(self, message):
+        self.message = message
+
+class SBHLabSampleParameterError(Exception):
+
+    def __init__(self, message):
+        self.message = message
 
 if __name__ == '__main__':
     main()
