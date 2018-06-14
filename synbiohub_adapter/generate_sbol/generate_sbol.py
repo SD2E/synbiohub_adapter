@@ -15,16 +15,16 @@ def main(args=None):
     parser.add_argument('-i', '--input_files', nargs='*', default=[f for f in os.listdir('.') if os.path.isfile(f) and f.endswith('.csv')])
     parser.add_argument('-o', '--output_file', nargs='?', default='generated_sbol.xml')
     parser.add_argument('-m', '--om', nargs='?', default='om-2.0.rdf')
-    parser.add_argument('-w', '--overwrite', action='store_true')
+    # parser.add_argument('-w', '--overwrite', action='store_true')
     # parser.add_argument('-u', '--url', nargs='?', default='https://hub.sd2e.org')
     # parser.add_argument('-e', '--email', nargs='?', default='sd2_service@sd2e.org')
     # parser.add_argument('-p', '--password', nargs='?', default=None)
     args = parser.parse_args(args)
 
-    doc = generate_sbol(args.input, args.om)
+    doc = generate_sbol(args.input_files, args.om)
     
     # if password is None:
-    doc.write(args.output)
+    doc.write(args.output_file)
 
 def generate_sbol(csv_files, om_file):
     doc = XDocument()
@@ -53,7 +53,8 @@ def generate_sbol(csv_files, om_file):
         'Control': generate_control,
         'Gate': generate_gate, 
         'Media': generate_media,
-        'Solution': generate_solution
+        'Solution': generate_solution,
+        'Stain' : generate_stain
     }
 
     generate_input_switcher = {
@@ -203,6 +204,21 @@ def generate_solution(doc, row, header, devices=[], systems=[], inputs=[], measu
     print('solution ' + display_id)
 
     return doc.create_solution(devices, systems, inputs, measures, display_id, name, descr)
+
+def generate_stain(doc, row, header, devices=[], systems=[], inputs=[], measures={}):
+    display_id = row[header['ID']]
+    try:
+        name = row[header['Name']]
+    except:
+        name = None
+    try:
+        descr = row[header['Description']]
+    except:
+        descr = None
+
+    print('stain ' + display_id)
+
+    return doc.create_stain(devices, systems, inputs, measures, display_id, name, descr)
 
 def generate_bead(doc, row, header):
     display_id = row[header['ID']]
