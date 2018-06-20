@@ -289,7 +289,11 @@ class SynBioHub():
                     local_entity.addPropertyValue(remote_predicate, obj)
 
 
-class BadLabParameterError(Exception):
+class SBHLabParameterError(Exception):
+    pass
+
+
+class BadLabParameterError(SBHLabParameterError):
 
     def __init__(self, parameter):
         self.parameter = parameter
@@ -298,7 +302,7 @@ class BadLabParameterError(Exception):
         return "Invalid parameter URI: {}".format(self.parameter)
 
 
-class UndefinedURIError(Exception):
+class UndefinedURIError(SBHLabParameterError):
 
     def __init__(self, uri):
         self.uri = uri
