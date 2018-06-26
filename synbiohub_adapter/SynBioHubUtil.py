@@ -438,7 +438,7 @@ class SBOLQuery():
 			sample_cardinality = ''
 
 		mod_query = self.construct_collection_entity_query(collections, 'exp', roles=roles, sub_types=sub_types, sub_roles=sub_roles, definitions=definitions, all_sub_types=all_sub_types, entity_label=mod_label, other_entity_labels=other_mod_labels, members=experiments, member_cardinality=sample_cardinality)
-		
+
 		return self.fetch_SPARQL(self._server, mod_query)
 
 	# Retrieves from the specified collection of design elements the URIs for all ComponentDefinitions with 

@@ -28,34 +28,14 @@ class TestSBHQueries(unittest.TestCase):
 
 	# Test control query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-	def test_query_design_set_controls(self):
-		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
-		controls = sbh_query.query_design_set_controls(SD2Constants.YEAST_GATES_DESIGN_COLLECTION)
-		print(controls)
-
-	def test_query_design_set_fbead_controls(self):
-		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
-		controls = sbh_query.query_design_set_fbead_controls(SD2Constants.YEAST_GATES_DESIGN_COLLECTION)
-		print(controls)
-
-	def test_query_design_set_fluorescein_controls(self):
-		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
-		controls = sbh_query.query_design_set_fluorescein_controls(SD2Constants.YEAST_GATES_DESIGN_COLLECTION)
-		print(controls)
-
-	def test_query_design_set_ludox_controls(self):
-		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
-		controls = sbh_query.query_design_set_ludox_controls(SD2Constants.YEAST_GATES_DESIGN_COLLECTION)
-		print(controls)
-
-	def test_query_design_set_water_controls(self):
-		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
-		controls = sbh_query.query_design_set_water_controls(SD2Constants.YEAST_GATES_DESIGN_COLLECTION)
-		print(controls)	
-
 	def test_query_design_controls(self):
 		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
 		controls = sbh_query.query_design_controls()
+		print(controls)
+
+	def test_query_design_set_controls(self):
+		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
+		controls = sbh_query.query_design_set_controls(SD2Constants.YEAST_GATES_DESIGN_COLLECTION)
 		print(controls)
 
 	def test_query_design_fbead_controls(self):
@@ -63,9 +43,19 @@ class TestSBHQueries(unittest.TestCase):
 		controls = sbh_query.query_design_fbead_controls()
 		print(controls)
 
+	def test_query_design_set_fbead_controls(self):
+		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
+		controls = sbh_query.query_design_set_fbead_controls(SD2Constants.YEAST_GATES_DESIGN_COLLECTION)
+		print(controls)
+
 	def test_query_design_fluorescein_controls(self):
 		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
 		controls = sbh_query.query_design_fluorescein_controls()
+		print(controls)
+
+	def test_query_design_set_fluorescein_controls(self):
+		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
+		controls = sbh_query.query_design_set_fluorescein_controls(SD2Constants.YEAST_GATES_DESIGN_COLLECTION)
 		print(controls)
 
 	def test_query_design_ludox_controls(self):
@@ -73,28 +63,121 @@ class TestSBHQueries(unittest.TestCase):
 		controls = sbh_query.query_design_ludox_controls()
 		print(controls)
 
+	def test_query_design_set_ludox_controls(self):
+		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
+		controls = sbh_query.query_design_set_ludox_controls(SD2Constants.YEAST_GATES_DESIGN_COLLECTION)
+		print(controls)
+
 	def test_query_design_water_controls(self):
 		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
 		controls = sbh_query.query_design_water_controls()
 		print(controls)
 
-	# Test gate query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-
-	def test_query_design_set_gates(self):
+	def test_query_design_set_water_controls(self):
 		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
-		gates = sbh_query.query_design_set_gates(SD2Constants.YEAST_GATES_DESIGN_COLLECTION)
-		print(gates)
+		controls = sbh_query.query_design_set_water_controls(SD2Constants.YEAST_GATES_DESIGN_COLLECTION)
+		print(controls)
+
+	def test_query_experiment_controls(self):
+		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
+		controls = sbh_query.query_experiment_controls()
+		print(controls)
+
+	def test_query_experiment_set_controls(self):
+		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
+		controls = sbh_query.query_experiment_set_controls(SD2Constants.YEAST_GATES_EXPERIMENT_COLLECTION)
+		print(controls)
+
+	def test_query_single_experiment_controls(self):
+		yeast_gates_experiment = 'https://hub.sd2e.org/user/sd2e/experiment/transcriptic_yeast_gates_q0_r1bfbfd7f8dn5/1'
+
+		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
+		controls = sbh_query.query_single_experiment_controls(yeast_gates_experiment)
+		print(controls)
+
+	def test_query_experiment_fbead_controls(self):
+		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
+		controls = sbh_query.query_experiment_fbead_controls()
+		print(controls)
+
+	def test_query_experiment_set_fbead_controls(self):
+		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
+		controls = sbh_query.query_experiment_set_fbead_controls(SD2Constants.YEAST_GATES_EXPERIMENT_COLLECTION)
+		print(controls)
+
+	def test_query_single_experiment_fbead_controls(self):
+		yeast_gates_experiment = 'https://hub.sd2e.org/user/sd2e/experiment/transcriptic_yeast_gates_q0_r1bfbfd7f8dn5/1'
+
+		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
+		controls = sbh_query.query_single_experiment_fbead_controls(yeast_gates_experiment)
+		print(controls)
+
+	def test_query_experiment_fluorescein_controls(self):
+		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
+		controls = sbh_query.query_experiment_fluorescein_controls()
+		print(controls)
+
+	def test_query_experiment_set_fluorescein_controls(self):
+		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
+		controls = sbh_query.query_experiment_set_fluorescein_controls(SD2Constants.YEAST_GATES_EXPERIMENT_COLLECTION)
+		print(controls)
+
+	def test_query_single_experiment_fluorescein_controls(self):
+		yeast_gates_experiment = 'https://hub.sd2e.org/user/sd2e/experiment/transcriptic_yeast_gates_q0_r1bfbfd7f8dn5/1'
+
+		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
+		controls = sbh_query.query_single_experiment_fluorescein_controls(yeast_gates_experiment)
+		print(controls)
+
+	def test_query_experiment_ludox_controls(self):
+		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
+		controls = sbh_query.query_experiment_ludox_controls()
+		print(controls)
+
+	def test_query_experiment_set_ludox_controls(self):
+		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
+		controls = sbh_query.query_experiment_set_ludox_controls(SD2Constants.YEAST_GATES_EXPERIMENT_COLLECTION)
+		print(controls)
+
+	def test_query_single_experiment_ludox_controls(self):
+		yeast_gates_experiment = 'https://hub.sd2e.org/user/sd2e/experiment/transcriptic_yeast_gates_q0_r1bfbfd7f8dn5/1'
+
+		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
+		controls = sbh_query.query_single_experiment_ludox_controls(yeast_gates_experiment)
+		print(controls)
+
+	def test_query_experiment_water_controls(self):
+		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
+		controls = sbh_query.query_experiment_water_controls()
+		print(controls)
+
+	def test_query_experiment_set_water_controls(self):
+		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
+		controls = sbh_query.query_experiment_set_water_controls(SD2Constants.YEAST_GATES_EXPERIMENT_COLLECTION)
+		print(controls)	
+
+	def test_query_single_experiment_water_controls(self):
+		yeast_gates_experiment = 'https://hub.sd2e.org/user/sd2e/experiment/transcriptic_yeast_gates_q0_r1bfbfd7f8dn5/1'
+
+		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
+		controls = sbh_query.query_single_experiment_water_controls(yeast_gates_experiment)
+		print(controls)	
+
+	# Test gate query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 	def test_query_design_gates(self):
 		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
 		gates = sbh_query.query_design_gates()
 		print(gates)
 
-	def test_query_single_experiment_gates(self):
-		yeast_gates_experiment = 'https://hub.sd2e.org/user/sd2e/experiment/biofab_yeast_gates_q0_aq_11269_4/1'
-
+	def test_query_design_set_gates(self):
 		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
-		gates = sbh_query.query_single_experiment_gates(yeast_gates_experiment)
+		gates = sbh_query.query_design_set_gates(SD2Constants.YEAST_GATES_DESIGN_COLLECTION)
+		print(gates)
+
+	def test_query_experiment_gates(self):
+		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
+		gates = sbh_query.query_experiment_gates()
 		print(gates)
 
 	def test_query_experiment_set_gates(self):
@@ -102,9 +185,11 @@ class TestSBHQueries(unittest.TestCase):
 		gates = sbh_query.query_experiment_set_gates(SD2Constants.YEAST_GATES_EXPERIMENT_COLLECTION)
 		print(gates)
 
-	def test_query_experiment_gates(self):
+	def test_query_single_experiment_gates(self):
+		yeast_gates_experiment = 'https://hub.sd2e.org/user/sd2e/experiment/biofab_yeast_gates_q0_aq_11269_4/1'
+
 		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
-		gates = sbh_query.query_experiment_gates()
+		gates = sbh_query.query_single_experiment_gates(yeast_gates_experiment)
 		print(gates)
 
 	# Test inducer query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -162,23 +247,38 @@ class TestSBHQueries(unittest.TestCase):
 		media = sbh_query.query_design_media()
 		print(media)
 
-	# Test plasmid query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-
-	def test_query_design_set_plasmids(self):
+	def test_query_experiment_media(self):
 		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
-		plasmids = sbh_query.query_design_set_plasmids(SD2Constants.YEAST_GATES_DESIGN_COLLECTION)
-		print(plasmids)
+		media = sbh_query.query_experiment_media()
+		print(media)
+
+	def test_query_experiment_set_media(self):
+		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
+		media = sbh_query.query_experiment_set_media(SD2Constants.YEAST_GATES_EXPERIMENT_COLLECTION)
+		print(media)
+
+	def test_query_single_experiment_media(self):
+		yeast_gates_experiment = 'https://hub.sd2e.org/user/sd2e/experiment/biofab_yeast_gates_q0_aq_11269_4/1'
+
+		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
+		media = sbh_query.query_single_experiment_media(yeast_gates_experiment)
+		print(media)
+
+	# Test plasmid query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 	def test_query_design_plasmids(self):
 		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
 		plasmids = sbh_query.query_design_plasmids()
 		print(plasmids)
 
-	def test_query_single_experiment_plasmids(self):
-		yeast_gates_experiment = 'https://hub.sd2e.org/user/sd2e/experiment/biofab_yeast_gates_q0_aq_11269_4/1'
-
+	def test_query_design_set_plasmids(self):
 		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
-		plasmids = sbh_query.query_single_experiment_plasmids(yeast_gates_experiment)
+		plasmids = sbh_query.query_design_set_plasmids(SD2Constants.YEAST_GATES_DESIGN_COLLECTION)
+		print(plasmids)
+
+	def test_query_experiment_plasmids(self):
+		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
+		plasmids = sbh_query.query_experiment_plasmids()
 		print(plasmids)
 
 	def test_query_experiment_set_plasmids(self):
@@ -186,9 +286,11 @@ class TestSBHQueries(unittest.TestCase):
 		plasmids = sbh_query.query_experiment_set_plasmids(SD2Constants.RULE_30_EXPERIMENT_COLLECTION)
 		print(plasmids)
 
-	def test_query_experiment_plasmids(self):
+	def test_query_single_experiment_plasmids(self):
+		yeast_gates_experiment = 'https://hub.sd2e.org/user/sd2e/experiment/biofab_yeast_gates_q0_aq_11269_4/1'
+
 		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
-		plasmids = sbh_query.query_experiment_plasmids()
+		plasmids = sbh_query.query_single_experiment_plasmids(yeast_gates_experiment)
 		print(plasmids)
 
 	def test_query_sample_plasmids(self):
@@ -205,23 +307,38 @@ class TestSBHQueries(unittest.TestCase):
 		plasmids = sbh_query.query_condition_plasmids(rule_30_condition)
 		print(plasmids)
 
-	# Test strain query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+	# Test riboswitch query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-	def test_query_design_set_strains(self):
+	def test_query_design_riboswitches(self):
 		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
-		strains = sbh_query.query_design_set_strains(SD2Constants.YEAST_GATES_DESIGN_COLLECTION)
-		print(strains)
+		riboswitches = sbh_query.query_design_riboswitches()
+		print(riboswitches)
+
+	def test_query_design_set_riboswitches(self):
+		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
+		riboswitches = sbh_query.query_design_set_riboswitches(SD2Constants.RIBOSWITCHES_DESIGN_COLLECTION)
+		print(riboswitches)
+
+	def test_query_experiment_riboswitches(self):
+		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
+		riboswitches = sbh_query.query_experiment_riboswitches()
+		print(riboswitches)
+
+	# Test strain query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 	def test_query_design_strains(self):
 		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
 		strains = sbh_query.query_design_strains()
 		print(strains)
 
-	def test_query_single_experiment_strains(self):
-		rule_30_experiment = 'https://hub.sd2e.org/user/sd2e/experiment/transcriptic_rule_30_q0_1_09242017/1'
-
+	def test_query_design_set_strains(self):
 		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
-		strains = sbh_query.query_single_experiment_strains(rule_30_experiment)
+		strains = sbh_query.query_design_set_strains(SD2Constants.YEAST_GATES_DESIGN_COLLECTION)
+		print(strains)
+
+	def test_query_experiment_strains(self):
+		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
+		strains = sbh_query.query_experiment_strains()
 		print(strains)
 
 	def test_query_experiment_set_strains(self):
@@ -229,9 +346,11 @@ class TestSBHQueries(unittest.TestCase):
 		strains = sbh_query.query_experiment_set_strains(SD2Constants.RULE_30_EXPERIMENT_COLLECTION)
 		print(strains)
 
-	def test_query_experiment_strains(self):
+	def test_query_single_experiment_strains(self):
+		rule_30_experiment = 'https://hub.sd2e.org/user/sd2e/experiment/transcriptic_rule_30_q0_1_09242017/1'
+
 		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
-		strains = sbh_query.query_experiment_strains()
+		strains = sbh_query.query_single_experiment_strains(rule_30_experiment)
 		print(strains)
 
 	# Test sample query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -277,6 +396,12 @@ class TestSBHQueries(unittest.TestCase):
 		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
 		exp_set_size = sbh_query.query_experiment_set_size(SD2Constants.RULE_30_EXPERIMENT_COLLECTION)
 		print(exp_set_size)
+
+	# Test statistics query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+	def test_query_synbiohub_statistics(self):
+		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
+		sbh_query.query_synbiohub_statistics()
 
 	# Note: This BBN instance will successfully query infomration if the user is directly connected to BBN's server
 	# def test_bbnSBH(self):
