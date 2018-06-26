@@ -50,6 +50,12 @@ class SynBioHub():
         self.sparql = sparql
         self.locked_predicates = locked_predicates
 
+    def attach_file(self, file, uri):
+        response = requests.post(uri + '/attach', headers={'Accept': 'text/plain', 'X-authorization': self.token}, files={'file': open(file, 'rb')})
+
+        print('attached file')
+        print(response)
+
     def push_lab_plan_parameter(self, plan_uri, parameter_uri, parameter_value):
         try:
             assert parameter_uri in SD2Constants.PLAN_PARAMETER_PREDICATES
@@ -75,6 +81,9 @@ class SynBioHub():
         plan.addPropertyValue(parameter_uri, parameter_value)
 
         self.part_shop.submit(doc, SD2Constants.SD2_EXPERIMENT_COLLECTION, 2)
+
+        print('pushed plan parameter')
+        print(response)
 
     def push_lab_sample_parameter(self, sample_uri, parameter_uri, parameter_value):
         try:
@@ -102,7 +111,10 @@ class SynBioHub():
         setattr(sample, parameter_uri, URIProperty(sample.this, parameter_uri, '0', '*'))
         sample.addPropertyValue(parameter_uri, parameter_value)
 
-        self.part_shop.submit(doc, list(collection_to_member.keys())[0], 2)
+        response = self.part_shop.submit(doc, list(collection_to_member.keys())[0], 2)
+
+        print('pushed sample parameter')
+        print(response)  
 
     def submit_to_collection(self, doc, collection_uri, overwrite, sub_collection_uris=[]):
         Config.setOption('validate', False)

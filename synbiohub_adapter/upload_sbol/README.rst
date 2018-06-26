@@ -53,3 +53,7 @@ You can also upload a lab parameter for an experiment plan or sample in SynBioHu
 	sbh.push_lab_plan_parameter('insert_URI_for_experiment_plan_here', 'http://sd2e.org#positive_control', 'insert_valid_positive_control_URI_here')
 
     sbh.push_lab_sample_parameter('insert_URI_for_sample_here', 'http://sd2e.org#bead_model', 'insert_valid_bead_model_URI_here')
+
+Finally, you can attach a file to any URI in SynBioHub by performing the following method call:
+
+	sbh.attach_file('path_to_file', 'uri')
