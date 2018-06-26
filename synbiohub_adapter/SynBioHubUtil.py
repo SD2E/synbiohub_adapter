@@ -12,6 +12,8 @@ from .cache_query import wrap_query_fn
 				Tramy Nguyen
 '''
 class SBOLConstants():
+	RIBOSWITCH = "http://identifiers.org/so/SO:0000035"
+
 	EFFECTOR = "http://identifiers.org/chebi/CHEBI:35224"
 	FLUORESCEIN = "http://identifiers.org/chebi/CHEBI:31624"
 	FLUORESCENCE = "http://purl.obolibrary.org/obo/NCIT_C16586"
