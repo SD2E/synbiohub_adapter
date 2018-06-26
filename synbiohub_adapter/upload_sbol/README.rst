@@ -43,7 +43,7 @@ Equivalently, you can import the SynBioHub class and use it as shown below assum
 
 .. code-block:: python
 
-from synbiohub_adapter.upload_sbol import SynBioHub
+	from synbiohub_adapter.upload_sbol import SynBioHub
 
     sbh = SynBioHub('https://hub.sd2e.org', 'sd2_service@sd2e.org', 'insert_password_here', 'http://hub-api.sd2e.org:80/sparql', {'http://sd2e.org#bead_model', 'http://sd2e.org#bead_batch'})
     sbh.submit_to_collection(doc, 'https://hub.sd2e.org/user/sd2e/design/design_collection/1', True, ['https://hub.sd2e.org/user/sd2e/design/yeast_gates/1'])
@@ -52,7 +52,7 @@ You can also upload a lab parameter for an experiment plan or sample in SynBioHu
 
 .. code-block:: python
 
-sbh.push_lab_plan_parameter('insert_URI_for_experiment_plan_here', 'http://sd2e.org#positive_control', 'insert_valid_positive_control_URI_here')
+	sbh.push_lab_plan_parameter('insert_URI_for_experiment_plan_here', 'http://sd2e.org#positive_control', 'insert_valid_positive_control_URI_here')
 
     sbh.push_lab_sample_parameter('insert_URI_for_sample_here', 'http://sd2e.org#bead_model', 'insert_valid_bead_model_URI_here')
 
