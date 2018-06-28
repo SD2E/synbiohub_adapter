@@ -397,6 +397,14 @@ class TestSBHQueries(unittest.TestCase):
 		exp_set_size = sbh_query.query_experiment_set_size(SD2Constants.RULE_30_EXPERIMENT_COLLECTION)
 		print(exp_set_size)
 
+	# Test attachment retrieval methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+	def test_query_plan_attachments(self):
+		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
+		plan_attachments = sbh_query.query_plan_attachments("https://hub.sd2e.org/user/sd2e/experiment/biofab_yeast_gates_q0_aq_11269_1/1")
+		assert plan_attachments is not None and len(plan_attachments['results']['bindings']) == 1
+		print(plan_attachments)
+
 	# Test statistics query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 	def test_query_synbiohub_statistics(self):
