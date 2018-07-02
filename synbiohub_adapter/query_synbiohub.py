@@ -770,7 +770,7 @@ class SynBioHubQuery(SBOLQuery):
 		return self.fetch_SPARQL(self._server, exp_set_size_query)
 
 	# Retrieves the attachments for a given plan URI
-	def query_plan_attachments(self, plan_uri):
+	def query_single_experiment_attachments(self, plan_uri):
 		attachment_query = """
 		SELECT ?attachment_id WHERE
 		{{
