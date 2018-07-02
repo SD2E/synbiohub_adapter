@@ -769,6 +769,17 @@ class SynBioHubQuery(SBOLQuery):
 
 		return self.fetch_SPARQL(self._server, exp_set_size_query)
 
+	# Retrieves the attachments for a given plan URI
+	def query_single_experiment_attachments(self, plan_uri):
+		attachment_query = """
+		SELECT ?attachment_id WHERE
+		{{
+		<{}> <http://wiki.synbiohub.org/wiki/Terms/synbiohub#attachment> ?attachment_id .
+		}}
+		""".format(plan_uri)
+
+		return self.fetch_SPARQL(self._server, attachment_query)
+
 	def query_synbiohub_statistics(self):
 		design_riboswitches = repr(len(self.query_design_riboswitches(pretty=True)))
 		exp_riboswitches = repr(len(self.query_experiment_riboswitches(by_sample=False)))

@@ -67,6 +67,18 @@ class SynBioHub():
         print('attached file')
         print(response)
 
+    # for a given plan URI, retrieve its intent JSON
+    def get_single_experiment_intent_attachment(self, plan_uri):
+
+        sbh_query = SynBioHubQuery(self.sparql)
+        attachments = sbh_query.query_single_experiment_attachments(plan_uri)
+        for binding in attachments['results']['bindings']:
+            response = requests.get(binding['attachment_id']['value'] + '/download', headers={'Accept': 'text/plain', 'X-authorization': self.token})
+            attachment_json = response.json()
+            # TODO find a better way to identify intent attachments
+            if attachment_json.get("experimental-variables") != None:
+                return attachment_json
+
     def push_lab_plan_parameter(self, plan_uri, parameter_uri, parameter_value):
         """Pushes a lab parameter for a plan to SynBioHub.
 
