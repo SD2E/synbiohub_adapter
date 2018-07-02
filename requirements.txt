@@ -1,2 +1,0 @@
-sparqlwrapper
-git+https://git@github.com/nroehner/pySBOLx.git
