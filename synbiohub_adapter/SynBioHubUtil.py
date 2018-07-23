@@ -460,9 +460,14 @@ class SBOLQuery():
 		return self.fetch_SPARQL(self._server, mod_query)
 
 	def query_collection_members(self, collections=[], members=[], rdf_type=None):
-		mem_query = self.construct_collection_entity_query(collections=collections, members=members, rdf_type=rdf_type, entity_depth=1)
+		mem_query = self.construct_collection_entity_query(collections, members=members, rdf_type=rdf_type, entity_depth=1)
 
 		return self.fetch_SPARQL(self._server, mem_query)
+
+	def query_collections(self, collections=[]):
+		collection_query = self.construct_collection_entity_query(collections, entity_label='collection', entity_depth=1)
+
+		return self.fetch_SPARQL(self._server, collection_query)
 
 	def serialize_options(self, options):
 		serial_options = []

@@ -4,8 +4,8 @@ import os
 import json
 import requests
 from sbol import *
-from synbiohub_adapter.query_synbiohub import SynBioHubQuery
-from synbiohub_adapter.SynBioHubUtil import SD2Constants
+from synbiohub_adapter import SynBioHubQuery
+from synbiohub_adapter import SD2Constants
 from pySBOLx.pySBOLx import Experiment
 
 
@@ -18,6 +18,8 @@ def main(args=None):
                         f for f in os.listdir('.') if os.path.isfile(f) and f.endswith('.xml')])
     parser.add_argument('-c', '--collection_uri', nargs='?',
                         default=SD2Constants.SD2_DESIGN_COLLECTION)
+    parser.add_argument('-n', '--collection_name', nargs='?', default='')
+    parser.add_argument('-d', '--collection_description', nargs='?', default='')
     parser.add_argument('-b', '--sub_collection_uris', nargs='*', default=[])
     parser.add_argument('-w', '--overwrite', action='store_true')
     parser.add_argument('-u', '--url', nargs='?',
@@ -30,21 +32,27 @@ def main(args=None):
     parser.add_argument('-l', '--locked_predicates', nargs='*', default=[])
     args = parser.parse_args(args)
 
-    docs = load_documents(args.input_files)
+    docs = load_documents(args.input_files, args.collection_uri, args.collection_name, args.collection_description)
 
     sbh = SynBioHub(args.url, args.email, args.password,
                     args.sparql, set(args.locked_predicates))
 
     for doc in docs:
         sbh.submit_to_collection(
-            doc, args.collection_uri, args.overwrite, args.sub_collection_uris)
+            doc, args.collection_uri, args.overwrite, args.sub_collection_uris, args.collection_name, args.collection_description)
 
 
-def load_documents(sbol_files):
+def load_documents(sbol_files, collection_uri, collection_name='', collection_description=''):
     docs = []
     for sbol_file in sbol_files:
         doc = Document()
+
         doc.read(sbol_file)
+
+        doc.displayId = collection_uri.split('/')[-2]
+        doc.name = collection_name
+        doc.description = collection_description
+
         docs.append(doc)
     return docs
 
@@ -64,7 +72,7 @@ class SynBioHub():
     def attach_file(self, file, uri):
         response = requests.post(uri + '/attach', headers={'Accept': 'text/plain', 'X-authorization': self.token}, files={'file': open(file, 'rb')})
 
-        print('attached file')
+        print('Attached file.')
         print(response)
 
     # for a given plan URI, retrieve the named attachment
@@ -126,9 +134,9 @@ class SynBioHub():
             plan.this, parameter_uri, '0', '*'))
         plan.addPropertyValue(parameter_uri, parameter_value)
 
-        self.part_shop.submit(doc, SD2Constants.SD2_EXPERIMENT_COLLECTION, 2)
+        response = self.part_shop.submit(doc, SD2Constants.SD2_EXPERIMENT_COLLECTION, 2)
 
-        print('pushed plan parameter')
+        print('Pushed plan parameter.')
         print(response)
 
     def push_lab_sample_parameter(self, sample_uri, parameter_uri, parameter_value):
@@ -168,33 +176,37 @@ class SynBioHub():
 
         response = self.part_shop.submit(doc, list(collection_to_member.keys())[0], 2)
 
-        print('pushed sample parameter')
+        print('Pushed sample parameter.')
         print(response)  
 
     def submit_to_collection(self, doc, collection_uri, overwrite, sub_collection_uris=[]):
         Config.setOption('validate', False)
         Config.setOption('sbol_typed_uris', False)
 
-        local_to_remote = self.__map_local_to_remote(
-            doc, collection_uri, sub_collection_uris)
+        if len(self.query_collections([collection_uri])) == 0:
+            response = self.part_shop.submit(doc)
+        else:
+            local_to_remote = self.__map_local_to_remote(
+                doc, collection_uri, sub_collection_uris)
 
-        print('mapped local to remote')
+            print('Mapped local to remote.')
 
-        if overwrite or len(local_to_remote) == 0:
+            try:
+                assert overwrite or len(local_to_remote) == 0
+            except AssertionError:
+                raise URIsInUseError(list(local_to_remote.keys()))
+
             if len(local_to_remote) > 0:
                 if len(self.locked_predicates) > 0:
                     self.__copy_remote_predicates(doc, local_to_remote)
                 self.remove_all(local_to_remote.values())
 
-                print('removed remote')
+                print('Removed remote.')
 
             response = self.part_shop.submit(doc, collection_uri, 2)
 
-            print('submitted local')
-            print(response)
-        else:
-            print(repr(local_to_remote.keys())[
-                  10:-1] + ' have been previously uploaded and would be overwritten. Upload aborted. To overwrite, include -w in arguments.')
+        print('Submitted local.')
+        print(response)
 
     def search_sub_collections(self, collection_uri):
         sub_collection_uris = []
@@ -205,6 +217,17 @@ class SynBioHub():
             sub_collection_uris.append(result['uri'])
 
         return sub_collection_uris
+
+    def query_collections(self, collection_uris):
+        sbh_query = SynBioHubQuery(self.sparql)
+
+        response = sbh_query.query_collections(collection_uris)
+
+        found_collection_uris = []
+        for binding in response['results']['bindings']:
+            found_collection_uris.append(binding['collection']['value'])
+
+        return found_collection_uris
 
     def query_sub_collection_members(self, member_uris, collection_uri):
         sub_collection_uris = self.search_sub_collections(collection_uri)
@@ -285,6 +308,7 @@ class SynBioHub():
         if len(sub_collection_to_remote) == 0:
             collection_to_remote = self.query_collection_members(
                 list(remote_to_local.keys()), [collection_uri])
+            
             for collection_key in collection_to_remote.keys():
                 for remote_uri in collection_to_remote[collection_key]:
                     local_to_remote[remote_to_local[remote_uri]] = remote_uri
@@ -348,6 +372,14 @@ class UndefinedURIError(SBHLabParameterError):
 
     def __str__(self):
         return "Undefined URI: {}".format(self.uri)
+
+class URIsInUseError(Exception):
+
+    def __init__(self, uris_in_use):
+        self.uris_in_use = uris_in_use
+
+    def __str__(self):
+        return "URIs in use: {} are already in use.".format(repr(self.uris_in_use))
 
 
 if __name__ == '__main__':
