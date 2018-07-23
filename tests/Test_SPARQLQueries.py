@@ -405,6 +405,24 @@ class TestSBHQueries(unittest.TestCase):
 		assert plan_attachments is not None and len(plan_attachments['results']['bindings']) == 1
 		print(plan_attachments)
 
+		plan_attachments = sbh_query.query_single_experiment_attachments("foo")
+		assert plan_attachments is not None and len(plan_attachments['results']['bindings']) == 0
+		print(plan_attachments)
+
+	def test_query_plan_named_attachments(self):
+		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
+		plan_attachments = sbh_query.query_single_experiment_attachment("https://hub.sd2e.org/user/sd2e/experiment/biofab_yeast_gates_q0_intent_control_test/1", "biofab_yg_UWBF_NOR_intent_control_test.json")
+		assert plan_attachments is not None and len(plan_attachments['results']['bindings']) == 1
+		print(plan_attachments)
+
+		plan_attachments = sbh_query.query_single_experiment_attachment("https://hub.sd2e.org/user/sd2e/experiment/biofab_yeast_gates_q0_intent_control_test/1", "biofab_yg_UWBF_NOR_intent_control_test_sample_attributes.json")
+		assert plan_attachments is not None and len(plan_attachments['results']['bindings']) == 1
+		print(plan_attachments)
+
+		plan_attachments = sbh_query.query_single_experiment_attachment("https://hub.sd2e.org/user/sd2e/experiment/biofab_yeast_gates_q0_intent_control_test/1", "foo")
+		assert plan_attachments is not None and len(plan_attachments['results']['bindings']) == 0
+		print(plan_attachments)
+
 	# Test statistics query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 	def test_query_synbiohub_statistics(self):
