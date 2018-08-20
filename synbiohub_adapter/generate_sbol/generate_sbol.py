@@ -107,6 +107,11 @@ def generate_sbol_helper(doc, csv_file, generate_device_switcher, generate_syste
                     out_inputs.append(identified)
 
             try:
+                identified.wasDerivedFrom = row[header['Source']]
+            except:
+                pass
+
+            try:
                 out_measures[identified.displayId] = generate_concentration(doc, row, header, om)
             except:
                 try:

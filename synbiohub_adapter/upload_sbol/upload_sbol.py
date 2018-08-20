@@ -18,8 +18,8 @@ def main(args=None):
                         f for f in os.listdir('.') if os.path.isfile(f) and f.endswith('.xml')])
     parser.add_argument('-c', '--collection_uri', nargs='?',
                         default=SD2Constants.SD2_DESIGN_COLLECTION)
-    parser.add_argument('-n', '--collection_name', nargs='?', default='')
-    parser.add_argument('-d', '--collection_description', nargs='?', default='')
+    parser.add_argument('-n', '--collection_name', nargs='?', default='Default Collection')
+    parser.add_argument('-d', '--collection_description', nargs='?', default='This is a default collection.')
     parser.add_argument('-b', '--sub_collection_uris', nargs='*', default=[])
     parser.add_argument('-w', '--overwrite', action='store_true')
     parser.add_argument('-u', '--url', nargs='?',
@@ -39,10 +39,10 @@ def main(args=None):
 
     for doc in docs:
         sbh.submit_to_collection(
-            doc, args.collection_uri, args.overwrite, args.sub_collection_uris, args.collection_name, args.collection_description)
+            doc, args.collection_uri, args.overwrite, args.sub_collection_uris)
 
 
-def load_documents(sbol_files, collection_uri, collection_name='', collection_description=''):
+def load_documents(sbol_files, collection_uri, collection_name='Default Collection', collection_description='This is a default collection.'):
     docs = []
     for sbol_file in sbol_files:
         doc = Document()

@@ -425,9 +425,9 @@ class TestSBHQueries(unittest.TestCase):
 
 	# Test statistics query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-	def test_query_synbiohub_statistics(self):
-		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
-		sbh_query.query_synbiohub_statistics()
+	# def test_query_synbiohub_statistics(self):
+	# 	sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
+	# 	sbh_query.query_synbiohub_statistics()
 
 	# Note: This BBN instance will successfully query infomration if the user is directly connected to BBN's server
 	# def test_bbnSBH(self):
