@@ -423,6 +423,13 @@ class TestSBHQueries(unittest.TestCase):
 		assert plan_attachments is not None and len(plan_attachments['results']['bindings']) == 0
 		print(plan_attachments)
 
+	# Test lab query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+	def test_query_designs_by_lab_ids(self):
+		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
+		designs = sbh_query.query_designs_by_lab_ids(SD2Constants.GINKGO, ['3411', '376', '772', '1993'])
+		print(designs)
+
 	# Test statistics query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 	# def test_query_synbiohub_statistics(self):

@@ -913,23 +913,41 @@ class SynBioHubQuery(SBOLQuery):
 
         return self.fetch_SPARQL(self._server, attachment_name_query)
 
-    def query_identities_by_lab_ids(self, lab, lab_ids, pretty=True):
-        identity_query = """
-        PREFIX sbol: <http://sbols.org/v2#>
-        PREFIX sd2: <http://sd2e.org#>
-        SELECT ?identity ?ids WHERE {{ 
-            <{cl}> sbol:member ?identity .
-            VALUES (?ids) {{ {id} }}
-            ?identity sd2:{la} ?ids .
-        }}
-        """.format(cl=SD2Constants.SD2_DESIGN_COLLECTION, la=lab, id=self.serialize_options(lab_ids))
+    def query_designs_by_lab_ids(self, lab, lab_ids, verbose=False, pretty=True):
+        if verbose:
+            design_query = """
+            PREFIX sbol: <http://sbols.org/v2#>
+            PREFIX dcterms: <http://purl.org/dc/terms/>
+            PREFIX sd2: <http://sd2e.org#>
+            SELECT ?identity ?name ?id WHERE {{ 
+                <{col}> sbol:member ?identity .
+                ?identity dcterms:title ?name .
+                VALUES (?id) {{ {id} }}
+                ?identity sd2:{lab} ?id
+            }}
+            """.format(col=SD2Constants.SD2_DESIGN_COLLECTION, lab=lab + '_UID', id=self.serialize_literal_options(lab_ids))
+        else:
+            design_query = """
+            PREFIX sbol: <http://sbols.org/v2#>
+            PREFIX sd2: <http://sd2e.org#>
+            SELECT ?identity ?id WHERE {{ 
+                <{col}> sbol:member ?identity .
+                VALUES (?id) {{ {id} }}
+                ?identity sd2:{lab} ?id
+            }}
+            """.format(col=SD2Constants.SD2_DESIGN_COLLECTION, lab=lab + '_UID', id=self.serialize_literal_options(lab_ids))
 
-        query_result = self.fetch_SPARQL(self._server, identity_query)
+        print(design_query)
+
+        design_query_result = self.fetch_SPARQL(self._server, design_query)
 
         if pretty:
-            return self.format_query_result(query_result, ['identity'])
+            if verbose:
+                return self.format_query_result(design_query_result, ['identity', 'name'], 'id')
+            else:
+                return self.format_query_result(design_query_result, ['identity'], 'id')
         else:
-            return query_result
+            return design_query_result
 
     def query_synbiohub_statistics(self):
         design_riboswitches = repr(len(self.query_design_riboswitches(pretty=True)))
@@ -1001,4 +1019,4 @@ class SynBioHubQuery(SBOLQuery):
     def submit_ExistingCollection(self, sbolDoc, collURI, overwrite):
         sbolDoc.identity = collURI
         sbh_connector = login_SBH(self._server)
-        self.submit_Collection(sbh_connector, sbolDoc, False, overwrite)
+        self.submit_Collection(sbh_connector, sbolDoc, False, overwrite)    

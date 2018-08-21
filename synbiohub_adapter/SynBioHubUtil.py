@@ -53,6 +53,14 @@ class SD2Constants():
     SD2_EXPERIMENT_COLLECTION = 'https://hub.sd2e.org/user/sd2e/experiment/experiment_collection/1'
     RULE_30_EXPERIMENT_COLLECTION = 'https://hub.sd2e.org/user/sd2e/experiment/rule_30/1'
     YEAST_GATES_EXPERIMENT_COLLECTION = 'https://hub.sd2e.org/user/sd2e/experiment/yeast_gates/1'
+
+    # SD2 labs
+
+    GINKGO = 'Ginkgo'
+    BIOFAB = 'BioFAB'
+    TRANSCRIPTIC = 'Transcriptic'
+
+    # Plate reader control
     
     LUDOX = 'https://hub.sd2e.org/user/sd2e/design/ludox_S40/1'
 
@@ -417,13 +425,14 @@ class SBOLQuery():
             for binding in query_result['results']['bindings']:
                 group_value = binding[group_key]['value']
 
-                if group_value not in formatted:
-                    formatted[group_value] = []
+                if group_value in formatted:
+                    if not isinstance(formatted[group_value], list):
+                        formatted[group_value] = [formatted[group_value]]
 
-            for binding in query_result['results']['bindings']:
-                group_value = binding[group_key]['value']
-
-                formatted[group_value].append(self.__format_binding(binding, binding_keys))
+                    formatted[group_value].append(self.__format_binding(binding, binding_keys))
+                else:
+                    formatted[group_value] = self.__format_binding(binding, binding_keys)
+                    
 
             return formatted
 
@@ -486,7 +495,7 @@ class SBOLQuery():
     def serialize_literal_options(self, options):
         serial_options = []
         for opt in options:
-            serial_options.append(''.join(['( ', opt, ' ) ']))
+            serial_options.append(''.join(['( "', opt, '" ) ']))
 
         return ''.join(serial_options)[:-1]
 
