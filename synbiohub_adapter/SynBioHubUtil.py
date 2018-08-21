@@ -483,6 +483,13 @@ class SBOLQuery():
 
         return ''.join(serial_options)[:-1]
 
+    def serialize_literal_options(self, options):
+        serial_options = []
+        for opt in options:
+            serial_options.append(''.join(['( ', opt, ' ) ']))
+
+        return ''.join(serial_options)[:-1]
+
     def serialize_objects(self, objects):
         serial_objects = []
         for obj in objects:
