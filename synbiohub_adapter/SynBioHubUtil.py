@@ -35,6 +35,7 @@ class SBOLConstants():
     OBI_STRAIN = "http://purl.obolibrary.org/obo/OBI_0001185"
 
     SBOL_NS = "http://sbols.org/v2#"
+    OM_NS = 'http://www.ontology-of-units-of-measure.org/resource/om-2#'
     BBN_HOMESPACE = "https://synbiohub.bbn.com"
 
 class BBNConstants():
@@ -128,9 +129,10 @@ class SBOLQuery():
     '''
 
     # server: The SynBioHub server to call sparql queries on.
-    def __init__(self, server, use_fallback_cache=False):
+    def __init__(self, server, use_fallback_cache=False, om=None):
         self._server = server
         self._use_fallback_cache = use_fallback_cache
+        self.om = om
 
         # If using fallback cache, wrap the fetch_SPARQL function
         # with cache storage/retrieval.
@@ -398,6 +400,53 @@ class SBOLQuery():
         else:
             return ""
 
+    def construct_unit_query(self, unit_id=None, name=None, symbol=None):
+        if unit_id is not None or name is not None or symbol is not None:
+            unit_query_fragments = []
+
+            if unit_id is not None:
+                om_uri = '/'.join([SBOLConstants.OM_NS[:-1], unit_id])
+
+                unit_query_fragments.append("""
+                    VALUES (?uri) {{ {uri} }}
+                    ?uri rdfs:label ?name ;
+                        om:symbol ?symbol .
+                    FILTER( lang(?name) = "en" )
+                """.format(uri=self.serialize_options([om_uri])))
+
+            if name is not None:
+                unit_query_fragments.append("""
+                    VALUES (?name) {{ {nam} }}
+                    ?uri rdfs:label ?name ;
+                        om:symbol ?symbol .
+                    FILTER( lang(?name) = "en" || lang(?name) = "nl" )
+                """.format(nam=self.serialize_literal_options([name]))) 
+
+            if symbol is not None:
+                unit_query_fragments.append("""
+                    ?uri rdfs:label ?name ;
+                        om:symbol "{sym}" .
+                    FILTER( lang(?name) = "en" )
+                """.format(sym=symbol))
+
+                unit_query_fragments.append("""
+                    ?uri rdfs:label ?name ;
+                        om:alternativeSymbol "{sym}" .
+                    FILTER( lang(?name) = "en" )
+                """.format(sym=symbol))
+
+            unit_query_body = """
+            } UNION {
+            """.join(unit_query_fragments)
+
+            return """
+            SELECT ?uri ?name ?symbol WHERE {{ {{
+            {bod}
+            }} }}
+            """.format(bod=unit_query_body)
+        else:
+            return ""
+
     def __format_binding(self, binding, binding_keys):
         if len(binding_keys) > 1:
             formatted = {}
@@ -484,6 +533,17 @@ class SBOLQuery():
         collection_query = self.construct_collection_entity_query(collections, entity_label='collection', entity_depth=1)
 
         return self.fetch_SPARQL(self._server, collection_query)
+
+    def query_units(self, unit_id=None, name=None, symbol=None):
+        unit_uris = []
+
+        unit_query = self.construct_unit_query(unit_id, name, symbol)
+
+        if self.om is not None:
+            for unit_query_result in self.om.query(unit_query):
+                unit_uris.append(unit_query_result.uri)
+
+        return unit_uris
 
     def serialize_options(self, options):
         serial_options = []

@@ -2,6 +2,7 @@ import argparse
 import csv
 import sys
 import os
+from synbiohub_adapter import SBOLQuery
 from pySBOLx.pySBOLx import XDocument
 
 SD2_DESIGN_NS = 'http://hub.sd2e.org/user/sd2e/design'
@@ -112,6 +113,8 @@ def generate_sbol_helper(doc, csv_file, generate_device_switcher, generate_syste
                 pass
 
             try:
+                symbol = row[header['Concentration_Units']]
+
                 out_measures[identified.displayId] = generate_concentration(doc, row, header, om)
             except:
                 try:
@@ -380,20 +383,49 @@ def generate_concentration_unit(doc, row, header, om):
 
     assert len(symbol) > 0
 
-    try:
-        return doc.create_unit(om, symbol)
-    except:
-        return doc.create_unit(om=om, name=symbol)
+    unit_query = SBOLQuery("", om=om)
 
+    unit_uris = unit_query.query_units(symbol, symbol, symbol)
+
+    if len(unit_uris) == 0:
+        unit_id = symbol.replace('/', '_').replace('-', '_').replace(' ', '')
+
+        if is_sbol_alnum_id(unit_id):
+            return doc.create_unit(unit_id, symbol)
+        else:
+            raise NonStandardUnitSymbolConversionError(symbol)
+    else:
+        return unit_uris[0]
+    
 def generate_volume_unit(doc, row, header, om):
     symbol = row[header['Volume_Units']]
 
     assert len(symbol) > 0
 
-    try:
-        return doc.create_unit(om, symbol)
-    except:
-        return doc.create_unit(om=om, name=symbol)
+    unit_query = SBOLQuery("", om=om)
+
+    unit_uris = unit_query.query_units(symbol, symbol, symbol)
+
+    if len(unit_uris) == 0:
+        unit_id = symbol.replace('/', '_').replace('-', '_').replace(' ', '')
+
+        if is_sbol_alnum_id(unit_id):
+            return doc.create_unit(om, unit_id, symbol)
+        else:
+            raise NonStandardUnitSymbolConversionError(symbol)
+    else:
+        return unit_uris[0]
+
+def is_sbol_alnum_id(display_id):
+    return not display_id[0].isdigit() and display_id.replace('_', '').isalnum()
+
+class NonStandardUnitSymbolConversionError(Exception):
+
+    def __init__(self, symbol):
+        self.symbol = symbol
+
+    def __str__(self):
+        return "Failed to convert symbol {} to valid ID for non-standard Unit. ID must start with non-digit and must contain only alphanumeric characters and underscores.".format(self.symbol)
 
 if __name__ == '__main__':
     main()
