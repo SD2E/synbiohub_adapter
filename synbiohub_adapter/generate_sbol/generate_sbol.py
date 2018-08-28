@@ -85,10 +85,11 @@ def generate_sbol_helper(doc, csv_file, generate_device_switcher, generate_syste
 
                 try:
                     aux_file = os.path.join(os.path.dirname(csv_file), row[header['Composition_File']])
-
-                    generate_sbol_helper(doc, aux_file, generate_device_switcher, generate_system_switcher, generate_input_switcher, om, devices, systems, inputs, measures)
                 except:
-                    pass
+                    aux_file = None
+
+                if aux_file is not None:
+                    generate_sbol_helper(doc, aux_file, generate_device_switcher, generate_system_switcher, generate_input_switcher, om, devices, systems, inputs, measures)
 
                 identified = generate_system(doc, row, header, devices, systems, inputs, measures)
 
@@ -112,31 +113,46 @@ def generate_sbol_helper(doc, csv_file, generate_device_switcher, generate_syste
             except:
                 pass
 
-            try:
-                symbol = row[header['Concentration_Units']]
+            measure = generate_measure(doc, row, header, om)
 
-                out_measures[identified.displayId] = generate_concentration(doc, row, header, om)
-            except:
-                try:
-                    out_measures[identified.displayId] = generate_volume(doc, row, header, om)
-                except:
-                    pass
+            if measure is not None:
+                out_measures[identified.displayId] = measure
 
-def generate_volume(doc, row, header, om):
+def generate_measure(doc, row, header, om):
     try:
-        unit = generate_volume_unit(doc, row, header, om)
-
-        return {'mag': float(row[header['Volume']]), 'unit': unit, 'id': 'volume'}
+        measure = float(row[header['Measure']])
     except:
-        return {'mag': float(row[header['Volume']]), 'id': 'volume'}
+        measure = None
 
-def generate_concentration(doc, row, header, om):
+    unit = generate_unit(doc, row, header, om)
+
+    if measure is not None and unit is not None:
+        return {'mag': float(row[header['Measure']]), 'unit': unit, 'id': 'measure'}
+    else:
+        return None
+
+def generate_unit(doc, row, header, om):
     try:
-        unit = generate_concentration_unit(doc, row, header, om)
-
-        return {'mag': float(row[header['Concentration']]), 'unit': unit, 'id': 'concentration'}
+        symbol = row[header['Units']]
     except:
-        return {'mag': float(row[header['Concentration']]), 'id': 'concentration'}
+        symbol = None
+
+    if symbol is not None and len(symbol) > 0:
+        unit_query = SBOLQuery("", om=om)
+
+        unit_uris = unit_query.query_units(symbol, symbol, symbol)
+
+        if len(unit_uris) == 0:
+            unit_id = symbol.replace('/', '_').replace('-', '_').replace(' ', '')
+
+            if is_sbol_alnum_id(unit_id):
+                return doc.create_unit(unit_id, symbol)
+            else:
+                raise NonStandardUnitSymbolConversionError(symbol)
+        else:
+            return unit_uris[0]
+    else:
+        return None
 
 def generate_buffer(doc, row, header, devices=[], systems=[], inputs=[], measures={}):
     display_id = row[header['ID']]
@@ -377,44 +393,6 @@ def generate_inducer(doc, row, header):
     print('inducer ' + display_id)
 
     return doc.create_inducer(display_id, name, descr)
-
-def generate_concentration_unit(doc, row, header, om):
-    symbol = row[header['Concentration_Units']]
-
-    assert len(symbol) > 0
-
-    unit_query = SBOLQuery("", om=om)
-
-    unit_uris = unit_query.query_units(symbol, symbol, symbol)
-
-    if len(unit_uris) == 0:
-        unit_id = symbol.replace('/', '_').replace('-', '_').replace(' ', '')
-
-        if is_sbol_alnum_id(unit_id):
-            return doc.create_unit(unit_id, symbol)
-        else:
-            raise NonStandardUnitSymbolConversionError(symbol)
-    else:
-        return unit_uris[0]
-    
-def generate_volume_unit(doc, row, header, om):
-    symbol = row[header['Volume_Units']]
-
-    assert len(symbol) > 0
-
-    unit_query = SBOLQuery("", om=om)
-
-    unit_uris = unit_query.query_units(symbol, symbol, symbol)
-
-    if len(unit_uris) == 0:
-        unit_id = symbol.replace('/', '_').replace('-', '_').replace(' ', '')
-
-        if is_sbol_alnum_id(unit_id):
-            return doc.create_unit(om, unit_id, symbol)
-        else:
-            raise NonStandardUnitSymbolConversionError(symbol)
-    else:
-        return unit_uris[0]
 
 def is_sbol_alnum_id(display_id):
     return not display_id[0].isdigit() and display_id.replace('_', '').isalnum()
