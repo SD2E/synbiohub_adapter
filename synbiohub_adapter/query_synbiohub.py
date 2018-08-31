@@ -913,7 +913,7 @@ class SynBioHubQuery(SBOLQuery):
 
         return self.fetch_SPARQL(self._server, attachment_name_query)
 
-    def query_designs_by_lab_ids(self, lab, lab_ids, verbose=False, pretty=True):
+    def query_designs_by_lab_ids(self, lab, lab_ids, verbose=False, pretty=True, print_query=False):
         if verbose:
             design_query = """
             PREFIX sbol: <http://sbols.org/v2#>
@@ -937,7 +937,8 @@ class SynBioHubQuery(SBOLQuery):
             }}
             """.format(col=SD2Constants.SD2_DESIGN_COLLECTION, lab=lab + '_UID', id=self.serialize_literal_options(lab_ids))
 
-        print(design_query)
+        if print_query:
+            print(design_query)
 
         design_query_result = self.fetch_SPARQL(self._server, design_query)
 
