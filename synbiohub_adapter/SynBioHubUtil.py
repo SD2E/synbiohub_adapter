@@ -533,8 +533,6 @@ class SBOLQuery():
     def query_collections(self, collections=[]):
         collection_query = self.construct_collection_entity_query(collections, entity_label='collection', entity_depth=1)
 
-        print(collection_query)
-
         return self.fetch_SPARQL(self._server, collection_query)
 
     def query_units(self, unit_id=None, name=None, symbol=None):
