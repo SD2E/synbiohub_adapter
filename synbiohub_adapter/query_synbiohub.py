@@ -222,14 +222,14 @@ class SynBioHubQuery(SBOLQuery):
         PREFIX sbol: <http://sbols.org/v2#>
         PREFIX sd2: <http://sd2e.org#>
 
-        SELECT DISTINCT ?gate_type ?input ?level WHERE {{
+        SELECT DISTINCT ?gate ?gate_type ?input ?level WHERE {{
             <https://hub.sd2e.org/user/sd2e/experiment/experiment_collection/1> sbol:member ?exp .
             ?exp sd2:experimentalDesign ?design .
             ?design sd2:experimentalCondition ?cond .
-            VALUES (?def) {{ {ga} }}
-            ?cond sd2:definition ?def ;
+            VALUES (?gate) {{ {ga} }}
+            ?cond sd2:definition ?gate ;
                 sd2:experimentalLevel ?elevel .
-            ?def sbol:role ?gate_type .
+            ?gate sbol:role ?gate_type .
             ?elevel sd2:level ?level;
                 sd2:experimentalVariable ?evar .
             ?evar dcterms:title ?input
