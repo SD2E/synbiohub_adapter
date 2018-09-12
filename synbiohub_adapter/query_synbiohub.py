@@ -216,6 +216,30 @@ class SynBioHubQuery(SBOLQuery):
 
     # Gate query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
+    def query_gate_input_levels(self, gates):
+        gate_query = """
+        PREFIX dcterms: <http://purl.org/dc/terms/>
+        PREFIX sbol: <http://sbols.org/v2#>
+        PREFIX sd2: <http://sd2e.org#>
+
+        SELECT DISTINCT ?gate_type ?input ?level WHERE {{
+            <https://hub.sd2e.org/user/sd2e/experiment/experiment_collection/1> sbol:member ?exp .
+            ?exp sd2:experimentalDesign ?design .
+            ?design sd2:experimentalCondition ?cond .
+            VALUES (?def) {{ {ga} }}
+            ?cond sd2:definition ?def ;
+                sd2:experimentalLevel ?elevel .
+            ?def sbol:role ?gate_type .
+            ?elevel sd2:level ?level;
+                sd2:experimentalVariable ?evar .
+            ?evar dcterms:title ?input
+        }}
+        """.format(ga=self.serialize_options(gates))
+
+        query_result = self.fetch_SPARQL(self._server, gate_query)
+
+        return self.fetch_SPARQL(self._server, gate_query)
+
     # Retrieves the URIs for all logic gates from the collection of every SD2 design element.
     def query_design_gates(self, verbose=False, with_role=True, pretty=False, collections=[SD2Constants.SD2_DESIGN_COLLECTION]):
         mod_labels = ['gate']

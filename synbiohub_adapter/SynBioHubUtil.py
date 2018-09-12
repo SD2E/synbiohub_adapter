@@ -45,6 +45,7 @@ class BBNConstants():
 
 class SD2Constants():
     SD2_SERVER = "http://hub-api.sd2e.org:80/sparql"
+    SD2_STAGING_SERVER = "https://hub-api-staging.sd2e.org:80/sparql"
     
     SD2_DESIGN_COLLECTION = 'https://hub.sd2e.org/user/sd2e/design/design_collection/1'
     RULE_30_DESIGN_COLLECTION = 'https://hub.sd2e.org/user/sd2e/design/rule_30/1'
@@ -531,6 +532,8 @@ class SBOLQuery():
 
     def query_collections(self, collections=[]):
         collection_query = self.construct_collection_entity_query(collections, entity_label='collection', entity_depth=1)
+
+        print(collection_query)
 
         return self.fetch_SPARQL(self._server, collection_query)
 
