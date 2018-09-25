@@ -26,6 +26,11 @@ class TestSBHQueries(unittest.TestCase):
 		members = sbh_query.query_collection_members([SD2Constants.YEAST_GATES_DESIGN_COLLECTION], ['https://hub.sd2e.org/user/sd2e/design/UWBF_7376/1', 'https://hub.sd2e.org/user/sd2e/design/pAN4036/1'])
 		print(members)
 
+	def test_query_collections(self):
+		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
+		members = sbh_query.query_collections([SD2Constants.SD2_DESIGN_COLLECTION])
+		print(members)
+
 	# Test control query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 	def test_query_design_controls(self):
@@ -164,6 +169,11 @@ class TestSBHQueries(unittest.TestCase):
 		print(controls)	
 
 	# Test gate query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+	def test_query_gate_input_levels(self):
+		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
+		input_levels = sbh_query.query_gate_input_levels(['https://hub.sd2e.org/user/sd2e/design/UWBF_16969/1'])
+		print(input_levels)
 
 	def test_query_design_gates(self):
 		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
@@ -374,7 +384,7 @@ class TestSBHQueries(unittest.TestCase):
 	# Test experiment intent query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 	def test_query_single_experiment_intent(self):
-		yeast_gates_experiment = 'https://hub.sd2e.org/user/sd2e/experiment/biofab_yeast_gates_q0_aq_10843/1'
+		yeast_gates_experiment = 'https://hub.sd2e.org/user/sd2e/experiment/biofab_yeast_gates_q0_aq_12548_3/1'
 
 		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
 		exp_intent = sbh_query.query_single_experiment_intent(yeast_gates_experiment)
@@ -405,11 +415,36 @@ class TestSBHQueries(unittest.TestCase):
 		assert plan_attachments is not None and len(plan_attachments['results']['bindings']) == 1
 		print(plan_attachments)
 
+		plan_attachments = sbh_query.query_single_experiment_attachments("foo")
+		assert plan_attachments is not None and len(plan_attachments['results']['bindings']) == 0
+		print(plan_attachments)
+
+	def test_query_plan_named_attachments(self):
+		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
+		plan_attachments = sbh_query.query_single_experiment_attachment("https://hub.sd2e.org/user/sd2e/experiment/biofab_yeast_gates_q0_intent_control_test/1", "biofab_yg_UWBF_NOR_intent_control_test.json")
+		assert plan_attachments is not None and len(plan_attachments['results']['bindings']) == 1
+		print(plan_attachments)
+
+		plan_attachments = sbh_query.query_single_experiment_attachment("https://hub.sd2e.org/user/sd2e/experiment/biofab_yeast_gates_q0_intent_control_test/1", "biofab_yg_UWBF_NOR_intent_control_test_sample_attributes.json")
+		assert plan_attachments is not None and len(plan_attachments['results']['bindings']) == 1
+		print(plan_attachments)
+
+		plan_attachments = sbh_query.query_single_experiment_attachment("https://hub.sd2e.org/user/sd2e/experiment/biofab_yeast_gates_q0_intent_control_test/1", "foo")
+		assert plan_attachments is not None and len(plan_attachments['results']['bindings']) == 0
+		print(plan_attachments)
+
+	# Test lab query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+	def test_query_designs_by_lab_ids(self):
+		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
+		designs = sbh_query.query_designs_by_lab_ids(SD2Constants.GINKGO, ['3411', '376', '772', '1993'])
+		print(designs)
+
 	# Test statistics query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-	def test_query_synbiohub_statistics(self):
-		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
-		sbh_query.query_synbiohub_statistics()
+	# def test_query_synbiohub_statistics(self):
+	# 	sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
+	# 	sbh_query.query_synbiohub_statistics()
 
 	# Note: This BBN instance will successfully query infomration if the user is directly connected to BBN's server
 	# def test_bbnSBH(self):

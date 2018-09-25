@@ -158,7 +158,105 @@ class SynBioHubQuery(SBOLQuery):
 	def query_single_experiment_water_controls(self, experiment, verbose=False, trace_derivation=True, by_sample=True, pretty=True):
 		return self.query_experiment_water_controls(verbose, trace_derivation, by_sample, pretty, experiments=[experiment])
 
+	# DNA query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+	# Retrieves the URIs for all DNA components from the collection of every SD2 design element.
+	def query_design_dna(self, verbose=False, with_sequence=False, pretty=False, collections=[SD2Constants.SD2_DESIGN_COLLECTION]):
+		comp_labels = ['plasmid']
+
+		if verbose:
+			comp_labels.extend(['name', 'description'])
+
+		if with_sequence:
+			comp_labels.append('sequence')
+
+		query_result = self.query_design_components([BIOPAX_DNA], collections, comp_labels[0], comp_labels[1:])
+
+		if pretty:
+			return self.format_query_result(query_result, comp_labels)
+		else:
+			return query_result
+
+	# Retrieves the URIs for all DNA components from the specified collection of design elements.
+	# This collection is typically associated with a challenge problem.
+	def query_design_set_dna(self, collection, verbose=False, with_sequence=False, pretty=False):
+		return self.query_design_dna(verbose, with_sequence, pretty, [collection])
+
+	# Retrieves the URIs for all DNA components used by experiments in the collection of every SD2 experiment.
+	def query_experiment_dna(self, verbose=False, with_sequence=False, trace_derivation=True, by_sample=False, pretty=True, collections=[SD2Constants.SD2_EXPERIMENT_COLLECTION], experiments=[]):
+		comp_labels = ['plasmid']
+
+		if verbose:
+			comp_labels.extend(['name', 'description'])
+
+		if with_sequence:
+			comp_labels.append('sequence')
+
+		if by_sample:
+			comp_labels.append('sample')
+
+		query_result = self.query_experiment_components([BIOPAX_DNA], collections, comp_labels[0], comp_labels[1:], trace_derivation, experiments=experiments)
+
+		if pretty:
+			if by_sample:
+				return self.format_query_result(query_result, comp_labels[:-1], comp_labels[-1])
+			else:
+				return self.format_query_result(query_result, comp_labels)
+		else:
+			return query_result
+
+	# Retrieves the URIs for all DNA components used in the specified collection of experiments.
+	# This collection is typically associated with a challenge problem.
+	def query_experiment_set_dna(self, collection, verbose=False, with_sequence=False, trace_derivation=True, by_sample=False, pretty=True):
+		return self.query_experiment_dna(verbose, with_sequence, trace_derivation, by_sample, pretty, [collection])
+
+	# Retrieves the URIs for all DNA components in the specified experiment.
+	def query_single_experiment_dna(self, experiment, verbose=False, with_sequence=False, trace_derivation=True, by_sample=True, pretty=True):
+		return self.query_experiment_dna(verbose, with_sequence, trace_derivation, by_sample, pretty, experiments=[experiment])
+
 	# Gate query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+	def query_gate_input_levels(self, gates, pretty=False):
+		gate_query = """
+		PREFIX dcterms: <http://purl.org/dc/terms/>
+		PREFIX sbol: <http://sbols.org/v2#>
+		PREFIX sd2: <http://sd2e.org#>
+
+		SELECT DISTINCT ?gate ?gate_type ?input ?level WHERE {{
+			<https://hub.sd2e.org/user/sd2e/experiment/experiment_collection/1> sbol:member ?exp .
+			?exp sd2:experimentalDesign ?design .
+			?design sd2:experimentalCondition ?cond .
+			VALUES (?gate) {{ {ga} }}
+			?cond sd2:definition ?gate ;
+				sd2:experimentalLevel ?elevel .
+			?gate sbol:role ?gate_type .
+			?elevel sd2:level ?level;
+				sd2:experimentalVariable ?evar .
+			?evar dcterms:title ?input
+		}}
+		""".format(ga=self.serialize_options(gates))
+		query_result = self.fetch_SPARQL(self._server, gate_query)
+		if pretty:
+			query_result = self.format_query_result(query_result, ['gate', 'gate_type', 'input', 'level'])
+
+		return query_result
+
+
+	def query_gate_logic(self, gates, pretty=False):
+		gate_query = """
+			PREFIX sbol: <http://sbols.org/v2#>
+			SELECT DISTINCT ?gate ?gate_type WHERE  {{ 
+				VALUES (?gate) {{ {ga} }}
+				?gate sbol:role ?gate_type
+				FILTER(STRSTARTS(STR(?gate_type), "http://www.openmath.org/cd/logic1#")) 
+			}}
+		""".format(ga=self.serialize_options(gates))
+
+		query_result = self.fetch_SPARQL(self._server, gate_query)
+		if pretty:
+			query_result = self.format_query_result(query_result, ['gate', 'gate_type'])
+		return query_result
+
 
 	# Retrieves the URIs for all logic gates from the collection of every SD2 design element.
 	def query_design_gates(self, verbose=False, with_role=True, pretty=False, collections=[SD2Constants.SD2_DESIGN_COLLECTION]):
@@ -222,12 +320,12 @@ class SynBioHubQuery(SBOLQuery):
 		inducer_query = """
 		PREFIX sbol: <http://sbols.org/v2#>
 		SELECT DISTINCT ?inducer WHERE {{ 
-  			<{col}> sbol:member ?inducer .
-  			?inducer sbol:type <{ty}> ;
-           		sbol:role <{ro}>
+			<{col}> sbol:member ?inducer .
+			?inducer sbol:type <{ty}> ;
+				sbol:role <{ro}>
 		}}
 		""".format(col=collection, ty=BIOPAX_SMALL_MOLECULE, ro=SBOLConstants.EFFECTOR)
-    
+	
 		return self.fetch_SPARQL(self._server, inducer_query)
 	
 	# Retrieves the URIs for all inducers from the collection of every SD2 design element.
@@ -243,17 +341,17 @@ class SynBioHubQuery(SBOLQuery):
 		PREFIX prov: <http://www.w3.org/ns/prov#> 
 		SELECT ?inducer (concat('[',group_concat(distinct ?level;separator=','),']') as ?levels)
 		WHERE {{ 
-  			<{exp}> sd2:experimentalData ?data .
-  			?data prov:wasDerivedFrom ?sample .
-  			?sample sbol:built ?condition .
-  			?condition sbol:functionalComponent ?fc .
-  			?fc sbol:definition ?inducer .
-  			?inducer sbol:type <{ty}> ;
-           		sbol:role <{ro}> .
-           	OPTIONAL {{ 
-           		?fc om:measure ?concentration .
-           		?concentration om:hasNumericalValue ?level
-           	}}
+			<{exp}> sd2:experimentalData ?data .
+			?data prov:wasDerivedFrom ?sample .
+			?sample sbol:built ?condition .
+			?condition sbol:functionalComponent ?fc .
+			?fc sbol:definition ?inducer .
+			?inducer sbol:type <{ty}> ;
+				sbol:role <{ro}> .
+			OPTIONAL {{ 
+				?fc om:measure ?concentration .
+				?concentration om:hasNumericalValue ?level
+			}}
 		}}
 		GROUP BY ?inducer
 		""".format(exp=experiment, ty=BIOPAX_SMALL_MOLECULE, ro=SBOLConstants.EFFECTOR)
@@ -270,18 +368,18 @@ class SynBioHubQuery(SBOLQuery):
 		PREFIX prov: <http://www.w3.org/ns/prov#> 
 		SELECT ?inducer (concat('[',group_concat(distinct ?level;separator=','),']') as ?levels)
 		WHERE {{ 
-  			<{col}> sbol:member ?exp .
-  			?exp sd2:experimentalData ?data .
-  			?data prov:wasDerivedFrom ?sample .
-  			?sample sbol:built ?condition .
-  			?condition sbol:functionalComponent ?fc .
-  			?fc sbol:definition ?inducer .
-  			?inducer sbol:type <{ty}> ;
-           		sbol:role <{ro}> .
-           	OPTIONAL {{ 
-           		?fc om:measure ?concentration .
-           		?concentration om:hasNumericalValue ?level
-           	}}
+			<{col}> sbol:member ?exp .
+			?exp sd2:experimentalData ?data .
+			?data prov:wasDerivedFrom ?sample .
+			?sample sbol:built ?condition .
+			?condition sbol:functionalComponent ?fc .
+			?fc sbol:definition ?inducer .
+			?inducer sbol:type <{ty}> ;
+				sbol:role <{ro}> .
+			OPTIONAL {{ 
+				?fc om:measure ?concentration .
+				?concentration om:hasNumericalValue ?level
+			}}
 		}}
 		GROUP BY ?inducer
 		""".format(col=collection, ty=BIOPAX_SMALL_MOLECULE, ro=SBOLConstants.EFFECTOR)
@@ -298,15 +396,15 @@ class SynBioHubQuery(SBOLQuery):
 		PREFIX sbol: <http://sbols.org/v2#>
 		PREFIX om: <http://www.ontology-of-units-of-measure.org/resource/om-2#>
 		SELECT ?inducer ?level WHERE {{ 
-  			<{samp}> sbol:built ?condition .
-  			?condition sbol:functionalComponent ?fc .
-  			?fc sbol:definition ?inducer .
-  			?inducer sbol:type <{ty}> ;
-           		sbol:role <{ro}> .
-           	OPTIONAL {{ 
-           		?fc om:measure ?concentration .
-           		?concentration om:hasNumericalValue ?level
-           	}}
+			<{samp}> sbol:built ?condition .
+			?condition sbol:functionalComponent ?fc .
+			?fc sbol:definition ?inducer .
+			?inducer sbol:type <{ty}> ;
+				sbol:role <{ro}> .
+			OPTIONAL {{ 
+				?fc om:measure ?concentration .
+				?concentration om:hasNumericalValue ?level
+			}}
 		}}
 		GROUP BY ?inducer
 		""".format(samp=sample, ty=BIOPAX_SMALL_MOLECULE, ro=SBOLConstants.EFFECTOR)
@@ -319,14 +417,14 @@ class SynBioHubQuery(SBOLQuery):
 		PREFIX sbol: <http://sbols.org/v2#>
 		PREFIX om: <http://www.ontology-of-units-of-measure.org/resource/om-2#>
 		SELECT ?inducer ?level WHERE {{ 
-  			<{cond}> sbol:functionalComponent ?fc .
-  			?fc sbol:definition ?inducer .
-  			?inducer sbol:type <{ty}> ;
-           		sbol:role <{ro}> .
-           	OPTIONAL {{ 
-           		?fc om:measure ?concentration .
-           		?concentration om:hasNumericalValue ?level
-           	}}
+			<{cond}> sbol:functionalComponent ?fc .
+			?fc sbol:definition ?inducer .
+			?inducer sbol:type <{ty}> ;
+				sbol:role <{ro}> .
+			OPTIONAL {{ 
+				?fc om:measure ?concentration .
+				?concentration om:hasNumericalValue ?level
+			}}
 		}}
 		GROUP BY ?inducer
 		""".format(cond=condition, ty=BIOPAX_SMALL_MOLECULE, ro=SBOLConstants.EFFECTOR)
@@ -342,7 +440,7 @@ class SynBioHubQuery(SBOLQuery):
 		if verbose:
 			mod_labels.extend(['name', 'description'])
 
-		query_result = self.query_design_modules([SBOLConstants.MEDIA], collections, mod_labels[0], mod_labels[1:])
+		query_result = self.query_design_modules([SBOLConstants.OBI_MEDIA, SBOLConstants.NCIT_MEDIA], collections, mod_labels[0], mod_labels[1:])
 
 		if pretty:
 			return self.format_query_result(query_result, mod_labels)
@@ -364,7 +462,7 @@ class SynBioHubQuery(SBOLQuery):
 		if by_sample:
 			mod_labels.append('sample')
 
-		query_result = self.query_experiment_modules([SBOLConstants.MEDIA], collections, mod_labels[0], mod_labels[1:], trace_derivation, experiments=experiments)
+		query_result = self.query_experiment_modules([SBOLConstants.OBI_MEDIA, SBOLConstants.NCIT_MEDIA], collections, mod_labels[0], mod_labels[1:], trace_derivation, experiments=experiments)
 
 		if pretty:
 			if by_sample:
@@ -444,11 +542,11 @@ class SynBioHubQuery(SBOLQuery):
 		plasmid_query = """
 		PREFIX sbol: <http://sbols.org/v2#>
 		SELECT DISTINCT ?plasmid WHERE {{ 
-  			<{samp}> sbol:built ?condition .
-  			?condition sbol:functionalComponent ?fc .
-  			?fc sbol:definition ?plasmid .
-  			?plasmid sbol:type <{ty1}> ;
-           		sbol:type <{ty2}>
+			<{samp}> sbol:built ?condition .
+			?condition sbol:functionalComponent ?fc .
+			?fc sbol:definition ?plasmid .
+			?plasmid sbol:type <{ty1}> ;
+				sbol:type <{ty2}>
 		}}
 		""".format(samp=sample, ty1=BIOPAX_DNA, ty2=SO_CIRCULAR)
 
@@ -459,16 +557,72 @@ class SynBioHubQuery(SBOLQuery):
 		plasmid_query = """
 		PREFIX sbol: <http://sbols.org/v2#>
 		SELECT DISTINCT ?plasmid WHERE {{ 
-  			<{cond}> sbol:functionalComponent ?fc .
-  			?fc sbol:definition ?plasmid .
-  			?plasmid sbol:type <{ty1}> ;
-           		sbol:type <{ty2}>
+			<{cond}> sbol:functionalComponent ?fc .
+			?fc sbol:definition ?plasmid .
+			?plasmid sbol:type <{ty1}> ;
+				sbol:type <{ty2}>
 		}}
 		""".format(cond=condition, ty1=BIOPAX_DNA, ty2=SO_CIRCULAR)
 
 		return self.fetch_SPARQL(self._server, plasmid_query)
 
-	# Plasmid query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+	# DNA query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+	# Retrieves the URIs for all protein components from the collection of every SD2 design element.
+	def query_design_proteins(self, verbose=False, with_sequence=False, pretty=False, collections=[SD2Constants.SD2_DESIGN_COLLECTION]):
+		comp_labels = ['plasmid']
+
+		if verbose:
+			comp_labels.extend(['name', 'description'])
+
+		if with_sequence:
+			comp_labels.append('sequence')
+
+		query_result = self.query_design_components([BIOPAX_PROTEIN], collections, comp_labels[0], comp_labels[1:])
+
+		if pretty:
+			return self.format_query_result(query_result, comp_labels)
+		else:
+			return query_result
+
+	# Retrieves the URIs for all protein components from the specified collection of design elements.
+	# This collection is typically associated with a challenge problem.
+	def query_design_set_proteins(self, collection, verbose=False, with_sequence=False, pretty=False):
+		return self.query_design_proteins(verbose, with_sequence, pretty, [collection])
+
+	# Retrieves the URIs for all protein components used by experiments in the collection of every SD2 experiment.
+	def query_experiment_proteins(self, verbose=False, with_sequence=False, trace_derivation=True, by_sample=False, pretty=True, collections=[SD2Constants.SD2_EXPERIMENT_COLLECTION], experiments=[]):
+		comp_labels = ['plasmid']
+
+		if verbose:
+			comp_labels.extend(['name', 'description'])
+
+		if with_sequence:
+			comp_labels.append('sequence')
+
+		if by_sample:
+			comp_labels.append('sample')
+
+		query_result = self.query_experiment_components([BIOPAX_PROTEIN], collections, comp_labels[0], comp_labels[1:], trace_derivation, experiments=experiments)
+
+		if pretty:
+			if by_sample:
+				return self.format_query_result(query_result, comp_labels[:-1], comp_labels[-1])
+			else:
+				return self.format_query_result(query_result, comp_labels)
+		else:
+			return query_result
+
+	# Retrieves the URIs for all protein components used in the specified collection of experiments.
+	# This collection is typically associated with a challenge problem.
+	def query_experiment_set_proteins(self, collection, verbose=False, with_sequence=False, trace_derivation=True, by_sample=False, pretty=True):
+		return self.query_experiment_proteins(verbose, with_sequence, trace_derivation, by_sample, pretty, [collection])
+
+	# Retrieves the URIs for all protein components in the specified experiment.
+	def query_single_experiment_proteins(self, experiment, verbose=False, with_sequence=False, trace_derivation=True, by_sample=True, pretty=True):
+		return self.query_experiment_proteins(verbose, with_sequence, trace_derivation, by_sample, pretty, experiments=[experiment])
+
+	# Riboswitch query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 	# Retrieves the URIs for all riboswitches from the collection of every SD2 design element.
 	def query_design_riboswitches(self, verbose=False, with_sequence=False, pretty=False, collections=[SD2Constants.SD2_DESIGN_COLLECTION]):
@@ -581,14 +735,23 @@ class SynBioHubQuery(SBOLQuery):
 		PREFIX sd2: <http://sd2e.org#> 
 		PREFIX prov: <http://www.w3.org/ns/prov#> 
 		SELECT ?sample ?prob WHERE {{ 
-  			<{exp}> sd2:experimentalData ?data;
-  				sd2:matches_sample ?intent_sample .
-  			?data prov:wasDerivedFrom+ ?sample .
-  			?intent_sample sd2:has_sample ?sample .
-  			?intent_sample sd2:has_probability ?prob
-  			FILTER (?prob <= {thr})
+			<{exp}> sd2:experimentalData ?data;
+				sd2:matches_sample ?intent_sample .
+			?data prov:wasDerivedFrom+ ?sample .
+			?intent_sample sd2:has_sample ?sample .
+			?intent_sample sd2:has_probability ?prob
+			FILTER (?prob <= {thr})
 		}}
 		""".format(exp=experiment, thr=threshold)
+
+		return self.fetch_SPARQL(self._server, sample_query)
+
+	def query_intent_downselect_samples(self, plan_uri):
+		sample_query = """
+		SELECT ?sample WHERE {{
+			<{}> <http://sd2e.org#intent_downselect_sample> ?sample .
+		}}
+		""".format(plan_uri)
 
 		return self.fetch_SPARQL(self._server, sample_query)
 
@@ -600,10 +763,10 @@ class SynBioHubQuery(SBOLQuery):
 		PREFIX sd2: <http://sd2e.org#>
 		PREFIX prov: <http://www.w3.org/ns/prov#> 
 		SELECT DISTINCT ?sample ?source WHERE {{ 
-  			<{exp}> sd2:experimentalData ?data .
-  			?data prov:wasDerivedFrom ?sample;
-  				sd2:attachment ?attach .
-  			?attach sd2:source ?source
+			<{exp}> sd2:experimentalData ?data .
+			?data prov:wasDerivedFrom ?sample;
+				sd2:attachment ?attach .
+			?attach sd2:source ?source
 		}}
 		""".format(exp=experiment)
 
@@ -623,21 +786,21 @@ class SynBioHubQuery(SBOLQuery):
 		PREFIX dcterms: <http://purl.org/dc/terms/>
 		SELECT ?dname ?ename ?oname ?ddef ?edef ?odef
 		WHERE {{ {{
-  			<{exp}> sd2:experimentalDesign ?design .
-  			?design sd2:diagnosticVariable ?dvar .
-  			?dvar dcterms:title ?dname .
-  			OPTIONAL {{?dvar sd2:definition ?ddef}}
-  		}} UNION {{
-  			<{exp}> sd2:experimentalDesign ?design .
-  			?design sd2:experimentalVariable ?evar .
-  			?evar dcterms:title ?ename .
-  			OPTIONAL {{?evar sd2:definition ?edef}}
-  		}} UNION {{
-  			<{exp}> sd2:experimentalDesign ?design .
-  			?design sd2:outcomeVariable ?ovar .
-  			?ovar dcterms:title ?oname .
-  			OPTIONAL {{?ovar sd2:definition ?odef}}
-  		}} }}
+			<{exp}> sd2:experimentalDesign ?design .
+			?design sd2:diagnosticVariable ?dvar .
+			?dvar dcterms:title ?dname .
+			OPTIONAL {{?dvar sd2:definition ?ddef}}
+		}} UNION {{
+			<{exp}> sd2:experimentalDesign ?design .
+			?design sd2:experimentalVariable ?evar .
+			?evar dcterms:title ?ename .
+			OPTIONAL {{?evar sd2:definition ?edef}}
+		}} UNION {{
+			<{exp}> sd2:experimentalDesign ?design .
+			?design sd2:outcomeVariable ?ovar .
+			?ovar dcterms:title ?oname .
+			OPTIONAL {{?ovar sd2:definition ?odef}}
+		}} }}
 		""".format(exp=experiment)
 
 		intent_data = self.fetch_SPARQL(self._server, intent_query)
@@ -674,21 +837,21 @@ class SynBioHubQuery(SBOLQuery):
 		PREFIX dcterms: <http://purl.org/dc/terms/>
 		SELECT ?defin ?emag ?ename ?omag ?oname
 		WHERE {{ {{
-  			<{exp}> sd2:experimentalDesign ?design .
-  			?design sd2:experimentalCondition ?cond .
-  			?cond sd2:definition ?defin ;
-  				sd2:experimentalLevel ?elevel .
-  			?elevel sd2:level ?emag ;
-  				sd2:experimentalVariable ?evar .
-  			?evar dcterms:title ?ename
+			<{exp}> sd2:experimentalDesign ?design .
+			?design sd2:experimentalCondition ?cond .
+			?cond sd2:definition ?defin ;
+				sd2:experimentalLevel ?elevel .
+			?elevel sd2:level ?emag ;
+				sd2:experimentalVariable ?evar .
+			?evar dcterms:title ?ename
 		}} UNION {{
 			<{exp}> sd2:experimentalDesign ?design .
-  			?design sd2:experimentalCondition ?cond .
-  			?cond sd2:definition ?defin ;
-  				sd2:outcomeLevel ?olevel .
-  			?olevel sd2:level ?omag ;
-  				sd2:experimentalVariable ?ovar .
-  			?ovar dcterms:title ?oname
+			?design sd2:experimentalCondition ?cond .
+			?cond sd2:definition ?defin ;
+				sd2:outcomeLevel ?olevel .
+			?olevel sd2:level ?omag ;
+				sd2:experimentalVariable ?ovar .
+			?ovar dcterms:title ?oname
 		}} }}
 		""".format(exp=experiment)
 
@@ -728,9 +891,9 @@ class SynBioHubQuery(SBOLQuery):
 		design_set_query = """
 		PREFIX sbol: <http://sbols.org/v2#>
 		SELECT DISTINCT ?collection WHERE {{ 
-  			<{col}> sbol:member ?design ;
-  				sbol:member ?collection .
-  			?collection sbol:member ?design
+			<{col}> sbol:member ?design ;
+				sbol:member ?collection .
+			?collection sbol:member ?design
 		}}
 		""".format(col=SD2Constants.SD2_DESIGN_COLLECTION)
 
@@ -743,13 +906,13 @@ class SynBioHubQuery(SBOLQuery):
 		PREFIX sbol: <http://sbols.org/v2#>
 		PREFIX sd2: <http://sd2e.org#>
 		SELECT DISTINCT ?subcol WHERE {{ 
-  			<{col}> sbol:member ?subcol .
-  			?subcol sbol:member ?exp .
-  			?exp sd2:experimentalData ?data .
-  			FILTER NOT EXISTS {{
-  				?subcol sbol:member ?m .
-  				FILTER ( ?m != ?exp )
-  			}}
+			<{col}> sbol:member ?subcol .
+			?subcol sbol:member ?exp .
+			?exp sd2:experimentalData ?data .
+			FILTER NOT EXISTS {{
+				?subcol sbol:member ?m .
+				FILTER ( ?m != ?exp )
+			}}
 		}}
 		""".format(col=SD2Constants.SD2_EXPERIMENT_COLLECTION)
 
@@ -762,8 +925,8 @@ class SynBioHubQuery(SBOLQuery):
 		PREFIX sbol: <http://sbols.org/v2#>
 		PREFIX sd2: <http://sd2e.org#>
 		SELECT (count(distinct ?exp) as ?size) WHERE {{ 
-  			<{col}> sbol:member ?exp .
-  			?exp sd2:experimentalData ?data
+			<{col}> sbol:member ?exp .
+			?exp sd2:experimentalData ?data
 		}}
 		""".format(col=collection)
 
@@ -779,6 +942,55 @@ class SynBioHubQuery(SBOLQuery):
 		""".format(plan_uri)
 
 		return self.fetch_SPARQL(self._server, attachment_query)
+
+	# Retrieves the named attachment for a given plan URI
+	def query_single_experiment_attachment(self, plan_uri, attachment_name):
+		attachment_name_query = """
+		SELECT ?attachment_id WHERE
+		{{
+		<{}> <http://wiki.synbiohub.org/wiki/Terms/synbiohub#attachment> ?attachment_id .
+		?attachment_id <http://purl.org/dc/terms/title> "{}" .
+		}}
+		""".format(plan_uri, attachment_name)
+
+		return self.fetch_SPARQL(self._server, attachment_name_query)
+
+	def query_designs_by_lab_ids(self, lab, lab_ids, verbose=False, pretty=True, print_query=False):
+		if verbose:
+			design_query = """
+			PREFIX sbol: <http://sbols.org/v2#>
+			PREFIX dcterms: <http://purl.org/dc/terms/>
+			PREFIX sd2: <http://sd2e.org#>
+			SELECT ?identity ?name ?id WHERE {{ 
+				<{col}> sbol:member ?identity .
+				?identity dcterms:title ?name .
+				VALUES (?id) {{ {id} }}
+				?identity sd2:{lab} ?id
+			}}
+			""".format(col=SD2Constants.SD2_DESIGN_COLLECTION, lab=lab + '_UID', id=self.serialize_literal_options(lab_ids))
+		else:
+			design_query = """
+			PREFIX sbol: <http://sbols.org/v2#>
+			PREFIX sd2: <http://sd2e.org#>
+			SELECT ?identity ?id WHERE {{ 
+				<{col}> sbol:member ?identity .
+				VALUES (?id) {{ {id} }}
+				?identity sd2:{lab} ?id
+			}}
+			""".format(col=SD2Constants.SD2_DESIGN_COLLECTION, lab=lab + '_UID', id=self.serialize_literal_options(lab_ids))
+
+		if print_query:
+			print(design_query)
+
+		design_query_result = self.fetch_SPARQL(self._server, design_query)
+
+		if pretty:
+			if verbose:
+				return self.format_query_result(design_query_result, ['identity', 'name'], 'id')
+			else:
+				return self.format_query_result(design_query_result, ['identity'], 'id')
+		else:
+			return design_query_result
 
 	def query_synbiohub_statistics(self):
 		design_riboswitches = repr(len(self.query_design_riboswitches(pretty=True)))
@@ -814,9 +1026,9 @@ class SynBioHubQuery(SBOLQuery):
 	# sbh_connector: An instance of the pySBOL Partshop to set SynBioHub credential needed for submitting a collection
 	# sbolDoc: The SBOL Document containing the data to be submitted to SynBioHub
 	# isNewCollection: A boolean variable. True will submit the given sbolDoc to a new SynBioHub Collection. 
-	# 	Otherwise, False will submit to existing SynBioHub Collection.
+	#   Otherwise, False will submit to existing SynBioHub Collection.
 	# overwrite: An integer variable to indicate whether the data submitting to the existing SynBioHub collection should override information.
-	# 	Note: Setting the variable overwrite = 1 (ovewrite existing collection data) or 2 (merge existing collection data with new data)
+	#   Note: Setting the variable overwrite = 1 (ovewrite existing collection data) or 2 (merge existing collection data with new data)
 	def submit_Collection(self, sbh_connector, sbolDoc, isNewCollection, overwrite):
 		result = sbh_connector.submit(sbolDoc) if isNewCollection else sbh_connector.submit(sbolDoc, sbolDoc.identity, overwrite)
 		
@@ -829,7 +1041,7 @@ class SynBioHubQuery(SBOLQuery):
 	# Submit a new collection to the specified SynBioHub instance. 
 	# sbolDoc: The SBOL Document containing SBOL parts that the user would like to upload as a new Collection.
 	# displayId: The SynBioHub Collection Id that must be set when creating a new SynBioHub Collection. 
-	# 	Note: This displayId must be unique from the Collection IDs that exist in the SynBioHub instance that the user want to upload their design to.
+	#   Note: This displayId must be unique from the Collection IDs that exist in the SynBioHub instance that the user want to upload their design to.
 	# name: The SynBioHub Collection Name that must be set when creating a new SynBioHub Collection
 	# description: A description about this new collection. 
 	# version: The version number that you would like to set this new SynBioHub Collection as. 
@@ -846,8 +1058,8 @@ class SynBioHubQuery(SBOLQuery):
 	# sbolDoc: The SBOL Document that the user wants to submit to the existing SynBioHub Collection
 	# collURI: The URI of the SynBioHub Collection that the user would like to submit to
 	# ovewrite: An integer variable to indicate whether the data submitting to the existing SynBioHub collection should override information.
-	# 	Note: Setting the variable overwrite = 1 (ovewrite existing collection data) or 2 (merge existing collection data with new data). 0 will be set as default.
+	#   Note: Setting the variable overwrite = 1 (ovewrite existing collection data) or 2 (merge existing collection data with new data). 0 will be set as default.
 	def submit_ExistingCollection(self, sbolDoc, collURI, overwrite):
 		sbolDoc.identity = collURI
 		sbh_connector = login_SBH(self._server)
-		self.submit_Collection(sbh_connector, sbolDoc, False, overwrite)
+		self.submit_Collection(sbh_connector, sbolDoc, False, overwrite)    
