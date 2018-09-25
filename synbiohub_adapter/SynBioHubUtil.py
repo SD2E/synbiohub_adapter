@@ -45,7 +45,7 @@ class BBNConstants():
 
 class SD2Constants():
 	SD2_SERVER = "http://hub-api.sd2e.org:80/sparql"
-  SD2_STAGING_SERVER = "https://hub-api-staging.sd2e.org:80/sparql"
+        SD2_STAGING_SERVER = "https://hub-api-staging.sd2e.org:80/sparql"
 	
 	SD2_DESIGN_COLLECTION = 'https://hub.sd2e.org/user/sd2e/design/design_collection/1'
 	RULE_30_DESIGN_COLLECTION = 'https://hub.sd2e.org/user/sd2e/design/rule_30/1'
