@@ -44,73 +44,66 @@ class BBNConstants():
     BBN_RULE30_COLLECTION = 'https://synbiohub.bbn.com/user/tramyn/transcriptic_rule_30_q0_1_09242017/transcriptic_rule_30_q0_1_09242017_collection/1'
 
 class SD2Constants():
-    SD2_SERVER = "http://hub-api.sd2e.org:80/sparql"
-    SD2_STAGING_SERVER = "https://hub-api-staging.sd2e.org:80/sparql"
-    
-    SD2_DESIGN_COLLECTION = 'https://hub.sd2e.org/user/sd2e/design/design_collection/1'
-    RULE_30_DESIGN_COLLECTION = 'https://hub.sd2e.org/user/sd2e/design/rule_30/1'
-    YEAST_GATES_DESIGN_COLLECTION = 'https://hub.sd2e.org/user/sd2e/design/yeast_gates/1'
-    RIBOSWITCHES_DESIGN_COLLECTION = 'https://hub.sd2e.org/user/sd2e/design/Riboswitches/1'
+	SD2_SERVER = "http://hub-api.sd2e.org:80/sparql"
+	SD2_STAGING_SERVER = "https://hub-api-staging.sd2e.org:80/sparql"
+	
+	SD2_DESIGN_COLLECTION = 'https://hub.sd2e.org/user/sd2e/design/design_collection/1'
+	RULE_30_DESIGN_COLLECTION = 'https://hub.sd2e.org/user/sd2e/design/rule_30/1'
+	YEAST_GATES_DESIGN_COLLECTION = 'https://hub.sd2e.org/user/sd2e/design/yeast_gates/1'
+	YEAST_GATES_STRAINS_COLLECTION = 'https://hub.sd2e.org/user/sd2e/design/yeast_gates_strains/1'
+	RIBOSWITCHES_DESIGN_COLLECTION = 'https://hub.sd2e.org/user/sd2e/design/Riboswitches/1'
 
-    SD2_EXPERIMENT_COLLECTION = 'https://hub.sd2e.org/user/sd2e/experiment/experiment_collection/1'
-    RULE_30_EXPERIMENT_COLLECTION = 'https://hub.sd2e.org/user/sd2e/experiment/rule_30/1'
-    YEAST_GATES_EXPERIMENT_COLLECTION = 'https://hub.sd2e.org/user/sd2e/experiment/yeast_gates/1'
+	SD2_EXPERIMENT_COLLECTION = 'https://hub.sd2e.org/user/sd2e/experiment/experiment_collection/1'
+	RULE_30_EXPERIMENT_COLLECTION = 'https://hub.sd2e.org/user/sd2e/experiment/rule_30/1'
+	YEAST_GATES_EXPERIMENT_COLLECTION = 'https://hub.sd2e.org/user/sd2e/experiment/yeast_gates/1'
+	
+	LUDOX = 'https://hub.sd2e.org/user/sd2e/design/ludox_S40/1'
 
-    # SD2 labs
+	# Flow ETL
+	# Link from plan_uri
+	FLOW_POSITIVE_CONTROL = 'http://sd2e.org#positive_control'
+	FLOW_POSITIVE_CONTROL_CHANNEL_CONFIG = 'http://sd2e.org#positive_control_channel_config'
+	FLOW_NEGATIVE_CONTROL = 'http://sd2e.org#negative_control'
+	FLOW_BEAD_CONTROL = 'http://sd2e.org#bead_control'
 
-    GINKGO = 'Ginkgo'
-    BIOFAB = 'BioFAB'
-    TRANSCRIPTIC = 'Transcriptic'
+	PLAN_PARAMETER_PREDICATES = {
+		FLOW_POSITIVE_CONTROL,
+		FLOW_POSITIVE_CONTROL_CHANNEL_CONFIG,
+		FLOW_NEGATIVE_CONTROL,
+		FLOW_BEAD_CONTROL
+	}
 
-    # Plate reader control
-    
-    LUDOX = 'https://hub.sd2e.org/user/sd2e/design/ludox_S40/1'
+	# Runtime parameters, link from sample_uri
+	FLOW_BEAD_MODEL = 'http://sd2e.org#bead_model'
+	FLOW_BEAD_BATCH = 'http://sd2e.org#bead_batch'
 
-    # Flow ETL
-    # Link from plan_uri
-    FLOW_POSITIVE_CONTROL = 'http://sd2e.org#positive_control'
-    FLOW_POSITIVE_CONTROL_CHANNEL_CONFIG = 'http://sd2e.org#positive_control_channel_config'
-    FLOW_NEGATIVE_CONTROL = 'http://sd2e.org#negative_control'
-    FLOW_BEAD_CONTROL = 'http://sd2e.org#bead_control'
+	SAMPLE_PARAMETER_PREDICATES = {
+		FLOW_BEAD_MODEL,
+		FLOW_BEAD_BATCH
+	}
 
-    PLAN_PARAMETER_PREDICATES = {
-        FLOW_POSITIVE_CONTROL,
-        FLOW_POSITIVE_CONTROL_CHANNEL_CONFIG,
-        FLOW_NEGATIVE_CONTROL,
-        FLOW_BEAD_CONTROL
-    }
+	# bandpass/longpass channel configuration
+	CYTOMETER_CHANNEL_EW = 'http://sd2e.org#cytometer_channel_excitation_wavelength'
+	CYTOMETER_CHANNEL_EM_FILTER_TYPE = 'http://sd2e.org#cytometer_channel_emission_filter_type'
+	CYTOMETER_CHANNEL_EM_FILTER_CENTER = 'http://sd2e.org#cytometer_channel_emission_filter_center'
+	CYTOMETER_CHANNEL_EM_FILTER_WIDTH = 'http://sd2e.org#cytometer_channel_emission_filter_width'
+	CYTOMETER_CHANNEL_FILTER_CUTOFF = 'http://sd2e.org#cytometer_channel_emission_filter_cutoff'
 
-    # Runtime parameters, link from sample_uri
-    FLOW_BEAD_MODEL = 'http://sd2e.org#bead_model'
-    FLOW_BEAD_BATCH = 'http://sd2e.org#bead_batch'
+	# PR ETL, link from plan_uri
+	PR_LUDOX_CONTROL = 'http://sd2e.org#platereader_LUDOX_control'
+	PR_WATER_CONTROL = 'http://sd2e.org#platereader_water_control'
+	PR_FLUORESCEIN_CONTROL = 'http://sd2e.org#platereader_fluorescein_control'
 
-    SAMPLE_PARAMETER_PREDICATES = {
-        FLOW_BEAD_MODEL,
-        FLOW_BEAD_BATCH
-    }
-
-    # bandpass/longpass channel configuration
-    CYTOMETER_CHANNEL_EW = 'http://sd2e.org#cytometer_channel_excitation_wavelength'
-    CYTOMETER_CHANNEL_EM_FILTER_TYPE = 'http://sd2e.org#cytometer_channel_emission_filter_type'
-    CYTOMETER_CHANNEL_EM_FILTER_CENTER = 'http://sd2e.org#cytometer_channel_emission_filter_center'
-    CYTOMETER_CHANNEL_EM_FILTER_WIDTH = 'http://sd2e.org#cytometer_channel_emission_filter_width'
-    CYTOMETER_CHANNEL_FILTER_CUTOFF = 'http://sd2e.org#cytometer_channel_emission_filter_cutoff'
-
-    # PR ETL, link from plan_uri
-    PR_LUDOX_CONTROL = 'http://sd2e.org#platereader_LUDOX_control'
-    PR_WATER_CONTROL = 'http://sd2e.org#platereader_water_control'
-    PR_FLUORESCEIN_CONTROL = 'http://sd2e.org#platereader_fluorescein_control'
-
-    LOGIC_OPERATORS = [
-        "http://www.openmath.org/cd/logic1#not",
-        "http://www.openmath.org/cd/logic1#or",
-        "http://www.openmath.org/cd/logic1#xor",
-        "http://www.openmath.org/cd/logic1#nor",
-        "http://www.openmath.org/cd/logic1#xnor",
-        "http://www.openmath.org/cd/logic1#and",
-        "http://www.openmath.org/cd/logic1#nand",
-        "http://www.openmath.org/cd/logic1#implies"
-    ]
+	LOGIC_OPERATORS = [
+		"http://www.openmath.org/cd/logic1#not",
+		"http://www.openmath.org/cd/logic1#or",
+		"http://www.openmath.org/cd/logic1#xor",
+		"http://www.openmath.org/cd/logic1#nor",
+		"http://www.openmath.org/cd/logic1#xnor",
+		"http://www.openmath.org/cd/logic1#and",
+		"http://www.openmath.org/cd/logic1#nand",
+		"http://www.openmath.org/cd/logic1#implies"
+	]
 
 class SBHConstants():
     SD2_SERVER = "http://hub-api.sd2e.org:80/sparql"
