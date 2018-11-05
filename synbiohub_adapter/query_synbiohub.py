@@ -232,7 +232,8 @@ class SynBioHubQuery(SBOLQuery):
 			?gate sbol:role ?gate_type .
 			?elevel sd2:level ?level;
 				sd2:experimentalVariable ?evar .
-			?evar dcterms:title ?input
+			?evar dcterms:title ?input .
+			FILTER ( strstarts(str(?gate_type), "http://www.openmath.org/cd/logic1") )
 		}}
 		""".format(ga=self.serialize_options(gates))
 		query_result = self.fetch_SPARQL(self._server, gate_query)
@@ -278,7 +279,7 @@ class SynBioHubQuery(SBOLQuery):
 	# Retrieves the URIs for all logic gates fom the specified collection of design elements.
 	# This collection is typically associated with a challenge problem.
 	def query_design_set_gates(self, collection, verbose=False, with_role=True, pretty=False):
-		return self.query_design_gates(verbose, with_role, [collection])
+		return self.query_design_gates(verbose, with_role, pretty, [collection])
 
 	# Retrieves the URIs for all logic gates used by experiments in the collection of every SD2 experiment.
 	def query_experiment_gates(self, verbose=False, with_role=True, trace_derivation=True, by_sample=False, pretty=True, collections=[SD2Constants.SD2_EXPERIMENT_COLLECTION], experiments=[]):
@@ -679,6 +680,48 @@ class SynBioHubQuery(SBOLQuery):
 		return self.query_experiment_riboswitches(verbose, with_sequence, trace_derivation, by_sample, pretty, experiments=[experiment])
 
 	# Strain query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+	def query_and_compare_strains(self, strains):
+		strain_query = """
+		PREFIX sbol: <http://sbols.org/v2#>
+
+		SELECT ?strain ?plasmid WHERE {{ 
+			?strain sbol:functionalComponent ?fc .
+			?fc sbol:definition ?plasmid .
+			?plasmid sbol:type {ty}
+		}}
+		""".format(st2=self.serialize_options(strains), ty=self.serialize_objects([SO_CIRCULAR, BIOPAX_DNA]))
+
+		query_result = self.fetch_SPARQL(self._server, strain_query)
+
+		query_result = self.format_query_result(query_result, ['plasmid'], 'strain')
+
+		print(query_result)
+
+		# VALUES (?strain) {{ {st2} }}
+
+		# strain_comparison = {}
+
+		# strain_comparison['shared_plasmids'] = []
+
+		# for plasmid in query_result:
+		# 	if len(strains) == len(query_result[plasmid]):
+		# 		strain_comparison['shared_plasmids'].append(plasmid)
+		# 	else:
+		# 		if isinstance(query_result[plasmid], list):
+		# 			for strain in query_result[plasmid]:
+		# 				if strain not in strain_comparison:
+		# 					strain_comparison[strain] = []
+
+		# 				strain_comparison[strain].append(plasmid)
+		# 		else:
+		# 			strain = query_result[plasmid]
+					
+		# 			if strain not in strain_comparison:
+		# 				strain_comparison[strain] = []
+
+		# 			strain_comparison[strain].append(plasmid)
+
+		# return strain_comparison
 
 	# Retrieves the URIs for all strains from the collection of every SD2 design element.
 	def query_design_strains(self, verbose=False, pretty=False, collections=[SD2Constants.SD2_DESIGN_COLLECTION]):
