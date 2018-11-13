@@ -57,7 +57,12 @@ class SD2Constants():
 	SD2_EXPERIMENT_COLLECTION = 'https://hub.sd2e.org/user/sd2e/experiment/experiment_collection/1'
 	RULE_30_EXPERIMENT_COLLECTION = 'https://hub.sd2e.org/user/sd2e/experiment/rule_30/1'
 	YEAST_GATES_EXPERIMENT_COLLECTION = 'https://hub.sd2e.org/user/sd2e/experiment/yeast_gates/1'
-	
+
+	# SD2 labs
+	GINKGO = 'Ginkgo'
+	BIOFAB = 'BioFAB'
+	TRANSCRIPTIC = 'Transcriptic'
+
 	LUDOX = 'https://hub.sd2e.org/user/sd2e/design/ludox_S40/1'
 
 	# Flow ETL

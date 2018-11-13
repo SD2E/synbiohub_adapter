@@ -986,7 +986,7 @@ class SynBioHubQuery(SBOLQuery):
 		attachment_query = """
 		SELECT ?attachment_id WHERE
 		{{
-		<{}> <http://wiki.synbiohub.org/wiki/Terms/synbiohub#attachment> ?attachment_id .
+		<{}> <http://sbols.org/v2#attachment> ?attachment_id .
 		}}
 		""".format(plan_uri)
 
@@ -997,7 +997,7 @@ class SynBioHubQuery(SBOLQuery):
 		attachment_name_query = """
 		SELECT ?attachment_id WHERE
 		{{
-		<{}> <http://wiki.synbiohub.org/wiki/Terms/synbiohub#attachment> ?attachment_id .
+		<{}> <http://sbols.org/v2#attachment> ?attachment_id .
 		?attachment_id <http://purl.org/dc/terms/title> "{}" .
 		}}
 		""".format(plan_uri, attachment_name)
