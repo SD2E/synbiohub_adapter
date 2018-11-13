@@ -216,6 +216,7 @@ class SynBioHubQuery(SBOLQuery):
 
 	# Gate query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
+	# Retrieves input levels for gates based on experimental conditions and sorts levels by input ID if a single gate is queried. 
 	def query_gate_input_levels(self, gates, pretty=False):
 		gate_query = """
 		PREFIX dcterms: <http://purl.org/dc/terms/>
@@ -238,7 +239,12 @@ class SynBioHubQuery(SBOLQuery):
 		""".format(ga=self.serialize_options(gates))
 		query_result = self.fetch_SPARQL(self._server, gate_query)
 		if pretty:
-			query_result = self.format_query_result(query_result, ['gate', 'gate_type', 'input', 'level'])
+			if len(gates) == 1:
+				query_result = self.format_query_result(query_result, ['gate', 'gate_type', 'input', 'level'], sort_key='input')
+			else:
+				query_result = self.format_query_result(query_result, ['gate', 'gate_type', 'input', 'level'])
+		elif len(gates) == 1:
+			self.sort_query_result(query_result, 'input')
 
 		return query_result
 

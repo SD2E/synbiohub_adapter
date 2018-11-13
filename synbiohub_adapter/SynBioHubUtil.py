@@ -5,6 +5,7 @@ import csv
 from .fetch_SPARQL import fetch_SPARQL as _fetch_SPARQL
 from sbol import *
 from .cache_query import wrap_query_fn
+from functools import partial
 
 '''
     This is a utility module containing classes with constant variables used for querying SynBioHub information
@@ -454,14 +455,12 @@ class SBOLQuery():
         else:
             return binding[binding_keys[0]]['value']
 
-    def format_query_result(self, query_result, binding_keys, group_key=None):
+    def format_query_result(self, query_result, binding_keys, group_key=None, sort_key=None):
         if group_key is None:
             formatted = []
 
             for binding in query_result['results']['bindings']:
                 formatted.append(self.__format_binding(binding, binding_keys))
-            
-            return formatted
         else:
             formatted = {}
 
@@ -475,9 +474,34 @@ class SBOLQuery():
                     formatted[group_value].append(self.__format_binding(binding, binding_keys))
                 else:
                     formatted[group_value] = self.__format_binding(binding, binding_keys)
-                    
 
-            return formatted
+        if sort_key is not None:
+            self.sort_query_result(formatted, sort_key)
+
+        return formatted
+
+    def sort_query_result(self, query_result, sort_key=None):
+        if isinstance(query_result, list):
+            self.__sort_query_list(query_result, sort_key)
+        else:
+            try:
+                self.__sort_query_list(query_result['results']['bindings'], sort_key)
+            except:
+                for binding in query_result:
+                    if isinstance(binding, list):
+                        self.__sort_query_list(binding, sort_key)
+
+    def __sort_query_list(self, query_list, sort_key=None):
+        if sort_key is None:
+            query_list.sort()
+        else:
+            try:
+                query_list.sort(key=lambda x: x[sort_key]['value'])
+            except:
+                try:
+                    query_list.sort(key=lambda x: x[sort_key])
+                except:
+                    query_list.sort()
 
     def query_experiment_components(self, types=[], collections=[], comp_label='comp', other_comp_labels=[], trace_derivation=True, roles=[], all_types=True, sub_types=[], sub_roles=[], definitions=[], all_sub_types=True, experiments=[]):
         if trace_derivation:
