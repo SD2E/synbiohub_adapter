@@ -170,10 +170,17 @@ class TestSBHQueries(unittest.TestCase):
 
 	# Test gate query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
+	def test_query_single_circuit_sample_properties(self):
+		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
+		sample_props = sbh_query.query_gate_input_levels('https://hub.sd2e.org/user/sd2e/transcriptic_yeast_gates_q0_r1bbktv6x4xke/s1871_R5736_R16724_R28544/1')
+		print(sample_props)
+
 	def test_query_gate_input_levels(self):
 		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
-		input_levels = sbh_query.query_gate_input_levels(['https://hub.sd2e.org/user/sd2e/design/UWBF_16969/1'])
-		print(input_levels)
+		input_levels1 = sbh_query.query_gate_input_levels(['https://hub.sd2e.org/user/sd2e/design/UWBF_16969/1'], True)
+		input_levels2 = sbh_query.query_gate_input_levels(['https://hub.sd2e.org/user/sd2e/design/UWBF_16969/1'], False)
+		print(input_levels1)
+		print(input_levels2)
 
 	def test_query_design_gates(self):
 		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
@@ -182,7 +189,7 @@ class TestSBHQueries(unittest.TestCase):
 
 	def test_query_design_set_gates(self):
 		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
-		gates = sbh_query.query_design_set_gates(SD2Constants.YEAST_GATES_DESIGN_COLLECTION)
+		gates = sbh_query.query_design_set_gates(SD2Constants.SD2_DESIGN_COLLECTION, with_role=False, pretty=True)
 		print(gates)
 
 	def test_query_experiment_gates(self):
@@ -317,6 +324,18 @@ class TestSBHQueries(unittest.TestCase):
 		plasmids = sbh_query.query_condition_plasmids(rule_30_condition)
 		print(plasmids)
 
+	# Test primer query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+	def test_query_design_primers(self):
+		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
+		primers = sbh_query.query_design_primers(with_sequence=True, downstream_gene='dnaA')
+		print(primers)
+
+	def test_query_design_set_primers(self):
+		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
+		primers = sbh_query.query_design_set_primers(SD2Constants.NOVEL_CHASSIS_DESIGN_COLLECTION, with_sequence=True, downstream_gene='dnaA')
+		print(primers)
+
 	# Test riboswitch query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 	def test_query_design_riboswitches(self):
@@ -335,6 +354,10 @@ class TestSBHQueries(unittest.TestCase):
 		print(riboswitches)
 
 	# Test strain query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+	def test_query_and_compare_strains(self):
+		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
+		sbh_query.query_and_compare_strains(['https://hub.sd2e.org/user/sd2e/design/UWBF_7376/1', 'https://hub.sd2e.org/user/sd2e/design/UWBF_7375/1'])
 
 	def test_query_design_strains(self):
 		sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)

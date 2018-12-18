@@ -162,7 +162,7 @@ class SynBioHubQuery(SBOLQuery):
 
 	# Retrieves the URIs for all DNA components from the collection of every SD2 design element.
 	def query_design_dna(self, verbose=False, with_sequence=False, pretty=False, collections=[SD2Constants.SD2_DESIGN_COLLECTION]):
-		comp_labels = ['plasmid']
+		comp_labels = ['dna']
 
 		if verbose:
 			comp_labels.extend(['name', 'description'])
@@ -184,7 +184,7 @@ class SynBioHubQuery(SBOLQuery):
 
 	# Retrieves the URIs for all DNA components used by experiments in the collection of every SD2 experiment.
 	def query_experiment_dna(self, verbose=False, with_sequence=False, trace_derivation=True, by_sample=False, pretty=True, collections=[SD2Constants.SD2_EXPERIMENT_COLLECTION], experiments=[]):
-		comp_labels = ['plasmid']
+		comp_labels = ['dna']
 
 		if verbose:
 			comp_labels.extend(['name', 'description'])
@@ -573,11 +573,77 @@ class SynBioHubQuery(SBOLQuery):
 
 		return self.fetch_SPARQL(self._server, plasmid_query)
 
+	# Primer query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+	# Retrieves the URIs for all plasmids from the collection of every SD2 design element.
+	def query_design_primers(self, verbose=False, with_sequence=False, pretty=False, collections=[SD2Constants.SD2_DESIGN_COLLECTION], downstream_gene=None):
+		comp_labels = ['primer']
+
+		if verbose:
+			comp_labels.extend(['name', 'description'])
+
+		if with_sequence:
+			comp_labels.append('sequence')
+
+		if downstream_gene is None:
+			primer_properties = {}
+		else:
+			primer_properties = {'sd2:downstreamGene': downstream_gene}
+
+		query_result = self.query_design_components([BIOPAX_DNA], collections, comp_labels[0], comp_labels[1:], [SBOLConstants.PRIMER], custom_properties=primer_properties)
+
+		if pretty:
+			return self.format_query_result(query_result, comp_labels)
+		else:
+			return query_result
+
+	# Retrieves the URIs for all plasmids from the specified collection of design elements.
+	# This collection is typically associated with a challenge problem.
+	def query_design_set_primers(self, collection, verbose=False, with_sequence=False, pretty=False, downstream_gene=None):
+		return self.query_design_primers(verbose, with_sequence, pretty, [collection], downstream_gene)
+
+	# Retrieves the URIs for all plasmids used by experiments in the collection of every SD2 experiment.
+	def query_experiment_primers(self, verbose=False, with_sequence=False, trace_derivation=True, by_sample=False, pretty=True, collections=[SD2Constants.SD2_EXPERIMENT_COLLECTION], experiments=[], downstream_gene=None):
+		comp_labels = ['primer']
+
+		if verbose:
+			comp_labels.extend(['name', 'description'])
+
+		if with_sequence:
+			comp_labels.append('sequence')
+
+		if by_sample:
+			comp_labels.append('sample')
+
+		if downstream_gene is None:
+			primer_properties = {}
+		else:
+			primer_properties = {'sd2:downstreamGene': downstream_gene}
+
+		query_result = self.query_experiment_components([BIOPAX_DNA], collections, comp_labels[0], comp_labels[1:], trace_derivation, [SBOLConstants.PRIMER], experiments=experiments, custom_properties=primer_properties)
+
+		if pretty:
+			if by_sample:
+				return self.format_query_result(query_result, comp_labels[:-1], comp_labels[-1])
+			else:
+				return self.format_query_result(query_result, comp_labels)
+		else:
+			return query_result
+
+	# Retrieves the URIs for all plasmids used in the specified collection of experiments.
+	# This collection is typically associated with a challenge problem.
+	def query_experiment_set_primers(self, collection, verbose=False, with_sequence=False, trace_derivation=True, by_sample=False, pretty=True, downstream_gene=None):
+		return self.query_experiment_plasmids(verbose, with_sequence, trace_derivation, by_sample, pretty, [collection], downstream_gene=downstream_gene)
+
+	# Retrieves the URIs for all plasmids in the specified experiment.
+	def query_single_experiment_primers(self, experiment, verbose=False, with_sequence=False, trace_derivation=True, by_sample=True, pretty=True, downstream_gene=None):
+		return self.query_experiment_plasmids(verbose, with_sequence, trace_derivation, by_sample, pretty, experiments=[experiment], downstream_gene=downstream_gene)
+
 	# DNA query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 	# Retrieves the URIs for all protein components from the collection of every SD2 design element.
 	def query_design_proteins(self, verbose=False, with_sequence=False, pretty=False, collections=[SD2Constants.SD2_DESIGN_COLLECTION]):
-		comp_labels = ['plasmid']
+		comp_labels = ['protein']
 
 		if verbose:
 			comp_labels.extend(['name', 'description'])
@@ -599,7 +665,7 @@ class SynBioHubQuery(SBOLQuery):
 
 	# Retrieves the URIs for all protein components used by experiments in the collection of every SD2 experiment.
 	def query_experiment_proteins(self, verbose=False, with_sequence=False, trace_derivation=True, by_sample=False, pretty=True, collections=[SD2Constants.SD2_EXPERIMENT_COLLECTION], experiments=[]):
-		comp_labels = ['plasmid']
+		comp_labels = ['protein']
 
 		if verbose:
 			comp_labels.extend(['name', 'description'])
