@@ -1071,6 +1071,20 @@ class SynBioHubQuery(SBOLQuery):
 
 		print(repr(len(self.format_query_result(exp_query_result, ['entity']))) + ' experiment plans')
 
+	# Filters members of the collection that contain the substring in their URI
+	def filter(self, collection, search_token):
+		sparql_filter = """
+		PREFIX sbol: <http://sbols.org/v2#>
+		PREFIX sd2: <http://sd2e.org#>
+		PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+		SELECT DISTINCT ?sample_group 
+		WHERE {{ 
+  			<{col}> sbol:member ?sample_group .
+ 			FILTER (contains(str(?sample_group), "{tok}"))
+		}}
+		""".format(col=collection, tok=search_token)
+		return self.fetch_SPARQL(self._server, sparql_filter)
+
 	# Submit the data stored in the given sbolDoc to a collection on SynBioHub
 	# sbh_connector: An instance of the pySBOL Partshop to set SynBioHub credential needed for submitting a collection
 	# sbolDoc: The SBOL Document containing the data to be submitted to SynBioHub
