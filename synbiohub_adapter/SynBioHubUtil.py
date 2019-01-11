@@ -1,9 +1,10 @@
 import getpass
 import sys
 
-from .fetch_SPARQL import fetch_SPARQL as _fetch_SPARQL
+from SPARQLWrapper import SPARQLWrapper, JSON, POST
 from sbol import *
 from .cache_query import wrap_query_fn
+
 
 '''
 	This is a utility module containing classes with constant variables used for querying SynBioHub information
@@ -112,16 +113,49 @@ class SBOLQuery():
 	'''
 
 	# server: The SynBioHub server to call sparql queries on.
-	def __init__(self, server, use_fallback_cache=False):
+	def __init__(self, server, use_fallback_cache=False, user = None, authentication_key = None):
 		self._server = server
 		self._use_fallback_cache = use_fallback_cache
+		self.user = user
+		self.authentication_key = authentication_key
 
 		# If using fallback cache, wrap the fetch_SPARQL function
 		# with cache storage/retrieval.
 		if use_fallback_cache:
 			self.fetch_SPARQL = wrap_query_fn(_fetch_SPARQL)
-		else:
-			self.fetch_SPARQL = _fetch_SPARQL
+
+
+	def login(self, user, password):
+		server = self._server
+		if '/sparql' in self._server:
+			p = self._server.find('/sparql')
+			server = self._server[:p]
+		endpoint = SPARQLWrapper(server + '/login')
+		endpoint.setMethod(POST)
+		endpoint.addCustomHttpHeader('Content-Type', 'application/x-www-form-urlencoded')
+		endpoint.addCustomHttpHeader('Accept', 'text/plain')
+		endpoint.addCustomHttpHeader('charset', 'utf-8"')
+		endpoint.addParameter('email', user)
+		endpoint.addParameter('password', password)	
+		self.user = user
+		self.authentication_key = str(endpoint.query().response.read())
+
+	def fetch_SPARQL(self, server, query):
+		sparql = SPARQLWrapper(self._server)
+		if self.authentication_key and self.user:
+			sparql.addCustomHttpHeader('X-authorization', self.authentication_key)
+			if 'WHERE' in query:
+				if '/sparql' in self._server:
+					p = self._server.find('/sparql')
+					server = self._server[:p]
+				FROM = "  FROM <{server}/user/{user}> ".format(server=server, user=self.user)
+				p = query.find('WHERE')
+				query = query[:p] + FROM + query[p:]
+		print(query)	
+		sparql.setQuery(query)
+		sparql.setReturnFormat(JSON)	
+		results = sparql.query().convert()
+		return results
 
 	# Constructs a partial SPARQL query for all collection members with 
 	# at least one of the specified types (or all of the specified types). 
