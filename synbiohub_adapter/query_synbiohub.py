@@ -1077,13 +1077,14 @@ class SynBioHubQuery(SBOLQuery):
 		PREFIX sbol: <http://sbols.org/v2#>
 		PREFIX sd2: <http://sd2e.org#>
 		PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-		SELECT DISTINCT ?sample_group 
+		SELECT DISTINCT ?member 
 		WHERE {{ 
-  			<{col}> sbol:member ?sample_group .
- 			FILTER (contains(str(?sample_group), "{tok}"))
+  			<{col}> sbol:member ?member .
+ 			FILTER (contains(str(?member), "{tok}"))
 		}}
 		""".format(col=collection, tok=search_token)
-		return self.fetch_SPARQL(self._server, sparql_filter)
+		result = self.fetch_SPARQL(self._server, sparql_filter)
+		return self.format_query_result(result, ['member'])
 
 	# Submit the data stored in the given sbolDoc to a collection on SynBioHub
 	# sbh_connector: An instance of the pySBOL Partshop to set SynBioHub credential needed for submitting a collection
