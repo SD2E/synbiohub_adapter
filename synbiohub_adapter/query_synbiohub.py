@@ -17,8 +17,8 @@ class SynBioHubQuery(SBOLQuery):
 	'''
 
 	# server: The SynBioHub server to call sparql queries on.
-	def __init__(self, server, use_fallback_cache=False, user = None, authentication_key = None):
-		super().__init__(server, use_fallback_cache, user, authentication_key)
+	def __init__(self, server, use_fallback_cache=False, user = None, authentication_key = None, spoofed_url = None):
+		super().__init__(server, use_fallback_cache, user, authentication_key, spoofed_url)
 
 	# Control query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 

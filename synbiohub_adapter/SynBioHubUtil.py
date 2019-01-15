@@ -1,9 +1,11 @@
 import getpass
 import sys
+import csv
 
 from SPARQLWrapper import SPARQLWrapper, JSON, POST
 from sbol import *
 from .cache_query import wrap_query_fn
+from functools import partial
 
 
 '''
@@ -13,21 +15,29 @@ from .cache_query import wrap_query_fn
 				Tramy Nguyen
 '''
 class SBOLConstants():
+	RIBOSWITCH = "http://identifiers.org/so/SO:0000035"
+
+	CHEMICAL_ENTITY = "http://identifiers.org/chebi/CHEBI:24431"
 	EFFECTOR = "http://identifiers.org/chebi/CHEBI:35224"
 	FLUORESCEIN = "http://identifiers.org/chebi/CHEBI:31624"
-	FLUORESCENCE = "http://purl.obolibrary.org/obo/NCIT_C16586"
 	H2O = "http://identifiers.org/chebi/CHEBI:15377"
 
 	LOGIC_OPERATOR = "http://edamontology.org/data_2133"
 
 	BEAD = "http://purl.obolibrary.org/obo/NCIT_C70671"
+	BUFFER = "http://purl.obolibrary.org/obo/NCIT_C70815"
 	CONTROL = "http://purl.obolibrary.org/obo/NCIT_C28143"
+	FLUORESCENCE = "http://purl.obolibrary.org/obo/NCIT_C16586"
+	NCIT_MEDIA = "http://purl.obolibrary.org/obo/NCIT_C85504"
+	SOLUTION = "http://purl.obolibrary.org/obo/NCIT_C70830"
+	STAIN = "http://purl.obolibrary.org/obo/NCIT_C841"
 	NCIT_STRAIN = "http://purl.obolibrary.org/obo/NCIT_C14419"
-	
-	MEDIA = "http://purl.obolibrary.org/obo/OBI_0000079"
+
+	OBI_MEDIA = "http://purl.obolibrary.org/obo/OBI_0000079"
 	OBI_STRAIN = "http://purl.obolibrary.org/obo/OBI_0001185"
 
 	SBOL_NS = "http://sbols.org/v2#"
+	OM_NS = 'http://www.ontology-of-units-of-measure.org/resource/om-2#'
 	BBN_HOMESPACE = "https://synbiohub.bbn.com"
 
 class BBNConstants():
@@ -37,16 +47,23 @@ class BBNConstants():
 
 class SD2Constants():
 	SD2_SERVER = "http://hub-api.sd2e.org:80/sparql"
+	SD2_STAGING_SERVER = "https://hub-api-staging.sd2e.org:80/sparql"
 	
 	SD2_DESIGN_COLLECTION = 'https://hub.sd2e.org/user/sd2e/design/design_collection/1'
 	RULE_30_DESIGN_COLLECTION = 'https://hub.sd2e.org/user/sd2e/design/rule_30/1'
 	YEAST_GATES_DESIGN_COLLECTION = 'https://hub.sd2e.org/user/sd2e/design/yeast_gates/1'
+	YEAST_GATES_STRAINS_COLLECTION = 'https://hub.sd2e.org/user/sd2e/design/yeast_gates_strains/1'
 	RIBOSWITCHES_DESIGN_COLLECTION = 'https://hub.sd2e.org/user/sd2e/design/Riboswitches/1'
 
 	SD2_EXPERIMENT_COLLECTION = 'https://hub.sd2e.org/user/sd2e/experiment/experiment_collection/1'
 	RULE_30_EXPERIMENT_COLLECTION = 'https://hub.sd2e.org/user/sd2e/experiment/rule_30/1'
 	YEAST_GATES_EXPERIMENT_COLLECTION = 'https://hub.sd2e.org/user/sd2e/experiment/yeast_gates/1'
-	
+
+	# SD2 labs
+	GINKGO = 'Ginkgo'
+	BIOFAB = 'BioFAB'
+	TRANSCRIPTIC = 'Transcriptic'
+
 	LUDOX = 'https://hub.sd2e.org/user/sd2e/design/ludox_S40/1'
 
 	# Flow ETL
@@ -113,45 +130,49 @@ class SBOLQuery():
 	'''
 
 	# server: The SynBioHub server to call sparql queries on.
-	def __init__(self, server, use_fallback_cache=False, user = None, authentication_key = None):
+	def __init__(self, server, use_fallback_cache=False, user = None, authentication_key = None, spoofed_url = None):
 		self._server = server
 		self._use_fallback_cache = use_fallback_cache
 		self.user = user
 		self.authentication_key = authentication_key
+		self.spoofed_url = spoofed_url
 
 		# If using fallback cache, wrap the fetch_SPARQL function
 		# with cache storage/retrieval.
 		if use_fallback_cache:
-			self.fetch_SPARQL = wrap_query_fn(_fetch_SPARQL)
+			self.fetch_SPARQL = wrap_query_fn(self.fetch_SPARQL)
 
 
 	def login(self, user, password):
-		server = self._server
-		if '/sparql' in self._server:
-			p = self._server.find('/sparql')
-			server = self._server[:p]
-		endpoint = SPARQLWrapper(server + '/login')
-		endpoint.setMethod(POST)
-		endpoint.addCustomHttpHeader('Content-Type', 'application/x-www-form-urlencoded')
-		endpoint.addCustomHttpHeader('Accept', 'text/plain')
-		endpoint.addCustomHttpHeader('charset', 'utf-8"')
-		endpoint.addParameter('email', user)
-		endpoint.addParameter('password', password)	
+		if not '/sparql' in self._server:
+			self._server += '/sparql'
+		p = self._server.find('/sparql')
+		resource = self._server[:p]
+		login_endpoint = SPARQLWrapper(resource + '/login')
+		login_endpoint.setMethod(POST)
+		login_endpoint.addCustomHttpHeader('Content-Type', 'application/x-www-form-urlencoded')
+		login_endpoint.addCustomHttpHeader('Accept', 'text/plain')
+		login_endpoint.addCustomHttpHeader('charset', 'utf-8"')
+		login_endpoint.addParameter('email', user)
+		login_endpoint.addParameter('password', password)	
 		self.user = user
-		self.authentication_key = str(endpoint.query().response.read())
+		self.authentication_key = str(login_endpoint.query().response.read())
 
 	def fetch_SPARQL(self, server, query):
 		sparql = SPARQLWrapper(self._server)
 		if self.authentication_key and self.user:
 			sparql.addCustomHttpHeader('X-authorization', self.authentication_key)
 			if 'WHERE' in query:
-				if '/sparql' in self._server:
-					p = self._server.find('/sparql')
-					server = self._server[:p]
-				FROM = "  FROM <{server}/user/{user}> ".format(server=server, user=self.user)
+				if self.spoofed_url:
+					resource = self.spoofed_url
+				else:
+					resource = self._server
+				if '/sparql' in resource:
+					p = resource.find('/sparql')
+					resource = resource[:p]
+				FROM = "  FROM <{resource}/user/{user}> ".format(resource=resource, user=self.user)
 				p = query.find('WHERE')
 				query = query[:p] + FROM + query[p:]
-		print(query)	
 		sparql.setQuery(query)
 		sparql.setReturnFormat(JSON)	
 		results = sparql.query().convert()
@@ -508,7 +529,41 @@ class SBOLQuery():
 		for obj in objects:
 			serial_objects.append(''.join(['<', obj, '>, ']))
 
-		return ''.join(serial_objects)[:-2]		
+	def query_collections(self, collections=[]):
+		collection_query = self.construct_collection_entity_query(collections, entity_label='collection', entity_depth=1)
+		return self.fetch_SPARQL(self._server, collection_query)
+
+	def query_units(self, unit_id=None, name=None, symbol=None):
+		unit_uris = []
+
+		unit_query = self.construct_unit_query(unit_id, name, symbol)
+
+		if self.om is not None:
+			for unit_query_result in self.om.query(unit_query):
+				unit_uris.append(unit_query_result.uri)
+
+		return unit_uris
+
+	def serialize_options(self, options):
+		serial_options = []
+		for opt in options:
+			serial_options.append(''.join(['( <', opt, '> ) ']))
+
+		return ''.join(serial_options)[:-1]
+
+	def serialize_literal_options(self, options):
+		serial_options = []
+		for opt in options:
+			serial_options.append(''.join(['( "', opt, '" ) ']))
+
+		return ''.join(serial_options)[:-1]
+
+	def serialize_objects(self, objects):
+		serial_objects = []
+		for obj in objects:
+			serial_objects.append(''.join(['<', obj, '>, ']))
+
+		return ''.join(serial_objects)[:-2]     
 
 def loadSBOLFile(sbolFile):
 	sbolDoc = Document()
@@ -520,3 +575,25 @@ def login_SBH(server):
 	sbh_user = input('Enter SynBioHub Username: ')
 	sbh_connector.login(sbh_user, getpass.getpass(prompt='Enter SynBioHub Password: ', stream=sys.stderr))
 	return sbh_connector
+
+def export_definitions_to_csv(server, collections, csv_path):
+	sbol_query = SBOLQuery(server)
+
+	comps = sbol_query.format_query_result(sbol_query.query_design_components(collections=collections, other_comp_labels=['name']), ['comp', 'name'])
+
+	mods = sbol_query.format_query_result(sbol_query.query_design_modules(collections=collections, other_mod_labels=['name']), ['mod', 'name'])
+
+	with open(csv_path, 'w', newline='') as csv_file:
+		csv_writer = csv.writer(csv_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+
+		for comp in comps:
+			if 'name' in comp:
+				csv_writer.writerow([comp['comp'], comp['name']])
+			else:
+				csv_writer.writerow([comp['comp'], ''])
+
+		for mod in mods:
+			if 'name' in mod:
+				csv_writer.writerow([mod['mod'], mod['name']])
+			else:
+				csv_writer.writerow([mod['mod'], ''])
