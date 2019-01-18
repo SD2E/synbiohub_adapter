@@ -244,7 +244,7 @@ class SynBioHubQuery(SBOLQuery):
 			else:
 				query_result = self.format_query_result(query_result, ['gate', 'gate_type', 'input', 'level'])
 		elif len(gates) == 1:
-			self.sort_query_result(query_result, 'input')
+			self.sorts_query_result(query_result, 'input')
 
 		return query_result
 
@@ -275,7 +275,9 @@ class SynBioHubQuery(SBOLQuery):
 		if with_role:
 			mod_labels.append('role')
 
-		query_result = self.query_design_modules(SD2Constants.LOGIC_OPERATORS, collections, mod_labels[0], mod_labels[1:])
+		strain_properties = {'sbol:role': ''.join(['<', SBOLConstants.NCIT_STRAIN, '>'])}
+
+		query_result = self.query_design_modules(SD2Constants.LOGIC_OPERATORS, collections, mod_labels[0], mod_labels[1:], custom_properties=strain_properties)
 
 		if pretty:
 			return self.format_query_result(query_result, mod_labels)
@@ -300,7 +302,9 @@ class SynBioHubQuery(SBOLQuery):
 		if by_sample:
 			mod_labels.append('sample')
 
-		query_result = self.query_experiment_modules(SD2Constants.LOGIC_OPERATORS, collections, mod_labels[0], mod_labels[1:], trace_derivation, experiments=experiments)
+		strain_properties = {'sbol:role': ''.join(['<', SBOLConstants.NCIT_STRAIN, '>'])}
+
+		query_result = self.query_experiment_modules(SD2Constants.LOGIC_OPERATORS, collections, mod_labels[0], mod_labels[1:], trace_derivation, experiments=experiments, custom_properties=strain_properties)
 
 		if pretty:
 			if by_sample:
@@ -752,22 +756,22 @@ class SynBioHubQuery(SBOLQuery):
 		return self.query_experiment_riboswitches(verbose, with_sequence, trace_derivation, by_sample, pretty, experiments=[experiment])
 
 	# Strain query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-	def query_and_compare_strains(self, strains):
-		strain_query = """
-		PREFIX sbol: <http://sbols.org/v2#>
+	# def query_and_compare_strains(self, strains):
+	# 	strain_query = """
+	# 	PREFIX sbol: <http://sbols.org/v2#>
 
-		SELECT ?strain ?plasmid WHERE {{ 
-			?strain sbol:functionalComponent ?fc .
-			?fc sbol:definition ?plasmid .
-			?plasmid sbol:type {ty}
-		}}
-		""".format(st2=self.serialize_options(strains), ty=self.serialize_objects([SO_CIRCULAR, BIOPAX_DNA]))
+	# 	SELECT ?strain ?plasmid WHERE {{ 
+	# 		?strain sbol:functionalComponent ?fc .
+	# 		?fc sbol:definition ?plasmid .
+	# 		?plasmid sbol:type {ty}
+	# 	}}
+	# 	""".format(st2=self.serialize_options(strains), ty=self.serialize_objects([SO_CIRCULAR, BIOPAX_DNA]))
 
-		query_result = self.fetch_SPARQL(self._server, strain_query)
+	# 	query_result = self.fetch_SPARQL(self._server, strain_query)
 
-		query_result = self.format_query_result(query_result, ['plasmid'], 'strain')
+	# 	query_result = self.format_query_result(query_result, ['plasmid'], 'strain')
 
-		print(query_result)
+	# 	print(query_result)
 
 		# VALUES (?strain) {{ {st2} }}
 
@@ -797,15 +801,15 @@ class SynBioHubQuery(SBOLQuery):
 
 	# Retrieves the URIs for all strains from the collection of every SD2 design element.
 	def query_design_strains(self, verbose=False, pretty=False, collections=[SD2Constants.SD2_DESIGN_COLLECTION]):
-		comp_labels = ['strain']
+		mod_labels = ['strain']
 
 		if verbose:
-			comp_labels.extend(['name', 'description'])
+			mod_labels.extend(['name', 'description'])
 
-		query_result = self.query_design_components([SBOLConstants.NCIT_STRAIN, SBOLConstants.OBI_STRAIN], collections, comp_labels[0], comp_labels[1:], all_types=False)
+		query_result = self.query_design_modules([SBOLConstants.NCIT_STRAIN], collections, mod_labels[0], mod_labels[1:])
 
 		if pretty:
-			return self.format_query_result(query_result, comp_labels)
+			return self.format_query_result(query_result, mod_labels)
 		else:
 			return query_result
 		
@@ -816,21 +820,21 @@ class SynBioHubQuery(SBOLQuery):
 
 	# Retrieves the URIs for all strains used by experiments in the collection of every SD2 experiment.
 	def query_experiment_strains(self, verbose=False, trace_derivation=True, by_sample=False, pretty=True, collections=[SD2Constants.SD2_EXPERIMENT_COLLECTION], experiments=[]):
-		comp_labels = ['strain']
+		mod_labels = ['strain']
 
 		if verbose:
-			comp_labels.extend(['name', 'description'])
+			mod_labels.extend(['name', 'description'])
 
 		if by_sample:
-			comp_labels.append('sample')
+			mod_labels.append('sample')
 
-		query_result = self.query_experiment_components([SBOLConstants.NCIT_STRAIN, SBOLConstants.OBI_STRAIN], collections, comp_labels[0], comp_labels[1:], trace_derivation, all_types=False, experiments=experiments)
+		query_result = self.query_experiment_modules([SBOLConstants.NCIT_STRAIN], collections, mod_labels[0], mod_labels[1:], trace_derivation, experiments=experiments)
 
 		if pretty:
 			if by_sample:
-				return self.format_query_result(query_result, comp_labels[:-1], comp_labels[-1])
+				return self.format_query_result(query_result, mod_labels[:-1], mod_labels[-1])
 			else:
-				return self.format_query_result(query_result, comp_labels)
+				return self.format_query_result(query_result, mod_labels)
 		else:
 			return query_result
 
@@ -1002,7 +1006,7 @@ class SynBioHubQuery(SBOLQuery):
 
 	# Retrieves the URIs for all sub-collections of design elements from the collection of every SD2 design element.
 	# These sub-collections are typically associated with challenge problems.
-	def query_design_sets(self):
+	def query_design_sets(self, pretty=True):
 		design_set_query = """
 		PREFIX sbol: <http://sbols.org/v2#>
 		SELECT DISTINCT ?collection WHERE {{ 
@@ -1012,26 +1016,32 @@ class SynBioHubQuery(SBOLQuery):
 		}}
 		""".format(col=SD2Constants.SD2_DESIGN_COLLECTION)
 
-		return self.fetch_SPARQL(self._server, design_set_query)
+		query_result = self.fetch_SPARQL(self._server, design_set_query)
+
+		if pretty:
+			return self.format_query_result(query_result, ['collection'])
+		else:
+			return query_result
 
 	# Retrieves the URIs for all sub-collections of experiments from the collection of every SD2 experiemnt.
 	# These sub-collections are typically associated with challenge problems.
-	def query_experiment_sets(self):
+	def query_experiment_sets(self, pretty=True):
 		exp_set_query = """
 		PREFIX sbol: <http://sbols.org/v2#>
 		PREFIX sd2: <http://sd2e.org#>
-		SELECT DISTINCT ?subcol WHERE {{ 
-			<{col}> sbol:member ?subcol .
-			?subcol sbol:member ?exp .
-			?exp sd2:experimentalData ?data .
-			FILTER NOT EXISTS {{
-				?subcol sbol:member ?m .
-				FILTER ( ?m != ?exp )
-			}}
+		SELECT DISTINCT ?collection WHERE {{ 
+			<{col}> sbol:member ?collection .
+			?collection sbol:member ?exp .
+			?exp rdf:type <http://sd2e.org#Experiment> 
 		}}
 		""".format(col=SD2Constants.SD2_EXPERIMENT_COLLECTION)
 
-		return self.fetch_SPARQL(self._server, exp_set_query)
+		query_result = self.fetch_SPARQL(self._server, exp_set_query)
+
+		if pretty:
+			return self.format_query_result(query_result, ['collection'])
+		else:
+			return query_result
 
 	# Retrieves the size of the specified collection of experiments.
 	# This collection is typically associated with a challenge problem.
@@ -1041,11 +1051,13 @@ class SynBioHubQuery(SBOLQuery):
 		PREFIX sd2: <http://sd2e.org#>
 		SELECT (count(distinct ?exp) as ?size) WHERE {{ 
 			<{col}> sbol:member ?exp .
-			?exp sd2:experimentalData ?data
+			?exp rdf:type <http://sd2e.org#Experiment> 
 		}}
 		""".format(col=collection)
 
-		return self.fetch_SPARQL(self._server, exp_set_size_query)
+		query_result = self.fetch_SPARQL(self._server, exp_set_size_query)
+
+		return int(query_result['results']['bindings'][0]['size']['value'])
 
 	# Retrieves the attachments for a given plan URI
 	def query_single_experiment_attachments(self, plan_uri):
