@@ -159,12 +159,14 @@ class SBOLQuery():
 		login_endpoint.addParameter('email', user)
 		login_endpoint.addParameter('password', password)	
 		self.user = user
-		self.authentication_key = str(login_endpoint.query().response.read())
+		self.authentication_key = login_endpoint.query().response.read().decode("utf-8")
+		print(self.authentication_key)
 
 	def fetch_SPARQL(self, server, query):
 		sparql = SPARQLWrapper(self._server)
 		if self.authentication_key and self.user:
 			sparql.addCustomHttpHeader('X-authorization', self.authentication_key)
+			print(self.authentication_key)
 			if 'WHERE' in query:
 				if self.spoofed_url:
 					resource = self.spoofed_url
@@ -176,8 +178,10 @@ class SBOLQuery():
 				FROM = "  FROM <{resource}/user/{user}> ".format(resource=resource, user=self.user)
 				p = query.find('WHERE')
 				query = query[:p] + FROM + query[p:]
+		print(query)
 		sparql.setQuery(query)
 		sparql.setReturnFormat(JSON)	
+		print(sparql._createRequest().headers)
 		results = sparql.query().convert()
 		return results
 
