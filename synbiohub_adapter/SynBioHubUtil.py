@@ -2,7 +2,7 @@ import getpass
 import sys
 import csv
 
-from .fetch_SPARQL import fetch_SPARQL as _fetch_SPARQL
+from SPARQLWrapper import SPARQLWrapper, JSON, POST
 from sbol import *
 from .cache_query import wrap_query_fn
 from functools import partial
@@ -128,22 +128,58 @@ class SBHConstants():
     SD2_EXPERIMENT_COLLECTION = 'https://hub.sd2e.org/user/sd2e/experiment/experiment_collection/1'
 
 class SBOLQuery():
-    ''' This class structures SPARQL queries for objects belonging to classes from the SBOL data model. 
-        An instance of this class will allow a user to pull information on these objects from the specified instance of SynBioHub.
-    '''
+	''' This class structures SPARQL queries for objects belonging to classes from the SBOL data model. 
+		An instance of this class will allow a user to pull information on these objects from the specified instance of SynBioHub.
+	'''
 
-    # server: The SynBioHub server to call sparql queries on.
-    def __init__(self, server, use_fallback_cache=False, om=None):
-        self._server = server
-        self._use_fallback_cache = use_fallback_cache
-        self.om = om
+	# server: The SynBioHub server to call sparql queries on.
+	def __init__(self, server, use_fallback_cache=False, user = None, authentication_key = None, spoofed_url = None):
+		self._server = server
+		self._use_fallback_cache = use_fallback_cache
+		self.user = user
+		self.authentication_key = authentication_key
+		self.spoofed_url = spoofed_url
 
-        # If using fallback cache, wrap the fetch_SPARQL function
-        # with cache storage/retrieval.
-        if use_fallback_cache:
-            self.fetch_SPARQL = wrap_query_fn(_fetch_SPARQL)
-        else:
-            self.fetch_SPARQL = _fetch_SPARQL
+		# If using fallback cache, wrap the fetch_SPARQL function
+		# with cache storage/retrieval.
+		if use_fallback_cache:
+			self.fetch_SPARQL = wrap_query_fn(self.fetch_SPARQL)
+
+
+	def login(self, user, password):
+		if not '/sparql' in self._server:
+			self._server += '/sparql'
+		p = self._server.find('/sparql')
+		resource = self._server[:p]
+		login_endpoint = SPARQLWrapper(resource + '/login')
+		login_endpoint.setMethod(POST)
+		login_endpoint.addCustomHttpHeader('Content-Type', 'application/x-www-form-urlencoded')
+		login_endpoint.addCustomHttpHeader('Accept', 'text/plain')
+		login_endpoint.addCustomHttpHeader('charset', 'utf-8"')
+		login_endpoint.addParameter('email', user)
+		login_endpoint.addParameter('password', password)	
+		self.user = user
+		self.authentication_key = str(login_endpoint.query().response.read())
+
+	def fetch_SPARQL(self, server, query):
+		sparql = SPARQLWrapper(self._server)
+		if self.authentication_key and self.user:
+			sparql.addCustomHttpHeader('X-authorization', self.authentication_key)
+			if 'WHERE' in query:
+				if self.spoofed_url:
+					resource = self.spoofed_url
+				else:
+					resource = self._server
+				if '/sparql' in resource:
+					p = resource.find('/sparql')
+					resource = resource[:p]
+				FROM = "  FROM <{resource}/user/{user}> ".format(resource=resource, user=self.user)
+				p = query.find('WHERE')
+				query = query[:p] + FROM + query[p:]
+		sparql.setQuery(query)
+		sparql.setReturnFormat(JSON)	
+		results = sparql.query().convert()
+		return results
 
     # Constructs a partial SPARQL query for all collection members with 
     # at least one of the specified types (or all of the specified types). 
@@ -611,29 +647,29 @@ def loadSBOLFile(sbolFile):
     return sbolDoc
 
 def login_SBH(server):
-    sbh_connector = PartShop(server)
-    sbh_user = input('Enter SynBioHub Username: ')
-    sbh_connector.login(sbh_user, getpass.getpass(prompt='Enter SynBioHub Password: ', stream=sys.stderr))
-    return sbh_connector
+	sbh_connector = PartShop(server)
+	sbh_user = input('Enter SynBioHub Username: ')
+	sbh_connector.login(sbh_user, getpass.getpass(prompt='Enter SynBioHub Password: ', stream=sys.stderr))
+	return sbh_connector
 
 def export_definitions_to_csv(server, collections, csv_path):
-    sbol_query = SBOLQuery(server)
+	sbol_query = SBOLQuery(server)
 
-    comps = sbol_query.format_query_result(sbol_query.query_design_components(collections=collections, other_comp_labels=['name']), ['comp', 'name'])
+	comps = sbol_query.format_query_result(sbol_query.query_design_components(collections=collections, other_comp_labels=['name']), ['comp', 'name'])
 
-    mods = sbol_query.format_query_result(sbol_query.query_design_modules(collections=collections, other_mod_labels=['name']), ['mod', 'name'])
+	mods = sbol_query.format_query_result(sbol_query.query_design_modules(collections=collections, other_mod_labels=['name']), ['mod', 'name'])
 
-    with open(csv_path, 'w', newline='') as csv_file:
-        csv_writer = csv.writer(csv_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+	with open(csv_path, 'w', newline='') as csv_file:
+		csv_writer = csv.writer(csv_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
 
-        for comp in comps:
-            if 'name' in comp:
-                csv_writer.writerow([comp['comp'], comp['name']])
-            else:
-                csv_writer.writerow([comp['comp'], ''])
+		for comp in comps:
+			if 'name' in comp:
+				csv_writer.writerow([comp['comp'], comp['name']])
+			else:
+				csv_writer.writerow([comp['comp'], ''])
 
-        for mod in mods:
-            if 'name' in mod:
-                csv_writer.writerow([mod['mod'], mod['name']])
-            else:
-                csv_writer.writerow([mod['mod'], ''])
+		for mod in mods:
+			if 'name' in mod:
+				csv_writer.writerow([mod['mod'], mod['name']])
+			else:
+				csv_writer.writerow([mod['mod'], ''])
