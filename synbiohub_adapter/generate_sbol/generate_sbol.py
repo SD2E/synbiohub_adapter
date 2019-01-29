@@ -2,6 +2,7 @@ import argparse
 import csv
 import sys
 import os
+from synbiohub_adapter import SBOLQuery
 from pySBOLx.pySBOLx import XDocument
 
 SD2_DESIGN_NS = 'http://hub.sd2e.org/user/sd2e/design'
@@ -84,10 +85,11 @@ def generate_sbol_helper(doc, csv_file, generate_device_switcher, generate_syste
 
                 try:
                     aux_file = os.path.join(os.path.dirname(csv_file), row[header['Composition_File']])
-
-                    generate_sbol_helper(doc, aux_file, generate_device_switcher, generate_system_switcher, generate_input_switcher, om, devices, systems, inputs, measures)
                 except:
-                    pass
+                    aux_file = None
+
+                if aux_file is not None:
+                    generate_sbol_helper(doc, aux_file, generate_device_switcher, generate_system_switcher, generate_input_switcher, om, devices, systems, inputs, measures)
 
                 identified = generate_system(doc, row, header, devices, systems, inputs, measures)
 
@@ -107,28 +109,50 @@ def generate_sbol_helper(doc, csv_file, generate_device_switcher, generate_syste
                     out_inputs.append(identified)
 
             try:
-                out_measures[identified.displayId] = generate_concentration(doc, row, header, om)
+                identified.wasDerivedFrom = row[header['Source']]
             except:
-                try:
-                    out_measures[identified.displayId] = generate_volume(doc, row, header, om)
-                except:
-                    pass
+                pass
 
-def generate_volume(doc, row, header, om):
+            measure = generate_measure(doc, row, header, om)
+
+            if measure is not None:
+                out_measures[identified.displayId] = measure
+
+def generate_measure(doc, row, header, om):
     try:
-        unit = generate_volume_unit(doc, row, header, om)
-
-        return {'mag': float(row[header['Volume']]), 'unit': unit, 'id': 'volume'}
+        measure = float(row[header['Measure']])
     except:
-        return {'mag': float(row[header['Volume']]), 'id': 'volume'}
+        measure = None
 
-def generate_concentration(doc, row, header, om):
+    unit = generate_unit(doc, row, header, om)
+
+    if measure is not None and unit is not None:
+        return {'mag': float(row[header['Measure']]), 'unit': unit, 'id': 'measure'}
+    else:
+        return None
+
+def generate_unit(doc, row, header, om):
     try:
-        unit = generate_concentration_unit(doc, row, header, om)
-
-        return {'mag': float(row[header['Concentration']]), 'unit': unit, 'id': 'concentration'}
+        symbol = row[header['Units']]
     except:
-        return {'mag': float(row[header['Concentration']]), 'id': 'concentration'}
+        symbol = None
+
+    if symbol is not None and len(symbol) > 0:
+        unit_query = SBOLQuery("", om=om)
+
+        unit_uris = unit_query.query_units(symbol, symbol, symbol)
+
+        if len(unit_uris) == 0:
+            unit_id = symbol.replace('/', '_').replace('-', '_').replace(' ', '')
+
+            if is_sbol_alnum_id(unit_id):
+                return doc.create_unit(unit_id, symbol)
+            else:
+                raise NonStandardUnitSymbolConversionError(symbol)
+        else:
+            return unit_uris[0]
+    else:
+        return None
 
 def generate_buffer(doc, row, header, devices=[], systems=[], inputs=[], measures={}):
     display_id = row[header['ID']]
@@ -370,25 +394,16 @@ def generate_inducer(doc, row, header):
 
     return doc.create_inducer(display_id, name, descr)
 
-def generate_concentration_unit(doc, row, header, om):
-    symbol = row[header['Concentration_Units']]
+def is_sbol_alnum_id(display_id):
+    return not display_id[0].isdigit() and display_id.replace('_', '').isalnum()
 
-    assert len(symbol) > 0
+class NonStandardUnitSymbolConversionError(Exception):
 
-    try:
-        return doc.create_unit(om, symbol)
-    except:
-        return doc.create_unit(om=om, name=symbol)
+    def __init__(self, symbol):
+        self.symbol = symbol
 
-def generate_volume_unit(doc, row, header, om):
-    symbol = row[header['Volume_Units']]
-
-    assert len(symbol) > 0
-
-    try:
-        return doc.create_unit(om, symbol)
-    except:
-        return doc.create_unit(om=om, name=symbol)
+    def __str__(self):
+        return "Failed to convert symbol {} to valid ID for non-standard Unit. ID must start with non-digit and must contain only alphanumeric characters and underscores.".format(self.symbol)
 
 if __name__ == '__main__':
     main()
