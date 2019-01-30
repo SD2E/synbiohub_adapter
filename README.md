@@ -31,6 +31,14 @@ python setup.py develop
 pip install -e .
 ```
 
+### Running Tests
+
+Running tests requires the user provide a password for SynBioHub through the `SBH_PASSWORD` environment variable, e.g.
+
+```
+SBH_PASSWORD=<pword> python3 -m unittest discover tests
+```
+
 ### Linux Prerequisites
 
 On linux, you will to install `libxslt-dev` and `curl`.
