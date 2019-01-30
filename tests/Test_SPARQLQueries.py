@@ -4,13 +4,19 @@ from synbiohub_adapter.query_synbiohub import *
 from synbiohub_adapter.SynBioHubUtil import *
 from sbol import *
 from getpass import getpass
+import sys
+import os
 
 class TestSBHQueries(unittest.TestCase):
 
     @classmethod
     def setUpClass(self):
         self.user = 'sd2e'
-        self.password = getpass()
+        if 'SBH_PASSWORD' in os.environ.keys():
+        	self.password = os.environ['SBH_PASSWORD']
+        else:       	
+        	self.password = getpass()
+
     '''
         This class will perform unit testing to query information from SynBioHub's instances. 
 
