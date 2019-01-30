@@ -46,8 +46,8 @@ class BBNConstants():
     BBN_RULE30_COLLECTION = 'https://synbiohub.bbn.com/user/tramyn/transcriptic_rule_30_q0_1_09242017/transcriptic_rule_30_q0_1_09242017_collection/1'
 
 class SD2Constants():
-    SD2_SERVER = "http://hub-api.sd2e.org:80/sparql"
-    SD2_STAGING_SERVER = "https://hub-api-staging.sd2e.org:80/sparql"
+    SD2_SERVER = "https://hub.sd2e.org"
+    SD2_STAGING_SERVER = "https://hub-staging.sd2e.org"
     
     SD2_DESIGN_COLLECTION = 'https://hub.sd2e.org/user/sd2e/design/design_collection/1'
     RULE_30_DESIGN_COLLECTION = 'https://hub.sd2e.org/user/sd2e/design/rule_30/1'
@@ -115,17 +115,17 @@ class SD2Constants():
 
     ADAPTER_NS = 'http://hub.sd2e.org/adapter'
 
-class SBHConstants():
-    SD2_SERVER = "http://hub-api.sd2e.org:80/sparql"
-    BBN_SERVER = "https://synbiohub.bbn.com/"
-    BBN_YEASTGATES_COLLECTION = "https://synbiohub.bbn.com/user/tramyn/BBN_YEAST_GATES/BBN_YEAST_GATES_collection/1"
-    BBN_RULE30_COLLECTION = 'https://synbiohub.bbn.com/user/tramyn/transcriptic_rule_30_q0_1_09242017/transcriptic_rule_30_q0_1_09242017_collection/1'
-    RULE_30_EXPERIMENT_COLLECTION = 'https://hub.sd2e.org/user/sd2e/experiment/rule_30/1'
-    YEAST_GATES_EXPERIMENT_COLLECTION = 'https://hub.sd2e.org/user/sd2e/experiment/yeast_gates/1'
-    RULE_30_DESIGN_COLLECTION = 'https://hub.sd2e.org/user/sd2e/design/rule_30/1'
-    YEAST_GATES_DESIGN_COLLECTION = 'https://hub.sd2e.org/user/sd2e/design/yeast_gates/1'
-    SD2_DESIGN_COLLECTION = 'https://hub.sd2e.org/user/sd2e/design/design_collection/1'
-    SD2_EXPERIMENT_COLLECTION = 'https://hub.sd2e.org/user/sd2e/experiment/experiment_collection/1'
+# class SBHConstants():
+#     SD2_SERVER = "http://hub-api.sd2e.org:80/sparql"
+#     BBN_SERVER = "https://synbiohub.bbn.com/"
+#     BBN_YEASTGATES_COLLECTION = "https://synbiohub.bbn.com/user/tramyn/BBN_YEAST_GATES/BBN_YEAST_GATES_collection/1"
+#     BBN_RULE30_COLLECTION = 'https://synbiohub.bbn.com/user/tramyn/transcriptic_rule_30_q0_1_09242017/transcriptic_rule_30_q0_1_09242017_collection/1'
+#     RULE_30_EXPERIMENT_COLLECTION = 'https://hub.sd2e.org/user/sd2e/experiment/rule_30/1'
+#     YEAST_GATES_EXPERIMENT_COLLECTION = 'https://hub.sd2e.org/user/sd2e/experiment/yeast_gates/1'
+#     RULE_30_DESIGN_COLLECTION = 'https://hub.sd2e.org/user/sd2e/design/rule_30/1'
+#     YEAST_GATES_DESIGN_COLLECTION = 'https://hub.sd2e.org/user/sd2e/design/yeast_gates/1'
+#     SD2_DESIGN_COLLECTION = 'https://hub.sd2e.org/user/sd2e/design/design_collection/1'
+#     SD2_EXPERIMENT_COLLECTION = 'https://hub.sd2e.org/user/sd2e/experiment/experiment_collection/1'
 
 class SBOLQuery():
     ''' This class structures SPARQL queries for objects belonging to classes from the SBOL data model. 
@@ -133,7 +133,7 @@ class SBOLQuery():
     '''
 
     # server: The SynBioHub server to call sparql queries on.
-    def __init__(self, server, use_fallback_cache=False, user = None, authentication_key = None, spoofed_url = None):
+    def __init__(self, server, use_fallback_cache=False, user=None, authentication_key=None, spoofed_url=None):
         self._server = server
         self._use_fallback_cache = use_fallback_cache
         self.user = user
@@ -160,13 +160,11 @@ class SBOLQuery():
         login_endpoint.addParameter('password', password)   
         self.user = user
         self.authentication_key = login_endpoint.query().response.read().decode("utf-8")
-        print(self.authentication_key)
 
     def fetch_SPARQL(self, server, query):
         sparql = SPARQLWrapper(self._server)
         if self.authentication_key and self.user:
             sparql.addCustomHttpHeader('X-authorization', self.authentication_key)
-            print(self.authentication_key)
             if 'WHERE' in query:
                 if self.spoofed_url:
                     resource = self.spoofed_url
@@ -178,10 +176,8 @@ class SBOLQuery():
                 FROM = "  FROM <{resource}/user/{user}> ".format(resource=resource, user=self.user)
                 p = query.find('WHERE')
                 query = query[:p] + FROM + query[p:]
-        print(query)
         sparql.setQuery(query)
-        sparql.setReturnFormat(JSON)    
-        print(sparql._createRequest().headers)
+        sparql.setReturnFormat(JSON)
         results = sparql.query().convert()
         return results
 
