@@ -1027,6 +1027,7 @@ class SynBioHubQuery(SBOLQuery):
     # These sub-collections are typically associated with challenge problems.
     def query_experiment_sets(self, pretty=True):
         exp_set_query = """
+        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
         PREFIX sbol: <http://sbols.org/v2#>
         PREFIX sd2: <http://sd2e.org#>
         SELECT DISTINCT ?collection WHERE {{ 
@@ -1047,6 +1048,7 @@ class SynBioHubQuery(SBOLQuery):
     # This collection is typically associated with a challenge problem.
     def query_experiment_set_size(self, collection):
         exp_set_size_query = """
+        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
         PREFIX sbol: <http://sbols.org/v2#>
         PREFIX sd2: <http://sd2e.org#>
         SELECT (count(distinct ?exp) as ?size) WHERE {{ 
