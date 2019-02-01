@@ -1,5 +1,6 @@
 
 # synbiohub_adapter
+![Build Status](https://api.travis-ci.com/SD2E/synbiohub_adapter.svg?branch=master)
 
 ## Installation
 
