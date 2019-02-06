@@ -6,13 +6,15 @@ import pycodestyle
 
 # Please do not increase this number. Style warnings should DECREASE,
 # not increase.
-ALLOWED_ERRORS = 4137
+ALLOWED_ERRORS = 2105
 
 # Allow longer lines. The default is 79, which allows the 80th
 # character to be a line continuation symbol. Here, we increase the
 # line length to (effectively) 120.
 MAX_LINE_LENGTH = 119
 
+# List of files and directories to exclude from style checks
+EXCLUDE = ['build']
 
 class TestStyle(unittest.TestCase):
 
@@ -24,7 +26,8 @@ class TestStyle(unittest.TestCase):
         # Allow 120 character lines. The default is 80, but that's a
         # pretty narrow window size these days.
         sg = pycodestyle.StyleGuide(quiet=True,
-                                    max_line_length=MAX_LINE_LENGTH)
+                                    max_line_length=MAX_LINE_LENGTH,
+                                    exclude=EXCLUDE)
         report = sg.check_files(dirs_and_files)
         self.assertEqual(report.total_errors, ALLOWED_ERRORS)
 
@@ -34,13 +37,13 @@ class TestStyle(unittest.TestCase):
         # List all clean directories and files
         # Keep these sorted
         dirs_and_files = [
-            'build/lib/tests/__init__.py',
             'setup.py',
             'tests/__init__.py',
             'tests/test_pycodestyle.py'
         ]
         sg = pycodestyle.StyleGuide(quiet=True,
-                                    max_line_length=MAX_LINE_LENGTH)
+                                    max_line_length=MAX_LINE_LENGTH,
+                                    exclude=EXCLUDE)
         report = sg.check_files(dirs_and_files)
         self.assertEqual(report.total_errors, 0)
 

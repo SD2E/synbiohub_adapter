@@ -5,5 +5,4 @@ install:
   - python setup.py install
   - pip install pycodestyle
 script:
-  - pycodestyle --statistics --max-line-length 119 .
   - python -m unittest discover tests
