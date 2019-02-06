@@ -16,6 +16,7 @@ MAX_LINE_LENGTH = 119
 # List of files and directories to exclude from style checks
 EXCLUDE = ['build']
 
+
 class TestStyle(unittest.TestCase):
 
     def test_style(self):
