@@ -30,7 +30,7 @@ class TestStyle(unittest.TestCase):
                                     max_line_length=MAX_LINE_LENGTH,
                                     exclude=EXCLUDE)
         report = sg.check_files(dirs_and_files)
-        self.assertEqual(report.total_errors, ALLOWED_ERRORS)
+        self.assertTrue(report.total_errors <= ALLOWED_ERRORS, msg='{0} style violations exceed the maximum {1} allowed'.format(report.total_errors, ALLOWED_ERRORS))
 
     def test_clean(self):
         """Ensure that warning free files stay that way.
