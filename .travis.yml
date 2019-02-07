@@ -5,8 +5,4 @@ install:
   - python setup.py install
   - pip install pycodestyle
 script:
-  - pycodestyle --exclude=build --max-line-length=119 --statistics .
-  - pycodestyle --exclude=build --max-line-length=119 --statistics synbiohub_adapter
-  - pycodestyle --exclude=build --max-line-length=119 --statistics tests
-  - pycodestyle --exclude=build --max-line-length=119 --select W191 tests
   - python -m unittest discover tests
