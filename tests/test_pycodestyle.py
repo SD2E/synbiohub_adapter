@@ -1,4 +1,5 @@
 import unittest
+import os
 
 # If this import fails, do `pip3 install [--user] pycodestyle`
 import pycodestyle
@@ -18,6 +19,12 @@ EXCLUDE = ['build']
 # Report custom failure messages instead of default assertion errors
 unittest.TestCase.longMessage = False
 
+# Verbose option will explicitly print all style failures
+if 'VERBOSE' in os.environ.keys():
+    QUIET = os.environ['VERBOSE']
+else:
+    QUIET = True
+
 
 class TestStyle(unittest.TestCase):
 
@@ -28,7 +35,7 @@ class TestStyle(unittest.TestCase):
         dirs_and_files = ['.']
         # Allow 120 character lines. The default is 80, but that's a
         # pretty narrow window size these days.
-        sg = pycodestyle.StyleGuide(quiet=True,
+        sg = pycodestyle.StyleGuide(quiet=QUIET,
                                     max_line_length=MAX_LINE_LENGTH,
                                     exclude=EXCLUDE)
         report = sg.check_files(dirs_and_files)
@@ -46,7 +53,7 @@ class TestStyle(unittest.TestCase):
             'tests/__init__.py',
             'tests/test_pycodestyle.py'
         ]
-        sg = pycodestyle.StyleGuide(quiet=False,
+        sg = pycodestyle.StyleGuide(quiet=QUIET,
                                     max_line_length=MAX_LINE_LENGTH,
                                     exclude=EXCLUDE)
         for f in dirs_and_files:
