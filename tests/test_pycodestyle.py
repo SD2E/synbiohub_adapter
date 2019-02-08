@@ -1,4 +1,3 @@
-
 import unittest
 
 # If this import fails, do `pip3 install [--user] pycodestyle`
@@ -6,7 +5,7 @@ import pycodestyle
 
 # Please do not increase this number. Style warnings should DECREASE,
 # not increase.
-ALLOWED_ERRORS = 2105
+ALLOWED_ERRORS = 2104
 
 # Allow longer lines. The default is 79, which allows the 80th
 # character to be a line continuation symbol. Here, we increase the
@@ -15,6 +14,9 @@ MAX_LINE_LENGTH = 119
 
 # List of files and directories to exclude from style checks
 EXCLUDE = ['build']
+
+# Report custom failure messages instead of default assertion errors
+unittest.TestCase.longMessage = False
 
 
 class TestStyle(unittest.TestCase):
@@ -30,7 +32,9 @@ class TestStyle(unittest.TestCase):
                                     max_line_length=MAX_LINE_LENGTH,
                                     exclude=EXCLUDE)
         report = sg.check_files(dirs_and_files)
-        self.assertTrue(report.total_errors <= ALLOWED_ERRORS, msg='{0} style violations exceed the maximum {1} allowed'.format(report.total_errors, ALLOWED_ERRORS))
+        self.assertEqual(report.total_errors, ALLOWED_ERRORS,
+                         msg='{0} style violations exceed the maximum {1} allowed'.format(report.total_errors,
+                                                                                          ALLOWED_ERRORS))
 
     def test_clean(self):
         """Ensure that warning free files stay that way.
@@ -42,11 +46,13 @@ class TestStyle(unittest.TestCase):
             'tests/__init__.py',
             'tests/test_pycodestyle.py'
         ]
-        sg = pycodestyle.StyleGuide(quiet=True,
+        sg = pycodestyle.StyleGuide(quiet=False,
                                     max_line_length=MAX_LINE_LENGTH,
                                     exclude=EXCLUDE)
-        report = sg.check_files(dirs_and_files)
-        self.assertEqual(report.total_errors, 0)
+        for f in dirs_and_files:
+            report = sg.check_files([f])
+            self.assertEqual(report.total_errors, 0,
+                             msg='New style violation introduced in previously clean file {}'.format(f))
 
 
 if __name__ == '__main__':
