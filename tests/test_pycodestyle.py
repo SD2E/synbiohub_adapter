@@ -21,7 +21,7 @@ unittest.TestCase.longMessage = False
 
 # Verbose option will explicitly print all style failures
 if 'VERBOSE' in os.environ.keys():
-    QUIET = os.environ['VERBOSE']
+    QUIET = not os.environ['VERBOSE']
 else:
     QUIET = True
 
@@ -40,8 +40,8 @@ class TestStyle(unittest.TestCase):
                                     exclude=EXCLUDE)
         report = sg.check_files(dirs_and_files)
         self.assertEqual(report.total_errors, ALLOWED_ERRORS,
-                         msg='{0} style violations exceed the maximum {1} allowed'.format(report.total_errors,
-                                                                                          ALLOWED_ERRORS))
+                         msg='{0} style violations were found. Expected {1}'.format(report.total_errors,
+                                                                                    ALLOWED_ERRORS))
 
     def test_clean(self):
         """Ensure that warning free files stay that way.
