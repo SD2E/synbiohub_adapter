@@ -40,6 +40,13 @@ Running tests requires the user provide a password for SynBioHub through the `SB
 SBH_PASSWORD=<pword> python3 -m unittest discover tests
 ```
 
+The tests include a check for conformance with Python style best-practices. If a new style violation is introduced into
+the code base, the test will fail. To diagnose this failure, run the following test:
+
+```
+VERBOSE=1 python3 -m unittest tests/test_pycodestyle.py
+```
+
 ### Linux Prerequisites
 
 On linux, you will to install `libxslt-dev` and `curl`.
