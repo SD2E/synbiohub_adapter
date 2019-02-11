@@ -1191,4 +1191,4 @@ class SynBioHubQuery(SBOLQuery):
     def submit_ExistingCollection(self, sbolDoc, collURI, overwrite):
         sbolDoc.identity = collURI
         sbh_connector = login_SBH(self._server)
-        self.submit_Collection(sbh_connector, sbolDoc, False, overwrite)    
+        self.submit_Collection(sbh_connector, sbolDoc, False, overwrite)
