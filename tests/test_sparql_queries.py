@@ -25,7 +25,7 @@ class TestSBHQueries(unittest.TestCase):
             SPARQLWrapper is used to remotely execute SynBioHub queries.
 
         To run this python file, enter in the following command from the synbiohub_adapter directory:
-            python -m unittest tests/Test_SPARQLQueries.py
+            python -m unittest tests/test_sparql_queries.py
 
         author(s) : Nicholas Roehner
                     Tramy Nguyen
@@ -689,7 +689,6 @@ class TestSBHQueries(unittest.TestCase):
             'https://hub.sd2e.org/user/sd2e/design/M9/1', 
             'https://hub.sd2e.org/user/sd2e/design/M90x20Kan0x20500x2Dug0x2Dper0x2DmL/1', 
             'https://hub.sd2e.org/user/sd2e/design/M90x20Chlor0x20350x2Dug0x2Dper0x2Dml0x20Kan0x20500x2Dug0x2Dper0x2Dml/1', 
-            'https://hub.sd2e.org/user/sd2e/design/SC0x20Media/1', 
             'https://hub.sd2e.org/user/sd2e/design/YEP0x2020x250x2Ddextrose/1', 
             'https://hub.sd2e.org/user/sd2e/design/M9_supplemented_no_carbon/1', 
             'https://hub.sd2e.org/user/sd2e/design/culture_media_2/1', 
