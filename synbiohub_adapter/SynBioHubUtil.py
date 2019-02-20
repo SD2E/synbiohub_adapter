@@ -665,7 +665,7 @@ class SBOLQuery():
 
     # Retrieves from the specified collection of design elements the URIs for all ModuleDefinitions with 
     # at least one of the specified roles and that contain a FunctionalComponent or Module with 
-    # at least one of the specified sub-types (or all of the specified sub-types) and with 
+    # at least one of the specified sub-types (or all of the specified sub-types) and with
     # at least one of the specified roles.
     # This collection is typically associated with a challenge problem.
     def query_design_modules(self, roles=[], collections=[], mod_label='mod', other_mod_labels=[], sub_types=[], sub_roles=[], definitions=[], all_sub_types=True, custom_properties=[], sub_comp_label='sub_comp', members=[]):
@@ -713,18 +713,21 @@ class SBOLQuery():
         for obj in objects:
             serial_objects.append(''.join(['<', obj, '>, ']))
 
-        return ''.join(serial_objects)[:-2]     
+        return ''.join(serial_objects)[:-2]
+
 
 def loadSBOLFile(sbolFile):
     sbolDoc = Document()
     sbolDoc.read(sbolFile)
     return sbolDoc
 
+
 def login_SBH(server):
     sbh_connector = PartShop(server)
     sbh_user = input('Enter SynBioHub Username: ')
     sbh_connector.login(sbh_user, getpass.getpass(prompt='Enter SynBioHub Password: ', stream=sys.stderr))
     return sbh_connector
+
 
 def export_definitions_to_csv(server, collections, csv_path):
     sbol_query = SBOLQuery(server)
