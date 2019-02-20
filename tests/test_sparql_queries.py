@@ -689,7 +689,6 @@ class TestSBHQueries(unittest.TestCase):
             'https://hub.sd2e.org/user/sd2e/design/M9/1', 
             'https://hub.sd2e.org/user/sd2e/design/M90x20Kan0x20500x2Dug0x2Dper0x2DmL/1', 
             'https://hub.sd2e.org/user/sd2e/design/M90x20Chlor0x20350x2Dug0x2Dper0x2Dml0x20Kan0x20500x2Dug0x2Dper0x2Dml/1', 
-            'https://hub.sd2e.org/user/sd2e/design/SC0x20Media/1', 
             'https://hub.sd2e.org/user/sd2e/design/YEP0x2020x250x2Ddextrose/1', 
             'https://hub.sd2e.org/user/sd2e/design/M9_supplemented_no_carbon/1', 
             'https://hub.sd2e.org/user/sd2e/design/culture_media_2/1', 
