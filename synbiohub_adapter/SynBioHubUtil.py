@@ -288,7 +288,8 @@ class SBOLQuery():
         ?seq sbol:elements ?sequence .
         """.format(el=entity_label)
 
-    def construct_feature_pattern(self, entity_label='entity', sub_label='sub', sub_entity_label='feature'):
+    def construct_feature_pattern(self, entity_label='entity', sub_label='sub',
+                                  sub_entity_label='feature'):
         return """
         ?{el} sbol:sequenceAnnotation ?seqAnno ;
             sbol:component ?{sl} .
@@ -296,7 +297,7 @@ class SBOLQuery():
             sbol:location ?location .
         ?location sbol:start ?start ;
             sbol:end ?end .
-        ?{sl} sbol:definition ?{sel} 
+        ?{sl} sbol:definition ?{sel}
         """.format(el=entity_label, sl=sub_label, sel=sub_entity_label)
 
     def construct_rdf_type_pattern(self, rdf_type, entity_label='entity'):
@@ -333,7 +334,8 @@ class SBOLQuery():
                 sequence_pattern = ""
 
             if 'feature' in other_entity_labels:
-                feature_pattern = self.construct_feature_pattern(entity_label, sub_label)
+                feature_pattern = self.construct_feature_pattern(entity_label,
+                                                                 sub_label)
             else:
                 feature_pattern = ""
 
@@ -555,7 +557,8 @@ class SBOLQuery():
         entity_value = binding[entity_key]['value']
 
         if entity_value in formatted:
-            formatted_binding = self.__format_entity_binding(binding, binding_keys)
+            formatted_binding = self.__format_entity_binding(binding,
+                                                            binding_keys)
 
             for key in formatted_binding.keys():
                 if formatted[entity_value][key] != formatted_binding[key]:
@@ -566,7 +569,9 @@ class SBOLQuery():
         else:
             formatted[entity_value] = self.__format_entity_binding(binding, binding_keys)
 
-    def format_query_result(self, query_result, binding_keys, group_key=None, sort_key=None, entity_key=None, sub_binding_keys=[], sub_group_key=None):
+    def format_query_result(self, query_result, binding_keys, group_key=None,
+                            sort_key=None, entity_key=None, sub_binding_keys=[],
+                            sub_group_key=None):
         if group_key is None and entity_key is None or len(binding_keys) == 0 and sub_group_key is None:
             if len(binding_keys) == 0:
                 if group_key is not None:
@@ -610,7 +615,8 @@ class SBOLQuery():
             self.__sort_query_list(query_result, sort_key)
         else:
             try:
-                self.__sort_query_list(query_result['results']['bindings'], sort_key)
+                self.__sort_query_list(query_result['results']['bindings'],
+                                       sort_key)
             except:
                 for binding in query_result:
                     if isinstance(binding, list):
