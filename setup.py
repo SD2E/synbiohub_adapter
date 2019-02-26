@@ -6,7 +6,7 @@ setup(
     name='synbiohub_adapter',
     version='0.0.1',
     packages=find_packages(),
-    install_requires=['SPARQLWrapper', 'appdirs', 'requests', 'pySBOLx==0.1', 'pysbol'],
+    install_requires=['pycodestyle==2.5.0', 'SPARQLWrapper', 'appdirs', 'requests', 'pySBOLx==0.1', 'pysbol'],
     dependency_links=[
         'git+https://git@github.com/nroehner/pySBOLx.git#egg=pySBOLx-0.1'
     ]
