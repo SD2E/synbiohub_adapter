@@ -1,6 +1,0 @@
-ID,Name,Description,Type,CHEBI,Source,Concentration,Concentration_Units
-CAT_90000_726,BD Bacto Yeast Extract BD Biosciences,"Is a concentrate of the water soluble portion of autolyzed yeast, and has the highest levels of carbohydrate of BD yeast extract offerings.",Media,,https://us.vwr.com/,20,g/l
-CAT_147440250,Adenine,,CHEBI,CHEBI_16708,http://www.acros.com/,0.08,g/l
-CAT_DF0123_17_3,BD Bacto Dehydrated Culture Media Additive_Tryptone,"Dehydrated, enzymatic digest of casein especially rich in tryptone.",Media,,https://www.fishersci.com/shop/products/bd-bacto-dehydrated-culture-media-additive-yeast-extract-3/p-4898247,10,g/l
-CAT_D16_3,Dextrose (D-Glucose),,CHEBI,CHEBI_17634,https://www.fishersci.com/shop/products/dextrose-d-glucose-anhydrous-granular-powder-certified-acs-fisher-chemical-6/d163,20,g/l
-ddH2O,ddH2O (sterile ultra-pure water),,CHEBI,CHEBI_15377,,,
