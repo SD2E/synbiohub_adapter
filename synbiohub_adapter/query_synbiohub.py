@@ -244,7 +244,7 @@ class SynBioHubQuery(SBOLQuery):
             else:
                 query_result = self.format_query_result(query_result, ['gate', 'gate_type', 'input', 'level'])
         elif len(gates) == 1:
-            self.sorts_query_result(query_result, 'input')
+            self.sort_query_result(query_result, 'input')
 
         return query_result
 

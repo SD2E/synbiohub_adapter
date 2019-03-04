@@ -471,12 +471,54 @@ class TestSBHQueries(unittest.TestCase):
 
     ###########
 
-    # def test_query_gate_input_levels(self):
-    #   sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
-    #   input_levels1 = sbh_query.query_gate_input_levels(['https://hub.sd2e.org/user/sd2e/design/UWBF_16969/1'], True)
-    #   input_levels2 = sbh_query.query_gate_input_levels(['https://hub.sd2e.org/user/sd2e/design/UWBF_16969/1'], False)
-    #   print(input_levels1)
-    #   print(input_levels2)
+    def test_query_gate_logic(self):
+        sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
+        sbh_query.login(self.user, self.password)
+        actual_circuit = sbh_query.query_gate_logic(['https://hub.sd2e.org/user/sd2e/design/UWBF_16969/1'], pretty=True)
+        expected_circuit = [{'gate': 'https://hub.sd2e.org/user/sd2e/design/UWBF_16969/1',
+                             'gate_type': 'http://www.openmath.org/cd/logic1#xor'}]
+        assert expected_circuit == actual_circuit
+
+    def test_query_gate_input_levels(self):
+        sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
+        sbh_query.login(self.user, self.password)
+        input_levels = sbh_query.query_gate_input_levels(['https://hub.sd2e.org/user/sd2e/design/UWBF_16969/1'])
+        expected_levels_bindings = [{
+            'gate': {
+                'type': 'uri',
+                'value': 'https://hub.sd2e.org/user/sd2e/design/UWBF_16969/1'
+            },
+            'gate_type': {
+                'type': 'uri',
+                'value': 'http://www.openmath.org/cd/logic1#xor'
+            },
+            'input': {
+                'type': 'literal',
+                'value': 'pADH1:iRGR-r3'
+            },
+            'level': {
+                'type': 'literal',
+                'value': '0'
+            }
+        }, {
+            'gate': {
+                'type': 'uri',
+                'value': 'https://hub.sd2e.org/user/sd2e/design/UWBF_16969/1'
+            },
+            'gate_type': {
+                'type': 'uri',
+                'value': 'http://www.openmath.org/cd/logic1#xor'
+            },
+            'input': {
+                'type': 'literal',
+                'value': 'pGRR:RGR-r6'
+            },
+            'level': {
+                'type': 'literal',
+                'value': '1'
+            }
+        }]
+        assert expected_levels_bindings == input_levels["results"]["bindings"]
 
     def test_query_design_gates(self):
         sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
@@ -1271,10 +1313,13 @@ class TestSBHQueries(unittest.TestCase):
 
     # # Test lab query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-    # def test_query_designs_by_lab_ids(self):
-    #   sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
-    #   designs = sbh_query.query_designs_by_lab_ids(SD2Constants.GINKGO, ['3411', '376', '772', '1993'])
-    #   print(designs)
+    def test_query_designs_by_lab_ids(self):
+        sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
+        sbh_query.login(self.user, self.password)
+        designs = sbh_query.query_designs_by_lab_ids(SD2Constants.GINKGO, ['1'], verbose=True)
+        expected_designs = {'1': {'identity': 'https://hub.sd2e.org/user/sd2e/design/CAT_G33_500/1',
+                            'name': 'Glycerol'}}
+        assert expected_designs == designs
 
     # Test statistics query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
