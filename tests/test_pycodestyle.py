@@ -6,7 +6,7 @@ import pycodestyle
 
 # Please do not increase this number. Style warnings should DECREASE,
 # not increase.
-ALLOWED_ERRORS = 1007
+ALLOWED_ERRORS = 976
 
 # Allow longer lines. The default is 79, which allows the 80th
 # character to be a line continuation symbol. Here, we increase the
@@ -62,33 +62,29 @@ class TestStyle(unittest.TestCase):
             self.assertEqual(report.total_errors, 0,
                              msg='New style violation introduced in previously clean file {}'.format(f))
 
-    def test_tabs(self):
-        """Ensure no tabs are used for indentation
+    def assert_clean_report(self, code, message):
+        """Verify that no erros of the given pycodestyle code exist in the
+        codebase.
+
         """
-        # List all clean directories and files
-        # Keep these sorted
         dirs_and_files = ['.']
         sg = pycodestyle.StyleGuide(quiet=QUIET,
                                     max_line_length=MAX_LINE_LENGTH,
                                     exclude=EXCLUDE,
-                                    select=['W191'])
+                                    select=[code])
         report = sg.check_files(dirs_and_files)
         self.assertEqual(report.total_errors, 0,
-                         msg='Tabs are used for indentation')
+                         msg=message)
+
+    def test_tabs(self):
+        self.assert_clean_report('W191', 'indentation contains tabs')
+
+    def test_indent_multiple_of_four(self):
+        self.assert_clean_report('E111', 'indentation is not a multiple of four')
+        self.assert_clean_report('E114', 'indentation is not a multiple of four (comment)')
 
     def test_trailing_whitespace(self):
-        """Ensure no tabs are used for indentation
-        """
-        # List all clean directories and files
-        # Keep these sorted
-        dirs_and_files = ['.']
-        sg = pycodestyle.StyleGuide(quiet=QUIET,
-                                    max_line_length=MAX_LINE_LENGTH,
-                                    exclude=EXCLUDE,
-                                    select=['W291'])
-        report = sg.check_files(dirs_and_files)
-        self.assertEqual(report.total_errors, 0,
-                         msg='Trailing whitespace exists')
+        self.assert_clean_report('W291', 'trailing whitespace')
 
 
 if __name__ == '__main__':
