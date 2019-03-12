@@ -5,5 +5,5 @@ from synbiohub_adapter.SynBioHubUtil import (
     SBOLQuery
 )
 from synbiohub_adapter.query_synbiohub import (
-	SynBioHubQuery
+    SynBioHubQuery
 )

@@ -13,9 +13,9 @@ class TestSBHQueries(unittest.TestCase):
     def setUpClass(self):
         self.user = 'sd2e'
         if 'SBH_PASSWORD' in os.environ.keys():
-        	self.password = os.environ['SBH_PASSWORD']
-        else:       	
-        	self.password = getpass()
+            self.password = os.environ['SBH_PASSWORD']
+        else:           
+            self.password = getpass()
 
     '''
         This class will perform unit testing to query information from SynBioHub's instances. 
