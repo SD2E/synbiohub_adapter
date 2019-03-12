@@ -15,7 +15,7 @@ python setup.py install
 or 
 
 ```
-pip install .
+pip install --process-dependency-link .
 ```
 
 ### Development Install
