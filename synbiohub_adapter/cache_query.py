@@ -22,7 +22,7 @@ except OSError as e:
     else:
         # Directory already exists, ignore error
         pass
-    
+
 
 def wrap_query_fn(fn, db_file_path=None):
     if db_file_path is None:

@@ -23,7 +23,7 @@ def main(args=None):
     args = parser.parse_args(args)
 
     doc = generate_sbol(args.input_files, args.om)
-    
+
     # if password is None:
     doc.write(args.output_file)
 
@@ -52,7 +52,7 @@ def generate_sbol(csv_files, om_file):
     generate_system_switcher = {
         'Buffer': generate_buffer,
         'Control': generate_control,
-        'Gate': generate_gate, 
+        'Gate': generate_gate,
         'Media': generate_media,
         'Solution': generate_solution,
         'Stain' : generate_stain
@@ -61,7 +61,7 @@ def generate_sbol(csv_files, om_file):
     generate_input_switcher = {
         'Inducer': generate_inducer
     }
-    
+
     for csv_file in csv_files:
         generate_sbol_helper(doc, csv_file, generate_device_switcher, generate_system_switcher, generate_input_switcher, om)
 

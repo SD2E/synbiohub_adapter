@@ -6,7 +6,7 @@ import pycodestyle
 
 # Please do not increase this number. Style warnings should DECREASE,
 # not increase.
-ALLOWED_ERRORS = 1675
+ALLOWED_ERRORS = 1007
 
 # Allow longer lines. The default is 79, which allows the 80th
 # character to be a line continuation symbol. Here, we increase the
@@ -75,6 +75,20 @@ class TestStyle(unittest.TestCase):
         report = sg.check_files(dirs_and_files)
         self.assertEqual(report.total_errors, 0,
                          msg='Tabs are used for indentation')
+
+    def test_trailing_whitespace(self):
+        """Ensure no tabs are used for indentation
+        """
+        # List all clean directories and files
+        # Keep these sorted
+        dirs_and_files = ['.']
+        sg = pycodestyle.StyleGuide(quiet=QUIET,
+                                    max_line_length=MAX_LINE_LENGTH,
+                                    exclude=EXCLUDE,
+                                    select=['W291'])
+        report = sg.check_files(dirs_and_files)
+        self.assertEqual(report.total_errors, 0,
+                         msg='Trailing whitespace exists')
 
 
 if __name__ == '__main__':
