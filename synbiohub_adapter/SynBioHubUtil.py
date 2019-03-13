@@ -9,8 +9,8 @@ from functools import partial
 
 '''
     This is a utility module containing classes with constant variables used for querying SynBioHub information
-    
-    author(s) : Nicholas Roehner 
+
+    author(s) : Nicholas Roehner
                 Tramy Nguyen
 '''
 class SBOLConstants():
@@ -48,7 +48,7 @@ class BBNConstants():
 class SD2Constants():
     SD2_SERVER = "https://hub.sd2e.org"
     SD2_STAGING_SERVER = "https://hub-staging.sd2e.org"
-    
+
     SD2_DESIGN_COLLECTION = 'https://hub.sd2e.org/user/sd2e/design/design_collection/1'
     RULE_30_DESIGN_COLLECTION = 'https://hub.sd2e.org/user/sd2e/design/rule_30/1'
     YEAST_GATES_DESIGN_COLLECTION = 'https://hub.sd2e.org/user/sd2e/design/yeast_gates/1'
@@ -128,7 +128,7 @@ class SD2Constants():
 #     SD2_EXPERIMENT_COLLECTION = 'https://hub.sd2e.org/user/sd2e/experiment/experiment_collection/1'
 
 class SBOLQuery():
-    ''' This class structures SPARQL queries for objects belonging to classes from the SBOL data model. 
+    ''' This class structures SPARQL queries for objects belonging to classes from the SBOL data model.
         An instance of this class will allow a user to pull information on these objects from the specified instance of SynBioHub.
     '''
 
@@ -157,7 +157,7 @@ class SBOLQuery():
         login_endpoint.addCustomHttpHeader('Accept', 'text/plain')
         login_endpoint.addCustomHttpHeader('charset', 'utf-8"')
         login_endpoint.addParameter('email', user)
-        login_endpoint.addParameter('password', password)   
+        login_endpoint.addParameter('password', password)
         self.user = user
         self.authentication_key = login_endpoint.query().response.read().decode("utf-8")
 
@@ -181,8 +181,8 @@ class SBOLQuery():
         results = sparql.query().convert()
         return results
 
-    # Constructs a partial SPARQL query for all collection members with 
-    # at least one of the specified types (or all of the specified types). 
+    # Constructs a partial SPARQL query for all collection members with
+    # at least one of the specified types (or all of the specified types).
     def construct_type_pattern(self, types, all_types=True, entity_label='entity', type_label='type'):
         if len(types) == 0:
             return ""
@@ -194,8 +194,8 @@ class SBOLQuery():
             ?{el} sbol:type ?{tl} .
             """.format(ty=self.serialize_options(types), el=entity_label, tl=type_label)
 
-    # Constructs a partial SPARQL query for all collection members with 
-    # at least one of the specified roles. 
+    # Constructs a partial SPARQL query for all collection members with
+    # at least one of the specified roles.
     def construct_role_pattern(self, roles, entity_label='entity', role_label='role'):
         if len(roles) == 0:
             return ""
@@ -208,7 +208,7 @@ class SBOLQuery():
             """.format(ro=self.serialize_options(roles), el=entity_label, rl=role_label)
 
     def construct_custom_pattern(self, custom_properties, entity_label='entity'):
-        query_arr = ['?{el} {qn} {obj} .'.format(el=entity_label, qn=qname, obj=custom_properties[qname]) if custom_properties[qname].startswith('<') and custom_properties[qname].endswith('>') 
+        query_arr = ['?{el} {qn} {obj} .'.format(el=entity_label, qn=qname, obj=custom_properties[qname]) if custom_properties[qname].startswith('<') and custom_properties[qname].endswith('>')
             else '?{el} {qn} "{obj}" .'.format(el=entity_label, qn=qname, obj=custom_properties[qname]) for qname in custom_properties]
 
         return '\n'.join(query_arr)
@@ -223,7 +223,7 @@ class SBOLQuery():
             VALUES (?{sel}) {{ {df} }}
             ?{el} sbol:definition ?{sel} .
             """.format(el=entity_label, sel=sub_entity_label, df=self.serialize_options(definitions))
-            
+
     def construct_sub_pattern(self, sub_entity_pattern="", definitions=[], entity_label='entity', sub_label='sub', sub_entity_label='sub_entity', rdf_type=None):
         if rdf_type is None:
             sub_predicate = "(sbol:component) (sbol:functionalComponent) (sbol:module)"
@@ -372,14 +372,14 @@ class SBOLQuery():
 
         if len(collections) > 0:
             if len(members) > 0:
-                return """ 
+                return """
                 VALUES (?{cl}) {{ {col} }}
-                VALUES (?{ml}) {{ {mem} }}  
+                VALUES (?{ml}) {{ {mem} }}
                 ?{cl} sbol:member ?{ml} .
                 {mp}
                 """.format(col=self.serialize_options(collections), cl=collection_label, mem=self.serialize_options(members), ml=member_label, mp=member_pattern)
             else:
-                return """ 
+                return """
                 VALUES (?{cl}) {{ {col} }}
                 ?{cl} sbol:member ?{ml} .
                 {mp}
@@ -387,12 +387,12 @@ class SBOLQuery():
         else:
             if len(members) > 0:
                 return """
-                VALUES (?{ml}) {{ {mem} }}  
+                VALUES (?{ml}) {{ {mem} }}
                 ?{cl} sbol:member ?{ml} .
                 {mp}
                 """.format(cl=collection_label, mem=self.serialize_options(members), ml=member_label, mp=member_pattern)
             else:
-                return """ 
+                return """
                 ?{cl} sbol:member ?{ml} .
                 {mp}
                 """.format(cl=collection_label, ml=member_label, mp=member_pattern)
@@ -441,7 +441,7 @@ class SBOLQuery():
         sub_entity_pattern = self.construct_entity_pattern(types=sub_types, roles=sub_roles, all_types=all_sub_types, entity_label=sub_entity_label, type_label='sub_type', role_label='sub_role')
         entity_pattern_1 = self.construct_entity_pattern(types, roles, all_types, sub_entity_pattern, definitions, entity_label, other_entity_labels, sub_entity_label=sub_entity_label, rdf_type=rdf_type, custom_properties=custom_properties)
         collection_pattern_1 = self.construct_collection_pattern(collections, member_label, members, member_cardinality, entity_label)
-        
+
         if entity_depth == 1:
             return """
             PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -498,7 +498,7 @@ class SBOLQuery():
                     ?uri rdfs:label ?name ;
                         om:symbol ?symbol .
                     FILTER( lang(?name) = "en" || lang(?name) = "nl" )
-                """.format(nam=self.serialize_literal_options([name]))) 
+                """.format(nam=self.serialize_literal_options([name])))
 
             if symbol is not None:
                 unit_query_fragments.append("""
@@ -562,7 +562,7 @@ class SBOLQuery():
 
             for key in formatted_binding.keys():
                 if formatted[entity_value][key] != formatted_binding[key]:
-                    if not isinstance(formatted[entity_value][key], list): 
+                    if not isinstance(formatted[entity_value][key], list):
                         formatted[entity_value][key] = [formatted[entity_value][key]]
 
                     formatted[entity_value][key].append(formatted_binding[key])
@@ -650,21 +650,21 @@ class SBOLQuery():
         else:
             sample_cardinality = ''
 
-        mod_query = self.construct_collection_entity_query(collections, 'exp', roles=roles, sub_types=sub_types, sub_roles=sub_roles, definitions=definitions, all_sub_types=all_sub_types, entity_label=mod_label, other_entity_labels=other_mod_labels, members=experiments, 
+        mod_query = self.construct_collection_entity_query(collections, 'exp', roles=roles, sub_types=sub_types, sub_roles=sub_roles, definitions=definitions, all_sub_types=all_sub_types, entity_label=mod_label, other_entity_labels=other_mod_labels, members=experiments,
             member_cardinality=sample_cardinality, rdf_type="http://sbols.org/v2#ModuleDefinition", entity_depth=2, custom_properties=custom_properties)
 
         return self.fetch_SPARQL(self._server, mod_query)
 
-    # Retrieves from the specified collection of design elements the URIs for all ComponentDefinitions with 
-    # at least one of the specified types (or all of the specified types) and at least one of the specified roles 
+    # Retrieves from the specified collection of design elements the URIs for all ComponentDefinitions with
+    # at least one of the specified types (or all of the specified types) and at least one of the specified roles
     # This collection is typically associated with a challenge problem.
     def query_design_components(self, types=[], collections=[], comp_label='comp', other_comp_labels=[], roles=[], all_types=True, sub_types=[], sub_roles=[], definitions=[], all_sub_types=True, custom_properties=[], members=[]):
         comp_query = self.construct_collection_entity_query(collections, comp_label, types, roles, all_types, sub_types, sub_roles, definitions, all_sub_types, other_entity_labels=other_comp_labels, members=members, rdf_type="http://sbols.org/v2#ComponentDefinition", custom_properties=custom_properties)
 
         return self.fetch_SPARQL(self._server, comp_query)
 
-    # Retrieves from the specified collection of design elements the URIs for all ModuleDefinitions with 
-    # at least one of the specified roles and that contain a FunctionalComponent or Module with 
+    # Retrieves from the specified collection of design elements the URIs for all ModuleDefinitions with
+    # at least one of the specified roles and that contain a FunctionalComponent or Module with
     # at least one of the specified sub-types (or all of the specified sub-types) and with
     # at least one of the specified roles.
     # This collection is typically associated with a challenge problem.

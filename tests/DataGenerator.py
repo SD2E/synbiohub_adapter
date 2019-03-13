@@ -31,7 +31,7 @@ if __name__ == '__main__':
     res = sbolDoc.writeString()
     xmlGraph = Graph()
     xmlGraph.parse(data=res)
-        
+
     total_obj = []
     for sbol_subj, sbol_pred, sbol_obj in xmlGraph:
         total_obj.append(sbol_obj)

@@ -32,7 +32,7 @@
 #         raise QueryBadFormed()
 #     elif uncatchable_exception:
 #         raise UncatchableException()
-    
+
 #     return query_result(*args)
 
 # db_file_path = os.path.join(db_dir, 'testing_fallback_cache.db')
@@ -45,7 +45,7 @@
 #             os.remove(db_file_path)
 #         except FileNotFoundError:
 #             pass
-            
+
 #     def test_normal_success(self):
 #         # Normal query works when no exceptions occur
 #         reset_flags()
@@ -72,17 +72,17 @@
 #         q_key = ('cache', 'catchable', 'success')
 #         # Get the result in the cache
 #         self.assertEqual(cached_query(q_key), query_result(q_key))
-        
+
 #         set_catchable()
 #         self.assertEqual(cached_query(q_key), query_result(q_key))
-        
+
 #     def test_cache_uncatchable_fail(self):
 #         # Cache fails when uncatchable exception occurs and result is cached
 #         reset_flags()
 #         q_key = ('cache', 'uncatchable', 'fail')
 #         # Get the result in the cache
 #         self.assertEqual(cached_query(q_key), query_result(q_key))
-        
+
 #         set_uncatchable()
 #         with self.assertRaises(UncatchableException):
 #             cached_query(q_key)
@@ -94,7 +94,7 @@
 #         q_key = ('cache', 'catchable', 'fail')
 #         # Don't get the result in the cache
 #         #self.assertEqual(cached_query(q_key), query_result(q_key))
-        
+
 #         set_catchable()
 #         with self.assertRaises(QueryBadFormed):
 #             cached_query(q_key)
