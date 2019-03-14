@@ -16,5 +16,8 @@ setup(
     ],
     dependency_links=[
         'git+https://git@github.com/nroehner/pySBOLx.git#egg=pySBOLx-0.1'
+    ],
+    classifiers=[
+        "Programming Language :: Python :: 3 :: Only"
     ]
 )
