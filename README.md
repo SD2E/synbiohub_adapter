@@ -9,13 +9,14 @@ To install synbiohub_adapter so it is importable by python, run one
 of the two commands below.
 
 ```
-python setup.py install
+pip3 install --process-dependency-links \
+      git+https://github.com/SD2E/synbiohub_adapter.git@v1.0b2
 ```
 
-or 
+### Install from git clone
 
 ```
-pip install --process-dependency-link .
+pip3 install --process-dependency-link .
 ```
 
 ### Development Install
@@ -25,11 +26,7 @@ source will be represented in the imported code without having to
 re-install, run one of the two commands below.
 
 ```
-python setup.py develop
-```
-
-```
-pip install -e .
+pip3 install -e .
 ```
 
 ### Running Tests
@@ -54,8 +51,6 @@ On linux, you will to install `libxslt-dev` and `curl`.
 ```
 apt-get install curl libxslt-dev
 ```
->>>>>>> Update install instructions in readme
-
 
 ### Using docker and docker-compose
 Run bash in docker container:

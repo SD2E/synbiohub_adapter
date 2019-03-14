@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='synbiohub_adapter',
-    version='1.0a0',
+    version='1.0b2',
     packages=find_packages(),
     install_requires=[
         'SPARQLWrapper>=1.8.2',
@@ -16,5 +16,8 @@ setup(
     ],
     dependency_links=[
         'git+https://git@github.com/nroehner/pySBOLx.git#egg=pySBOLx-0.1'
+    ],
+    classifiers=[
+        "Programming Language :: Python :: 3 :: Only"
     ]
 )
