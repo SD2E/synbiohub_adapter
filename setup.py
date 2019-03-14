@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='synbiohub_adapter',
-    version='1.0a0',
+    version='1.0b2',
     packages=find_packages(),
     install_requires=[
         'SPARQLWrapper>=1.8.2',
