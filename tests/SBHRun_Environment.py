@@ -278,7 +278,7 @@ def run_setThreads(sbh_connector, set_size, t_growthRate, sbolFile, sbolDoc_size
     threadId_List = []
     threadDur_List = []
     threadSize = t_growthRate
-    for i in range(1, set_size+1):
+    for i in range(1, set_size + 1):
         curr_set = createThreads(threadSize, sbh_connector, sbolDoc_size, collPrefix, sbolFile)
         for t in curr_set:
             t.start()
@@ -300,7 +300,7 @@ def generate_setData(sbh_connector, iterations, set_size, t_growthRate, sbolFile
     setId_List = []
     threadId_List = []
     threadDur_List = []
-    for i in range(1, iterations+1):
+    for i in range(1, iterations + 1):
         r1, r2, r3 = run_setThreads(sbh_connector, set_size, t_growthRate, sbolFile, sbolDoc_size, collPrefix)
         runId_List.extend(['run' + str(i)] * len(r1))
         setId_List.extend(r1)
@@ -318,8 +318,8 @@ def generate_tripleData(sbh_connector, iterations, collPrefix, sbolFiles):
     runId_List = []
     tripeSize_List = []
     pushTime_List = []
-    for i in range(1, iterations+1):
-        sbol_tripleSizes, pushTimes = run_triples(sbh_connector, collPrefix+str(i), sbolFiles)
+    for i in range(1, iterations + 1):
+        sbol_tripleSizes, pushTimes = run_triples(sbh_connector, collPrefix + str(i), sbolFiles)
 
         runId_List.extend(['Run' + str(i)] * len(pushTimes))
         tripeSize_List.extend(sbol_tripleSizes)
@@ -370,7 +370,7 @@ def create_SpeedLinePlot(df, f, sbolDoc_size, trip_size):
     ax.set_ylabel("Time to Push (sec)")
     ax.set_xlabel("Push Index")
 
-    df.plot(x=df.index+1, y='Push_Time', ax=ax)
+    df.plot(x=df.index + 1, y='Push_Time', ax=ax)
 
     fileName = get_fileName(f)
     fig.savefig('outputs/SpeedResult_f%s_d%s.pdf' % (fileName, sbolDoc_size))
@@ -380,7 +380,7 @@ def create_SpeedLine2Plot(df, f, sbolDoc_size, trip_size):
     ax.set_title("Time to Push %s Triples to SynBioHub" % trip_size)
     ax.set_ylabel("Time to Push (sec)")
     ax.set_xlabel("Push Index")
-    df.plot(x=df.index+1, y='Total_Time', ax=ax)
+    df.plot(x=df.index + 1, y='Total_Time', ax=ax)
 
     fileName = get_fileName(f)
     fig.savefig('outputs/SpeedResult2_f%s_d%s.pdf' % (fileName, sbolDoc_size))
@@ -410,7 +410,7 @@ def create_TripleScatterPlot(df, iterations):
     grouped_runs = df.groupby('Run_ID')
     for name, group in grouped_runs:
         fit = np.polyfit(group['Triple_Size'], group['Push_Time'], deg=1)
-        ax.plot(group['Triple_Size'], fit[0]*group['Triple_Size']+fit[1], color='black')
+        ax.plot(group['Triple_Size'], fit[0] * group['Triple_Size'] + fit[1], color='black')
         ax.scatter(data=group, x='Triple_Size', y='Push_Time', marker='o', c='orange')
 
     ax.set_title("Time to Push SBOL Documents with Varying Size")

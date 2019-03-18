@@ -83,6 +83,7 @@ class TestStyle(unittest.TestCase):
         self.assert_clean_report('E202', "whitespace before ')'")
         self.assert_clean_report('E203', "whitespace before ':'")
         self.assert_clean_report('E225', "missing whitespace around operator")
+        self.assert_clean_report('E226', "missing whitespace around arithmetic operator")
         self.assert_clean_report('E251', "unexpected spaces around keyword / parameter equals")
         self.assert_clean_report('E261', "at least two spaces before inline comment")
         self.assert_clean_report('E271', "multiple spaces after keyword")
