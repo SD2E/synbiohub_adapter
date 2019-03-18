@@ -7,7 +7,8 @@ import numpy as np
 import matplotlib.cm as cm
 import matplotlib.pyplot as plt
 
-import os, fnmatch
+import os
+import fnmatch
 import random
 import re
 import getpass
@@ -55,7 +56,7 @@ class myThread (threading.Thread):
         for sbolTriple in self.sbolTriples_list:
             push_time = push_sbh(sbolTriple.sbolDoc(), self.sbh_connector)
             self.tupTime_List.append((push_time, sbolTriple))
-            self.pushPull_List.append((push_time, 0)) # TODO: currently pull will not work on current pySBOL build so set to 0
+            self.pushPull_List.append((push_time, 0))  # TODO: currently pull will not work on current pySBOL build so set to 0
         self.thread_end = time.clock()
 
     '''
@@ -125,6 +126,7 @@ class SBOLTriple():
     def totalTriples(self):
         return self.__tripleSize
 
+
 '''
 Generates a unique id
 '''
@@ -132,6 +134,7 @@ def get_uniqueID(idPrefix):
     t = time.ctime()
     uid = '_'.join([idPrefix, t])
     return re.sub(r'[: ]', '_', uid)
+
 
 '''
 Returns a list of SBOL Documents
@@ -148,9 +151,9 @@ def create_sbolDocs(numDocs, idPrefix, sbolFile):
         trip_obj = SBOLTriple(sbolFile, uid)
         sbolTriples.append(trip_obj)
         sbolDoc_List.append(trip_obj.sbolDoc())
-        print("created doc%s" %i)
+        print("created doc%s" % i)
 
-    return  sbolDoc_List, sbolTriples
+    return sbolDoc_List, sbolTriples
 
 
 '''
@@ -161,6 +164,7 @@ def get_randomFile(sbolFiles):
     selectedFile = random.choice(sbolFiles)
     return selectedFile
 
+
 '''
 Returns a list of xml file found in the given directory
 '''
@@ -168,6 +172,7 @@ def get_sbolList(dirLocation):
     for root, dir, files in os.walk(dirLocation):
         sbolFiles = [os.path.abspath(os.path.join(root, fileName)) for fileName in files]
         return sbolFiles
+
 
 '''
 Returns the time (seconds) it takes to make a push to a new Collection on SynBioHub
@@ -206,7 +211,7 @@ def pull_sbh(sbh_connector, sbolURI):
             if topLevel.type == 'http://sd2e.org#ExperimentalData':
                 experimentalData_tl.append(topLevel)
                 if len(experimentalData_tl) != 74:
-                    print("Found the wrong SynBioHub Part with this uri: %s" %sbolURI)
+                    print("Found the wrong SynBioHub Part with this uri: %s" % sbolURI)
 
     return end - start
 
@@ -240,10 +245,9 @@ def generate_speedData(sbolFile, sbh_connector, sbolDoc_size, idPrefix):
             sum += r1
             currTotal.append(sum)
 
-
     df = pd.DataFrame({"Pull_Time": pullTimes,
-                        "Push_Time": pushTimes,
-                        "Total_Time": currTotal})
+                       "Push_Time": pushTimes,
+                       "Total_Time": currTotal})
     # df.loc['Total'] = df.sum()
     return df
 
@@ -274,7 +278,7 @@ def run_setThreads(sbh_connector, set_size, t_growthRate, sbolFile, sbolDoc_size
     threadId_List = []
     threadDur_List = []
     threadSize = t_growthRate
-    for i in range(1, set_size+1):
+    for i in range(1, set_size + 1):
         curr_set = createThreads(threadSize, sbh_connector, sbolDoc_size, collPrefix, sbolFile)
         for t in curr_set:
             t.start()
@@ -296,7 +300,7 @@ def generate_setData(sbh_connector, iterations, set_size, t_growthRate, sbolFile
     setId_List = []
     threadId_List = []
     threadDur_List = []
-    for i in range(1, iterations+1):
+    for i in range(1, iterations + 1):
         r1, r2, r3 = run_setThreads(sbh_connector, set_size, t_growthRate, sbolFile, sbolDoc_size, collPrefix)
         runId_List.extend(['run' + str(i)] * len(r1))
         setId_List.extend(r1)
@@ -304,27 +308,27 @@ def generate_setData(sbh_connector, iterations, set_size, t_growthRate, sbolFile
         threadDur_List.extend(r3)
 
     df = pd.DataFrame({"Run_ID": runId_List,
-                        "Set_ID": setId_List,
-                        "Thread_ID": threadId_List,
-                        "Time/Thread": threadDur_List},
-                        columns=['Run_ID', 'Set_ID', 'Thread_ID', 'Time/Thread'])
+                       "Set_ID": setId_List,
+                       "Thread_ID": threadId_List,
+                       "Time/Thread": threadDur_List},
+                      columns=['Run_ID', 'Set_ID', 'Thread_ID', 'Time/Thread'])
     return df
 
 def generate_tripleData(sbh_connector, iterations, collPrefix, sbolFiles):
     runId_List = []
     tripeSize_List = []
     pushTime_List = []
-    for i in range(1, iterations+1):
-        sbol_tripleSizes, pushTimes = run_triples(sbh_connector, collPrefix+str(i), sbolFiles)
+    for i in range(1, iterations + 1):
+        sbol_tripleSizes, pushTimes = run_triples(sbh_connector, collPrefix + str(i), sbolFiles)
 
         runId_List.extend(['Run' + str(i)] * len(pushTimes))
         tripeSize_List.extend(sbol_tripleSizes)
         pushTime_List.extend(pushTimes)
 
     df = pd.DataFrame({"Run_ID": runId_List,
-                        "Triple_Size": tripeSize_List,
-                        "Push_Time": pushTime_List},
-                        columns=['Run_ID', 'Triple_Size', 'Push_Time'])
+                       "Triple_Size": tripeSize_List,
+                       "Push_Time": pushTime_List},
+                      columns=['Run_ID', 'Triple_Size', 'Push_Time'])
     return df
 
 def get_fileName(filePath):
@@ -342,7 +346,7 @@ def br_speed(sbh_connector, sbolDoc_size, sbolFiles):
 
         create_SpeedLinePlot(df, f, sbolDoc_size, triple_size)
         create_SpeedLine2Plot(df, f, sbolDoc_size, triple_size)
-        df.to_csv("outputs/SpeedResult_f%s_d%s.csv" %(fileName, sbolDoc_size))
+        df.to_csv("outputs/SpeedResult_f%s_d%s.csv" % (fileName, sbolDoc_size))
 
 
 def br_setThread(sbh_connector, iterations, set_size, t_growthRate, sbolDoc_size, sbolFiles):
@@ -351,35 +355,35 @@ def br_setThread(sbh_connector, iterations, set_size, t_growthRate, sbolDoc_size
         trip_obj = SBOLTriple(f, "temp_id")
         fileName = get_fileName(f)
         create_SetBarPlot(df, iterations, set_size, f, trip_obj.totalTriples(), sbolDoc_size)
-        df.to_csv("outputs/Set_f%s_iter%s_s%s_d%s.csv" %(fileName, iterations, set_size, sbolDoc_size))
+        df.to_csv("outputs/Set_f%s_iter%s_s%s_d%s.csv" % (fileName, iterations, set_size, sbolDoc_size))
 
 def br_triples(sbh_connector, iterations, sbolFiles):
     df = generate_tripleData(sbh_connector, iterations, "RT", sbolFiles)
     create_TripleScatterPlot(df, iterations)
-    df.to_csv("outputs/Triples_iter%s.csv" %(iterations))
+    df.to_csv("outputs/Triples_iter%s.csv" % (iterations))
 
 def create_SpeedLinePlot(df, f, sbolDoc_size, trip_size):
     y_max = 20
     fig, ax = plt.subplots()
     plt.ylim((0, y_max))
-    ax.set_title("Time to Push %s Triples to SynBioHub" %trip_size)
+    ax.set_title("Time to Push %s Triples to SynBioHub" % trip_size)
     ax.set_ylabel("Time to Push (sec)")
     ax.set_xlabel("Push Index")
 
-    df.plot(x=df.index+1, y='Push_Time', ax = ax)
+    df.plot(x=df.index + 1, y='Push_Time', ax=ax)
 
     fileName = get_fileName(f)
-    fig.savefig('outputs/SpeedResult_f%s_d%s.pdf' %(fileName, sbolDoc_size))
+    fig.savefig('outputs/SpeedResult_f%s_d%s.pdf' % (fileName, sbolDoc_size))
 
 def create_SpeedLine2Plot(df, f, sbolDoc_size, trip_size):
     fig, ax = plt.subplots()
-    ax.set_title("Time to Push %s Triples to SynBioHub" %trip_size)
+    ax.set_title("Time to Push %s Triples to SynBioHub" % trip_size)
     ax.set_ylabel("Time to Push (sec)")
     ax.set_xlabel("Push Index")
-    df.plot(x=df.index+1, y='Total_Time', ax=ax)
+    df.plot(x=df.index + 1, y='Total_Time', ax=ax)
 
     fileName = get_fileName(f)
-    fig.savefig('outputs/SpeedResult2_f%s_d%s.pdf' %(fileName, sbolDoc_size))
+    fig.savefig('outputs/SpeedResult2_f%s_d%s.pdf' % (fileName, sbolDoc_size))
 
 
 def create_SetBarPlot(df, iterations, set_size, f, trip_size, doc_size):
@@ -393,13 +397,12 @@ def create_SetBarPlot(df, iterations, set_size, f, trip_size, doc_size):
     g = plt.get_cmap('Dark2')
     means.plot.barh(xerr=errors, ax=ax, legend=False, colormap=g)
 
-
-    ax.set_title("Average Time to Push %s Triples per Thread" %(trip_size))
+    ax.set_title("Average Time to Push %s Triples per Thread" % (trip_size))
     ax.set_xlabel("Time to Push (sec)")
     ax.set_ylabel("Thread Group")
 
     fileName = get_fileName(f)
-    fig.savefig('outputs/Set_f%s_iter%s_s%s_d%s.pdf' %(fileName, iterations, set_size, doc_size))
+    fig.savefig('outputs/Set_f%s_iter%s_s%s_d%s.pdf' % (fileName, iterations, set_size, doc_size))
 
 def create_TripleScatterPlot(df, iterations):
     fig, ax = plt.subplots()
@@ -407,13 +410,13 @@ def create_TripleScatterPlot(df, iterations):
     grouped_runs = df.groupby('Run_ID')
     for name, group in grouped_runs:
         fit = np.polyfit(group['Triple_Size'], group['Push_Time'], deg=1)
-        ax.plot(group['Triple_Size'], fit[0]*group['Triple_Size']+fit[1], color='black')
+        ax.plot(group['Triple_Size'], fit[0] * group['Triple_Size'] + fit[1], color='black')
         ax.scatter(data=group, x='Triple_Size', y='Push_Time', marker='o', c='orange')
 
-    ax.set_title("Time to Push SBOL Documents with Varying Size" )
+    ax.set_title("Time to Push SBOL Documents with Varying Size")
     ax.set_ylabel("Time to Push (sec)")
     ax.set_xlabel("Document Size (# of Triples)")
-    fig.savefig('outputs/Triples_iter%s.pdf' %(iterations))
+    fig.savefig('outputs/Triples_iter%s.pdf' % (iterations))
 
 def backup_sequentialLoad():
     # At one point, update pushing to SBH to do something like this so performance doesn't suffer.
@@ -427,6 +430,7 @@ def backup_sequentialLoad():
         sbolDoc.description = uid + "_description"
         sbolDoc.version = str("1")
         push_sbh(sbolDoc, sbh_connector)
+
 
 if __name__ == '__main__':
     server_name = "https://synbiohub.bbn.com"
@@ -445,4 +449,3 @@ if __name__ == '__main__':
 
     # iterations, set_size=10, t_growthRate=5, sbolDoc_size=100
     # br_setThread(sbh_connector, 3, 5, 3, 50, sbolFiles) # TODO: MAKE SURE TO CHANGE COLOR OF BAR GRAPH TO MAKE IT LOOK COOL...
-

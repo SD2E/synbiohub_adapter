@@ -17,7 +17,7 @@ class SynBioHubQuery(SBOLQuery):
     '''
 
     # server: The SynBioHub server to call sparql queries on.
-    def __init__(self, server, use_fallback_cache=False, user = None, authentication_key = None, spoofed_url = None):
+    def __init__(self, server, use_fallback_cache=False, user=None, authentication_key=None, spoofed_url=None):
         super().__init__(server, use_fallback_cache, user, authentication_key, spoofed_url)
 
     # Control query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -248,7 +248,6 @@ class SynBioHubQuery(SBOLQuery):
 
         return query_result
 
-
     def query_gate_logic(self, gates, pretty=False):
         gate_query = """
             PREFIX sbol: <http://sbols.org/v2#>
@@ -263,7 +262,6 @@ class SynBioHubQuery(SBOLQuery):
         if pretty:
             query_result = self.format_query_result(query_result, ['gate', 'gate_type'])
         return query_result
-
 
     # Retrieves the URIs for all logic gates from the collection of every SD2 design element.
     def query_design_gates(self, verbose=False, with_role=True, pretty=False, collections=[SD2Constants.SD2_DESIGN_COLLECTION]):
@@ -1154,8 +1152,8 @@ class SynBioHubQuery(SBOLQuery):
 
         print(exp_media + ' out of ' + design_media + ' media')
 
-        design_controls= repr(len(self.query_design_controls(pretty=True)))
-        exp_controls= repr(len(self.query_experiment_controls(by_sample=False)))
+        design_controls = repr(len(self.query_design_controls(pretty=True)))
+        exp_controls = repr(len(self.query_experiment_controls(by_sample=False)))
 
         print(exp_controls + ' out of ' + design_controls + ' controls')
 
