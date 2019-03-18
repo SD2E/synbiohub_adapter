@@ -4,18 +4,18 @@
 
 ## Installation
 
+To install the current release of synbiohub_adapter:
 
-To install synbiohub_adapter so it is importable by python, run one
-of the two commands below.
-
-```
+```shell
 pip3 install --process-dependency-links \
-      git+https://github.com/SD2E/synbiohub_adapter.git@v1.0b2
+      git+https://github.com/SD2E/synbiohub_adapter.git@v1.0
 ```
 
 ### Install from git clone
 
-```
+You can also install from a git clone:
+
+```shell
 pip3 install --process-dependency-link .
 ```
 
