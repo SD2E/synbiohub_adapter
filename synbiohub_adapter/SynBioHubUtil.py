@@ -187,7 +187,7 @@ class SBOLQuery():
         if len(types) == 0:
             return ""
         elif all_types or len(types) == 1:
-                return "?{el} sbol:type {ty} .".format(ty=self.serialize_objects(types), el=entity_label)
+            return "?{el} sbol:type {ty} .".format(ty=self.serialize_objects(types), el=entity_label)
         else:
             return """
             VALUES (?{tl}) {{ {ty} }}

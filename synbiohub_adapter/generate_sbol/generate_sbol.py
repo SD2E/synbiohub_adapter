@@ -55,7 +55,7 @@ def generate_sbol(csv_files, om_file):
         'Gate': generate_gate,
         'Media': generate_media,
         'Solution': generate_solution,
-        'Stain' : generate_stain
+        'Stain': generate_stain
     }
 
     generate_input_switcher = {

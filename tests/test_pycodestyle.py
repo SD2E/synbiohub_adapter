@@ -6,7 +6,7 @@ import pycodestyle
 
 # Please do not increase this number. Style warnings should DECREASE,
 # not increase.
-ALLOWED_ERRORS = 970
+ALLOWED_ERRORS = 962
 
 # Allow longer lines. The default is 79, which allows the 80th
 # character to be a line continuation symbol. Here, we increase the
@@ -76,27 +76,29 @@ class TestStyle(unittest.TestCase):
         self.assertEqual(report.total_errors, 0,
                          msg=message)
 
-    def test_tabs(self):
-        self.assert_clean_report('W191', 'indentation contains tabs')
-
-    def test_indent_multiple_of_four(self):
+    def test_indentation(self):
         self.assert_clean_report('E111', 'indentation is not a multiple of four')
         self.assert_clean_report('E114', 'indentation is not a multiple of four (comment)')
+        self.assert_clean_report('E117', 'over-indented')
 
-    def test_trailing_whitespace(self):
-        self.assert_clean_report('W291', 'trailing whitespace')
+    def test_whitespace(self):
+        self.assert_clean_report('E202', "whitespace before ')'")
+        self.assert_clean_report('E203', "whitespace before ':'")
+        self.assert_clean_report('E261', "at least two spaces before inline comment")
+        self.assert_clean_report('E271', "multiple spaces after keyword")
 
-    def test_compare_to_none(self):
+    def test_blank_line(self):
+        self.assert_clean_report('E301', "expected 1 blank line, found 0")
+
+    def test_import(self):
+        self.assert_clean_report('E4', "Import style errors ('E4*') exist")
+
+    def test_statement(self):
         self.assert_clean_report('E711', "comparison to None should be 'if cond is not None:'")
-
-    def test_for_membership_not_in(self):
         self.assert_clean_report('E713', "test for membership should be 'not in'")
 
-    def test_for_no_newline_at_eof(self):
-        self.assert_clean_report('W292', 'no newline at end of file')
-
-    def test_blank_line_at_eof(self):
-        self.assert_clean_report('W391', 'blank line at end of file')
+    def test_all_warnings(self):
+        self.assert_clean_report('W', "Style warnings ('W*') exists")
 
 
 if __name__ == '__main__':

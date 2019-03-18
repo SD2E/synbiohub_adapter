@@ -7,7 +7,8 @@ import numpy as np
 import matplotlib.cm as cm
 import matplotlib.pyplot as plt
 
-import os, fnmatch
+import os
+import fnmatch
 import random
 import re
 import getpass
@@ -55,7 +56,7 @@ class myThread (threading.Thread):
         for sbolTriple in self.sbolTriples_list:
             push_time = push_sbh(sbolTriple.sbolDoc(), self.sbh_connector)
             self.tupTime_List.append((push_time, sbolTriple))
-            self.pushPull_List.append((push_time, 0)) # TODO: currently pull will not work on current pySBOL build so set to 0
+            self.pushPull_List.append((push_time, 0))  # TODO: currently pull will not work on current pySBOL build so set to 0
         self.thread_end = time.clock()
 
     '''
@@ -150,7 +151,7 @@ def create_sbolDocs(numDocs, idPrefix, sbolFile):
         sbolDoc_List.append(trip_obj.sbolDoc())
         print("created doc%s" %i)
 
-    return  sbolDoc_List, sbolTriples
+    return sbolDoc_List, sbolTriples
 
 
 '''
@@ -410,7 +411,7 @@ def create_TripleScatterPlot(df, iterations):
         ax.plot(group['Triple_Size'], fit[0]*group['Triple_Size']+fit[1], color='black')
         ax.scatter(data=group, x='Triple_Size', y='Push_Time', marker='o', c='orange')
 
-    ax.set_title("Time to Push SBOL Documents with Varying Size" )
+    ax.set_title("Time to Push SBOL Documents with Varying Size")
     ax.set_ylabel("Time to Push (sec)")
     ax.set_xlabel("Document Size (# of Triples)")
     fig.savefig('outputs/Triples_iter%s.pdf' %(iterations))

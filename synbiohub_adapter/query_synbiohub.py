@@ -264,7 +264,6 @@ class SynBioHubQuery(SBOLQuery):
             query_result = self.format_query_result(query_result, ['gate', 'gate_type'])
         return query_result
 
-
     # Retrieves the URIs for all logic gates from the collection of every SD2 design element.
     def query_design_gates(self, verbose=False, with_role=True, pretty=False, collections=[SD2Constants.SD2_DESIGN_COLLECTION]):
         mod_labels = ['gate']
