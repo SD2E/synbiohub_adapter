@@ -9,6 +9,11 @@ WORKDIR /opt/scripts
 
 ADD . /opt/scripts
 
+# built-in pip is ancient
+RUN pip install --upgrade pip
+# nuke all existing packages in the image
+# ensure we only get the packages we want per the SBH setup.py
+RUN pip freeze | xargs pip uninstall -y || true
 RUN python3 setup.py install
 
 CMD python3 -m unittest discover /opt/scripts/tests

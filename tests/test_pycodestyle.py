@@ -6,7 +6,7 @@ import pycodestyle
 
 # Please do not increase this number. Style warnings should DECREASE,
 # not increase.
-ALLOWED_ERRORS = 2099
+ALLOWED_ERRORS = 976
 
 # Allow longer lines. The default is 79, which allows the 80th
 # character to be a line continuation symbol. Here, we increase the
@@ -50,6 +50,7 @@ class TestStyle(unittest.TestCase):
         # Keep these sorted
         dirs_and_files = [
             'setup.py',
+            'synbiohub_adapter/__init__.py',
             'tests/__init__.py',
             'tests/test_pycodestyle.py'
         ]
@@ -60,6 +61,30 @@ class TestStyle(unittest.TestCase):
             report = sg.check_files([f])
             self.assertEqual(report.total_errors, 0,
                              msg='New style violation introduced in previously clean file {}'.format(f))
+
+    def assert_clean_report(self, code, message):
+        """Verify that no erros of the given pycodestyle code exist in the
+        codebase.
+
+        """
+        dirs_and_files = ['.']
+        sg = pycodestyle.StyleGuide(quiet=QUIET,
+                                    max_line_length=MAX_LINE_LENGTH,
+                                    exclude=EXCLUDE,
+                                    select=[code])
+        report = sg.check_files(dirs_and_files)
+        self.assertEqual(report.total_errors, 0,
+                         msg=message)
+
+    def test_tabs(self):
+        self.assert_clean_report('W191', 'indentation contains tabs')
+
+    def test_indent_multiple_of_four(self):
+        self.assert_clean_report('E111', 'indentation is not a multiple of four')
+        self.assert_clean_report('E114', 'indentation is not a multiple of four (comment)')
+
+    def test_trailing_whitespace(self):
+        self.assert_clean_report('W291', 'trailing whitespace')
 
 
 if __name__ == '__main__':
