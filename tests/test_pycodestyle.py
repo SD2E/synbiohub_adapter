@@ -6,7 +6,7 @@ import pycodestyle
 
 # Please do not increase this number. Style warnings should DECREASE,
 # not increase.
-ALLOWED_ERRORS = 976
+ALLOWED_ERRORS = 970
 
 # Allow longer lines. The default is 79, which allows the 80th
 # character to be a line continuation symbol. Here, we increase the
@@ -85,6 +85,18 @@ class TestStyle(unittest.TestCase):
 
     def test_trailing_whitespace(self):
         self.assert_clean_report('W291', 'trailing whitespace')
+
+    def test_compare_to_none(self):
+        self.assert_clean_report('E711', "comparison to None should be 'if cond is not None:'")
+
+    def test_for_membership_not_in(self):
+        self.assert_clean_report('E713', "test for membership should be 'not in'")
+
+    def test_for_no_newline_at_eof(self):
+        self.assert_clean_report('W292', 'no newline at end of file')
+
+    def test_blank_line_at_eof(self):
+        self.assert_clean_report('W391', 'blank line at end of file')
 
 
 if __name__ == '__main__':

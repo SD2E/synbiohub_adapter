@@ -453,7 +453,7 @@ class SynBioHub():
             try:
                 attachment_json = response.json()
                 # TODO find a better way to identify intent attachments
-                if attachment_json.get("experimental-variables") != None:
+                if attachment_json.get("experimental-variables") is not None:
                     return attachment_json
             except ValueError:
                 print("{} is not JSON, trying next attachment".format(attachment_id))

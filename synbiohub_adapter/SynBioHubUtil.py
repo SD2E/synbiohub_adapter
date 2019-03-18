@@ -147,7 +147,7 @@ class SBOLQuery():
 
 
     def login(self, user, password):
-        if not '/sparql' in self._server:
+        if '/sparql' not in self._server:
             self._server += '/sparql'
         p = self._server.find('/sparql')
         resource = self._server[:p]
