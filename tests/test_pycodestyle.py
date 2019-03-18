@@ -6,7 +6,7 @@ import pycodestyle
 
 # Please do not increase this number. Style warnings should DECREASE,
 # not increase.
-ALLOWED_ERRORS = 962
+ALLOWED_ERRORS = 937
 
 # Allow longer lines. The default is 79, which allows the 80th
 # character to be a line continuation symbol. Here, we increase the
@@ -80,15 +80,19 @@ class TestStyle(unittest.TestCase):
         self.assert_clean_report('E111', 'indentation is not a multiple of four')
         self.assert_clean_report('E114', 'indentation is not a multiple of four (comment)')
         self.assert_clean_report('E117', 'over-indented')
+        self.assert_clean_report('E127', 'continuation line over-indented for visual indent')
 
     def test_whitespace(self):
         self.assert_clean_report('E202', "whitespace before ')'")
         self.assert_clean_report('E203', "whitespace before ':'")
+        self.assert_clean_report('E251', "unexpected spaces around keyword / parameter equals")
         self.assert_clean_report('E261', "at least two spaces before inline comment")
         self.assert_clean_report('E271', "multiple spaces after keyword")
 
     def test_blank_line(self):
         self.assert_clean_report('E301', "expected 1 blank line, found 0")
+        self.assert_clean_report('E303', "too many blank lines (2)")
+        self.assert_clean_report('E305', "expected 2 blank lines after class or function definition, found 1")
 
     def test_import(self):
         self.assert_clean_report('E4', "Import style errors ('E4*') exist")

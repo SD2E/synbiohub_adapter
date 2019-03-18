@@ -126,6 +126,7 @@ class SBOLTriple():
     def totalTriples(self):
         return self.__tripleSize
 
+
 '''
 Generates a unique id
 '''
@@ -133,6 +134,7 @@ def get_uniqueID(idPrefix):
     t = time.ctime()
     uid = '_'.join([idPrefix, t])
     return re.sub(r'[: ]', '_', uid)
+
 
 '''
 Returns a list of SBOL Documents
@@ -162,6 +164,7 @@ def get_randomFile(sbolFiles):
     selectedFile = random.choice(sbolFiles)
     return selectedFile
 
+
 '''
 Returns a list of xml file found in the given directory
 '''
@@ -169,6 +172,7 @@ def get_sbolList(dirLocation):
     for root, dir, files in os.walk(dirLocation):
         sbolFiles = [os.path.abspath(os.path.join(root, fileName)) for fileName in files]
         return sbolFiles
+
 
 '''
 Returns the time (seconds) it takes to make a push to a new Collection on SynBioHub
@@ -241,10 +245,9 @@ def generate_speedData(sbolFile, sbh_connector, sbolDoc_size, idPrefix):
             sum += r1
             currTotal.append(sum)
 
-
     df = pd.DataFrame({"Pull_Time": pullTimes,
-                        "Push_Time": pushTimes,
-                        "Total_Time": currTotal})
+                       "Push_Time": pushTimes,
+                       "Total_Time": currTotal})
     # df.loc['Total'] = df.sum()
     return df
 
@@ -305,10 +308,10 @@ def generate_setData(sbh_connector, iterations, set_size, t_growthRate, sbolFile
         threadDur_List.extend(r3)
 
     df = pd.DataFrame({"Run_ID": runId_List,
-                        "Set_ID": setId_List,
-                        "Thread_ID": threadId_List,
-                        "Time/Thread": threadDur_List},
-                        columns=['Run_ID', 'Set_ID', 'Thread_ID', 'Time/Thread'])
+                       "Set_ID": setId_List,
+                       "Thread_ID": threadId_List,
+                       "Time/Thread": threadDur_List},
+                      columns=['Run_ID', 'Set_ID', 'Thread_ID', 'Time/Thread'])
     return df
 
 def generate_tripleData(sbh_connector, iterations, collPrefix, sbolFiles):
@@ -323,9 +326,9 @@ def generate_tripleData(sbh_connector, iterations, collPrefix, sbolFiles):
         pushTime_List.extend(pushTimes)
 
     df = pd.DataFrame({"Run_ID": runId_List,
-                        "Triple_Size": tripeSize_List,
-                        "Push_Time": pushTime_List},
-                        columns=['Run_ID', 'Triple_Size', 'Push_Time'])
+                       "Triple_Size": tripeSize_List,
+                       "Push_Time": pushTime_List},
+                      columns=['Run_ID', 'Triple_Size', 'Push_Time'])
     return df
 
 def get_fileName(filePath):
@@ -367,7 +370,7 @@ def create_SpeedLinePlot(df, f, sbolDoc_size, trip_size):
     ax.set_ylabel("Time to Push (sec)")
     ax.set_xlabel("Push Index")
 
-    df.plot(x=df.index+1, y='Push_Time', ax = ax)
+    df.plot(x=df.index+1, y='Push_Time', ax=ax)
 
     fileName = get_fileName(f)
     fig.savefig('outputs/SpeedResult_f%s_d%s.pdf' %(fileName, sbolDoc_size))
@@ -393,7 +396,6 @@ def create_SetBarPlot(df, iterations, set_size, f, trip_size, doc_size):
 
     g = plt.get_cmap('Dark2')
     means.plot.barh(xerr=errors, ax=ax, legend=False, colormap=g)
-
 
     ax.set_title("Average Time to Push %s Triples per Thread" %(trip_size))
     ax.set_xlabel("Time to Push (sec)")
@@ -428,6 +430,7 @@ def backup_sequentialLoad():
         sbolDoc.description = uid + "_description"
         sbolDoc.version = str("1")
         push_sbh(sbolDoc, sbh_connector)
+
 
 if __name__ == '__main__':
     server_name = "https://synbiohub.bbn.com"

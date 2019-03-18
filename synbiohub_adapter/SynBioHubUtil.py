@@ -145,7 +145,6 @@ class SBOLQuery():
         if use_fallback_cache:
             self.fetch_SPARQL = wrap_query_fn(self.fetch_SPARQL)
 
-
     def login(self, user, password):
         if '/sparql' not in self._server:
             self._server += '/sparql'

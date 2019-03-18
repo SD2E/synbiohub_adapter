@@ -405,5 +405,6 @@ class NonStandardUnitSymbolConversionError(Exception):
     def __str__(self):
         return "Failed to convert symbol {} to valid ID for non-standard Unit. ID must start with non-digit and must contain only alphanumeric characters and underscores.".format(self.symbol)
 
+
 if __name__ == '__main__':
     main()
