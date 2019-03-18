@@ -6,7 +6,7 @@ import pycodestyle
 
 # Please do not increase this number. Style warnings should DECREASE,
 # not increase.
-ALLOWED_ERRORS = 448
+ALLOWED_ERRORS = 434
 
 # Allow longer lines. The default is 79, which allows the 80th
 # character to be a line continuation symbol. Here, we increase the
@@ -82,6 +82,7 @@ class TestStyle(unittest.TestCase):
     def test_whitespace(self):
         self.assert_clean_report('E202', "whitespace before ')'")
         self.assert_clean_report('E203', "whitespace before ':'")
+        self.assert_clean_report('E225', "missing whitespace around operator")
         self.assert_clean_report('E251', "unexpected spaces around keyword / parameter equals")
         self.assert_clean_report('E261', "at least two spaces before inline comment")
         self.assert_clean_report('E271', "multiple spaces after keyword")

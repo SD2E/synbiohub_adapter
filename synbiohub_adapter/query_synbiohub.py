@@ -1152,8 +1152,8 @@ class SynBioHubQuery(SBOLQuery):
 
         print(exp_media + ' out of ' + design_media + ' media')
 
-        design_controls= repr(len(self.query_design_controls(pretty=True)))
-        exp_controls= repr(len(self.query_experiment_controls(by_sample=False)))
+        design_controls = repr(len(self.query_design_controls(pretty=True)))
+        exp_controls = repr(len(self.query_experiment_controls(by_sample=False)))
 
         print(exp_controls + ' out of ' + design_controls + ' controls')
 

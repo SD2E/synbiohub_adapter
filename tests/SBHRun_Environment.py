@@ -151,7 +151,7 @@ def create_sbolDocs(numDocs, idPrefix, sbolFile):
         trip_obj = SBOLTriple(sbolFile, uid)
         sbolTriples.append(trip_obj)
         sbolDoc_List.append(trip_obj.sbolDoc())
-        print("created doc%s" %i)
+        print("created doc%s" % i)
 
     return sbolDoc_List, sbolTriples
 
@@ -211,7 +211,7 @@ def pull_sbh(sbh_connector, sbolURI):
             if topLevel.type == 'http://sd2e.org#ExperimentalData':
                 experimentalData_tl.append(topLevel)
                 if len(experimentalData_tl) != 74:
-                    print("Found the wrong SynBioHub Part with this uri: %s" %sbolURI)
+                    print("Found the wrong SynBioHub Part with this uri: %s" % sbolURI)
 
     return end - start
 
@@ -346,7 +346,7 @@ def br_speed(sbh_connector, sbolDoc_size, sbolFiles):
 
         create_SpeedLinePlot(df, f, sbolDoc_size, triple_size)
         create_SpeedLine2Plot(df, f, sbolDoc_size, triple_size)
-        df.to_csv("outputs/SpeedResult_f%s_d%s.csv" %(fileName, sbolDoc_size))
+        df.to_csv("outputs/SpeedResult_f%s_d%s.csv" % (fileName, sbolDoc_size))
 
 
 def br_setThread(sbh_connector, iterations, set_size, t_growthRate, sbolDoc_size, sbolFiles):
@@ -355,35 +355,35 @@ def br_setThread(sbh_connector, iterations, set_size, t_growthRate, sbolDoc_size
         trip_obj = SBOLTriple(f, "temp_id")
         fileName = get_fileName(f)
         create_SetBarPlot(df, iterations, set_size, f, trip_obj.totalTriples(), sbolDoc_size)
-        df.to_csv("outputs/Set_f%s_iter%s_s%s_d%s.csv" %(fileName, iterations, set_size, sbolDoc_size))
+        df.to_csv("outputs/Set_f%s_iter%s_s%s_d%s.csv" % (fileName, iterations, set_size, sbolDoc_size))
 
 def br_triples(sbh_connector, iterations, sbolFiles):
     df = generate_tripleData(sbh_connector, iterations, "RT", sbolFiles)
     create_TripleScatterPlot(df, iterations)
-    df.to_csv("outputs/Triples_iter%s.csv" %(iterations))
+    df.to_csv("outputs/Triples_iter%s.csv" % (iterations))
 
 def create_SpeedLinePlot(df, f, sbolDoc_size, trip_size):
     y_max = 20
     fig, ax = plt.subplots()
     plt.ylim((0, y_max))
-    ax.set_title("Time to Push %s Triples to SynBioHub" %trip_size)
+    ax.set_title("Time to Push %s Triples to SynBioHub" % trip_size)
     ax.set_ylabel("Time to Push (sec)")
     ax.set_xlabel("Push Index")
 
     df.plot(x=df.index+1, y='Push_Time', ax=ax)
 
     fileName = get_fileName(f)
-    fig.savefig('outputs/SpeedResult_f%s_d%s.pdf' %(fileName, sbolDoc_size))
+    fig.savefig('outputs/SpeedResult_f%s_d%s.pdf' % (fileName, sbolDoc_size))
 
 def create_SpeedLine2Plot(df, f, sbolDoc_size, trip_size):
     fig, ax = plt.subplots()
-    ax.set_title("Time to Push %s Triples to SynBioHub" %trip_size)
+    ax.set_title("Time to Push %s Triples to SynBioHub" % trip_size)
     ax.set_ylabel("Time to Push (sec)")
     ax.set_xlabel("Push Index")
     df.plot(x=df.index+1, y='Total_Time', ax=ax)
 
     fileName = get_fileName(f)
-    fig.savefig('outputs/SpeedResult2_f%s_d%s.pdf' %(fileName, sbolDoc_size))
+    fig.savefig('outputs/SpeedResult2_f%s_d%s.pdf' % (fileName, sbolDoc_size))
 
 
 def create_SetBarPlot(df, iterations, set_size, f, trip_size, doc_size):
@@ -397,12 +397,12 @@ def create_SetBarPlot(df, iterations, set_size, f, trip_size, doc_size):
     g = plt.get_cmap('Dark2')
     means.plot.barh(xerr=errors, ax=ax, legend=False, colormap=g)
 
-    ax.set_title("Average Time to Push %s Triples per Thread" %(trip_size))
+    ax.set_title("Average Time to Push %s Triples per Thread" % (trip_size))
     ax.set_xlabel("Time to Push (sec)")
     ax.set_ylabel("Thread Group")
 
     fileName = get_fileName(f)
-    fig.savefig('outputs/Set_f%s_iter%s_s%s_d%s.pdf' %(fileName, iterations, set_size, doc_size))
+    fig.savefig('outputs/Set_f%s_iter%s_s%s_d%s.pdf' % (fileName, iterations, set_size, doc_size))
 
 def create_TripleScatterPlot(df, iterations):
     fig, ax = plt.subplots()
@@ -416,7 +416,7 @@ def create_TripleScatterPlot(df, iterations):
     ax.set_title("Time to Push SBOL Documents with Varying Size")
     ax.set_ylabel("Time to Push (sec)")
     ax.set_xlabel("Document Size (# of Triples)")
-    fig.savefig('outputs/Triples_iter%s.pdf' %(iterations))
+    fig.savefig('outputs/Triples_iter%s.pdf' % (iterations))
 
 def backup_sequentialLoad():
     # At one point, update pushing to SBH to do something like this so performance doesn't suffer.
