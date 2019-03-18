@@ -6,7 +6,7 @@ import pycodestyle
 
 # Please do not increase this number. Style warnings should DECREASE,
 # not increase.
-ALLOWED_ERRORS = 937
+ALLOWED_ERRORS = 448
 
 # Allow longer lines. The default is 79, which allows the 80th
 # character to be a line continuation symbol. Here, we increase the
@@ -77,10 +77,7 @@ class TestStyle(unittest.TestCase):
                          msg=message)
 
     def test_indentation(self):
-        self.assert_clean_report('E111', 'indentation is not a multiple of four')
-        self.assert_clean_report('E114', 'indentation is not a multiple of four (comment)')
-        self.assert_clean_report('E117', 'over-indented')
-        self.assert_clean_report('E127', 'continuation line over-indented for visual indent')
+        self.assert_clean_report('E1', "Indentation style errors ('E1xx') exist")
 
     def test_whitespace(self):
         self.assert_clean_report('E202', "whitespace before ')'")

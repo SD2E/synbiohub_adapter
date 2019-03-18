@@ -208,7 +208,7 @@ class SBOLQuery():
 
     def construct_custom_pattern(self, custom_properties, entity_label='entity'):
         query_arr = ['?{el} {qn} {obj} .'.format(el=entity_label, qn=qname, obj=custom_properties[qname]) if custom_properties[qname].startswith('<') and custom_properties[qname].endswith('>')
-            else '?{el} {qn} "{obj}" .'.format(el=entity_label, qn=qname, obj=custom_properties[qname]) for qname in custom_properties]
+                     else '?{el} {qn} "{obj}" .'.format(el=entity_label, qn=qname, obj=custom_properties[qname]) for qname in custom_properties]
 
         return '\n'.join(query_arr)
 
@@ -557,7 +557,7 @@ class SBOLQuery():
 
         if entity_value in formatted:
             formatted_binding = self.__format_entity_binding(binding,
-                                                            binding_keys)
+                                                             binding_keys)
 
             for key in formatted_binding.keys():
                 if formatted[entity_value][key] != formatted_binding[key]:
@@ -649,8 +649,7 @@ class SBOLQuery():
         else:
             sample_cardinality = ''
 
-        mod_query = self.construct_collection_entity_query(collections, 'exp', roles=roles, sub_types=sub_types, sub_roles=sub_roles, definitions=definitions, all_sub_types=all_sub_types, entity_label=mod_label, other_entity_labels=other_mod_labels, members=experiments,
-            member_cardinality=sample_cardinality, rdf_type="http://sbols.org/v2#ModuleDefinition", entity_depth=2, custom_properties=custom_properties)
+        mod_query = self.construct_collection_entity_query(collections, 'exp', roles=roles, sub_types=sub_types, sub_roles=sub_roles, definitions=definitions, all_sub_types=all_sub_types, entity_label=mod_label, other_entity_labels=other_mod_labels, members=experiments, member_cardinality=sample_cardinality, rdf_type="http://sbols.org/v2#ModuleDefinition", entity_depth=2, custom_properties=custom_properties)
 
         return self.fetch_SPARQL(self._server, mod_query)
 
