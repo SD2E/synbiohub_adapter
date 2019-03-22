@@ -2,7 +2,7 @@ import getpass
 import sys
 import csv
 
-from SPARQLWrapper import SPARQLWrapper, JSON, POST
+from SPARQLWrapper import SPARQLWrapper, JSON, POST, SPARQLExceptions
 from sbol import *
 from .cache_query import wrap_query_fn
 from functools import partial
@@ -178,6 +178,12 @@ class SBOLQuery():
         sparql.setQuery(query)
         sparql.setReturnFormat(JSON)
         results = sparql.query().convert()
+        if type(results) is bytes and results.startswith(b'<!DOCTYPE html>'):
+            # The query failed. We assume the problem was a lack of
+            # authentication.
+            # Without authentication, SynBioHub redirects to the home
+            # page so raw HTML is returned.
+            raise SPARQLExceptions.Unauthorized()
         return results
 
     # Constructs a partial SPARQL query for all collection members with
