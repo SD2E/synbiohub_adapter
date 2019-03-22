@@ -5,9 +5,9 @@ import json
 import requests
 import re
 from sbol import *
-from synbiohub_adapter import SynBioHubQuery
-from synbiohub_adapter import SD2Constants
-from pySBOLx.pySBOLx import Experiment
+from synbiohub_adapter.query_synbiohub import SynBioHubQuery
+from synbiohub_adapter.query_synbiohub import SD2Constants
+# from pySBOLx.pySBOLx import Experiment
 
 def main(args=None):
     if args is None:
