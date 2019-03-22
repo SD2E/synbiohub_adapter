@@ -17,7 +17,6 @@ def main(args=None):
     parser.add_argument('-e', '--email')
     parser.add_argument('-p', '--password')
     parser.add_argument('-u', '--url', nargs='?', default='https://hub.sd2e.org')
-    parser.add_argument('-s', '--sparql', nargs='?', default='http://hub-api.sd2e.org:80/sparql')
     parser.add_argument('-f', '--sbol_files', nargs='*', default=[f for f in os.listdir('.') if os.path.isfile(f) and f.endswith('.xml')])
     parser.add_argument('-w', '--overwrite', action='store_true')
     parser.add_argument('-W', '--overwrite_sub_collections', action='store_true')
@@ -44,7 +43,7 @@ def main(args=None):
         docs[-1].read(sbol_file)
 
     if len(docs) > 0:
-        sbh = SynBioHub(args.url, args.email, args.password, args.sparql)
+        sbh = SynBioHub(args.url, args.email, args.password)
 
         if args.collection_id is not None and args.collection_version is not None and args.collection_name is not None and args.collection_description is not None:
             sbh.submit_collection(docs[0], args.collection_id, args.collection_version, args.collection_name, args.collection_description, int(args.max_upload))
@@ -56,13 +55,13 @@ def main(args=None):
         raise EmptySubmissionError()
 
 class SynBioHub():
-    def __init__(self, url, email, password, sparql):
+    def __init__(self, url, email, password):
         self.url = url
+        self.email = email
         self.part_shop = PartShop(url + '/')
         self.part_shop.login(email, password)
         response = requests.post(url + '/login', headers={'Accept': 'text/plain'}, data={'email': email, 'password': password})
         self.token = response.content.decode('UTF-8')
-        self.sparql = sparql
 
     def submit_collection(self, doc, collection_id, collection_version, collection_name, collection_description, max_upload=0, sub_collection_id=None, sub_collection_version=None, sub_collection_name=None, sub_collection_description=None):
         if max_upload > 0 and len(doc) > max_upload:
@@ -404,7 +403,9 @@ class SynBioHub():
         responses = []
 
         cut_len = 50
-        sbh_query = SynBioHubQuery(self.sparql)
+
+        sbh_query = SynBioHubQuery(self.url, user=self.email, authentication_key=self.token)
+
         if len(member_uris) <= cut_len:
             responses.append(sbh_query.query_collection_members(collection_uris, member_uris, rdf_type))
         else:
@@ -435,7 +436,8 @@ class SynBioHub():
 
     # for a given plan URI, retrieve the named attachment
     def get_single_experiment_attachment(self, plan_uri, attachment_name):
-        sbh_query = SynBioHubQuery(self.sparql)
+        sbh_query = SynBioHubQuery(self.url, user=self.email, authentication_key=self.token)
+
         attachments = sbh_query.query_single_experiment_attachment(plan_uri, attachment_name)
         if len(attachments['results']['bindings']) > 0:
             attachment_id = attachments['results']['bindings'][0]['attachment_id']['value']
@@ -445,7 +447,8 @@ class SynBioHub():
 
     # for a given plan URI, retrieve its intent JSON
     def get_single_experiment_intent_attachment(self, plan_uri):
-        sbh_query = SynBioHubQuery(self.sparql)
+        sbh_query = SynBioHubQuery(self.url, user=self.email, authentication_key=self.token)
+
         attachments = sbh_query.query_single_experiment_attachments(plan_uri)
         for binding in attachments['results']['bindings']:
             attachment_id = binding['attachment_id']['value']
