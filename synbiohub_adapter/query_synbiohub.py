@@ -180,8 +180,8 @@ class SynBioHubQuery(SBOLQuery):
 
     # Retrieves the URIs for all DNA components from the specified collection of design elements.
     # This collection is typically associated with a challenge problem.
-    def query_design_set_dna(self, collection, verbose=False, with_sequence=False, pretty=False):
-        return self.query_design_dna(verbose, with_sequence, pretty, [collection])
+    def query_design_set_dna(self, collection, verbose=False, with_sequence=False, pretty=False, roles=[], dna=[]):
+        return self.query_design_dna(verbose, with_sequence, pretty, [collection], roles, dna)
 
     # Retrieves the URIs for all DNA components used by experiments in the collection of every SD2 experiment.
     def query_experiment_dna(self, verbose=False, with_sequence=False, trace_derivation=True, by_sample=False, pretty=True, collections=[SD2Constants.SD2_EXPERIMENT_COLLECTION], experiments=[]):
