@@ -23,10 +23,10 @@ pip3 install --process-dependency-link .
 
 If you would like to install synbiohub_adapter so that changes to the
 source will be represented in the imported code without having to
-re-install, run one of the two commands below.
+re-install, run this command:
 
 ```
-pip3 install -e .
+pip3 install --process-dependency-link -e .
 ```
 
 ### Running Tests

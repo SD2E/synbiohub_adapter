@@ -12,7 +12,8 @@ setup(
         'pySBOLx==0.1',
         'pycodestyle>=2.5.0',
         'pysbol==2.3.1.post6',
-        'requests>=2.21.0'
+        'requests>=2.21.0',
+        'tenacity>=5.0.3'
     ],
     dependency_links=[
         'git+https://git@github.com/nroehner/pySBOLx.git#egg=pySBOLx-0.1'

@@ -7,6 +7,10 @@ from sbol import *
 from .cache_query import wrap_query_fn
 from functools import partial
 
+# tenacity allows retrying functions/methods automatically
+import tenacity
+
+
 '''
     This is a utility module containing classes with constant variables used for querying SynBioHub information
 
@@ -160,6 +164,13 @@ class SBOLQuery():
         self.user = user
         self.authentication_key = login_endpoint.query().response.read().decode("utf-8")
 
+    # * Stop after trying 3 times
+    # * Wait 3 seconds between retries
+    # * Reraise the exception that caused the failure, rather than
+    #   raising a tenacity.RetryError
+    @tenacity.retry(stop=tenacity.stop_after_attempt(3),
+                    wait=tenacity.wait_fixed(3),
+                    reraise=True)
     def fetch_SPARQL(self, server, query):
         sparql = SPARQLWrapper(self._server)
         if self.authentication_key and self.user:
