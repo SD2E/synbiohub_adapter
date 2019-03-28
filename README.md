@@ -1,5 +1,6 @@
 
 # synbiohub_adapter
+![Build Status](https://api.travis-ci.com/SD2E/synbiohub_adapter.svg?branch=master)
 
 ## Installation
 
@@ -29,6 +30,21 @@ python setup.py develop
 
 ```
 pip install -e .
+```
+
+### Running Tests
+
+Running tests requires the user provide a password for SynBioHub through the `SBH_PASSWORD` environment variable, e.g.
+
+```
+SBH_PASSWORD=<pword> python3 -m unittest discover tests
+```
+
+The tests include a check for conformance with Python style best-practices. If a new style violation is introduced into
+the code base, the test will fail. To diagnose this failure, run the following test:
+
+```
+VERBOSE=1 python3 -m unittest tests/test_pycodestyle.py
 ```
 
 ### Linux Prerequisites

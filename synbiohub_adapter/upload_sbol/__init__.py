@@ -3,5 +3,5 @@ from synbiohub_adapter.upload_sbol.upload_sbol import (
     SBHLabParameterError,
     BadLabParameterError,
     UndefinedURIError,
-    URIsInUseError
 )
+

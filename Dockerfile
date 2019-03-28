@@ -9,8 +9,6 @@ WORKDIR /opt/scripts
 
 ADD . /opt/scripts
 
-RUN pip3 install --upgrade pip
-
-RUN pip3 install --process-dependency-link /opt/scripts/
+RUN python3 setup.py install
 
 CMD python3 -m unittest discover /opt/scripts/tests

@@ -4,3 +4,5 @@
 /tests/__pycache__
 /synbiohub_adapter/__pycache__
 /sbh_adapter.egg-info
+*.pyc
+*~
