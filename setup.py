@@ -8,10 +8,18 @@ install_requires = [
     'SPARQLWrapper>=1.8.2',
     'appdirs>=1.4.3',
     'pycodestyle>=2.5.0',
-    'pysbol==2.3.1.post6',
+    'pysbol>=2.3.1',
     'requests>=2.21.0',
     'tenacity>=5.0.3'
 ]
+
+# Set up pysbolx dependency.
+# --------------------------
+# pip version 19 honors PEP 440 dependency specifications, while
+# earlier versions of pip use the dependency_links. The two (19.0+ and
+# <19.0) are not compatible. This block detects the active version of
+# pip and sets up the pysbolx dependency for whichever version is
+# being used.
 
 pip_version = parse_version(pip.__version__)
 if pip_version >= parse_version('19.0.0'):
