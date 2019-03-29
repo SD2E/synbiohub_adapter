@@ -4,6 +4,9 @@
 
 ## Installation
 
+_N.B. For pip versions 19 or higher, omit the `--process-dependency-links` argument._
+
+
 To install the current release of synbiohub_adapter:
 
 ```shell
@@ -16,7 +19,7 @@ pip3 install --process-dependency-links \
 You can also install from a git clone:
 
 ```shell
-pip3 install --process-dependency-link .
+pip3 install [--process-dependency-links] .
 ```
 
 ### Development Install
@@ -26,7 +29,7 @@ source will be represented in the imported code without having to
 re-install, run this command:
 
 ```
-pip3 install --process-dependency-link -e .
+pip3 install [--process-dependency-links] -e .
 ```
 
 ### Running Tests
