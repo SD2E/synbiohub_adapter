@@ -23,7 +23,7 @@ def main(args=None):
     args = parser.parse_args(args)
 
     doc = generate_sbol(args.input_files, args.om)
-    
+
     # if password is None:
     doc.write(args.output_file)
 
@@ -52,16 +52,16 @@ def generate_sbol(csv_files, om_file):
     generate_system_switcher = {
         'Buffer': generate_buffer,
         'Control': generate_control,
-        'Gate': generate_gate, 
+        'Gate': generate_gate,
         'Media': generate_media,
         'Solution': generate_solution,
-        'Stain' : generate_stain
+        'Stain': generate_stain
     }
 
     generate_input_switcher = {
         'Inducer': generate_inducer
     }
-    
+
     for csv_file in csv_files:
         generate_sbol_helper(doc, csv_file, generate_device_switcher, generate_system_switcher, generate_input_switcher, om)
 
@@ -404,6 +404,7 @@ class NonStandardUnitSymbolConversionError(Exception):
 
     def __str__(self):
         return "Failed to convert symbol {} to valid ID for non-standard Unit. ID must start with non-digit and must contain only alphanumeric characters and underscores.".format(self.symbol)
+
 
 if __name__ == '__main__':
     main()

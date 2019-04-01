@@ -31,7 +31,7 @@ def main(args=None):
     parser.add_argument('-D', '--collection_description', nargs='?', default=None)
     parser.add_argument('-V', '--collection_version', nargs='?', default='1')
     parser.add_argument('-m', '--max_upload', nargs='?', default='0')
-    
+
     args = parser.parse_args(args)
 
     Config.setOption('sbol_typed_uris', False)
@@ -45,8 +45,8 @@ def main(args=None):
 
     if len(docs) > 0:
         sbh = SynBioHub(args.url, args.email, args.password, args.sparql)
-    
-        if args.collection_id is not None and args.collection_version is not None and args.collection_name is not None and args.collection_description is not None: 
+
+        if args.collection_id is not None and args.collection_version is not None and args.collection_name is not None and args.collection_description is not None:
             sbh.submit_collection(docs[0], args.collection_id, args.collection_version, args.collection_name, args.collection_description, int(args.max_upload))
         elif args.collection_uri is not None:
             sbh.submit_to_collection(docs, args.collection_uri, int(args.max_upload), args.overwrite, args.overwrite_sub_collections, args.sub_collection_id, args.sub_collection_version, args.sub_collection_name, args.sub_collection_description)
@@ -315,7 +315,7 @@ class SynBioHub():
     @classmethod
     def __create_sub_collection_documents(cls, doc, collection_namespace):
         sub_collection_docs = []
-        
+
         for sub_collection in doc.collections:
             sub_collection_docs.append(Document())
 
@@ -367,7 +367,7 @@ class SynBioHub():
     @classmethod
     def __create_root_sub_collection(cls, doc, sub_collection_id, sub_collection_version, sub_collection_name=None, sub_collection_description=None):
         root_sub_collection = cls.__create_sub_collection(sub_collection_id, sub_collection_version, sub_collection_name, sub_collection_description)
-        
+
         local_uri_arr = [obj.identity for obj in doc]
 
         root_sub_collection.members = root_sub_collection.members + local_uri_arr
@@ -453,7 +453,7 @@ class SynBioHub():
             try:
                 attachment_json = response.json()
                 # TODO find a better way to identify intent attachments
-                if attachment_json.get("experimental-variables") != None:
+                if attachment_json.get("experimental-variables") is not None:
                     return attachment_json
             except ValueError:
                 print("{} is not JSON, trying next attachment".format(attachment_id))
@@ -610,6 +610,7 @@ class UndefinedURIError(SBHLabParameterError):
 
     def __str__(self):
         return "Undefined URI: {}".format(self.uri)
+
 
 if __name__ == '__main__':
     main()
