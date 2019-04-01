@@ -11,6 +11,8 @@ from sbol import *
     author(s) : Nicholas Roehner
                 Tramy Nguyen
 '''
+
+
 class SynBioHubQuery(SBOLQuery):
     ''' This class is used is used to push and pull information from SynBioHub.
         Each method of this class is a SPARQL query used to call to the specified instance of SynBioHub.
@@ -1010,7 +1012,7 @@ class SynBioHubQuery(SBOLQuery):
             except:
                 exp_intent['truth-table']['output'][i] = int(binding['omag']['value'])
 
-        return json.dumps(exp_intent, separators=(',',':'))
+        return json.dumps(exp_intent, separators=(',', ':'))
 
     # Design and experiment set query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
