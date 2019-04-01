@@ -6,7 +6,7 @@ import pycodestyle
 
 # Please do not increase this number. Style warnings should DECREASE,
 # not increase.
-ALLOWED_ERRORS = 434
+ALLOWED_ERRORS = 432
 
 # Allow longer lines. The default is 79, which allows the 80th
 # character to be a line continuation symbol. Here, we increase the

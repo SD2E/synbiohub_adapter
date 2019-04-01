@@ -11,6 +11,8 @@ from sbol import *
     author(s) : Nicholas Roehner
                 Tramy Nguyen
 '''
+
+
 class SynBioHubQuery(SBOLQuery):
     ''' This class is used is used to push and pull information from SynBioHub.
         Each method of this class is a SPARQL query used to call to the specified instance of SynBioHub.
@@ -1010,7 +1012,7 @@ class SynBioHubQuery(SBOLQuery):
             except:
                 exp_intent['truth-table']['output'][i] = int(binding['omag']['value'])
 
-        return json.dumps(exp_intent, separators=(',',':'))
+        return json.dumps(exp_intent, separators=(',', ':'))
 
     # Design and experiment set query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
@@ -1160,6 +1162,21 @@ class SynBioHubQuery(SBOLQuery):
         exp_query_result = self.query_collection_members(collections=[SD2Constants.SD2_EXPERIMENT_COLLECTION], rdf_type='http://sd2e.org#Experiment')
 
         print(repr(len(self.format_query_result(exp_query_result, ['entity']))) + ' experiment plans')
+
+    # Filters members of the collection that contain the substring in their URI
+    def filter(self, collection, search_token):
+        sparql_filter = """
+        PREFIX sbol: <http://sbols.org/v2#>
+        PREFIX sd2: <http://sd2e.org#>
+        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        SELECT DISTINCT ?member
+        WHERE {{
+            <{col}> sbol:member ?member .
+            FILTER (contains(str(?member), "{tok}"))
+        }}
+        """.format(col=collection, tok=search_token)
+        result = self.fetch_SPARQL(self._server, sparql_filter)
+        return self.format_query_result(result, ['member'])
 
     # Submit the data stored in the given sbolDoc to a collection on SynBioHub
     # sbh_connector: An instance of the pySBOL Partshop to set SynBioHub credential needed for submitting a collection
