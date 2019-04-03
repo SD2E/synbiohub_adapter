@@ -57,6 +57,8 @@ def main(args=None):
 
 class SynBioHub():
     def __init__(self, url, email, password, sparql):
+        if url[-1] == '/':
+            url = url.strip('/')
         self.url = url
         self.part_shop = PartShop(url)
         self.part_shop.login(email, password)
