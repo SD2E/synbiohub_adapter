@@ -3,7 +3,7 @@ import unittest
 import warnings
 
 from synbiohub_adapter.query_synbiohub import SynBioHubQuery
-from synbiohub_adapter.SynBioHubUtil import SD2Constants 
+from synbiohub_adapter.SynBioHubUtil import SD2Constants
 import SPARQLWrapper
 
 
