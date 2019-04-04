@@ -39,7 +39,7 @@ class TestStyle(unittest.TestCase):
                                     max_line_length=MAX_LINE_LENGTH,
                                     exclude=EXCLUDE)
         report = sg.check_files(dirs_and_files)
-        self.assertEqual(report.total_errors, ALLOWED_ERRORS,
+        self.assertTrue(report.total_errors <= ALLOWED_ERRORS,
                          msg='{0} style violations were found. Expected {1}'.format(report.total_errors,
                                                                                     ALLOWED_ERRORS))
 
