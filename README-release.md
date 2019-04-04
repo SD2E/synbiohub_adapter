@@ -3,6 +3,9 @@
 1. Update [issues](https://github.com/SD2E/synbiohub_adapter/issues) and
    [pull requests](https://github.com/SD2E/synbiohub_adapter/pulls) so they are appropriately
    targeted for this milestone and closed
+1. Bump the version number in the README.md on the master branch
+   * _Note: Use the standard contribution process by submitting these changes via a pull request, not a direct push to the synbiohub_adapter repository_
+   * Bump version number in `README.md`
 1. Tag the release using [semantic versioning](http://semver.org)
 
    ```shell
@@ -29,8 +32,7 @@
      minimum, link to the milestone which documents the issues and
      pull requests that are part of the release.
    * Upload the tar file and wheel created above
-1. Bump the version numbers on the on the master branch
+1. Bump the version numbers on the develop branch
    * _Note: Use the standard contribution process by submitting these changes via a pull request, not a direct push to the synbiohub_adapter repository_
    * Bump version number in `synbiohub_adapter/__init__.py`
    * Bump version number in `setup.py`
-   * Bump version number in `README.md`

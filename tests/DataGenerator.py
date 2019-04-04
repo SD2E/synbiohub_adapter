@@ -20,6 +20,7 @@ def create_seq(idPrefix):
     seq = Sequence(s_uri, 'atatatatatatatatat', SBOL_ENCODING_IUPAC, '1.0')
     return seq
 
+
 if __name__ == '__main__':
     sbolDoc = Document()
     setHomespace("https://www.bbn.com/")

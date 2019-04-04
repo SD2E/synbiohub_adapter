@@ -2,10 +2,14 @@ import getpass
 import sys
 import csv
 
-from SPARQLWrapper import SPARQLWrapper, JSON, POST
+from SPARQLWrapper import SPARQLWrapper, JSON, POST, SPARQLExceptions
 from sbol import *
 from .cache_query import wrap_query_fn
 from functools import partial
+
+# tenacity allows retrying functions/methods automatically
+import tenacity
+
 
 '''
     This is a utility module containing classes with constant variables used for querying SynBioHub information
@@ -145,9 +149,8 @@ class SBOLQuery():
         if use_fallback_cache:
             self.fetch_SPARQL = wrap_query_fn(self.fetch_SPARQL)
 
-
     def login(self, user, password):
-        if not '/sparql' in self._server:
+        if '/sparql' not in self._server:
             self._server += '/sparql'
         p = self._server.find('/sparql')
         resource = self._server[:p]
@@ -161,6 +164,13 @@ class SBOLQuery():
         self.user = user
         self.authentication_key = login_endpoint.query().response.read().decode("utf-8")
 
+    # * Stop after trying 3 times
+    # * Wait 3 seconds between retries
+    # * Reraise the exception that caused the failure, rather than
+    #   raising a tenacity.RetryError
+    @tenacity.retry(stop=tenacity.stop_after_attempt(3),
+                    wait=tenacity.wait_fixed(3),
+                    reraise=True)
     def fetch_SPARQL(self, server, query):
         sparql = SPARQLWrapper(self._server)
         if self.authentication_key and self.user:
@@ -179,6 +189,12 @@ class SBOLQuery():
         sparql.setQuery(query)
         sparql.setReturnFormat(JSON)
         results = sparql.query().convert()
+        if type(results) is bytes and results.startswith(b'<!DOCTYPE html>'):
+            # The query failed. We assume the problem was a lack of
+            # authentication.
+            # Without authentication, SynBioHub redirects to the home
+            # page so raw HTML is returned.
+            raise SPARQLExceptions.Unauthorized()
         return results
 
     # Constructs a partial SPARQL query for all collection members with
@@ -187,7 +203,7 @@ class SBOLQuery():
         if len(types) == 0:
             return ""
         elif all_types or len(types) == 1:
-                return "?{el} sbol:type {ty} .".format(ty=self.serialize_objects(types), el=entity_label)
+            return "?{el} sbol:type {ty} .".format(ty=self.serialize_objects(types), el=entity_label)
         else:
             return """
             VALUES (?{tl}) {{ {ty} }}
@@ -209,7 +225,7 @@ class SBOLQuery():
 
     def construct_custom_pattern(self, custom_properties, entity_label='entity'):
         query_arr = ['?{el} {qn} {obj} .'.format(el=entity_label, qn=qname, obj=custom_properties[qname]) if custom_properties[qname].startswith('<') and custom_properties[qname].endswith('>')
-            else '?{el} {qn} "{obj}" .'.format(el=entity_label, qn=qname, obj=custom_properties[qname]) for qname in custom_properties]
+                     else '?{el} {qn} "{obj}" .'.format(el=entity_label, qn=qname, obj=custom_properties[qname]) for qname in custom_properties]
 
         return '\n'.join(query_arr)
 
@@ -558,7 +574,7 @@ class SBOLQuery():
 
         if entity_value in formatted:
             formatted_binding = self.__format_entity_binding(binding,
-                                                            binding_keys)
+                                                             binding_keys)
 
             for key in formatted_binding.keys():
                 if formatted[entity_value][key] != formatted_binding[key]:
@@ -650,8 +666,7 @@ class SBOLQuery():
         else:
             sample_cardinality = ''
 
-        mod_query = self.construct_collection_entity_query(collections, 'exp', roles=roles, sub_types=sub_types, sub_roles=sub_roles, definitions=definitions, all_sub_types=all_sub_types, entity_label=mod_label, other_entity_labels=other_mod_labels, members=experiments,
-            member_cardinality=sample_cardinality, rdf_type="http://sbols.org/v2#ModuleDefinition", entity_depth=2, custom_properties=custom_properties)
+        mod_query = self.construct_collection_entity_query(collections, 'exp', roles=roles, sub_types=sub_types, sub_roles=sub_roles, definitions=definitions, all_sub_types=all_sub_types, entity_label=mod_label, other_entity_labels=other_mod_labels, members=experiments, member_cardinality=sample_cardinality, rdf_type="http://sbols.org/v2#ModuleDefinition", entity_depth=2, custom_properties=custom_properties)
 
         return self.fetch_SPARQL(self._server, mod_query)
 
