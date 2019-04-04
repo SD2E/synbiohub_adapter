@@ -40,8 +40,8 @@ class TestStyle(unittest.TestCase):
                                     exclude=EXCLUDE)
         report = sg.check_files(dirs_and_files)
         self.assertTrue(report.total_errors <= ALLOWED_ERRORS,
-                         msg='{0} style violations were found. Expected {1}'.format(report.total_errors,
-                                                                                    ALLOWED_ERRORS))
+                        msg='{0} style violations were found. Expected {1}'.format(report.total_errors,
+                                                                                   ALLOWED_ERRORS))
 
     def test_clean(self):
         """Ensure that warning free files stay that way.
