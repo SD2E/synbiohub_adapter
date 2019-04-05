@@ -57,8 +57,9 @@ def main(args=None):
 
 class SynBioHub():
     def __init__(self, url, email, password, sparql):
+        url = url.rstrip('/')
         self.url = url
-        self.part_shop = PartShop(url + '/')
+        self.part_shop = PartShop(url)
         self.part_shop.login(email, password)
         response = requests.post(url + '/login', headers={'Accept': 'text/plain'}, data={'email': email, 'password': password})
         self.token = response.content.decode('UTF-8')
@@ -453,7 +454,7 @@ class SynBioHub():
             try:
                 attachment_json = response.json()
                 # TODO find a better way to identify intent attachments
-                if attachment_json.get("experimental-variables") != None:
+                if attachment_json.get("experimental-variables") is not None:
                     return attachment_json
             except ValueError:
                 print("{} is not JSON, trying next attachment".format(attachment_id))
@@ -610,6 +611,7 @@ class UndefinedURIError(SBHLabParameterError):
 
     def __str__(self):
         return "Undefined URI: {}".format(self.uri)
+
 
 if __name__ == '__main__':
     main()

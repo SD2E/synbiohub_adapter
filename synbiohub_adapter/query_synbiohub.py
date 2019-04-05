@@ -11,13 +11,15 @@ from sbol import *
     author(s) : Nicholas Roehner
                 Tramy Nguyen
 '''
+
+
 class SynBioHubQuery(SBOLQuery):
     ''' This class is used is used to push and pull information from SynBioHub.
         Each method of this class is a SPARQL query used to call to the specified instance of SynBioHub.
     '''
 
     # server: The SynBioHub server to call sparql queries on.
-    def __init__(self, server, use_fallback_cache=False, user = None, authentication_key = None, spoofed_url = None):
+    def __init__(self, server, use_fallback_cache=False, user=None, authentication_key=None, spoofed_url=None):
         super().__init__(server, use_fallback_cache, user, authentication_key, spoofed_url)
 
     # Control query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -248,7 +250,6 @@ class SynBioHubQuery(SBOLQuery):
 
         return query_result
 
-
     def query_gate_logic(self, gates, pretty=False):
         gate_query = """
             PREFIX sbol: <http://sbols.org/v2#>
@@ -263,7 +264,6 @@ class SynBioHubQuery(SBOLQuery):
         if pretty:
             query_result = self.format_query_result(query_result, ['gate', 'gate_type'])
         return query_result
-
 
     # Retrieves the URIs for all logic gates from the collection of every SD2 design element.
     def query_design_gates(self, verbose=False, with_role=True, pretty=False, collections=[SD2Constants.SD2_DESIGN_COLLECTION]):
@@ -1012,7 +1012,7 @@ class SynBioHubQuery(SBOLQuery):
             except:
                 exp_intent['truth-table']['output'][i] = int(binding['omag']['value'])
 
-        return json.dumps(exp_intent, separators=(',',':'))
+        return json.dumps(exp_intent, separators=(',', ':'))
 
     # Design and experiment set query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
@@ -1154,14 +1154,29 @@ class SynBioHubQuery(SBOLQuery):
 
         print(exp_media + ' out of ' + design_media + ' media')
 
-        design_controls= repr(len(self.query_design_controls(pretty=True)))
-        exp_controls= repr(len(self.query_experiment_controls(by_sample=False)))
+        design_controls = repr(len(self.query_design_controls(pretty=True)))
+        exp_controls = repr(len(self.query_experiment_controls(by_sample=False)))
 
         print(exp_controls + ' out of ' + design_controls + ' controls')
 
         exp_query_result = self.query_collection_members(collections=[SD2Constants.SD2_EXPERIMENT_COLLECTION], rdf_type='http://sd2e.org#Experiment')
 
         print(repr(len(self.format_query_result(exp_query_result, ['entity']))) + ' experiment plans')
+
+    # Filters members of the collection that contain the substring in their URI
+    def filter(self, collection, search_token):
+        sparql_filter = """
+        PREFIX sbol: <http://sbols.org/v2#>
+        PREFIX sd2: <http://sd2e.org#>
+        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        SELECT DISTINCT ?member
+        WHERE {{
+            <{col}> sbol:member ?member .
+            FILTER (contains(str(?member), "{tok}"))
+        }}
+        """.format(col=collection, tok=search_token)
+        result = self.fetch_SPARQL(self._server, sparql_filter)
+        return self.format_query_result(result, ['member'])
 
     # Submit the data stored in the given sbolDoc to a collection on SynBioHub
     # sbh_connector: An instance of the pySBOL Partshop to set SynBioHub credential needed for submitting a collection

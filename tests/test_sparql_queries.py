@@ -57,7 +57,8 @@ class TestSBHQueries(unittest.TestCase):
 
         controls = set(sbh_query.query_design_controls(pretty=True))
 
-        min_controls = {'https://hub.sd2e.org/user/sd2e/design/fluorescein_control_3_125/1',
+        min_controls = {
+            'https://hub.sd2e.org/user/sd2e/design/fluorescein_control_3_125/1',
             'https://hub.sd2e.org/user/sd2e/design/ludox_S40_control_200/1',
             'https://hub.sd2e.org/user/sd2e/design/water_blank_300/1',
             'https://hub.sd2e.org/user/sd2e/design/fluorescein_control_6_25/1',
@@ -76,7 +77,8 @@ class TestSBHQueries(unittest.TestCase):
             'https://hub.sd2e.org/user/sd2e/design/fluorescein_control_25/1',
             'https://hub.sd2e.org/user/sd2e/design/ludox_S40_control_100/1',
             'https://hub.sd2e.org/user/sd2e/design/LB_Cm50_no_inducer/1',
-            'https://hub.sd2e.org/user/sd2e/design/spherotech_rainbow_beads/1'}
+            'https://hub.sd2e.org/user/sd2e/design/spherotech_rainbow_beads/1'
+        }
 
         missing_controls = min_controls.difference(controls)
 
@@ -88,7 +90,8 @@ class TestSBHQueries(unittest.TestCase):
 
         controls = set(sbh_query.query_design_set_controls(SD2Constants.YEAST_GATES_DESIGN_COLLECTION, pretty=True))
 
-        min_controls = {'https://hub.sd2e.org/user/sd2e/design/fluorescein_control_3_125/1',
+        min_controls = {
+            'https://hub.sd2e.org/user/sd2e/design/fluorescein_control_3_125/1',
             'https://hub.sd2e.org/user/sd2e/design/ludox_S40_control_200/1',
             'https://hub.sd2e.org/user/sd2e/design/water_blank_300/1',
             'https://hub.sd2e.org/user/sd2e/design/fluorescein_control_6_25/1',
@@ -106,7 +109,8 @@ class TestSBHQueries(unittest.TestCase):
             'https://hub.sd2e.org/user/sd2e/design/fluorescein_control_12_5/1',
             'https://hub.sd2e.org/user/sd2e/design/fluorescein_control_25/1',
             'https://hub.sd2e.org/user/sd2e/design/ludox_S40_control_100/1',
-            'https://hub.sd2e.org/user/sd2e/design/spherotech_rainbow_beads/1'}
+            'https://hub.sd2e.org/user/sd2e/design/spherotech_rainbow_beads/1'
+        }
 
         missing_controls = min_controls.difference(controls)
 
@@ -142,7 +146,8 @@ class TestSBHQueries(unittest.TestCase):
 
         controls = set(sbh_query.query_design_fluorescein_controls(pretty=True))
 
-        min_controls = {'https://hub.sd2e.org/user/sd2e/design/fluorescein_control_3_125/1',
+        min_controls = {
+            'https://hub.sd2e.org/user/sd2e/design/fluorescein_control_3_125/1',
             'https://hub.sd2e.org/user/sd2e/design/fluorescein_control_6_25/1',
             'https://hub.sd2e.org/user/sd2e/design/fluorescein_control_0_05078125/1',
             'https://hub.sd2e.org/user/sd2e/design/fluorescein_control_0_1015625/1',
@@ -153,7 +158,8 @@ class TestSBHQueries(unittest.TestCase):
             'https://hub.sd2e.org/user/sd2e/design/fluorescein_control_0_203125/1',
             'https://hub.sd2e.org/user/sd2e/design/fluorescein_control_50/1',
             'https://hub.sd2e.org/user/sd2e/design/fluorescein_control_12_5/1',
-            'https://hub.sd2e.org/user/sd2e/design/fluorescein_control_25/1'}
+            'https://hub.sd2e.org/user/sd2e/design/fluorescein_control_25/1'
+        }
 
         missing_controls = min_controls.difference(controls)
 
@@ -165,7 +171,8 @@ class TestSBHQueries(unittest.TestCase):
 
         controls = set(sbh_query.query_design_set_fluorescein_controls(SD2Constants.YEAST_GATES_DESIGN_COLLECTION, pretty=True))
 
-        min_controls = {'https://hub.sd2e.org/user/sd2e/design/fluorescein_control_0_203125/1',
+        min_controls = {
+            'https://hub.sd2e.org/user/sd2e/design/fluorescein_control_0_203125/1',
             'https://hub.sd2e.org/user/sd2e/design/fluorescein_control_6_25/1',
             'https://hub.sd2e.org/user/sd2e/design/fluorescein_control_1_625/1',
             'https://hub.sd2e.org/user/sd2e/design/fluorescein_control_0_05078125/1',
@@ -176,7 +183,8 @@ class TestSBHQueries(unittest.TestCase):
             'https://hub.sd2e.org/user/sd2e/design/fluorescein_control_0_1015625/1',
             'https://hub.sd2e.org/user/sd2e/design/fluorescein_control_50/1',
             'https://hub.sd2e.org/user/sd2e/design/fluorescein_control_25/1',
-            'https://hub.sd2e.org/user/sd2e/design/fluorescein_control_0_40625/1'}
+            'https://hub.sd2e.org/user/sd2e/design/fluorescein_control_0_40625/1'
+        }
 
         missing_controls = min_controls.difference(controls)
 
@@ -188,9 +196,11 @@ class TestSBHQueries(unittest.TestCase):
 
         controls = set(sbh_query.query_design_ludox_controls(pretty=True))
 
-        min_controls = {'https://hub.sd2e.org/user/sd2e/design/ludox_S40_control_200/1',
+        min_controls = {
+            'https://hub.sd2e.org/user/sd2e/design/ludox_S40_control_200/1',
             'https://hub.sd2e.org/user/sd2e/design/ludox_S40_control_300/1',
-            'https://hub.sd2e.org/user/sd2e/design/ludox_S40_control_100/1'}
+            'https://hub.sd2e.org/user/sd2e/design/ludox_S40_control_100/1'
+        }
 
         missing_controls = min_controls.difference(controls)
 
@@ -202,9 +212,11 @@ class TestSBHQueries(unittest.TestCase):
 
         controls = set(sbh_query.query_design_set_ludox_controls(SD2Constants.YEAST_GATES_DESIGN_COLLECTION, pretty=True))
 
-        min_controls = {'https://hub.sd2e.org/user/sd2e/design/ludox_S40_control_100/1',
+        min_controls = {
+            'https://hub.sd2e.org/user/sd2e/design/ludox_S40_control_100/1',
             'https://hub.sd2e.org/user/sd2e/design/ludox_S40_control_200/1',
-            'https://hub.sd2e.org/user/sd2e/design/ludox_S40_control_300/1'}
+            'https://hub.sd2e.org/user/sd2e/design/ludox_S40_control_300/1'
+        }
 
         missing_controls = min_controls.difference(controls)
 
@@ -216,9 +228,11 @@ class TestSBHQueries(unittest.TestCase):
 
         controls = set(sbh_query.query_design_water_controls(pretty=True))
 
-        min_controls = {'https://hub.sd2e.org/user/sd2e/design/water_blank_300/1',
+        min_controls = {
+            'https://hub.sd2e.org/user/sd2e/design/water_blank_300/1',
             'https://hub.sd2e.org/user/sd2e/design/water_blank_200/1',
-            'https://hub.sd2e.org/user/sd2e/design/water_blank_100/1'}
+            'https://hub.sd2e.org/user/sd2e/design/water_blank_100/1'
+        }
 
         missing_controls = min_controls.difference(controls)
 
@@ -230,9 +244,11 @@ class TestSBHQueries(unittest.TestCase):
 
         controls = set(sbh_query.query_design_set_water_controls(SD2Constants.YEAST_GATES_DESIGN_COLLECTION, pretty=True))
 
-        min_controls = {'https://hub.sd2e.org/user/sd2e/design/water_blank_300/1',
+        min_controls = {
+            'https://hub.sd2e.org/user/sd2e/design/water_blank_300/1',
             'https://hub.sd2e.org/user/sd2e/design/water_blank_100/1',
-            'https://hub.sd2e.org/user/sd2e/design/water_blank_200/1'}
+            'https://hub.sd2e.org/user/sd2e/design/water_blank_200/1'
+        }
 
         missing_controls = min_controls.difference(controls)
 
@@ -244,7 +260,8 @@ class TestSBHQueries(unittest.TestCase):
 
         controls = set(sbh_query.query_experiment_controls())
 
-        min_controls = {'https://hub.sd2e.org/user/sd2e/design/fluorescein_control_3_125/1',
+        min_controls = {
+            'https://hub.sd2e.org/user/sd2e/design/fluorescein_control_3_125/1',
             'https://hub.sd2e.org/user/sd2e/design/ludox_S40_control_200/1',
             'https://hub.sd2e.org/user/sd2e/design/water_blank_300/1',
             'https://hub.sd2e.org/user/sd2e/design/fluorescein_control_6_25/1',
@@ -261,7 +278,8 @@ class TestSBHQueries(unittest.TestCase):
             'https://hub.sd2e.org/user/sd2e/design/ludox_S40_control_300/1',
             'https://hub.sd2e.org/user/sd2e/design/fluorescein_control_12_5/1',
             'https://hub.sd2e.org/user/sd2e/design/fluorescein_control_25/1',
-            'https://hub.sd2e.org/user/sd2e/design/ludox_S40_control_100/1'}
+            'https://hub.sd2e.org/user/sd2e/design/ludox_S40_control_100/1'
+        }
 
         missing_controls = min_controls.difference(controls)
 
@@ -273,7 +291,8 @@ class TestSBHQueries(unittest.TestCase):
 
         controls = set(sbh_query.query_experiment_set_controls(SD2Constants.YEAST_GATES_EXPERIMENT_COLLECTION))
 
-        min_controls = {'https://hub.sd2e.org/user/sd2e/design/water_blank_300/1',
+        min_controls = {
+            'https://hub.sd2e.org/user/sd2e/design/water_blank_300/1',
             'https://hub.sd2e.org/user/sd2e/design/fluorescein_control_3_125/1',
             'https://hub.sd2e.org/user/sd2e/design/ludox_S40_control_200/1',
             'https://hub.sd2e.org/user/sd2e/design/fluorescein_control_6_25/1',
@@ -290,7 +309,8 @@ class TestSBHQueries(unittest.TestCase):
             'https://hub.sd2e.org/user/sd2e/design/ludox_S40_control_100/1',
             'https://hub.sd2e.org/user/sd2e/design/fluorescein_control_12_5/1',
             'https://hub.sd2e.org/user/sd2e/design/ludox_S40_control_300/1',
-            'https://hub.sd2e.org/user/sd2e/design/fluorescein_control_25/1'}
+            'https://hub.sd2e.org/user/sd2e/design/fluorescein_control_25/1'
+        }
 
         missing_controls = min_controls.difference(controls)
 
@@ -328,7 +348,8 @@ class TestSBHQueries(unittest.TestCase):
 
         controls = set(sbh_query.query_experiment_fluorescein_controls())
 
-        min_controls = {'https://hub.sd2e.org/user/sd2e/design/fluorescein_control_3_125/1',
+        min_controls = {
+            'https://hub.sd2e.org/user/sd2e/design/fluorescein_control_3_125/1',
             'https://hub.sd2e.org/user/sd2e/design/fluorescein_control_6_25/1',
             'https://hub.sd2e.org/user/sd2e/design/fluorescein_control_0_1015625/1',
             'https://hub.sd2e.org/user/sd2e/design/fluorescein_control_0_05078125/1',
@@ -339,7 +360,8 @@ class TestSBHQueries(unittest.TestCase):
             'https://hub.sd2e.org/user/sd2e/design/fluorescein_control_0_203125/1',
             'https://hub.sd2e.org/user/sd2e/design/fluorescein_control_12_5/1',
             'https://hub.sd2e.org/user/sd2e/design/fluorescein_control_50/1',
-            'https://hub.sd2e.org/user/sd2e/design/fluorescein_control_25/1'}
+            'https://hub.sd2e.org/user/sd2e/design/fluorescein_control_25/1'
+        }
 
         missing_controls = min_controls.difference(controls)
 
@@ -351,7 +373,8 @@ class TestSBHQueries(unittest.TestCase):
 
         controls = set(sbh_query.query_experiment_set_fluorescein_controls(SD2Constants.YEAST_GATES_EXPERIMENT_COLLECTION))
 
-        min_controls = {'https://hub.sd2e.org/user/sd2e/design/fluorescein_control_3_125/1',
+        min_controls = {
+            'https://hub.sd2e.org/user/sd2e/design/fluorescein_control_3_125/1',
             'https://hub.sd2e.org/user/sd2e/design/fluorescein_control_6_25/1',
             'https://hub.sd2e.org/user/sd2e/design/fluorescein_control_0_1015625/1',
             'https://hub.sd2e.org/user/sd2e/design/fluorescein_control_0_05078125/1',
@@ -362,7 +385,8 @@ class TestSBHQueries(unittest.TestCase):
             'https://hub.sd2e.org/user/sd2e/design/fluorescein_control_0_025390625/1',
             'https://hub.sd2e.org/user/sd2e/design/fluorescein_control_50/1',
             'https://hub.sd2e.org/user/sd2e/design/fluorescein_control_12_5/1',
-            'https://hub.sd2e.org/user/sd2e/design/fluorescein_control_25/1'}
+            'https://hub.sd2e.org/user/sd2e/design/fluorescein_control_25/1'
+        }
 
         missing_controls = min_controls.difference(controls)
 
@@ -386,9 +410,11 @@ class TestSBHQueries(unittest.TestCase):
 
         controls = set(sbh_query.query_experiment_ludox_controls())
 
-        min_controls = {'https://hub.sd2e.org/user/sd2e/design/ludox_S40_control_200/1',
+        min_controls = {
+            'https://hub.sd2e.org/user/sd2e/design/ludox_S40_control_200/1',
             'https://hub.sd2e.org/user/sd2e/design/ludox_S40_control_300/1',
-            'https://hub.sd2e.org/user/sd2e/design/ludox_S40_control_100/1'}
+            'https://hub.sd2e.org/user/sd2e/design/ludox_S40_control_100/1'
+        }
 
         missing_controls = min_controls.difference(controls)
 
@@ -400,9 +426,11 @@ class TestSBHQueries(unittest.TestCase):
 
         controls = set(sbh_query.query_experiment_set_ludox_controls(SD2Constants.YEAST_GATES_EXPERIMENT_COLLECTION))
 
-        min_controls = {'https://hub.sd2e.org/user/sd2e/design/ludox_S40_control_200/1',
+        min_controls = {
+            'https://hub.sd2e.org/user/sd2e/design/ludox_S40_control_200/1',
             'https://hub.sd2e.org/user/sd2e/design/ludox_S40_control_300/1',
-            'https://hub.sd2e.org/user/sd2e/design/ludox_S40_control_100/1'}
+            'https://hub.sd2e.org/user/sd2e/design/ludox_S40_control_100/1'
+        }
 
         missing_controls = min_controls.difference(controls)
 
@@ -426,9 +454,11 @@ class TestSBHQueries(unittest.TestCase):
 
         controls = set(sbh_query.query_experiment_water_controls())
 
-        min_controls = {'https://hub.sd2e.org/user/sd2e/design/water_blank_300/1',
+        min_controls = {
+            'https://hub.sd2e.org/user/sd2e/design/water_blank_300/1',
             'https://hub.sd2e.org/user/sd2e/design/water_blank_200/1',
-            'https://hub.sd2e.org/user/sd2e/design/water_blank_100/1'}
+            'https://hub.sd2e.org/user/sd2e/design/water_blank_100/1'
+        }
 
         missing_controls = min_controls.difference(controls)
 
@@ -440,9 +470,11 @@ class TestSBHQueries(unittest.TestCase):
 
         controls = set(sbh_query.query_experiment_set_water_controls(SD2Constants.YEAST_GATES_EXPERIMENT_COLLECTION))
 
-        min_controls = {'https://hub.sd2e.org/user/sd2e/design/water_blank_300/1',
+        min_controls = {
+            'https://hub.sd2e.org/user/sd2e/design/water_blank_300/1',
             'https://hub.sd2e.org/user/sd2e/design/water_blank_200/1',
-            'https://hub.sd2e.org/user/sd2e/design/water_blank_100/1'}
+            'https://hub.sd2e.org/user/sd2e/design/water_blank_100/1'
+        }
 
         missing_controls = min_controls.difference(controls)
 
@@ -526,7 +558,8 @@ class TestSBHQueries(unittest.TestCase):
 
         gates = set(sbh_query.query_design_gates(with_role=False, pretty=True))
 
-        min_gates = {'https://hub.sd2e.org/user/sd2e/design/UWBF_16967/1',
+        min_gates = {
+            'https://hub.sd2e.org/user/sd2e/design/UWBF_16967/1',
             'https://hub.sd2e.org/user/sd2e/design/UWBF_5783/1',
             'https://hub.sd2e.org/user/sd2e/design/UWBF_7300/1',
             'https://hub.sd2e.org/user/sd2e/design/UWBF_7374/1',
@@ -549,7 +582,8 @@ class TestSBHQueries(unittest.TestCase):
             'https://hub.sd2e.org/user/sd2e/design/UWBF_7377/1',
             'https://hub.sd2e.org/user/sd2e/design/UWBF_8225/1',
             'https://hub.sd2e.org/user/sd2e/design/UWBF_8543/1',
-            'https://hub.sd2e.org/user/sd2e/design/UWBF_16968/1'}
+            'https://hub.sd2e.org/user/sd2e/design/UWBF_16968/1'
+        }
 
         missing_gates = min_gates.difference(gates)
 
@@ -561,7 +595,8 @@ class TestSBHQueries(unittest.TestCase):
 
         gates = set(sbh_query.query_design_set_gates(SD2Constants.YEAST_GATES_DESIGN_COLLECTION, with_role=False, pretty=True))
 
-        min_gates = {'https://hub.sd2e.org/user/sd2e/design/UWBF_16967/1',
+        min_gates = {
+            'https://hub.sd2e.org/user/sd2e/design/UWBF_16967/1',
             'https://hub.sd2e.org/user/sd2e/design/UWBF_5783/1',
             'https://hub.sd2e.org/user/sd2e/design/UWBF_7300/1',
             'https://hub.sd2e.org/user/sd2e/design/UWBF_7374/1',
@@ -584,7 +619,8 @@ class TestSBHQueries(unittest.TestCase):
             'https://hub.sd2e.org/user/sd2e/design/UWBF_7377/1',
             'https://hub.sd2e.org/user/sd2e/design/UWBF_8225/1',
             'https://hub.sd2e.org/user/sd2e/design/UWBF_8543/1',
-            'https://hub.sd2e.org/user/sd2e/design/UWBF_16968/1'}
+            'https://hub.sd2e.org/user/sd2e/design/UWBF_16968/1'
+        }
 
         missing_gates = min_gates.difference(gates)
 
@@ -596,7 +632,8 @@ class TestSBHQueries(unittest.TestCase):
 
         gates = set(sbh_query.query_experiment_gates(with_role=False))
 
-        min_gates = {'https://hub.sd2e.org/user/sd2e/design/UWBF_16967/1',
+        min_gates = {
+            'https://hub.sd2e.org/user/sd2e/design/UWBF_16967/1',
             'https://hub.sd2e.org/user/sd2e/design/UWBF_5783/1',
             'https://hub.sd2e.org/user/sd2e/design/UWBF_7300/1',
             'https://hub.sd2e.org/user/sd2e/design/UWBF_7374/1',
@@ -619,7 +656,8 @@ class TestSBHQueries(unittest.TestCase):
             'https://hub.sd2e.org/user/sd2e/design/UWBF_7377/1',
             'https://hub.sd2e.org/user/sd2e/design/UWBF_8225/1',
             'https://hub.sd2e.org/user/sd2e/design/UWBF_8543/1',
-            'https://hub.sd2e.org/user/sd2e/design/UWBF_16968/1'}
+            'https://hub.sd2e.org/user/sd2e/design/UWBF_16968/1'
+        }
 
         missing_gates = min_gates.difference(gates)
 
@@ -631,7 +669,8 @@ class TestSBHQueries(unittest.TestCase):
 
         gates = set(sbh_query.query_experiment_set_gates(SD2Constants.YEAST_GATES_EXPERIMENT_COLLECTION, with_role=False))
 
-        min_gates = {'https://hub.sd2e.org/user/sd2e/design/UWBF_16967/1',
+        min_gates = {
+            'https://hub.sd2e.org/user/sd2e/design/UWBF_16967/1',
             'https://hub.sd2e.org/user/sd2e/design/UWBF_5783/1',
             'https://hub.sd2e.org/user/sd2e/design/UWBF_7300/1',
             'https://hub.sd2e.org/user/sd2e/design/UWBF_7374/1',
@@ -654,7 +693,8 @@ class TestSBHQueries(unittest.TestCase):
             'https://hub.sd2e.org/user/sd2e/design/UWBF_7377/1',
             'https://hub.sd2e.org/user/sd2e/design/UWBF_8225/1',
             'https://hub.sd2e.org/user/sd2e/design/UWBF_8543/1',
-            'https://hub.sd2e.org/user/sd2e/design/UWBF_16968/1'}
+            'https://hub.sd2e.org/user/sd2e/design/UWBF_16968/1'
+        }
 
         missing_gates = min_gates.difference(gates)
 
@@ -723,7 +763,8 @@ class TestSBHQueries(unittest.TestCase):
 
         media = set(sbh_query.query_design_media(pretty=True))
 
-        min_media = {'https://hub.sd2e.org/user/sd2e/design/CAT_630425/1',
+        min_media = {
+            'https://hub.sd2e.org/user/sd2e/design/CAT_630425/1',
             'https://hub.sd2e.org/user/sd2e/design/CAT_R459942/1',
             'https://hub.sd2e.org/user/sd2e/design/CAT_90000_726/1',
             'https://hub.sd2e.org/user/sd2e/design/CAT_DF0123_17_3/1',
@@ -759,7 +800,8 @@ class TestSBHQueries(unittest.TestCase):
             'https://hub.sd2e.org/user/sd2e/design/culture_media_10/1',
             'https://hub.sd2e.org/user/sd2e/design/culture_media_12/1',
             'https://hub.sd2e.org/user/sd2e/design/teknova_M1902/1',
-            'https://hub.sd2e.org/user/sd2e/design/M9_glucose_CAA/1'}
+            'https://hub.sd2e.org/user/sd2e/design/M9_glucose_CAA/1'
+        }
 
         missing_media = min_media.difference(media)
 
@@ -771,7 +813,8 @@ class TestSBHQueries(unittest.TestCase):
 
         media = set(sbh_query.query_design_set_media(SD2Constants.YEAST_GATES_DESIGN_COLLECTION, pretty=True))
 
-        min_media = {'https://hub.sd2e.org/user/sd2e/design/culture_media_4/1',
+        min_media = {
+            'https://hub.sd2e.org/user/sd2e/design/culture_media_4/1',
             'https://hub.sd2e.org/user/sd2e/design/culture_media_2/1',
             'https://hub.sd2e.org/user/sd2e/design/culture_media_3/1',
             'https://hub.sd2e.org/user/sd2e/design/culture_media_5/1',
@@ -782,7 +825,8 @@ class TestSBHQueries(unittest.TestCase):
             'https://hub.sd2e.org/user/sd2e/design/culture_media_7/1',
             'https://hub.sd2e.org/user/sd2e/design/culture_media_8/1',
             'https://hub.sd2e.org/user/sd2e/design/culture_media_10/1',
-            'https://hub.sd2e.org/user/sd2e/design/culture_media_12/1'}
+            'https://hub.sd2e.org/user/sd2e/design/culture_media_12/1'
+        }
 
         missing_media = min_media.difference(media)
 
@@ -794,7 +838,8 @@ class TestSBHQueries(unittest.TestCase):
 
         media = set(sbh_query.query_experiment_media())
 
-        min_media = {'https://hub.sd2e.org/user/sd2e/design/culture_media_4/1',
+        min_media = {
+            'https://hub.sd2e.org/user/sd2e/design/culture_media_4/1',
             'https://hub.sd2e.org/user/sd2e/design/culture_media_2/1',
             'https://hub.sd2e.org/user/sd2e/design/culture_media_3/1',
             'https://hub.sd2e.org/user/sd2e/design/culture_media_5/1',
@@ -802,7 +847,8 @@ class TestSBHQueries(unittest.TestCase):
             'https://hub.sd2e.org/user/sd2e/design/CAT_DF0123_17_3/1',
             'https://hub.sd2e.org/user/sd2e/design/CAT_90000_726/1',
             'https://hub.sd2e.org/user/sd2e/design/CAT_R459942/1',
-            'https://hub.sd2e.org/user/sd2e/design/CAT_630425/1'}
+            'https://hub.sd2e.org/user/sd2e/design/CAT_630425/1'
+        }
 
         missing_media = min_media.difference(media)
 
@@ -814,7 +860,8 @@ class TestSBHQueries(unittest.TestCase):
 
         media = set(sbh_query.query_experiment_set_media(SD2Constants.YEAST_GATES_EXPERIMENT_COLLECTION))
 
-        min_media = {'https://hub.sd2e.org/user/sd2e/design/culture_media_4/1',
+        min_media = {
+            'https://hub.sd2e.org/user/sd2e/design/culture_media_4/1',
             'https://hub.sd2e.org/user/sd2e/design/culture_media_2/1',
             'https://hub.sd2e.org/user/sd2e/design/culture_media_3/1',
             'https://hub.sd2e.org/user/sd2e/design/culture_media_5/1',
@@ -822,7 +869,8 @@ class TestSBHQueries(unittest.TestCase):
             'https://hub.sd2e.org/user/sd2e/design/CAT_DF0123_17_3/1',
             'https://hub.sd2e.org/user/sd2e/design/CAT_90000_726/1',
             'https://hub.sd2e.org/user/sd2e/design/CAT_R459942/1',
-            'https://hub.sd2e.org/user/sd2e/design/CAT_630425/1'}
+            'https://hub.sd2e.org/user/sd2e/design/CAT_630425/1'
+        }
 
         missing_media = min_media.difference(media)
 
@@ -845,48 +893,8 @@ class TestSBHQueries(unittest.TestCase):
 
         plasmids = set(sbh_query.query_design_plasmids(pretty=True))
 
-        min_plasmids = {'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_002/1',
-                'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_013/1',
-                'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_014/1',
-                'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_017/1',
-                'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_023/1',
-                'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_021/1',
-                'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_004/1',
-                'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_011/1',
-                'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_024/1',
-                'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_019/1',
-                'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_003/1',
-                'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_016/1',
-                'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_010/1',
-                'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_012/1',
-                'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_018/1',
-                'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_009/1',
-                'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_022/1',
-                'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_008/1',
-                'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_007/1',
-                'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_015/1',
-                'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_001/1',
-                'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_006/1',
-                'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_020/1',
-                'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_005/1',
-                'https://hub.sd2e.org/user/sd2e/design/pAN1201/1',
-                'https://hub.sd2e.org/user/sd2e/design/pAN1717/1',
-                'https://hub.sd2e.org/user/sd2e/design/pAN3928/1',
-                'https://hub.sd2e.org/user/sd2e/design/pAN4036/1',
-                'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_025/1',
-                'https://hub.sd2e.org/user/sd2e/design/pJS007_LALT_NAND/1'}
-
-        missing_plasmids = min_plasmids.difference(plasmids)
-
-        assert len(missing_plasmids) == 0,"Failed to retrieve {num} of minimum {mini} plasmids from SD2 program. Missing: {miss}".format(num=repr(len(min_plasmids) - len(plasmids)), mini=repr(len(min_plasmids)), miss='\n'.join(missing_plasmids))
-
-    def test_query_design_set_plasmids(self):
-        sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
-        sbh_query.login(self.user, self.password)
-
-        plasmids = set(sbh_query.query_design_set_plasmids(SD2Constants.YEAST_GATES_DESIGN_COLLECTION, pretty=True))
-
-        min_plasmids = {'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_002/1',
+        min_plasmids = {
+            'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_002/1',
             'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_013/1',
             'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_014/1',
             'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_017/1',
@@ -910,7 +918,51 @@ class TestSBHQueries(unittest.TestCase):
             'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_006/1',
             'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_020/1',
             'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_005/1',
-            'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_025/1'}
+            'https://hub.sd2e.org/user/sd2e/design/pAN1201/1',
+            'https://hub.sd2e.org/user/sd2e/design/pAN1717/1',
+            'https://hub.sd2e.org/user/sd2e/design/pAN3928/1',
+            'https://hub.sd2e.org/user/sd2e/design/pAN4036/1',
+            'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_025/1',
+            'https://hub.sd2e.org/user/sd2e/design/pJS007_LALT_NAND/1'
+        }
+
+        missing_plasmids = min_plasmids.difference(plasmids)
+
+        assert len(missing_plasmids) == 0,"Failed to retrieve {num} of minimum {mini} plasmids from SD2 program. Missing: {miss}".format(num=repr(len(min_plasmids) - len(plasmids)), mini=repr(len(min_plasmids)), miss='\n'.join(missing_plasmids))
+
+    def test_query_design_set_plasmids(self):
+        sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
+        sbh_query.login(self.user, self.password)
+
+        plasmids = set(sbh_query.query_design_set_plasmids(SD2Constants.YEAST_GATES_DESIGN_COLLECTION, pretty=True))
+
+        min_plasmids = {
+            'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_002/1',
+            'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_013/1',
+            'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_014/1',
+            'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_017/1',
+            'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_023/1',
+            'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_021/1',
+            'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_004/1',
+            'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_011/1',
+            'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_024/1',
+            'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_019/1',
+            'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_003/1',
+            'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_016/1',
+            'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_010/1',
+            'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_012/1',
+            'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_018/1',
+            'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_009/1',
+            'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_022/1',
+            'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_008/1',
+            'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_007/1',
+            'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_015/1',
+            'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_001/1',
+            'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_006/1',
+            'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_020/1',
+            'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_005/1',
+            'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_025/1'
+        }
 
         missing_plasmids = min_plasmids.difference(plasmids)
 
@@ -922,7 +974,8 @@ class TestSBHQueries(unittest.TestCase):
 
         plasmids = set(sbh_query.query_experiment_plasmids())
 
-        min_plasmids = {'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_021/1',
+        min_plasmids = {
+            'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_021/1',
             'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_010/1',
             'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_003/1',
             'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_015/1',
@@ -949,7 +1002,8 @@ class TestSBHQueries(unittest.TestCase):
             'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_025/1',
             'https://hub.sd2e.org/user/sd2e/design/pAN1717/1',
             'https://hub.sd2e.org/user/sd2e/design/pAN3928/1',
-            'https://hub.sd2e.org/user/sd2e/design/pAN4036/1'}
+            'https://hub.sd2e.org/user/sd2e/design/pAN4036/1'
+        }
 
         missing_plasmids = min_plasmids.difference(plasmids)
 
@@ -961,7 +1015,8 @@ class TestSBHQueries(unittest.TestCase):
 
         plasmids = set(sbh_query.query_experiment_set_plasmids(SD2Constants.YEAST_GATES_EXPERIMENT_COLLECTION))
 
-        min_plasmids = {'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_021/1',
+        min_plasmids = {
+            'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_021/1',
             'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_010/1',
             'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_003/1',
             'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_015/1',
@@ -984,7 +1039,8 @@ class TestSBHQueries(unittest.TestCase):
             'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_022/1',
             'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_023/1',
             'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_002/1',
-            'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_025/1'}
+            'https://hub.sd2e.org/user/sd2e/design/YG_plasmid_025/1'
+        }
 
         missing_plasmids = min_plasmids.difference(plasmids)
 
@@ -1023,14 +1079,16 @@ class TestSBHQueries(unittest.TestCase):
 
         primers = set(sbh_query.query_design_primers(with_sequence=False, pretty=True, downstream_gene=downstream_gene))
 
-        min_primers = {'https://hub.sd2e.org/user/sd2e/design/UCSB_PNNL_Output_Primer_4232/1',
+        min_primers = {
+            'https://hub.sd2e.org/user/sd2e/design/UCSB_PNNL_Output_Primer_4232/1',
             'https://hub.sd2e.org/user/sd2e/design/UCSB_PNNL_Output_Primer_4211/1',
             'https://hub.sd2e.org/user/sd2e/design/UCSB_PNNL_Output_Primer_3466/1',
             'https://hub.sd2e.org/user/sd2e/design/UCSB_PNNL_Output_Primer_11801/1',
             'https://hub.sd2e.org/user/sd2e/design/UCSB_PNNL_Output_Primer_2995/1',
             'https://hub.sd2e.org/user/sd2e/design/UCSB_PNNL_Output_Primer_0/1',
             'https://hub.sd2e.org/user/sd2e/design/UCSB_PNNL_Output_Primer_3417/1',
-            'https://hub.sd2e.org/user/sd2e/design/UCSB_PNNL_Output_Primer_13595/1'}
+            'https://hub.sd2e.org/user/sd2e/design/UCSB_PNNL_Output_Primer_13595/1'
+        }
 
         missing_primers = min_primers.difference(primers)
 
@@ -1044,14 +1102,16 @@ class TestSBHQueries(unittest.TestCase):
 
         primers = set(sbh_query.query_design_set_primers(SD2Constants.NOVEL_CHASSIS_DESIGN_COLLECTION, with_sequence=False, pretty=True, downstream_gene=downstream_gene))
 
-        min_primers = {'https://hub.sd2e.org/user/sd2e/design/UCSB_PNNL_Output_Primer_4232/1',
+        min_primers = {
+            'https://hub.sd2e.org/user/sd2e/design/UCSB_PNNL_Output_Primer_4232/1',
             'https://hub.sd2e.org/user/sd2e/design/UCSB_PNNL_Output_Primer_4211/1',
             'https://hub.sd2e.org/user/sd2e/design/UCSB_PNNL_Output_Primer_3466/1',
             'https://hub.sd2e.org/user/sd2e/design/UCSB_PNNL_Output_Primer_11801/1',
             'https://hub.sd2e.org/user/sd2e/design/UCSB_PNNL_Output_Primer_2995/1',
             'https://hub.sd2e.org/user/sd2e/design/UCSB_PNNL_Output_Primer_0/1',
             'https://hub.sd2e.org/user/sd2e/design/UCSB_PNNL_Output_Primer_3417/1',
-            'https://hub.sd2e.org/user/sd2e/design/UCSB_PNNL_Output_Primer_13595/1'}
+            'https://hub.sd2e.org/user/sd2e/design/UCSB_PNNL_Output_Primer_13595/1'
+        }
 
         missing_primers = min_primers.difference(primers)
 
@@ -1101,7 +1161,8 @@ class TestSBHQueries(unittest.TestCase):
 
         strains = set(sbh_query.query_design_set_strains(SD2Constants.YEAST_GATES_DESIGN_COLLECTION, pretty=True))
 
-        min_strains = {'https://hub.sd2e.org/user/sd2e/design/UWBF_16967/1',
+        min_strains = {
+            'https://hub.sd2e.org/user/sd2e/design/UWBF_16967/1',
             'https://hub.sd2e.org/user/sd2e/design/UWBF_5783/1',
             'https://hub.sd2e.org/user/sd2e/design/UWBF_7300/1',
             'https://hub.sd2e.org/user/sd2e/design/UWBF_7374/1',
@@ -1125,7 +1186,8 @@ class TestSBHQueries(unittest.TestCase):
             'https://hub.sd2e.org/user/sd2e/design/UWBF_7377/1',
             'https://hub.sd2e.org/user/sd2e/design/UWBF_8225/1',
             'https://hub.sd2e.org/user/sd2e/design/UWBF_8543/1',
-            'https://hub.sd2e.org/user/sd2e/design/UWBF_16968/1'}
+            'https://hub.sd2e.org/user/sd2e/design/UWBF_16968/1'
+        }
 
         missing_strains = min_strains.difference(strains)
 
@@ -1137,7 +1199,8 @@ class TestSBHQueries(unittest.TestCase):
 
         strains = set(sbh_query.query_experiment_strains())
 
-        min_strains = {'https://hub.sd2e.org/user/sd2e/design/UWBF_16967/1',
+        min_strains = {
+            'https://hub.sd2e.org/user/sd2e/design/UWBF_16967/1',
             'https://hub.sd2e.org/user/sd2e/design/UWBF_5783/1',
             'https://hub.sd2e.org/user/sd2e/design/UWBF_7300/1',
             'https://hub.sd2e.org/user/sd2e/design/UWBF_7374/1',
@@ -1160,7 +1223,8 @@ class TestSBHQueries(unittest.TestCase):
             'https://hub.sd2e.org/user/sd2e/design/UWBF_7377/1',
             'https://hub.sd2e.org/user/sd2e/design/UWBF_8225/1',
             'https://hub.sd2e.org/user/sd2e/design/UWBF_8543/1',
-            'https://hub.sd2e.org/user/sd2e/design/UWBF_16968/1'}
+            'https://hub.sd2e.org/user/sd2e/design/UWBF_16968/1'
+        }
 
         missing_strains = min_strains.difference(strains)
 
@@ -1172,7 +1236,8 @@ class TestSBHQueries(unittest.TestCase):
 
         strains = set(sbh_query.query_experiment_set_strains(SD2Constants.YEAST_GATES_EXPERIMENT_COLLECTION))
 
-        min_strains = {'https://hub.sd2e.org/user/sd2e/design/UWBF_5783/1',
+        min_strains = {
+            'https://hub.sd2e.org/user/sd2e/design/UWBF_5783/1',
             'https://hub.sd2e.org/user/sd2e/design/UWBF_5993/1',
             'https://hub.sd2e.org/user/sd2e/design/UWBF_5992/1',
             'https://hub.sd2e.org/user/sd2e/design/UWBF_8225/1',
@@ -1195,7 +1260,8 @@ class TestSBHQueries(unittest.TestCase):
             'https://hub.sd2e.org/user/sd2e/design/UWBF_7300/1',
             'https://hub.sd2e.org/user/sd2e/design/UWBF_8231/1',
             'https://hub.sd2e.org/user/sd2e/design/UWBF_7299/1',
-            'https://hub.sd2e.org/user/sd2e/design/UWBF_7377/1'}
+            'https://hub.sd2e.org/user/sd2e/design/UWBF_7377/1'
+        }
 
         missing_strains = min_strains.difference(strains)
 
@@ -1243,7 +1309,8 @@ class TestSBHQueries(unittest.TestCase):
 
         design_sets = set(sbh_query.query_design_sets(pretty=True))
 
-        min_design_sets = {'https://hub.sd2e.org/user/sd2e/design/yeast_gates/1',
+        min_design_sets = {
+            'https://hub.sd2e.org/user/sd2e/design/yeast_gates/1',
             'https://hub.sd2e.org/user/sd2e/design/yeast_gates_plasmids/1',
             'https://hub.sd2e.org/user/sd2e/design/yeast_gates_strains/1',
             'https://hub.sd2e.org/user/sd2e/design/novel_chassis_genomes/1',
@@ -1252,7 +1319,8 @@ class TestSBHQueries(unittest.TestCase):
             'https://hub.sd2e.org/user/sd2e/design/novel_chassis/1',
             'https://hub.sd2e.org/user/sd2e/design/novel_chassis_strains/1',
             'https://hub.sd2e.org/user/sd2e/design/rule_30/1',
-            'https://hub.sd2e.org/user/sd2e/design/SBME_Cell_Free/1'}
+            'https://hub.sd2e.org/user/sd2e/design/SBME_Cell_Free/1'
+        }
 
         missing_design_sets = min_design_sets.difference(design_sets)
 
@@ -1264,10 +1332,12 @@ class TestSBHQueries(unittest.TestCase):
 
         exp_sets = set(sbh_query.query_experiment_sets())
 
-        min_exp_sets = {'https://hub.sd2e.org/user/sd2e/experiment/transcriptic_yeast_gates/1',
+        min_exp_sets = {
+            'https://hub.sd2e.org/user/sd2e/experiment/transcriptic_yeast_gates/1',
             'https://hub.sd2e.org/user/sd2e/experiment/rule_30/1',
             'https://hub.sd2e.org/user/sd2e/experiment/biofab_yeast_gates/1',
-            'https://hub.sd2e.org/user/sd2e/experiment/yeast_gates/1'}
+            'https://hub.sd2e.org/user/sd2e/experiment/yeast_gates/1'
+        }
 
         missing_exp_sets = min_exp_sets.difference(exp_sets)
 
