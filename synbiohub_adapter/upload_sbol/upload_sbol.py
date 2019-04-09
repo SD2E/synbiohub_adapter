@@ -55,9 +55,10 @@ def main(args=None):
 
 class SynBioHub():
     def __init__(self, url, email, password):
+        url = url.rstrip('/')
         self.url = url
         self.email = email
-        self.part_shop = PartShop(url + '/')
+        self.part_shop = PartShop(url)
         self.part_shop.login(email, password)
         response = requests.post(url + '/login', headers={'Accept': 'text/plain'}, data={'email': email, 'password': password})
         self.token = response.content.decode('UTF-8')

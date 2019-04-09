@@ -15,7 +15,7 @@ install_requires = [
 
 setup(
     name='synbiohub_adapter',
-    version='1.1',
+    version='1.2',
     packages=find_packages(),
     install_requires=install_requires,
     classifiers=[
