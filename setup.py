@@ -18,7 +18,6 @@ setup(
     version='1.1',
     packages=find_packages(),
     install_requires=install_requires,
-    dependency_links=[],
     classifiers=[
         "Programming Language :: Python :: 3 :: Only"
     ]
