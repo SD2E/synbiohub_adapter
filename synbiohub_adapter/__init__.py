@@ -1,5 +1,5 @@
 # See https://www.python.org/dev/peps/pep-0440/ for info on version numbering
-__version__ = '2.1'
+__version__ = '1.2'
 
 from synbiohub_adapter.SynBioHubUtil import (
     SBOLConstants,
