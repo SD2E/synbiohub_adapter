@@ -6,7 +6,7 @@ import pycodestyle
 
 # Please do not increase this number. Style warnings should DECREASE,
 # not increase.
-ALLOWED_ERRORS = 432
+ALLOWED_ERRORS = 366
 
 # Allow longer lines. The default is 79, which allows the 80th
 # character to be a line continuation symbol. Here, we increase the
@@ -39,9 +39,9 @@ class TestStyle(unittest.TestCase):
                                     max_line_length=MAX_LINE_LENGTH,
                                     exclude=EXCLUDE)
         report = sg.check_files(dirs_and_files)
-        self.assertTrue(report.total_errors <= ALLOWED_ERRORS,
-                        msg='{0} style violations were found. Expected {1}'.format(report.total_errors,
-                                                                                   ALLOWED_ERRORS))
+        self.assertEqual(report.total_errors, ALLOWED_ERRORS,
+                         msg='{0} style violations were found. Expected {1}'.format(report.total_errors,
+                                                                                    ALLOWED_ERRORS))
 
     def test_clean(self):
         """Ensure that warning free files stay that way.
