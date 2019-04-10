@@ -48,14 +48,6 @@ the code base, the test will fail. To diagnose this failure, run the following t
 VERBOSE=1 python3 -m unittest tests/test_pycodestyle.py
 ```
 
-### Linux Prerequisites
-
-On linux, you will need to install `libxslt-dev` and `curl`.
-
-```shell
-apt-get install curl libxslt-dev
-```
-
 ### Using docker and docker-compose
 Run bash in docker container:
 
