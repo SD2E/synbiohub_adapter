@@ -1,3 +1,0 @@
-ID,Name,Description,Type,CHEBI,Source,GenBank,Composition_File,Concentration,Concentration_Units,Volume,Volume_Units
-fluorescein,Fluorescein,,CHEBI,CHEBI:31624,,,,0.05078125,micromolair,,
-pbs,Phosphate Buffered Saline,,Buffer,,,,,,,,

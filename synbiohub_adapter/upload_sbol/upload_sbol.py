@@ -7,7 +7,7 @@ import re
 from sbol import *
 from synbiohub_adapter import SynBioHubQuery
 from synbiohub_adapter import SD2Constants
-from pySBOLx.pySBOLx import Experiment
+
 
 def main(args=None):
     if args is None:

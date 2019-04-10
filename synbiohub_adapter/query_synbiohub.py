@@ -162,8 +162,9 @@ class SynBioHubQuery(SBOLQuery):
 
     # DNA query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-    # Retrieves the URIs for all DNA components from the collection of every SD2 design element.
-    def query_design_dna(self, verbose=False, with_sequence=False, pretty=False, collections=[SD2Constants.SD2_DESIGN_COLLECTION]):
+    # Retrieves URIs and optional properties for all DNA components (or a
+    # specified set) from the collection of every SD2 design element.
+    def query_design_dna(self, verbose=False, with_sequence=False, pretty=False, collections=[SD2Constants.SD2_DESIGN_COLLECTION], roles=[], dna=[]):
         comp_labels = ['dna']
 
         if verbose:
@@ -172,7 +173,7 @@ class SynBioHubQuery(SBOLQuery):
         if with_sequence:
             comp_labels.append('sequence')
 
-        query_result = self.query_design_components([BIOPAX_DNA], collections, comp_labels[0], comp_labels[1:])
+        query_result = self.query_design_components([BIOPAX_DNA], collections, comp_labels[0], comp_labels[1:], roles, members=dna)
 
         if pretty:
             return self.format_query_result(query_result, comp_labels)
@@ -181,8 +182,8 @@ class SynBioHubQuery(SBOLQuery):
 
     # Retrieves the URIs for all DNA components from the specified collection of design elements.
     # This collection is typically associated with a challenge problem.
-    def query_design_set_dna(self, collection, verbose=False, with_sequence=False, pretty=False):
-        return self.query_design_dna(verbose, with_sequence, pretty, [collection])
+    def query_design_set_dna(self, collection, verbose=False, with_sequence=False, pretty=False, roles=[], dna=[]):
+        return self.query_design_dna(verbose, with_sequence, pretty, [collection], roles, dna)
 
     # Retrieves the URIs for all DNA components used by experiments in the collection of every SD2 experiment.
     def query_experiment_dna(self, verbose=False, with_sequence=False, trace_derivation=True, by_sample=False, pretty=True, collections=[SD2Constants.SD2_EXPERIMENT_COLLECTION], experiments=[]):
@@ -494,7 +495,8 @@ class SynBioHubQuery(SBOLQuery):
 
     # Plasmid query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-    # Retrieves the URIs for all plasmids from the collection of every SD2 design element.
+    # Retrieves URIs and optional properties for all plasmids (or a specified
+    # set of plasmids) from the collection of every SD2 design element.
     def query_design_plasmids(self, verbose=False, with_sequence=False, with_features=False, pretty=False, collections=[SD2Constants.SD2_DESIGN_COLLECTION], plasmids=[]):
         comp_labels = ['plasmid']
 
@@ -518,7 +520,8 @@ class SynBioHubQuery(SBOLQuery):
         else:
             return query_result
 
-    # Retrieves the URIs for all plasmids from the specified collection of design elements.
+    # Retrieves URIs and optional properties for all plasmids (or a specified
+    # set of plasmids) from the specified collection of design elements.
     # This collection is typically associated with a challenge problem.
     def query_design_set_plasmids(self, collection, verbose=False, with_sequence=False, with_features=False, pretty=False, plasmids=[]):
         return self.query_design_plasmids(verbose, with_sequence, with_features, pretty, [collection], plasmids)
@@ -806,7 +809,8 @@ class SynBioHubQuery(SBOLQuery):
 
         # return strain_comparison
 
-    # Retrieves the URIs for all strains from the collection of every SD2 design element.
+    # Retrieves URIs and optional properties for all strains from
+    # the collection of every SD2 design element.
     def query_design_strains(self, verbose=False, pretty=False, collections=[SD2Constants.SD2_DESIGN_COLLECTION], with_plasmids=False):
         mod_labels = ['strain']
 
@@ -825,7 +829,8 @@ class SynBioHubQuery(SBOLQuery):
         else:
             return query_result
 
-    # Retrieves the URIs for all strains from the specified collection of design elements.
+    # Retrieves URIs and optional properties for all strains from
+    # the specified collection of design elements.
     # This collection is typically associated with a challenge problem.
     def query_design_set_strains(self, collection, verbose=False, pretty=False, with_plasmids=False):
         return self.query_design_strains(verbose, pretty, [collection], with_plasmids)
