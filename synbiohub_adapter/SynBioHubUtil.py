@@ -149,6 +149,13 @@ class SBOLQuery():
         if use_fallback_cache:
             self.fetch_SPARQL = wrap_query_fn(self.fetch_SPARQL)
 
+    # * Stop after trying 3 times
+    # * Wait 3 seconds between retries
+    # * Reraise the exception that caused the failure, rather than
+    #   raising a tenacity.RetryError
+    @tenacity.retry(stop=tenacity.stop_after_attempt(3),
+                    wait=tenacity.wait_fixed(3),
+                    reraise=True)
     def login(self, user, password):
         if '/sparql' not in self._server:
             self._server += '/sparql'
