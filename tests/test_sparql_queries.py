@@ -1386,9 +1386,14 @@ class TestSBHQueries(unittest.TestCase):
     def test_query_designs_by_lab_ids(self):
         sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
         sbh_query.login(self.user, self.password)
+
         designs = sbh_query.query_designs_by_lab_ids(SD2Constants.GINKGO, ['1'], verbose=True)
         expected_designs = {'1': {'identity': 'https://hub.sd2e.org/user/sd2e/design/CAT_G33_500/1',
                             'name': 'Glycerol'}}
+
+        designs = sbh_query.query_designs_by_lab_ids(SD2Constants.CALTECH, ['a'], verbose=True)
+        expected_designs = {'a': {'identity': 'https://hub.sd2e.org/user/sd2e/design/Murray0x20BioCon0x20A/1',
+                            'name': 'Murray BioCon A'}}
         assert expected_designs == designs
 
     # Test statistics query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\

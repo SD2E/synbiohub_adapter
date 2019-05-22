@@ -65,6 +65,7 @@ class SD2Constants():
     YEAST_GATES_EXPERIMENT_COLLECTION = 'https://hub.sd2e.org/user/sd2e/experiment/yeast_gates/1'
 
     # SD2 labs
+    CALTECH = 'CalTech'
     GINKGO = 'Ginkgo'
     BIOFAB = 'BioFAB'
     TRANSCRIPTIC = 'Transcriptic'
