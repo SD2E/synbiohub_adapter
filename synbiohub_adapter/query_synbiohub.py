@@ -266,6 +266,34 @@ class SynBioHubQuery(SBOLQuery):
             query_result = self.format_query_result(query_result, ['gate', 'gate_type'])
         return query_result
 
+    def query_strain_circuit_io(self, strains, pretty=False):
+        directions = [SBOL_DIRECTION_IN, SBOL_DIRECTION_OUT]
+        strain_circuit_labels = ['strain', 'species', 'direction']
+
+        strain_circuit_query = """
+        PREFIX dcterms: <http://purl.org/dc/terms/>
+        PREFIX sbol: <http://sbols.org/v2#>
+
+        SELECT DISTINCT ?strain ?species ?direction WHERE {{
+            VALUES (?strain) {{ {st} }}
+            ?strain sbol:module ?mod .
+            ?mod sbol:definition ?circuit .
+            ?circuit sbol:functionalComponent ?fc .
+            VALUES (?direction) {{ {di} }}
+            ?fc sbol:direction ?direction;
+                sbol:definition ?def .
+            ?def sbol:displayId ?species
+            
+        }}
+        """.format(st=self.serialize_options(strains), di=self.serialize_options(directions))
+
+        query_result = self.fetch_SPARQL(self._server, strain_circuit_query)
+
+        if pretty:
+            return self.format_query_result(query_result, strain_circuit_labels)
+        else:
+            return query_result
+
     # Retrieves the URIs for all logic gates from the collection of every SD2 design element.
     def query_design_gates(self, verbose=False, with_role=True, pretty=False, collections=[SD2Constants.SD2_DESIGN_COLLECTION]):
         mod_labels = ['gate']
