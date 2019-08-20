@@ -268,7 +268,7 @@ class SynBioHubQuery(SBOLQuery):
 
     def query_strain_circuit_io(self, strains, pretty=False):
         directions = [SBOL_DIRECTION_IN, SBOL_DIRECTION_OUT]
-        strain_circuit_labels = ['strain', 'species', 'direction']
+        io_labels = ['species', 'direction']
 
         strain_circuit_query = """
         PREFIX dcterms: <http://purl.org/dc/terms/>
@@ -282,7 +282,7 @@ class SynBioHubQuery(SBOLQuery):
             VALUES (?direction) {{ {di} }}
             ?fc sbol:direction ?direction;
                 sbol:definition ?def .
-            ?def sbol:displayId ?species
+            ?def dcterms:title ?species
             
         }}
         """.format(st=self.serialize_options(strains), di=self.serialize_options(directions))
@@ -290,7 +290,7 @@ class SynBioHubQuery(SBOLQuery):
         query_result = self.fetch_SPARQL(self._server, strain_circuit_query)
 
         if pretty:
-            return self.format_query_result(query_result, strain_circuit_labels)
+            return self.format_query_result(query_result, io_labels, 'strain')
         else:
             return query_result
 
