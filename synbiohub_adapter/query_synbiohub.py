@@ -266,6 +266,71 @@ class SynBioHubQuery(SBOLQuery):
             query_result = self.format_query_result(query_result, ['gate', 'gate_type'])
         return query_result
 
+    def query_strain_circuit_topology(self, strains, pretty=False):
+        regulation_types = [SBO_INHIBITION, SBO_STIMULATION]
+        regulator_roles = [SBO_INHIBITOR, SBO_STIMULATOR]
+        regulated_roles = [SBO_INHIBITED, SBO_STIMULATED]
+
+        production_types = [SBO_GENETIC_PRODUCTION]
+        product_roles = [SBO_PRODUCT]
+        template_roles = ['http://identifiers.org/biomodels.sbo/SBO:0000645']
+
+        topology_labels = ['gateInput', 'gateOutput', 'regulatedFeature', 'templateFeature']
+
+        strain_circuit_query = """
+        PREFIX dcterms: <http://purl.org/dc/terms/>
+        PREFIX sbol: <http://sbols.org/v2#>
+
+        SELECT DISTINCT ?strain ?gateInput ?gateOutput ?regulatedFeature ?templateFeature WHERE {{
+            VALUES (?strain) {{ {st} }}
+            ?strain (sbol:module/sbol:definition)+ ?circuit;
+                (sbol:module/sbol:definition)*/sbol:functionalComponent/sbol:definition ?device .
+            ?circuit sbol:functionalComponent ?regulatorSpecies;
+                sbol:functionalComponent ?regulatedSpecies;
+                sbol:functionalComponent ?templateSpecies;
+                sbol:functionalComponent ?productSpecies;
+                sbol:interaction ?regulationArc;
+                sbol:interaction ?productionArc .
+            ?regulatorSpecies sbol:definition/dcterms:title ?gateInput .
+            ?productSpecies sbol:definition/dcterms:title ?gateOutput .
+            ?regulatedSpecies sbol:definition ?regulatedFeature .
+            ?templateSpecies sbol:definition ?templateFeature .
+            ?device sbol:component/sbol:definition ?regulatedFeature;
+                sbol:component/sbol:definition ?templateFeature .
+
+            VALUES (?regulationType) {{ {rt} }}
+            ?regulationArc sbol:type ?regulationType;
+                sbol:participation/sbol:functionalComponent/sbol:definition ?regulator .
+            VALUES (?regulatorRole) {{ {rr} }}
+            ?regulator sbol:role ?regulatorRole;
+                sbol:participant ?regulatorSpecies .
+            VALUES (?regulatedRole) {{ {dr} }}
+            ?regulated sbol:role ?regulatedRole;
+                sbol:participant ?regulatedSpecies .
+
+            VALUES (?productionType) {{ {pt} }}
+            ?productionArc sbol:type ?productionType;
+                sbol:participation ?product .
+            VALUES (?productRole) {{ {pr} }}
+            ?product sbol:role ?productRole;
+                sbol:participant ?productSpecies .
+            VALUES (?templateRole) {{ {tr} }}
+            ?template sbol:role ?templateRole;
+                sbol:participant ?templateSpecies .
+            
+        }}
+        """.format(st=self.serialize_options(strains), rt=self.serialize_options(regulation_types),
+            rr=self.serialize_options(regulator_roles), dr=self.serialize_options(regulated_roles),
+            pt=self.serialize_options(production_types), pr=self.serialize_options(product_roles),
+            tr=self.serialize_options(template_roles))
+
+        query_result = self.fetch_SPARQL(self._server, strain_circuit_query)
+
+        if pretty:
+            return self.format_query_result(query_result, topology_labels, 'strain')
+        else:
+            return query_result
+
     def query_strain_circuit_io(self, strains, pretty=False):
         directions = [SBOL_DIRECTION_IN, SBOL_DIRECTION_OUT]
         io_labels = ['species', 'direction']
