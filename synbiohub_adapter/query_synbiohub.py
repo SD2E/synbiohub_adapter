@@ -324,6 +324,8 @@ class SynBioHubQuery(SBOLQuery):
             pt=self.serialize_options(production_types), pr=self.serialize_options(product_roles),
             tr=self.serialize_options(template_roles))
 
+        print(strain_circuit_query)
+
         query_result = self.fetch_SPARQL(self._server, strain_circuit_query)
 
         if pretty:
