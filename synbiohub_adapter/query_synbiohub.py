@@ -303,7 +303,8 @@ class SynBioHubQuery(SBOLQuery):
 
             VALUES (?regulationType) {{ {rt} }}
             ?regulationArc sbol:type ?regulationType;
-                sbol:participation/sbol:functionalComponent/sbol:definition ?regulator .
+                sbol:participation ?regulator;
+                sbol:participation ?regulated .
             VALUES (?regulatorRole) {{ {rr} }}
             ?regulator sbol:role ?regulatorRole;
                 sbol:participant ?regulatorSpecies .
@@ -313,6 +314,7 @@ class SynBioHubQuery(SBOLQuery):
 
             VALUES (?productionType) {{ {pt} }}
             ?productionArc sbol:type ?productionType;
+                sbol:participation ?template;
                 sbol:participation ?product .
             VALUES (?productRole) {{ {pr} }}
             ?product sbol:role ?productRole;
