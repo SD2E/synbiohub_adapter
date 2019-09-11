@@ -273,7 +273,10 @@ class SynBioHubQuery(SBOLQuery):
 
         production_types = [SBO_GENETIC_PRODUCTION]
         product_roles = [SBO_PRODUCT]
-        template_roles = ['http://identifiers.org/biomodels.sbo/SBO:0000645']
+        template_roles = [
+            'http://identifiers.org/biomodels.sbo/SBO:0000645',
+            'http://identifiers.org/biomodels.sbo/SBO:0000335'
+        ]
 
         topology_labels = ['gateInput', 'gateOutput', 'regulatedFeature', 'templateFeature']
 
