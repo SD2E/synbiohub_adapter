@@ -59,8 +59,7 @@ class TestStyle(unittest.TestCase):
             'tests/test_authentication.py',
             'tests/test_fallback_cache.py',
             'tests/test_pycodestyle.py',
-            'tests/test_sbh_submissions.py',
-            'tests/test_sbolquery.py'
+            'tests/test_sbh_submissions.py'
         ]
         sg = pycodestyle.StyleGuide(quiet=QUIET,
                                     max_line_length=MAX_LINE_LENGTH,
