@@ -17,6 +17,8 @@ import tenacity
     author(s) : Nicholas Roehner
                 Tramy Nguyen
 '''
+
+
 class SBOLConstants():
     PRIMER = "http://identifiers.org/so/SO:0000112"
     RIBOSWITCH = "http://identifiers.org/so/SO:0000035"
@@ -44,10 +46,12 @@ class SBOLConstants():
     OM_NS = 'http://www.ontology-of-units-of-measure.org/resource/om-2#'
     BBN_HOMESPACE = "https://synbiohub.bbn.com"
 
+
 class BBNConstants():
     BBN_SERVER = "https://synbiohub.bbn.com/"
     BBN_YEASTGATES_COLLECTION = "https://synbiohub.bbn.com/user/tramyn/BBN_YEAST_GATES/BBN_YEAST_GATES_collection/1"
     BBN_RULE30_COLLECTION = 'https://synbiohub.bbn.com/user/tramyn/transcriptic_rule_30_q0_1_09242017/transcriptic_rule_30_q0_1_09242017_collection/1'
+
 
 class SD2Constants():
     SD2_SERVER = "https://hub.sd2e.org"
@@ -131,9 +135,12 @@ class SD2Constants():
 #     SD2_DESIGN_COLLECTION = 'https://hub.sd2e.org/user/sd2e/design/design_collection/1'
 #     SD2_EXPERIMENT_COLLECTION = 'https://hub.sd2e.org/user/sd2e/experiment/experiment_collection/1'
 
+
 class SBOLQuery():
     ''' This class structures SPARQL queries for objects belonging to classes from the SBOL data model.
-        An instance of this class will allow a user to pull information on these objects from the specified instance of SynBioHub.
+
+        An instance of this class will allow a user to pull information on these objects from the
+        specified instance of SynBioHub.
     '''
 
     # server: The SynBioHub server to call sparql queries on.
@@ -231,9 +238,10 @@ class SBOLQuery():
             """.format(ro=self.serialize_options(roles), el=entity_label, rl=role_label)
 
     def construct_custom_pattern(self, custom_properties, entity_label='entity'):
-        query_arr = ['?{el} {qn} {obj} .'.format(el=entity_label, qn=qname, obj=custom_properties[qname]) if custom_properties[qname].startswith('<') and custom_properties[qname].endswith('>')
-                     else '?{el} {qn} "{obj}" .'.format(el=entity_label, qn=qname, obj=custom_properties[qname]) for qname in custom_properties]
-
+        query_arr = ['?{el} {qn} {obj} .'.format(el=entity_label, qn=qname, obj=custom_properties[qname])
+                     if custom_properties[qname].startswith('<') and custom_properties[qname].endswith('>')
+                     else '?{el} {qn} "{obj}" .'.format(el=entity_label, qn=qname, obj=custom_properties[qname])
+                     for qname in custom_properties]
         return '\n'.join(query_arr)
 
     def construct_definition_pattern(self, definitions, entity_label='entity', sub_entity_label='sub_entity'):
@@ -247,7 +255,8 @@ class SBOLQuery():
             ?{el} sbol:definition ?{sel} .
             """.format(el=entity_label, sel=sub_entity_label, df=self.serialize_options(definitions))
 
-    def construct_sub_pattern(self, sub_entity_pattern="", definitions=[], entity_label='entity', sub_label='sub', sub_entity_label='sub_entity', rdf_type=None):
+    def construct_sub_pattern(self, sub_entity_pattern="", definitions=[], entity_label='entity', sub_label='sub',
+                              sub_entity_label='sub_entity', rdf_type=None):
         if rdf_type is None:
             sub_predicate = "(sbol:component) (sbol:functionalComponent) (sbol:module)"
         elif rdf_type == 'http://sbols.org/v2#ComponentDefinition':
@@ -328,13 +337,16 @@ class SBOLQuery():
         ?{el} rdf:type <{rt}> .
         """.format(el=entity_label, rt=rdf_type)
 
-    def construct_entity_pattern(self, types=[], roles=[], all_types=True, sub_entity_pattern="", definitions=[], entity_label='entity', other_entity_labels=[], type_label='type', role_label='role', sub_label='sub', sub_entity_label='sub_entity', rdf_type=None, custom_properties=[]):
+    def construct_entity_pattern(self, types=[], roles=[], all_types=True, sub_entity_pattern="", definitions=[],
+                                 entity_label='entity', other_entity_labels=[], type_label='type', role_label='role',
+                                 sub_label='sub', sub_entity_label='sub_entity', rdf_type=None, custom_properties=[]):
         if len(types) > 0 or len(roles) > 0 or len(sub_entity_pattern) > 0 or len(definitions) > 0 or rdf_type is not None:
             type_pattern = self.construct_type_pattern(types, all_types, entity_label, type_label)
 
             role_pattern = self.construct_role_pattern(roles, entity_label, role_label)
 
-            sub_pattern = self.construct_sub_pattern(sub_entity_pattern, definitions, entity_label, sub_label, sub_entity_label)
+            sub_pattern = self.construct_sub_pattern(sub_entity_pattern, definitions, entity_label, sub_label,
+                                                     sub_entity_label)
 
             if rdf_type is not None:
                 rdf_type_pattern = self.construct_rdf_type_pattern(rdf_type, entity_label)
@@ -377,11 +389,13 @@ class SBOLQuery():
             {qp}
             {fp}
             {cp}
-            """.format(tp=type_pattern, rp=role_pattern, sp=sub_pattern, rt=rdf_type_pattern, np=name_pattern, dp=description_pattern, qp=sequence_pattern, fp=feature_pattern, cp=custom_pattern)
+            """.format(tp=type_pattern, rp=role_pattern, sp=sub_pattern, rt=rdf_type_pattern, np=name_pattern,
+                       dp=description_pattern, qp=sequence_pattern, fp=feature_pattern, cp=custom_pattern)
         else:
             return ""
 
-    def construct_collection_pattern(self, collections=[], member_label='entity', members=[], member_cardinality='*', entity_label='entity', collection_label='collection'):
+    def construct_collection_pattern(self, collections=[], member_label='entity', members=[], member_cardinality='*',
+                                     entity_label='entity', collection_label='collection'):
         member_pattern_switcher = {
             'exp': self.construct_experiment_pattern
         }
@@ -400,20 +414,23 @@ class SBOLQuery():
                 VALUES (?{ml}) {{ {mem} }}
                 ?{cl} sbol:member ?{ml} .
                 {mp}
-                """.format(col=self.serialize_options(collections), cl=collection_label, mem=self.serialize_options(members), ml=member_label, mp=member_pattern)
+                """.format(col=self.serialize_options(collections), cl=collection_label,
+                           mem=self.serialize_options(members), ml=member_label, mp=member_pattern)
             else:
                 return """
                 VALUES (?{cl}) {{ {col} }}
                 ?{cl} sbol:member ?{ml} .
                 {mp}
-                """.format(col=self.serialize_options(collections), cl=collection_label, ml=member_label, mp=member_pattern)
+                """.format(col=self.serialize_options(collections), cl=collection_label, ml=member_label,
+                           mp=member_pattern)
         else:
             if len(members) > 0:
                 return """
                 VALUES (?{ml}) {{ {mem} }}
                 ?{cl} sbol:member ?{ml} .
                 {mp}
-                """.format(cl=collection_label, mem=self.serialize_options(members), ml=member_label, mp=member_pattern)
+                """.format(cl=collection_label, mem=self.serialize_options(members), ml=member_label,
+                           mp=member_pattern)
             else:
                 return """
                 ?{cl} sbol:member ?{ml} .
@@ -449,7 +466,11 @@ class SBOLQuery():
     # Constructs a SPARQL query for all members of the specified collection with
     # at least one of the specified types (or all of the specified types) and
     # at least one of the specified roles.
-    def construct_collection_entity_query(self, collections, member_label='entity', types=[], roles=[], all_types=True, sub_types=[], sub_roles=[], definitions=[], all_sub_types=True, entity_label=None, other_entity_labels=[], members=[], member_cardinality='+', rdf_type=None, entity_depth=1, custom_properties=[], sub_entity_label='sub_entity'):
+    def construct_collection_entity_query(self, collections, member_label='entity', types=[], roles=[],
+                                          all_types=True, sub_types=[], sub_roles=[], definitions=[],
+                                          all_sub_types=True, entity_label=None, other_entity_labels=[],
+                                          members=[], member_cardinality='+', rdf_type=None, entity_depth=1,
+                                          custom_properties=[], sub_entity_label='sub_entity'):
         target_labels = []
         if len(collections) > 1 or len(collections) == 0:
             target_labels.append('collection')
@@ -461,9 +482,15 @@ class SBOLQuery():
             target_labels.extend(other_entity_labels)
         target_labels.append(entity_label)
 
-        sub_entity_pattern = self.construct_entity_pattern(types=sub_types, roles=sub_roles, all_types=all_sub_types, entity_label=sub_entity_label, type_label='sub_type', role_label='sub_role')
-        entity_pattern_1 = self.construct_entity_pattern(types, roles, all_types, sub_entity_pattern, definitions, entity_label, other_entity_labels, sub_entity_label=sub_entity_label, rdf_type=rdf_type, custom_properties=custom_properties)
-        collection_pattern_1 = self.construct_collection_pattern(collections, member_label, members, member_cardinality, entity_label)
+        sub_entity_pattern = self.construct_entity_pattern(types=sub_types, roles=sub_roles, all_types=all_sub_types,
+                                                           entity_label=sub_entity_label, type_label='sub_type',
+                                                           role_label='sub_role')
+        entity_pattern_1 = self.construct_entity_pattern(types, roles, all_types, sub_entity_pattern,
+                                                         definitions, entity_label, other_entity_labels,
+                                                         sub_entity_label=sub_entity_label,
+                                                         rdf_type=rdf_type, custom_properties=custom_properties)
+        collection_pattern_1 = self.construct_collection_pattern(collections, member_label, members,
+                                                                 member_cardinality, entity_label)
 
         if entity_depth == 1:
             return """
@@ -478,11 +505,18 @@ class SBOLQuery():
             }}
             """.format(tl=' ?'.join(target_labels), cp1=collection_pattern_1, ep1=entity_pattern_1)
         elif entity_depth == 2:
-            sub_sub_entity_pattern = self.construct_entity_pattern(types=sub_types, roles=sub_roles, all_types=all_sub_types, entity_label=sub_entity_label, type_label='sub_type', role_label='sub_role')
-            sub_entity_pattern = self.construct_entity_pattern(types, roles, all_types, sub_sub_entity_pattern, definitions, entity_label, other_entity_labels, rdf_type=rdf_type, custom_properties=custom_properties)
-            entity_pattern_2 = self.construct_entity_pattern(sub_entity_pattern=sub_entity_pattern, sub_label='sub_prime', sub_entity_label=entity_label)
+            sub_sub_entity_pattern = self.construct_entity_pattern(types=sub_types, roles=sub_roles,
+                                                                   all_types=all_sub_types,
+                                                                   entity_label=sub_entity_label,
+                                                                   type_label='sub_type', role_label='sub_role')
+            sub_entity_pattern = self.construct_entity_pattern(types, roles, all_types, sub_sub_entity_pattern,
+                                                               definitions, entity_label, other_entity_labels,
+                                                               rdf_type=rdf_type, custom_properties=custom_properties)
+            entity_pattern_2 = self.construct_entity_pattern(sub_entity_pattern=sub_entity_pattern,
+                                                             sub_label='sub_prime', sub_entity_label=entity_label)
 
-            collection_pattern_2 = self.construct_collection_pattern(collections, member_label, members, member_cardinality)
+            collection_pattern_2 = self.construct_collection_pattern(collections, member_label, members,
+                                                                     member_cardinality)
 
             return """
             PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -497,7 +531,8 @@ class SBOLQuery():
                 {cp2}
                 {ep2}
             }} }}
-            """.format(tl=' ?'.join(target_labels), cp1=collection_pattern_1, cp2=collection_pattern_2, ep1=entity_pattern_1, ep2=entity_pattern_2)
+            """.format(tl=' ?'.join(target_labels), cp1=collection_pattern_1, cp2=collection_pattern_2,
+                       ep1=entity_pattern_1, ep2=entity_pattern_2)
         else:
             return ""
 
@@ -626,7 +661,8 @@ class SBOLQuery():
                         if sub_group_key not in formatted[entity_value]:
                             formatted[entity_value][sub_group_key] = {}
 
-                        self.__format_group(formatted[entity_value][sub_group_key], binding, sub_binding_keys, sub_group_key)
+                        self.__format_group(formatted[entity_value][sub_group_key], binding, sub_binding_keys,
+                                            sub_group_key)
 
         if sort_key is not None:
             self.sort_query_result(formatted, sort_key)
@@ -657,31 +693,51 @@ class SBOLQuery():
                 except:
                     query_list.sort()
 
-    def query_experiment_components(self, types=[], collections=[], comp_label='comp', other_comp_labels=[], trace_derivation=True, roles=[], all_types=True, sub_types=[], sub_roles=[], definitions=[], all_sub_types=True, experiments=[], custom_properties=[]):
+    def query_experiment_components(self, types=[], collections=[], comp_label='comp', other_comp_labels=[],
+                                    trace_derivation=True, roles=[], all_types=True, sub_types=[], sub_roles=[],
+                                    definitions=[], all_sub_types=True, experiments=[], custom_properties=[]):
         if trace_derivation:
             sample_cardinality = '*'
         else:
             sample_cardinality = ''
 
-        comp_query = self.construct_collection_entity_query(collections, 'exp', types, roles, all_types, sub_types, sub_roles, definitions, all_sub_types, comp_label, other_comp_labels, experiments, sample_cardinality, "http://sbols.org/v2#ComponentDefinition", 2, custom_properties)
+        comp_query = self.construct_collection_entity_query(collections, 'exp', types, roles, all_types, sub_types,
+                                                            sub_roles, definitions, all_sub_types, comp_label,
+                                                            other_comp_labels, experiments, sample_cardinality,
+                                                            "http://sbols.org/v2#ComponentDefinition", 2,
+                                                            custom_properties)
 
         return self.fetch_SPARQL(self._server, comp_query)
 
-    def query_experiment_modules(self, roles=[], collections=[], mod_label='mod', other_mod_labels=[], trace_derivation=True, sub_types=[], sub_roles=[], definitions=[], all_sub_types=True, experiments=[], custom_properties=[]):
+    def query_experiment_modules(self, roles=[], collections=[], mod_label='mod', other_mod_labels=[],
+                                 trace_derivation=True, sub_types=[], sub_roles=[], definitions=[],
+                                 all_sub_types=True, experiments=[], custom_properties=[]):
         if trace_derivation:
             sample_cardinality = '*'
         else:
             sample_cardinality = ''
 
-        mod_query = self.construct_collection_entity_query(collections, 'exp', roles=roles, sub_types=sub_types, sub_roles=sub_roles, definitions=definitions, all_sub_types=all_sub_types, entity_label=mod_label, other_entity_labels=other_mod_labels, members=experiments, member_cardinality=sample_cardinality, rdf_type="http://sbols.org/v2#ModuleDefinition", entity_depth=2, custom_properties=custom_properties)
+        mod_query = self.construct_collection_entity_query(collections, 'exp', roles=roles, sub_types=sub_types,
+                                                           sub_roles=sub_roles, definitions=definitions,
+                                                           all_sub_types=all_sub_types, entity_label=mod_label,
+                                                           other_entity_labels=other_mod_labels, members=experiments,
+                                                           member_cardinality=sample_cardinality,
+                                                           rdf_type="http://sbols.org/v2#ModuleDefinition",
+                                                           entity_depth=2, custom_properties=custom_properties)
 
         return self.fetch_SPARQL(self._server, mod_query)
 
     # Retrieves from the specified collection of design elements the URIs for all ComponentDefinitions with
     # at least one of the specified types (or all of the specified types) and at least one of the specified roles
     # This collection is typically associated with a challenge problem.
-    def query_design_components(self, types=[], collections=[], comp_label='comp', other_comp_labels=[], roles=[], all_types=True, sub_types=[], sub_roles=[], definitions=[], all_sub_types=True, custom_properties=[], members=[]):
-        comp_query = self.construct_collection_entity_query(collections, comp_label, types, roles, all_types, sub_types, sub_roles, definitions, all_sub_types, other_entity_labels=other_comp_labels, members=members, rdf_type="http://sbols.org/v2#ComponentDefinition", custom_properties=custom_properties)
+    def query_design_components(self, types=[], collections=[], comp_label='comp', other_comp_labels=[],
+                                roles=[], all_types=True, sub_types=[], sub_roles=[], definitions=[],
+                                all_sub_types=True, custom_properties=[], members=[]):
+        comp_query = self.construct_collection_entity_query(collections, comp_label, types, roles, all_types,
+                                                            sub_types, sub_roles, definitions, all_sub_types,
+                                                            other_entity_labels=other_comp_labels, members=members,
+                                                            rdf_type="http://sbols.org/v2#ComponentDefinition",
+                                                            custom_properties=custom_properties)
 
         return self.fetch_SPARQL(self._server, comp_query)
 
@@ -690,8 +746,16 @@ class SBOLQuery():
     # at least one of the specified sub-types (or all of the specified sub-types) and with
     # at least one of the specified roles.
     # This collection is typically associated with a challenge problem.
-    def query_design_modules(self, roles=[], collections=[], mod_label='mod', other_mod_labels=[], sub_types=[], sub_roles=[], definitions=[], all_sub_types=True, custom_properties=[], sub_comp_label='sub_comp', members=[]):
-        mod_query = self.construct_collection_entity_query(collections, mod_label, roles=roles, sub_types=sub_types, sub_roles=sub_roles, definitions=definitions, all_sub_types=all_sub_types, other_entity_labels=other_mod_labels, members=members, rdf_type="http://sbols.org/v2#ModuleDefinition", custom_properties=custom_properties, sub_entity_label=sub_comp_label)
+    def query_design_modules(self, roles=[], collections=[], mod_label='mod', other_mod_labels=[], sub_types=[],
+                             sub_roles=[], definitions=[], all_sub_types=True, custom_properties=[],
+                             sub_comp_label='sub_comp', members=[]):
+        mod_query = self.construct_collection_entity_query(collections, mod_label, roles=roles,
+                                                           sub_types=sub_types, sub_roles=sub_roles,
+                                                           definitions=definitions, all_sub_types=all_sub_types,
+                                                           other_entity_labels=other_mod_labels, members=members,
+                                                           rdf_type="http://sbols.org/v2#ModuleDefinition",
+                                                           custom_properties=custom_properties,
+                                                           sub_entity_label=sub_comp_label)
 
         return self.fetch_SPARQL(self._server, mod_query)
 
@@ -754,9 +818,13 @@ def login_SBH(server):
 def export_definitions_to_csv(server, collections, csv_path):
     sbol_query = SBOLQuery(server)
 
-    comps = sbol_query.format_query_result(sbol_query.query_design_components(collections=collections, other_comp_labels=['name']), ['comp', 'name'])
+    comps = sbol_query.format_query_result(sbol_query.query_design_components(collections=collections,
+                                                                              other_comp_labels=['name']),
+                                           ['comp', 'name'])
 
-    mods = sbol_query.format_query_result(sbol_query.query_design_modules(collections=collections, other_mod_labels=['name']), ['mod', 'name'])
+    mods = sbol_query.format_query_result(sbol_query.query_design_modules(collections=collections,
+                                                                          other_mod_labels=['name']),
+                                          ['mod', 'name'])
 
     with open(csv_path, 'w', newline='') as csv_file:
         csv_writer = csv.writer(csv_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
