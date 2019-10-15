@@ -1388,8 +1388,48 @@ class TestSBHQueries(unittest.TestCase):
         sbh_query.login(self.user, self.password)
         designs = sbh_query.query_designs_by_lab_ids(SD2Constants.GINKGO, ['1'], verbose=True)
         expected_designs = {'1': {'identity': 'https://hub.sd2e.org/user/sd2e/design/CAT_G33_500/1',
-                            'name': 'Glycerol'}}
+                                  'name': 'Glycerol'}}
         assert expected_designs == designs
+
+    def test_query_lab_ids_by_designs(self):
+        sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
+        sbh_query.login(self.user, self.password)
+        # Test with default options
+        lab_ids = sbh_query.query_lab_ids_by_designs(SD2Constants.GINKGO,
+                                                     ['https://hub.sd2e.org/user/sd2e/design/CAT_G33_500/1'])
+        expected = {'https://hub.sd2e.org/user/sd2e/design/CAT_G33_500/1': '1'}
+        assert expected == lab_ids
+        # Test with verbose (default is False)
+        lab_ids = sbh_query.query_lab_ids_by_designs(SD2Constants.GINKGO,
+                                                     ['https://hub.sd2e.org/user/sd2e/design/CAT_G33_500/1'],
+                                                     verbose=True)
+        expected = {'https://hub.sd2e.org/user/sd2e/design/CAT_G33_500/1': {'id': '1',
+                                                                            'name': 'Glycerol'}}
+        assert expected == lab_ids
+        # Test without pretty (default is True)
+        lab_ids = sbh_query.query_lab_ids_by_designs(SD2Constants.GINKGO,
+                                                     ['https://hub.sd2e.org/user/sd2e/design/CAT_G33_500/1'],
+                                                     pretty=False)
+        expected = {'head': {'link': [],
+                             'vars': ['design', 'name', 'id']},
+                    'results': {'distinct': False,
+                                'ordered': True,
+                                'bindings': [{'design':
+                                              {'type': 'uri',
+                                               'value': 'https://hub.sd2e.org/user/sd2e/design/CAT_G33_500/1'},
+                                              'name': {'type': 'literal',
+                                                       'value': 'Glycerol'},
+                                              'id': {'type': 'literal',
+                                                     'value': '1'}}]}}
+        assert expected == lab_ids
+        # Test querying multiple designs
+        designs = ['https://hub.sd2e.org/user/sd2e/design/UWBF_6390/1',
+                   'https://hub.sd2e.org/user/sd2e/design/CAT_G33_500/1']
+        lab_ids = sbh_query.query_lab_ids_by_designs(SD2Constants.GINKGO,
+                                                     designs)
+        expected = {'https://hub.sd2e.org/user/sd2e/design/CAT_G33_500/1': '1',
+                    'https://hub.sd2e.org/user/sd2e/design/UWBF_6390/1': '162063'}
+        assert expected == lab_ids
 
     # Test statistics query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
