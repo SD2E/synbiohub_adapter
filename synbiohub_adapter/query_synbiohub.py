@@ -1138,6 +1138,43 @@ class SynBioHubQuery(SBOLQuery):
         else:
             return design_query_result
 
+    def query_lab_ids_by_designs(self, lab, designs, verbose=False, pretty=True, print_query=False):
+        """Look up lab ids for design URIs. Given a lab name
+        (SD2Constants.GINKGO, SD2Constants.TRANSCRIPTIC) and a list of
+        design URIs, return the lab ids associated with the design
+        URIs for the given lab.
+
+        """
+        # Accept a string or list for designs
+        if isinstance(designs, (bytes, str)):
+            designs = [designs]
+        lab_id_query = """
+            PREFIX sbol: <http://sbols.org/v2#>
+            PREFIX dcterms: <http://purl.org/dc/terms/>
+            PREFIX sd2: <http://sd2e.org#>
+            SELECT ?design ?name ?id WHERE {{
+                VALUES (?design) {{ {designs} }}
+                <{col}> sbol:member ?design .
+                ?design dcterms:title ?name .
+                ?design sd2:{lab} ?id
+            }}
+            """.format(col=SD2Constants.SD2_DESIGN_COLLECTION,
+                       lab=lab + '_UID',
+                       designs=self.serialize_options(designs))
+
+        if print_query:
+            print(lab_id_query)
+
+        lab_id_result = self.fetch_SPARQL(self._server, lab_id_query)
+
+        if pretty:
+            if verbose:
+                return self.format_query_result(lab_id_result, ['id', 'name'], 'design')
+            else:
+                return self.format_query_result(lab_id_result, ['id'], 'design')
+        else:
+            return lab_id_result
+
     def query_synbiohub_statistics(self):
         design_riboswitches = repr(len(self.query_design_riboswitches(pretty=True)))
         exp_riboswitches = repr(len(self.query_experiment_riboswitches(by_sample=False)))
