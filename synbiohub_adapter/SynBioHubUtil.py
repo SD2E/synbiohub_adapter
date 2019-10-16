@@ -481,7 +481,8 @@ class SBOLQuery():
 
         if len(other_entity_labels) > 0:
             target_labels.extend(other_entity_labels)
-        target_labels.append(entity_label)
+        if entity_label not in target_labels:
+            target_labels.append(entity_label)
 
         sub_entity_pattern = self.construct_entity_pattern(types=sub_types, roles=sub_roles, all_types=all_sub_types,
                                                            entity_label=sub_entity_label, type_label='sub_type',
@@ -782,25 +783,19 @@ class SBOLQuery():
         return unit_uris
 
     def serialize_options(self, options):
-        serial_options = []
-        for opt in options:
-            serial_options.append(''.join(['( <', opt, '> ) ']))
-
-        return ''.join(serial_options)[:-1]
+        if isinstance(options, (str, bytes)):
+            options = [options]
+        return ' '.join(['( <' + opt + '> )' for opt in options])
 
     def serialize_literal_options(self, options):
-        serial_options = []
-        for opt in options:
-            serial_options.append(''.join(['( "', opt, '" ) ']))
-
-        return ''.join(serial_options)[:-1]
+        if isinstance(options, (str, bytes)):
+            options = [options]
+        return ' '.join(['( "' + opt + '" )' for opt in options])
 
     def serialize_objects(self, objects):
-        serial_objects = []
-        for obj in objects:
-            serial_objects.append(''.join(['<', obj, '>, ']))
-
-        return ''.join(serial_objects)[:-2]
+        if isinstance(objects, (str, bytes)):
+            objects = [objects]
+        return ', '.join(['<' + obj + '>' for obj in objects])
 
 
 def loadSBOLFile(sbolFile):
