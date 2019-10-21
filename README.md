@@ -12,7 +12,7 @@ synbiohub_adapter is not compatible with Python 2.
 To install the current release of synbiohub_adapter:
 
 ```shell
-pip3 install git+https://github.com/SD2E/synbiohub_adapter.git@v1.1
+pip3 install git+https://github.com/SD2E/synbiohub_adapter.git@v1.2
 ```
 
 ### Install from git clone
