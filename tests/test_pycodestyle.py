@@ -6,7 +6,7 @@ import pycodestyle
 
 # Please do not increase this number. Style warnings should DECREASE,
 # not increase.
-ALLOWED_ERRORS = 432
+ALLOWED_ERRORS = 205
 
 # Allow longer lines. The default is 79, which allows the 80th
 # character to be a line continuation symbol. Here, we increase the
@@ -51,8 +51,16 @@ class TestStyle(unittest.TestCase):
         dirs_and_files = [
             'setup.py',
             'synbiohub_adapter/__init__.py',
+            'synbiohub_adapter/cache_query.py',
+            'synbiohub_adapter/upload_sbol/__init__.py',
+            'tests/DataGenerator.py',
+            'tests/SBHRun_Environment.py',
             'tests/__init__.py',
-            'tests/test_pycodestyle.py'
+            'tests/test_authentication.py',
+            'tests/test_fallback_cache.py',
+            'tests/test_pycodestyle.py',
+            'tests/test_sbh_submissions.py',
+            'tests/test_sbolquery.py'
         ]
         sg = pycodestyle.StyleGuide(quiet=QUIET,
                                     max_line_length=MAX_LINE_LENGTH,
@@ -62,46 +70,28 @@ class TestStyle(unittest.TestCase):
             self.assertEqual(report.total_errors, 0,
                              msg='New style violation introduced in previously clean file {}'.format(f))
 
-    def assert_clean_report(self, code, message):
-        """Verify that no erros of the given pycodestyle code exist in the
-        codebase.
-
-        """
-        dirs_and_files = ['.']
+    def assert_warning_count(self, code, count, message):
         sg = pycodestyle.StyleGuide(quiet=QUIET,
                                     max_line_length=MAX_LINE_LENGTH,
                                     exclude=EXCLUDE,
                                     select=[code])
-        report = sg.check_files(dirs_and_files)
-        self.assertEqual(report.total_errors, 0,
-                         msg=message)
+        report = sg.check_files('.')
+        message = 'Too many "{} {}" style errors. Expected {}, found {}'.format(code, message,
+                                                                                count, report.total_errors)
+        self.assertEqual(report.total_errors, count, msg=message)
 
-    def test_indentation(self):
-        self.assert_clean_report('E1', "Indentation style errors ('E1xx') exist")
+    def test_allowed_errors(self):
+        self.assert_warning_count('E501', 188, "line too long")
+        self.assert_warning_count('E722', 17, "do not use bare 'except'")
 
-    def test_whitespace(self):
-        self.assert_clean_report('E202', "whitespace before ')'")
-        self.assert_clean_report('E203', "whitespace before ':'")
-        self.assert_clean_report('E225', "missing whitespace around operator")
-        self.assert_clean_report('E226', "missing whitespace around arithmetic operator")
-        self.assert_clean_report('E251', "unexpected spaces around keyword / parameter equals")
-        self.assert_clean_report('E261', "at least two spaces before inline comment")
-        self.assert_clean_report('E271', "multiple spaces after keyword")
-
-    def test_blank_line(self):
-        self.assert_clean_report('E301', "expected 1 blank line, found 0")
-        self.assert_clean_report('E303', "too many blank lines (2)")
-        self.assert_clean_report('E305', "expected 2 blank lines after class or function definition, found 1")
-
-    def test_import(self):
-        self.assert_clean_report('E4', "Import style errors ('E4*') exist")
-
-    def test_statement(self):
-        self.assert_clean_report('E711', "comparison to None should be 'if cond is not None:'")
-        self.assert_clean_report('E713', "test for membership should be 'not in'")
-
-    def test_all_warnings(self):
-        self.assert_clean_report('W', "Style warnings ('W*') exists")
+    def test_disallowed_errors(self):
+        """All errors other than E501 and E722 should not appear in the code."""
+        sg = pycodestyle.StyleGuide(quiet=QUIET,
+                                    max_line_length=MAX_LINE_LENGTH,
+                                    exclude=EXCLUDE,
+                                    ignore=['E501', 'E722'])
+        report = sg.check_files('.')
+        self.assertEqual(report.total_errors, 0)
 
 
 if __name__ == '__main__':

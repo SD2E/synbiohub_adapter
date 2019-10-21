@@ -7,7 +7,7 @@ import re
 from sbol import *
 from synbiohub_adapter import SynBioHubQuery
 from synbiohub_adapter import SD2Constants
-from pySBOLx.pySBOLx import Experiment
+
 
 def main(args=None):
     if args is None:
@@ -18,7 +18,8 @@ def main(args=None):
     parser.add_argument('-p', '--password')
     parser.add_argument('-u', '--url', nargs='?', default='https://hub.sd2e.org')
     parser.add_argument('-s', '--sparql', nargs='?', default='http://hub-api.sd2e.org:80/sparql')
-    parser.add_argument('-f', '--sbol_files', nargs='*', default=[f for f in os.listdir('.') if os.path.isfile(f) and f.endswith('.xml')])
+    parser.add_argument('-f', '--sbol_files', nargs='*',
+                        default=[f for f in os.listdir('.') if os.path.isfile(f) and f.endswith('.xml')])
     parser.add_argument('-w', '--overwrite', action='store_true')
     parser.add_argument('-W', '--overwrite_sub_collections', action='store_true')
     parser.add_argument('-c', '--collection_uri', nargs='?', default=None)
@@ -47,13 +48,18 @@ def main(args=None):
         sbh = SynBioHub(args.url, args.email, args.password, args.sparql)
 
         if args.collection_id is not None and args.collection_version is not None and args.collection_name is not None and args.collection_description is not None:
-            sbh.submit_collection(docs[0], args.collection_id, args.collection_version, args.collection_name, args.collection_description, int(args.max_upload))
+            sbh.submit_collection(docs[0], args.collection_id, args.collection_version, args.collection_name,
+                                  args.collection_description, int(args.max_upload))
         elif args.collection_uri is not None:
-            sbh.submit_to_collection(docs, args.collection_uri, int(args.max_upload), args.overwrite, args.overwrite_sub_collections, args.sub_collection_id, args.sub_collection_version, args.sub_collection_name, args.sub_collection_description)
+            sbh.submit_to_collection(docs, args.collection_uri, int(args.max_upload), args.overwrite,
+                                     args.overwrite_sub_collections, args.sub_collection_id,
+                                     args.sub_collection_version, args.sub_collection_name,
+                                     args.sub_collection_description)
         else:
             raise CollectionArgumentError()
     else:
         raise EmptySubmissionError()
+
 
 class SynBioHub():
     def __init__(self, url, email, password, sparql):
@@ -61,16 +67,21 @@ class SynBioHub():
         self.url = url
         self.part_shop = PartShop(url)
         self.part_shop.login(email, password)
-        response = requests.post(url + '/login', headers={'Accept': 'text/plain'}, data={'email': email, 'password': password})
+        response = requests.post(url + '/login',
+                                 headers={'Accept': 'text/plain'},
+                                 data={'email': email, 'password': password})
         self.token = response.content.decode('UTF-8')
         self.sparql = sparql
 
-    def submit_collection(self, doc, collection_id, collection_version, collection_name, collection_description, max_upload=0, sub_collection_id=None, sub_collection_version=None, sub_collection_name=None, sub_collection_description=None):
+    def submit_collection(self, doc, collection_id, collection_version, collection_name, collection_description,
+                          max_upload=0, sub_collection_id=None, sub_collection_version=None,
+                          sub_collection_name=None, sub_collection_description=None):
         if max_upload > 0 and len(doc) > max_upload:
             raise MaxUploadError(max_upload)
 
         if sub_collection_id is not None and sub_collection_version is not None:
-            self.__create_root_sub_collection(doc, sub_collection_id, sub_collection_version, sub_collection_name, sub_collection_description)
+            self.__create_root_sub_collection(doc, sub_collection_id, sub_collection_version, sub_collection_name,
+                                              sub_collection_description)
 
         doc.displayId = collection_id
         doc.name = collection_name
@@ -84,21 +95,28 @@ class SynBioHub():
         else:
             print(response)
 
-    def submit_to_collection(self, docs, collection_uri, max_upload=0, overwrite=False, overwrite_sub_collections=False, sub_collection_id=None, sub_collection_version=None, sub_collection_name=None, sub_collection_description=None):
+    def submit_to_collection(self, docs, collection_uri, max_upload=0, overwrite=False,
+                             overwrite_sub_collections=False, sub_collection_id=None, sub_collection_version=None,
+                             sub_collection_name=None, sub_collection_description=None):
         collection_namespace = self.__get_top_level_namespace(collection_uri)
 
         submission_docs = []
 
         for doc in docs:
             if max_upload > 0 and len(doc) > max_upload or len(self.__get_namespaces(doc)) > 1:
-                submission_docs = submission_docs + self.__split_document_by_namespace(doc, collection_namespace, max_upload)
+                submission_docs = submission_docs + self.__split_document_by_namespace(doc, collection_namespace,
+                                                                                       max_upload)
 
                 submission_docs = submission_docs + self.__create_sub_collection_documents(doc, collection_namespace)
             else:
                 submission_docs.append(doc)
 
         if sub_collection_id is not None and sub_collection_version is not None:
-            submission_docs.append(self.__create_root_sub_collection_document(docs, collection_namespace, sub_collection_id, sub_collection_version, sub_collection_name, sub_collection_description))
+            submission_docs.append(self.__create_root_sub_collection_document(docs, collection_namespace,
+                                                                              sub_collection_id,
+                                                                              sub_collection_version,
+                                                                              sub_collection_name,
+                                                                              sub_collection_description))
 
         if overwrite and not overwrite_sub_collections:
             self.__merge_remote_sub_collections(submission_docs, collection_namespace)
@@ -351,8 +369,11 @@ class SynBioHub():
         setHomespace(temp_homespace)
 
     @classmethod
-    def __create_root_sub_collection_document(cls, docs, collection_namespace, sub_collection_id, sub_collection_version, sub_collection_name=None, sub_collection_description=None):
-        root_sub_collection = cls.__create_sub_collection(sub_collection_id, sub_collection_version, sub_collection_name, sub_collection_description)
+    def __create_root_sub_collection_document(cls, docs, collection_namespace, sub_collection_id,
+                                              sub_collection_version, sub_collection_name=None,
+                                              sub_collection_description=None):
+        root_sub_collection = cls.__create_sub_collection(sub_collection_id, sub_collection_version,
+                                                          sub_collection_name, sub_collection_description)
 
         for doc in docs:
             remote_uri_arr = ['/'.join([collection_namespace] + obj.identity.split('/')[-2:]) for obj in doc]
@@ -366,8 +387,10 @@ class SynBioHub():
         return root_sub_collection_doc
 
     @classmethod
-    def __create_root_sub_collection(cls, doc, sub_collection_id, sub_collection_version, sub_collection_name=None, sub_collection_description=None):
-        root_sub_collection = cls.__create_sub_collection(sub_collection_id, sub_collection_version, sub_collection_name, sub_collection_description)
+    def __create_root_sub_collection(cls, doc, sub_collection_id, sub_collection_version, sub_collection_name=None,
+                                     sub_collection_description=None):
+        root_sub_collection = cls.__create_sub_collection(sub_collection_id, sub_collection_version,
+                                                          sub_collection_name, sub_collection_description)
 
         local_uri_arr = [obj.identity for obj in doc]
 
@@ -378,7 +401,8 @@ class SynBioHub():
         return root_sub_collection
 
     @classmethod
-    def __create_sub_collection(cls, sub_collection_id, sub_collection_version, sub_collection_name=None, sub_collection_description=None):
+    def __create_sub_collection(cls, sub_collection_id, sub_collection_version, sub_collection_name=None,
+                                sub_collection_description=None):
         sub_collection = Collection(sub_collection_id, sub_collection_version)
 
         if sub_collection_name is not None:
@@ -397,7 +421,10 @@ class SynBioHub():
             requests.get(uri + '/remove', headers=header)
 
     def attach_file(self, file, uri):
-        response = requests.post(uri + '/attach', headers={'Accept': 'text/plain', 'X-authorization': self.token}, files={'file': open(file, 'rb')})
+        response = requests.post(uri + '/attach',
+                                 headers={'Accept': 'text/plain',
+                                          'X-authorization': self.token},
+                                 files={'file': open(file, 'rb')})
 
         print(response)
 
@@ -414,7 +441,9 @@ class SynBioHub():
                 cut_i.append(i * cut_len)
             cut_i.append(cut_i[-1] + len(member_uris) % cut_len)
             for i in range(0, len(cut_i) - 1):
-                responses.append(sbh_query.query_collection_members(collection_uris, member_uris[cut_i[i]:cut_i[i + 1]], rdf_type))
+                responses.append(sbh_query.query_collection_members(collection_uris,
+                                                                    member_uris[cut_i[i]:cut_i[i + 1]],
+                                                                    rdf_type))
 
         collection_to_member = {}
 
@@ -440,7 +469,9 @@ class SynBioHub():
         attachments = sbh_query.query_single_experiment_attachment(plan_uri, attachment_name)
         if len(attachments['results']['bindings']) > 0:
             attachment_id = attachments['results']['bindings'][0]['attachment_id']['value']
-            response = requests.get(attachment_id + '/download', headers={'Accept': 'text/plain', 'X-authorization': self.token})
+            response = requests.get(attachment_id + '/download',
+                                    headers={'Accept': 'text/plain',
+                                             'X-authorization': self.token})
             return response.json()
         print("No attachment found {}".format(attachment_name))
 
@@ -450,7 +481,9 @@ class SynBioHub():
         attachments = sbh_query.query_single_experiment_attachments(plan_uri)
         for binding in attachments['results']['bindings']:
             attachment_id = binding['attachment_id']['value']
-            response = requests.get(attachment_id + '/download', headers={'Accept': 'text/plain', 'X-authorization': self.token})
+            response = requests.get(attachment_id + '/download',
+                                    headers={'Accept': 'text/plain',
+                                             'X-authorization': self.token})
             try:
                 attachment_json = response.json()
                 # TODO find a better way to identify intent attachments
@@ -472,7 +505,9 @@ class SynBioHub():
         except AssertionError:
             raise BadLabParameterError(parameter_uri)
 
-        if len(self.query_collection_members([plan_uri], [SD2Constants.SD2_EXPERIMENT_COLLECTION], 'http://sd2e.org#Experiment')) == 0:
+        if len(self.query_collection_members([plan_uri],
+                                             [SD2Constants.SD2_EXPERIMENT_COLLECTION],
+                                             'http://sd2e.org#Experiment')) == 0:
             raise UndefinedURIError(plan_uri)
 
         uri_arr = plan_uri.split('/')
@@ -534,13 +569,18 @@ class SynBioHub():
 
         print(response)
 
+
 class CollectionArgumentError(Exception):
 
     def __init__(self):
         pass
 
     def __str__(self):
-        return "Either the URI of an existing collection (-c) or the ID (-I), version (-V), name (-N), and description (-D) of a new collection must be provided as arguments."
+        msg = ("Either the URI of an existing collection (-c) or the ID (-I),"
+               " version (-V), name (-N), and description (-D) of a new"
+               " collection must be provided as arguments.")
+        return msg
+
 
 class EmptySubmissionError(Exception):
 
@@ -550,13 +590,16 @@ class EmptySubmissionError(Exception):
     def __str__(self):
         return "No documents were submitted for upload."
 
+
 class MaxUploadError(Exception):
 
     def __init__(self, max_upload):
         self.max_upload = max_upload
 
     def __str__(self):
-        return "Submitted document contains more objects than the max upload size of {max}".format(max=repr(self.max_upload))
+        msg = "Submitted document contains more objects than the max upload size of {max}"
+        return msg.format(max=repr(self.max_upload))
+
 
 class SubCollectionMergeError(Exception):
 
@@ -565,7 +608,9 @@ class SubCollectionMergeError(Exception):
         self.collection_version = collection_version
 
     def __str__(self):
-        return "Sub collection with ID {id} and version {ve} failed to merge.".format(id=self.collection_id, ve=self.collection_version)
+        msg = "Sub collection with ID {id} and version {ve} failed to merge."
+        return msg.format(id=self.collection_id, ve=self.collection_version)
+
 
 class MissingCollectionError(Exception):
 
@@ -575,6 +620,7 @@ class MissingCollectionError(Exception):
     def __str__(self):
         return "There is no Collection with URI {uri}.".format(uri=self.collection_uri)
 
+
 class DuplicateCollectionError(Exception):
 
     def __init__(self, collection_id, collection_version):
@@ -582,7 +628,9 @@ class DuplicateCollectionError(Exception):
         self.collection_version = collection_version
 
     def __str__(self):
-        return "There already exists a Collection with ID {id} and version {ve}.".format(id=self.collection_id, ve=self.collection_version)
+        msg = "There already exists a Collection with ID {id} and version {ve}."
+        return msg.format(id=self.collection_id, ve=self.collection_version)
+
 
 class ObjectMismatchError(Exception):
 
@@ -591,10 +639,13 @@ class ObjectMismatchError(Exception):
         self.obj_version = obj.version
 
     def __str__(self):
-        return "Target Collection already contains a non-matching object with ID {id} and version {ve}.".format(id=self.obj_id, ve=obj_version)
+        msg = "Target Collection already contains a non-matching object with ID {id} and version {ve}."
+        return msg.format(id=self.obj_id, ve=obj_version)
+
 
 class SBHLabParameterError(Exception):
     pass
+
 
 class BadLabParameterError(SBHLabParameterError):
 
@@ -603,6 +654,7 @@ class BadLabParameterError(SBHLabParameterError):
 
     def __str__(self):
         return "Invalid parameter URI: {}".format(self.parameter)
+
 
 class UndefinedURIError(SBHLabParameterError):
 

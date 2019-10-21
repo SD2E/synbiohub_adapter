@@ -162,8 +162,9 @@ class SynBioHubQuery(SBOLQuery):
 
     # DNA query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-    # Retrieves the URIs for all DNA components from the collection of every SD2 design element.
-    def query_design_dna(self, verbose=False, with_sequence=False, pretty=False, collections=[SD2Constants.SD2_DESIGN_COLLECTION]):
+    # Retrieves URIs and optional properties for all DNA components (or a
+    # specified set) from the collection of every SD2 design element.
+    def query_design_dna(self, verbose=False, with_sequence=False, pretty=False, collections=[SD2Constants.SD2_DESIGN_COLLECTION], roles=[], dna=[]):
         comp_labels = ['dna']
 
         if verbose:
@@ -172,7 +173,7 @@ class SynBioHubQuery(SBOLQuery):
         if with_sequence:
             comp_labels.append('sequence')
 
-        query_result = self.query_design_components([BIOPAX_DNA], collections, comp_labels[0], comp_labels[1:])
+        query_result = self.query_design_components([BIOPAX_DNA], collections, comp_labels[0], comp_labels[1:], roles, members=dna)
 
         if pretty:
             return self.format_query_result(query_result, comp_labels)
@@ -181,8 +182,8 @@ class SynBioHubQuery(SBOLQuery):
 
     # Retrieves the URIs for all DNA components from the specified collection of design elements.
     # This collection is typically associated with a challenge problem.
-    def query_design_set_dna(self, collection, verbose=False, with_sequence=False, pretty=False):
-        return self.query_design_dna(verbose, with_sequence, pretty, [collection])
+    def query_design_set_dna(self, collection, verbose=False, with_sequence=False, pretty=False, roles=[], dna=[]):
+        return self.query_design_dna(verbose, with_sequence, pretty, [collection], roles, dna)
 
     # Retrieves the URIs for all DNA components used by experiments in the collection of every SD2 experiment.
     def query_experiment_dna(self, verbose=False, with_sequence=False, trace_derivation=True, by_sample=False, pretty=True, collections=[SD2Constants.SD2_EXPERIMENT_COLLECTION], experiments=[]):
@@ -494,7 +495,8 @@ class SynBioHubQuery(SBOLQuery):
 
     # Plasmid query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-    # Retrieves the URIs for all plasmids from the collection of every SD2 design element.
+    # Retrieves URIs and optional properties for all plasmids (or a specified
+    # set of plasmids) from the collection of every SD2 design element.
     def query_design_plasmids(self, verbose=False, with_sequence=False, with_features=False, pretty=False, collections=[SD2Constants.SD2_DESIGN_COLLECTION], plasmids=[]):
         comp_labels = ['plasmid']
 
@@ -518,7 +520,8 @@ class SynBioHubQuery(SBOLQuery):
         else:
             return query_result
 
-    # Retrieves the URIs for all plasmids from the specified collection of design elements.
+    # Retrieves URIs and optional properties for all plasmids (or a specified
+    # set of plasmids) from the specified collection of design elements.
     # This collection is typically associated with a challenge problem.
     def query_design_set_plasmids(self, collection, verbose=False, with_sequence=False, with_features=False, pretty=False, plasmids=[]):
         return self.query_design_plasmids(verbose, with_sequence, with_features, pretty, [collection], plasmids)
@@ -806,7 +809,8 @@ class SynBioHubQuery(SBOLQuery):
 
         # return strain_comparison
 
-    # Retrieves the URIs for all strains from the collection of every SD2 design element.
+    # Retrieves URIs and optional properties for all strains from
+    # the collection of every SD2 design element.
     def query_design_strains(self, verbose=False, pretty=False, collections=[SD2Constants.SD2_DESIGN_COLLECTION], with_plasmids=False):
         mod_labels = ['strain']
 
@@ -825,7 +829,8 @@ class SynBioHubQuery(SBOLQuery):
         else:
             return query_result
 
-    # Retrieves the URIs for all strains from the specified collection of design elements.
+    # Retrieves URIs and optional properties for all strains from
+    # the specified collection of design elements.
     # This collection is typically associated with a challenge problem.
     def query_design_set_strains(self, collection, verbose=False, pretty=False, with_plasmids=False):
         return self.query_design_strains(verbose, pretty, [collection], with_plasmids)
@@ -1132,6 +1137,43 @@ class SynBioHubQuery(SBOLQuery):
                 return self.format_query_result(design_query_result, ['identity'], 'id')
         else:
             return design_query_result
+
+    def query_lab_ids_by_designs(self, lab, designs, verbose=False, pretty=True, print_query=False):
+        """Look up lab ids for design URIs. Given a lab name
+        (SD2Constants.GINKGO, SD2Constants.TRANSCRIPTIC) and a list of
+        design URIs, return the lab ids associated with the design
+        URIs for the given lab.
+
+        """
+        # Accept a string or list for designs
+        if isinstance(designs, (bytes, str)):
+            designs = [designs]
+        lab_id_query = """
+            PREFIX sbol: <http://sbols.org/v2#>
+            PREFIX dcterms: <http://purl.org/dc/terms/>
+            PREFIX sd2: <http://sd2e.org#>
+            SELECT ?design ?name ?id WHERE {{
+                VALUES (?design) {{ {designs} }}
+                <{col}> sbol:member ?design .
+                ?design dcterms:title ?name .
+                ?design sd2:{lab} ?id
+            }}
+            """.format(col=SD2Constants.SD2_DESIGN_COLLECTION,
+                       lab=lab + '_UID',
+                       designs=self.serialize_options(designs))
+
+        if print_query:
+            print(lab_id_query)
+
+        lab_id_result = self.fetch_SPARQL(self._server, lab_id_query)
+
+        if pretty:
+            if verbose:
+                return self.format_query_result(lab_id_result, ['id', 'name'], 'design')
+            else:
+                return self.format_query_result(lab_id_result, ['id'], 'design')
+        else:
+            return lab_id_result
 
     def query_synbiohub_statistics(self):
         design_riboswitches = repr(len(self.query_design_riboswitches(pretty=True)))

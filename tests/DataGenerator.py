@@ -4,6 +4,7 @@ import time
 from rdflib import Graph
 import re
 
+
 def get_uniqueID(idPrefix):
     t = time.ctime()
     uid = '_'.join([idPrefix, t])
@@ -14,6 +15,7 @@ def create_compDef(idPrefix):
     c_uri = get_uniqueID('compDef' + idPrefix)
     compDef = ComponentDefinition(c_uri, BIOPAX_DNA, '1.0')
     return compDef
+
 
 def create_seq(idPrefix):
     s_uri = get_uniqueID('seq' + idPrefix)

@@ -7,6 +7,7 @@ from getpass import getpass
 import sys
 import os
 
+
 class TestSBHQueries(unittest.TestCase):
 
     @classmethod
@@ -37,16 +38,17 @@ class TestSBHQueries(unittest.TestCase):
 
     # def test_query_collection_members(self):
     #   sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
-    #   members = sbh_query.query_collection_members([SD2Constants.YEAST_GATES_DESIGN_COLLECTION], ['https://hub.sd2e.org/user/sd2e/design/UWBF_7376/1', 'https://hub.sd2e.org/user/sd2e/design/pAN4036/1'])
-
+    #   members = sbh_query.query_collection_members([SD2Constants.YEAST_GATES_DESIGN_COLLECTION],
+    #                                                ['https://hub.sd2e.org/user/sd2e/design/UWBF_7376/1',
+    #                                                 'https://hub.sd2e.org/user/sd2e/design/pAN4036/1'])
     #   print(members)
 
     ###########
 
     # def test_query_collections(self):
     #   sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
-    #   members = sbh_query.query_collections([SD2Constants.SD2_DESIGN_COLLECTION, 'https://hub.sd2e.org/user/sd2e/design/google/1'])
-
+    #   members = sbh_query.query_collections([SD2Constants.SD2_DESIGN_COLLECTION,
+    #                                          'https://hub.sd2e.org/user/sd2e/design/google/1'])
     #   print(members)
 
     # Test control query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -82,7 +84,10 @@ class TestSBHQueries(unittest.TestCase):
 
         missing_controls = min_controls.difference(controls)
 
-        assert len(missing_controls) == 0,"Failed to retrieve {num} of minimum {mini} controls from SD2 program. Missing: {miss}".format(num=repr(len(min_controls) - len(controls)), mini=repr(len(min_controls)), miss='\n'.join(missing_controls))
+        msg = "Failed to retrieve {num} of minimum {mini} controls from SD2 program. Missing: {miss}"
+        assert len(missing_controls) == 0, msg.format(num=repr(len(min_controls) - len(controls)),
+                                                      mini=repr(len(min_controls)),
+                                                      miss='\n'.join(missing_controls))
 
     def test_query_design_set_controls(self):
         sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
@@ -114,7 +119,10 @@ class TestSBHQueries(unittest.TestCase):
 
         missing_controls = min_controls.difference(controls)
 
-        assert len(missing_controls) == 0,"Failed to retrieve {num} of minimum {mini} controls from Yeast Gates challenge problem. Missing: {miss}".format(num=repr(len(min_controls) - len(controls)), mini=repr(len(min_controls)), miss='\n'.join(missing_controls))
+        msg = "Failed to retrieve {num} of minimum {mini} controls from Yeast Gates challenge problem. Missing: {miss}"
+        assert len(missing_controls) == 0, msg.format(num=repr(len(min_controls) - len(controls)),
+                                                      mini=repr(len(min_controls)),
+                                                      miss='\n'.join(missing_controls))
 
     def test_query_design_fbead_controls(self):
         sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
@@ -126,19 +134,27 @@ class TestSBHQueries(unittest.TestCase):
 
         missing_controls = min_controls.difference(controls)
 
-        assert len(missing_controls) == 0,"Failed to retrieve {num} of minimum {mini} fluorescent bead controls from SD2 program. Missing: {miss}".format(num=repr(len(min_controls) - len(controls)), mini=repr(len(min_controls)), miss='\n'.join(missing_controls))
+        msg = "Failed to retrieve {num} of minimum {mini} fluorescent bead controls from SD2 program. Missing: {miss}"
+        assert len(missing_controls) == 0, msg.format(num=repr(len(min_controls) - len(controls)),
+                                                      mini=repr(len(min_controls)),
+                                                      miss='\n'.join(missing_controls))
 
     def test_query_design_set_fbead_controls(self):
         sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
         sbh_query.login(self.user, self.password)
 
-        controls = set(sbh_query.query_design_set_fbead_controls(SD2Constants.YEAST_GATES_DESIGN_COLLECTION, pretty=True))
+        controls = set(sbh_query.query_design_set_fbead_controls(SD2Constants.YEAST_GATES_DESIGN_COLLECTION,
+                                                                 pretty=True))
 
         min_controls = {'https://hub.sd2e.org/user/sd2e/design/spherotech_rainbow_beads/1'}
 
         missing_controls = min_controls.difference(controls)
 
-        assert len(missing_controls) == 0,"Failed to retrieve {num} of minimum {mini} fluorescent bead controls from Yeast Gates challenge problem. Missing: {miss}".format(num=repr(len(min_controls) - len(controls)), mini=repr(len(min_controls)), miss='\n'.join(missing_controls))
+        msg = "Failed to retrieve {num} of minimum {mini} fluorescent bead"
+        msg += " controls from Yeast Gates challenge problem. Missing: {miss}"
+        assert len(missing_controls) == 0, msg.format(num=repr(len(min_controls) - len(controls)),
+                                                      mini=repr(len(min_controls)),
+                                                      miss='\n'.join(missing_controls))
 
     def test_query_design_fluorescein_controls(self):
         sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
@@ -163,13 +179,17 @@ class TestSBHQueries(unittest.TestCase):
 
         missing_controls = min_controls.difference(controls)
 
-        assert len(missing_controls) == 0,"Failed to retrieve {num} of minimum {mini} fluorescein controls from SD2 program. Missing: {miss}".format(num=repr(len(min_controls) - len(controls)), mini=repr(len(min_controls)), miss='\n'.join(missing_controls))
+        msg = "Failed to retrieve {num} of minimum {mini} fluorescein controls from SD2 program. Missing: {miss}"
+        assert len(missing_controls) == 0, msg.format(num=repr(len(min_controls) - len(controls)),
+                                                      mini=repr(len(min_controls)),
+                                                      miss='\n'.join(missing_controls))
 
     def test_query_design_set_fluorescein_controls(self):
         sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
         sbh_query.login(self.user, self.password)
 
-        controls = set(sbh_query.query_design_set_fluorescein_controls(SD2Constants.YEAST_GATES_DESIGN_COLLECTION, pretty=True))
+        controls = set(sbh_query.query_design_set_fluorescein_controls(SD2Constants.YEAST_GATES_DESIGN_COLLECTION,
+                                                                       pretty=True))
 
         min_controls = {
             'https://hub.sd2e.org/user/sd2e/design/fluorescein_control_0_203125/1',
@@ -188,7 +208,11 @@ class TestSBHQueries(unittest.TestCase):
 
         missing_controls = min_controls.difference(controls)
 
-        assert len(missing_controls) == 0,"Failed to retrieve {num} of minimum {mini} fluorescein controls from Yeast Gates challenge problem. Missing: {miss}".format(num=repr(len(min_controls) - len(controls)), mini=repr(len(min_controls)), miss='\n'.join(missing_controls))
+        msg = "Failed to retrieve {num} of minimum {mini} fluorescein controls from"
+        msg += " Yeast Gates challenge problem. Missing: {miss}"
+        assert len(missing_controls) == 0, msg.format(num=repr(len(min_controls) - len(controls)),
+                                                      mini=repr(len(min_controls)),
+                                                      miss='\n'.join(missing_controls))
 
     def test_query_design_ludox_controls(self):
         sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
@@ -204,13 +228,17 @@ class TestSBHQueries(unittest.TestCase):
 
         missing_controls = min_controls.difference(controls)
 
-        assert len(missing_controls) == 0,"Failed to retrieve {num} of minimum {mini} LUDOX controls from SD2 program. Missing: {miss}".format(num=repr(len(min_controls) - len(controls)), mini=repr(len(min_controls)), miss='\n'.join(missing_controls))
+        msg = "Failed to retrieve {num} of minimum {mini} LUDOX controls from SD2 program. Missing: {miss}"
+        assert len(missing_controls) == 0, msg.format(num=repr(len(min_controls) - len(controls)),
+                                                      mini=repr(len(min_controls)),
+                                                      miss='\n'.join(missing_controls))
 
     def test_query_design_set_ludox_controls(self):
         sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
         sbh_query.login(self.user, self.password)
 
-        controls = set(sbh_query.query_design_set_ludox_controls(SD2Constants.YEAST_GATES_DESIGN_COLLECTION, pretty=True))
+        controls = set(sbh_query.query_design_set_ludox_controls(SD2Constants.YEAST_GATES_DESIGN_COLLECTION,
+                                                                 pretty=True))
 
         min_controls = {
             'https://hub.sd2e.org/user/sd2e/design/ludox_S40_control_100/1',
@@ -220,7 +248,10 @@ class TestSBHQueries(unittest.TestCase):
 
         missing_controls = min_controls.difference(controls)
 
-        assert len(missing_controls) == 0,"Failed to retrieve {num} of minimum {mini} LUDOX controls from Yeast Gates challenge problem. Missing: {miss}".format(num=repr(len(min_controls) - len(controls)), mini=repr(len(min_controls)), miss='\n'.join(missing_controls))
+        msg = "Failed to retrieve {num} of minimum {mini} LUDOX controls from Yeast Gates challenge problem. Missing: {miss}"
+        assert len(missing_controls) == 0, msg.format(num=repr(len(min_controls) - len(controls)),
+                                                      mini=repr(len(min_controls)),
+                                                      miss='\n'.join(missing_controls))
 
     def test_query_design_water_controls(self):
         sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
@@ -236,13 +267,17 @@ class TestSBHQueries(unittest.TestCase):
 
         missing_controls = min_controls.difference(controls)
 
-        assert len(missing_controls) == 0,"Failed to retrieve {num} of minimum {mini} water controls from SD2 program. Missing: {miss}".format(num=repr(len(min_controls) - len(controls)), mini=repr(len(min_controls)), miss='\n'.join(missing_controls))
+        msg = "Failed to retrieve {num} of minimum {mini} water controls from SD2 program. Missing: {miss}"
+        assert len(missing_controls) == 0, msg.format(num=repr(len(min_controls) - len(controls)),
+                                                      mini=repr(len(min_controls)),
+                                                      miss='\n'.join(missing_controls))
 
     def test_query_design_set_water_controls(self):
         sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
         sbh_query.login(self.user, self.password)
 
-        controls = set(sbh_query.query_design_set_water_controls(SD2Constants.YEAST_GATES_DESIGN_COLLECTION, pretty=True))
+        controls = set(sbh_query.query_design_set_water_controls(SD2Constants.YEAST_GATES_DESIGN_COLLECTION,
+                                                                 pretty=True))
 
         min_controls = {
             'https://hub.sd2e.org/user/sd2e/design/water_blank_300/1',
@@ -252,7 +287,10 @@ class TestSBHQueries(unittest.TestCase):
 
         missing_controls = min_controls.difference(controls)
 
-        assert len(missing_controls) == 0,"Failed to retrieve {num} of minimum {mini} water controls from Yeast Gates challenge problem. Missing: {miss}".format(num=repr(len(min_controls) - len(controls)), mini=repr(len(min_controls)), miss='\n'.join(missing_controls))
+        msg = "Failed to retrieve {num} of minimum {mini} water controls from Yeast Gates challenge problem. Missing: {miss}"
+        assert len(missing_controls) == 0, msg.format(num=repr(len(min_controls) - len(controls)),
+                                                      mini=repr(len(min_controls)),
+                                                      miss='\n'.join(missing_controls))
 
     def test_query_experiment_controls(self):
         sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
@@ -283,7 +321,7 @@ class TestSBHQueries(unittest.TestCase):
 
         missing_controls = min_controls.difference(controls)
 
-        assert len(missing_controls) == 0,"Failed to retrieve {num} of minimum {mini} controls from SD2 experiments. Missing: {miss}".format(num=repr(len(min_controls) - len(controls)), mini=repr(len(min_controls)), miss='\n'.join(missing_controls))
+        assert len(missing_controls) == 0, "Failed to retrieve {num} of minimum {mini} controls from SD2 experiments. Missing: {miss}".format(num=repr(len(min_controls) - len(controls)), mini=repr(len(min_controls)), miss='\n'.join(missing_controls))
 
     def test_query_experiment_set_controls(self):
         sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
@@ -314,7 +352,7 @@ class TestSBHQueries(unittest.TestCase):
 
         missing_controls = min_controls.difference(controls)
 
-        assert len(missing_controls) == 0,"Failed to retrieve {num} of minimum {mini} controls from Yeast Gates experiments. Missing: {miss}".format(num=repr(len(min_controls) - len(controls)), mini=repr(len(min_controls)), miss='\n'.join(missing_controls))
+        assert len(missing_controls) == 0, "Failed to retrieve {num} of minimum {mini} controls from Yeast Gates experiments. Missing: {miss}".format(num=repr(len(min_controls) - len(controls)), mini=repr(len(min_controls)), miss='\n'.join(missing_controls))
 
     def test_query_single_experiment_controls(self):
         yeast_gates_experiment = 'https://hub.sd2e.org/user/sd2e/experiment/transcriptic_yeast_gates_q0_r1bfbfd7f8dn5/1'
@@ -326,7 +364,7 @@ class TestSBHQueries(unittest.TestCase):
 
         min_controls = 72
 
-        assert len(controls) >= min_controls,"Failed to retrieve {num} of {mini} control samples from Yeast Gates experiment {exp}.".format(num=repr(72 - len(controls)), mini=repr(min_controls), exp=yeast_gates_experiment.split('/')[-2])
+        assert len(controls) >= min_controls, "Failed to retrieve {num} of {mini} control samples from Yeast Gates experiment {exp}.".format(num=repr(72 - len(controls)), mini=repr(min_controls), exp=yeast_gates_experiment.split('/')[-2])
 
     # def test_query_experiment_fbead_controls(self):
     #   sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
@@ -365,7 +403,7 @@ class TestSBHQueries(unittest.TestCase):
 
         missing_controls = min_controls.difference(controls)
 
-        assert len(missing_controls) == 0,"Failed to retrieve {num} of minimum {mini} fluorescein controls from SD2 experiments. Missing: {miss}".format(num=repr(len(min_controls) - len(controls)), mini=repr(len(min_controls)), miss='\n'.join(missing_controls))
+        assert len(missing_controls) == 0, "Failed to retrieve {num} of minimum {mini} fluorescein controls from SD2 experiments. Missing: {miss}".format(num=repr(len(min_controls) - len(controls)), mini=repr(len(min_controls)), miss='\n'.join(missing_controls))
 
     def test_query_experiment_set_fluorescein_controls(self):
         sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
@@ -390,7 +428,7 @@ class TestSBHQueries(unittest.TestCase):
 
         missing_controls = min_controls.difference(controls)
 
-        assert len(missing_controls) == 0,"Failed to retrieve {num} of minimum {mini} fluorescein controls from Yeast Gates experiments. Missing: {miss}".format(num=repr(len(min_controls) - len(controls)), mini=repr(len(min_controls)), miss='\n'.join(missing_controls))
+        assert len(missing_controls) == 0, "Failed to retrieve {num} of minimum {mini} fluorescein controls from Yeast Gates experiments. Missing: {miss}".format(num=repr(len(min_controls) - len(controls)), mini=repr(len(min_controls)), miss='\n'.join(missing_controls))
 
     def test_query_single_experiment_fluorescein_controls(self):
         yeast_gates_experiment = 'https://hub.sd2e.org/user/sd2e/experiment/transcriptic_yeast_gates_q0_r1bfbfd7f8dn5/1'
@@ -402,7 +440,7 @@ class TestSBHQueries(unittest.TestCase):
 
         min_controls = 48
 
-        assert len(controls) >= min_controls,"Failed to retrieve {num} of {mini} fluorescein control samples from Yeast Gates experiment {exp}.".format(num=repr(48 - len(controls)), mini=repr(min_controls), exp=yeast_gates_experiment.split('/')[-2])
+        assert len(controls) >= min_controls, "Failed to retrieve {num} of {mini} fluorescein control samples from Yeast Gates experiment {exp}.".format(num=repr(48 - len(controls)), mini=repr(min_controls), exp=yeast_gates_experiment.split('/')[-2])
 
     def test_query_experiment_ludox_controls(self):
         sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
@@ -418,7 +456,7 @@ class TestSBHQueries(unittest.TestCase):
 
         missing_controls = min_controls.difference(controls)
 
-        assert len(missing_controls) == 0,"Failed to retrieve {num} of minimum {mini} LUDOX controls from SD2 experiments. Missing: {miss}".format(num=repr(len(min_controls) - len(controls)), mini=repr(len(min_controls)), miss='\n'.join(missing_controls))
+        assert len(missing_controls) == 0, "Failed to retrieve {num} of minimum {mini} LUDOX controls from SD2 experiments. Missing: {miss}".format(num=repr(len(min_controls) - len(controls)), mini=repr(len(min_controls)), miss='\n'.join(missing_controls))
 
     def test_query_experiment_set_ludox_controls(self):
         sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
@@ -434,7 +472,7 @@ class TestSBHQueries(unittest.TestCase):
 
         missing_controls = min_controls.difference(controls)
 
-        assert len(missing_controls) == 0,"Failed to retrieve {num} of minimum {mini} LUDOX controls from Yeast Gates experiments. Missing: {miss}".format(num=repr(len(min_controls) - len(controls)), mini=repr(len(min_controls)), miss='\n'.join(missing_controls))
+        assert len(missing_controls) == 0, "Failed to retrieve {num} of minimum {mini} LUDOX controls from Yeast Gates experiments. Missing: {miss}".format(num=repr(len(min_controls) - len(controls)), mini=repr(len(min_controls)), miss='\n'.join(missing_controls))
 
     def test_query_single_experiment_ludox_controls(self):
         yeast_gates_experiment = 'https://hub.sd2e.org/user/sd2e/experiment/transcriptic_yeast_gates_q0_r1bfbfd7f8dn5/1'
@@ -446,7 +484,7 @@ class TestSBHQueries(unittest.TestCase):
 
         min_controls = 12
 
-        assert len(controls) >= min_controls,"Failed to retrieve {num} of {mini} LUDOX control samples from Yeast Gates experiment {exp}.".format(num=repr(12 - len(controls)), mini=repr(min_controls), exp=yeast_gates_experiment.split('/')[-2])
+        assert len(controls) >= min_controls, "Failed to retrieve {num} of {mini} LUDOX control samples from Yeast Gates experiment {exp}.".format(num=repr(12 - len(controls)), mini=repr(min_controls), exp=yeast_gates_experiment.split('/')[-2])
 
     def test_query_experiment_water_controls(self):
         sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
@@ -462,7 +500,7 @@ class TestSBHQueries(unittest.TestCase):
 
         missing_controls = min_controls.difference(controls)
 
-        assert len(missing_controls) == 0,"Failed to retrieve {num} of minimum {mini} water controls from SD2 experiments. Missing: {miss}".format(num=repr(len(min_controls) - len(controls)), mini=repr(len(min_controls)), miss='\n'.join(missing_controls))
+        assert len(missing_controls) == 0, "Failed to retrieve {num} of minimum {mini} water controls from SD2 experiments. Missing: {miss}".format(num=repr(len(min_controls) - len(controls)), mini=repr(len(min_controls)), miss='\n'.join(missing_controls))
 
     def test_query_experiment_set_water_controls(self):
         sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
@@ -478,7 +516,7 @@ class TestSBHQueries(unittest.TestCase):
 
         missing_controls = min_controls.difference(controls)
 
-        assert len(missing_controls) == 0,"Failed to retrieve {num} of minimum {mini} water controls from Yeast Gates experiments. Missing: {miss}".format(num=repr(len(min_controls) - len(controls)), mini=repr(len(min_controls)), miss='\n'.join(missing_controls))
+        assert len(missing_controls) == 0, "Failed to retrieve {num} of minimum {mini} water controls from Yeast Gates experiments. Missing: {miss}".format(num=repr(len(min_controls) - len(controls)), mini=repr(len(min_controls)), miss='\n'.join(missing_controls))
 
     def test_query_single_experiment_water_controls(self):
         yeast_gates_experiment = 'https://hub.sd2e.org/user/sd2e/experiment/transcriptic_yeast_gates_q0_r1bfbfd7f8dn5/1'
@@ -490,7 +528,7 @@ class TestSBHQueries(unittest.TestCase):
 
         min_controls = 12
 
-        assert len(controls) >= min_controls,"Failed to retrieve {num} of {mini} water control samples from Yeast Gates experiment {exp}.".format(num=repr(min_controls - len(controls)), mini=repr(min_controls), exp=yeast_gates_experiment.split('/')[-2])
+        assert len(controls) >= min_controls, "Failed to retrieve {num} of {mini} water control samples from Yeast Gates experiment {exp}.".format(num=repr(min_controls - len(controls)), mini=repr(min_controls), exp=yeast_gates_experiment.split('/')[-2])
 
     # Test gate query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
@@ -506,7 +544,8 @@ class TestSBHQueries(unittest.TestCase):
     def test_query_gate_logic(self):
         sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
         sbh_query.login(self.user, self.password)
-        actual_circuit = sbh_query.query_gate_logic(['https://hub.sd2e.org/user/sd2e/design/UWBF_16969/1'], pretty=True)
+        actual_circuit = sbh_query.query_gate_logic(['https://hub.sd2e.org/user/sd2e/design/UWBF_16969/1'],
+                                                    pretty=True)
         expected_circuit = [{'gate': 'https://hub.sd2e.org/user/sd2e/design/UWBF_16969/1',
                              'gate_type': 'http://www.openmath.org/cd/logic1#xor'}]
         assert expected_circuit == actual_circuit
@@ -587,13 +626,14 @@ class TestSBHQueries(unittest.TestCase):
 
         missing_gates = min_gates.difference(gates)
 
-        assert len(missing_gates) == 0,"Failed to retrieve {num} of minimum {mini} logic gate strains from SD2 program. Missing: {miss}".format(num=repr(len(min_gates) - len(gates)), mini=repr(len(min_gates)), miss='\n'.join(missing_gates))
+        assert len(missing_gates) == 0, "Failed to retrieve {num} of minimum {mini} logic gate strains from SD2 program. Missing: {miss}".format(num=repr(len(min_gates) - len(gates)), mini=repr(len(min_gates)), miss='\n'.join(missing_gates))
 
     def test_query_design_set_gates(self):
         sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
         sbh_query.login(self.user, self.password)
 
-        gates = set(sbh_query.query_design_set_gates(SD2Constants.YEAST_GATES_DESIGN_COLLECTION, with_role=False, pretty=True))
+        gates = set(sbh_query.query_design_set_gates(SD2Constants.YEAST_GATES_DESIGN_COLLECTION, with_role=False,
+                                                     pretty=True))
 
         min_gates = {
             'https://hub.sd2e.org/user/sd2e/design/UWBF_16967/1',
@@ -624,7 +664,7 @@ class TestSBHQueries(unittest.TestCase):
 
         missing_gates = min_gates.difference(gates)
 
-        assert len(missing_gates) == 0,"Failed to retrieve {num} of minimum {mini} logic gate strains from Yeast Gates challenge problem. Missing: {miss}".format(num=repr(len(min_gates) - len(gates)), mini=repr(len(min_gates)), miss='\n'.join(missing_gates))
+        assert len(missing_gates) == 0, "Failed to retrieve {num} of minimum {mini} logic gate strains from Yeast Gates challenge problem. Missing: {miss}".format(num=repr(len(min_gates) - len(gates)), mini=repr(len(min_gates)), miss='\n'.join(missing_gates))
 
     def test_query_experiment_gates(self):
         sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
@@ -661,13 +701,14 @@ class TestSBHQueries(unittest.TestCase):
 
         missing_gates = min_gates.difference(gates)
 
-        assert len(missing_gates) == 0,"Failed to retrieve {num} of minimum {mini} logic gate strains from SD2 experiments. Missing: {miss}".format(num=repr(len(min_gates) - len(gates)), mini=repr(len(min_gates)), miss='\n'.join(missing_gates))
+        assert len(missing_gates) == 0, "Failed to retrieve {num} of minimum {mini} logic gate strains from SD2 experiments. Missing: {miss}".format(num=repr(len(min_gates) - len(gates)), mini=repr(len(min_gates)), miss='\n'.join(missing_gates))
 
     def test_query_experiment_set_gates(self):
         sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
         sbh_query.login(self.user, self.password)
 
-        gates = set(sbh_query.query_experiment_set_gates(SD2Constants.YEAST_GATES_EXPERIMENT_COLLECTION, with_role=False))
+        gates = set(sbh_query.query_experiment_set_gates(SD2Constants.YEAST_GATES_EXPERIMENT_COLLECTION,
+                                                         with_role=False))
 
         min_gates = {
             'https://hub.sd2e.org/user/sd2e/design/UWBF_16967/1',
@@ -698,7 +739,7 @@ class TestSBHQueries(unittest.TestCase):
 
         missing_gates = min_gates.difference(gates)
 
-        assert len(missing_gates) == 0,"Failed to retrieve {num} of minimum {mini} logic gate strains from Yeast Gates experiments. Missing: {miss}".format(num=repr(len(min_gates) - len(gates)), mini=repr(len(min_gates)), miss='\n'.join(missing_gates))
+        assert len(missing_gates) == 0, "Failed to retrieve {num} of minimum {mini} logic gate strains from Yeast Gates experiments. Missing: {miss}".format(num=repr(len(min_gates) - len(gates)), mini=repr(len(min_gates)), miss='\n'.join(missing_gates))
 
     ###########
 
@@ -805,7 +846,7 @@ class TestSBHQueries(unittest.TestCase):
 
         missing_media = min_media.difference(media)
 
-        assert len(missing_media) == 0,"Failed to retrieve {num} of minimum {mini} growth media from SD2 program. Missing: {miss}".format(num=repr(len(min_media) - len(media)), mini=repr(len(min_media)), miss='\n'.join(missing_media))
+        assert len(missing_media) == 0, "Failed to retrieve {num} of minimum {mini} growth media from SD2 program. Missing: {miss}".format(num=repr(len(min_media) - len(media)), mini=repr(len(min_media)), miss='\n'.join(missing_media))
 
     def test_query_design_set_media(self):
         sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
@@ -830,7 +871,7 @@ class TestSBHQueries(unittest.TestCase):
 
         missing_media = min_media.difference(media)
 
-        assert len(missing_media) == 0,"Failed to retrieve {num} of minimum {mini} growth media from Yeast Gates challenge problem. Missing: {miss}".format(num=repr(len(min_media) - len(media)), mini=repr(len(min_media)), miss='\n'.join(missing_media))
+        assert len(missing_media) == 0, "Failed to retrieve {num} of minimum {mini} growth media from Yeast Gates challenge problem. Missing: {miss}".format(num=repr(len(min_media) - len(media)), mini=repr(len(min_media)), miss='\n'.join(missing_media))
 
     def test_query_experiment_media(self):
         sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
@@ -852,7 +893,7 @@ class TestSBHQueries(unittest.TestCase):
 
         missing_media = min_media.difference(media)
 
-        assert len(missing_media) == 0,"Failed to retrieve {num} of minimum {mini} growth media from SD2 experiments. Missing: {miss}".format(num=repr(len(min_media) - len(media)), mini=repr(len(min_media)), miss='\n'.join(missing_media))
+        assert len(missing_media) == 0, "Failed to retrieve {num} of minimum {mini} growth media from SD2 experiments. Missing: {miss}".format(num=repr(len(min_media) - len(media)), mini=repr(len(min_media)), miss='\n'.join(missing_media))
 
     def test_query_experiment_set_media(self):
         sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
@@ -874,7 +915,7 @@ class TestSBHQueries(unittest.TestCase):
 
         missing_media = min_media.difference(media)
 
-        assert len(missing_media) == 0,"Failed to retrieve {num} of minimum {mini} growth media from Yeast Gates experiments. Missing: {miss}".format(num=repr(len(min_media) - len(media)), mini=repr(len(min_media)), miss='\n'.join(missing_media))
+        assert len(missing_media) == 0, "Failed to retrieve {num} of minimum {mini} growth media from Yeast Gates experiments. Missing: {miss}".format(num=repr(len(min_media) - len(media)), mini=repr(len(min_media)), miss='\n'.join(missing_media))
 
     ###########
 
@@ -928,7 +969,7 @@ class TestSBHQueries(unittest.TestCase):
 
         missing_plasmids = min_plasmids.difference(plasmids)
 
-        assert len(missing_plasmids) == 0,"Failed to retrieve {num} of minimum {mini} plasmids from SD2 program. Missing: {miss}".format(num=repr(len(min_plasmids) - len(plasmids)), mini=repr(len(min_plasmids)), miss='\n'.join(missing_plasmids))
+        assert len(missing_plasmids) == 0, "Failed to retrieve {num} of minimum {mini} plasmids from SD2 program. Missing: {miss}".format(num=repr(len(min_plasmids) - len(plasmids)), mini=repr(len(min_plasmids)), miss='\n'.join(missing_plasmids))
 
     def test_query_design_set_plasmids(self):
         sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
@@ -966,7 +1007,7 @@ class TestSBHQueries(unittest.TestCase):
 
         missing_plasmids = min_plasmids.difference(plasmids)
 
-        assert len(missing_plasmids) == 0,"Failed to retrieve {num} of minimum {mini} plasmids from Yeast Gates challenge problem. Missing: {miss}".format(num=repr(len(min_plasmids) - len(plasmids)), mini=repr(len(min_plasmids)), miss='\n'.join(missing_plasmids))
+        assert len(missing_plasmids) == 0, "Failed to retrieve {num} of minimum {mini} plasmids from Yeast Gates challenge problem. Missing: {miss}".format(num=repr(len(min_plasmids) - len(plasmids)), mini=repr(len(min_plasmids)), miss='\n'.join(missing_plasmids))
 
     def test_query_experiment_plasmids(self):
         sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
@@ -1007,7 +1048,7 @@ class TestSBHQueries(unittest.TestCase):
 
         missing_plasmids = min_plasmids.difference(plasmids)
 
-        assert len(missing_plasmids) == 0,"Failed to retrieve {num} of minimum {mini} plasmids from SD2 experiments. Missing: {miss}".format(num=repr(len(min_plasmids) - len(plasmids)), mini=repr(len(min_plasmids)), miss='\n'.join(missing_plasmids))
+        assert len(missing_plasmids) == 0, "Failed to retrieve {num} of minimum {mini} plasmids from SD2 experiments. Missing: {miss}".format(num=repr(len(min_plasmids) - len(plasmids)), mini=repr(len(min_plasmids)), miss='\n'.join(missing_plasmids))
 
     def test_query_experiment_set_plasmids(self):
         sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
@@ -1044,7 +1085,7 @@ class TestSBHQueries(unittest.TestCase):
 
         missing_plasmids = min_plasmids.difference(plasmids)
 
-        assert len(missing_plasmids) == 0,"Failed to retrieve {num} of minimum {mini} plasmids from Yeast Gates experiments. Missing: {miss}".format(num=repr(len(min_plasmids) - len(plasmids)), mini=repr(len(min_plasmids)), miss='\n'.join(missing_plasmids))
+        assert len(missing_plasmids) == 0, "Failed to retrieve {num} of minimum {mini} plasmids from Yeast Gates experiments. Missing: {miss}".format(num=repr(len(min_plasmids) - len(plasmids)), mini=repr(len(min_plasmids)), miss='\n'.join(missing_plasmids))
 
     ############
 
@@ -1077,7 +1118,8 @@ class TestSBHQueries(unittest.TestCase):
         sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
         sbh_query.login(self.user, self.password)
 
-        primers = set(sbh_query.query_design_primers(with_sequence=False, pretty=True, downstream_gene=downstream_gene))
+        primers = set(sbh_query.query_design_primers(with_sequence=False, pretty=True,
+                                                     downstream_gene=downstream_gene))
 
         min_primers = {
             'https://hub.sd2e.org/user/sd2e/design/UCSB_PNNL_Output_Primer_4232/1',
@@ -1092,7 +1134,7 @@ class TestSBHQueries(unittest.TestCase):
 
         missing_primers = min_primers.difference(primers)
 
-        assert len(missing_primers) == 0,"Failed to retrieve {num} of minimum {mini} primers with downstream gene {dg} from SD2 program. Missing: {miss}".format(num=repr(len(min_primers) - len(primers)), mini=repr(len(min_primers)), dg=downstream_gene, miss='\n'.join(missing_primers))
+        assert len(missing_primers) == 0, "Failed to retrieve {num} of minimum {mini} primers with downstream gene {dg} from SD2 program. Missing: {miss}".format(num=repr(len(min_primers) - len(primers)), mini=repr(len(min_primers)), dg=downstream_gene, miss='\n'.join(missing_primers))
 
     def test_query_design_set_primers(self):
         downstream_gene = 'dnaA'
@@ -1100,7 +1142,10 @@ class TestSBHQueries(unittest.TestCase):
         sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
         sbh_query.login(self.user, self.password)
 
-        primers = set(sbh_query.query_design_set_primers(SD2Constants.NOVEL_CHASSIS_DESIGN_COLLECTION, with_sequence=False, pretty=True, downstream_gene=downstream_gene))
+        primers = set(sbh_query.query_design_set_primers(SD2Constants.NOVEL_CHASSIS_DESIGN_COLLECTION,
+                                                         with_sequence=False,
+                                                         pretty=True,
+                                                         downstream_gene=downstream_gene))
 
         min_primers = {
             'https://hub.sd2e.org/user/sd2e/design/UCSB_PNNL_Output_Primer_4232/1',
@@ -1115,7 +1160,7 @@ class TestSBHQueries(unittest.TestCase):
 
         missing_primers = min_primers.difference(primers)
 
-        assert len(missing_primers) == 0,"Failed to retrieve {num} of minimum {mini} primers with downstream gene {dg} from Novel Chassis challenge problem. Missing: {miss}".format(num=repr(len(min_primers) - len(primers)), mini=repr(len(min_primers)), dg=downstream_gene, miss='\n'.join(missing_primers))
+        assert len(missing_primers) == 0, "Failed to retrieve {num} of minimum {mini} primers with downstream gene {dg} from Novel Chassis challenge problem. Missing: {miss}".format(num=repr(len(min_primers) - len(primers)), mini=repr(len(min_primers)), dg=downstream_gene, miss='\n'.join(missing_primers))
 
     # # Test riboswitch query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
@@ -1127,17 +1172,18 @@ class TestSBHQueries(unittest.TestCase):
 
         min_riboswitches = 193
 
-        assert len(riboswitches) >= min_riboswitches,"Failed to retrieve {num} of minimum {mini} riboswitches from SD2 program.".format(num=repr(min_riboswitches - len(riboswitches)), mini=repr(min_riboswitches))
+        assert len(riboswitches) >= min_riboswitches, "Failed to retrieve {num} of minimum {mini} riboswitches from SD2 program.".format(num=repr(min_riboswitches - len(riboswitches)), mini=repr(min_riboswitches))
 
     def test_query_design_set_riboswitches(self):
         sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
         sbh_query.login(self.user, self.password)
 
-        riboswitches = sbh_query.query_design_set_riboswitches(SD2Constants.RIBOSWITCHES_DESIGN_COLLECTION, pretty=True)
+        riboswitches = sbh_query.query_design_set_riboswitches(SD2Constants.RIBOSWITCHES_DESIGN_COLLECTION,
+                                                               pretty=True)
 
         min_riboswitches = 193
 
-        assert len(riboswitches) >= min_riboswitches,"Failed to retrieve {num} of minimum {mini} riboswitches from Riboswitches challenge problem.".format(num=repr(min_riboswitches - len(riboswitches)), mini=repr(min_riboswitches))
+        assert len(riboswitches) >= min_riboswitches, "Failed to retrieve {num} of minimum {mini} riboswitches from Riboswitches challenge problem.".format(num=repr(min_riboswitches - len(riboswitches)), mini=repr(min_riboswitches))
 
     # # Test strain query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
@@ -1153,7 +1199,9 @@ class TestSBHQueries(unittest.TestCase):
 
         min_strains = 51
 
-        assert len(strains) >= min_strains,"Failed to retrieve {num} of minimum {mini} strains from SD2 program.".format(num=repr(min_strains - len(strains)), mini=repr(min_strains))
+        msg = "Failed to retrieve {num} of minimum {mini} strains from SD2 program."
+        assert len(strains) >= min_strains, msg.format(num=repr(min_strains - len(strains)),
+                                                       mini=repr(min_strains))
 
     def test_query_design_set_strains(self):
         sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
@@ -1191,7 +1239,7 @@ class TestSBHQueries(unittest.TestCase):
 
         missing_strains = min_strains.difference(strains)
 
-        assert len(missing_strains) == 0,"Failed to retrieve {num} of minimum {mini} strains from Yeast Gates challenge problem. Missing: {miss}".format(num=repr(len(min_strains) - len(strains)), mini=repr(len(min_strains)), miss='\n'.join(missing_strains))
+        assert len(missing_strains) == 0, "Failed to retrieve {num} of minimum {mini} strains from Yeast Gates challenge problem. Missing: {miss}".format(num=repr(len(min_strains) - len(strains)), mini=repr(len(min_strains)), miss='\n'.join(missing_strains))
 
     def test_query_experiment_strains(self):
         sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
@@ -1228,7 +1276,7 @@ class TestSBHQueries(unittest.TestCase):
 
         missing_strains = min_strains.difference(strains)
 
-        assert len(missing_strains) == 0,"Failed to retrieve {num} of minimum {mini} strains from SD2 experiments. Missing: {miss}".format(num=repr(len(min_strains) - len(strains)), mini=repr(len(min_strains)), miss='\n'.join(missing_strains))
+        assert len(missing_strains) == 0, "Failed to retrieve {num} of minimum {mini} strains from SD2 experiments. Missing: {miss}".format(num=repr(len(min_strains) - len(strains)), mini=repr(len(min_strains)), miss='\n'.join(missing_strains))
 
     def test_query_experiment_set_strains(self):
         sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
@@ -1265,7 +1313,7 @@ class TestSBHQueries(unittest.TestCase):
 
         missing_strains = min_strains.difference(strains)
 
-        assert len(missing_strains) == 0,"Failed to retrieve {num} of minimum {mini} strains from Yeast Gates experiments. Missing: {miss}".format(num=repr(len(min_strains) - len(strains)), mini=repr(len(min_strains)), miss='\n'.join(missing_strains))
+        assert len(missing_strains) == 0, "Failed to retrieve {num} of minimum {mini} strains from Yeast Gates experiments. Missing: {miss}".format(num=repr(len(min_strains) - len(strains)), mini=repr(len(min_strains)), miss='\n'.join(missing_strains))
 
     # def test_query_single_experiment_strains(self):
     #   rule_30_experiment = 'https://hub.sd2e.org/user/sd2e/experiment/transcriptic_rule_30_q0_1_09242017/1'
@@ -1324,7 +1372,7 @@ class TestSBHQueries(unittest.TestCase):
 
         missing_design_sets = min_design_sets.difference(design_sets)
 
-        assert len(missing_design_sets) == 0,"Failed to retrieve {num} of minimum {mini} design collections from SD2 program. Missing: {miss}".format(num=repr(len(min_design_sets) - len(design_sets)), mini=repr(len(min_design_sets)), miss='\n'.join(missing_design_sets))
+        assert len(missing_design_sets) == 0, "Failed to retrieve {num} of minimum {mini} design collections from SD2 program. Missing: {miss}".format(num=repr(len(min_design_sets) - len(design_sets)), mini=repr(len(min_design_sets)), miss='\n'.join(missing_design_sets))
 
     def test_query_experiment_sets(self):
         sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
@@ -1341,7 +1389,7 @@ class TestSBHQueries(unittest.TestCase):
 
         missing_exp_sets = min_exp_sets.difference(exp_sets)
 
-        assert len(missing_exp_sets) == 0,"Failed to retrieve {num} of minimum {mini} experiment collections from SD2 program. Missing: {miss}".format(num=repr(len(min_exp_sets) - len(exp_sets)), mini=repr(len(min_exp_sets)), miss='\n'.join(missing_exp_sets))
+        assert len(missing_exp_sets) == 0, "Failed to retrieve {num} of minimum {mini} experiment collections from SD2 program. Missing: {miss}".format(num=repr(len(min_exp_sets) - len(exp_sets)), mini=repr(len(min_exp_sets)), miss='\n'.join(missing_exp_sets))
 
     def test_query_experiment_set_size(self):
         experiment_set = SD2Constants.YEAST_GATES_EXPERIMENT_COLLECTION
@@ -1353,7 +1401,7 @@ class TestSBHQueries(unittest.TestCase):
 
         min_exp_set_size = 46
 
-        assert exp_set_size >= min_exp_set_size,"Failed to retrieve {num} of minimum {mini} experiments from collection with URI <{es}>.".format(num=repr(min_exp_set_size - exp_set_size), mini=repr(min_exp_set_size), es=experiment_set)
+        assert exp_set_size >= min_exp_set_size, "Failed to retrieve {num} of minimum {mini} experiments from collection with URI <{es}>.".format(num=repr(min_exp_set_size - exp_set_size), mini=repr(min_exp_set_size), es=experiment_set)
 
     # # Test attachment retrieval methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
@@ -1386,10 +1434,56 @@ class TestSBHQueries(unittest.TestCase):
     def test_query_designs_by_lab_ids(self):
         sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
         sbh_query.login(self.user, self.password)
+
         designs = sbh_query.query_designs_by_lab_ids(SD2Constants.GINKGO, ['1'], verbose=True)
         expected_designs = {'1': {'identity': 'https://hub.sd2e.org/user/sd2e/design/CAT_G33_500/1',
-                            'name': 'Glycerol'}}
+                                  'name': 'Glycerol'}}
         assert expected_designs == designs
+
+        designs = sbh_query.query_designs_by_lab_ids(SD2Constants.CALTECH, ['a'], verbose=True)
+        expected_designs = {'a': {'identity': 'https://hub.sd2e.org/user/sd2e/design/Murray0x20BioCon0x20A/1',
+                                  'name': 'Murray BioCon A'}}
+        assert expected_designs == designs
+
+    def test_query_lab_ids_by_designs(self):
+        sbh_query = SynBioHubQuery(SD2Constants.SD2_SERVER)
+        sbh_query.login(self.user, self.password)
+        # Test with default options
+        lab_ids = sbh_query.query_lab_ids_by_designs(SD2Constants.GINKGO,
+                                                     ['https://hub.sd2e.org/user/sd2e/design/CAT_G33_500/1'])
+        expected = {'https://hub.sd2e.org/user/sd2e/design/CAT_G33_500/1': '1'}
+        assert expected == lab_ids
+        # Test with verbose (default is False)
+        lab_ids = sbh_query.query_lab_ids_by_designs(SD2Constants.GINKGO,
+                                                     ['https://hub.sd2e.org/user/sd2e/design/CAT_G33_500/1'],
+                                                     verbose=True)
+        expected = {'https://hub.sd2e.org/user/sd2e/design/CAT_G33_500/1': {'id': '1',
+                                                                            'name': 'Glycerol'}}
+        assert expected == lab_ids
+        # Test without pretty (default is True)
+        lab_ids = sbh_query.query_lab_ids_by_designs(SD2Constants.GINKGO,
+                                                     ['https://hub.sd2e.org/user/sd2e/design/CAT_G33_500/1'],
+                                                     pretty=False)
+        expected = {'head': {'link': [],
+                             'vars': ['design', 'name', 'id']},
+                    'results': {'distinct': False,
+                                'ordered': True,
+                                'bindings': [{'design':
+                                              {'type': 'uri',
+                                               'value': 'https://hub.sd2e.org/user/sd2e/design/CAT_G33_500/1'},
+                                              'name': {'type': 'literal',
+                                                       'value': 'Glycerol'},
+                                              'id': {'type': 'literal',
+                                                     'value': '1'}}]}}
+        assert expected == lab_ids
+        # Test querying multiple designs
+        designs = ['https://hub.sd2e.org/user/sd2e/design/UWBF_6390/1',
+                   'https://hub.sd2e.org/user/sd2e/design/CAT_G33_500/1']
+        lab_ids = sbh_query.query_lab_ids_by_designs(SD2Constants.GINKGO,
+                                                     designs)
+        expected = {'https://hub.sd2e.org/user/sd2e/design/CAT_G33_500/1': '1',
+                    'https://hub.sd2e.org/user/sd2e/design/UWBF_6390/1': '162063'}
+        assert expected == lab_ids
 
     # Test statistics query methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 

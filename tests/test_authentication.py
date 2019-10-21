@@ -4,6 +4,7 @@ import warnings
 
 import synbiohub_adapter as sbha
 import SPARQLWrapper
+from getpass import getpass
 
 
 class TestAuthentication(unittest.TestCase):
