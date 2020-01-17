@@ -1,123 +1,131 @@
-# import unittest
+import unittest
 
-# from synbiohub_adapter.query_synbiohub import *
-# from synbiohub_adapter.SynBioHubUtil import *
-# from sbol import *
+from synbiohub_adapter.upload_sbol.upload_sbol import SynBioHub
+from synbiohub_adapter.SynBioHubUtil import SD2Constants
+import sbol
+from getpass import getpass
+import os
 
-# class TestSBHSubmissions(unittest.TestCase):
-#   '''
-#       This class will perform unit testing to submit SBOL data to SynBioHub.
+class TestSBHSubmissions(unittest.TestCase):
+    '''
+        This class will perform unit testing to submit SBOL data to SynBioHub.
 
-#       To run this python file, enter in the following command from the synbiohub_adapter directory:
-#           python -m unittest tests/Test_SBHSubmissions.py
-#   '''
+        To run this python file, enter in the following command from the synbiohub_adapter directory:
+            python -m unittest tests/test_sbh_submissions.py
+    '''
 
-#   def test_submitNewCollection(self):
-#       server = SBHConstants.BBN_SERVER
-#       sbhQuery = SynBioHubQuery(server)
+    @classmethod
+    def setUpClass(self):
+        self.user = 'sd2e'
+        if 'SBH_PASSWORD' in os.environ.keys():
+            self.password = os.environ['SBH_PASSWORD']
+        else:
+            self.password = getpass()
 
-#       rule30_sbol = 'examples/rule_30_design.xml'
-#       displayId = 'design'
-#       name = 'BBN_Rule30_Design'
-#       description = 'Rule of 30 design collection used for testing BBN SBH instance'
-#       version = '1'
+    def test_submit_collection(self):
+        sbh = SynBioHub(SD2Constants.SD2_STAGING_SERVER, self.user, self.password, 
+            SD2Constants.SD2_STAGING_SERVER + '/sparql', SD2Constants.SD2_SERVER)
 
-#       sbolDoc = loadSBOLFile(rule30_sbol)
-#       sbhQuery.submit_NewCollection(sbolDoc, displayId, name, description, version)
+        sbol.Config.setOption('sbol_typed_uris', False)
+        sbol.Config.setOption('validate', False)
+        sbol.setHomespace('http://dummy.org')
 
-#   def test_submitNewCollection2(self):
-#       server = SBHConstants.BBN_SERVER
-#       sbhQuery = SynBioHubQuery(server)
+        member_ID = 'foo'
 
-#       rule30_sbol = 'examples/rule_30_plan.xml'
-#       displayId = 'transcriptic_rule_30_q0_1_09242017'
-#       name = 'BBN_Rule30_Plan'
-#       description = 'Rule of 30 plan collection used for testing BBN SBH instance'
-#       version = '1'
+        doc = sbol.Document()
+        doc.componentDefinitions.create(member_ID)
 
-#       sbolDoc = loadSBOLFile(rule30_sbol)
-#       sbhQuery.submit_NewCollection(sbolDoc, displayId, name, description, version)
+        collection_ID = 'adapter_test_1'
+        collection_name = 'Adapter Test Collection 1'
+        collection_description = 'This is a test of the upload_sbol module of synbiohub_adapter.'
+        collection_version = '1'
 
-#   def test_submitNewCollection3(self):
-#       server = SBHConstants.BBN_SERVER
-#       sbhQuery = SynBioHubQuery(server)
+        sbh.submit_collection(doc, collection_ID, collection_version, collection_name,
+            collection_description, overwrite=True)
 
-#       rule30_sbol = 'examples/rule_30_experiments.xml'
-#       displayId = 'rule_30'
-#       name = 'BBN_Rule30_Problem'
-#       description = 'Rule of 30 problem collection used for testing BBN SBH instance'
-#       version = '1'
+        member_identity = '/'.join([SD2Constants.SD2_SERVER, 'user', self.user, collection_ID,
+            member_ID, '1'])
+        collection_identity = '/'.join([SD2Constants.SD2_SERVER, 'user', self.user, collection_ID,
+            collection_ID + '_collection', '1'])
 
-#       sbolDoc = loadSBOLFile(rule30_sbol)
-#       sbhQuery.submit_NewCollection(sbolDoc, displayId, name, description, version)
+        query_result = sbh.query_collection_members(collection_uris=[collection_identity])
 
-#   def test_submitNewCollection4(self):
-#       server = SBHConstants.BBN_SERVER
-#       sbhQuery = SynBioHubQuery(server)
+        assert len(query_result[collection_identity]) == 1 and query_result[collection_identity][0] == member_identity
 
-#       rule30_sbol = 'examples/rule30-Q0-v2.xml'
-#       displayId = 'rule_30_Q0_v2'
-#       name = 'BBN_Rule30'
-#       description = 'Rule of 30 problem collection used for stress testing'
-#       version = '1'
+    def test_submit_sub_collection(self):
+        sbh = SynBioHub(SD2Constants.SD2_STAGING_SERVER, self.user, self.password, 
+            SD2Constants.SD2_STAGING_SERVER + '/sparql', SD2Constants.SD2_SERVER)
 
-#       sbolDoc = loadSBOLFile(rule30_sbol)
-#       sbhQuery.submit_NewCollection(sbolDoc, displayId, name, description, version)
+        sbol.Config.setOption('sbol_typed_uris', False)
+        sbol.Config.setOption('validate', False)
+        sbol.setHomespace('http://dummy.org')
 
-#   def test_submitExistingCollection(self):
-#       # Note: To run this method, make sure that the collection exist on synbiohub first.
-#       server = SBHConstants.BBN_SERVER
-#       sbhQuery = SynBioHubQuery(server)
+        doc = sbol.Document()
 
-#       rule30_sbol = 'examples/rule30-Q0-v2.xml'
-#       rule30_collection = 'https://synbiohub.bbn.com/user/tramyn/design/design_collection/1'
-#       sbolDoc = loadSBOLFile(rule30_sbol)
-#       sbhQuery.submit_ExistingCollection(sbolDoc, rule30_collection, 2)
+        collection_ID = 'adapter_test_2'
+        collection_name = 'Adapter Test Collection 2'
+        collection_description = 'This is a test of the upload_sbol module of synbiohub_adapter.'
+        collection_version = '1'
 
-#   def test_stress1(self):
-#       sbolDoc = Document()
+        sub_collection_ID = 'sub_adapter_test'
+        sub_collection_name = 'Sub Adapter Test Collection'
+        sub_collection_description = 'This is a test of the upload_sbol module of synbiohub_adapter.'
+        sub_collection_version = '1'
 
-#       for i in range(0, 500):
-#           c_uri = "CompDef" + str(i)
-#           c = ComponentDefinition(c_uri, BIOPAX_DNA, '1.0')
+        sbh.submit_collection(doc, collection_ID, collection_version, collection_name,
+            collection_description, 0, sub_collection_ID, sub_collection_version, sub_collection_name,
+            sub_collection_description, overwrite=True)
 
-#           s_uri = "Seq" + str(i)
-#           elements = 'atatatatat'
-#           s = Sequence(s_uri, elements, SBOL_ENCODING_IUPAC, "1.0")
+        collection_identity = '/'.join([SD2Constants.SD2_SERVER, 'user', self.user, collection_ID,
+            collection_ID + '_collection', '1'])
+        sub_collection_identity = '/'.join([SD2Constants.SD2_SERVER, 'user', self.user, collection_ID,
+            sub_collection_ID, '1'])
 
-#           c.sequences = s.identity
+        query_result = sbh.query_collection_members(collection_uris=[collection_identity])
 
-#           sbolDoc.addComponentDefinition(c)
-#           sbolDoc.addSequence(s)
+        assert len(query_result[collection_identity]) == 1 and query_result[collection_identity][0] == sub_collection_identity
 
-#       server = SBHConstants.BBN_SERVER
-#       sbhQuery = SynBioHubQuery(server)
-#       displayId = 'stress1_reg'
-#       name = 'dummy_CompDef'
-#       description = 'A collection full of dummy ComponentDefinitions'
-#       version = '1'
-#       sbhQuery.submit_NewCollection(sbolDoc, displayId, name, description, version)
+    def test_submit_to_collection(self):
+        sbh = SynBioHub(SD2Constants.SD2_STAGING_SERVER, self.user, self.password, 
+            SD2Constants.SD2_STAGING_SERVER + '/sparql', SD2Constants.SD2_SERVER)
 
-#   def test_stress2(self):
-#       # write to new collections with different versions
-#       server = SBHConstants.BBN_SERVER
-#       sbhQuery = SynBioHubQuery(server)
+        sbol.Config.setOption('sbol_typed_uris', False)
+        sbol.Config.setOption('validate', False)
+        sbol.setHomespace('http://dummy.org')
 
-#       rule30_sbol = 'examples/rule30-Q0-v2.xml'
-#       description = "same rule of 30 but different versioning collection."
-#       sbolDoc = loadSBOLFile(rule30_sbol)
-#       sbh_connector = sbhQuery.login_SBH()
+        member_ID1 = 'foo'
 
-#       sbolDoc.description = description
+        doc1 = sbol.Document()
+        doc1.componentDefinitions.create(member_ID1)
 
-#       for v in range(0, 3):
-#           version = str(v)
-#           sbolDoc.version = version
-#           sbolDoc.displayId = 'stress2_reg' + version
-#           sbolDoc.name = 'rule30_Q0_v' + version
+        collection_ID = 'adapter_test_3'
+        collection_name = 'Adapter Test Collection 3'
+        collection_description = 'This is a test of the upload_sbol module of synbiohub_adapter.'
+        collection_version = '1'
 
-#           sbhQuery.submit_Collection(sbh_connector, sbolDoc, True, 0)
+        sbh.submit_collection(doc1, collection_ID, collection_version, collection_name,
+            collection_description, overwrite=True)
 
+        member_identity1 = '/'.join([SD2Constants.SD2_SERVER, 'user', self.user, collection_ID,
+            member_ID1, '1'])
+        collection_identity = '/'.join([SD2Constants.SD2_SERVER, 'user', self.user, collection_ID,
+            collection_ID + '_collection', '1'])
 
-# if __name__ == '__main__':
-#   unittest.main()
+        member_ID2 = 'bar'
+
+        doc2 = sbol.Document()
+        doc2.componentDefinitions.create(member_ID2)
+
+        sbh.submit_to_collection([doc2], collection_identity)
+
+        member_identity2 = '/'.join([SD2Constants.SD2_SERVER, 'user', self.user, collection_ID,
+            member_ID2, '1'])
+
+        query_result = sbh.query_collection_members(collection_uris=[collection_identity])
+
+        assert (len(query_result[collection_identity]) == 2 and (
+            (query_result[collection_identity][0] == member_identity1 and query_result[collection_identity][1] == member_identity2)
+            or (query_result[collection_identity][0] == member_identity2 and query_result[collection_identity][1] == member_identity1)))
+
+if __name__ == '__main__':
+  unittest.main()

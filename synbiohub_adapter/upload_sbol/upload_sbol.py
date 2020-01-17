@@ -62,9 +62,10 @@ def main(args=None):
 
 
 class SynBioHub():
-    def __init__(self, url, email, password, sparql):
+    def __init__(self, url, email, password, sparql, spoofed_url=None):
         url = url.rstrip('/')
         self.url = url
+        self.email = email
         self.part_shop = PartShop(url)
         self.part_shop.login(email, password)
         response = requests.post(url + '/login',
@@ -72,10 +73,11 @@ class SynBioHub():
                                  data={'email': email, 'password': password})
         self.token = response.content.decode('UTF-8')
         self.sparql = sparql
+        self.spoofed_url = spoofed_url
 
     def submit_collection(self, doc, collection_id, collection_version, collection_name, collection_description,
                           max_upload=0, sub_collection_id=None, sub_collection_version=None,
-                          sub_collection_name=None, sub_collection_description=None):
+                          sub_collection_name=None, sub_collection_description=None, overwrite=False):
         if max_upload > 0 and len(doc) > max_upload:
             raise MaxUploadError(max_upload)
 
@@ -88,12 +90,27 @@ class SynBioHub():
         doc.description = collection_description
         doc.version = collection_version
 
-        response = self.part_shop.submit(doc)
+        try:
+            response = self.part_shop.submit(doc)
 
-        if response == 'Submission id and version already in use':
-            raise DuplicateCollectionError(doc.displayId, doc.version)
-        else:
             print(response)
+        except RuntimeError as e:
+            if str(e).endswith('Submission id and version already in use'):
+                if overwrite:
+                    if self.spoofed_url:
+                        collection_uri = '/'.join([self.spoofed_url, 'user', self.email, collection_id,
+                            collection_id + '_collection', '1'])
+                    else:
+                        collection_uri = '/'.join([self.url, 'user', self.email, collection_id,
+                            collection_id + '_collection', '1'])
+                    
+                    response = self.part_shop.submit(doc, collection_uri, 1)
+
+                    print(response)
+                else:
+                    raise DuplicateCollectionError(doc.displayId, doc.version)
+            else:
+                raise e
 
     def submit_to_collection(self, docs, collection_uri, max_upload=0, overwrite=False,
                              overwrite_sub_collections=False, sub_collection_id=None, sub_collection_version=None,
@@ -428,11 +445,14 @@ class SynBioHub():
 
         print(response)
 
-    def query_collection_members(self, member_uris, collection_uris=[], rdf_type=None):
+    def query_collection_members(self, member_uris=[], collection_uris=[], rdf_type=None):
         responses = []
 
         cut_len = 50
-        sbh_query = SynBioHubQuery(self.sparql)
+        
+        sbh_query = SynBioHubQuery(self.sparql, user=self.email, authentication_key=self.token,
+            spoofed_url=self.spoofed_url)
+
         if len(member_uris) <= cut_len:
             responses.append(sbh_query.query_collection_members(collection_uris, member_uris, rdf_type))
         else:
