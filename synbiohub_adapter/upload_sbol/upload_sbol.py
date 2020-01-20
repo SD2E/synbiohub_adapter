@@ -47,7 +47,8 @@ def main(args=None):
     if len(docs) > 0:
         sbh = SynBioHub(args.url, args.email, args.password, args.sparql)
 
-        if args.collection_id is not None and args.collection_version is not None and args.collection_name is not None and args.collection_description is not None:
+        if (args.collection_id is not None and args.collection_version is not None and args.collection_name
+                is not None and args.collection_description is not None):
             sbh.submit_collection(docs[0], args.collection_id, args.collection_version, args.collection_name,
                                   args.collection_description, int(args.max_upload))
         elif args.collection_uri is not None:
@@ -99,11 +100,11 @@ class SynBioHub():
                 if overwrite:
                     if self.spoofed_url:
                         collection_uri = '/'.join([self.spoofed_url, 'user', self.email, collection_id,
-                            collection_id + '_collection', '1'])
+                                                  collection_id + '_collection', '1'])
                     else:
                         collection_uri = '/'.join([self.url, 'user', self.email, collection_id,
-                            collection_id + '_collection', '1'])
-                    
+                                                  collection_id + '_collection', '1'])
+
                     response = self.part_shop.submit(doc, collection_uri, 1)
 
                     print(response)
@@ -155,7 +156,8 @@ class SynBioHub():
                 if 'Submission id and version does not exist' in repr(e):
                     raise MissingCollectionError(collection_uri)
                 elif not overwrite:
-                    matched = re.match(r'Submission terminated\.\nA submission with this id already exists, and it includes an object: (.+) that is already in this repository and has different content', repr(e))
+                    matched = re.match(r'Submission terminated\.\nA submission with this id already exists, and it \
+includes an object: (.+) that is already in this repository and has different content', repr(e))
 
                     if matched is not None:
                         obj_uri_arr = matched.group(1).split('/')
@@ -194,7 +196,8 @@ class SynBioHub():
             copy_comp_def = cls.__copy_by_namespace(comp_def, namespace_to_docs, split_cap)
 
             cls.__port_sub_reference_namespaces(copy_comp_def, 'components', 'definition', doc, collection_namespace)
-            cls.__port_sub_sub_reference_namespaces(copy_comp_def, 'components', 'mapsTos', 'remote', doc, collection_namespace)
+            cls.__port_sub_sub_reference_namespaces(copy_comp_def, 'components', 'mapsTos', 'remote', doc,
+                                                    collection_namespace)
 
             cls.__port_reference_namespaces(copy_comp_def, 'sequences', doc, collection_namespace)
             cls.__port_reference_namespaces(copy_comp_def, 'attachments', doc, collection_namespace)
@@ -204,10 +207,14 @@ class SynBioHub():
         for derivation in doc.combinatorialderivations:
             copy_derivation = cls.__copy_by_namespace(derivation, namespace_to_docs, split_cap)
 
-            cls.__port_sub_reference_namespaces(copy_derivation, 'variableComponents', 'variable', doc, collection_namespace)
-            cls.__port_sub_reference_namespaces(copy_derivation, 'variableComponents', 'variants', doc, collection_namespace)
-            cls.__port_sub_reference_namespaces(copy_derivation, 'variableComponents', 'variantCollections', doc, collection_namespace)
-            cls.__port_sub_reference_namespaces(copy_derivation, 'variableComponents', 'variantDerivations', doc, collection_namespace)
+            cls.__port_sub_reference_namespaces(copy_derivation, 'variableComponents', 'variable', doc,
+                                                collection_namespace)
+            cls.__port_sub_reference_namespaces(copy_derivation, 'variableComponents', 'variants', doc,
+                                                collection_namespace)
+            cls.__port_sub_reference_namespaces(copy_derivation, 'variableComponents', 'variantCollections', doc,
+                                                collection_namespace)
+            cls.__port_sub_reference_namespaces(copy_derivation, 'variableComponents', 'variantDerivations', doc,
+                                                collection_namespace)
 
             cls.__port_reference_namespaces(copy_derivation, 'template', doc, collection_namespace)
 
@@ -222,9 +229,12 @@ class SynBioHub():
             copy_mod_def = cls.__copy_by_namespace(mod_def, namespace_to_docs, split_cap)
 
             cls.__port_sub_reference_namespaces(copy_mod_def, 'modules', 'definition', doc, collection_namespace)
-            cls.__port_sub_reference_namespaces(copy_mod_def, 'functionalComponents', 'definition', doc, collection_namespace)
-            cls.__port_sub_sub_reference_namespaces(copy_mod_def, 'modules', 'mapsTos', 'remote', doc, collection_namespace)
-            cls.__port_sub_sub_reference_namespaces(copy_mod_def, 'functionalComponents', 'mapsTos', 'remote', doc, collection_namespace)
+            cls.__port_sub_reference_namespaces(copy_mod_def, 'functionalComponents', 'definition', doc,
+                                                collection_namespace)
+            cls.__port_sub_sub_reference_namespaces(copy_mod_def, 'modules', 'mapsTos', 'remote', doc,
+                                                    collection_namespace)
+            cls.__port_sub_sub_reference_namespaces(copy_mod_def, 'functionalComponents', 'mapsTos', 'remote', doc,
+                                                    collection_namespace)
 
             cls.__port_reference_namespaces(copy_mod_def, 'models', doc, collection_namespace)
             cls.__port_reference_namespaces(copy_mod_def, 'attachments', doc, collection_namespace)
@@ -327,7 +337,8 @@ class SynBioHub():
                         static_refs.add(ref)
 
             if len(static_refs) != len(refs):
-                refs = [ref if ref in static_refs else '/'.join([collection_namespace] + ref.split('/')[-2:]) for ref in refs]
+                refs = [ref if ref in static_refs else '/'.join([collection_namespace] + ref.split('/')[-2:])
+                        for ref in refs]
 
                 setattr(obj, property_name, refs)
         elif refs is not None:
@@ -344,9 +355,11 @@ class SynBioHub():
             cls.__port_reference_namespaces(sub_obj, sub_property_name, doc, collection_namespace)
 
     @classmethod
-    def __port_sub_sub_reference_namespaces(cls, obj, property_name, sub_property_name, sub_sub_property_name, doc, collection_namespace):
+    def __port_sub_sub_reference_namespaces(cls, obj, property_name, sub_property_name, sub_sub_property_name, doc,
+                                            collection_namespace):
         for sub_obj in getattr(obj, property_name):
-            cls.__port_sub_reference_namespaces(sub_obj, sub_property_name, sub_sub_property_name, doc, collection_namespace)
+            cls.__port_sub_reference_namespaces(sub_obj, sub_property_name, sub_sub_property_name, doc,
+                                                collection_namespace)
 
     @classmethod
     def __create_sub_collection_documents(cls, doc, collection_namespace):
@@ -357,7 +370,8 @@ class SynBioHub():
 
             sub_copy = sub_collection.copy(sub_collection_docs[-1])
 
-            sub_copy.members = ['/'.join([collection_namespace] + member.split('/')[-2:]) for member in sub_copy.members]
+            sub_copy.members = ['/'.join([collection_namespace] + member.split('/')[-2:])
+                                for member in sub_copy.members]
 
         return sub_collection_docs
 
@@ -383,7 +397,7 @@ class SynBioHub():
                         sub_collection.members = sub_collection.members + remote_sub_collection.members
                     except RuntimeError:
                         raise SubCollectionMergeError(sub_collection.displayId, sub_collection.version)
-                except:
+                except LookupError:
                     pass
 
         setHomespace(temp_homespace)
@@ -452,9 +466,9 @@ class SynBioHub():
         responses = []
 
         cut_len = 50
-        
+
         sbh_query = SynBioHubQuery(self.sparql, user=self.email, authentication_key=self.token,
-            spoofed_url=self.spoofed_url)
+                                   spoofed_url=self.spoofed_url)
 
         if len(member_uris) <= cut_len:
             responses.append(sbh_query.query_collection_members(collection_uris, member_uris, rdf_type))
@@ -478,10 +492,10 @@ class SynBioHub():
                     collection_uri = binding['collection']['value']
                 try:
                     collection_to_member[collection_uri].append(binding['entity']['value'])
-                except:
+                except KeyError:
                     try:
                         collection_to_member[collection_uri] = [binding['entity']['value']]
-                    except:
+                    except KeyError:
                         pass
 
         return collection_to_member
