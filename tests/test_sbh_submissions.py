@@ -50,7 +50,7 @@ class TestSBHSubmissions(unittest.TestCase):
 
         query_result = sbh.query_collection_members(collection_uris=[collection_identity])
 
-        assert len(query_result[collection_identity]) == 1 and query_result[collection_identity][0] == member_identity
+        assert len(query_result[collection_identity]) == 1 and member_identity in query_result[collection_identity]
 
     def test_submit_sub_collection(self):
         sbh = SynBioHub(SD2Constants.SD2_STAGING_SERVER, self.user, self.password, 
@@ -83,7 +83,7 @@ class TestSBHSubmissions(unittest.TestCase):
 
         query_result = sbh.query_collection_members(collection_uris=[collection_identity])
 
-        assert len(query_result[collection_identity]) == 1 and query_result[collection_identity][0] == sub_collection_identity
+        assert len(query_result[collection_identity]) == 1 and sub_collection_identity in query_result[collection_identity]
 
     def test_submit_to_collection(self):
         sbh = SynBioHub(SD2Constants.SD2_STAGING_SERVER, self.user, self.password, 
@@ -123,9 +123,75 @@ class TestSBHSubmissions(unittest.TestCase):
 
         query_result = sbh.query_collection_members(collection_uris=[collection_identity])
 
-        assert (len(query_result[collection_identity]) == 2 and (
-            (query_result[collection_identity][0] == member_identity1 and query_result[collection_identity][1] == member_identity2)
-            or (query_result[collection_identity][0] == member_identity2 and query_result[collection_identity][1] == member_identity1)))
+        assert (len(query_result[collection_identity]) == 2
+            and member_identity1 in query_result[collection_identity]
+            and member_identity2 in query_result[collection_identity])
+
+    def test_submit_to_sub_collection(self):
+        sbh = SynBioHub(SD2Constants.SD2_STAGING_SERVER, self.user, self.password, 
+            SD2Constants.SD2_STAGING_SERVER + '/sparql', SD2Constants.SD2_SERVER)
+
+        sbol.Config.setOption('sbol_typed_uris', False)
+        sbol.Config.setOption('validate', False)
+        sbol.setHomespace('http://dummy.org')
+
+        doc1 = sbol.Document()
+
+        collection_ID = 'adapter_test_4'
+        collection_name = 'Adapter Test Collection 4'
+        collection_description = 'This is a test of the upload_sbol module of synbiohub_adapter.'
+        collection_version = '1'
+
+        sub_collection_ID = 'sub_adapter_test'
+        sub_collection_name = 'Sub Adapter Test Collection'
+        sub_collection_description = 'This is a test of the upload_sbol module of synbiohub_adapter.'
+        sub_collection_version = '1'
+
+        sbh.submit_collection(doc1, collection_ID, collection_version, collection_name,
+            collection_description, 0, sub_collection_ID, sub_collection_version, sub_collection_name,
+            sub_collection_description, overwrite=True)
+
+        collection_identity = '/'.join([SD2Constants.SD2_SERVER, 'user', self.user, collection_ID,
+            collection_ID + '_collection', '1'])
+        sub_collection_identity = '/'.join([SD2Constants.SD2_SERVER, 'user', self.user, collection_ID,
+            sub_collection_ID, '1'])
+
+        member_ID1 = 'bar'
+
+        doc2 = sbol.Document()
+        doc2.componentDefinitions.create(member_ID1)
+
+        sbh.submit_to_collection([doc2], collection_identity, overwrite=True, sub_collection_id=sub_collection_ID,
+            sub_collection_version=sub_collection_version, sub_collection_name=sub_collection_name,
+            sub_collection_description=sub_collection_description)
+
+        member_identity1 = '/'.join([SD2Constants.SD2_SERVER, 'user', self.user, collection_ID,
+            member_ID1, '1'])
+
+        member_ID2 = 'foo'
+
+        doc3 = sbol.Document()
+        doc3.componentDefinitions.create(member_ID2)
+
+        sbh.submit_to_collection([doc3], collection_identity, overwrite=True, sub_collection_id=sub_collection_ID,
+            sub_collection_version=sub_collection_version, sub_collection_name=sub_collection_name,
+            sub_collection_description=sub_collection_description)
+
+        member_identity2 = '/'.join([SD2Constants.SD2_SERVER, 'user', self.user, collection_ID,
+            member_ID2, '1'])
+
+        query_result1 = sbh.query_collection_members(collection_uris=[collection_identity])
+
+        assert (len(query_result1[collection_identity]) == 3
+            and member_identity1 in query_result1[collection_identity]
+            and member_identity2 in query_result1[collection_identity]
+            and sub_collection_identity in query_result1[collection_identity])
+
+        query_result2 = sbh.query_collection_members(collection_uris=[sub_collection_identity])
+
+        assert (len(query_result2[sub_collection_identity]) == 2
+            and member_identity1 in query_result2[sub_collection_identity]
+            and member_identity2 in query_result2[sub_collection_identity])
 
 if __name__ == '__main__':
   unittest.main()

@@ -372,13 +372,16 @@ class SynBioHub():
                 remote_uri = '/'.join([collection_namespace, sub_collection.displayId, sub_collection.version])
 
                 try:
-                    self.part_shop.pull(remote_uri, remote_doc, False)
+                    if self.spoofed_url:
+                        self.part_shop.pull(remote_uri.replace(self.spoofed_url, self.url), remote_doc, False)
+                    else:
+                        self.part_shop.pull(remote_uri, remote_doc, False)
 
                     try:
-                        remote_sub_collection = remote_doc.getCollection(remote_uri.replace(self.url + '/', ''))
+                        remote_sub_collection = remote_doc.getCollection(remote_uri)
 
                         sub_collection.members = sub_collection.members + remote_sub_collection.members
-                    except:
+                    except RuntimeError:
                         raise SubCollectionMergeError(sub_collection.displayId, sub_collection.version)
                 except:
                     pass
