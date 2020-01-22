@@ -654,7 +654,7 @@ class SubCollectionMergeError(Exception):
         if self.additional_detail:
             msg = "Sub collection with ID {id} and version {ve} failed to merge. {ad}"
 
-            return msg.format(id=self.collection_id, ve=self.collection_version, ad=additional_detail)
+            return msg.format(id=self.collection_id, ve=self.collection_version, ad=self.additional_detail)
         else:
             msg = "Sub collection with ID {id} and version {ve} failed to merge."
 
