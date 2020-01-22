@@ -95,6 +95,8 @@ class SynBioHub():
             response = self.part_shop.submit(doc)
 
             print(response)
+        # If Collection already exists on SynBioHub, then DuplicateCollectionError should be raised unless overwriting.
+        # Since exception raised by PartShop in this case is generic, currently check its message.
         except RuntimeError as e:
             if str(e).endswith('Submission id and version already in use'):
                 if overwrite:
@@ -385,18 +387,22 @@ includes an object: (.+) that is already in this repository and has different co
             for sub_collection in doc.collections:
                 remote_uri = '/'.join([collection_namespace, sub_collection.displayId, sub_collection.version])
 
+                if self.spoofed_url:
+                    pull_uri = remote_uri.replace(self.spoofed_url, self.url)
+                else:
+                    pull_uri = remote_uri
+
                 try:
-                    if self.spoofed_url:
-                        self.part_shop.pull(remote_uri.replace(self.spoofed_url, self.url), remote_doc, False)
-                    else:
-                        self.part_shop.pull(remote_uri, remote_doc, False)
+                    self.part_shop.pull(pull_uri, remote_doc, False)
 
                     try:
                         remote_sub_collection = remote_doc.getCollection(remote_uri)
 
                         sub_collection.members = sub_collection.members + remote_sub_collection.members
-                    except RuntimeError:
-                        raise SubCollectionMergeError(sub_collection.displayId, sub_collection.version)
+                    except RuntimeError as e:
+                        raise SubCollectionMergeError(sub_collection.displayId, sub_collection.version, str(e))
+
+                # If sub-Collection does not already exist on SynBioHub, then there is nothing to merge.
                 except LookupError:
                     pass
 
@@ -490,13 +496,12 @@ includes an object: (.+) that is already in this repository and has different co
                     collection_uri = collection_uris[0]
                 else:
                     collection_uri = binding['collection']['value']
-                try:
+
+                if collection_uri not in collection_to_member:
+                    collection_to_member[collection_uri] = []
+
+                if 'entity' in binding:
                     collection_to_member[collection_uri].append(binding['entity']['value'])
-                except KeyError:
-                    try:
-                        collection_to_member[collection_uri] = [binding['entity']['value']]
-                    except KeyError:
-                        pass
 
         return collection_to_member
 
@@ -640,13 +645,20 @@ class MaxUploadError(Exception):
 
 class SubCollectionMergeError(Exception):
 
-    def __init__(self, collection_id, collection_version):
+    def __init__(self, collection_id, collection_version, additional_detail=None):
         self.collection_id = collection_id
         self.collection_version = collection_version
+        self.additional_detail = additional_detail
 
     def __str__(self):
-        msg = "Sub collection with ID {id} and version {ve} failed to merge."
-        return msg.format(id=self.collection_id, ve=self.collection_version)
+        if self.additional_detail:
+            msg = "Sub collection with ID {id} and version {ve} failed to merge. {ad}"
+
+            return msg.format(id=self.collection_id, ve=self.collection_version, ad=additional_detail)
+        else:
+            msg = "Sub collection with ID {id} and version {ve} failed to merge."
+
+            return msg.format(id=self.collection_id, ve=self.collection_version)
 
 
 class MissingCollectionError(Exception):
