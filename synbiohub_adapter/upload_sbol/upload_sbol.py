@@ -4,6 +4,7 @@ import os
 import json
 import requests
 import re
+from urllib3.exceptions import HTTPError
 from sbol import *
 from synbiohub_adapter import SynBioHubQuery
 from synbiohub_adapter import SD2Constants
@@ -97,7 +98,7 @@ class SynBioHub():
             print(response)
         # If Collection already exists on SynBioHub, then DuplicateCollectionError should be raised unless overwriting.
         # Since exception raised by PartShop in this case is generic, currently check its message.
-        except RuntimeError as e:
+        except (HTTPError, RuntimeError) as e:
             if str(e).endswith('Submission id and version already in use'):
                 if overwrite:
                     if self.spoofed_url:
