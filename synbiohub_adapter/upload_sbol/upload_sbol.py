@@ -114,11 +114,8 @@ class SynBioHub():
         # If Collection already exists on SynBioHub, then DuplicateCollectionError should be raised unless overwriting.
         # Since exception raised by PartShop in this case is generic, currently check its message.
         except (HTTPError, RuntimeError) as e:
-            e_message = str(e)
-            if isinstance(e_message, bytes):
-                e_message = e_message.decode('UTF-8')
-
-            if e_message.endswith('Submission id and version already in use'):
+            if (str(e).endswith('Submission id and version already in use') or str(e).endswith("b'Submission id and \
+version already in use'")):
                 if overwrite:
                     if self.spoofed_url:
                         collection_uri = '/'.join([self.spoofed_url, 'user', self.email, collection_id,
@@ -131,7 +128,7 @@ class SynBioHub():
 
                     print(response)
                 else:
-                   raise DuplicateCollectionError(doc.displayId, doc.version) 
+                    raise DuplicateCollectionError(doc.displayId, doc.version)
             else:
                 raise e
 
