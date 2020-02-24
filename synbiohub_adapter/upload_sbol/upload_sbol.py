@@ -95,7 +95,6 @@ class SynBioHub():
         try:
             response = self.part_shop.submit(doc)
 
-            print(response)
         # If Collection already exists on SynBioHub, then DuplicateCollectionError should be raised unless overwriting.
         # Since exception raised by PartShop in this case is generic, currently check its message.
         except (HTTPError, RuntimeError) as e:
@@ -110,8 +109,6 @@ version already in use'")):
                                                    collection_id + '_collection', '1'])
 
                     response = self.part_shop.submit(doc, collection_uri, 1)
-
-                    print(response)
                 else:
                     raise DuplicateCollectionError(doc.displayId, doc.version)
             else:
@@ -154,8 +151,8 @@ version already in use'")):
                 else:
                     response = self.part_shop.submit(submission_doc, collection_uri, 2)
 
-                print(response)
-                print(repr(i) + ' of ' + repr(len(submission_docs)))
+                # print(response)
+                # print(repr(i) + ' of ' + repr(len(submission_docs)))
             except RuntimeError as e:
                 if 'Submission id and version does not exist' in repr(e):
                     raise MissingCollectionError(collection_uri)
@@ -468,8 +465,6 @@ includes an object: (.+) that is already in this repository and has different co
                                           'X-authorization': self.token},
                                  files={'file': open(file, 'rb')})
 
-        print(response)
-
     def query_collection_members(self, member_uris=[], collection_uris=[], rdf_type=None):
         responses = []
 
@@ -572,8 +567,6 @@ includes an object: (.+) that is already in this repository and has different co
 
         response = self.part_shop.submit(doc, SD2Constants.SD2_EXPERIMENT_COLLECTION, 2)
 
-        print(response)
-
     def push_lab_sample_parameter(self, sample_uri, parameter_uri, parameter_value):
         """Pushes a lab parameter for a sample to SynBioHub.
 
@@ -610,8 +603,6 @@ includes an object: (.+) that is already in this repository and has different co
         sample.addPropertyValue(parameter_uri, parameter_value)
 
         response = self.part_shop.submit(doc, list(collection_to_member.keys())[0], 2)
-
-        print(response)
 
 
 class CollectionArgumentError(Exception):
