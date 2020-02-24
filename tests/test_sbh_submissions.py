@@ -52,7 +52,8 @@ class TestSBHSubmissions(unittest.TestCase):
 
         query_result = sbh.query_collection_members(collection_uris=[collection_identity])
 
-        assert len(query_result[collection_identity]) == 1 and member_identity in query_result[collection_identity]
+        self.assertEqual(len(query_result[collection_identity]), 1)
+        self.assertIn(member_identity, query_result[collection_identity])
 
     def test_submit_sub_collection(self):
         sbh = SynBioHub(SD2Constants.SD2_STAGING_SERVER, self.user, self.password,
@@ -85,8 +86,8 @@ class TestSBHSubmissions(unittest.TestCase):
 
         query_result = sbh.query_collection_members(collection_uris=[collection_identity])
 
-        assert (len(query_result[collection_identity]) == 1 and sub_collection_identity
-                in query_result[collection_identity])
+        self.assertEqual(len(query_result[collection_identity]), 1)
+        self.assertIn(sub_collection_identity, query_result[collection_identity])
 
     def test_submit_to_collection(self):
         sbh = SynBioHub(SD2Constants.SD2_STAGING_SERVER, self.user, self.password,
@@ -126,8 +127,9 @@ class TestSBHSubmissions(unittest.TestCase):
 
         query_result = sbh.query_collection_members(collection_uris=[collection_identity])
 
-        assert (len(query_result[collection_identity]) == 2 and member_identity1
-                in query_result[collection_identity] and member_identity2 in query_result[collection_identity])
+        self.assertEqual(len(query_result[collection_identity]), 2)
+        self.assertIn(member_identity1, query_result[collection_identity])
+        self.assertIn(member_identity2, query_result[collection_identity])
 
     @unittest.expectedFailure
     def test_submit_to_sub_collection(self):
@@ -187,14 +189,16 @@ class TestSBHSubmissions(unittest.TestCase):
 
         query_result1 = sbh.query_collection_members(collection_uris=[collection_identity])
 
-        assert (len(query_result1[collection_identity]) == 3 and member_identity1 in
-                query_result1[collection_identity] and member_identity2 in
-                query_result1[collection_identity] and sub_collection_identity in query_result1[collection_identity])
+        self.assertEqual(len(query_result1[collection_identity]), 3)
+        self.assertIn(member_identity1, query_result1[collection_identity])
+        self.assertIn(member_identity2, query_result1[collection_identity])
+        self.assertIn(sub_collection_identity, query_result1[collection_identity])
 
         query_result2 = sbh.query_collection_members(collection_uris=[sub_collection_identity])
 
-        assert (len(query_result2[sub_collection_identity]) == 2 and member_identity1 in
-                query_result2[sub_collection_identity] and member_identity2 in query_result2[sub_collection_identity])
+        self.assertEqual(len(query_result2[sub_collection_identity]), 2)
+        self.assertIn(member_identity1, query_result2[sub_collection_identity])
+        self.assertIn(member_identity2, query_result2[sub_collection_identity])
 
 
 if __name__ == '__main__':
