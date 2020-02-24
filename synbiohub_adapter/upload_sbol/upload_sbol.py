@@ -77,21 +77,6 @@ class SynBioHub():
         self.sparql = sparql
         self.spoofed_url = spoofed_url
 
-    def __resubmit_collection(self, doc, collection_id, overwrite):
-        if overwrite:
-            if self.spoofed_url:
-                collection_uri = '/'.join([self.spoofed_url, 'user', self.email, collection_id,
-                                          collection_id + '_collection', '1'])
-            else:
-                collection_uri = '/'.join([self.url, 'user', self.email, collection_id,
-                                          collection_id + '_collection', '1'])
-
-            response = self.part_shop.submit(doc, collection_uri, 1)
-
-            print(response)
-        else:
-            raise DuplicateCollectionError(doc.displayId, doc.version)
-
     def submit_collection(self, doc, collection_id, collection_version, collection_name, collection_description,
                           max_upload=0, sub_collection_id=None, sub_collection_version=None,
                           sub_collection_name=None, sub_collection_description=None, overwrite=False):
