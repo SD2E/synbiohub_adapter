@@ -52,6 +52,7 @@ class TestSBHSubmissions(unittest.TestCase):
 
         query_result = sbh.query_collection_members(collection_uris=[collection_identity])
 
+        self.assertIn(collection_identity, query_result)
         self.assertEqual(len(query_result[collection_identity]), 1)
         self.assertIn(member_identity, query_result[collection_identity])
 
@@ -86,6 +87,7 @@ class TestSBHSubmissions(unittest.TestCase):
 
         query_result = sbh.query_collection_members(collection_uris=[collection_identity])
 
+        self.assertIn(collection_identity, query_result)
         self.assertEqual(len(query_result[collection_identity]), 1)
         self.assertIn(sub_collection_identity, query_result[collection_identity])
 
@@ -127,6 +129,7 @@ class TestSBHSubmissions(unittest.TestCase):
 
         query_result = sbh.query_collection_members(collection_uris=[collection_identity])
 
+        self.assertIn(collection_identity, query_result)
         self.assertEqual(len(query_result[collection_identity]), 2)
         self.assertIn(member_identity1, query_result[collection_identity])
         self.assertIn(member_identity2, query_result[collection_identity])
