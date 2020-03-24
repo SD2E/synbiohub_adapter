@@ -77,6 +77,27 @@ class SynBioHub():
         self.sparql = sparql
         self.spoofed_url = spoofed_url
 
+    def submit_document(self, doc, collection_uri='', overwrite_merge=0):
+        files = {}
+        files['id'] = (None, doc.displayId)
+        files['version'] = (None, doc.version)
+        files['name'] = (None, doc.name)
+        files['description'] = (None, doc.description)
+        files['file'] = ('file', doc.writeString(), 'text/xml')
+        files['citations'] = (None, '')
+        files['keywords'] = (None, '')
+        files['overwrite_merge'] = (None, str(overwrite_merge))
+        files['user'] = (None, self.token)
+        if len(collection_uri) > 0:
+            files['rootCollections'] = (None, collection_uri)
+
+        response = requests.post(self.url + '/submit',
+                                 files=files,
+                                 headers={'Accept': 'text/plain',
+                                          'X-authorization': self.token})
+
+        return response
+
     def submit_collection(self, doc, collection_id, collection_version, collection_name, collection_description,
                           max_upload=0, sub_collection_id=None, sub_collection_version=None,
                           sub_collection_name=None, sub_collection_description=None, overwrite=False):
@@ -92,14 +113,11 @@ class SynBioHub():
         doc.description = collection_description
         doc.version = collection_version
 
-        try:
-            response = self.part_shop.submit(doc)
+        response = self.submit_document(doc)
 
         # If Collection already exists on SynBioHub, then DuplicateCollectionError should be raised unless overwriting.
-        # Since exception raised by PartShop in this case is generic, currently check its message.
-        except (HTTPError, RuntimeError) as e:
-            if (str(e).endswith('Submission id and version already in use') or str(e).endswith("b'Submission id and \
-version already in use'")):
+        if response.status_code != 200:
+            if response.content.decode('UTF-8').endswith('Submission id and version already in use'):
                 if overwrite:
                     if self.spoofed_url:
                         collection_uri = '/'.join([self.spoofed_url, 'user', self.email, collection_id,
@@ -108,11 +126,14 @@ version already in use'")):
                         collection_uri = '/'.join([self.url, 'user', self.email, collection_id,
                                                    collection_id + '_collection', '1'])
 
-                    response = self.part_shop.submit(doc, collection_uri, 1)
+                    response = self.submit_document(doc, collection_uri, 1)
+
+                    if response.status_code != 200:
+                        raise SubmissionFailureError(response.status_code, response.content.decode('UTF-8'))
                 else:
                     raise DuplicateCollectionError(doc.displayId, doc.version)
             else:
-                raise e
+                raise SubmissionFailureError(response.status_code, response.content.decode('UTF-8'))
 
     def submit_to_collection(self, docs, collection_uri, max_upload=0, overwrite=False,
                              overwrite_sub_collections=False, sub_collection_id=None, sub_collection_version=None,
@@ -147,9 +168,9 @@ version already in use'")):
 
             try:
                 if overwrite:
-                    response = self.part_shop.submit(submission_doc, collection_uri, 3)
+                    response = self.submit_document(doc, collection_uri, 3)
                 else:
-                    response = self.part_shop.submit(submission_doc, collection_uri, 2)
+                    response = self.submit_document(doc, collection_uri, 2)
 
                 # print(response)
                 # print(repr(i) + ' of ' + repr(len(submission_docs)))
@@ -565,7 +586,7 @@ includes an object: (.+) that is already in this repository and has different co
             plan.this, parameter_uri, '0', '*'))
         plan.addPropertyValue(parameter_uri, parameter_value)
 
-        response = self.part_shop.submit(doc, SD2Constants.SD2_EXPERIMENT_COLLECTION, 2)
+        response = self.submit_document(doc, SD2Constants.SD2_EXPERIMENT_COLLECTION, 2)
 
     def push_lab_sample_parameter(self, sample_uri, parameter_uri, parameter_value):
         """Pushes a lab parameter for a sample to SynBioHub.
@@ -602,7 +623,7 @@ includes an object: (.+) that is already in this repository and has different co
             sample.this, parameter_uri, '0', '*'))
         sample.addPropertyValue(parameter_uri, parameter_value)
 
-        response = self.part_shop.submit(doc, list(collection_to_member.keys())[0], 2)
+        response = self.submit_document(doc, list(collection_to_member.keys())[0], 2)
 
 
 class CollectionArgumentError(Exception):
@@ -672,6 +693,17 @@ class DuplicateCollectionError(Exception):
     def __str__(self):
         msg = "There already exists a Collection with ID {id} and version {ve}."
         return msg.format(id=self.collection_id, ve=self.collection_version)
+
+
+class SubmissionFailureError(Exception):
+
+    def __init__(self, status_code, response_content):
+        self.status_code = status_code
+        self.response_content = response_content
+
+    def __str__(self):
+        msg = 'Submission failed with status code {sc} and content "{rc}".'
+        return msg.format(sc=str(status_code), rc=self.response_content)
 
 
 class ObjectMismatchError(Exception):
