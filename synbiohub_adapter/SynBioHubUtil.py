@@ -3,7 +3,7 @@ import sys
 import csv
 
 from SPARQLWrapper import SPARQLWrapper, JSON, POST, SPARQLExceptions
-from sbol import *
+from sbol2 import *
 from .cache_query import wrap_query_fn
 from functools import partial
 

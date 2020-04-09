@@ -8,9 +8,8 @@ install_requires = [
     'SPARQLWrapper>=1.8.2',
     'appdirs>=1.4.3',
     'pycodestyle>=2.5.0',
-    # This syntax requires pip>=18
-    'sbol@git+https://github.com/llotneb/SBOL',
     'requests>=2.21.0',
+    'sbol2',
     'tenacity>=5.0.3'
 ]
 

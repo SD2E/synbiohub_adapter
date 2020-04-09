@@ -2,7 +2,7 @@ import unittest
 
 from synbiohub_adapter.query_synbiohub import *
 from synbiohub_adapter.SynBioHubUtil import *
-from sbol import *
+from sbol2 import *
 from getpass import getpass
 import sys
 import os
