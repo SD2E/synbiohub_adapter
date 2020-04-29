@@ -795,7 +795,8 @@ class SBOLQuery():
     def serialize_objects(self, objects):
         if isinstance(objects, (str, bytes)):
             objects = [objects]
-        return ', '.join(['<' + obj + '>' for obj in objects])
+        literal = '<{}>'
+        return ', '.join([literal.format(obj) for obj in objects])
 
 
 def loadSBOLFile(sbolFile):
