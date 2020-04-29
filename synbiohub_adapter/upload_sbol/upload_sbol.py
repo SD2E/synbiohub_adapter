@@ -5,7 +5,7 @@ import json
 import requests
 import re
 from urllib3.exceptions import HTTPError
-from sbol import *
+from sbol2 import *
 from synbiohub_adapter import SynBioHubQuery
 from synbiohub_adapter import SD2Constants
 
