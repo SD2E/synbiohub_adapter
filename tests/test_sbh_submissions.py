@@ -134,7 +134,6 @@ class TestSBHSubmissions(unittest.TestCase):
         self.assertIn(member_identity1, query_result[collection_identity])
         self.assertIn(member_identity2, query_result[collection_identity])
 
-    @unittest.expectedFailure
     def test_submit_to_sub_collection(self):
         sbh = SynBioHub(SD2Constants.SD2_STAGING_SERVER, self.user, self.password,
                         SD2Constants.SD2_STAGING_SERVER + '/sparql', SD2Constants.SD2_SERVER)
