@@ -2,7 +2,7 @@ import unittest
 
 from synbiohub_adapter.upload_sbol.upload_sbol import SynBioHub
 from synbiohub_adapter.SynBioHubUtil import SD2Constants
-import sbol
+import sbol2 as sbol
 from getpass import getpass
 import os
 

@@ -8,8 +8,8 @@ install_requires = [
     'SPARQLWrapper>=1.8.2',
     'appdirs>=1.4.3',
     'pycodestyle>=2.5.0',
-    'pysbol>=2.3.1',
     'requests>=2.21.0',
+    'sbol2',
     'tenacity>=5.0.3'
 ]
 

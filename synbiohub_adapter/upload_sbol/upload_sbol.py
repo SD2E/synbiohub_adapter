@@ -5,7 +5,7 @@ import json
 import requests
 import re
 from urllib3.exceptions import HTTPError
-from sbol import *
+from sbol2 import *
 from synbiohub_adapter import SynBioHubQuery
 from synbiohub_adapter import SD2Constants
 
@@ -395,7 +395,7 @@ includes an object: (.+) that is already in this repository and has different co
                     self.part_shop.pull(pull_uri, remote_doc, False)
 
                     try:
-                        remote_sub_collection = remote_doc.getCollection(remote_uri)
+                        remote_sub_collection = remote_doc.collections.get(remote_uri)
 
                         sub_collection.members = sub_collection.members + remote_sub_collection.members
                     except RuntimeError as e:
