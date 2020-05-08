@@ -3,7 +3,7 @@ import sys
 import json
 
 from synbiohub_adapter.SynBioHubUtil import *
-from sbol import *
+from sbol2 import *
 
 '''
     This module is used to query information from SD2's SynBioHub instance for DARPA's SD2E project.

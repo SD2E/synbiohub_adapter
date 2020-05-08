@@ -6,7 +6,7 @@ import pycodestyle
 
 # Please do not increase this number. Style warnings should DECREASE,
 # not increase.
-ALLOWED_ERRORS = 205
+ALLOWED_ERRORS = 187
 
 # Allow longer lines. The default is 79, which allows the 80th
 # character to be a line continuation symbol. Here, we increase the
@@ -81,8 +81,8 @@ class TestStyle(unittest.TestCase):
         self.assertEqual(report.total_errors, count, msg=message)
 
     def test_allowed_errors(self):
-        self.assert_warning_count('E501', 188, "line too long")
-        self.assert_warning_count('E722', 17, "do not use bare 'except'")
+        self.assert_warning_count('E501', 174, "line too long")
+        self.assert_warning_count('E722', 13, "do not use bare 'except'")
 
     def test_disallowed_errors(self):
         """All errors other than E501 and E722 should not appear in the code."""

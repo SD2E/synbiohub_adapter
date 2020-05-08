@@ -8,14 +8,14 @@ install_requires = [
     'SPARQLWrapper>=1.8.2',
     'appdirs>=1.4.3',
     'pycodestyle>=2.5.0',
-    'pysbol>=2.3.1',
     'requests>=2.21.0',
+    'sbol2',
     'tenacity>=5.0.3'
 ]
 
 setup(
     name='synbiohub_adapter',
-    version='1.2',
+    version='1.3',
     packages=find_packages(),
     install_requires=install_requires,
     classifiers=[

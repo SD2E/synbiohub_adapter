@@ -3,7 +3,7 @@ import sys
 import csv
 
 from SPARQLWrapper import SPARQLWrapper, JSON, POST, SPARQLExceptions
-from sbol import *
+from sbol2 import *
 from .cache_query import wrap_query_fn
 from functools import partial
 
@@ -795,7 +795,8 @@ class SBOLQuery():
     def serialize_objects(self, objects):
         if isinstance(objects, (str, bytes)):
             objects = [objects]
-        return ', '.join(['<' + obj + '>' for obj in objects])
+        literal = '<{}>'
+        return ', '.join([literal.format(obj) for obj in objects])
 
 
 def loadSBOLFile(sbolFile):
