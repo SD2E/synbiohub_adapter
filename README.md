@@ -1,6 +1,5 @@
 
 # synbiohub_adapter
-![Build Status](https://api.travis-ci.com/SD2E/synbiohub_adapter.svg?branch=master)
 
 synbiohub_adapter is a Python 3 package that provides an API to [SynBioHub](http://wiki.synbiohub.org/wiki/Main_Page).
 
@@ -12,7 +11,7 @@ synbiohub_adapter is not compatible with Python 2.
 To install the current release of synbiohub_adapter:
 
 ```shell
-pip3 install git+https://github.com/SD2E/synbiohub_adapter.git@v1.2
+pip3 install git+https://github.com/SD2E/synbiohub_adapter.git@v1.3
 ```
 
 ### Install from git clone
